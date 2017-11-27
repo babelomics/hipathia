@@ -1,0 +1,37 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-hsa05211-1	PTPN11	533	267	white	rectangle	gene	0.5	black	46	17	5781
+N-hsa05211-16	C00122	334	0	white	circle	compound	0.5	black	8	8	NA
+N-hsa05211-28	RAC1	580	201	white	rectangle	gene	0.5	black	46	17	5879
+N-hsa05211-29	CRK	535	297	white	rectangle	gene	0.5	black	46	17	1398,1399
+N-hsa05211-30	RAPGEF1	620	298	white	rectangle	gene	0.5	black	46	17	2889
+N-hsa05211-32	GRB2	330	232	white	rectangle	gene	0.5	black	46	17	2885
+N-hsa05211-33	EGLN2*	354	424	white	rectangle	gene	0.5	black	46	17	112398,112399,54583
+N-hsa05211-38	MET	233	279	white	rectangle	gene	0.5	black	46	17	4233
+N-hsa05211-39	GAB1	330	326	white	rectangle	gene	0.5	black	46	17	2549
+N-hsa05211-44	CDC42	580	178	white	rectangle	gene	0.5	black	46	17	998
+N-hsa05211-47	PIK3R5	707	326	white	rectangle	gene	0.5	black	46	17	23533,5290,5291,5293,5294,5295,5296,8503
+N-hsa05211-50	HGF	151	280	white	rectangle	gene	0.5	black	46	17	3082
+N-hsa05211-52	MAPK1	743	232	white	rectangle	gene	0.5	black	46	17	5594,5595
+N-hsa05211-53	MAP2K1	661	232	white	rectangle	gene	0.5	black	46	17	5604,5605
+N-hsa05211-54	ARAF	579	232	white	rectangle	gene	0.5	black	46	17	369,5894,673
+N-hsa05211-5 13	ARNT EPAS1	676	68	white	rectangle	gene,gene	0.5	black	46	17	405,9915,/,2034,3091
+N-hsa05211-6 13	CREBBP EPAS1	699	129	white	rectangle	gene,gene	0.5	black	46	17	1387,2033,/,2034,3091
+N-hsa05211-35 37	ARNT EPAS1*	676	496	white	rectangle	gene,gene	0.5	black	46	17	405,9915,/,2034,3091
+N-hsa05211-36 37	CREBBP EPAS1*	697	558	white	rectangle	gene,gene	0.5	black	46	17	1387,2033,/,2034,3091
+N-hsa05211-12	EGLN2	416	0	white	rectangle	gene	0.5	black	46	17	112398,112399,54583
+N-hsa05211-40	PAK4	657	190	white	rectangle	gene	0.5	black	46	17	10298,5058,5062,5063,56924,57144
+N-hsa05211-43	RAP1A	707	298	white	rectangle	gene	0.5	black	46	17	5906,5908
+N-hsa05211-31	SOS1	413	232	white	rectangle	gene	0.5	black	46	17	6654,6655
+N-hsa05211-46	AKT3	838	326	white	rectangle	gene	0.5	black	46	17	10000,207,208
+N-hsa05211-45	ETS1	888	243	white	rectangle	gene	0.5	black	46	17	2113
+N-hsa05211-48	JUN	888	221	white	rectangle	gene	0.5	black	46	17	3725
+N-hsa05211-4	SLC2A1	800	133	white	rectangle	gene	0.5	black	46	17	6513
+N-hsa05211-3	VEGFA	800	106	white	rectangle	gene	0.5	black	46	17	7422
+N-hsa05211-2	TGFB1	800	80	white	rectangle	gene	0.5	black	46	17	7040,7042,7043
+N-hsa05211-23	PDGFB	800	54	white	rectangle	gene	0.5	black	46	17	5155
+N-hsa05211-22	TGFA	800	28	white	rectangle	gene	0.5	black	46	17	7039
+N-hsa05211-42	SLC2A1*	800	573	white	rectangle	gene	0.5	black	46	17	6513
+N-hsa05211-27	VEGFA*	800	546	white	rectangle	gene	0.5	black	46	17	7422
+N-hsa05211-21	TGFB1*	800	520	white	rectangle	gene	0.5	black	46	17	7040,7042,7043
+N-hsa05211-41	PDGFB*	800	494	white	rectangle	gene	0.5	black	46	17	5155
+N-hsa05211-49	TGFA*	800	468	white	rectangle	gene	0.5	black	46	17	7039

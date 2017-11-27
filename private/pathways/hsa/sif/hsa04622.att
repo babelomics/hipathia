@@ -1,0 +1,32 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-hsa04622-2	IFIH1	444	125	white	rectangle	gene	0.5	black	46	17	64135
+N-hsa04622-3	TRIM25	398	469	white	rectangle	gene	0.5	black	46	17	7706
+N-hsa04622-4	RNF125	456	469	white	rectangle	gene	0.5	black	46	17	54941
+N-hsa04622-7	OTUD5	753	348	white	rectangle	gene	0.5	black	46	17	55593
+N-hsa04622-15	FADD	841	206	white	rectangle	gene	0.5	black	46	17	8772
+N-hsa04622-22	IKBKB	1022	205	white	rectangle	gene	0.5	black	46	17	3551
+N-hsa04622-24	NFKBIA	1111	205	white	rectangle	gene	0.5	black	46	17	4792,4793
+N-hsa04622-27	DHX58	387	271	white	rectangle	gene	0.5	black	46	17	79132
+N-hsa04622-28	RNF125*	474	200	white	rectangle	gene	0.5	black	46	17	54941
+N-hsa04622-32	NLRX1	603	346	white	rectangle	gene	0.5	black	46	17	79671
+N-hsa04622-34	CYLD	423	505	white	rectangle	gene	0.5	black	46	17	1540
+N-hsa04622-39	SIKE1	931	388	white	rectangle	gene	0.5	black	46	17	80143
+N-hsa04622-40	TKFC	444	228	white	rectangle	gene	0.5	black	46	17	26007
+N-hsa04622-43	MAP3K1	821	16	white	rectangle	gene	0.5	black	46	17	4214
+N-hsa04622-47	MAP3K7	821	82	white	rectangle	gene	0.5	black	46	17	6885
+N-hsa04622-16 17	CASP8 CASP10	931	215	white	rectangle	gene,gene	0.5	black	46	17	841,/,843
+N-hsa04622-1 29	DDX58 ISG15	444	401	white	rectangle	gene,gene	0.5	black	46	17	23586,/,9636
+N-hsa04622-1 30 31	DDX58 ATG5 ATG12	444	401	white	rectangle	gene,gene,gene	0.5	black	46	17	23586,/,9474,/,9140
+N-hsa04622-5 46	MAVS TRAF2	622	271	white	rectangle	gene,gene	0.5	black	46	17	57506,/,7186
+N-hsa04622-5 20	MAVS TRAF6	622	271	white	rectangle	gene,gene	0.5	black	46	17	57506,/,7189
+N-hsa04622-8 12 13 14	TRAF3 TANK AZI2 TBKBP1	753	296	white	rectangle	gene,gene,gene,gene	0.5	black	46	17	7187,/,10010,/,64343,/,9755
+N-hsa04622-37 12 13 14	TRADD TANK AZI2 TBKBP1	753	227	white	rectangle	gene,gene,gene,gene	0.5	black	46	17	8717,/,10010,/,64343,/,9755
+N-hsa04622-42 10 26 36	DDX3X IKBKE TBK1 IKBKG	988	388	white	rectangle	gene,gene,gene,gene	0.5	black	46	17	1654,/,9641,/,29110,/,8517
+N-hsa04622-5 8 37	MAVS TRAF3 TRADD	622	271	white	rectangle	gene,gene,gene	0.5	black	46	17	57506,/,7187,/,8717
+N-hsa04622-5 33	MAVS TMEM173	622	271	white	rectangle	gene,gene	0.5	black	46	17	57506,/,340061
+N-hsa04622-6	NFKB1	1111	160	white	rectangle	gene	0.5	black	46	17	4790,5970
+N-hsa04622-44	MAPK8	974	31	white	rectangle	gene	0.5	black	46	17	5599,5601,5602
+N-hsa04622-45	MAPK14	974	0	white	rectangle	gene	0.5	black	46	17	1432,5600,5603,6300
+N-hsa04622-21 22 23	CHUK IKBKB IKBKG	1022	222	white	rectangle	gene,gene,gene	0.5	black	46	17	1147,/,3551,/,8517
+N-hsa04622-11	IRF7	1022	308	white	rectangle	gene	0.5	black	46	17	3665
+N-hsa04622-9 35	IRF3 PIN1	1022	337	white	rectangle	gene,gene	0.5	black	46	17	3661,/,5300

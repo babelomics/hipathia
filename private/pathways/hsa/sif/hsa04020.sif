@@ -1,0 +1,58 @@
+N-hsa04020-6	activation	N-hsa04020-13
+N-hsa04020-13	activation	N-hsa04020-43
+N-hsa04020-20	activation	N-hsa04020-64
+N-hsa04020-20	activation	N-hsa04020-13
+N-hsa04020-24	activation	N-hsa04020-12
+N-hsa04020-24	activation	N-hsa04020-13
+N-hsa04020-27	activation	N-hsa04020-13
+N-hsa04020-28	activation	N-hsa04020-13
+N-hsa04020-30	activation	N-hsa04020-46
+N-hsa04020-30	activation	N-hsa04020-18
+N-hsa04020-30	activation	N-hsa04020-17
+N-hsa04020-30	activation	N-hsa04020-15
+N-hsa04020-32	activation	N-hsa04020-44
+N-hsa04020-32	activation	N-hsa04020-27
+N-hsa04020-32	activation	N-hsa04020-22
+N-hsa04020-33	activation	N-hsa04020-37
+N-hsa04020-34	activation	N-hsa04020-37
+N-hsa04020-35	activation	N-hsa04020-47
+N-hsa04020-36	activation	N-hsa04020-13
+N-hsa04020-37	activation	N-hsa04020-44
+N-hsa04020-37	activation	N-hsa04020-27
+N-hsa04020-39	activation	N-hsa04020-16
+N-hsa04020-40	activation	N-hsa04020-44
+N-hsa04020-40	activation	N-hsa04020-27
+N-hsa04020-43	activation	N-hsa04020-44
+N-hsa04020-43	activation	N-hsa04020-27
+N-hsa04020-44	activation	N-hsa04020-13
+N-hsa04020-46	activation	N-hsa04020-13
+N-hsa04020-47	activation	N-hsa04020-44
+N-hsa04020-47	activation	N-hsa04020-27
+N-hsa04020-48	activation	N-hsa04020-13
+N-hsa04020-50	activation	N-hsa04020-13
+N-hsa04020-51	activation	N-hsa04020-13
+N-hsa04020-52	activation	N-hsa04020-35
+N-hsa04020-54	activation	N-hsa04020-13
+N-hsa04020-57	activation	N-hsa04020-61
+N-hsa04020-58	activation	N-hsa04020-13
+N-hsa04020-59	activation	N-hsa04020-62
+N-hsa04020-60	inhibition	N-hsa04020-58
+N-hsa04020-61	inhibition	N-hsa04020-60
+N-hsa04020-62	activation	N-hsa04020-57
+N-hsa04020-63	activation	N-hsa04020-13
+N-hsa04020-65	activation	N-hsa04020-13
+N-hsa04020-67	activation	N-hsa04020-48
+N-hsa04020-10 11 55	activation	N-hsa04020-13
+N-hsa04020-9 53	activation	N-hsa04020-42
+N-hsa04020-9 53	activation	N-hsa04020-8
+N-hsa04020-9 53	activation	N-hsa04020-7
+N-hsa04020-25 53	activation	N-hsa04020-42
+N-hsa04020-25 53	activation	N-hsa04020-8
+N-hsa04020-25 53	activation	N-hsa04020-7
+N-hsa04020-26 53	activation	N-hsa04020-42
+N-hsa04020-26 53	activation	N-hsa04020-8
+N-hsa04020-26 53	activation	N-hsa04020-7
+N-hsa04020-45 53	activation	N-hsa04020-42
+N-hsa04020-45 53	activation	N-hsa04020-13
+N-hsa04020-45 53	activation	N-hsa04020-8
+N-hsa04020-45 53	activation	N-hsa04020-7

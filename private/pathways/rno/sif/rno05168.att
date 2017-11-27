@@ -1,0 +1,47 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-rno05168-8	Mapk8	714	880	white	rectangle	gene	0.5	black	46	17	116554,25272,50658
+N-rno05168-20	Tlr3	353	645	white	rectangle	gene	0.5	black	46	17	364594
+N-rno05168-21	Tlr9	353	672	white	rectangle	gene	0.5	black	46	17	338457
+N-rno05168-22	Tlr2	264	714	white	rectangle	gene	0.5	black	46	17	310553
+N-rno05168-23	Ticam1	426	645	white	rectangle	gene	0.5	black	46	17	363328
+N-rno05168-24	Myd88	426	714	white	rectangle	gene	0.5	black	46	17	301059
+N-rno05168-26	100910771	584	751	white	rectangle	gene	0.5	black	46	17	100910771,313121
+N-rno05168-28	Nfkbia	757	816	white	rectangle	gene	0.5	black	46	17	25493,81525
+N-rno05168-41	Traf6	505	714	white	rectangle	gene	0.5	black	46	17	311245
+N-rno05168-45	Ddx58	403	586	white	rectangle	gene	0.5	black	46	17	297989
+N-rno05168-46	Mavs	491	575	white	rectangle	gene	0.5	black	46	17	311430
+N-rno05168-47	Ifih1	403	565	white	rectangle	gene	0.5	black	46	17	499801
+N-rno05168-54	Usp7	683	723	white	rectangle	gene	0.5	black	46	17	360471
+N-rno05168-78	Eif2ak4	478	474	white	rectangle	gene	0.5	black	46	17	114859,27137,29702,54287
+N-rno05168-81	Ppp1ca	478	508	white	rectangle	gene	0.5	black	46	17	24668,24669,25594
+N-rno05168-82	Oas1a	480	426	white	rectangle	gene	0.5	black	46	17	192281,246268,363938,494202
+N-rno05168-105	Srpk1	1039	663	white	rectangle	gene	0.5	black	46	17	361811
+N-rno05168-108	Csnk2a1	858	436	white	rectangle	gene	0.5	black	46	17	116549,307641,81650
+N-rno05168-109	Cdk2	820	398	white	rectangle	gene	0.5	black	46	17	362817,54237
+N-rno05168-120	Fadd	363	88	white	rectangle	gene	0.5	black	46	17	266610
+N-rno05168-121	Casp8	532	87	white	rectangle	gene	0.5	black	46	17	64044
+N-rno05168-128	Nfkbia*	532	0	white	rectangle	gene	0.5	black	46	17	25493
+N-rno05168-129	Rela*	532	34	white	rectangle	gene	0.5	black	46	17	309165,81736
+N-rno05168-135	Csnk2a1*	1179	131	white	rectangle	gene	0.5	black	46	17	116549,307641,81650
+N-rno05168-139	Ikbkb	685	822	white	rectangle	gene	0.5	black	46	17	84351
+N-rno05168-25 26	Tab2 100910771	584	734	white	rectangle	gene,gene	0.5	black	46	17	308267,315139,/,100910771,313121
+N-rno05168-43 44	Ikbke Tbk1	576	584	white	rectangle	gene,gene	0.5	black	46	17	363984,/,299827
+N-rno05168-4 7	Tnfrsf14 Traf2	264	883	white	rectangle	gene,gene	0.5	black	46	17	366518,/,311786,362788,684173,687813
+N-rno05168-87 90	Ifnar1 Tyk2	264	202	white	rectangle	gene,gene	0.5	black	46	17	288264,686326,/,100361294,84598
+N-rno05168-88 94	Ifngr1 Jak2	264	180	white	rectangle	gene,gene	0.5	black	46	17	116465,360697,/,24514,84598
+N-rno05168-90 110	Tyk2 Socs3	344	202	white	rectangle	gene,gene	0.5	black	46	17	100361294,84598,/,89829
+N-rno05168-117 119	Fas Faslg	264	97	white	rectangle	gene,gene	0.5	black	46	17	246097,/,25385
+N-rno05168-118 126	Tnfrsf1a 103694380	264	75	white	rectangle	gene,gene	0.5	black	46	17	25625,/,103694380,24835
+N-rno05168-10	Jun	786	880	white	rectangle	gene	0.5	black	46	17	24516,314322
+N-rno05168-27	Irf3	683	626	white	rectangle	gene	0.5	black	46	17	292892,293624
+N-rno05168-9	Rela	757	785	white	rectangle	gene	0.5	black	46	17	309165,81736
+N-rno05168-29	Ikbkg	685	788	white	rectangle	gene	0.5	black	46	17	309295
+N-rno05168-79	Eif2s1	563	474	white	rectangle	gene	0.5	black	46	17	54318
+N-rno05168-83	Rnasel	612	426	white	rectangle	gene	0.5	black	46	17	359726
+N-rno05168-106 134	Srsf9 C1qbp	1117	663	white	rectangle	gene,gene	0.5	black	46	17	288701,29667,361814,362264,362612,362687,494445,689890,/,29681
+N-rno05168-39 40	Pou2f3 100911260	934	402	white	rectangle	gene,gene	0.5	black	46	17	116544,/,100911260,314704,363519
+N-rno05168-122	Casp3	627	110	white	rectangle	gene	0.5	black	46	17	25402
+N-rno05168-123	100363502	627	62	white	rectangle	gene	0.5	black	46	17	100363502,25309,25310
+N-rno05168-138	Chuk	685	805	white	rectangle	gene	0.5	black	46	17	309361
+N-rno05168-91 92	Stat1 Irf9	484	202	white	rectangle	gene,gene	0.5	black	46	17	25124,288774,/,305896
+N-rno05168-92 93	Irf9 Stat1	608	192	white	rectangle	gene,gene	0.5	black	46	17	305896,/,25124

@@ -1,0 +1,37 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-hsa05145-1	MYD88	402	599	white	rectangle	gene	0.5	black	46	17	4615
+N-hsa05145-2	IRAK1	479	599	white	rectangle	gene	0.5	black	46	17	3654,51135
+N-hsa05145-3	TRAF6	556	599	white	rectangle	gene	0.5	black	46	17	7189
+N-hsa05145-4	MAP3K7	633	599	white	rectangle	gene	0.5	black	46	17	6885
+N-hsa05145-6	CHUK	839	599	white	rectangle	gene	0.5	black	46	17	1147,3551,8517
+N-hsa05145-7	NFKBIA	929	599	white	rectangle	gene	0.5	black	46	17	4792,4793
+N-hsa05145-12	MAP2K3	722	644	white	rectangle	gene	0.5	black	46	17	5606,5608
+N-hsa05145-22	STAT1	624	753	white	rectangle	gene	0.5	black	46	17	6772
+N-hsa05145-26	ALOX5	488	100	white	rectangle	gene	0.5	black	46	17	240
+N-hsa05145-28	SOCS1	417	705	white	rectangle	gene	0.5	black	46	17	8651
+N-hsa05145-31	CYCS	647	300	white	rectangle	gene	0.5	black	46	17	54205
+N-hsa05145-34	CASP9	730	300	white	rectangle	gene	0.5	black	46	17	842
+N-hsa05145-36	CASP8	730	272	white	rectangle	gene	0.5	black	46	17	841
+N-hsa05145-37	GNAI1*	398	229	white	rectangle	gene	0.5	black	46	17	2770,2771,2773,2775
+N-hsa05145-38	PIK3R5	478	229	white	rectangle	gene	0.5	black	46	17	23533,5290,5291,5293,5294,5295,5296,8503
+N-hsa05145-39	PDPK1	582	229	white	rectangle	gene	0.5	black	46	17	5170
+N-hsa05145-40	AKT3	662	229	white	rectangle	gene	0.5	black	46	17	10000,207,208
+N-hsa05145-57	CCR5	326	164	white	rectangle	gene	0.5	black	46	17	1234
+N-hsa05145-58	PPIF	264	164	white	rectangle	gene	0.5	black	46	17	10105
+N-hsa05145-71	BIRC8	771	336	white	rectangle	gene	0.5	black	46	17	112401,329,330,331,79444
+N-hsa05145-21 56 55	JAK1 IFNGR1 IFNG	365	753	white	rectangle	gene,gene,gene	0.5	black	46	17	3716,3717,/,3459,3460,/,3458
+N-hsa05145-51 52	LY96 TLR4	280	641	white	rectangle	gene,gene	0.5	black	46	17	23643,/,7099
+N-hsa05145-53 54	HSPA1A TLR2	264	580	white	rectangle	gene,gene	0.5	black	46	17	3303,3304,3305,3306,3310,3312,/,7097
+N-hsa05145-68 69	TNF TNFRSF1A	264	272	white	rectangle	gene,gene	0.5	black	46	17	7124,/,7132
+N-hsa05145-79 81	IL10RA JAK1	326	18	white	rectangle	gene,gene	0.5	black	46	17	3587,3588,/,3716,7297
+N-hsa05145-4 5	MAP3K7 TAB1	633	599	white	rectangle	gene,gene	0.5	black	46	17	6885,/,10454,23118
+N-hsa05145-10	MAPK8	802	676	white	rectangle	gene	0.5	black	46	17	5599,5601,5602
+N-hsa05145-9	MAPK1	802	708	white	rectangle	gene	0.5	black	46	17	5594,5595
+N-hsa05145-8	NFKB1	929	559	white	rectangle	gene	0.5	black	46	17	4790,5970
+N-hsa05145-11	MAPK14	802	644	white	rectangle	gene	0.5	black	46	17	1432,5600,5603,6300
+N-hsa05145-23	CIITA	802	795	white	rectangle	gene	0.5	black	46	17	4261
+N-hsa05145-29	C06314	589	101	white	circle	compound	0.5	black	8	8	NA
+N-hsa05145-35	CASP3	813	300	white	rectangle	gene	0.5	black	46	17	836
+N-hsa05145-67	BAD	763	229	white	rectangle	gene	0.5	black	46	17	572
+N-hsa05145-13	GNAI1	398	164	white	rectangle	gene	0.5	black	46	17	2770,2771,2773,2775
+N-hsa05145-33	STAT3	625	0	white	rectangle	gene	0.5	black	46	17	6774

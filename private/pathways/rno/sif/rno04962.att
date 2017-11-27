@@ -1,0 +1,10 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-rno04962-3	C00575	519	65	white	circle	compound	0.5	black	8	8	NA
+N-rno04962-4	Avp	664	121	white	rectangle	gene	0.5	black	46	17	24221
+N-rno04962-5	Avpr2	580	122	white	rectangle	gene	0.5	black	46	17	25108
+N-rno04962-6	Gnas	530	96	white	rectangle	gene	0.5	black	46	17	24896
+N-rno04962-7	Adcy6	582	64	white	rectangle	gene	0.5	black	46	17	25289,302950,64508
+N-rno04962-8	Prkaca	463	64	white	rectangle	gene	0.5	black	46	17	25636,293508
+N-rno04962-9	Creb3l4	464	0	white	rectangle	gene	0.5	black	46	17	310616,314638,362165,362339,500131,81646
+N-rno04962-22	Arhgdig	400	156	white	rectangle	gene	0.5	black	46	17	360500,360678,362456
+N-rno04962-10	Aqp2	370	64	white	rectangle	gene	0.5	black	46	17	25386

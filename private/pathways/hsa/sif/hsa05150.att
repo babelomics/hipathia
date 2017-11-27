@@ -1,0 +1,22 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-hsa05150-2	C3	456	917	white	rectangle	gene	0.5	black	46	17	718
+N-hsa05150-4	C5	837	676	white	rectangle	gene	0.5	black	46	17	727
+N-hsa05150-15	C11596	712	518	white	circle	compound	0.5	black	8	8	NA
+N-hsa05150-17	PLG	527	751	white	rectangle	gene	0.5	black	46	17	5340
+N-hsa05150-31	102723407	639	561	white	rectangle	gene	0.5	black	46	17	102723407
+N-hsa05150-32	102723407*	325	751	white	rectangle	gene	0.5	black	46	17	102723407
+N-hsa05150-33	CFI	664	718	white	rectangle	gene	0.5	black	46	17	3426
+N-hsa05150-47	CFH	496	983	white	rectangle	gene	0.5	black	46	17	3075
+N-hsa05150-64	C20898	379	0	white	circle	compound	0.5	black	8	8	NA
+N-hsa05150-65	PTAFR	482	0	white	rectangle	gene	0.5	black	46	17	5724
+N-hsa05150-5 6 7	C1S C1R C1QA	439	783	white	rectangle	gene,gene,gene	0.5	black	46	17	716,/,715,/,712,713,714
+N-hsa05150-8 9	C4A C2	540	815	white	rectangle	gene,gene	0.5	black	46	17	720,721,/,717
+N-hsa05150-10 11	MBL2 MASP2	376	849	white	rectangle	gene,gene	0.5	black	46	17	4153,/,10747,5648
+N-hsa05150-48	C3AR1	888	444	white	rectangle	gene	0.5	black	46	17	719
+N-hsa05150-13	C5AR1	837	444	white	rectangle	gene	0.5	black	46	17	728
+N-hsa05150-69	FPR2	732	444	white	rectangle	gene	0.5	black	46	17	2358,2359
+N-hsa05150-14	FPR1	783	444	white	rectangle	gene	0.5	black	46	17	2357
+N-hsa05150-1 2 3	CFD C3 CFB	540	930	white	rectangle	gene,gene,gene	0.5	black	46	17	1675,/,718,/,629
+N-hsa05150-35	FCAR	681	444	white	rectangle	gene	0.5	black	46	17	2204
+N-hsa05150-40	FCGR1A	628	444	white	rectangle	gene	0.5	black	46	17	2209,2212,2213,2214,2215,9103
+N-hsa05150-66	IL10	661	0	white	rectangle	gene	0.5	black	46	17	3586

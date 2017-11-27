@@ -1,0 +1,21 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-mmu05219-2	Hras	361	404	white	rectangle	gene	0.5	black	46	17	15461
+N-mmu05219-13	Cdkn2a	675	225	white	rectangle	gene	0.5	black	46	17	12578
+N-mmu05219-14	Cdkn1a	913	192	white	rectangle	gene	0.5	black	46	17	12575
+N-mmu05219-16	Rassf1	391	322	white	rectangle	gene	0.5	black	46	17	56289
+N-mmu05219-17	Dapk2	555	323	white	rectangle	gene	0.5	black	46	17	13143,13144,69635
+N-mmu05219-18	Mdm2	753	225	white	rectangle	gene	0.5	black	46	17	17246
+N-mmu05219-20	E2f1	1022	102	white	rectangle	gene	0.5	black	46	17	13555,13557,242705
+N-mmu05219-22	Fgfr3	255	372	white	rectangle	gene	0.5	black	46	17	14184
+N-mmu05219-28	Cdkn2a*	993	192	white	rectangle	gene	0.5	black	46	17	12578
+N-mmu05219-29	Egf	182	12	white	rectangle	gene	0.5	black	46	17	13645
+N-mmu05219-32	Mapk1	584	373	white	rectangle	gene	0.5	black	46	17	26413,26417
+N-mmu05219-33	Map2k1	509	373	white	rectangle	gene	0.5	black	46	17	26395,26396
+N-mmu05219-34	Braf	436	373	white	rectangle	gene	0.5	black	46	17	109880,110157,11836
+N-mmu05219-35	Hras*	362	373	white	rectangle	gene	0.5	black	46	17	15461,16653,18176
+N-mmu05219-23 25	Cdk4 Ccnd1	939	132	white	rectangle	gene,gene	0.5	black	46	17	12567,/,12443
+N-mmu05219-19	Trp53	796	192	white	rectangle	gene	0.5	black	46	17	22059
+N-mmu05219-21	Rb1	1022	139	white	rectangle	gene	0.5	black	46	17	19645
+N-mmu05219-12	Erbb2	255	0	white	rectangle	gene	0.5	black	46	17	13866
+N-mmu05219-10	Egfr	255	22	white	rectangle	gene	0.5	black	46	17	13649
+N-mmu05219-27	Rps6ka5	697	372	white	rectangle	gene	0.5	black	46	17	73086

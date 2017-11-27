@@ -1,0 +1,38 @@
+N-rno05221-1	activation	N-rno05221-16
+N-rno05221-1	activation	N-rno05221-15 18
+N-rno05221-2	activation	N-rno05221-38
+N-rno05221-2	activation	N-rno05221-43
+N-rno05221-3	activation	N-rno05221-38
+N-rno05221-3	activation	N-rno05221-43
+N-rno05221-4	activation	N-rno05221-38
+N-rno05221-4	activation	N-rno05221-31
+N-rno05221-4	activation	N-rno05221-14
+N-rno05221-4	inhibition	N-rno05221-6
+N-rno05221-4	inhibition	N-rno05221-5
+N-rno05221-7	inhibition	N-rno05221-6
+N-rno05221-7	inhibition	N-rno05221-5
+N-rno05221-7	activation	N-rno05221-15 18
+N-rno05221-14	activation	N-rno05221-21
+N-rno05221-14	activation	N-rno05221-27
+N-rno05221-19	activation	N-rno05221-16
+N-rno05221-19	inhibition	N-rno05221-5
+N-rno05221-19	activation	N-rno05221-15 18
+N-rno05221-22	activation	N-rno05221-38
+N-rno05221-22	activation	N-rno05221-43
+N-rno05221-25	activation	N-rno05221-13
+N-rno05221-30	activation	N-rno05221-22
+N-rno05221-31	activation	N-rno05221-30
+N-rno05221-33	activation	N-rno05221-38
+N-rno05221-33	activation	N-rno05221-31
+N-rno05221-33	activation	N-rno05221-14
+N-rno05221-34	activation	N-rno05221-29
+N-rno05221-34	inhibition	N-rno05221-35
+N-rno05221-37	activation	N-rno05221-25
+N-rno05221-37	activation	N-rno05221-34
+N-rno05221-37	inhibition	N-rno05221-26
+N-rno05221-38	activation	N-rno05221-37
+N-rno05221-42	activation	N-rno05221-41
+N-rno05221-43	activation	N-rno05221-42
+N-rno05221-15 18	activation	N-rno05221-17
+N-rno05221-15 18	activation	N-rno05221-12
+N-rno05221-15 18	activation	N-rno05221-11

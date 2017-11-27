@@ -1,0 +1,17 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-hsa05216-1	HRAS	369	385	white	rectangle	gene	0.5	black	46	17	3265,3845,4893
+N-hsa05216-3	BRAF	447	385	white	rectangle	gene	0.5	black	46	17	673
+N-hsa05216-4	BRAF*	447	508	white	rectangle	gene	0.5	black	46	17	673
+N-hsa05216-6	MAP2K1	525	385	white	rectangle	gene	0.5	black	46	17	5604,5605
+N-hsa05216-10	CTNNB1	490	11	white	rectangle	gene	0.5	black	46	17	1499
+N-hsa05216-16	MAP2K1*	525	527	white	rectangle	gene	0.5	black	46	17	5604,5605
+N-hsa05216-17	BRAF**	447	543	white	rectangle	gene	0.5	black	46	17	673
+N-hsa05216-18	HRAS*	369	544	white	rectangle	gene	0.5	black	46	17	3265,3845,4893
+N-hsa05216-19	RET	278	576	white	rectangle	gene	0.5	black	46	17	5979,8030,8031
+N-hsa05216-20	TFG	222	529	white	rectangle	gene	0.5	black	46	17	10342,4914,7170,7175
+N-hsa05216-21	LEF1	722	11	white	rectangle	gene	0.5	black	46	17	51176,6932,6934,83439
+N-hsa05216-5	MAPK1	602	385	white	rectangle	gene	0.5	black	46	17	5594,5595
+N-hsa05216-12	CDH1	222	11	white	rectangle	gene	0.5	black	46	17	999
+N-hsa05216-14	MAPK1*	602	527	white	rectangle	gene	0.5	black	46	17	5594,5595
+N-hsa05216-11	MYC	835	23	white	rectangle	gene	0.5	black	46	17	4609
+N-hsa05216-15	CCND1	835	0	white	rectangle	gene	0.5	black	46	17	595

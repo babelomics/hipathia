@@ -1,0 +1,17 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-rno04330-5	Hdac1	663	0	white	rectangle	gene	0.5	black	46	17	297893,84576,84577
+N-rno04330-17	Adam17	146	6	white	rectangle	gene	0.5	black	46	17	57027
+N-rno04330-20	Numbl	297	161	white	rectangle	gene	0.5	black	46	17	292732,29419
+N-rno04330-21	Jag1	83	59	white	rectangle	gene	0.5	black	46	17	29146,29147
+N-rno04330-22	Notch1	189	105	white	rectangle	gene	0.5	black	46	17	25496,29492,406162,56761
+N-rno04330-23	Dvl2	244	180	white	rectangle	gene	0.5	black	46	17	303251,303811,83721
+N-rno04330-25	Lfng	137	181	white	rectangle	gene	0.5	black	46	17	170905,315119,60433
+N-rno04330-26	Dll3	83	105	white	rectangle	gene	0.5	black	46	17	114125,311332,84010
+N-rno04330-1 18 2 3	Ncstn Psenen 108348064 Psen1	263	35	white	rectangle	gene,gene,gene,gene	0.5	black	46	17	289231,/,292788,/,108348064,300802,365872,691658,/,29192,81751
+N-rno04330-15 16	Ep300 Maml1	608	136	white	rectangle	gene,gene	0.5	black	46	17	170915,301164,303539,54244,/,303101,310405,689844
+N-rno04330-5 8	Hdac1 Ctbp1	663	0	white	rectangle	gene,gene	0.5	black	46	17	297893,84576,84577,/,29382,81717
+N-rno04330-10 5 6	Ncor2 Hdac1 Cir1	693	46	white	rectangle	gene,gene,gene	0.5	black	46	17	360801,/,297893,84576,84577,/,362149
+N-rno04330-13 14	Rbpjl2 Snw1	663	105	white	rectangle	gene,gene	0.5	black	46	17	297767,362268,679028,/,500695
+N-rno04330-19	Dtx4	333	131	white	rectangle	gene	0.5	black	46	17	293774,304591,498089,500847,687424
+N-rno04330-12	Hes1	810	120	white	rectangle	gene	0.5	black	46	17	29577,79225
+N-rno04330-11	Ptcra	810	91	white	rectangle	gene	0.5	black	46	17	116462

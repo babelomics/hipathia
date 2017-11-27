@@ -1,0 +1,26 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-rno04720-1	Prkca	452	69	white	rectangle	gene	0.5	black	46	17	24680,24681,25023
+N-rno04720-3	Camk4	816	43	white	rectangle	gene	0.5	black	46	17	25050
+N-rno04720-10	NEWGENE_621802	530	219	white	rectangle	gene	0.5	black	46	17	103693838,171140,24245,24246,25400
+N-rno04720-11	C00025	202	212	white	circle	compound	0.5	black	8	8	NA
+N-rno04720-12	Ppp3cc	448	219	white	rectangle	gene	0.5	black	46	17	171378,24674,24675,29748,29749
+N-rno04720-13	Calm1	437	150	white	rectangle	gene	0.5	black	46	17	24242,24244,307100,364774,50663,691455
+N-rno04720-14	Rps6ka2	816	150	white	rectangle	gene	0.5	black	46	17	117269,317203,501560,81771
+N-rno04720-16	Grin1	317	151	white	rectangle	gene	0.5	black	46	17	24408,24409,24410,24411,24412
+N-rno04720-17	Prkaca	576	382	white	rectangle	gene	0.5	black	46	17	25636,293508
+N-rno04720-19	Ppp1ca	542	258	white	rectangle	gene	0.5	black	46	17	24668,24669,25594
+N-rno04720-20	Adcy8	317	284	white	rectangle	gene	0.5	black	46	17	29241,305509
+N-rno04720-21	Gria2	317	415	white	rectangle	gene	0.5	black	46	17	29627,50592
+N-rno04720-22	Rapgef3	488	308	white	rectangle	gene	0.5	black	46	17	59326
+N-rno04720-23	Mapk1	743	150	white	rectangle	gene	0.5	black	46	17	116590,50689
+N-rno04720-24	Map2k1	677	150	white	rectangle	gene	0.5	black	46	17	170851,58960
+N-rno04720-25	Braf	610	150	white	rectangle	gene	0.5	black	46	17	114486,24703,64363
+N-rno04720-26	Kras	543	150	white	rectangle	gene	0.5	black	46	17	24525,24605,293621
+N-rno04720-27	Rap1b	598	258	white	rectangle	gene	0.5	black	46	17	171337,295347
+N-rno04720-28	Ppp1r1a	558	324	white	rectangle	gene	0.5	black	46	17	58977
+N-rno04720-29	Gnaq	393	0	white	rectangle	gene	0.5	black	46	17	81666
+N-rno04720-30	Grm1	316	0	white	rectangle	gene	0.5	black	46	17	24414,24418
+N-rno04720-31	Plcb1	464	0	white	rectangle	gene	0.5	black	46	17	24654,25031,29322,85240
+N-rno04720-4 15	Ep300 Atf4	889	90	white	rectangle	gene,gene	0.5	black	46	17	170915,54244,/,79255
+N-rno04720-18	Cacna1c	316	92	white	rectangle	gene	0.5	black	46	17	24239
+N-rno04720-32	Itpr1	582	61	white	rectangle	gene	0.5	black	46	17	25262,25679,81678

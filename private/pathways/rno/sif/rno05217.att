@@ -1,0 +1,14 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-rno05217-7	Wnt2	678	102	white	rectangle	gene	0.5	black	46	17	114487,114850,116466,140584,24881,24882,282582,287357,291678,293990,303181,303586,315196,315294,316526,316527,500047,64566,84426
+N-rno05217-8	Shh	132	216	white	rectangle	gene	0.5	black	46	17	29499
+N-rno05217-13	Dvl2	304	1	white	rectangle	gene	0.5	black	46	17	303251,303811,83721
+N-rno05217-14	100360552	211	2	white	rectangle	gene	0.5	black	46	17	100360552,100909849,266608,266715,282581,317674,363913,364754,58868,64512,64558
+N-rno05217-16	Gli3	501	156	white	rectangle	gene	0.5	black	46	17	140588,140589,304729
+N-rno05217-20	Ctnnb1	477	1	white	rectangle	gene	0.5	black	46	17	84353
+N-rno05217-21	Gsk3b	394	1	white	rectangle	gene	0.5	black	46	17	84027
+N-rno05217-10	Ptch1*	211	216	white	rectangle	gene	0.5	black	46	17	89830
+N-rno05217-5	Bmp4	678	208	white	rectangle	gene	0.5	black	46	17	25296,29373
+N-rno05217-19	Hhip	678	181	white	rectangle	gene	0.5	black	46	17	291936
+N-rno05217-3	Gli1	678	155	white	rectangle	gene	0.5	black	46	17	140589
+N-rno05217-4	Ptch1	678	129	white	rectangle	gene	0.5	black	46	17	89830
+N-rno05217-22	Lef1	626	0	white	rectangle	gene	0.5	black	46	17	161452,312451,363595,679869

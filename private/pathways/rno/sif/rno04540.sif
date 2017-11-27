@@ -1,0 +1,61 @@
+N-rno04540-8	activation	N-rno04540-18 19
+N-rno04540-9	activation	N-rno04540-14 16
+N-rno04540-9	activation	N-rno04540-14 15
+N-rno04540-9	activation	N-rno04540-14 31
+N-rno04540-9	activation	N-rno04540-16 17
+N-rno04540-13	activation	N-rno04540-41
+N-rno04540-23	inhibition	N-rno04540-14 16
+N-rno04540-23	inhibition	N-rno04540-14 15
+N-rno04540-23	inhibition	N-rno04540-14 31
+N-rno04540-23	inhibition	N-rno04540-16 17
+N-rno04540-24	activation	N-rno04540-25
+N-rno04540-25	activation	N-rno04540-23
+N-rno04540-26	activation	N-rno04540-14 16
+N-rno04540-26	activation	N-rno04540-14 15
+N-rno04540-26	activation	N-rno04540-14 31
+N-rno04540-26	activation	N-rno04540-16 17
+N-rno04540-27	activation	N-rno04540-11
+N-rno04540-27	activation	N-rno04540-48
+N-rno04540-28	inhibition	N-rno04540-14 16
+N-rno04540-28	inhibition	N-rno04540-14 15
+N-rno04540-28	inhibition	N-rno04540-14 31
+N-rno04540-29	activation	N-rno04540-1
+N-rno04540-29	activation	N-rno04540-13
+N-rno04540-30	activation	N-rno04540-14 16
+N-rno04540-30	activation	N-rno04540-14 15
+N-rno04540-30	activation	N-rno04540-14 31
+N-rno04540-30	activation	N-rno04540-16 17
+N-rno04540-33	activation	N-rno04540-30
+N-rno04540-34	activation	N-rno04540-24
+N-rno04540-34	activation	N-rno04540-14 16
+N-rno04540-34	activation	N-rno04540-14 15
+N-rno04540-34	activation	N-rno04540-14 31
+N-rno04540-34	activation	N-rno04540-16 17
+N-rno04540-37	activation	N-rno04540-26
+N-rno04540-37	activation	N-rno04540-10
+N-rno04540-38	inhibition	N-rno04540-14 16
+N-rno04540-38	inhibition	N-rno04540-14 15
+N-rno04540-38	inhibition	N-rno04540-14 31
+N-rno04540-38	inhibition	N-rno04540-16 17
+N-rno04540-39	activation	N-rno04540-38
+N-rno04540-40	activation	N-rno04540-39
+N-rno04540-41	activation	N-rno04540-40
+N-rno04540-42	activation	N-rno04540-41
+N-rno04540-43	activation	N-rno04540-42
+N-rno04540-44	activation	N-rno04540-43
+N-rno04540-44	activation	N-rno04540-34
+N-rno04540-45	activation	N-rno04540-44
+N-rno04540-46	activation	N-rno04540-22
+N-rno04540-46	activation	N-rno04540-47
+N-rno04540-47	activation	N-rno04540-33
+N-rno04540-48	activation	N-rno04540-52
+N-rno04540-49	inhibition	N-rno04540-33
+N-rno04540-50	activation	N-rno04540-12
+N-rno04540-50	activation	N-rno04540-48
+N-rno04540-51	activation	N-rno04540-21
+N-rno04540-51	activation	N-rno04540-49
+N-rno04540-52	activation	N-rno04540-9
+N-rno04540-52	activation	N-rno04540-54
+N-rno04540-53	activation	N-rno04540-21
+N-rno04540-53	activation	N-rno04540-47
+N-rno04540-54	activation	N-rno04540-9

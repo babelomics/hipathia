@@ -1,0 +1,49 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-mmu04020-6	Itpka	873	83	white	rectangle	gene	0.5	black	46	17	228550,233011,320404
+N-mmu04020-13	C00076	693	289	white	circle	compound	0.5	black	8	8	NA
+N-mmu04020-20	Slc8a2	182	569	white	rectangle	gene	0.5	black	46	17	110891,110893,20541
+N-mmu04020-24	Slc8a2*	916	572	white	rectangle	gene	0.5	black	46	17	110891,110893,20541
+N-mmu04020-27	Prkca	873	54	white	rectangle	gene	0.5	black	46	17	18750,18751,18752
+N-mmu04020-28	Ptk2b	873	113	white	rectangle	gene	0.5	black	46	17	19229
+N-mmu04020-30	Cd38	182	52	white	rectangle	gene	0.5	black	46	17	12494
+N-mmu04020-32	Plce1	354	142	white	rectangle	gene	0.5	black	46	17	74055
+N-mmu04020-33	CRP55H	182	134	white	rectangle	gene	0.5	black	46	17	641025
+N-mmu04020-34	Egfr	182	200	white	rectangle	gene	0.5	black	46	17	13649,13866,13867,13869,18595,18596
+N-mmu04020-35	Gna11	268	245	white	rectangle	gene	0.5	black	46	17	14672,14675,14676,14682
+N-mmu04020-36	Chrna7	182	294	white	rectangle	gene	0.5	black	46	17	11441,14810,14811,14813,14814,18436,18438,18439,18440,228139,231602,94045
+N-mmu04020-37	Plcg1	354	166	white	rectangle	gene	0.5	black	46	17	18803,234779
+N-mmu04020-39	Sphk1	354	0	white	rectangle	gene	0.5	black	46	17	20698,56632
+N-mmu04020-40	Plcz1	354	118	white	rectangle	gene	0.5	black	46	17	114875
+N-mmu04020-43	Plcd1	354	213	white	rectangle	gene	0.5	black	46	17	18799,18802,72469
+N-mmu04020-44	Itpr1	612	178	white	rectangle	gene	0.5	black	46	17	16438,16439,16440
+N-mmu04020-46	Ryr1	612	354	white	rectangle	gene	0.5	black	46	17	20190,20191,20192
+N-mmu04020-47	Plcb1	354	190	white	rectangle	gene	0.5	black	46	17	18795,18796,18797,18798
+N-mmu04020-48	Orai1	182	440	white	rectangle	gene	0.5	black	46	17	109305,269717,269999
+N-mmu04020-50	Cacna1c	182	385	white	rectangle	gene	0.5	black	46	17	12288,12289,12292,54652
+N-mmu04020-51	Cacna1a	182	366	white	rectangle	gene	0.5	black	46	17	12286,12287,12290
+N-mmu04020-52	Grm5	182	245	white	rectangle	gene	0.5	black	46	17	108071,11548,11549,11550,11607,11608,12061,12062,12425,12426,12669,12671,13617,13618,14062,14816,14829,15465,15558,15559,15560,16867,170732,18216,18430,19204,19216,19218,19220,21336,21337,21338,21390,22045,243764,26361,54140,57260,58861,70086
+N-mmu04020-54	Tnnc1	873	457	white	rectangle	gene	0.5	black	46	17	21924,21925
+N-mmu04020-57	Adcy4	354	484	white	rectangle	gene	0.5	black	46	17	104110,104111,11513,11514,11515,210044,432530
+N-mmu04020-58	Atp2a1	612	382	white	rectangle	gene	0.5	black	46	17	11937,11938,53313
+N-mmu04020-59	Adora2a	182	484	white	rectangle	gene	0.5	black	46	17	11540,11541,11554,11555,11556,12669,12671,13488,13492,15466,15562,15563,15564,15565,15566,213788
+N-mmu04020-60	Pln	612	484	white	rectangle	gene	0.5	black	46	17	18821
+N-mmu04020-61	Prkaca	479	484	white	rectangle	gene	0.5	black	46	17	18747,18749
+N-mmu04020-62	Gnal	268	484	white	rectangle	gene	0.5	black	46	17	14680,14683
+N-mmu04020-63	Cacna1g a1G	182	347	white	rectangle	gene	0.5	black	46	17	12291,239556,58226
+N-mmu04020-65	Atp2b2	182	528	white	rectangle	gene	0.5	black	46	17	11941,320707,381290,67972
+N-mmu04020-67	Stim2	510	440	white	rectangle	gene	0.5	black	46	17	116873,20866
+N-mmu04020-10 11 55	Vdac1 Ppif Slc25a4	871	545	white	rectangle	gene,gene,gene	0.5	black	46	17	22333,22334,22335,/,105675,/,11739,11740,73333
+N-mmu04020-9 53	Nos1 Calm1	873	216	white	rectangle	gene,gene	0.5	black	46	17	18125,18126,18127,/,12313,12314,12315,494124,70405,75600,80796
+N-mmu04020-25 53	Camk2d d-CaMKII Calm1	873	276	white	rectangle	gene,gene	0.5	black	46	17	108058,12322,12323,12325,12326,/,12313,12314,12315,494124,70405,75600,80796
+N-mmu04020-26 53	Ppp3ca Calm1	873	301	white	rectangle	gene,gene	0.5	black	46	17	19055,19056,19057,19058,19059,/,12313,12314,12315,494124,70405,75600,80796
+N-mmu04020-45 53	Phkb Calm1	873	394	white	rectangle	gene,gene	0.5	black	46	17	102093,110094,18679,18682,68961,/,12313,12314,12315,494124,70405,75600,80796
+N-mmu04020-64	C01330*	129	565	white	circle	compound	0.5	black	8	8	NA
+N-mmu04020-12	C01330	961	577	white	circle	compound	0.5	black	8	8	NA
+N-mmu04020-18	C00002	254	92	white	circle	compound	0.5	black	8	8	NA
+N-mmu04020-17	C00004	254	23	white	circle	compound	0.5	black	8	8	NA
+N-mmu04020-15	C13051	474	52	white	circle	compound	0.5	black	8	8	NA
+N-mmu04020-22	C00575	276	142	white	circle	compound	0.5	black	8	8	NA
+N-mmu04020-16	C06124	435	1	white	circle	compound	0.5	black	8	8	NA
+N-mmu04020-42	Mylk	873	419	white	rectangle	gene	0.5	black	46	17	107589,213435,228785,238564
+N-mmu04020-8	Pde1a	873	153	white	rectangle	gene	0.5	black	46	17	18573,18574,18575
+N-mmu04020-7	Adcy3	873	178	white	rectangle	gene	0.5	black	46	17	104111,11514,432530

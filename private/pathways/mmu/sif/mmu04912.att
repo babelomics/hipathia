@@ -1,0 +1,36 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-mmu04912-2	Prkca	444	190	white	rectangle	gene	0.5	black	46	17	18750,18751,18753
+N-mmu04912-3	Adcy4	489	443	white	rectangle	gene	0.5	black	46	17	104110,104111,11512,11513,11514,11515,210044,224129,432530
+N-mmu04912-10	Plcb1	352	277	white	rectangle	gene	0.5	black	46	17	18795,18796,18797,18798
+N-mmu04912-11	Cdc42	643	137	white	rectangle	gene	0.5	black	46	17	12540
+N-mmu04912-16	Map2k3	645	298	white	rectangle	gene	0.5	black	46	17	26397,26399
+N-mmu04912-18	Map3k1	570	298	white	rectangle	gene	0.5	black	46	17	26401,26405,26406,26407
+N-mmu04912-21	Itpr1	459	380	white	rectangle	gene	0.5	black	46	17	16438,16439,16440
+N-mmu04912-22	Calm1	623	380	white	rectangle	gene	0.5	black	46	17	12313,12314,12315,494124,70405,75600,80796
+N-mmu04912-23	Gna11	279	296	white	rectangle	gene	0.5	black	46	17	14672,14682
+N-mmu04912-25	Gnrhr	191	363	white	rectangle	gene	0.5	black	46	17	14715
+N-mmu04912-27	Gnas	362	443	white	rectangle	gene	0.5	black	46	17	14683
+N-mmu04912-28	Gnrh1	109	363	white	rectangle	gene	0.5	black	46	17	14714
+N-mmu04912-29	Src	570	137	white	rectangle	gene	0.5	black	46	17	20779
+N-mmu04912-31	Prkaca	743	443	white	rectangle	gene	0.5	black	46	17	18747,18749
+N-mmu04912-34	Mapk1	864	0	white	rectangle	gene	0.5	black	46	17	26413,26417
+N-mmu04912-36	Map2k1	667	0	white	rectangle	gene	0.5	black	46	17	26395,26396
+N-mmu04912-37	Raf1	571	0	white	rectangle	gene	0.5	black	46	17	110157
+N-mmu04912-38	Hras	455	0	white	rectangle	gene	0.5	black	46	17	15461,16653,18176
+N-mmu04912-39	Sos1	369	0	white	rectangle	gene	0.5	black	46	17	20662,20663
+N-mmu04912-40	Grb2	283	0	white	rectangle	gene	0.5	black	46	17	14784
+N-mmu04912-41	Egfr	191	59	white	rectangle	gene	0.5	black	46	17	13649
+N-mmu04912-42	Hbegf	109	59	white	rectangle	gene	0.5	black	46	17	15200
+N-mmu04912-44	Map2k4	791	137	white	rectangle	gene	0.5	black	46	17	26398,26400
+N-mmu04912-45	Mapk10	864	137	white	rectangle	gene	0.5	black	46	17	26414,26419,26420
+N-mmu04912-47	Map3k1*	717	137	white	rectangle	gene	0.5	black	46	17	26401
+N-mmu04912-24 30	Mmp14 Mmp2	191	135	white	rectangle	gene,gene	0.5	black	46	17	17387,/,17390
+N-mmu04912-19	Mapk7	570	254	white	rectangle	gene	0.5	black	46	17	23939
+N-mmu04912-20	Pla2g4a	570	210	white	rectangle	gene	0.5	black	46	17	18783,211429,232889,271844,329502,78390
+N-mmu04912-26	Pld1	570	180	white	rectangle	gene	0.5	black	46	17	18805,18806
+N-mmu04912-43	Ptk2b	618	40	white	rectangle	gene	0.5	black	46	17	19229
+N-mmu04912-17	Mapk11	722	298	white	rectangle	gene	0.5	black	46	17	19094,26415,26416,29857
+N-mmu04912-15	Camk2d d-CaMKII	718	380	white	rectangle	gene	0.5	black	46	17	108058,12322,12323,12325
+N-mmu04912-14	Atf4	870	443	white	rectangle	gene	0.5	black	46	17	11911
+N-mmu04912-33	Elk1	939	0	white	rectangle	gene	0.5	black	46	17	13712
+N-mmu04912-46	Jun	938	137	white	rectangle	gene	0.5	black	46	17	16476

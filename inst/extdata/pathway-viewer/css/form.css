@@ -1,0 +1,134 @@
+/*
+
+    Form box
+
+    <div class="formbox">
+        <div class="formtitle">
+        </div>
+        <div class="formcontent">
+        </div>
+    </div>
+
+*/
+
+.stv-formbox {
+    border: 1px solid rgba(125, 125, 125, 0.4);
+    margin: 0 5px 10px 5px;
+    background-color: #FFFFFF;
+}
+
+.stv-formbox.stv-shdw {
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.stv-formtitle {
+    padding: 6px 10px;
+    font-size: 16px;
+    color: #000;
+    background-color: #f5f5f5;
+}
+
+.stv-formtitle > * {
+    margin-left: 5px;
+}
+
+
+/*.stv-formtitle > .actions > * {
+    margin-left: 5px;
+    padding:1px 4px;
+    cursor: pointer;
+}
+
+.stv-formtitle > .actions > *[data-checked] {
+    background-color: #ddd;
+}
+
+.stv-formtitle > .actions > *:hover {
+    background-color: #ccc;
+}*/
+
+.stv-formcontent {
+    padding: 8px 10px;
+    border-top: 1px solid rgba(125, 125, 125, 0.3);
+}
+
+.stv-formbox.stv-fit {
+    margin: 0px;
+    border-width: 0;
+}
+
+.stv-formcontent.stv-fit {
+    padding: 0px;
+}
+
+
+/*
+
+    radio and checkbox
+
+    <label class="control">
+        <input type="checkbox">
+        <span>text</span>
+    </label>
+
+*/
+
+label.stv-control {
+    color: inherit;
+}
+
+label.stv-control > input[type=radio],
+label.stv-control > input[type=checkbox] {
+    display: none;
+}
+
+label.stv-control > input[type=radio] + span,
+label.stv-control > input[type=checkbox] + span {
+    display: block;
+    position: relative;
+    outline: 0;
+    box-sizing: border-box;
+    line-height: 21px;
+    padding: 0px 5px;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+}
+
+label.stv-control > input[type=radio] + span:before,
+label.stv-control > input[type=checkbox] + span:before {
+    font-family: 'FontAwesome';
+    display: inline-block;
+    width: 20px;
+    position: relative;
+    top: 2px;
+    font-size: 18px;
+    color: #666;
+}
+
+label.stv-control > input[type=radio] + span:before {
+    content: '\f10c';
+}
+
+label.stv-control > input[type=radio]:checked + span:before {
+    content: '\f192';
+}
+
+label.stv-control > input[type=checkbox] + span:before {
+    content: '\f096';
+}
+
+label.stv-control > input[type=checkbox]:checked + span:before {
+    content: '\f046';
+}
+
+label.stv-control > input[type=radio]:disabled + span,
+label.stv-control > input[type=radio]:disabled + span:before {
+    color: rgba(125, 125, 125, 0.25);
+    !important;
+}
+
+input[type=text]:disabled {
+    color: rgba(125, 125, 125, 0.25);
+    !important;
+}

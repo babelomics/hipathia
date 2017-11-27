@@ -1,0 +1,15 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-hsa04710-6	NR1D1	621	205	white	rectangle	gene	0.5	black	46	17	9572
+N-hsa04710-15	FBXL3	305	299	white	rectangle	gene	0.5	black	46	17	26224
+N-hsa04710-16	PRKAG2	396	267	white	rectangle	gene	0.5	black	46	17	51422,53632,5562,5563,5564,5565,5571
+N-hsa04710-17	CREB1	731	437	white	rectangle	gene	0.5	black	46	17	1385
+N-hsa04710-18	CSNK1E	374	405	white	rectangle	gene	0.5	black	46	17	102800317,1453,1454
+N-hsa04710-20	C00076	296	446	white	circle	compound	0.5	black	8	8	NA
+N-hsa04710-21	C00575	296	430	white	circle	compound	0.5	black	8	8	NA
+N-hsa04710-3 4	ARNTL NPAS2	748	26	white	rectangle	gene,gene	0.5	black	46	17	406,/,4862,9575
+N-hsa04710-10 8 9	CSNK1E CRY1 PER1	475	0	white	rectangle	gene,gene,gene	0.5	black	46	17	102800317,1453,1454,/,1407,1408,/,5187,8863,8864
+N-hsa04710-12 13	SKP1 FBXW11	305	367	white	rectangle	gene,gene	0.5	black	46	17	6500,8454,9978,/,23291,8945
+N-hsa04710-11	CRY1	498	307	white	rectangle	gene	0.5	black	46	17	1407,1408
+N-hsa04710-7	PER1	452	358	white	rectangle	gene	0.5	black	46	17	5187,8863,8864
+N-hsa04710-23	BHLHE41	545	256	white	rectangle	gene	0.5	black	46	17	79365,8553
+N-hsa04710-5	RORA	748	119	white	rectangle	gene	0.5	black	46	17	6095,6096,6097

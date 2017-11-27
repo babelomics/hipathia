@@ -1,0 +1,27 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-mmu05134-5	Casp1	760	100	white	rectangle	gene	0.5	black	46	17	12362
+N-mmu05134-8	Naip1	620	147	white	rectangle	gene	0.5	black	46	17	17940,17948,17951,17952,53880
+N-mmu05134-12	Nfkbia	717	475	white	rectangle	gene	0.5	black	46	17	18035
+N-mmu05134-33	Cycs	685	677	white	rectangle	gene	0.5	black	46	17	13063,13067
+N-mmu05134-34	Casp9	756	677	white	rectangle	gene	0.5	black	46	17	12371
+N-mmu05134-37	Apaf1	685	707	white	rectangle	gene	0.5	black	46	17	11783
+N-mmu05134-55	Eef1a1	619	290	white	rectangle	gene	0.5	black	46	17	13627,13628
+N-mmu05134-56	Hsf1	718	290	white	rectangle	gene	0.5	black	46	17	15499
+N-mmu05134-62	Tlr5	208	94	white	rectangle	gene	0.5	black	46	17	53791
+N-mmu05134-63	C00338	119	66	white	circle	compound	0.5	black	8	8	NA
+N-mmu05134-64	Tlr2	208	65	white	rectangle	gene	0.5	black	46	17	24088
+N-mmu05134-65	Tlr4	208	0	white	rectangle	gene	0.5	black	46	17	21898
+N-mmu05134-66	Cd14	208	32	white	rectangle	gene	0.5	black	46	17	12475
+N-mmu05134-67	Myd88	311	65	white	rectangle	gene	0.5	black	46	17	17874
+N-mmu05134-3 4	Nlrc4 Pycard	620	100	white	rectangle	gene,gene	0.5	black	46	17	268973,/,66824
+N-mmu05134-7	Il18	918	111	white	rectangle	gene	0.5	black	43	17	16173
+N-mmu05134-6	Il1b	918	90	white	rectangle	gene	0.5	black	43	17	16176
+N-mmu05134-9	Casp7	760	147	white	rectangle	gene	0.5	black	46	17	12369
+N-mmu05134-10	Nfkb1	717	424	white	rectangle	gene	0.5	black	46	17	18033,19697
+N-mmu05134-35	Casp3	827	677	white	rectangle	gene	0.5	black	46	17	12367
+N-mmu05134-59	Hspa8	846	290	white	rectangle	gene	0.5	black	46	17	15481,15482,15511,15512,193740
+N-mmu05134-68	Tnf	620	60	white	rectangle	gene	0.5	black	43	17	21926
+N-mmu05134-69	Il1b*	620	40	white	rectangle	gene	0.5	black	43	17	16176
+N-mmu05134-70	Il6	620	20	white	rectangle	gene	0.5	black	43	17	16193
+N-mmu05134-72	Il12a	620	0	white	rectangle	gene	0.5	black	43	17	16159,16160
+N-mmu05134-73	Cxcl1	670	20	white	rectangle	gene	0.5	black	43	17	14825,20310,330122

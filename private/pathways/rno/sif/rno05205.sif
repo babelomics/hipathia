@@ -1,0 +1,156 @@
+N-rno05205-15	activation	N-rno05205-17
+N-rno05205-24	activation	N-rno05205-27
+N-rno05205-27	activation	N-rno05205-30
+N-rno05205-31	activation	N-rno05205-24
+N-rno05205-33	activation	N-rno05205-97
+N-rno05205-38	activation	N-rno05205-15
+N-rno05205-41	activation	N-rno05205-2 45
+N-rno05205-41	activation	N-rno05205-45 46
+N-rno05205-54	activation	N-rno05205-58
+N-rno05205-54	activation	N-rno05205-59
+N-rno05205-58	activation	N-rno05205-103
+N-rno05205-59	activation	N-rno05205-103
+N-rno05205-62	activation	N-rno05205-64
+N-rno05205-64	activation	N-rno05205-66
+N-rno05205-66	activation	N-rno05205-69
+N-rno05205-85	activation	N-rno05205-81
+N-rno05205-86	activation	N-rno05205-62
+N-rno05205-88	activation	N-rno05205-91
+N-rno05205-97	activation	N-rno05205-31
+N-rno05205-112	inhibition	N-rno05205-113
+N-rno05205-116	activation	N-rno05205-119
+N-rno05205-116	activation	N-rno05205-120
+N-rno05205-116	activation	N-rno05205-121
+N-rno05205-119	inhibition	N-rno05205-226
+N-rno05205-126	activation	N-rno05205-127
+N-rno05205-127	activation	N-rno05205-129
+N-rno05205-135	activation	N-rno05205-136
+N-rno05205-136	activation	N-rno05205-137
+N-rno05205-137	activation	N-rno05205-140
+N-rno05205-147	activation	N-rno05205-146
+N-rno05205-160	activation	N-rno05205-333
+N-rno05205-164	activation	N-rno05205-193
+N-rno05205-165	activation	N-rno05205-183
+N-rno05205-172	inhibition	N-rno05205-175
+N-rno05205-172	inhibition	N-rno05205-176
+N-rno05205-173	inhibition	N-rno05205-175
+N-rno05205-173	inhibition	N-rno05205-176
+N-rno05205-175	inhibition	N-rno05205-179
+N-rno05205-176	inhibition	N-rno05205-179
+N-rno05205-179	inhibition	N-rno05205-451
+N-rno05205-180	activation	N-rno05205-183
+N-rno05205-193	inhibition	N-rno05205-195
+N-rno05205-204	activation	N-rno05205-206
+N-rno05205-204	activation	N-rno05205-208
+N-rno05205-206	activation	N-rno05205-210
+N-rno05205-208	activation	N-rno05205-213
+N-rno05205-210	activation	N-rno05205-213
+N-rno05205-213	activation	N-rno05205-215 216
+N-rno05205-219	activation	N-rno05205-220
+N-rno05205-223	activation	N-rno05205-219
+N-rno05205-223	inhibition	N-rno05205-112
+N-rno05205-223	inhibition	N-rno05205-224
+N-rno05205-224	activation	N-rno05205-109
+N-rno05205-226	activation	N-rno05205-116
+N-rno05205-228	activation	N-rno05205-226
+N-rno05205-240	activation	N-rno05205-126
+N-rno05205-240	activation	N-rno05205-135
+N-rno05205-245	activation	N-rno05205-142
+N-rno05205-246	activation	N-rno05205-245
+N-rno05205-250	activation	N-rno05205-252
+N-rno05205-250	activation	N-rno05205-253
+N-rno05205-250	activation	N-rno05205-254
+N-rno05205-252	activation	N-rno05205-256
+N-rno05205-253	activation	N-rno05205-256
+N-rno05205-254	activation	N-rno05205-256
+N-rno05205-261	activation	N-rno05205-271
+N-rno05205-261	activation	N-rno05205-280
+N-rno05205-262	activation	N-rno05205-150
+N-rno05205-262	activation	N-rno05205-144
+N-rno05205-262	activation	N-rno05205-145
+N-rno05205-262	activation	N-rno05205-146
+N-rno05205-263	activation	N-rno05205-147
+N-rno05205-271	activation	N-rno05205-273 274
+N-rno05205-276	activation	N-rno05205-278
+N-rno05205-278	activation	N-rno05205-270
+N-rno05205-280	activation	N-rno05205-284
+N-rno05205-289	activation	N-rno05205-337
+N-rno05205-297	activation	N-rno05205-298
+N-rno05205-298	activation	N-rno05205-304
+N-rno05205-305	activation	N-rno05205-308
+N-rno05205-306	activation	N-rno05205-400
+N-rno05205-306	activation	N-rno05205-305
+N-rno05205-306	activation	N-rno05205-320 327
+N-rno05205-308	activation	N-rno05205-323
+N-rno05205-308	activation	N-rno05205-313
+N-rno05205-313	activation	N-rno05205-315
+N-rno05205-315	activation	N-rno05205-317
+N-rno05205-317	activation	N-rno05205-318
+N-rno05205-323	inhibition	N-rno05205-324
+N-rno05205-333	inhibition	N-rno05205-158
+N-rno05205-347	activation	N-rno05205-236
+N-rno05205-353	activation	N-rno05205-352
+N-rno05205-353	activation	N-rno05205-250
+N-rno05205-362	inhibition	N-rno05205-369
+N-rno05205-403	activation	N-rno05205-297
+N-rno05205-403	activation	N-rno05205-404 419
+N-rno05205-405	activation	N-rno05205-406 409
+N-rno05205-405	activation	N-rno05205-409 411
+N-rno05205-407	activation	N-rno05205-415
+N-rno05205-413	activation	N-rno05205-415
+N-rno05205-427	activation	N-rno05205-431
+N-rno05205-447	activation	N-rno05205-246
+N-rno05205-273 274	activation	N-rno05205-276
+N-rno05205-1 19	activation	N-rno05205-33
+N-rno05205-1 19	activation	N-rno05205-2 39
+N-rno05205-1 19	activation	N-rno05205-2 45
+N-rno05205-1 19	activation	N-rno05205-7 93
+N-rno05205-2 39	activation	N-rno05205-41
+N-rno05205-2 45	activation	N-rno05205-41
+N-rno05205-4 60	activation	N-rno05205-86
+N-rno05205-4 60	activation	N-rno05205-88
+N-rno05205-7 9	activation	N-rno05205-38
+N-rno05205-7 9	activation	N-rno05205-34
+N-rno05205-7 9	activation	N-rno05205-22
+N-rno05205-7 9	activation	N-rno05205-2 39
+N-rno05205-12 23	activation	N-rno05205-24
+N-rno05205-19 60	activation	N-rno05205-88
+N-rno05205-42 99	activation	N-rno05205-2 45
+N-rno05205-42 99	activation	N-rno05205-45 46
+N-rno05205-53 99 42 53	activation	N-rno05205-54
+N-rno05205-70 357	activation	N-rno05205-362
+N-rno05205-71 74 75	activation	N-rno05205-77
+N-rno05205-71 78	activation	N-rno05205-77
+N-rno05205-151 199	inhibition	N-rno05205-160
+N-rno05205-151 425	inhibition	N-rno05205-160
+N-rno05205-151 425	activation	N-rno05205-434
+N-rno05205-151 425	activation	N-rno05205-427
+N-rno05205-151 153 154	inhibition	N-rno05205-160
+N-rno05205-151 153 154	activation	N-rno05205-158
+N-rno05205-151 153 154	activation	N-rno05205-188
+N-rno05205-151 153 154	activation	N-rno05205-189
+N-rno05205-151 162	inhibition	N-rno05205-160
+N-rno05205-151 162	inhibition	N-rno05205-165
+N-rno05205-151 162	inhibition	N-rno05205-164
+N-rno05205-151 162	inhibition	N-rno05205-180
+N-rno05205-151 167	inhibition	N-rno05205-160
+N-rno05205-151 436 437	inhibition	N-rno05205-160
+N-rno05205-151 436 437	activation	N-rno05205-422
+N-rno05205-167 169	inhibition	N-rno05205-164
+N-rno05205-167 169	inhibition	N-rno05205-165
+N-rno05205-167 169	inhibition	N-rno05205-180
+N-rno05205-167 169	activation	N-rno05205-172
+N-rno05205-167 169	activation	N-rno05205-173
+N-rno05205-199 200	activation	N-rno05205-204
+N-rno05205-239 244	activation	N-rno05205-240
+N-rno05205-259 268	activation	N-rno05205-261
+N-rno05205-265 268	activation	N-rno05205-262
+N-rno05205-265 268	activation	N-rno05205-263
+N-rno05205-290 301	activation	N-rno05205-288
+N-rno05205-290 301	activation	N-rno05205-291 292
+N-rno05205-320 327	activation	N-rno05205-319
+N-rno05205-342 348	activation	N-rno05205-236
+N-rno05205-343 348	activation	N-rno05205-238
+N-rno05205-404 419	activation	N-rno05205-289
+N-rno05205-406 409	activation	N-rno05205-407
+N-rno05205-409 411	activation	N-rno05205-413

@@ -1,0 +1,30 @@
+N-rno05145-1	activation	N-rno05145-2
+N-rno05145-2	activation	N-rno05145-3
+N-rno05145-3	activation	N-rno05145-4 5
+N-rno05145-4	activation	N-rno05145-12
+N-rno05145-4	activation	N-rno05145-10
+N-rno05145-4	activation	N-rno05145-9
+N-rno05145-4	activation	N-rno05145-6
+N-rno05145-6	activation	N-rno05145-7
+N-rno05145-7	activation	N-rno05145-8
+N-rno05145-12	activation	N-rno05145-11
+N-rno05145-22	activation	N-rno05145-23
+N-rno05145-26	activation	N-rno05145-29
+N-rno05145-28	inhibition	N-rno05145-21 56 55
+N-rno05145-31	activation	N-rno05145-34
+N-rno05145-34	activation	N-rno05145-35
+N-rno05145-36	activation	N-rno05145-35
+N-rno05145-37	activation	N-rno05145-38
+N-rno05145-38	activation	N-rno05145-39
+N-rno05145-39	activation	N-rno05145-40
+N-rno05145-40	inhibition	N-rno05145-67
+N-rno05145-49	activation	N-rno05145-1
+N-rno05145-57	activation	N-rno05145-13
+N-rno05145-58	activation	N-rno05145-57
+N-rno05145-71	inhibition	N-rno05145-34
+N-rno05145-71	inhibition	N-rno05145-35
+N-rno05145-21 56 55	activation	N-rno05145-22
+N-rno05145-51 52	activation	N-rno05145-1
+N-rno05145-53 54	activation	N-rno05145-1
+N-rno05145-68 69	activation	N-rno05145-36
+N-rno05145-79 81	activation	N-rno05145-33

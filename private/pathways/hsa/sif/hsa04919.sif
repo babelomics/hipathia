@@ -1,0 +1,63 @@
+N-hsa04919-4	activation	N-hsa04919-5
+N-hsa04919-5	activation	N-hsa04919-83
+N-hsa04919-5	activation	N-hsa04919-43
+N-hsa04919-5	activation	N-hsa04919-44
+N-hsa04919-5	inhibition	N-hsa04919-12
+N-hsa04919-5	inhibition	N-hsa04919-85
+N-hsa04919-5	inhibition	N-hsa04919-87
+N-hsa04919-5	inhibition	N-hsa04919-88
+N-hsa04919-5	inhibition	N-hsa04919-89
+N-hsa04919-6	activation	N-hsa04919-5
+N-hsa04919-7	activation	N-hsa04919-46
+N-hsa04919-7	activation	N-hsa04919-4
+N-hsa04919-7	activation	N-hsa04919-40
+N-hsa04919-7	activation	N-hsa04919-41
+N-hsa04919-7	activation	N-hsa04919-21 53
+N-hsa04919-8	activation	N-hsa04919-37
+N-hsa04919-8	activation	N-hsa04919-45
+N-hsa04919-12	inhibition	N-hsa04919-11
+N-hsa04919-14	activation	N-hsa04919-35
+N-hsa04919-14	activation	N-hsa04919-106
+N-hsa04919-15	activation	N-hsa04919-16
+N-hsa04919-16	activation	N-hsa04919-17
+N-hsa04919-17	activation	N-hsa04919-37
+N-hsa04919-19	activation	N-hsa04919-2 3
+N-hsa04919-20	activation	N-hsa04919-2 3
+N-hsa04919-33	activation	N-hsa04919-34
+N-hsa04919-34	activation	N-hsa04919-17
+N-hsa04919-36	activation	N-hsa04919-8
+N-hsa04919-37	activation	N-hsa04919-18
+N-hsa04919-37	activation	N-hsa04919-38
+N-hsa04919-37	activation	N-hsa04919-39
+N-hsa04919-37	activation	N-hsa04919-26
+N-hsa04919-37	activation	N-hsa04919-46
+N-hsa04919-41	activation	N-hsa04919-42
+N-hsa04919-41	activation	N-hsa04919-91
+N-hsa04919-83	inhibition	N-hsa04919-84
+N-hsa04919-85	inhibition	N-hsa04919-86
+N-hsa04919-86	activation	N-hsa04919-25
+N-hsa04919-90	activation	N-hsa04919-103
+N-hsa04919-90	activation	N-hsa04919-27
+N-hsa04919-90	activation	N-hsa04919-28
+N-hsa04919-90	activation	N-hsa04919-29
+N-hsa04919-90	activation	N-hsa04919-104
+N-hsa04919-90	activation	N-hsa04919-30
+N-hsa04919-90	activation	N-hsa04919-31
+N-hsa04919-90	activation	N-hsa04919-32
+N-hsa04919-90	activation	N-hsa04919-99
+N-hsa04919-90	activation	N-hsa04919-100
+N-hsa04919-96	activation	N-hsa04919-7
+N-hsa04919-97	activation	N-hsa04919-94 95
+N-hsa04919-98	activation	N-hsa04919-30
+N-hsa04919-98	activation	N-hsa04919-31
+N-hsa04919-98	activation	N-hsa04919-32
+N-hsa04919-98	activation	N-hsa04919-99
+N-hsa04919-98	activation	N-hsa04919-100
+N-hsa04919-98	activation	N-hsa04919-101
+N-hsa04919-98	activation	N-hsa04919-102
+N-hsa04919-106	activation	N-hsa04919-8
+N-hsa04919-2 3	activation	N-hsa04919-14
+N-hsa04919-2 3	activation	N-hsa04919-15
+N-hsa04919-94 95	activation	N-hsa04919-96
+N-hsa04919-22 53	activation	N-hsa04919-7
+N-hsa04919-48 52	activation	N-hsa04919-49

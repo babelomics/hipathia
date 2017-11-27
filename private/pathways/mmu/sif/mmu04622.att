@@ -1,0 +1,32 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-mmu04622-2	Ifih1	444	125	white	rectangle	gene	0.5	black	46	17	71586
+N-mmu04622-3	Trim25	398	469	white	rectangle	gene	0.5	black	46	17	217069
+N-mmu04622-4	Rnf125	456	469	white	rectangle	gene	0.5	black	46	17	67664
+N-mmu04622-7	Otud5	753	348	white	rectangle	gene	0.5	black	46	17	54644
+N-mmu04622-15	Fadd	841	206	white	rectangle	gene	0.5	black	46	17	14082
+N-mmu04622-16	Casp8	931	215	white	rectangle	gene	0.5	black	46	17	12370
+N-mmu04622-22	Ikbkb b	1022	205	white	rectangle	gene	0.5	black	46	17	16150
+N-mmu04622-24	Nfkbia	1111	205	white	rectangle	gene	0.5	black	46	17	18035,18036
+N-mmu04622-27	Dhx58	387	271	white	rectangle	gene	0.5	black	46	17	80861
+N-mmu04622-28	Rnf125*	474	200	white	rectangle	gene	0.5	black	46	17	67664
+N-mmu04622-32	Nlrx1	603	346	white	rectangle	gene	0.5	black	46	17	270151
+N-mmu04622-34	Cyld	423	505	white	rectangle	gene	0.5	black	46	17	74256
+N-mmu04622-39	Sike1	931	388	white	rectangle	gene	0.5	black	46	17	66641
+N-mmu04622-40	Tkfc	444	228	white	rectangle	gene	0.5	black	46	17	225913
+N-mmu04622-43	Map3k1	821	16	white	rectangle	gene	0.5	black	46	17	26401
+N-mmu04622-47	Map3k7	821	82	white	rectangle	gene	0.5	black	46	17	26409
+N-mmu04622-1 29	Ddx58 Isg15	444	401	white	rectangle	gene,gene	0.5	black	46	17	230073,/,100038882
+N-mmu04622-1 30 31	Ddx58 Atg5 Atg12	444	401	white	rectangle	gene,gene,gene	0.5	black	46	17	230073,/,11793,/,67526
+N-mmu04622-5 46	Mavs Traf2	622	271	white	rectangle	gene,gene	0.5	black	46	17	228607,/,22030
+N-mmu04622-5 20	Mavs Traf6	622	271	white	rectangle	gene,gene	0.5	black	46	17	228607,/,22034
+N-mmu04622-8 12 13 14	Traf3 Tank Azi2 Tbkbp1	753	296	white	rectangle	gene,gene,gene,gene	0.5	black	46	17	22031,/,21353,/,27215,/,73174
+N-mmu04622-37 12 13 14	Tradd Tank Azi2 Tbkbp1	753	227	white	rectangle	gene,gene,gene,gene	0.5	black	46	17	71609,/,21353,/,27215,/,73174
+N-mmu04622-42 10 26 36	D1Pas1 Ikbke Tbk1 Ikbkg g	988	388	white	rectangle	gene,gene,gene,gene	0.5	black	46	17	110957,13205,/,56489,/,56480,/,16151
+N-mmu04622-5 8 37	Mavs Traf3 Tradd	622	271	white	rectangle	gene,gene,gene	0.5	black	46	17	228607,/,22031,/,71609
+N-mmu04622-5 33	Mavs Tmem173	622	271	white	rectangle	gene,gene	0.5	black	46	17	228607,/,72512
+N-mmu04622-21 22 23	Chuk Ikbkb b Ikbkg g	1022	222	white	rectangle	gene,gene,gene	0.5	black	46	17	12675,/,16150,/,16151
+N-mmu04622-6	Nfkb1	1111	160	white	rectangle	gene	0.5	black	46	17	18033,19697
+N-mmu04622-44	Mapk10	974	31	white	rectangle	gene	0.5	black	46	17	26414,26419,26420
+N-mmu04622-45	Mapk11	974	0	white	rectangle	gene	0.5	black	46	17	19094,26415,26416,29857
+N-mmu04622-11	Irf7	1022	308	white	rectangle	gene	0.5	black	46	17	54123
+N-mmu04622-9 35	Irf3 Pin1	1022	337	white	rectangle	gene,gene	0.5	black	46	17	54131,/,23988

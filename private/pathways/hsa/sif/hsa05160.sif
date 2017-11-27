@@ -1,0 +1,36 @@
+N-hsa05160-2	activation	N-hsa05160-3 4
+N-hsa05160-9	activation	N-hsa05160-10
+N-hsa05160-10	activation	N-hsa05160-15 16
+N-hsa05160-10	activation	N-hsa05160-3 4
+N-hsa05160-11	activation	N-hsa05160-8
+N-hsa05160-12	activation	N-hsa05160-11
+N-hsa05160-15	activation	N-hsa05160-12 13 14
+N-hsa05160-18	activation	N-hsa05160-21 19 20
+N-hsa05160-32	inhibition	N-hsa05160-22 23
+N-hsa05160-33	inhibition	N-hsa05160-22 23
+N-hsa05160-36	activation	N-hsa05160-37
+N-hsa05160-52	activation	N-hsa05160-11
+N-hsa05160-52	activation	N-hsa05160-54
+N-hsa05160-52	activation	N-hsa05160-53
+N-hsa05160-52	activation	N-hsa05160-55
+N-hsa05160-57	inhibition	N-hsa05160-58
+N-hsa05160-62	activation	N-hsa05160-63
+N-hsa05160-63	activation	N-hsa05160-56
+N-hsa05160-63	activation	N-hsa05160-71
+N-hsa05160-63	activation	N-hsa05160-55
+N-hsa05160-64	activation	N-hsa05160-84
+N-hsa05160-65	inhibition	N-hsa05160-66
+N-hsa05160-65	inhibition	N-hsa05160-85
+N-hsa05160-65	inhibition	N-hsa05160-70
+N-hsa05160-67	activation	N-hsa05160-59 60
+N-hsa05160-69	activation	N-hsa05160-70
+N-hsa05160-72	activation	N-hsa05160-73 74 75
+N-hsa05160-76	activation	N-hsa05160-77
+N-hsa05160-84	activation	N-hsa05160-65
+N-hsa05160-5 6	activation	N-hsa05160-7
+N-hsa05160-3 4	activation	N-hsa05160-12 13 14
+N-hsa05160-3 4	activation	N-hsa05160-5 6
+N-hsa05160-21 28	activation	N-hsa05160-22 23
+N-hsa05160-21 19 20	activation	N-hsa05160-22 23
+N-hsa05160-60 61	activation	N-hsa05160-62
+N-hsa05160-73 74 75	activation	N-hsa05160-76

@@ -1,0 +1,15 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-hsa04623-23	CHUK	721	0	white	rectangle	gene	0.5	black	46	17	1147,3551,8517
+N-hsa04623-24	DDX58	512	277	white	rectangle	gene	0.5	black	46	17	23586
+N-hsa04623-27	NFKBIA	820	0	white	rectangle	gene	0.5	black	46	17	4792,4793
+N-hsa04623-38	MB21D1	410	236	white	rectangle	gene	0.5	black	46	17	115004
+N-hsa04623-39	C20640	514	236	white	circle	compound	0.5	black	8	8	NA
+N-hsa04623-7 10	ZBP1 IRF3	537	132	white	rectangle	gene,gene	0.5	black	46	17	81030,/,3661
+N-hsa04623-7 12	ZBP1 IRF7	537	132	white	rectangle	gene,gene	0.5	black	46	17	81030,/,3665
+N-hsa04623-7 18	ZBP1 RIPK1	537	132	white	rectangle	gene,gene	0.5	black	46	17	81030,/,8737
+N-hsa04623-7 19	ZBP1 RIPK3	537	132	white	rectangle	gene,gene	0.5	black	46	17	81030,/,11035
+N-hsa04623-15 16	MAVS TMEM173	583	277	white	rectangle	gene,gene	0.5	black	46	17	57506,/,340061
+N-hsa04623-17	NFKB1	820	45	white	rectangle	gene	0.5	black	46	17	4790,5970
+N-hsa04623-8	TBK1	697	174	white	rectangle	gene	0.5	black	46	17	29110
+N-hsa04623-9	IKBKE	697	153	white	rectangle	gene	0.5	black	46	17	9641
+N-hsa04623-25	NFKB1*	820	324	white	rectangle	gene	0.5	black	46	17	4790,5970

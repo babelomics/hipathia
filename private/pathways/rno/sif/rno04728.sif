@@ -1,0 +1,53 @@
+N-rno04728-2	activation	N-rno04728-12
+N-rno04728-2	activation	N-rno04728-9
+N-rno04728-9	activation	N-rno04728-10
+N-rno04728-10	activation	N-rno04728-14
+N-rno04728-11	activation	N-rno04728-32
+N-rno04728-11	activation	N-rno04728-33
+N-rno04728-11	activation	N-rno04728-34
+N-rno04728-11	inhibition	N-rno04728-64
+N-rno04728-11	activation	N-rno04728-68
+N-rno04728-11	activation	N-rno04728-74
+N-rno04728-11	activation	N-rno04728-70 73
+N-rno04728-12	activation	N-rno04728-13
+N-rno04728-13	activation	N-rno04728-15
+N-rno04728-13	activation	N-rno04728-16
+N-rno04728-14	activation	N-rno04728-11
+N-rno04728-15	activation	N-rno04728-17
+N-rno04728-16	activation	N-rno04728-19
+N-rno04728-18	activation	N-rno04728-67
+N-rno04728-18	activation	N-rno04728-19
+N-rno04728-18	activation	N-rno04728-32
+N-rno04728-19	activation	N-rno04728-44
+N-rno04728-20	activation	N-rno04728-59
+N-rno04728-20	activation	N-rno04728-45
+N-rno04728-20	activation	N-rno04728-2
+N-rno04728-20	activation	N-rno04728-38
+N-rno04728-20	activation	N-rno04728-28
+N-rno04728-20	activation	N-rno04728-37 76
+N-rno04728-28	activation	N-rno04728-29
+N-rno04728-28	activation	N-rno04728-55 56
+N-rno04728-29	activation	N-rno04728-61
+N-rno04728-29	inhibition	N-rno04728-60
+N-rno04728-29	inhibition	N-rno04728-64
+N-rno04728-29	inhibition	N-rno04728-10
+N-rno04728-29	activation	N-rno04728-13
+N-rno04728-30	inhibition	N-rno04728-31
+N-rno04728-31	inhibition	N-rno04728-74
+N-rno04728-31	inhibition	N-rno04728-70 73
+N-rno04728-31	activation	N-rno04728-71 72
+N-rno04728-33	inhibition	N-rno04728-57
+N-rno04728-34	activation	N-rno04728-44
+N-rno04728-38	activation	N-rno04728-29
+N-rno04728-45	inhibition	N-rno04728-36
+N-rno04728-53	inhibition	N-rno04728-33
+N-rno04728-53	inhibition	N-rno04728-68
+N-rno04728-56	inhibition	N-rno04728-30
+N-rno04728-57	inhibition	N-rno04728-68
+N-rno04728-57	inhibition	N-rno04728-74
+N-rno04728-57	inhibition	N-rno04728-70 73
+N-rno04728-59	activation	N-rno04728-24
+N-rno04728-67	activation	N-rno04728-53
+N-rno04728-67	activation	N-rno04728-54
+N-rno04728-37 76	activation	N-rno04728-12
+N-rno04728-37 76	activation	N-rno04728-9

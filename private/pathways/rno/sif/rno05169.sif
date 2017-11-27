@@ -1,0 +1,43 @@
+N-rno05169-15	activation	N-rno05169-32
+N-rno05169-15	activation	N-rno05169-29
+N-rno05169-15	activation	N-rno05169-30
+N-rno05169-15	activation	N-rno05169-31
+N-rno05169-26	activation	N-rno05169-11
+N-rno05169-41	inhibition	N-rno05169-42 43
+N-rno05169-44	inhibition	N-rno05169-45
+N-rno05169-48	activation	N-rno05169-49
+N-rno05169-49	activation	N-rno05169-117
+N-rno05169-49	activation	N-rno05169-118
+N-rno05169-51	activation	N-rno05169-57
+N-rno05169-51	activation	N-rno05169-54 55 59
+N-rno05169-53	activation	N-rno05169-81
+N-rno05169-53	activation	N-rno05169-57
+N-rno05169-55	activation	N-rno05169-56
+N-rno05169-56	activation	N-rno05169-60
+N-rno05169-57	activation	N-rno05169-58
+N-rno05169-58	activation	N-rno05169-64
+N-rno05169-61	activation	N-rno05169-62
+N-rno05169-62	activation	N-rno05169-63 74
+N-rno05169-63	activation	N-rno05169-76
+N-rno05169-63	activation	N-rno05169-75
+N-rno05169-63	activation	N-rno05169-54 55 59
+N-rno05169-75	activation	N-rno05169-77
+N-rno05169-76	activation	N-rno05169-78
+N-rno05169-77	activation	N-rno05169-79
+N-rno05169-78	activation	N-rno05169-79
+N-rno05169-81	activation	N-rno05169-82
+N-rno05169-82	inhibition	N-rno05169-83
+N-rno05169-86	activation	N-rno05169-87
+N-rno05169-86	activation	N-rno05169-93
+N-rno05169-86	activation	N-rno05169-89
+N-rno05169-87	activation	N-rno05169-93
+N-rno05169-88	activation	N-rno05169-86
+N-rno05169-89	activation	N-rno05169-81
+N-rno05169-94	inhibition	N-rno05169-86
+N-rno05169-99	activation	N-rno05169-100
+N-rno05169-99	activation	N-rno05169-101
+N-rno05169-100	activation	N-rno05169-102
+N-rno05169-101	activation	N-rno05169-104
+N-rno05169-102	activation	N-rno05169-103
+N-rno05169-42 43	inhibition	N-rno05169-45
+N-rno05169-123 124	activation	N-rno05169-125

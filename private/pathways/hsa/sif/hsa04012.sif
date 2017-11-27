@@ -1,0 +1,94 @@
+N-hsa04012-2	activation	N-hsa04012-32
+N-hsa04012-4	activation	N-hsa04012-8
+N-hsa04012-6	activation	N-hsa04012-58
+N-hsa04012-13	activation	N-hsa04012-49
+N-hsa04012-13	activation	N-hsa04012-29
+N-hsa04012-13	activation	N-hsa04012-42
+N-hsa04012-13	activation	N-hsa04012-46
+N-hsa04012-13	activation	N-hsa04012-63
+N-hsa04012-13	activation	N-hsa04012-45
+N-hsa04012-13	activation	N-hsa04012-2
+N-hsa04012-26	activation	N-hsa04012-23
+N-hsa04012-26	inhibition	N-hsa04012-22
+N-hsa04012-27	activation	N-hsa04012-34
+N-hsa04012-28	activation	N-hsa04012-27
+N-hsa04012-32	activation	N-hsa04012-58
+N-hsa04012-33	activation	N-hsa04012-14 60
+N-hsa04012-33	activation	N-hsa04012-13
+N-hsa04012-34	activation	N-hsa04012-41
+N-hsa04012-38	activation	N-hsa04012-36 5
+N-hsa04012-38	activation	N-hsa04012-4
+N-hsa04012-38	activation	N-hsa04012-4 9
+N-hsa04012-39	activation	N-hsa04012-37 7
+N-hsa04012-39	activation	N-hsa04012-6
+N-hsa04012-39	activation	N-hsa04012-36 5
+N-hsa04012-39	activation	N-hsa04012-4
+N-hsa04012-39	activation	N-hsa04012-10 6
+N-hsa04012-39	activation	N-hsa04012-4 9
+N-hsa04012-41	activation	N-hsa04012-56
+N-hsa04012-41	activation	N-hsa04012-40
+N-hsa04012-42	activation	N-hsa04012-57
+N-hsa04012-44	activation	N-hsa04012-73
+N-hsa04012-45	activation	N-hsa04012-44
+N-hsa04012-46	activation	N-hsa04012-45
+N-hsa04012-49	activation	N-hsa04012-48
+N-hsa04012-49	activation	N-hsa04012-47
+N-hsa04012-50	activation	N-hsa04012-14 60
+N-hsa04012-50	activation	N-hsa04012-13
+N-hsa04012-50	activation	N-hsa04012-36 5
+N-hsa04012-50	activation	N-hsa04012-4
+N-hsa04012-50	activation	N-hsa04012-4 9
+N-hsa04012-51	activation	N-hsa04012-37 7
+N-hsa04012-51	activation	N-hsa04012-6
+N-hsa04012-51	activation	N-hsa04012-36 5
+N-hsa04012-51	activation	N-hsa04012-4
+N-hsa04012-51	activation	N-hsa04012-10 6
+N-hsa04012-51	activation	N-hsa04012-4 9
+N-hsa04012-52	activation	N-hsa04012-14 60
+N-hsa04012-52	activation	N-hsa04012-13
+N-hsa04012-52	activation	N-hsa04012-36 5
+N-hsa04012-52	activation	N-hsa04012-4
+N-hsa04012-52	activation	N-hsa04012-4 9
+N-hsa04012-53	activation	N-hsa04012-14 60
+N-hsa04012-53	activation	N-hsa04012-13
+N-hsa04012-53	activation	N-hsa04012-36 5
+N-hsa04012-53	activation	N-hsa04012-4
+N-hsa04012-53	activation	N-hsa04012-4 9
+N-hsa04012-58	activation	N-hsa04012-59
+N-hsa04012-59	activation	N-hsa04012-26
+N-hsa04012-59	inhibition	N-hsa04012-31
+N-hsa04012-59	inhibition	N-hsa04012-21
+N-hsa04012-59	inhibition	N-hsa04012-25
+N-hsa04012-59	inhibition	N-hsa04012-24
+N-hsa04012-60	activation	N-hsa04012-46
+N-hsa04012-63	activation	N-hsa04012-43
+N-hsa04012-64	activation	N-hsa04012-36 5
+N-hsa04012-64	activation	N-hsa04012-4
+N-hsa04012-64	activation	N-hsa04012-4 9
+N-hsa04012-66	activation	N-hsa04012-14 60
+N-hsa04012-66	activation	N-hsa04012-13
+N-hsa04012-67	activation	N-hsa04012-14 60
+N-hsa04012-67	activation	N-hsa04012-13
+N-hsa04012-70	activation	N-hsa04012-65
+N-hsa04012-70	activation	N-hsa04012-3
+N-hsa04012-71	activation	N-hsa04012-70
+N-hsa04012-72	activation	N-hsa04012-71
+N-hsa04012-73	activation	N-hsa04012-72
+N-hsa04012-14 60	activation	N-hsa04012-49
+N-hsa04012-14 60	activation	N-hsa04012-35
+N-hsa04012-14 60	activation	N-hsa04012-29
+N-hsa04012-14 60	activation	N-hsa04012-42
+N-hsa04012-14 60	activation	N-hsa04012-63
+N-hsa04012-14 60	activation	N-hsa04012-28
+N-hsa04012-14 60	activation	N-hsa04012-45
+N-hsa04012-14 60	activation	N-hsa04012-2
+N-hsa04012-36 5	activation	N-hsa04012-46
+N-hsa04012-36 5	activation	N-hsa04012-45
+N-hsa04012-36 5	activation	N-hsa04012-58
+N-hsa04012-11 12	activation	N-hsa04012-46
+N-hsa04012-11 12	activation	N-hsa04012-45
+N-hsa04012-10 6	activation	N-hsa04012-46
+N-hsa04012-10 6	activation	N-hsa04012-45
+N-hsa04012-4 9	activation	N-hsa04012-46
+N-hsa04012-4 9	activation	N-hsa04012-45
+N-hsa04012-4 9	activation	N-hsa04012-58

@@ -1,0 +1,24 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-mmu05218-3	Braf	402	335	white	rectangle	gene	0.5	black	46	17	109880
+N-mmu05218-7	Nras	302	38	white	rectangle	gene	0.5	black	46	17	18176
+N-mmu05218-11	Pten	429	183	white	rectangle	gene	0.5	black	46	17	19211
+N-mmu05218-12	Egfr	226	268	white	rectangle	gene	0.5	black	46	17	13649,14182,16001,17295,18595,18596
+N-mmu05218-13	Egf	148	268	white	rectangle	gene	0.5	black	46	17	13645,14164,14165,14166,14167,14168,14169,14170,14171,14172,14173,14174,14175,14176,14177,14178,14179,14180,15234,16000,18590,18591,54635,56636,64654,67112,71785,80857,80903
+N-mmu05218-15	Cdkn2a	877	172	white	rectangle	gene	0.5	black	46	17	12578
+N-mmu05218-16	Cdkn1a	748	73	white	rectangle	gene	0.5	black	46	17	12575
+N-mmu05218-18	Mdm2	796	172	white	rectangle	gene	0.5	black	46	17	17246
+N-mmu05218-19	Trp53	749	143	white	rectangle	gene	0.5	black	46	17	22059
+N-mmu05218-20	E2f1	895	0	white	rectangle	gene	0.5	black	46	17	13555,13557,242705
+N-mmu05218-25	Akt1	508	231	white	rectangle	gene	0.5	black	46	17	11651,11652,23797
+N-mmu05218-26	Pik3ca	402	230	white	rectangle	gene	0.5	black	46	17	18706,18707,18708,18709,18710,30955,320207,74769
+N-mmu05218-27	Cdkn2a*	749	5	white	rectangle	gene	0.5	black	46	17	12578
+N-mmu05218-30	Mapk1	562	303	white	rectangle	gene	0.5	black	46	17	26413,26417
+N-mmu05218-31	Map2k1	483	303	white	rectangle	gene	0.5	black	46	17	26395,26396
+N-mmu05218-32	Braf*	402	303	white	rectangle	gene	0.5	black	46	17	109880,110157,11836
+N-mmu05218-33	Hras	309	268	white	rectangle	gene	0.5	black	46	17	15461,16653,18176
+N-mmu05218-22 23	Cdk4 Ccnd1	812	30	white	rectangle	gene,gene	0.5	black	46	17	12567,12571,/,12443
+N-mmu05218-17	C05981	458	231	white	circle	compound	0.5	black	8	8	NA
+N-mmu05218-21	Rb1	895	37	white	rectangle	gene	0.5	black	46	17	19645
+N-mmu05218-14	Bad	586	203	white	rectangle	gene	0.5	black	46	17	12015
+N-mmu05218-9	Ccnd1	836	315	white	rectangle	gene	0.5	black	46	17	12443
+N-mmu05218-8	Cdk4	836	291	white	rectangle	gene	0.5	black	46	17	12567

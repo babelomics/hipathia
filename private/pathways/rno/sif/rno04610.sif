@@ -1,0 +1,52 @@
+N-rno04610-2	activation	N-rno04610-3
+N-rno04610-2	activation	N-rno04610-19
+N-rno04610-2	activation	N-rno04610-17
+N-rno04610-4	activation	N-rno04610-3
+N-rno04610-4	activation	N-rno04610-5
+N-rno04610-6	activation	N-rno04610-5
+N-rno04610-8	activation	N-rno04610-7
+N-rno04610-9	activation	N-rno04610-7
+N-rno04610-10	inhibition	N-rno04610-6
+N-rno04610-10	inhibition	N-rno04610-5
+N-rno04610-12	inhibition	N-rno04610-41
+N-rno04610-13	inhibition	N-rno04610-5
+N-rno04610-13	inhibition	N-rno04610-41
+N-rno04610-15	inhibition	N-rno04610-41
+N-rno04610-16	inhibition	N-rno04610-20
+N-rno04610-16	inhibition	N-rno04610-21
+N-rno04610-18	activation	N-rno04610-22
+N-rno04610-19	activation	N-rno04610-17
+N-rno04610-19	activation	N-rno04610-18
+N-rno04610-20	activation	N-rno04610-57
+N-rno04610-20	activation	N-rno04610-17
+N-rno04610-21	activation	N-rno04610-17
+N-rno04610-22	activation	N-rno04610-23
+N-rno04610-26	activation	N-rno04610-46
+N-rno04610-26	activation	N-rno04610-45
+N-rno04610-28	inhibition	N-rno04610-26
+N-rno04610-28	inhibition	N-rno04610-24 25
+N-rno04610-37	inhibition	N-rno04610-49
+N-rno04610-39	activation	N-rno04610-38 59
+N-rno04610-40	activation	N-rno04610-38 59
+N-rno04610-41	activation	N-rno04610-39
+N-rno04610-41	activation	N-rno04610-11
+N-rno04610-41	activation	N-rno04610-58
+N-rno04610-41	activation	N-rno04610-52
+N-rno04610-41	inhibition	N-rno04610-9
+N-rno04610-42	inhibition	N-rno04610-38 59
+N-rno04610-43	activation	N-rno04610-38 59
+N-rno04610-49	activation	N-rno04610-41
+N-rno04610-51	inhibition	N-rno04610-2
+N-rno04610-51	inhibition	N-rno04610-3
+N-rno04610-51	inhibition	N-rno04610-4
+N-rno04610-60	activation	N-rno04610-6
+N-rno04610-67	activation	N-rno04610-44
+N-rno04610-68	activation	N-rno04610-44
+N-rno04610-72	inhibition	N-rno04610-38 59
+N-rno04610-14 50	activation	N-rno04610-5
+N-rno04610-24 25	activation	N-rno04610-46
+N-rno04610-24 25	activation	N-rno04610-45
+N-rno04610-38 59	activation	N-rno04610-11
+N-rno04610-38 59	inhibition	N-rno04610-49
+N-rno04610-38 59	inhibition	N-rno04610-16
+N-rno04610-38 59	inhibition	N-rno04610-14 50

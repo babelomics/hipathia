@@ -1,0 +1,43 @@
+N-rno04350-1	inhibition	N-rno04350-46
+N-rno04350-2	inhibition	N-rno04350-1
+N-rno04350-13	activation	N-rno04350-14
+N-rno04350-14	activation	N-rno04350-10
+N-rno04350-15	activation	N-rno04350-12
+N-rno04350-16	inhibition	N-rno04350-17
+N-rno04350-16	inhibition	N-rno04350-14
+N-rno04350-17	activation	N-rno04350-11
+N-rno04350-22	inhibition	N-rno04350-21
+N-rno04350-28	activation	N-rno04350-17
+N-rno04350-29	activation	N-rno04350-27
+N-rno04350-29	inhibition	N-rno04350-46
+N-rno04350-29	inhibition	N-rno04350-15
+N-rno04350-30	inhibition	N-rno04350-29
+N-rno04350-31	inhibition	N-rno04350-46
+N-rno04350-31	inhibition	N-rno04350-15
+N-rno04350-33	activation	N-rno04350-32
+N-rno04350-35	activation	N-rno04350-34
+N-rno04350-37	activation	N-rno04350-38
+N-rno04350-38	activation	N-rno04350-36
+N-rno04350-44	activation	N-rno04350-35
+N-rno04350-44	activation	N-rno04350-33
+N-rno04350-45	activation	N-rno04350-38
+N-rno04350-46	activation	N-rno04350-44
+N-rno04350-46	activation	N-rno04350-44 45
+N-rno04350-47	inhibition	N-rno04350-46
+N-rno04350-48	activation	N-rno04350-42 43
+N-rno04350-49	activation	N-rno04350-42 43
+N-rno04350-51	activation	N-rno04350-55
+N-rno04350-52	activation	N-rno04350-50
+N-rno04350-53	inhibition	N-rno04350-52
+N-rno04350-55	activation	N-rno04350-41
+N-rno04350-56	inhibition	N-rno04350-52
+N-rno04350-57	inhibition	N-rno04350-51
+N-rno04350-58	inhibition	N-rno04350-45
+N-rno04350-58	inhibition	N-rno04350-44 45
+N-rno04350-59	inhibition	N-rno04350-28
+N-rno04350-19 20	activation	N-rno04350-21
+N-rno04350-23 24 25	inhibition	N-rno04350-22
+N-rno04350-3 39 4	inhibition	N-rno04350-38
+N-rno04350-42 43	inhibition	N-rno04350-38
+N-rno04350-42 43	inhibition	N-rno04350-55
+N-rno04350-42 43	inhibition	N-rno04350-44 45

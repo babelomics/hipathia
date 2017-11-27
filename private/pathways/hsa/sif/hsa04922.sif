@@ -1,0 +1,49 @@
+N-hsa04922-28	activation	N-hsa04922-29
+N-hsa04922-29	activation	N-hsa04922-30
+N-hsa04922-29	activation	N-hsa04922-38
+N-hsa04922-30	activation	N-hsa04922-31
+N-hsa04922-31	activation	N-hsa04922-33
+N-hsa04922-32	activation	N-hsa04922-42
+N-hsa04922-32	activation	N-hsa04922-84
+N-hsa04922-32	activation	N-hsa04922-70
+N-hsa04922-32	activation	N-hsa04922-62 63
+N-hsa04922-32	inhibition	N-hsa04922-45
+N-hsa04922-32	activation	N-hsa04922-43
+N-hsa04922-32	activation	N-hsa04922-80
+N-hsa04922-32	inhibition	N-hsa04922-36
+N-hsa04922-32	inhibition	N-hsa04922-17
+N-hsa04922-33	activation	N-hsa04922-32
+N-hsa04922-38	activation	N-hsa04922-39
+N-hsa04922-39	activation	N-hsa04922-40
+N-hsa04922-40	activation	N-hsa04922-84
+N-hsa04922-41	activation	N-hsa04922-82
+N-hsa04922-41	activation	N-hsa04922-66
+N-hsa04922-42	activation	N-hsa04922-46 47 48
+N-hsa04922-43	inhibition	N-hsa04922-44
+N-hsa04922-44	activation	N-hsa04922-46 47 48
+N-hsa04922-45	inhibition	N-hsa04922-44
+N-hsa04922-49	activation	N-hsa04922-89 90
+N-hsa04922-49	activation	N-hsa04922-52 54
+N-hsa04922-53	activation	N-hsa04922-52 54
+N-hsa04922-55	inhibition	N-hsa04922-44
+N-hsa04922-57	activation	N-hsa04922-58
+N-hsa04922-58	inhibition	N-hsa04922-33
+N-hsa04922-66	activation	N-hsa04922-44
+N-hsa04922-68	activation	N-hsa04922-24
+N-hsa04922-68	inhibition	N-hsa04922-67
+N-hsa04922-77	inhibition	N-hsa04922-60
+N-hsa04922-80	inhibition	N-hsa04922-78
+N-hsa04922-82	activation	N-hsa04922-83
+N-hsa04922-83	activation	N-hsa04922-52 54
+N-hsa04922-62 63	activation	N-hsa04922-37
+N-hsa04922-46 47 48	activation	N-hsa04922-49
+N-hsa04922-46 47 48	activation	N-hsa04922-55
+N-hsa04922-46 47 48	activation	N-hsa04922-51
+N-hsa04922-46 47 48	activation	N-hsa04922-50
+N-hsa04922-46 47 48	activation	N-hsa04922-59
+N-hsa04922-89 90	activation	N-hsa04922-51
+N-hsa04922-89 90	activation	N-hsa04922-50
+N-hsa04922-89 90	activation	N-hsa04922-59
+N-hsa04922-52 54	activation	N-hsa04922-51
+N-hsa04922-52 54	activation	N-hsa04922-50
+N-hsa04922-52 54	activation	N-hsa04922-59

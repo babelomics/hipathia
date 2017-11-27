@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<!DOCTYPE pathway SYSTEM "http://www.kegg.jp/kegg/xml/KGML_v0.7.2_.dtd">
+<!-- Creation date: Nov 11, 2016 17:31:15 +0900 (GMT+9) -->
+<pathway name="path:rno04320" org="rno" number="04320"
+         title="Dorso-ventral axis formation"
+         image="http://www.kegg.jp/kegg/pathway/rno/rno04320.png"
+         link="http://www.kegg.jp/kegg-bin/show_pathway?rno04320">
+    <entry id="1" name="ko:K03102" type="ortholog"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K03102">
+        <graphics name="K03102" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="rectangle" x="249" y="421" width="46" height="17"/>
+    </entry>
+    <entry id="2" name="ko:K03102" type="ortholog"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K03102">
+        <graphics name="K03102" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="rectangle" x="415" y="423" width="46" height="17"/>
+    </entry>
+    <entry id="3" name="path:rno04320" type="map"
+        link="http://www.kegg.jp/dbget-bin/www_bget?rno04320">
+        <graphics name="TITLE:Dorso-ventral axis formation" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="roundrectangle" x="207" y="58" width="334" height="25"/>
+    </entry>
+    <entry id="4" name="rno:307348 rno:307925" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?rno:307348+rno:307925">
+        <graphics name="Spire1..." fgcolor="#000000" bgcolor="#BFFFBF"
+             type="rectangle" x="515" y="411" width="46" height="17"/>
+    </entry>
+    <entry id="5" name="rno:100360457" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?rno:100360457">
+        <graphics name="Fmn2" fgcolor="#000000" bgcolor="#BFFFBF"
+             type="rectangle" x="515" y="394" width="46" height="17"/>
+    </entry>
+    <entry id="6" name="ko:K02524" type="ortholog"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K02524">
+        <graphics name="K02524" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="rectangle" x="441" y="402" width="46" height="17"/>
+    </entry>
+    <entry id="7" name="rno:306011 rno:363912 rno:689972" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?rno:306011+rno:363912+rno:689972">
+        <graphics name="Piwil2..." fgcolor="#000000" bgcolor="#BFFFBF"
+             type="rectangle" x="216" y="527" width="46" height="17"/>
+    </entry>
+    <entry id="8" name="rno:293056 rno:303010 rno:309510 rno:360949" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?rno:293056+rno:303010+rno:309510+rno:360949">
+        <graphics name="Cpeb1..." fgcolor="#000000" bgcolor="#BFFFBF"
+             type="rectangle" x="216" y="508" width="46" height="17"/>
+    </entry>
+    <entry id="9" name="ko:K02360" type="ortholog"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K02360">
+        <graphics name="K02360" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="rectangle" x="216" y="489" width="46" height="17"/>
+    </entry>
+    <entry id="10" name="ko:K02177" type="ortholog"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K02177">
+        <graphics name="K02177" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="rectangle" x="297" y="421" width="46" height="17"/>
+    </entry>
+    <entry id="11" name="ko:K02447" type="ortholog"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K02447">
+        <graphics name="K02447" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="rectangle" x="125" y="462" width="46" height="17"/>
+    </entry>
+    <entry id="12" name="ko:K02175" type="ortholog"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K02175">
+        <graphics name="K02175" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="rectangle" x="121" y="425" width="46" height="17"/>
+    </entry>
+    <entry id="13" name="ko:K02359" type="ortholog"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K02359">
+        <graphics name="K02359" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="rectangle" x="164" y="401" width="46" height="17"/>
+    </entry>
+    <entry id="14" name="rno:25496 rno:29492 rno:406162 rno:56761" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?rno:25496+rno:29492+rno:406162+rno:56761">
+        <graphics name="Notch1, NOTCH, TAN1..." fgcolor="#000000" bgcolor="#BFFFBF"
+             type="rectangle" x="164" y="291" width="46" height="17"/>
+    </entry>
+    <entry id="16" name="ko:K02174" type="ortholog"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K02174">
+        <graphics name="K02174" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="rectangle" x="694" y="140" width="46" height="17"/>
+    </entry>
+    <entry id="17" name="ko:K02215" type="ortholog"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K02215">
+        <graphics name="K02215" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="rectangle" x="583" y="220" width="46" height="17"/>
+    </entry>
+    <entry id="18" name="rno:312777" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?rno:312777">
+        <graphics name="Etv6" fgcolor="#000000" bgcolor="#BFFFBF"
+             type="rectangle" x="582" y="192" width="46" height="17"/>
+    </entry>
+    <entry id="19" name="rno:24356 rno:304063" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?rno:24356+rno:304063">
+        <graphics name="Ets1, Ets-1, Etsoncb, Tpl1..." fgcolor="#000000" bgcolor="#BFFFBF"
+             type="rectangle" x="582" y="166" width="46" height="17"/>
+    </entry>
+    <entry id="20" name="rno:116590 rno:50689" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?rno:116590+rno:50689">
+        <graphics name="Mapk1, ERK-2, ERT1, Erk2, p42-MAPK..." fgcolor="#000000" bgcolor="#BFFFBF"
+             type="rectangle" x="492" y="203" width="46" height="17"/>
+    </entry>
+    <entry id="21" name="rno:170851" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?rno:170851">
+        <graphics name="Map2k1, Mek1" fgcolor="#000000" bgcolor="#BFFFBF"
+             type="rectangle" x="418" y="203" width="46" height="17"/>
+    </entry>
+    <entry id="22" name="rno:114486" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?rno:114486">
+        <graphics name="Braf" fgcolor="#000000" bgcolor="#BFFFBF"
+             type="rectangle" x="345" y="203" width="46" height="17"/>
+    </entry>
+    <entry id="23" name="rno:24525" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?rno:24525">
+        <graphics name="Kras, Kras2, c-Ki-ras, p21" fgcolor="#000000" bgcolor="#BFFFBF"
+             type="rectangle" x="270" y="203" width="46" height="17"/>
+    </entry>
+    <entry id="24" name="rno:313845 rno:85384" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?rno:313845+rno:85384">
+        <graphics name="Sos1..." fgcolor="#000000" bgcolor="#BFFFBF"
+             type="rectangle" x="254" y="178" width="46" height="17"/>
+    </entry>
+    <entry id="25" name="rno:81504" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?rno:81504">
+        <graphics name="Grb2, Ash-psi" fgcolor="#000000" bgcolor="#BFFFBF"
+             type="rectangle" x="238" y="154" width="46" height="17"/>
+    </entry>
+    <entry id="26" name="ko:K02447" type="ortholog"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K02447">
+        <graphics name="K02447" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="rectangle" x="67" y="154" width="46" height="17"/>
+    </entry>
+    <entry id="27" name="rno:24329" type="gene"
+        link="http://www.kegg.jp/dbget-bin/www_bget?rno:24329">
+        <graphics name="Egfr, ERBB1, ErbB-1, Errp" fgcolor="#000000" bgcolor="#BFFFBF"
+             type="rectangle" x="164" y="154" width="46" height="17"/>
+    </entry>
+    <entry id="28" name="ko:K02104" type="ortholog"
+        link="http://www.kegg.jp/dbget-bin/www_bget?K02104">
+        <graphics name="K02104" fgcolor="#000000" bgcolor="#FFFFFF"
+             type="rectangle" x="93" y="115" width="46" height="17"/>
+    </entry>
+    <relation entry1="27" entry2="25" type="PPrel">
+        <subtype name="activation" value="--&gt;"/>
+    </relation>
+    <relation entry1="24" entry2="25" type="PPrel">
+        <subtype name="binding/association" value="---"/>
+    </relation>
+    <relation entry1="23" entry2="25" type="PPrel">
+        <subtype name="binding/association" value="---"/>
+    </relation>
+    <relation entry1="23" entry2="22" type="PPrel">
+        <subtype name="activation" value="--&gt;"/>
+    </relation>
+    <relation entry1="22" entry2="21" type="PPrel">
+        <subtype name="phosphorylation" value="+p"/>
+    </relation>
+    <relation entry1="21" entry2="20" type="PPrel">
+        <subtype name="phosphorylation" value="+p"/>
+    </relation>
+    <relation entry1="20" entry2="19" type="PPrel">
+        <subtype name="phosphorylation" value="+p"/>
+    </relation>
+    <relation entry1="20" entry2="18" type="PPrel">
+        <subtype name="inhibition" value="--|"/>
+    </relation>
+</pathway>

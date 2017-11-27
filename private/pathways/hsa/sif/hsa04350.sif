@@ -1,0 +1,43 @@
+N-hsa04350-1	inhibition	N-hsa04350-46
+N-hsa04350-2	inhibition	N-hsa04350-1
+N-hsa04350-13	activation	N-hsa04350-14
+N-hsa04350-14	activation	N-hsa04350-10
+N-hsa04350-15	activation	N-hsa04350-12
+N-hsa04350-16	inhibition	N-hsa04350-17
+N-hsa04350-16	inhibition	N-hsa04350-14
+N-hsa04350-17	activation	N-hsa04350-11
+N-hsa04350-22	inhibition	N-hsa04350-21
+N-hsa04350-28	activation	N-hsa04350-17
+N-hsa04350-29	activation	N-hsa04350-27
+N-hsa04350-29	inhibition	N-hsa04350-46
+N-hsa04350-29	inhibition	N-hsa04350-15
+N-hsa04350-30	inhibition	N-hsa04350-29
+N-hsa04350-31	inhibition	N-hsa04350-46
+N-hsa04350-31	inhibition	N-hsa04350-15
+N-hsa04350-33	activation	N-hsa04350-32
+N-hsa04350-35	activation	N-hsa04350-34
+N-hsa04350-37	activation	N-hsa04350-38
+N-hsa04350-38	activation	N-hsa04350-36
+N-hsa04350-44	activation	N-hsa04350-35
+N-hsa04350-44	activation	N-hsa04350-33
+N-hsa04350-45	activation	N-hsa04350-38
+N-hsa04350-46	activation	N-hsa04350-44
+N-hsa04350-46	activation	N-hsa04350-44 45
+N-hsa04350-47	inhibition	N-hsa04350-46
+N-hsa04350-48	activation	N-hsa04350-42 43
+N-hsa04350-49	activation	N-hsa04350-42 43
+N-hsa04350-51	activation	N-hsa04350-55
+N-hsa04350-52	activation	N-hsa04350-50
+N-hsa04350-53	inhibition	N-hsa04350-52
+N-hsa04350-55	activation	N-hsa04350-41
+N-hsa04350-56	inhibition	N-hsa04350-52
+N-hsa04350-57	inhibition	N-hsa04350-51
+N-hsa04350-58	inhibition	N-hsa04350-45
+N-hsa04350-58	inhibition	N-hsa04350-44 45
+N-hsa04350-59	inhibition	N-hsa04350-28
+N-hsa04350-19 20	activation	N-hsa04350-21
+N-hsa04350-23 24 25	inhibition	N-hsa04350-22
+N-hsa04350-3 39 4	inhibition	N-hsa04350-38
+N-hsa04350-42 43	inhibition	N-hsa04350-38
+N-hsa04350-42 43	inhibition	N-hsa04350-55
+N-hsa04350-42 43	inhibition	N-hsa04350-44 45

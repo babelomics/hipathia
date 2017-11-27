@@ -1,0 +1,89 @@
+N-mmu04520-5	activation	N-mmu04520-70
+N-mmu04520-6	activation	N-mmu04520-58
+N-mmu04520-6	activation	N-mmu04520-59
+N-mmu04520-11	activation	N-mmu04520-10
+N-mmu04520-14	inhibition	N-mmu04520-4
+N-mmu04520-14	activation	N-mmu04520-15
+N-mmu04520-14	activation	N-mmu04520-16
+N-mmu04520-15	inhibition	N-mmu04520-59
+N-mmu04520-15	inhibition	N-mmu04520-4
+N-mmu04520-16	inhibition	N-mmu04520-59
+N-mmu04520-16	inhibition	N-mmu04520-4
+N-mmu04520-19	activation	N-mmu04520-18
+N-mmu04520-20	activation	N-mmu04520-17
+N-mmu04520-20	activation	N-mmu04520-1 13
+N-mmu04520-21	activation	N-mmu04520-17
+N-mmu04520-22	inhibition	N-mmu04520-4
+N-mmu04520-22	inhibition	N-mmu04520-59
+N-mmu04520-22	activation	N-mmu04520-19
+N-mmu04520-23	inhibition	N-mmu04520-4
+N-mmu04520-23	inhibition	N-mmu04520-59
+N-mmu04520-25	inhibition	N-mmu04520-59
+N-mmu04520-26	activation	N-mmu04520-7 68
+N-mmu04520-26	activation	N-mmu04520-45 68
+N-mmu04520-27	activation	N-mmu04520-64
+N-mmu04520-28	activation	N-mmu04520-64
+N-mmu04520-29	activation	N-mmu04520-7 68
+N-mmu04520-29	activation	N-mmu04520-45 68
+N-mmu04520-30	activation	N-mmu04520-7 68
+N-mmu04520-30	activation	N-mmu04520-45 68
+N-mmu04520-31	activation	N-mmu04520-7 68
+N-mmu04520-31	activation	N-mmu04520-45 68
+N-mmu04520-32	activation	N-mmu04520-64
+N-mmu04520-32	activation	N-mmu04520-7 68
+N-mmu04520-32	activation	N-mmu04520-45 68
+N-mmu04520-33	activation	N-mmu04520-7 68
+N-mmu04520-33	activation	N-mmu04520-45 68
+N-mmu04520-35	activation	N-mmu04520-44 52 45
+N-mmu04520-35	activation	N-mmu04520-44 49
+N-mmu04520-35	activation	N-mmu04520-44 47
+N-mmu04520-38	activation	N-mmu04520-44 52 45
+N-mmu04520-38	activation	N-mmu04520-44 49
+N-mmu04520-38	activation	N-mmu04520-44 47
+N-mmu04520-39	activation	N-mmu04520-44 52 45
+N-mmu04520-39	activation	N-mmu04520-44 49
+N-mmu04520-39	activation	N-mmu04520-44 47
+N-mmu04520-41	activation	N-mmu04520-62
+N-mmu04520-41	activation	N-mmu04520-36 37
+N-mmu04520-42	activation	N-mmu04520-39
+N-mmu04520-42	activation	N-mmu04520-38
+N-mmu04520-42	activation	N-mmu04520-62
+N-mmu04520-42	activation	N-mmu04520-41
+N-mmu04520-59	activation	N-mmu04520-9 57
+N-mmu04520-61	inhibition	N-mmu04520-59
+N-mmu04520-62	activation	N-mmu04520-44 52 45
+N-mmu04520-62	activation	N-mmu04520-44 49
+N-mmu04520-62	activation	N-mmu04520-44 47
+N-mmu04520-65	inhibition	N-mmu04520-34
+N-mmu04520-66	inhibition	N-mmu04520-59
+N-mmu04520-70	inhibition	N-mmu04520-69
+N-mmu04520-71	activation	N-mmu04520-74
+N-mmu04520-71	activation	N-mmu04520-41
+N-mmu04520-74	activation	N-mmu04520-42
+N-mmu04520-36 37	activation	N-mmu04520-44 52 45
+N-mmu04520-36 37	activation	N-mmu04520-44 49
+N-mmu04520-36 37	activation	N-mmu04520-44 47
+N-mmu04520-3 51	activation	N-mmu04520-59
+N-mmu04520-3 51	activation	N-mmu04520-43
+N-mmu04520-3 48	activation	N-mmu04520-59
+N-mmu04520-3 48	activation	N-mmu04520-43
+N-mmu04520-3 46	activation	N-mmu04520-59
+N-mmu04520-3 46	activation	N-mmu04520-43
+N-mmu04520-3 55	activation	N-mmu04520-59
+N-mmu04520-3 55	activation	N-mmu04520-43
+N-mmu04520-50 56	activation	N-mmu04520-44 52 45
+N-mmu04520-50 56	activation	N-mmu04520-44 49
+N-mmu04520-50 56	activation	N-mmu04520-44 47
+N-mmu04520-53 56	activation	N-mmu04520-44 52 45
+N-mmu04520-53 56	activation	N-mmu04520-44 49
+N-mmu04520-53 56	activation	N-mmu04520-44 47
+N-mmu04520-54 56	activation	N-mmu04520-44 52 45
+N-mmu04520-54 56	activation	N-mmu04520-44 49
+N-mmu04520-54 56	activation	N-mmu04520-44 47
+N-mmu04520-56 72	activation	N-mmu04520-44 52 45
+N-mmu04520-56 72	activation	N-mmu04520-44 49
+N-mmu04520-56 72	activation	N-mmu04520-44 47
+N-mmu04520-56 72	activation	N-mmu04520-73
+N-mmu04520-56 72	activation	N-mmu04520-71
+N-mmu04520-67 72	activation	N-mmu04520-73
+N-mmu04520-67 72	activation	N-mmu04520-71

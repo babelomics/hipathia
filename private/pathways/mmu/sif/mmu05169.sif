@@ -1,0 +1,43 @@
+N-mmu05169-15	activation	N-mmu05169-32
+N-mmu05169-15	activation	N-mmu05169-29
+N-mmu05169-15	activation	N-mmu05169-30
+N-mmu05169-15	activation	N-mmu05169-31
+N-mmu05169-26	activation	N-mmu05169-11
+N-mmu05169-41	inhibition	N-mmu05169-42 43
+N-mmu05169-44	inhibition	N-mmu05169-45
+N-mmu05169-48	activation	N-mmu05169-49
+N-mmu05169-49	activation	N-mmu05169-117
+N-mmu05169-49	activation	N-mmu05169-118
+N-mmu05169-51	activation	N-mmu05169-57
+N-mmu05169-51	activation	N-mmu05169-54 55 59
+N-mmu05169-53	activation	N-mmu05169-81
+N-mmu05169-53	activation	N-mmu05169-57
+N-mmu05169-55	activation	N-mmu05169-56
+N-mmu05169-56	activation	N-mmu05169-60
+N-mmu05169-57	activation	N-mmu05169-58
+N-mmu05169-58	activation	N-mmu05169-64
+N-mmu05169-61	activation	N-mmu05169-62
+N-mmu05169-62	activation	N-mmu05169-63 74
+N-mmu05169-63	activation	N-mmu05169-76
+N-mmu05169-63	activation	N-mmu05169-75
+N-mmu05169-63	activation	N-mmu05169-54 55 59
+N-mmu05169-75	activation	N-mmu05169-77
+N-mmu05169-76	activation	N-mmu05169-78
+N-mmu05169-77	activation	N-mmu05169-79
+N-mmu05169-78	activation	N-mmu05169-79
+N-mmu05169-81	activation	N-mmu05169-82
+N-mmu05169-82	inhibition	N-mmu05169-83
+N-mmu05169-86	activation	N-mmu05169-87
+N-mmu05169-86	activation	N-mmu05169-93
+N-mmu05169-86	activation	N-mmu05169-89
+N-mmu05169-87	activation	N-mmu05169-93
+N-mmu05169-88	activation	N-mmu05169-86
+N-mmu05169-89	activation	N-mmu05169-81
+N-mmu05169-94	inhibition	N-mmu05169-86
+N-mmu05169-99	activation	N-mmu05169-100
+N-mmu05169-99	activation	N-mmu05169-101
+N-mmu05169-100	activation	N-mmu05169-102
+N-mmu05169-101	activation	N-mmu05169-104
+N-mmu05169-102	activation	N-mmu05169-103
+N-mmu05169-42 43	inhibition	N-mmu05169-45
+N-mmu05169-123 124	activation	N-mmu05169-125

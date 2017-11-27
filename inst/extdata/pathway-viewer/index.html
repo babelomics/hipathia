@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Pathway Viewer</title>
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- Chrome for Android theme color -->
+        <!--<meta name="theme-color" content="#303F9F">-->
+        <meta name="theme-color" content="#000000">
+
+        <!-- Web Application Manifest -->
+        <link rel="manifest" href="manifest.json">
+
+        <!-- Windows Theme color -->
+        <meta name="msapplication-TileColor" content="#3372DF">
+
+        <!-- Add to homescreen for Chrome on Android -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="application-name" content="Pathway Viewer">
+
+        <!-- Add to homescreen for Safari on iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Pathway Viewer">
+
+        <!-- Force Microsoft use latest web tech -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- END meta -->
+
+        <!--Config-->
+        <script src="conf/nv-config.js"></script>
+        <script src="conf/config.js"></script>
+
+        <!-- Normalize -->
+        <link href='normalize-css/normalize.css' rel='stylesheet' type='text/css'>
+
+        <!--Fonts-->
+        <link href='fonts/fonts.css' rel='stylesheet' type='text/css'>
+        <link href='fontawesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+        <!--CSS-->
+        <link href='css/global.css' rel='stylesheet' type='text/css'>
+        <link href='css/form.css' rel='stylesheet' type='text/css'>
+        <link href='css/context.css' rel='stylesheet' type='text/css'>
+
+
+        <!--Web Components-->
+        <script src="webcomponentsjs/webcomponents-lite.min.js"></script>
+
+        <link rel="import" href="pathway-viewer.html">
+
+        <link rel="import" href="conf/theme.html">
+
+        <style>
+            pathway-viewer {
+                background-color: #EDEDED;
+            }
+        </style>
+    </head>
+
+    <body unresolved class="fullbleed">
+        <pathway-viewer class="container" path="../pathways" path-type="url">
+            <div class="right-label ">
+                External box:
+            </div>
+            <div class="right-box" style="height:100px;">
+            </div>
+            <div class="left-label stv-btn stv-btn-shdw">!</div>
+        </pathway-viewer>
+        <script>
+            var pathwayViewer = document.querySelector('pathway-viewer');
+        </script>
+    </body>
+
+</html>

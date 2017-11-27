@@ -1,0 +1,14 @@
+N-mmu04710-6	inhibition	N-mmu04710-3 4
+N-mmu04710-15	inhibition	N-mmu04710-11
+N-mmu04710-16	activation	N-mmu04710-11
+N-mmu04710-17	activation	N-mmu04710-7
+N-mmu04710-18	activation	N-mmu04710-7
+N-mmu04710-20	activation	N-mmu04710-17
+N-mmu04710-21	activation	N-mmu04710-17
+N-mmu04710-3 4	activation	N-mmu04710-7
+N-mmu04710-3 4	activation	N-mmu04710-11
+N-mmu04710-3 4	activation	N-mmu04710-23
+N-mmu04710-3 4	activation	N-mmu04710-6
+N-mmu04710-3 4	activation	N-mmu04710-5
+N-mmu04710-10 8 9	inhibition	N-mmu04710-3 4
+N-mmu04710-12 13	inhibition	N-mmu04710-7

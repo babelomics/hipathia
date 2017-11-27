@@ -1,0 +1,34 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-rno05010-10	Casp9	810	377	white	rectangle	gene	0.5	black	46	17	58918
+N-rno05010-13	100363502	712	396	white	rectangle	gene	0.5	black	46	17	100363502,25309,25310
+N-rno05010-14	Apaf1	712	358	white	rectangle	gene	0.5	black	46	17	78963
+N-rno05010-23	Psen1	679	249	white	rectangle	gene	0.5	black	46	17	29192,81751
+N-rno05010-25	Gnaq	352	308	white	rectangle	gene	0.5	black	46	17	81666
+N-rno05010-26	Plcb1	424	307	white	rectangle	gene	0.5	black	46	17	24654,25031,29322,85240
+N-rno05010-27	C01245	425	266	white	circle	compound	0.5	black	8	8	NA
+N-rno05010-30	C00076	408	211	white	circle	compound	0.5	black	8	8	NA
+N-rno05010-33	Capn1	409	105	white	rectangle	gene	0.5	black	46	17	29153,29154
+N-rno05010-34	Cdk5r1	409	54	white	rectangle	gene	0.5	black	46	17	116671
+N-rno05010-35	Cdk5r1*	498	54	white	rectangle	gene	0.5	black	46	17	116671
+N-rno05010-36	Cdk5	498	14	white	rectangle	gene	0.5	black	46	17	140908
+N-rno05010-38	Fas	277	374	white	rectangle	gene	0.5	black	46	17	246097,25625
+N-rno05010-39	Fadd	350	373	white	rectangle	gene	0.5	black	46	17	266610
+N-rno05010-40	Casp8	423	373	white	rectangle	gene	0.5	black	46	17	64044
+N-rno05010-46	Nos1	468	105	white	rectangle	gene	0.5	black	46	17	24598
+N-rno05010-53	Calm1	567	351	white	rectangle	gene	0.5	black	46	17	24242,24244,307100,364774,50663,691455
+N-rno05010-54	Ppp3cc	637	351	white	rectangle	gene	0.5	black	46	17	171378,24674,24675,29748,29749
+N-rno05010-65	Gsk3b	580	0	white	rectangle	gene	0.5	black	46	17	84027
+N-rno05010-52 60	Apoe Lpl	211	405	white	rectangle	gene,gene	0.5	black	46	17	25728,/,24539
+N-rno05010-8 62	App Nae1	276	631	white	rectangle	gene,gene	0.5	black	46	17	54226,/,84019
+N-rno05010-8 58	App Apbb1	276	631	white	rectangle	gene,gene	0.5	black	46	17	54226,/,29722
+N-rno05010-12	Casp3	885	377	white	rectangle	gene	0.5	black	46	17	25402
+N-rno05010-49	Eif2ak3	659	166	white	rectangle	gene	0.5	black	46	17	29702
+N-rno05010-50	Ern1	714	166	white	rectangle	gene	0.5	black	46	17	498013
+N-rno05010-51	Atf6	768	166	white	rectangle	gene	0.5	black	46	17	304962
+N-rno05010-21	Itpr1	587	191	white	rectangle	gene	0.5	black	46	17	25262,25679,81678
+N-rno05010-37	Mapt	611	34	white	rectangle	gene	0.5	black	46	17	29477
+N-rno05010-41	Bid	494	373	white	rectangle	gene	0.5	black	46	17	64625
+N-rno05010-47	C00533	561	104	white	circle	compound	0.5	black	8	8	NA
+N-rno05010-55	Bad	655	391	white	rectangle	gene	0.5	black	46	17	64639
+N-rno05010-59	Lrp1	277	414	white	rectangle	gene	0.5	black	46	17	299858
+N-rno05010-61	Gapdh	356	605	white	rectangle	gene	0.5	black	46	17	24383,303448

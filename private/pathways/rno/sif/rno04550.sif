@@ -1,0 +1,56 @@
+N-rno04550-1	activation	N-rno04550-5
+N-rno04550-4	inhibition	N-rno04550-8
+N-rno04550-5	activation	N-rno04550-4
+N-rno04550-7	inhibition	N-rno04550-100
+N-rno04550-8	inhibition	N-rno04550-7
+N-rno04550-8	inhibition	N-rno04550-2 3 7
+N-rno04550-11	activation	N-rno04550-12
+N-rno04550-12	activation	N-rno04550-13
+N-rno04550-12	activation	N-rno04550-19
+N-rno04550-12	activation	N-rno04550-16
+N-rno04550-13	activation	N-rno04550-14
+N-rno04550-14	activation	N-rno04550-15
+N-rno04550-14	activation	N-rno04550-66
+N-rno04550-15	activation	N-rno04550-28
+N-rno04550-16	activation	N-rno04550-17
+N-rno04550-18	activation	N-rno04550-26
+N-rno04550-19	activation	N-rno04550-54
+N-rno04550-20	activation	N-rno04550-21
+N-rno04550-21	activation	N-rno04550-22
+N-rno04550-23	activation	N-rno04550-24
+N-rno04550-24	inhibition	N-rno04550-25
+N-rno04550-24	inhibition	N-rno04550-60
+N-rno04550-24	activation	N-rno04550-68 105
+N-rno04550-26	activation	N-rno04550-27
+N-rno04550-27	activation	N-rno04550-28
+N-rno04550-28	activation	N-rno04550-26
+N-rno04550-29	activation	N-rno04550-30
+N-rno04550-30	activation	N-rno04550-53 64
+N-rno04550-31	activation	N-rno04550-32
+N-rno04550-32	activation	N-rno04550-33
+N-rno04550-33	activation	N-rno04550-34
+N-rno04550-35	activation	N-rno04550-36
+N-rno04550-37	activation	N-rno04550-38
+N-rno04550-38	activation	N-rno04550-31
+N-rno04550-38	activation	N-rno04550-35
+N-rno04550-39	activation	N-rno04550-61
+N-rno04550-40	activation	N-rno04550-41
+N-rno04550-41	activation	N-rno04550-35
+N-rno04550-42	activation	N-rno04550-46
+N-rno04550-45	inhibition	N-rno04550-48
+N-rno04550-46	activation	N-rno04550-45
+N-rno04550-48	inhibition	N-rno04550-47
+N-rno04550-48	inhibition	N-rno04550-67
+N-rno04550-50	activation	N-rno04550-51
+N-rno04550-51	activation	N-rno04550-52
+N-rno04550-52	activation	N-rno04550-50
+N-rno04550-54	activation	N-rno04550-65
+N-rno04550-61	activation	N-rno04550-62 63
+N-rno04550-65	inhibition	N-rno04550-18
+N-rno04550-100	inhibition	N-rno04550-101
+N-rno04550-102	inhibition	N-rno04550-65
+N-rno04550-106	activation	N-rno04550-21
+N-rno04550-107	activation	N-rno04550-61
+N-rno04550-2 3 7	activation	N-rno04550-9
+N-rno04550-68 105	activation	N-rno04550-102
+N-rno04550-68 105	activation	N-rno04550-69

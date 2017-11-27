@@ -1,0 +1,32 @@
+N-rno05133-16	activation	N-rno05133-45
+N-rno05133-17	activation	N-rno05133-71
+N-rno05133-17	activation	N-rno05133-72
+N-rno05133-19	activation	N-rno05133-25 26
+N-rno05133-19	activation	N-rno05133-78
+N-rno05133-19	activation	N-rno05133-72
+N-rno05133-19	activation	N-rno05133-41
+N-rno05133-25	activation	N-rno05133-76 97
+N-rno05133-28	activation	N-rno05133-29
+N-rno05133-29	activation	N-rno05133-30
+N-rno05133-41	activation	N-rno05133-71
+N-rno05133-41	activation	N-rno05133-74
+N-rno05133-41	activation	N-rno05133-72
+N-rno05133-45	activation	N-rno05133-46
+N-rno05133-55	inhibition	N-rno05133-57 58
+N-rno05133-56	inhibition	N-rno05133-51 52 53
+N-rno05133-71	activation	N-rno05133-73
+N-rno05133-72	activation	N-rno05133-73
+N-rno05133-74	activation	N-rno05133-73
+N-rno05133-77	activation	N-rno05133-71
+N-rno05133-77	activation	N-rno05133-74
+N-rno05133-77	activation	N-rno05133-24
+N-rno05133-78	activation	N-rno05133-79
+N-rno05133-79	activation	N-rno05133-27
+N-rno05133-89	activation	N-rno05133-94
+N-rno05133-90	activation	N-rno05133-94
+N-rno05133-91	activation	N-rno05133-92 93 95
+N-rno05133-92 93 95	activation	N-rno05133-96
+N-rno05133-51 52 53	activation	N-rno05133-57 58
+N-rno05133-57 58	activation	N-rno05133-59
+N-rno05133-57 58	activation	N-rno05133-60
+N-rno05133-76 97	activation	N-rno05133-77

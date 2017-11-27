@@ -1,0 +1,19 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-hsa05131-2	RAC1	626	572	white	rectangle	gene	0.5	black	46	17	5879
+N-hsa05131-3	DOCK1	626	611	white	rectangle	gene	0.5	black	46	17	1793
+N-hsa05131-8	ELMO2	626	650	white	rectangle	gene	0.5	black	46	17	63916,79767,9844
+N-hsa05131-9	RHOG	626	691	white	rectangle	gene	0.5	black	46	17	391
+N-hsa05131-10	CDC42	503	586	white	rectangle	gene	0.5	black	46	17	998
+N-hsa05131-11	WASF2	627	529	white	rectangle	gene	0.5	black	46	17	10163,8936
+N-hsa05131-26	NOD1	374	109	white	rectangle	gene	0.5	black	46	17	10392,64127
+N-hsa05131-27	RIPK2	444	109	white	rectangle	gene	0.5	black	46	17	8767
+N-hsa05131-31	NFKBIA	577	47	white	rectangle	gene	0.5	black	46	17	4792,4793
+N-hsa05131-32	NFKB1	577	81	white	rectangle	gene	0.5	black	46	17	4790,5970
+N-hsa05131-34	MAPK8	578	161	white	rectangle	gene	0.5	black	46	17	5599,5601,5602
+N-hsa05131-35	MAPK1	578	141	white	rectangle	gene	0.5	black	46	17	5594,5595
+N-hsa05131-36	MAPK14	578	121	white	rectangle	gene	0.5	black	46	17	1432,5600,5603,6300
+N-hsa05131-39	102724594	706	158	white	rectangle	gene	0.5	black	43	17	102724594,199746,7307
+N-hsa05131-28 29 30	IKBKG CHUK IKBKB	503	64	white	rectangle	gene,gene,gene	0.5	black	46	17	8517,/,1147,/,3551
+N-hsa05131-41 42	UBE2D2 FBXW11	503	0	white	rectangle	gene,gene	0.5	black	46	17	7322,/,23291,8945
+N-hsa05131-12	ARPC5	627	483	white	rectangle	gene	0.5	black	46	17	10092,10093,10094,10095,10109,10552,81873
+N-hsa05131-38	CXCL8	754	100	white	rectangle	gene	0.5	black	43	17	3576

@@ -1,0 +1,31 @@
+N-mmu04916-1	inhibition	N-mmu04916-33
+N-mmu04916-5	activation	N-mmu04916-8
+N-mmu04916-5	activation	N-mmu04916-7
+N-mmu04916-5	activation	N-mmu04916-6
+N-mmu04916-11	activation	N-mmu04916-10
+N-mmu04916-12	activation	N-mmu04916-23
+N-mmu04916-13	activation	N-mmu04916-12
+N-mmu04916-14	activation	N-mmu04916-42
+N-mmu04916-17	activation	N-mmu04916-16
+N-mmu04916-18	activation	N-mmu04916-14
+N-mmu04916-22	activation	N-mmu04916-36
+N-mmu04916-23	activation	N-mmu04916-11
+N-mmu04916-23	activation	N-mmu04916-32
+N-mmu04916-24	inhibition	N-mmu04916-37
+N-mmu04916-26	activation	N-mmu04916-25 30
+N-mmu04916-27	activation	N-mmu04916-15
+N-mmu04916-28	activation	N-mmu04916-31
+N-mmu04916-29	activation	N-mmu04916-4
+N-mmu04916-32	activation	N-mmu04916-9
+N-mmu04916-33	inhibition	N-mmu04916-34
+N-mmu04916-34	activation	N-mmu04916-27
+N-mmu04916-35	activation	N-mmu04916-37
+N-mmu04916-36	activation	N-mmu04916-1
+N-mmu04916-37	activation	N-mmu04916-28
+N-mmu04916-38	activation	N-mmu04916-22
+N-mmu04916-39	activation	N-mmu04916-5
+N-mmu04916-40	activation	N-mmu04916-39
+N-mmu04916-41	activation	N-mmu04916-40
+N-mmu04916-42	activation	N-mmu04916-41
+N-mmu04916-43	activation	N-mmu04916-13
+N-mmu04916-25 30	activation	N-mmu04916-15

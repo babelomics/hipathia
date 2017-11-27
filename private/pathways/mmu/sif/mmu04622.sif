@@ -1,0 +1,45 @@
+N-mmu04622-2	activation	N-mmu04622-5 8 37
+N-mmu04622-2	activation	N-mmu04622-5 46
+N-mmu04622-2	activation	N-mmu04622-5 20
+N-mmu04622-2	activation	N-mmu04622-5 33
+N-mmu04622-3	activation	N-mmu04622-1 29
+N-mmu04622-3	activation	N-mmu04622-1 30 31
+N-mmu04622-4	inhibition	N-mmu04622-1 29
+N-mmu04622-4	inhibition	N-mmu04622-1 30 31
+N-mmu04622-7	inhibition	N-mmu04622-5 8 37
+N-mmu04622-7	inhibition	N-mmu04622-8 12 13 14
+N-mmu04622-15	activation	N-mmu04622-16
+N-mmu04622-16	activation	N-mmu04622-21 22 23
+N-mmu04622-22	activation	N-mmu04622-24
+N-mmu04622-24	activation	N-mmu04622-6
+N-mmu04622-27	activation	N-mmu04622-2
+N-mmu04622-27	inhibition	N-mmu04622-1 29
+N-mmu04622-27	inhibition	N-mmu04622-1 30 31
+N-mmu04622-28	inhibition	N-mmu04622-2
+N-mmu04622-32	inhibition	N-mmu04622-5 8 37
+N-mmu04622-32	inhibition	N-mmu04622-5 46
+N-mmu04622-32	inhibition	N-mmu04622-5 20
+N-mmu04622-32	inhibition	N-mmu04622-5 33
+N-mmu04622-34	inhibition	N-mmu04622-1 29
+N-mmu04622-34	inhibition	N-mmu04622-1 30 31
+N-mmu04622-39	inhibition	N-mmu04622-42 10 26 36
+N-mmu04622-40	inhibition	N-mmu04622-2
+N-mmu04622-43	activation	N-mmu04622-6
+N-mmu04622-43	activation	N-mmu04622-44
+N-mmu04622-43	activation	N-mmu04622-45
+N-mmu04622-47	activation	N-mmu04622-6
+N-mmu04622-47	activation	N-mmu04622-45
+N-mmu04622-1 29	activation	N-mmu04622-5 8 37
+N-mmu04622-1 29	activation	N-mmu04622-5 46
+N-mmu04622-1 29	activation	N-mmu04622-5 20
+N-mmu04622-1 29	activation	N-mmu04622-5 33
+N-mmu04622-1 30 31	activation	N-mmu04622-5 8 37
+N-mmu04622-1 30 31	activation	N-mmu04622-5 46
+N-mmu04622-1 30 31	activation	N-mmu04622-5 20
+N-mmu04622-1 30 31	activation	N-mmu04622-5 33
+N-mmu04622-5 46	activation	N-mmu04622-47
+N-mmu04622-5 20	activation	N-mmu04622-43
+N-mmu04622-8 12 13 14	activation	N-mmu04622-42 10 26 36
+N-mmu04622-37 12 13 14	activation	N-mmu04622-42 10 26 36
+N-mmu04622-42 10 26 36	activation	N-mmu04622-11
+N-mmu04622-42 10 26 36	activation	N-mmu04622-9 35

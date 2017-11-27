@@ -1,0 +1,35 @@
+N-hsa05220-2	activation	N-hsa05220-12 13
+N-hsa05220-5	activation	N-hsa05220-30
+N-hsa05220-5	activation	N-hsa05220-33 34 35
+N-hsa05220-5	activation	N-hsa05220-31
+N-hsa05220-5	activation	N-hsa05220-15
+N-hsa05220-5	activation	N-hsa05220-18
+N-hsa05220-11	activation	N-hsa05220-16 17
+N-hsa05220-14	activation	N-hsa05220-12 13
+N-hsa05220-18	activation	N-hsa05220-3
+N-hsa05220-20	activation	N-hsa05220-21
+N-hsa05220-23	inhibition	N-hsa05220-6
+N-hsa05220-24	activation	N-hsa05220-21
+N-hsa05220-26	inhibition	N-hsa05220-25
+N-hsa05220-27	activation	N-hsa05220-37
+N-hsa05220-28	inhibition	N-hsa05220-42 43
+N-hsa05220-29	activation	N-hsa05220-53
+N-hsa05220-30	activation	N-hsa05220-32
+N-hsa05220-30	activation	N-hsa05220-29
+N-hsa05220-32	activation	N-hsa05220-46
+N-hsa05220-32	activation	N-hsa05220-4
+N-hsa05220-37	inhibition	N-hsa05220-38
+N-hsa05220-38	activation	N-hsa05220-28
+N-hsa05220-39	activation	N-hsa05220-40
+N-hsa05220-45	activation	N-hsa05220-24
+N-hsa05220-45	activation	N-hsa05220-23
+N-hsa05220-45	inhibition	N-hsa05220-26
+N-hsa05220-45	inhibition	N-hsa05220-22
+N-hsa05220-46	activation	N-hsa05220-45
+N-hsa05220-47	activation	N-hsa05220-42 43
+N-hsa05220-51	activation	N-hsa05220-50
+N-hsa05220-52	activation	N-hsa05220-51
+N-hsa05220-53	activation	N-hsa05220-52
+N-hsa05220-33 34 35	activation	N-hsa05220-46
+N-hsa05220-16 17	activation	N-hsa05220-19 41
+N-hsa05220-42 43	activation	N-hsa05220-40

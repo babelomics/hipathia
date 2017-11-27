@@ -1,0 +1,19 @@
+N-hsa04960-5	activation	N-hsa04960-27
+N-hsa04960-5	inhibition	N-hsa04960-10 29
+N-hsa04960-6	activation	N-hsa04960-8
+N-hsa04960-8	activation	N-hsa04960-3
+N-hsa04960-8	activation	N-hsa04960-5
+N-hsa04960-8	activation	N-hsa04960-9
+N-hsa04960-8	activation	N-hsa04960-13
+N-hsa04960-8	activation	N-hsa04960-4
+N-hsa04960-9	activation	N-hsa04960-20
+N-hsa04960-14	activation	N-hsa04960-15
+N-hsa04960-14	activation	N-hsa04960-8
+N-hsa04960-18	activation	N-hsa04960-19
+N-hsa04960-19	activation	N-hsa04960-20
+N-hsa04960-20	activation	N-hsa04960-23
+N-hsa04960-21	activation	N-hsa04960-5
+N-hsa04960-22	activation	N-hsa04960-18
+N-hsa04960-23	activation	N-hsa04960-21
+N-hsa04960-26	activation	N-hsa04960-18
+N-hsa04960-10 29	inhibition	N-hsa04960-3

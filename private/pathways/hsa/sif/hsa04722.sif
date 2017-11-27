@@ -1,0 +1,194 @@
+N-hsa04722-5	activation	N-hsa04722-2 15
+N-hsa04722-5	activation	N-hsa04722-2 64
+N-hsa04722-5	activation	N-hsa04722-2 47
+N-hsa04722-5	activation	N-hsa04722-18 61
+N-hsa04722-5	activation	N-hsa04722-18 72
+N-hsa04722-5	activation	N-hsa04722-18 71
+N-hsa04722-5	activation	N-hsa04722-18 69
+N-hsa04722-5	activation	N-hsa04722-18 74
+N-hsa04722-5	activation	N-hsa04722-18 42
+N-hsa04722-5	activation	N-hsa04722-18 75 76
+N-hsa04722-6	activation	N-hsa04722-2 15
+N-hsa04722-6	activation	N-hsa04722-2 64
+N-hsa04722-6	activation	N-hsa04722-2 47
+N-hsa04722-6	activation	N-hsa04722-18 61
+N-hsa04722-6	activation	N-hsa04722-18 72
+N-hsa04722-6	activation	N-hsa04722-18 71
+N-hsa04722-6	activation	N-hsa04722-18 69
+N-hsa04722-6	activation	N-hsa04722-18 74
+N-hsa04722-6	activation	N-hsa04722-18 42
+N-hsa04722-6	activation	N-hsa04722-18 75 76
+N-hsa04722-7	activation	N-hsa04722-1 15
+N-hsa04722-7	activation	N-hsa04722-1 64
+N-hsa04722-7	activation	N-hsa04722-1 47
+N-hsa04722-7	activation	N-hsa04722-2 15
+N-hsa04722-7	activation	N-hsa04722-2 64
+N-hsa04722-7	activation	N-hsa04722-2 47
+N-hsa04722-7	activation	N-hsa04722-3 15
+N-hsa04722-7	activation	N-hsa04722-3 64
+N-hsa04722-7	activation	N-hsa04722-3 47
+N-hsa04722-7	activation	N-hsa04722-18 61
+N-hsa04722-7	activation	N-hsa04722-18 72
+N-hsa04722-7	activation	N-hsa04722-18 71
+N-hsa04722-7	activation	N-hsa04722-18 69
+N-hsa04722-7	activation	N-hsa04722-18 74
+N-hsa04722-7	activation	N-hsa04722-18 42
+N-hsa04722-7	activation	N-hsa04722-18 75 76
+N-hsa04722-9	activation	N-hsa04722-16
+N-hsa04722-9	activation	N-hsa04722-80
+N-hsa04722-16	activation	N-hsa04722-21
+N-hsa04722-17	activation	N-hsa04722-1 15
+N-hsa04722-17	activation	N-hsa04722-1 64
+N-hsa04722-17	activation	N-hsa04722-1 47
+N-hsa04722-17	activation	N-hsa04722-18 61
+N-hsa04722-17	activation	N-hsa04722-18 72
+N-hsa04722-17	activation	N-hsa04722-18 71
+N-hsa04722-17	activation	N-hsa04722-18 69
+N-hsa04722-17	activation	N-hsa04722-18 74
+N-hsa04722-17	activation	N-hsa04722-18 42
+N-hsa04722-17	activation	N-hsa04722-18 75 76
+N-hsa04722-19	activation	N-hsa04722-36
+N-hsa04722-19	inhibition	N-hsa04722-35
+N-hsa04722-19	inhibition	N-hsa04722-33
+N-hsa04722-19	inhibition	N-hsa04722-34
+N-hsa04722-20	activation	N-hsa04722-22
+N-hsa04722-20	activation	N-hsa04722-60
+N-hsa04722-20	activation	N-hsa04722-57
+N-hsa04722-20	activation	N-hsa04722-8 30
+N-hsa04722-20	activation	N-hsa04722-8 32
+N-hsa04722-21	activation	N-hsa04722-25
+N-hsa04722-22	activation	N-hsa04722-21
+N-hsa04722-25	activation	N-hsa04722-26
+N-hsa04722-25	inhibition	N-hsa04722-20
+N-hsa04722-25	activation	N-hsa04722-44
+N-hsa04722-26	activation	N-hsa04722-38
+N-hsa04722-26	inhibition	N-hsa04722-20
+N-hsa04722-29	activation	N-hsa04722-31
+N-hsa04722-31	activation	N-hsa04722-21
+N-hsa04722-36	activation	N-hsa04722-37
+N-hsa04722-40	activation	N-hsa04722-19
+N-hsa04722-44	activation	N-hsa04722-38
+N-hsa04722-45	activation	N-hsa04722-46
+N-hsa04722-49	activation	N-hsa04722-53
+N-hsa04722-49	activation	N-hsa04722-51
+N-hsa04722-51	activation	N-hsa04722-85
+N-hsa04722-52	activation	N-hsa04722-65
+N-hsa04722-54	activation	N-hsa04722-65
+N-hsa04722-55	activation	N-hsa04722-8 30
+N-hsa04722-55	activation	N-hsa04722-8 32
+N-hsa04722-56	activation	N-hsa04722-38
+N-hsa04722-57	activation	N-hsa04722-56
+N-hsa04722-58	activation	N-hsa04722-59
+N-hsa04722-59	activation	N-hsa04722-26
+N-hsa04722-60	activation	N-hsa04722-58
+N-hsa04722-65	activation	N-hsa04722-49
+N-hsa04722-66	activation	N-hsa04722-52
+N-hsa04722-66	activation	N-hsa04722-54
+N-hsa04722-67	activation	N-hsa04722-52
+N-hsa04722-67	activation	N-hsa04722-54
+N-hsa04722-68	inhibition	N-hsa04722-51
+N-hsa04722-78	activation	N-hsa04722-86
+N-hsa04722-80	activation	N-hsa04722-45
+N-hsa04722-86	activation	N-hsa04722-84
+N-hsa04722-1 15	activation	N-hsa04722-62
+N-hsa04722-1 15	activation	N-hsa04722-63
+N-hsa04722-1 15	activation	N-hsa04722-55
+N-hsa04722-1 15	activation	N-hsa04722-9
+N-hsa04722-1 15	activation	N-hsa04722-14 32
+N-hsa04722-1 15	activation	N-hsa04722-27 39
+N-hsa04722-1 15	activation	N-hsa04722-27 43
+N-hsa04722-1 64	activation	N-hsa04722-62
+N-hsa04722-1 64	activation	N-hsa04722-63
+N-hsa04722-1 64	activation	N-hsa04722-55
+N-hsa04722-1 64	activation	N-hsa04722-9
+N-hsa04722-1 64	activation	N-hsa04722-14 32
+N-hsa04722-1 64	activation	N-hsa04722-27 39
+N-hsa04722-1 64	activation	N-hsa04722-27 43
+N-hsa04722-1 47	activation	N-hsa04722-62
+N-hsa04722-1 47	activation	N-hsa04722-63
+N-hsa04722-1 47	activation	N-hsa04722-55
+N-hsa04722-1 47	activation	N-hsa04722-9
+N-hsa04722-1 47	activation	N-hsa04722-14 32
+N-hsa04722-1 47	activation	N-hsa04722-27 39
+N-hsa04722-1 47	activation	N-hsa04722-27 43
+N-hsa04722-2 15	activation	N-hsa04722-62
+N-hsa04722-2 15	activation	N-hsa04722-63
+N-hsa04722-2 15	activation	N-hsa04722-55
+N-hsa04722-2 15	activation	N-hsa04722-9
+N-hsa04722-2 15	activation	N-hsa04722-14 32
+N-hsa04722-2 64	activation	N-hsa04722-62
+N-hsa04722-2 64	activation	N-hsa04722-63
+N-hsa04722-2 64	activation	N-hsa04722-55
+N-hsa04722-2 64	activation	N-hsa04722-9
+N-hsa04722-2 64	activation	N-hsa04722-14 32
+N-hsa04722-2 47	activation	N-hsa04722-62
+N-hsa04722-2 47	activation	N-hsa04722-63
+N-hsa04722-2 47	activation	N-hsa04722-55
+N-hsa04722-2 47	activation	N-hsa04722-9
+N-hsa04722-2 47	activation	N-hsa04722-14 32
+N-hsa04722-3 15	activation	N-hsa04722-62
+N-hsa04722-3 15	activation	N-hsa04722-63
+N-hsa04722-3 15	activation	N-hsa04722-55
+N-hsa04722-3 15	activation	N-hsa04722-9
+N-hsa04722-3 15	activation	N-hsa04722-14 32
+N-hsa04722-3 64	activation	N-hsa04722-62
+N-hsa04722-3 64	activation	N-hsa04722-63
+N-hsa04722-3 64	activation	N-hsa04722-55
+N-hsa04722-3 64	activation	N-hsa04722-9
+N-hsa04722-3 64	activation	N-hsa04722-14 32
+N-hsa04722-3 47	activation	N-hsa04722-62
+N-hsa04722-3 47	activation	N-hsa04722-63
+N-hsa04722-3 47	activation	N-hsa04722-55
+N-hsa04722-3 47	activation	N-hsa04722-9
+N-hsa04722-3 47	activation	N-hsa04722-14 32
+N-hsa04722-8 30	activation	N-hsa04722-19
+N-hsa04722-8 30	activation	N-hsa04722-40
+N-hsa04722-8 32	activation	N-hsa04722-19
+N-hsa04722-8 32	activation	N-hsa04722-40
+N-hsa04722-15 24	activation	N-hsa04722-20
+N-hsa04722-18 61	activation	N-hsa04722-50
+N-hsa04722-18 61	activation	N-hsa04722-66
+N-hsa04722-18 61	activation	N-hsa04722-67
+N-hsa04722-18 61	inhibition	N-hsa04722-8 30
+N-hsa04722-18 61	inhibition	N-hsa04722-8 32
+N-hsa04722-18 61	activation	N-hsa04722-73 77
+N-hsa04722-18 72	inhibition	N-hsa04722-50
+N-hsa04722-18 72	activation	N-hsa04722-66
+N-hsa04722-18 72	activation	N-hsa04722-67
+N-hsa04722-18 72	inhibition	N-hsa04722-8 30
+N-hsa04722-18 72	inhibition	N-hsa04722-8 32
+N-hsa04722-18 72	activation	N-hsa04722-73 77
+N-hsa04722-18 71	inhibition	N-hsa04722-50
+N-hsa04722-18 71	activation	N-hsa04722-66
+N-hsa04722-18 71	activation	N-hsa04722-67
+N-hsa04722-18 71	inhibition	N-hsa04722-8 30
+N-hsa04722-18 71	inhibition	N-hsa04722-8 32
+N-hsa04722-18 71	activation	N-hsa04722-73 77
+N-hsa04722-18 69	inhibition	N-hsa04722-50
+N-hsa04722-18 69	activation	N-hsa04722-66
+N-hsa04722-18 69	activation	N-hsa04722-67
+N-hsa04722-18 69	inhibition	N-hsa04722-8 30
+N-hsa04722-18 69	inhibition	N-hsa04722-8 32
+N-hsa04722-18 69	inhibition	N-hsa04722-70
+N-hsa04722-18 69	activation	N-hsa04722-49
+N-hsa04722-18 69	activation	N-hsa04722-73 77
+N-hsa04722-18 74	inhibition	N-hsa04722-50
+N-hsa04722-18 74	activation	N-hsa04722-66
+N-hsa04722-18 74	activation	N-hsa04722-67
+N-hsa04722-18 74	inhibition	N-hsa04722-8 30
+N-hsa04722-18 74	inhibition	N-hsa04722-8 32
+N-hsa04722-18 74	activation	N-hsa04722-73 77
+N-hsa04722-18 42	inhibition	N-hsa04722-50
+N-hsa04722-18 42	activation	N-hsa04722-66
+N-hsa04722-18 42	activation	N-hsa04722-67
+N-hsa04722-18 42	inhibition	N-hsa04722-8 30
+N-hsa04722-18 42	inhibition	N-hsa04722-8 32
+N-hsa04722-18 42	activation	N-hsa04722-73 77
+N-hsa04722-18 75 76	inhibition	N-hsa04722-50
+N-hsa04722-18 75 76	activation	N-hsa04722-66
+N-hsa04722-18 75 76	activation	N-hsa04722-67
+N-hsa04722-18 75 76	inhibition	N-hsa04722-8 30
+N-hsa04722-18 75 76	inhibition	N-hsa04722-8 32
+N-hsa04722-18 75 76	activation	N-hsa04722-78
+N-hsa04722-18 75 76	activation	N-hsa04722-73 77
+N-hsa04722-27 28	activation	N-hsa04722-29

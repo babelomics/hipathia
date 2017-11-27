@@ -1,0 +1,37 @@
+N-rno04720-1	activation	N-rno04720-16
+N-rno04720-3	activation	N-rno04720-4 15
+N-rno04720-10	activation	N-rno04720-30
+N-rno04720-10	activation	N-rno04720-21
+N-rno04720-10	activation	N-rno04720-23
+N-rno04720-11	activation	N-rno04720-21
+N-rno04720-11	activation	N-rno04720-16
+N-rno04720-11	activation	N-rno04720-30
+N-rno04720-12	inhibition	N-rno04720-28
+N-rno04720-13	activation	N-rno04720-18
+N-rno04720-13	activation	N-rno04720-32
+N-rno04720-13	activation	N-rno04720-12
+N-rno04720-13	activation	N-rno04720-20
+N-rno04720-13	activation	N-rno04720-10
+N-rno04720-13	activation	N-rno04720-26
+N-rno04720-13	activation	N-rno04720-3
+N-rno04720-14	activation	N-rno04720-4 15
+N-rno04720-16	activation	N-rno04720-13
+N-rno04720-17	activation	N-rno04720-27
+N-rno04720-17	activation	N-rno04720-23
+N-rno04720-17	activation	N-rno04720-21
+N-rno04720-17	activation	N-rno04720-28
+N-rno04720-19	inhibition	N-rno04720-10
+N-rno04720-20	activation	N-rno04720-17
+N-rno04720-20	activation	N-rno04720-22
+N-rno04720-21	activation	N-rno04720-16
+N-rno04720-22	activation	N-rno04720-27
+N-rno04720-23	activation	N-rno04720-14
+N-rno04720-24	activation	N-rno04720-23
+N-rno04720-25	activation	N-rno04720-24
+N-rno04720-26	activation	N-rno04720-25
+N-rno04720-27	activation	N-rno04720-25
+N-rno04720-28	inhibition	N-rno04720-19
+N-rno04720-29	activation	N-rno04720-31
+N-rno04720-30	activation	N-rno04720-29
+N-rno04720-31	activation	N-rno04720-1
+N-rno04720-31	activation	N-rno04720-32

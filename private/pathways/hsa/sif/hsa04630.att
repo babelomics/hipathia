@@ -1,0 +1,31 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-hsa04630-2	AKT3	429	0	white	rectangle	gene	0.5	black	46	17	10000,207,208
+N-hsa04630-3	PIK3R5	346	1	white	rectangle	gene	0.5	black	46	17	23533,5290,5291,5293,5294,5295,5296,8503
+N-hsa04630-4	SOS1	429	66	white	rectangle	gene	0.5	black	46	17	6654,6655
+N-hsa04630-6	CISH	900	253	white	rectangle	gene	0.5	black	46	17	1154
+N-hsa04630-8	SOCS4	948	253	white	rectangle	gene	0.5	black	46	17	122809,30837,8651,8835,9021,9306,9655
+N-hsa04630-9	CREBBP	688	154	white	rectangle	gene	0.5	black	46	17	1387,2033
+N-hsa04630-11	STAT1	352	187	white	rectangle	gene	0.5	black	46	17	6772,6773,6774,6775,6776,6777,6778
+N-hsa04630-12	PIAS3	743	221	white	rectangle	gene	0.5	black	46	17	10401,51588,8554,9063
+N-hsa04630-13	PTPN6	272	143	white	rectangle	gene	0.5	black	46	17	5777
+N-hsa04630-14	STAM2	284	233	white	rectangle	gene	0.5	black	46	17	10254,8027
+N-hsa04630-19	FHL1	746	154	white	rectangle	gene	0.5	black	46	17	2273
+N-hsa04630-23	PTPN2	689	221	white	rectangle	gene	0.5	black	46	17	5771
+N-hsa04630-32	HRAS	510	66	white	rectangle	gene	0.5	black	46	17	3265
+N-hsa04630-37	PTPN2*	223	143	white	rectangle	gene	0.5	black	46	17	5771
+N-hsa04630-38	IL24	99	212	white	rectangle	gene	0.5	black	46	17	11009,1437,1489,282616,282617,282618,29949,338376,3439,3440,3441,3442,3443,3444,3445,3446,3447,3448,3449,3451,3452,3456,3458,3467,3558,3562,3565,3567,3569,3574,3578,3586,3589,3592,3593,3596,3600,3976,5008,50604,50616,51561,53342,56832,59067,85480
+N-hsa04630-39	CNTF	99	161	white	rectangle	gene	0.5	black	46	17	1270,1440,1442,1443,2056,2688,2689,3952,5617,7066
+N-hsa04630-29 5	PTPN11 GRB2	346	75	white	rectangle	gene,gene	0.5	black	46	17	5781,/,2885
+N-hsa04630-10 40 41	IRF9 STAT1 STAT1	584	154	white	rectangle	gene,gene,gene	0.5	black	46	17	10379,/,6772,6773,6774,6775,6776,6777,6778,/,6772,6773,6774,6775,6776,6777,6778
+N-hsa04630-15 22	JAK1 IL22RA2	225	187	white	rectangle	gene,gene	0.5	black	46	17	3716,3717,3718,7297,/,116379,1271,1438,1439,1441,149233,163702,2057,2690,3454,3455,3459,3460,3559,3560,3561,3563,3566,3568,3570,3572,3575,3581,3587,3588,3590,3594,3595,3597,3598,3601,3953,3977,4352,50615,53832,53833,5618,58985,64109,9180,9466
+N-hsa04630-35	MTOR	510	0	white	rectangle	gene	0.5	black	46	17	2475
+N-hsa04630-33	RAF1	592	66	white	rectangle	gene	0.5	black	46	17	5894
+N-hsa04630-7	BCL2	900	230	white	rectangle	gene	0.5	black	46	17	596
+N-hsa04630-31	BCL2L1	900	211	white	rectangle	gene	0.5	black	46	17	598
+N-hsa04630-1	MYC	900	187	white	rectangle	gene	0.5	black	46	17	4609
+N-hsa04630-30	CDKN1A	900	168	white	rectangle	gene	0.5	black	46	17	1026
+N-hsa04630-34	AOX1	900	149	white	rectangle	gene	0.5	black	46	17	316
+N-hsa04630-36	GFAP	900	130	white	rectangle	gene	0.5	black	46	17	2670
+N-hsa04630-24	MCL1	948	230	white	rectangle	gene	0.5	black	46	17	4170
+N-hsa04630-27	PIM1	948	211	white	rectangle	gene	0.5	black	46	17	5292
+N-hsa04630-28	CCND1	948	187	white	rectangle	gene	0.5	black	46	17	595,894,896

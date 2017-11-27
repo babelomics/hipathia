@@ -1,0 +1,155 @@
+N-hsa05205-15	activation	N-hsa05205-17
+N-hsa05205-24	activation	N-hsa05205-27
+N-hsa05205-27	activation	N-hsa05205-30
+N-hsa05205-31	activation	N-hsa05205-24
+N-hsa05205-33	activation	N-hsa05205-97
+N-hsa05205-38	activation	N-hsa05205-15
+N-hsa05205-41	activation	N-hsa05205-2 45
+N-hsa05205-41	activation	N-hsa05205-45 46
+N-hsa05205-54	activation	N-hsa05205-58
+N-hsa05205-54	activation	N-hsa05205-59
+N-hsa05205-58	activation	N-hsa05205-103
+N-hsa05205-59	activation	N-hsa05205-103
+N-hsa05205-62	activation	N-hsa05205-64
+N-hsa05205-64	activation	N-hsa05205-66
+N-hsa05205-66	activation	N-hsa05205-69
+N-hsa05205-85	activation	N-hsa05205-81
+N-hsa05205-86	activation	N-hsa05205-62
+N-hsa05205-88	activation	N-hsa05205-91
+N-hsa05205-97	activation	N-hsa05205-31
+N-hsa05205-112	inhibition	N-hsa05205-113
+N-hsa05205-116	activation	N-hsa05205-119
+N-hsa05205-116	activation	N-hsa05205-120
+N-hsa05205-116	activation	N-hsa05205-121
+N-hsa05205-119	inhibition	N-hsa05205-226
+N-hsa05205-126	activation	N-hsa05205-127
+N-hsa05205-127	activation	N-hsa05205-129
+N-hsa05205-135	activation	N-hsa05205-136
+N-hsa05205-136	activation	N-hsa05205-137
+N-hsa05205-137	activation	N-hsa05205-140
+N-hsa05205-147	activation	N-hsa05205-146
+N-hsa05205-160	activation	N-hsa05205-333
+N-hsa05205-164	activation	N-hsa05205-193
+N-hsa05205-165	activation	N-hsa05205-183
+N-hsa05205-172	inhibition	N-hsa05205-175
+N-hsa05205-172	inhibition	N-hsa05205-176
+N-hsa05205-173	inhibition	N-hsa05205-175
+N-hsa05205-173	inhibition	N-hsa05205-176
+N-hsa05205-175	inhibition	N-hsa05205-179
+N-hsa05205-176	inhibition	N-hsa05205-179
+N-hsa05205-179	inhibition	N-hsa05205-451
+N-hsa05205-180	activation	N-hsa05205-183
+N-hsa05205-193	inhibition	N-hsa05205-195
+N-hsa05205-204	activation	N-hsa05205-206
+N-hsa05205-204	activation	N-hsa05205-208
+N-hsa05205-206	activation	N-hsa05205-210
+N-hsa05205-208	activation	N-hsa05205-213
+N-hsa05205-210	activation	N-hsa05205-213
+N-hsa05205-213	activation	N-hsa05205-215 216
+N-hsa05205-219	activation	N-hsa05205-220
+N-hsa05205-223	activation	N-hsa05205-219
+N-hsa05205-223	inhibition	N-hsa05205-112
+N-hsa05205-223	inhibition	N-hsa05205-224
+N-hsa05205-224	activation	N-hsa05205-109
+N-hsa05205-226	activation	N-hsa05205-116
+N-hsa05205-228	activation	N-hsa05205-226
+N-hsa05205-230	activation	N-hsa05205-233 234
+N-hsa05205-240	activation	N-hsa05205-126
+N-hsa05205-240	activation	N-hsa05205-135
+N-hsa05205-245	activation	N-hsa05205-142
+N-hsa05205-246	activation	N-hsa05205-245
+N-hsa05205-250	activation	N-hsa05205-252
+N-hsa05205-250	activation	N-hsa05205-253
+N-hsa05205-250	activation	N-hsa05205-254
+N-hsa05205-252	activation	N-hsa05205-256
+N-hsa05205-253	activation	N-hsa05205-256
+N-hsa05205-254	activation	N-hsa05205-256
+N-hsa05205-261	activation	N-hsa05205-271
+N-hsa05205-261	activation	N-hsa05205-280
+N-hsa05205-262	activation	N-hsa05205-150
+N-hsa05205-262	activation	N-hsa05205-144
+N-hsa05205-262	activation	N-hsa05205-145
+N-hsa05205-262	activation	N-hsa05205-146
+N-hsa05205-263	activation	N-hsa05205-147
+N-hsa05205-271	activation	N-hsa05205-273 274
+N-hsa05205-276	activation	N-hsa05205-278
+N-hsa05205-278	activation	N-hsa05205-270
+N-hsa05205-280	activation	N-hsa05205-284
+N-hsa05205-289	activation	N-hsa05205-337
+N-hsa05205-297	activation	N-hsa05205-298
+N-hsa05205-298	activation	N-hsa05205-304
+N-hsa05205-305	activation	N-hsa05205-308
+N-hsa05205-306	activation	N-hsa05205-400
+N-hsa05205-306	activation	N-hsa05205-305
+N-hsa05205-306	activation	N-hsa05205-320 327
+N-hsa05205-308	activation	N-hsa05205-323
+N-hsa05205-308	activation	N-hsa05205-313
+N-hsa05205-313	activation	N-hsa05205-315
+N-hsa05205-315	activation	N-hsa05205-317
+N-hsa05205-317	activation	N-hsa05205-318
+N-hsa05205-323	inhibition	N-hsa05205-324
+N-hsa05205-333	inhibition	N-hsa05205-158
+N-hsa05205-347	activation	N-hsa05205-236
+N-hsa05205-353	activation	N-hsa05205-352
+N-hsa05205-353	activation	N-hsa05205-250
+N-hsa05205-362	inhibition	N-hsa05205-369
+N-hsa05205-403	activation	N-hsa05205-297
+N-hsa05205-403	activation	N-hsa05205-404 419
+N-hsa05205-405	activation	N-hsa05205-406 409
+N-hsa05205-405	activation	N-hsa05205-409 411
+N-hsa05205-407	activation	N-hsa05205-415
+N-hsa05205-413	activation	N-hsa05205-415
+N-hsa05205-427	activation	N-hsa05205-431
+N-hsa05205-447	activation	N-hsa05205-246
+N-hsa05205-273 274	activation	N-hsa05205-276
+N-hsa05205-1 19	activation	N-hsa05205-33
+N-hsa05205-1 19	activation	N-hsa05205-2 39
+N-hsa05205-1 19	activation	N-hsa05205-2 45
+N-hsa05205-1 19	activation	N-hsa05205-7 93
+N-hsa05205-2 39	activation	N-hsa05205-41
+N-hsa05205-2 45	activation	N-hsa05205-41
+N-hsa05205-4 60	activation	N-hsa05205-86
+N-hsa05205-4 60	activation	N-hsa05205-88
+N-hsa05205-7 9	activation	N-hsa05205-38
+N-hsa05205-7 9	activation	N-hsa05205-34
+N-hsa05205-7 9	activation	N-hsa05205-22
+N-hsa05205-7 9	activation	N-hsa05205-2 39
+N-hsa05205-12 23	activation	N-hsa05205-24
+N-hsa05205-19 60	activation	N-hsa05205-88
+N-hsa05205-42 99	activation	N-hsa05205-2 45
+N-hsa05205-42 99	activation	N-hsa05205-45 46
+N-hsa05205-53 99 42 53	activation	N-hsa05205-54
+N-hsa05205-70 357	activation	N-hsa05205-362
+N-hsa05205-71 74 75	activation	N-hsa05205-77
+N-hsa05205-71 78	activation	N-hsa05205-77
+N-hsa05205-151 199	inhibition	N-hsa05205-160
+N-hsa05205-151 425	inhibition	N-hsa05205-160
+N-hsa05205-151 425	activation	N-hsa05205-434
+N-hsa05205-151 425	activation	N-hsa05205-427
+N-hsa05205-151 153 154	inhibition	N-hsa05205-160
+N-hsa05205-151 153 154	activation	N-hsa05205-158
+N-hsa05205-151 153 154	activation	N-hsa05205-188
+N-hsa05205-151 153 154	activation	N-hsa05205-189
+N-hsa05205-151 162	inhibition	N-hsa05205-160
+N-hsa05205-151 162	inhibition	N-hsa05205-165
+N-hsa05205-151 162	inhibition	N-hsa05205-164
+N-hsa05205-151 162	inhibition	N-hsa05205-180
+N-hsa05205-151 167	inhibition	N-hsa05205-160
+N-hsa05205-151 436 437	inhibition	N-hsa05205-160
+N-hsa05205-151 436 437	activation	N-hsa05205-422
+N-hsa05205-167 169	inhibition	N-hsa05205-164
+N-hsa05205-167 169	inhibition	N-hsa05205-165
+N-hsa05205-167 169	inhibition	N-hsa05205-180
+N-hsa05205-167 169	activation	N-hsa05205-172
+N-hsa05205-167 169	activation	N-hsa05205-173
+N-hsa05205-199 200	activation	N-hsa05205-204
+N-hsa05205-239 244	activation	N-hsa05205-240
+N-hsa05205-259 268	activation	N-hsa05205-261
+N-hsa05205-265 268	activation	N-hsa05205-262
+N-hsa05205-265 268	activation	N-hsa05205-263
+N-hsa05205-320 327	activation	N-hsa05205-319
+N-hsa05205-342 348	activation	N-hsa05205-236
+N-hsa05205-343 348	activation	N-hsa05205-238
+N-hsa05205-404 419	activation	N-hsa05205-289
+N-hsa05205-406 409	activation	N-hsa05205-407
+N-hsa05205-409 411	activation	N-hsa05205-413

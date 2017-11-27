@@ -1,0 +1,29 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-rno04664-1	RGD1565478	112	190	white	rectangle	gene	0.5	black	46	17	691714
+N-rno04664-2	RGD1565478*	112	263	white	rectangle	gene	0.5	black	46	17	691714
+N-rno04664-17	Fyn	288	270	white	rectangle	gene	0.5	black	46	17	25150
+N-rno04664-26	Map2k4	548	236	white	rectangle	gene	0.5	black	46	17	287398,363855
+N-rno04664-27	108348082	548	175	white	rectangle	gene	0.5	black	46	17	108348082,114495,303200
+N-rno04664-28	Pdpk1	510	298	white	rectangle	gene	0.5	black	46	17	81745
+N-rno04664-29	Pik3ca	423	243	white	rectangle	gene	0.5	black	46	17	170911,25513,29741,298947,366508,497931,60664,85243
+N-rno04664-32	Lcp2	364	199	white	rectangle	gene	0.5	black	46	17	155918
+N-rno04664-33	Btk	305	414	white	rectangle	gene	0.5	black	46	17	367901
+N-rno04664-35	Lyn	251	317	white	rectangle	gene	0.5	black	46	17	81515
+N-rno04664-36	Lat	303	44	white	rectangle	gene	0.5	black	46	17	81511
+N-rno04664-37	Plcg1	439	384	white	rectangle	gene	0.5	black	46	17	25738,29337
+N-rno04664-40	Mapk1	625	110	white	rectangle	gene	0.5	black	46	17	116590,50689
+N-rno04664-41	Map2k1	557	110	white	rectangle	gene	0.5	black	46	17	170851,58960
+N-rno04664-42	Raf1	489	110	white	rectangle	gene	0.5	black	46	17	24703
+N-rno04664-43	Kras	458	45	white	rectangle	gene	0.5	black	46	17	24525,24605,293621
+N-rno04664-44	Sos1	407	0	white	rectangle	gene	0.5	black	46	17	313845,85384
+N-rno04664-45	Grb2	339	0	white	rectangle	gene	0.5	black	46	17	81504
+N-rno04664-48	Rac1	472	205	white	rectangle	gene	0.5	black	46	17	363875,366957
+N-rno04664-49	Vav1	407	110	white	rectangle	gene	0.5	black	46	17	25156,295378,296603
+N-rno04664-34 15 16 39	Syk Ms4a2 Fcer1a Fcer1g	274	199	white	rectangle	gene,gene,gene,gene	0.5	black	46	17	25155,/,25316,/,25047,/,25441
+N-rno04664-3 4 5	Fcer1g Ms4a2 Fcer1a	179	156	white	rectangle	gene,gene,gene	0.5	black	46	17	25441,/,25316,/,25047
+N-rno04664-31	Gab2	332	322	white	rectangle	gene	0.5	black	46	17	84477
+N-rno04664-47	Mapk8	621	236	white	rectangle	gene	0.5	black	46	17	116554,25272,50658
+N-rno04664-25	Mapk13	621	175	white	rectangle	gene	0.5	black	46	17	29513,60352,689314,81649
+N-rno04664-23	Akt1	621	297	white	rectangle	gene	0.5	black	46	17	24185,25233,29414
+N-rno04664-30	Prkca	625	356	white	rectangle	gene	0.5	black	46	17	24680
+N-rno04664-46	Pla2g4a	671	63	white	rectangle	gene	0.5	black	46	17	24653,296091,311341,691810,691813,691905,691907

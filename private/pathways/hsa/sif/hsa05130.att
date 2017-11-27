@@ -1,0 +1,14 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-hsa05130-2	CD14	414	620	white	rectangle	gene	0.5	black	46	17	929
+N-hsa05130-15	TUBA1B	536	584	white	rectangle	gene	0.5	black	46	17	10376,112714,113457,51807,7277,7278,7846,79861,84790
+N-hsa05130-37	WAS	625	412	white	rectangle	gene	0.5	black	46	17	7454,8976
+N-hsa05130-41	NCK1	536	379	white	rectangle	gene	0.5	black	46	17	4690,8440
+N-hsa05130-42	ARHGEF2	625	539	white	rectangle	gene	0.5	black	46	17	9181
+N-hsa05130-44	RHOA	713	539	white	rectangle	gene	0.5	black	46	17	387
+N-hsa05130-47	TUBB3	536	564	white	rectangle	gene	0.5	black	46	17	10381,10382,10383,203068,347688,347733,7280,81027,84617
+N-hsa05130-54	ARPC5	713	411	white	rectangle	gene	0.5	black	46	17	10092,10093,10094,10095,10109,10552,81873
+N-hsa05130-17 36	CDH1 PRKCA	549	0	white	rectangle	gene,gene	0.5	black	46	17	999,/,5578
+N-hsa05130-9	TLR4	414	660	white	rectangle	gene	0.5	black	46	17	7099
+N-hsa05130-28	ROCK1	801	539	white	rectangle	gene	0.5	black	46	17	6093,9475
+N-hsa05130-55	ACTB	801	411	white	rectangle	gene	0.5	black	46	17	60,71
+N-hsa05130-26	CTNNB1	638	0	white	rectangle	gene	0.5	black	46	17	1499

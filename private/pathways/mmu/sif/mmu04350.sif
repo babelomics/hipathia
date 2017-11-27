@@ -1,0 +1,43 @@
+N-mmu04350-1	inhibition	N-mmu04350-46
+N-mmu04350-2	inhibition	N-mmu04350-1
+N-mmu04350-13	activation	N-mmu04350-14
+N-mmu04350-14	activation	N-mmu04350-10
+N-mmu04350-15	activation	N-mmu04350-12
+N-mmu04350-16	inhibition	N-mmu04350-17
+N-mmu04350-16	inhibition	N-mmu04350-14
+N-mmu04350-17	activation	N-mmu04350-11
+N-mmu04350-22	inhibition	N-mmu04350-21
+N-mmu04350-28	activation	N-mmu04350-17
+N-mmu04350-29	activation	N-mmu04350-27
+N-mmu04350-29	inhibition	N-mmu04350-46
+N-mmu04350-29	inhibition	N-mmu04350-15
+N-mmu04350-30	inhibition	N-mmu04350-29
+N-mmu04350-31	inhibition	N-mmu04350-46
+N-mmu04350-31	inhibition	N-mmu04350-15
+N-mmu04350-33	activation	N-mmu04350-32
+N-mmu04350-35	activation	N-mmu04350-34
+N-mmu04350-37	activation	N-mmu04350-38
+N-mmu04350-38	activation	N-mmu04350-36
+N-mmu04350-44	activation	N-mmu04350-35
+N-mmu04350-44	activation	N-mmu04350-33
+N-mmu04350-45	activation	N-mmu04350-38
+N-mmu04350-46	activation	N-mmu04350-44
+N-mmu04350-46	activation	N-mmu04350-44 45
+N-mmu04350-47	inhibition	N-mmu04350-46
+N-mmu04350-48	activation	N-mmu04350-42 43
+N-mmu04350-49	activation	N-mmu04350-42 43
+N-mmu04350-51	activation	N-mmu04350-55
+N-mmu04350-52	activation	N-mmu04350-50
+N-mmu04350-53	inhibition	N-mmu04350-52
+N-mmu04350-55	activation	N-mmu04350-41
+N-mmu04350-56	inhibition	N-mmu04350-52
+N-mmu04350-57	inhibition	N-mmu04350-51
+N-mmu04350-58	inhibition	N-mmu04350-45
+N-mmu04350-58	inhibition	N-mmu04350-44 45
+N-mmu04350-59	inhibition	N-mmu04350-28
+N-mmu04350-19 20	activation	N-mmu04350-21
+N-mmu04350-23 24 25	inhibition	N-mmu04350-22
+N-mmu04350-3 39 4	inhibition	N-mmu04350-38
+N-mmu04350-42 43	inhibition	N-mmu04350-38
+N-mmu04350-42 43	inhibition	N-mmu04350-55
+N-mmu04350-42 43	inhibition	N-mmu04350-44 45

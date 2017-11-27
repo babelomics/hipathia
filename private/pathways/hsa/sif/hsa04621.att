@@ -1,0 +1,32 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-hsa04621-2	NOD2	423	530	white	rectangle	gene	0.5	black	46	17	64127
+N-hsa04621-5	NFKBIA	984	599	white	rectangle	gene	0.5	black	46	17	4792,4793
+N-hsa04621-8	IKBKB	841	568	white	rectangle	gene	0.5	black	46	17	3551
+N-hsa04621-9	MAP3K7	708	511	white	rectangle	gene	0.5	black	46	17	6885
+N-hsa04621-19	BIRC2	598	717	white	rectangle	gene	0.5	black	46	17	329,330
+N-hsa04621-38	ERBB2IP	423	489	white	rectangle	gene	0.5	black	46	17	55914
+N-hsa04621-39	SUGT1	423	683	white	rectangle	gene	0.5	black	46	17	10910
+N-hsa04621-45	CARD6	558	679	white	rectangle	gene	0.5	black	46	17	84674
+N-hsa04621-49	TNFAIP3	636	694	white	rectangle	gene	0.5	black	46	17	7128
+N-hsa04621-55	CARD18	628	38	white	rectangle	gene	0.5	black	46	17	59082
+N-hsa04621-56	PYDC1	573	223	white	rectangle	gene	0.5	black	46	17	260434
+N-hsa04621-59	TRAF6	727	602	white	rectangle	gene	0.5	black	46	17	7189
+N-hsa04621-10 11 9	TAB1 TAB2 MAP3K7	708	494	white	rectangle	gene,gene,gene	0.5	black	46	17	10454,/,23118,257397,/,6885
+N-hsa04621-1 27	NOD1 TRIP6	423	642	white	rectangle	gene,gene	0.5	black	46	17	10392,/,7205
+N-hsa04621-3 18	RIPK2 CARD9	600	588	white	rectangle	gene,gene	0.5	black	46	17	8767,/,64170
+N-hsa04621-20 22	NLRP1 PYCARD	550	343	white	rectangle	gene,gene	0.5	black	46	17	22861,/,29108
+N-hsa04621-36 37	SUGT1 HSP90AA1	550	103	white	rectangle	gene,gene	0.5	black	46	17	10910,/,3320,3326,7184
+N-hsa04621-57 58	MEFV PSTPIP1	648	223	white	rectangle	gene,gene	0.5	black	46	17	4210,/,9051
+N-hsa04621-6	NFKB1	984	561	white	rectangle	gene	0.5	black	46	17	4790,5970
+N-hsa04621-4 7 8	IKBKG CHUK IKBKB	841	602	white	rectangle	gene,gene,gene	0.5	black	46	17	8517,/,1147,/,3551
+N-hsa04621-33 35	NLRC4 PYCARD	550	0	white	rectangle	gene,gene	0.5	black	46	17	58484,/,29108
+N-hsa04621-34 35	CASP1 PYCARD	670	0	white	rectangle	gene,gene	0.5	black	46	17	834,/,29108
+N-hsa04621-21 30	NLRP3 PYCARD	550	177	white	rectangle	gene,gene	0.5	black	46	17	114548,/,29108
+N-hsa04621-30 32	PYCARD CASP1	610	177	white	rectangle	gene,gene	0.5	black	46	17	29108,/,834
+N-hsa04621-43	MAPK1	868	466	white	rectangle	gene	0.5	black	46	17	5594,5595
+N-hsa04621-42	MAPK8	868	446	white	rectangle	gene	0.5	black	46	17	5599,5601,5602
+N-hsa04621-44	MAPK14	868	426	white	rectangle	gene	0.5	black	46	17	1432,5600,5603,6300
+N-hsa04621-28	CASP8	802	666	white	rectangle	gene	0.5	black	46	17	841
+N-hsa04621-23	CASP1	670	343	white	rectangle	gene	0.5	black	46	17	834
+N-hsa04621-29	CASP5	610	311	white	rectangle	gene	0.5	black	46	17	838
+N-hsa04621-21 31 41	NLRP3 CARD8 CASP1	550	177	white	rectangle	gene,gene,gene	0.5	black	46	17	114548,/,22900,/,834

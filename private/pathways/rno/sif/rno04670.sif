@@ -1,0 +1,50 @@
+N-rno04670-26	activation	N-rno04670-47
+N-rno04670-32	activation	N-rno04670-28 41 49
+N-rno04670-33	activation	N-rno04670-32
+N-rno04670-34	activation	N-rno04670-35
+N-rno04670-34	activation	N-rno04670-45
+N-rno04670-34	activation	N-rno04670-10
+N-rno04670-36	activation	N-rno04670-35
+N-rno04670-36	activation	N-rno04670-45
+N-rno04670-36	activation	N-rno04670-10
+N-rno04670-36	activation	N-rno04670-33
+N-rno04670-40	inhibition	N-rno04670-36
+N-rno04670-47	activation	N-rno04670-42 43 44 46 48
+N-rno04670-51	activation	N-rno04670-75
+N-rno04670-60	activation	N-rno04670-50 63
+N-rno04670-62	activation	N-rno04670-85
+N-rno04670-64	activation	N-rno04670-85
+N-rno04670-71	activation	N-rno04670-34
+N-rno04670-74	activation	N-rno04670-73
+N-rno04670-75	activation	N-rno04670-74
+N-rno04670-83	activation	N-rno04670-62
+N-rno04670-85	activation	N-rno04670-55
+N-rno04670-85	activation	N-rno04670-76
+N-rno04670-85	activation	N-rno04670-54
+N-rno04670-42 43 44 46 48	activation	N-rno04670-2
+N-rno04670-42 43 44 46 48	activation	N-rno04670-39
+N-rno04670-50 63	activation	N-rno04670-68 52 58
+N-rno04670-50 63	activation	N-rno04670-69 57 78
+N-rno04670-50 63	activation	N-rno04670-70 53 59
+N-rno04670-5 9	activation	N-rno04670-18
+N-rno04670-5 49	activation	N-rno04670-18
+N-rno04670-7 27	activation	N-rno04670-15
+N-rno04670-13 87	inhibition	N-rno04670-36
+N-rno04670-13 87	inhibition	N-rno04670-14
+N-rno04670-56 70	activation	N-rno04670-86
+N-rno04670-56 70	activation	N-rno04670-71
+N-rno04670-56 70	activation	N-rno04670-36
+N-rno04670-65 66	activation	N-rno04670-64
+N-rno04670-66 67	activation	N-rno04670-64
+N-rno04670-66 67	activation	N-rno04670-60
+N-rno04670-66 67	activation	N-rno04670-83
+N-rno04670-68 52 58	inhibition	N-rno04670-40
+N-rno04670-69 57 78	activation	N-rno04670-42 43 44 46 48
+N-rno04670-69 57 78	activation	N-rno04670-26
+N-rno04670-69 80	activation	N-rno04670-42 43 44 46 48
+N-rno04670-69 80	activation	N-rno04670-26
+N-rno04670-69 80	activation	N-rno04670-86
+N-rno04670-70 53 59	activation	N-rno04670-71
+N-rno04670-70 53 59	activation	N-rno04670-36
+N-rno04670-70 53 59	activation	N-rno04670-51
+N-rno04670-70 53 59	activation	N-rno04670-64

@@ -1,0 +1,46 @@
+N-rno05031-13	activation	N-rno05031-46
+N-rno05031-35	inhibition	N-rno05031-15
+N-rno05031-39	activation	N-rno05031-8
+N-rno05031-40	activation	N-rno05031-13
+N-rno05031-43	activation	N-rno05031-48
+N-rno05031-44	inhibition	N-rno05031-51
+N-rno05031-45	activation	N-rno05031-12
+N-rno05031-45	activation	N-rno05031-11
+N-rno05031-45	activation	N-rno05031-10
+N-rno05031-46	activation	N-rno05031-47
+N-rno05031-47	activation	N-rno05031-49
+N-rno05031-48	activation	N-rno05031-96
+N-rno05031-48	activation	N-rno05031-97
+N-rno05031-48	activation	N-rno05031-98
+N-rno05031-49	activation	N-rno05031-45
+N-rno05031-51	inhibition	N-rno05031-48
+N-rno05031-52	activation	N-rno05031-11
+N-rno05031-52	activation	N-rno05031-12
+N-rno05031-56	activation	N-rno05031-63
+N-rno05031-60	inhibition	N-rno05031-61
+N-rno05031-61	inhibition	N-rno05031-62
+N-rno05031-62	activation	N-rno05031-99 107
+N-rno05031-62	activation	N-rno05031-99 104
+N-rno05031-62	activation	N-rno05031-99 100
+N-rno05031-63	activation	N-rno05031-64
+N-rno05031-64	activation	N-rno05031-66
+N-rno05031-65	activation	N-rno05031-54
+N-rno05031-65	activation	N-rno05031-53
+N-rno05031-66	activation	N-rno05031-65
+N-rno05031-73	inhibition	N-rno05031-77
+N-rno05031-83	activation	N-rno05031-17 82
+N-rno05031-84	activation	N-rno05031-17 82
+N-rno05031-85	activation	N-rno05031-84
+N-rno05031-87	activation	N-rno05031-78 86
+N-rno05031-88	activation	N-rno05031-78 86
+N-rno05031-89	activation	N-rno05031-88
+N-rno05031-90	activation	N-rno05031-54
+N-rno05031-90	activation	N-rno05031-55
+N-rno05031-91	activation	N-rno05031-56
+N-rno05031-105	activation	N-rno05031-32
+N-rno05031-106	activation	N-rno05031-75
+N-rno05031-42 50	activation	N-rno05031-43
+N-rno05031-57 58	activation	N-rno05031-59
+N-rno05031-99 107	inhibition	N-rno05031-101
+N-rno05031-99 104	inhibition	N-rno05031-101
+N-rno05031-99 100	inhibition	N-rno05031-101

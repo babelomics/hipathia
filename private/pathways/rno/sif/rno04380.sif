@@ -1,0 +1,60 @@
+N-rno04380-2	activation	N-rno04380-71
+N-rno04380-2	activation	N-rno04380-31
+N-rno04380-4	activation	N-rno04380-3 30
+N-rno04380-4	activation	N-rno04380-3 9
+N-rno04380-4	activation	N-rno04380-41 43
+N-rno04380-4	activation	N-rno04380-42 39 77
+N-rno04380-4	activation	N-rno04380-42 40 78
+N-rno04380-5	activation	N-rno04380-4
+N-rno04380-6	activation	N-rno04380-2
+N-rno04380-7	inhibition	N-rno04380-5
+N-rno04380-10	activation	N-rno04380-11
+N-rno04380-11	activation	N-rno04380-69
+N-rno04380-14	activation	N-rno04380-15
+N-rno04380-15	activation	N-rno04380-16
+N-rno04380-17	activation	N-rno04380-20
+N-rno04380-17	activation	N-rno04380-19
+N-rno04380-17	activation	N-rno04380-73
+N-rno04380-17	activation	N-rno04380-14
+N-rno04380-19	activation	N-rno04380-22
+N-rno04380-21	activation	N-rno04380-38
+N-rno04380-22	activation	N-rno04380-38
+N-rno04380-25	activation	N-rno04380-26 27
+N-rno04380-31	activation	N-rno04380-32
+N-rno04380-33	activation	N-rno04380-34
+N-rno04380-34	activation	N-rno04380-3 30
+N-rno04380-34	activation	N-rno04380-3 9
+N-rno04380-35	activation	N-rno04380-36
+N-rno04380-36	activation	N-rno04380-37
+N-rno04380-37	inhibition	N-rno04380-3 30
+N-rno04380-37	inhibition	N-rno04380-3 9
+N-rno04380-47	activation	N-rno04380-48
+N-rno04380-49	activation	N-rno04380-50
+N-rno04380-58	activation	N-rno04380-59
+N-rno04380-59	activation	N-rno04380-3 30
+N-rno04380-59	activation	N-rno04380-3 9
+N-rno04380-65	inhibition	N-rno04380-3 30
+N-rno04380-65	inhibition	N-rno04380-3 9
+N-rno04380-67	activation	N-rno04380-68
+N-rno04380-71	activation	N-rno04380-72
+N-rno04380-73	activation	N-rno04380-21
+N-rno04380-74	activation	N-rno04380-75
+N-rno04380-76	activation	N-rno04380-22
+N-rno04380-76	activation	N-rno04380-21
+N-rno04380-3 30	activation	N-rno04380-17 18
+N-rno04380-3 30	activation	N-rno04380-74
+N-rno04380-3 30	activation	N-rno04380-10
+N-rno04380-3 30	activation	N-rno04380-31
+N-rno04380-3 9	activation	N-rno04380-17 18
+N-rno04380-3 9	activation	N-rno04380-74
+N-rno04380-3 9	activation	N-rno04380-10
+N-rno04380-8 70	inhibition	N-rno04380-3 30
+N-rno04380-8 70	inhibition	N-rno04380-3 9
+N-rno04380-9 44	activation	N-rno04380-47
+N-rno04380-9 44	activation	N-rno04380-49
+N-rno04380-26 27	activation	N-rno04380-28 29
+N-rno04380-27 64	activation	N-rno04380-28 29
+N-rno04380-28 29	inhibition	N-rno04380-51
+N-rno04380-41 43	activation	N-rno04380-9 44
+N-rno04380-42 39 77	activation	N-rno04380-41 43
+N-rno04380-42 40 78	activation	N-rno04380-41 43

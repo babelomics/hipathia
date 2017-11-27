@@ -1,0 +1,34 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-hsa05132-4	RAC1	667	845	white	rectangle	gene	0.5	black	46	17	5879
+N-hsa05132-5	CDC42	667	819	white	rectangle	gene	0.5	black	46	17	998
+N-hsa05132-7	MAPK8	788	793	white	rectangle	gene	0.5	black	46	17	5599,5601,5602
+N-hsa05132-9	C04637	588	793	white	circle	compound	0.5	black	8	8	NA
+N-hsa05132-10	WASF2	815	694	white	rectangle	gene	0.5	black	46	17	10163,8936
+N-hsa05132-11	ARPC5	840	647	white	rectangle	gene	0.5	black	46	17	10092,10093,10094,10095,10109,10552,81873
+N-hsa05132-12	WAS	865	694	white	rectangle	gene	0.5	black	46	17	7454,8976
+N-hsa05132-15	RHOG	667	793	white	rectangle	gene	0.5	black	46	17	391
+N-hsa05132-24	TLR4	244	1103	white	rectangle	gene	0.5	black	46	17	7099
+N-hsa05132-26	CD14	244	1058	white	rectangle	gene	0.5	black	46	17	929
+N-hsa05132-27	C00338	125	1058	white	circle	compound	0.5	black	8	8	NA
+N-hsa05132-28	TLR5	1088	1103	white	rectangle	gene	0.5	black	46	17	7100
+N-hsa05132-29	MYD88	921	1103	white	rectangle	gene	0.5	black	46	17	4615
+N-hsa05132-38	FLNA	645	131	white	rectangle	gene	0.5	black	46	17	2316,2317,2318
+N-hsa05132-39	PFN3	645	153	white	rectangle	gene	0.5	black	46	17	345456,375189,5216,5217
+N-hsa05132-45	PLEKHM2	610	332	white	rectangle	gene	0.5	black	46	17	23207
+N-hsa05132-56	MAPK1	788	819	white	rectangle	gene	0.5	black	46	17	5594,5595
+N-hsa05132-57	MAPK14	788	845	white	rectangle	gene	0.5	black	46	17	1432,5600,5603,6300
+N-hsa05132-59	PKN3	989	638	white	rectangle	gene	0.5	black	46	17	29941,5585,5586
+N-hsa05132-64	IFNG	65	0	white	rectangle	gene	0.5	black	46	17	3458
+N-hsa05132-85	ROCK1	679	421	white	rectangle	gene	0.5	black	46	17	6093,9475
+N-hsa05132-65 66	IFNGR1 IFNGR2	244	8	white	rectangle	gene,gene	0.5	black	46	17	3459,/,3460
+N-hsa05132-51 52 53	NLRC4 PYCARD CASP1	646	979	white	rectangle	gene,gene,gene	0.5	black	46	17	58484,/,29108,/,834
+N-hsa05132-8	TJP1	740	1139	white	rectangle	gene	0.5	black	46	17	7082
+N-hsa05132-13	FOS	921	829	white	rectangle	gene	0.5	black	46	17	2353,3725
+N-hsa05132-6	NFKB1	921	807	white	rectangle	gene	0.5	black	46	17	4790,5970
+N-hsa05132-20	ACTB	840	602	white	rectangle	gene	0.5	black	46	17	60,71
+N-hsa05132-41	ACTB*	737	142	white	rectangle	gene	0.5	black	46	17	60,71
+N-hsa05132-48	KLC3	704	332	white	rectangle	gene	0.5	black	46	17	147700,3831,64837,89953
+N-hsa05132-86	MYH9	768	422	white	rectangle	gene	0.5	black	46	17	4627,4628,79784
+N-hsa05132-68	NOS2	522	0	white	rectangle	gene	0.5	black	46	17	4843
+N-hsa05132-55	IL18	1056	954	white	rectangle	gene	0.5	black	43	17	3606
+N-hsa05132-54	IL1B	1056	933	white	rectangle	gene	0.5	black	43	17	3553

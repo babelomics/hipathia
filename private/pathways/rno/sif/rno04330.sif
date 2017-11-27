@@ -1,0 +1,15 @@
+N-rno04330-5	inhibition	N-rno04330-13 14
+N-rno04330-17	activation	N-rno04330-22
+N-rno04330-20	inhibition	N-rno04330-22
+N-rno04330-21	inhibition	N-rno04330-22
+N-rno04330-22	activation	N-rno04330-19
+N-rno04330-22	activation	N-rno04330-13 14
+N-rno04330-23	inhibition	N-rno04330-22
+N-rno04330-25	activation	N-rno04330-22
+N-rno04330-26	activation	N-rno04330-22
+N-rno04330-1 18 2 3	activation	N-rno04330-22
+N-rno04330-15 16	activation	N-rno04330-13 14
+N-rno04330-5 8	inhibition	N-rno04330-13 14
+N-rno04330-10 5 6	inhibition	N-rno04330-13 14
+N-rno04330-13 14	activation	N-rno04330-12
+N-rno04330-13 14	activation	N-rno04330-11

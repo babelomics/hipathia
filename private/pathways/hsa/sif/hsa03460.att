@@ -1,0 +1,17 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-hsa03460-6	FANCD2	155	259	white	rectangle	gene	0.5	black	46	17	2177
+N-hsa03460-21	ATR	146	440	white	rectangle	gene	0.5	black	46	17	545
+N-hsa03460-24	BRCA2	346	110	white	rectangle	gene	0.5	black	46	17	675
+N-hsa03460-29	FAN1	154	0	white	rectangle	gene	0.5	black	44	17	22909
+N-hsa03460-20 21	ATRIP ATR	146	457	white	rectangle	gene,gene	0.5	black	46	17	84126,/,545
+N-hsa03460-30 31	USP1 WDR48	191	319	white	rectangle	gene,gene	0.5	black	46	17	7398,/,57599
+N-hsa03460-23 49	TELO2 C19orf40	256	450	white	rectangle	gene,gene	0.5	black	46	17	9894,/,91442
+N-hsa03460-26 12 24	BRIP1 PALB2 BRCA2	272	49	white	rectangle	gene,gene,gene	0.5	black	46	17	83990,/,79728,/,675
+N-hsa03460-1 10 11 13 2 3 32 35 4 50 51 8 9 14 17 18 19	FANCM FANCG FANCL C17orf70 FANCA FANCB UBE2T STRA13 FANCC C19orf40 HES1 FANCE FANCF BLM RMI1 RMI2 TOP3A	321	215	white	rectangle	gene,gene,gene,gene,gene,gene,gene,gene,gene,gene,gene,gene,gene,gene,gene,gene,gene	0.5	black	46	17	57697,/,2189,/,55120,/,80233,/,2175,/,2187,/,29089,/,201254,378708,/,2176,/,91442,/,3280,/,2178,/,2188,/,641,/,80010,/,116028,/,7156,8940
+N-hsa03460-27	BRCA1	226	49	white	rectangle	gene	0.5	black	46	17	672
+N-hsa03460-48	RAD51	425	88	white	rectangle	gene	0.5	black	46	17	5888
+N-hsa03460-25 40	MLH1 PMS2	272	6	white	rectangle	gene,gene	0.5	black	46	17	4292,/,5395
+N-hsa03460-7	FANCI	155	276	white	rectangle	gene	0.5	black	46	17	55215
+N-hsa03460-16 49	FANCM C19orf40	302	476	white	rectangle	gene,gene	0.5	black	46	17	57697,/,91442
+N-hsa03460-16 34	FANCM STRA13	302	476	white	rectangle	gene,gene	0.5	black	46	17	57697,/,201254,378708
+N-hsa03460-28	RAD51C	425	111	white	rectangle	gene	0.5	black	46	17	5889

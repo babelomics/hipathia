@@ -1,0 +1,76 @@
+N-rno04310-15	activation	N-rno04310-13
+N-rno04310-17	activation	N-rno04310-16
+N-rno04310-17	activation	N-rno04310-15
+N-rno04310-17	activation	N-rno04310-14
+N-rno04310-18	activation	N-rno04310-17
+N-rno04310-19	activation	N-rno04310-18
+N-rno04310-21	activation	N-rno04310-20
+N-rno04310-23	activation	N-rno04310-20
+N-rno04310-23	activation	N-rno04310-22
+N-rno04310-23	activation	N-rno04310-24 25
+N-rno04310-28	activation	N-rno04310-24 25
+N-rno04310-28	activation	N-rno04310-25 29 26
+N-rno04310-28	activation	N-rno04310-25 85
+N-rno04310-30	activation	N-rno04310-28
+N-rno04310-38	inhibition	N-rno04310-41 42
+N-rno04310-39	inhibition	N-rno04310-41 42
+N-rno04310-40	activation	N-rno04310-41 42
+N-rno04310-44	inhibition	N-rno04310-43 63
+N-rno04310-44	inhibition	N-rno04310-48 61 63
+N-rno04310-45	inhibition	N-rno04310-43 63
+N-rno04310-45	inhibition	N-rno04310-48 61 63
+N-rno04310-46	inhibition	N-rno04310-41 42
+N-rno04310-47	activation	N-rno04310-46
+N-rno04310-52	inhibition	N-rno04310-43 63
+N-rno04310-52	inhibition	N-rno04310-48 61 63
+N-rno04310-58	activation	N-rno04310-24 25
+N-rno04310-58	activation	N-rno04310-25 29 26
+N-rno04310-58	activation	N-rno04310-25 85
+N-rno04310-58	inhibition	N-rno04310-61 69 62
+N-rno04310-58	inhibition	N-rno04310-67 69
+N-rno04310-58	inhibition	N-rno04310-69 70
+N-rno04310-60	activation	N-rno04310-57
+N-rno04310-66	inhibition	N-rno04310-43 63
+N-rno04310-66	inhibition	N-rno04310-48 61 63
+N-rno04310-68	inhibition	N-rno04310-61 69 62
+N-rno04310-68	inhibition	N-rno04310-67 69
+N-rno04310-68	inhibition	N-rno04310-69 70
+N-rno04310-71	inhibition	N-rno04310-61 69 62
+N-rno04310-71	inhibition	N-rno04310-67 69
+N-rno04310-71	inhibition	N-rno04310-69 70
+N-rno04310-73	inhibition	N-rno04310-76 77
+N-rno04310-74	inhibition	N-rno04310-80
+N-rno04310-75	inhibition	N-rno04310-80
+N-rno04310-78	inhibition	N-rno04310-80
+N-rno04310-78	inhibition	N-rno04310-76 77
+N-rno04310-79	activation	N-rno04310-80
+N-rno04310-80	activation	N-rno04310-76 77
+N-rno04310-81	activation	N-rno04310-61 69 62
+N-rno04310-81	activation	N-rno04310-67 69
+N-rno04310-81	activation	N-rno04310-69 70
+N-rno04310-81	activation	N-rno04310-76 77
+N-rno04310-83	inhibition	N-rno04310-76 77
+N-rno04310-84	inhibition	N-rno04310-76 77
+N-rno04310-86	inhibition	N-rno04310-80
+N-rno04310-24 25	activation	N-rno04310-21
+N-rno04310-25 29 26	activation	N-rno04310-21
+N-rno04310-25 85	activation	N-rno04310-21
+N-rno04310-41 42	activation	N-rno04310-36
+N-rno04310-41 42	activation	N-rno04310-35
+N-rno04310-41 42	activation	N-rno04310-34
+N-rno04310-41 42	activation	N-rno04310-33
+N-rno04310-41 42	activation	N-rno04310-32
+N-rno04310-41 42	activation	N-rno04310-31
+N-rno04310-43 63	activation	N-rno04310-41 42
+N-rno04310-48 61 63	activation	N-rno04310-41 42
+N-rno04310-53 62	inhibition	N-rno04310-43 63
+N-rno04310-53 62	inhibition	N-rno04310-48 61 63
+N-rno04310-61 69 62	inhibition	N-rno04310-66
+N-rno04310-64 65	inhibition	N-rno04310-66
+N-rno04310-64 65	activation	N-rno04310-43 63
+N-rno04310-64 65	activation	N-rno04310-48 61 63
+N-rno04310-67 69	inhibition	N-rno04310-66
+N-rno04310-69 70	inhibition	N-rno04310-66
+N-rno04310-76 77	activation	N-rno04310-61 69 62
+N-rno04310-76 77	activation	N-rno04310-67 69
+N-rno04310-76 77	activation	N-rno04310-69 70

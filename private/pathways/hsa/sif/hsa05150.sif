@@ -1,0 +1,20 @@
+N-hsa05150-2	activation	N-hsa05150-4
+N-hsa05150-2	activation	N-hsa05150-48
+N-hsa05150-4	activation	N-hsa05150-13
+N-hsa05150-15	activation	N-hsa05150-69
+N-hsa05150-15	activation	N-hsa05150-14
+N-hsa05150-17	inhibition	N-hsa05150-32
+N-hsa05150-17	inhibition	N-hsa05150-2
+N-hsa05150-17	inhibition	N-hsa05150-1 2 3
+N-hsa05150-31	activation	N-hsa05150-35
+N-hsa05150-32	activation	N-hsa05150-5 6 7
+N-hsa05150-32	activation	N-hsa05150-40
+N-hsa05150-33	inhibition	N-hsa05150-2
+N-hsa05150-33	inhibition	N-hsa05150-1 2 3
+N-hsa05150-47	inhibition	N-hsa05150-1 2 3
+N-hsa05150-64	activation	N-hsa05150-65
+N-hsa05150-65	activation	N-hsa05150-66
+N-hsa05150-5 6 7	activation	N-hsa05150-8 9
+N-hsa05150-8 9	activation	N-hsa05150-2
+N-hsa05150-8 9	activation	N-hsa05150-1 2 3
+N-hsa05150-10 11	activation	N-hsa05150-8 9

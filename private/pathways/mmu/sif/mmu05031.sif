@@ -1,0 +1,46 @@
+N-mmu05031-13	activation	N-mmu05031-46
+N-mmu05031-35	inhibition	N-mmu05031-15
+N-mmu05031-39	activation	N-mmu05031-8
+N-mmu05031-40	activation	N-mmu05031-13
+N-mmu05031-43	activation	N-mmu05031-48
+N-mmu05031-44	inhibition	N-mmu05031-51
+N-mmu05031-45	activation	N-mmu05031-12
+N-mmu05031-45	activation	N-mmu05031-11
+N-mmu05031-45	activation	N-mmu05031-10
+N-mmu05031-46	activation	N-mmu05031-47
+N-mmu05031-47	activation	N-mmu05031-49
+N-mmu05031-48	activation	N-mmu05031-96
+N-mmu05031-48	activation	N-mmu05031-97
+N-mmu05031-48	activation	N-mmu05031-98
+N-mmu05031-49	activation	N-mmu05031-45
+N-mmu05031-51	inhibition	N-mmu05031-48
+N-mmu05031-52	activation	N-mmu05031-11
+N-mmu05031-52	activation	N-mmu05031-12
+N-mmu05031-56	activation	N-mmu05031-63
+N-mmu05031-60	inhibition	N-mmu05031-61
+N-mmu05031-61	inhibition	N-mmu05031-62
+N-mmu05031-62	activation	N-mmu05031-99 107
+N-mmu05031-62	activation	N-mmu05031-99 104
+N-mmu05031-62	activation	N-mmu05031-99 100
+N-mmu05031-63	activation	N-mmu05031-64
+N-mmu05031-64	activation	N-mmu05031-66
+N-mmu05031-65	activation	N-mmu05031-54
+N-mmu05031-65	activation	N-mmu05031-53
+N-mmu05031-66	activation	N-mmu05031-65
+N-mmu05031-73	inhibition	N-mmu05031-77
+N-mmu05031-83	activation	N-mmu05031-17 82
+N-mmu05031-84	activation	N-mmu05031-17 82
+N-mmu05031-85	activation	N-mmu05031-84
+N-mmu05031-87	activation	N-mmu05031-78 86
+N-mmu05031-88	activation	N-mmu05031-78 86
+N-mmu05031-89	activation	N-mmu05031-88
+N-mmu05031-90	activation	N-mmu05031-54
+N-mmu05031-90	activation	N-mmu05031-55
+N-mmu05031-91	activation	N-mmu05031-56
+N-mmu05031-105	activation	N-mmu05031-32
+N-mmu05031-106	activation	N-mmu05031-75
+N-mmu05031-42 50	activation	N-mmu05031-43
+N-mmu05031-57 58	activation	N-mmu05031-59
+N-mmu05031-99 107	inhibition	N-mmu05031-101
+N-mmu05031-99 104	inhibition	N-mmu05031-101
+N-mmu05031-99 100	inhibition	N-mmu05031-101

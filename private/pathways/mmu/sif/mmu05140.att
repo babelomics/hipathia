@@ -1,0 +1,28 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-mmu05140-4	Prkcb	527	238	white	rectangle	gene	0.5	black	46	17	18751
+N-mmu05140-18	Tlr4	250	662	white	rectangle	gene	0.5	black	46	17	21898,24088
+N-mmu05140-19	Myd88	351	662	white	rectangle	gene	0.5	black	46	17	17874
+N-mmu05140-20	Nfkbia	700	662	white	rectangle	gene	0.5	black	46	17	18035,18036
+N-mmu05140-23	Il4	940	587	white	rectangle	gene	0.5	black	46	17	16189
+N-mmu05140-25	Nos2	373	581	white	rectangle	gene	0.5	black	46	17	18126
+N-mmu05140-28	Il10	940	534	white	rectangle	gene	0.5	black	46	17	16153
+N-mmu05140-29	Tgfb1	940	515	white	rectangle	gene	0.5	black	46	17	21803,21808,21809
+N-mmu05140-33	Ptpn6	376	100	white	rectangle	gene	0.5	black	46	17	15170
+N-mmu05140-36	Mapk1	597	141	white	rectangle	gene	0.5	black	46	17	26413,26417
+N-mmu05140-48	Irak1	438	662	white	rectangle	gene	0.5	black	46	17	16179,266632
+N-mmu05140-49	Traf6	525	662	white	rectangle	gene	0.5	black	46	17	22034
+N-mmu05140-56	C00195	487	207	white	circle	compound	0.5	black	8	8	NA
+N-mmu05140-60	Ptgs2	466	475	white	rectangle	gene	0.5	black	46	17	19225
+N-mmu05140-50 51	Tab1 Map3k7	612	653	white	rectangle	gene,gene	0.5	black	46	17	66513,68652,/,26409
+N-mmu05140-58 59 6	Ncf2 Ncf4 Ncf1	678	238	white	rectangle	gene,gene,gene	0.5	black	46	17	17970,/,17972,/,17969
+N-mmu05140-2 63	Fcgr1 CRP55H	250	352	white	rectangle	gene,gene	0.5	black	46	17	14129,14131,246256,/,641025
+N-mmu05140-10 12	C3 Itgam	182	390	white	rectangle	gene,gene	0.5	black	46	17	12266,/,16409,16414,16415
+N-mmu05140-15 52 53	Jak1 Ifngr1 Ifngr2	326	0	white	rectangle	gene,gene,gene	0.5	black	46	17	16451,16452,/,15979,/,15980
+N-mmu05140-21	Nfkb1	700	626	white	rectangle	gene	0.5	black	46	17	18033,19697
+N-mmu05140-26	C00533	456	581	white	circle	compound	0.5	black	8	8	NA
+N-mmu05140-37	Elk1	801	152	white	rectangle	gene	0.5	black	46	17	13712
+N-mmu05140-55	Jun	801	111	white	rectangle	gene	0.5	black	46	17	16476
+N-mmu05140-62	C00584	513	488	white	circle	compound	0.5	black	8	8	NA
+N-mmu05140-41 57	Nos2 Cyba	632	290	white	rectangle	gene,gene	0.5	black	46	17	18126,/,13057
+N-mmu05140-43	Mapk11	598	69	white	rectangle	gene	0.5	black	46	17	19094,26415,26416,29857
+N-mmu05140-16	Stat1	597	0	white	rectangle	gene	0.5	black	46	17	20846

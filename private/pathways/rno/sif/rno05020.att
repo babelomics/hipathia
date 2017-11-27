@@ -1,0 +1,24 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-rno05020-23	Prnp	286	532	white	rectangle	gene	0.5	black	46	17	24686
+N-rno05020-32	Prnp***	286	432	white	rectangle	gene	0.5	black	46	17	24686
+N-rno05020-36	Prnp****	286	97	white	rectangle	gene	0.5	black	46	17	24686
+N-rno05020-45	Stip1	461	514	white	rectangle	gene	0.5	black	46	17	192277
+N-rno05020-47	C00575	516	515	white	circle	compound	0.5	black	8	8	NA
+N-rno05020-55	Map2k1	628	100	white	rectangle	gene	0.5	black	46	17	170851,58960
+N-rno05020-56	Mapk1	730	100	white	rectangle	gene	0.5	black	46	17	116590,50689
+N-rno05020-57	Elk1	850	100	white	rectangle	gene	0.5	black	46	17	314436
+N-rno05020-58	Egr1	730	37	white	rectangle	gene	0.5	black	46	17	24330
+N-rno05020-6 7	Prnp Prnp	286	343	white	rectangle	gene,gene	0.5	black	46	17	24686,/,24686
+N-rno05020-33 9	Prnp Prnp**	469	330	white	rectangle	gene,gene	0.5	black	46	17	24686,/,24686
+N-rno05020-42 43	Prnp Ncam1	286	604	white	rectangle	gene,gene	0.5	black	46	17	24686,/,24586,288280
+N-rno05020-42 44	Prnp Lamc1	286	604	white	rectangle	gene,gene	0.5	black	46	17	24686,/,117036
+N-rno05020-24	Prnp*	286	465	white	rectangle	gene	0.5	black	46	17	24686
+N-rno05020-26	Prnp**	286	385	white	rectangle	gene	0.5	black	46	17	24686
+N-rno05020-62	Notch1	319	29	white	rectangle	gene	0.5	black	46	17	25496
+N-rno05020-46	Prkaca	573	514	white	rectangle	gene	0.5	black	46	17	25636,293508
+N-rno05020-59	Ccl5	730	0	white	rectangle	gene	0.5	black	46	17	81780
+N-rno05020-25 8	Prnp Prnp*	286	268	white	rectangle	gene,gene	0.5	black	46	17	24686,/,24686
+N-rno05020-10 34	Prnp Prnp***	515	268	white	rectangle	gene,gene	0.5	black	46	17	24686,/,24686
+N-rno05020-52	Fyn	461	446	white	rectangle	gene	0.5	black	46	17	25150
+N-rno05020-48	Sod1	461	548	white	rectangle	gene	0.5	black	46	17	24786
+N-rno05020-49	Bax	461	479	white	rectangle	gene	0.5	black	46	17	24887

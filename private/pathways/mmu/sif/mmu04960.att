@@ -1,0 +1,19 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-mmu04960-5	Sgk1	294	168	white	rectangle	gene	0.5	black	46	17	20393
+N-mmu04960-6	C01780	649	305	white	circle	compound	0.5	black	8	8	NA
+N-mmu04960-8	Nr3c2	516	309	white	rectangle	gene	0.5	black	46	17	110784
+N-mmu04960-9	Kras	465	131	white	rectangle	gene	0.5	black	46	17	16653
+N-mmu04960-14	C00735	644	375	white	circle	compound	0.5	black	8	8	NA
+N-mmu04960-18	Insr	582	14	white	rectangle	gene	0.5	black	46	17	16337
+N-mmu04960-19	Irs1	486	16	white	rectangle	gene	0.5	black	46	17	16367
+N-mmu04960-20	Pik3ca	416	52	white	rectangle	gene	0.5	black	46	17	18706,18707,18708,18709,18710,30955,320207,74769
+N-mmu04960-21	Pdpk1	337	120	white	rectangle	gene	0.5	black	46	17	18607
+N-mmu04960-22	Ins1	664	30	white	rectangle	gene	0.5	black	46	17	16333,16334
+N-mmu04960-23	C05981	384	90	white	circle	compound	0.5	black	8	8	NA
+N-mmu04960-26	Igf1	665	0	white	rectangle	gene	0.5	black	46	17	16000
+N-mmu04960-10 29	Nedd4l Sfn	241	85	white	rectangle	gene,gene	0.5	black	46	17	83814,/,55948
+N-mmu04960-27	Kcnj1	157	275	white	rectangle	gene	0.5	black	46	17	56379
+N-mmu04960-3	Scnn1a	158	136	white	rectangle	gene	0.5	black	46	17	20276,20277,20278
+N-mmu04960-13	Fxyd4	582	141	white	rectangle	gene	0.5	black	46	17	108017
+N-mmu04960-4	Atp1a1	582	98	white	rectangle	gene	0.5	black	46	17	11928,11931,11932,11933,11936,232975,27222,67821,98660
+N-mmu04960-15	C00762	468	374	white	circle	compound	0.5	black	8	8	NA

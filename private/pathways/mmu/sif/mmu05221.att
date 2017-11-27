@@ -1,0 +1,32 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-mmu05221-1	Rara	940	146	white	rectangle	gene	0.5	black	46	17	19401,235320
+N-mmu05221-2	Kras	498	506	white	rectangle	gene	0.5	black	46	17	16653
+N-mmu05221-3	Nras	497	555	white	rectangle	gene	0.5	black	46	17	18176
+N-mmu05221-4	Flt3	275	515	white	rectangle	gene	0.5	black	46	17	14255
+N-mmu05221-7	Runx1	940	236	white	rectangle	gene	0.5	black	46	17	12394,12395
+N-mmu05221-14	Stat3	484	456	white	rectangle	gene	0.5	black	46	17	20848,20850,20851
+N-mmu05221-19	Pml	940	191	white	rectangle	gene	0.5	black	46	17	18854,19401
+N-mmu05221-22	Hras	497	531	white	rectangle	gene	0.5	black	46	17	15461,16653,18176
+N-mmu05221-25	Chuk	740	679	white	rectangle	gene	0.5	black	46	17	12675,16150,16151
+N-mmu05221-30	Sos1	429	531	white	rectangle	gene	0.5	black	46	17	20662,20663
+N-mmu05221-31	Grb2	360	531	white	rectangle	gene	0.5	black	46	17	14784
+N-mmu05221-33	Kit	275	541	white	rectangle	gene	0.5	black	46	17	16590
+N-mmu05221-34	Mtor	709	591	white	rectangle	gene	0.5	black	46	17	56717
+N-mmu05221-37	Akt1	637	636	white	rectangle	gene	0.5	black	46	17	11651,11652,23797
+N-mmu05221-38	Pik3ca	552	612	white	rectangle	gene	0.5	black	46	17	18706,18707,18708,18709,18710,30955,320207,74769
+N-mmu05221-42	Map2k1	685	531	white	rectangle	gene	0.5	black	46	17	26395,26396
+N-mmu05221-43	Braf	589	531	white	rectangle	gene	0.5	black	46	17	109880,110157,11836
+N-mmu05221-15 18	Jup Lef1	774	21	white	rectangle	gene,gene	0.5	black	46	17	16480,/,16842,21414,21415,21416
+N-mmu05221-16	Ccna1	1111	146	white	rectangle	gene	0.5	black	46	17	12427
+N-mmu05221-6	Cebpa	1033	304	white	rectangle	gene	0.5	black	46	17	12606
+N-mmu05221-5	Spi1	1033	233	white	rectangle	gene	0.5	black	46	17	20375
+N-mmu05221-21	Pim1	1056	468	white	rectangle	gene	0.5	black	46	17	18712
+N-mmu05221-27	Pim2	1056	444	white	rectangle	gene	0.5	black	46	17	18715
+N-mmu05221-13	Nfkb1	840	680	white	rectangle	gene	0.5	black	46	17	18033,19697
+N-mmu05221-29	Rps6kb2	781	575	white	rectangle	gene	0.5	black	46	17	58988,72508
+N-mmu05221-35	Eif4ebp1	781	604	white	rectangle	gene	0.5	black	46	17	13685
+N-mmu05221-26	Bad	740	636	white	rectangle	gene	0.5	black	46	17	12015
+N-mmu05221-41	Mapk1	784	531	white	rectangle	gene	0.5	black	46	17	26413,26417
+N-mmu05221-17	Ccnd1	1111	44	white	rectangle	gene	0.5	black	46	17	12443
+N-mmu05221-12	Myc	1111	22	white	rectangle	gene	0.5	black	46	17	17869
+N-mmu05221-11	Ppard b	1111	0	white	rectangle	gene	0.5	black	46	17	19015

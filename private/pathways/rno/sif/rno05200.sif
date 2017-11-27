@@ -1,0 +1,188 @@
+N-rno05200-2	activation	N-rno05200-18 4
+N-rno05200-3	activation	N-rno05200-2
+N-rno05200-8	activation	N-rno05200-17
+N-rno05200-12	inhibition	N-rno05200-44
+N-rno05200-13	activation	N-rno05200-11 14
+N-rno05200-15	activation	N-rno05200-23
+N-rno05200-16	activation	N-rno05200-92
+N-rno05200-17	activation	N-rno05200-12
+N-rno05200-19	activation	N-rno05200-24
+N-rno05200-19	activation	N-rno05200-56
+N-rno05200-19	activation	N-rno05200-20 21 22
+N-rno05200-23	activation	N-rno05200-92
+N-rno05200-24	activation	N-rno05200-199
+N-rno05200-25	activation	N-rno05200-54
+N-rno05200-25	activation	N-rno05200-55
+N-rno05200-26	activation	N-rno05200-23
+N-rno05200-26	activation	N-rno05200-25
+N-rno05200-26	activation	N-rno05200-69
+N-rno05200-27	activation	N-rno05200-23
+N-rno05200-27	activation	N-rno05200-25
+N-rno05200-28	activation	N-rno05200-69
+N-rno05200-28	activation	N-rno05200-56
+N-rno05200-28	activation	N-rno05200-23
+N-rno05200-29	activation	N-rno05200-69
+N-rno05200-29	activation	N-rno05200-56
+N-rno05200-29	activation	N-rno05200-23
+N-rno05200-30	activation	N-rno05200-23
+N-rno05200-30	activation	N-rno05200-56
+N-rno05200-31	activation	N-rno05200-23
+N-rno05200-31	activation	N-rno05200-56
+N-rno05200-32	activation	N-rno05200-56
+N-rno05200-33	activation	N-rno05200-56
+N-rno05200-34	activation	N-rno05200-58
+N-rno05200-35	activation	N-rno05200-26
+N-rno05200-36	activation	N-rno05200-26
+N-rno05200-37	activation	N-rno05200-32
+N-rno05200-38	activation	N-rno05200-28
+N-rno05200-39	activation	N-rno05200-29
+N-rno05200-44	activation	N-rno05200-231
+N-rno05200-47	activation	N-rno05200-63
+N-rno05200-50	inhibition	N-rno05200-53
+N-rno05200-51	inhibition	N-rno05200-80
+N-rno05200-54	activation	N-rno05200-200
+N-rno05200-55	activation	N-rno05200-200
+N-rno05200-56	activation	N-rno05200-57
+N-rno05200-57	activation	N-rno05200-58
+N-rno05200-58	activation	N-rno05200-59
+N-rno05200-58	activation	N-rno05200-23
+N-rno05200-58	activation	N-rno05200-70
+N-rno05200-58	activation	N-rno05200-61 62
+N-rno05200-59	activation	N-rno05200-60
+N-rno05200-60	activation	N-rno05200-229
+N-rno05200-63	activation	N-rno05200-64
+N-rno05200-64	activation	N-rno05200-192
+N-rno05200-64	activation	N-rno05200-193
+N-rno05200-64	activation	N-rno05200-194
+N-rno05200-64	activation	N-rno05200-195
+N-rno05200-64	activation	N-rno05200-198
+N-rno05200-64	activation	N-rno05200-196
+N-rno05200-64	activation	N-rno05200-197
+N-rno05200-67	activation	N-rno05200-58
+N-rno05200-68	activation	N-rno05200-58
+N-rno05200-69	activation	N-rno05200-93
+N-rno05200-69	activation	N-rno05200-95
+N-rno05200-70	activation	N-rno05200-71
+N-rno05200-70	activation	N-rno05200-72
+N-rno05200-71	activation	N-rno05200-73
+N-rno05200-72	activation	N-rno05200-75
+N-rno05200-73	inhibition	N-rno05200-76
+N-rno05200-77	activation	N-rno05200-209
+N-rno05200-77	activation	N-rno05200-210
+N-rno05200-77	activation	N-rno05200-212
+N-rno05200-77	activation	N-rno05200-207
+N-rno05200-78	activation	N-rno05200-209
+N-rno05200-78	activation	N-rno05200-210
+N-rno05200-78	activation	N-rno05200-212
+N-rno05200-78	activation	N-rno05200-207
+N-rno05200-79	activation	N-rno05200-209
+N-rno05200-79	activation	N-rno05200-210
+N-rno05200-79	activation	N-rno05200-212
+N-rno05200-79	activation	N-rno05200-207
+N-rno05200-81	activation	N-rno05200-189
+N-rno05200-81	activation	N-rno05200-190
+N-rno05200-81	activation	N-rno05200-191
+N-rno05200-82	activation	N-rno05200-59
+N-rno05200-82	activation	N-rno05200-58
+N-rno05200-90	activation	N-rno05200-40 41
+N-rno05200-92	activation	N-rno05200-230
+N-rno05200-93	activation	N-rno05200-82
+N-rno05200-95	activation	N-rno05200-82
+N-rno05200-98	inhibition	N-rno05200-99
+N-rno05200-99	activation	N-rno05200-101 102
+N-rno05200-104	activation	N-rno05200-110 111
+N-rno05200-104	activation	N-rno05200-110 112
+N-rno05200-113	activation	N-rno05200-222
+N-rno05200-118	activation	N-rno05200-119 120
+N-rno05200-123	activation	N-rno05200-221
+N-rno05200-127	activation	N-rno05200-129 130
+N-rno05200-128	activation	N-rno05200-129 130
+N-rno05200-133	inhibition	N-rno05200-104
+N-rno05200-142	activation	N-rno05200-146 147
+N-rno05200-150	activation	N-rno05200-148 149
+N-rno05200-151	inhibition	N-rno05200-153
+N-rno05200-151	activation	N-rno05200-148 149
+N-rno05200-152	inhibition	N-rno05200-153
+N-rno05200-152	inhibition	N-rno05200-155
+N-rno05200-152	activation	N-rno05200-220
+N-rno05200-152	activation	N-rno05200-148 149
+N-rno05200-153	activation	N-rno05200-214
+N-rno05200-153	activation	N-rno05200-213
+N-rno05200-153	activation	N-rno05200-215
+N-rno05200-155	activation	N-rno05200-218
+N-rno05200-155	activation	N-rno05200-216
+N-rno05200-155	activation	N-rno05200-217
+N-rno05200-155	activation	N-rno05200-219
+N-rno05200-156	activation	N-rno05200-218
+N-rno05200-156	activation	N-rno05200-216
+N-rno05200-156	activation	N-rno05200-217
+N-rno05200-156	activation	N-rno05200-219
+N-rno05200-157	activation	N-rno05200-220
+N-rno05200-158	activation	N-rno05200-165
+N-rno05200-159	inhibition	N-rno05200-158
+N-rno05200-163	activation	N-rno05200-175
+N-rno05200-165	inhibition	N-rno05200-164 166
+N-rno05200-167	activation	N-rno05200-168
+N-rno05200-171	inhibition	N-rno05200-174
+N-rno05200-172	activation	N-rno05200-171
+N-rno05200-174	inhibition	N-rno05200-169 170
+N-rno05200-175	inhibition	N-rno05200-164 166
+N-rno05200-176	activation	N-rno05200-164 166
+N-rno05200-177	activation	N-rno05200-159
+N-rno05200-178	activation	N-rno05200-179
+N-rno05200-179	activation	N-rno05200-180
+N-rno05200-180	activation	N-rno05200-181
+N-rno05200-181	activation	N-rno05200-113
+N-rno05200-206	activation	N-rno05200-229
+N-rno05200-221	inhibition	N-rno05200-113
+N-rno05200-228	activation	N-rno05200-230
+N-rno05200-229	activation	N-rno05200-77
+N-rno05200-229	activation	N-rno05200-78
+N-rno05200-229	activation	N-rno05200-79
+N-rno05200-230	inhibition	N-rno05200-44
+N-rno05200-230	inhibition	N-rno05200-49
+N-rno05200-230	inhibition	N-rno05200-50
+N-rno05200-230	inhibition	N-rno05200-227
+N-rno05200-230	inhibition	N-rno05200-52
+N-rno05200-230	inhibition	N-rno05200-226
+N-rno05200-230	activation	N-rno05200-47
+N-rno05200-230	activation	N-rno05200-48
+N-rno05200-230	activation	N-rno05200-51
+N-rno05200-231	activation	N-rno05200-81
+N-rno05200-232	activation	N-rno05200-183
+N-rno05200-232	activation	N-rno05200-184
+N-rno05200-232	activation	N-rno05200-187
+N-rno05200-232	activation	N-rno05200-185
+N-rno05200-232	activation	N-rno05200-186
+N-rno05200-233	activation	N-rno05200-178
+N-rno05200-248	activation	N-rno05200-30
+N-rno05200-249	activation	N-rno05200-31
+N-rno05200-250	activation	N-rno05200-33
+N-rno05200-251	activation	N-rno05200-40 41
+N-rno05200-252	activation	N-rno05200-40 41
+N-rno05200-40 41	activation	N-rno05200-42 43
+N-rno05200-11 14	activation	N-rno05200-15
+N-rno05200-20 21 22	activation	N-rno05200-23
+N-rno05200-119 120	activation	N-rno05200-121 122
+N-rno05200-161 162	inhibition	N-rno05200-163
+N-rno05200-161 162	activation	N-rno05200-172
+N-rno05200-164 166	activation	N-rno05200-167
+N-rno05200-169 170	activation	N-rno05200-167
+N-rno05200-101 102	activation	N-rno05200-232
+N-rno05200-18 4	activation	N-rno05200-5
+N-rno05200-105 106 107 108 109	activation	N-rno05200-110 111
+N-rno05200-105 106 107 108 109	activation	N-rno05200-110 112
+N-rno05200-61 62	activation	N-rno05200-65
+N-rno05200-61 62	activation	N-rno05200-66
+N-rno05200-91 97	inhibition	N-rno05200-98
+N-rno05200-110 111	activation	N-rno05200-205
+N-rno05200-110 111	activation	N-rno05200-202
+N-rno05200-110 111	activation	N-rno05200-204
+N-rno05200-110 111	activation	N-rno05200-203
+N-rno05200-110 112	activation	N-rno05200-205
+N-rno05200-110 112	activation	N-rno05200-202
+N-rno05200-110 112	activation	N-rno05200-204
+N-rno05200-110 112	activation	N-rno05200-203
+N-rno05200-148 149	activation	N-rno05200-225
+N-rno05200-148 149	activation	N-rno05200-224
+N-rno05200-148 149	activation	N-rno05200-223

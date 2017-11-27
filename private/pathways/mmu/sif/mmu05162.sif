@@ -1,0 +1,39 @@
+N-mmu05162-10	activation	N-mmu05162-11
+N-mmu05162-11	activation	N-mmu05162-12
+N-mmu05162-12	activation	N-mmu05162-13
+N-mmu05162-15	activation	N-mmu05162-17
+N-mmu05162-16	activation	N-mmu05162-22
+N-mmu05162-17	activation	N-mmu05162-18
+N-mmu05162-18	activation	N-mmu05162-83
+N-mmu05162-19	activation	N-mmu05162-20
+N-mmu05162-21	activation	N-mmu05162-22
+N-mmu05162-22	activation	N-mmu05162-109 110
+N-mmu05162-22	activation	N-mmu05162-13
+N-mmu05162-22	activation	N-mmu05162-20
+N-mmu05162-30	activation	N-mmu05162-25 70
+N-mmu05162-30	activation	N-mmu05162-25 26
+N-mmu05162-31	activation	N-mmu05162-32 33
+N-mmu05162-46	activation	N-mmu05162-45 57
+N-mmu05162-47	activation	N-mmu05162-50
+N-mmu05162-48	activation	N-mmu05162-50
+N-mmu05162-50	activation	N-mmu05162-51
+N-mmu05162-51	inhibition	N-mmu05162-105
+N-mmu05162-71	inhibition	N-mmu05162-50
+N-mmu05162-73	activation	N-mmu05162-74
+N-mmu05162-76	activation	N-mmu05162-13
+N-mmu05162-79	activation	N-mmu05162-78
+N-mmu05162-80	activation	N-mmu05162-81
+N-mmu05162-83	activation	N-mmu05162-107 108
+N-mmu05162-84	inhibition	N-mmu05162-83
+N-mmu05162-86	inhibition	N-mmu05162-62
+N-mmu05162-92	inhibition	N-mmu05162-93
+N-mmu05162-99	inhibition	N-mmu05162-101
+N-mmu05162-109 110	activation	N-mmu05162-23
+N-mmu05162-107 108	activation	N-mmu05162-19
+N-mmu05162-25 26	activation	N-mmu05162-27 28
+N-mmu05162-25 26	activation	N-mmu05162-27 70
+N-mmu05162-32 33	activation	N-mmu05162-28 34
+N-mmu05162-39 43	activation	N-mmu05162-44
+N-mmu05162-41 42	activation	N-mmu05162-39 43
+N-mmu05162-45 57	activation	N-mmu05162-50
+N-mmu05162-45 57	activation	N-mmu05162-58

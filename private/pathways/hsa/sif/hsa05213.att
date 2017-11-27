@@ -1,0 +1,25 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-hsa05213-1	CTNNB1	641	12	white	rectangle	gene	0.5	black	46	17	1499
+N-hsa05213-3	HRAS	466	114	white	rectangle	gene	0.5	black	46	17	3265,3845,4893
+N-hsa05213-14	ILK	433	163	white	rectangle	gene	0.5	black	46	17	3611
+N-hsa05213-19	LEF1	800	12	white	rectangle	gene	0.5	black	46	17	51176,6932,6934,83439
+N-hsa05213-20	PTEN	338	232	white	rectangle	gene	0.5	black	46	17	5728
+N-hsa05213-21	PDPK1	433	225	white	rectangle	gene	0.5	black	46	17	5170
+N-hsa05213-22	SOS1	394	114	white	rectangle	gene	0.5	black	46	17	6654,6655
+N-hsa05213-23	GRB2	322	114	white	rectangle	gene	0.5	black	46	17	2885
+N-hsa05213-28	EGFR	250	114	white	rectangle	gene	0.5	black	46	17	1956
+N-hsa05213-33	AKT3	488	192	white	rectangle	gene	0.5	black	46	17	10000,207,208
+N-hsa05213-34	PIK3R5	338	194	white	rectangle	gene	0.5	black	46	17	23533,5290,5291,5293,5294,5295,5296,8503
+N-hsa05213-35	EGF	173	113	white	rectangle	gene	0.5	black	46	17	1950
+N-hsa05213-39	MAPK1	681	114	white	rectangle	gene	0.5	black	46	17	5594,5595
+N-hsa05213-40	MAP2K1	610	114	white	rectangle	gene	0.5	black	46	17	5604,5605
+N-hsa05213-41	ARAF	538	114	white	rectangle	gene	0.5	black	46	17	369,5894,673
+N-hsa05213-42	KRAS	466	80	white	rectangle	gene	0.5	black	46	17	3845
+N-hsa05213-5 6 7	APC2 AXIN1 GSK3B	641	29	white	rectangle	gene,gene,gene	0.5	black	46	17	10297,324,/,8312,8313,/,2932
+N-hsa05213-31	MYC	923	23	white	rectangle	gene	0.5	black	46	17	4609
+N-hsa05213-29	CCND1	923	0	white	rectangle	gene	0.5	black	46	17	595
+N-hsa05213-25	C05981	393	194	white	circle	compound	0.5	black	8	8	NA
+N-hsa05213-13	CASP9	577	221	white	rectangle	gene	0.5	black	46	17	842
+N-hsa05213-12	BAD	577	192	white	rectangle	gene	0.5	black	46	17	572
+N-hsa05213-11	FOXO3	577	161	white	rectangle	gene	0.5	black	46	17	2309
+N-hsa05213-27	ELK1	800	113	white	rectangle	gene	0.5	black	46	17	2002

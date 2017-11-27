@@ -1,0 +1,55 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-hsa03320-1	C02165	435	672	white	circle	compound	0.5	black	8	8	NA
+N-hsa03320-2	BR:br08303(C10AB fibrates)	435	649	white	circle	other	0.5	black	8	8	NA
+N-hsa03320-3	BR:br08303(S01BC Antiinflammatory agents	435	634	white	circle	other	0.5	black	8	8	NA
+N-hsa03320-4	C15493	435	586	white	circle	compound	0.5	black	8	8	NA
+N-hsa03320-5	C15493*	435	136	white	circle	compound	0.5	black	8	8	NA
+N-hsa03320-6	BR:br08303(S01BC Antiinflammatory agents*	435	182	white	circle	other	0.5	black	8	8	NA
+N-hsa03320-48	C14767	435	220	white	circle	compound	0.5	black	8	8	NA
+N-hsa03320-49	C15493**	435	363	white	circle	compound	0.5	black	8	8	NA
+N-hsa03320-54	BR:br08303(A10BG Thiazolidinediones)	435	197	white	circle	other	0.5	black	8	8	NA
+N-hsa03320-14 15	PPARA RXRA	570	623	white	rectangle	gene,gene	0.5	black	46	17	5465,/,6256,6257,6258
+N-hsa03320-16 17	PPARD RXRA	570	398	white	rectangle	gene,gene	0.5	black	46	17	5467,/,6256,6257,6258
+N-hsa03320-18 19	PPARG RXRA	570	173	white	rectangle	gene,gene	0.5	black	46	17	5468,/,6256,6257,6258
+N-hsa03320-37	HMGCS2	838	719	white	rectangle	gene	0.5	black	46	17	3158
+N-hsa03320-61	APOA1	836	679	white	rectangle	gene	0.5	black	46	17	335
+N-hsa03320-46	APOA2	836	656	white	rectangle	gene	0.5	black	46	17	336
+N-hsa03320-57	APOC3	836	633	white	rectangle	gene	0.5	black	46	17	345
+N-hsa03320-64	APOA5	886	667	white	rectangle	gene	0.5	black	46	17	116519
+N-hsa03320-47	PLTP	886	644	white	rectangle	gene	0.5	black	46	17	5360
+N-hsa03320-65	ME1	836	593	white	rectangle	gene	0.5	black	46	17	4199
+N-hsa03320-55	SCD	836	570	white	rectangle	gene	0.5	black	46	17	6319,79966
+N-hsa03320-56	FADS2	886	581	white	rectangle	gene	0.5	black	46	17	9415
+N-hsa03320-33	CYP7A1	836	530	white	rectangle	gene	0.5	black	46	17	1581
+N-hsa03320-58	CYP8B1	836	507	white	rectangle	gene	0.5	black	46	17	1582
+N-hsa03320-59	NR1H3	886	530	white	rectangle	gene	0.5	black	46	17	10062
+N-hsa03320-63	DBI	836	467	white	rectangle	gene	0.5	black	46	17	1622
+N-hsa03320-44	FABP1	836	444	white	rectangle	gene	0.5	black	46	17	2168
+N-hsa03320-36	SLC27A4	886	433	white	rectangle	gene	0.5	black	46	17	10999,376497
+N-hsa03320-30	LPL	836	398	white	rectangle	gene	0.5	black	46	17	4023
+N-hsa03320-28	ACSL1	836	375	white	rectangle	gene	0.5	black	46	17	2180,2181,2182,23205,23305,51703,81616
+N-hsa03320-25	EHHADH	836	335	white	rectangle	gene	0.5	black	46	17	1962
+N-hsa03320-21	ACAA1	836	289	white	rectangle	gene	0.5	black	46	17	30
+N-hsa03320-20	SCP2	836	266	white	rectangle	gene	0.5	black	46	17	6342
+N-hsa03320-42	ACOX1	836	243	white	rectangle	gene	0.5	black	46	17	51,8309,8310
+N-hsa03320-27	CPT1C	886	324	white	rectangle	gene	0.5	black	46	17	126129,1374,1375
+N-hsa03320-26	CPT2	886	301	white	rectangle	gene	0.5	black	46	17	1376
+N-hsa03320-22	ACADM	886	255	white	rectangle	gene	0.5	black	46	17	34
+N-hsa03320-41	ANGPTL4	836	207	white	rectangle	gene	0.5	black	46	17	51129
+N-hsa03320-66	UCP1	836	127	white	rectangle	gene	0.5	black	46	17	7350
+N-hsa03320-32	FABP3	836	421	white	rectangle	gene	0.5	black	46	17	2170
+N-hsa03320-23	ACADL	886	278	white	rectangle	gene	0.5	black	46	17	33
+N-hsa03320-43	ILK	836	93	white	rectangle	gene	0.5	black	46	17	3611
+N-hsa03320-45	PDPK1	886	93	white	rectangle	gene	0.5	black	46	17	5170
+N-hsa03320-62	UBC	836	59	white	rectangle	gene	0.5	black	46	17	7316
+N-hsa03320-60	CYP27A1	886	507	white	rectangle	gene	0.5	black	46	17	1593
+N-hsa03320-31	CD36	886	410	white	rectangle	gene	0.5	black	46	17	948
+N-hsa03320-29	OLR1	886	387	white	rectangle	gene	0.5	black	46	17	4973
+N-hsa03320-10	PLIN1	886	207	white	rectangle	gene	0.5	black	46	17	5346
+N-hsa03320-40	FABP4	836	184	white	rectangle	gene	0.5	black	46	17	2167
+N-hsa03320-53	ADIPOQ	886	184	white	rectangle	gene	0.5	black	46	17	9370
+N-hsa03320-38	SORBS1	836	161	white	rectangle	gene	0.5	black	46	17	10580
+N-hsa03320-39	MMP1	886	161	white	rectangle	gene	0.5	black	46	17	4312
+N-hsa03320-9	PCK1	836	23	white	rectangle	gene	0.5	black	46	17	5105,5106
+N-hsa03320-7	AQP7	886	12	white	rectangle	gene	0.5	black	46	17	364
+N-hsa03320-8	GK	836	0	white	rectangle	gene	0.5	black	46	17	2710,2712

@@ -1,0 +1,56 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-rno05031-13	Drd1*	642	403	white	rectangle	gene	0.5	black	46	17	24316
+N-rno05031-35	D07445	368	564	white	circle	compound	0.5	black	8	8	NA
+N-rno05031-39	C03758	527	801	white	circle	compound	0.5	black	8	8	NA
+N-rno05031-40	C03758*	579	500	white	circle	compound	0.5	black	8	8	NA
+N-rno05031-43	NEWGENE_621802	856	568	white	rectangle	gene	0.5	black	46	17	103693838,171140,24245,24246,25050,25400
+N-rno05031-44	Ppp1r1b	785	474	white	rectangle	gene	0.5	black	46	17	360616
+N-rno05031-45	Prkaca	775	421	white	rectangle	gene	0.5	black	46	17	25636,293508
+N-rno05031-46	Gnas	714	390	white	rectangle	gene	0.5	black	46	17	24896
+N-rno05031-47	Adcy5	667	361	white	rectangle	gene	0.5	black	46	17	64532
+N-rno05031-48	Creb3l4	945	474	white	rectangle	gene	0.5	black	46	17	310616,314638,362165,362339,406169,500131,79255,81646,81647
+N-rno05031-49	C00575	777	360	white	circle	compound	0.5	black	8	8	NA
+N-rno05031-51	Ppp1ca	852	474	white	rectangle	gene	0.5	black	46	17	24668,24669,25594
+N-rno05031-52	C00025	577	595	white	circle	compound	0.5	black	8	8	NA
+N-rno05031-56	Drd1**	642	44	white	rectangle	gene	0.5	black	46	17	24316
+N-rno05031-60	Ppp1r1b*	793	120	white	rectangle	gene	0.5	black	46	17	360616
+N-rno05031-61	Ppp1ca*	860	120	white	rectangle	gene	0.5	black	46	17	24668,24669,25594
+N-rno05031-62	Creb3l4*	945	120	white	rectangle	gene	0.5	black	46	17	310616,314638,362165,362339,406169,500131,79255,81646,81647
+N-rno05031-63	Gnas*	716	28	white	rectangle	gene	0.5	black	46	17	24896
+N-rno05031-64	Adcy5*	667	0	white	rectangle	gene	0.5	black	46	17	64532
+N-rno05031-65	Prkaca*	780	65	white	rectangle	gene	0.5	black	46	17	25636,293508
+N-rno05031-66	C00575*	778	1	white	circle	compound	0.5	black	8	8	NA
+N-rno05031-73	D07445*	359	200	white	circle	compound	0.5	black	8	8	NA
+N-rno05031-83	Prkca	472	539	white	rectangle	gene	0.5	black	46	17	24680,24681,25023
+N-rno05031-84	NEWGENE_621802*	472	447	white	rectangle	gene	0.5	black	46	17	103693838,171140,24245,24246,25400
+N-rno05031-85	D07445**	492	411	white	circle	compound	0.5	black	8	8	NA
+N-rno05031-87	Prkca*	472	180	white	rectangle	gene	0.5	black	46	17	24680,24681,25023
+N-rno05031-88	NEWGENE_621802**	472	88	white	rectangle	gene	0.5	black	46	17	103693838,171140,24245,24246,25400
+N-rno05031-89	D07445***	492	52	white	circle	compound	0.5	black	8	8	NA
+N-rno05031-90	C00025*	577	243	white	circle	compound	0.5	black	8	8	NA
+N-rno05031-91	C03758**	577	140	white	circle	compound	0.5	black	8	8	NA
+N-rno05031-105	D07445****	153	470	white	circle	compound	0.5	black	8	8	NA
+N-rno05031-106	D07445*****	156	114	white	circle	compound	0.5	black	8	8	NA
+N-rno05031-42 50	Calm1 C00076	777	568	white	rectangle	gene,compound	0.5	black	46	17	24242,24244,307100,364774,50663,691455,/,NA
+N-rno05031-57 58	C00076 Calm1	734	215	white	circle	compound,gene	0.5	black	8	8	NA,/,24242,24244,307100,364774,50663,691455
+N-rno05031-99 107	Fosb Jun	1051	120	white	rectangle	gene,gene	0.5	black	46	17	100360880,/,24516
+N-rno05031-99 104	Fosb Sirt1	1051	120	white	rectangle	gene,gene	0.5	black	46	17	100360880,/,309757
+N-rno05031-99 100	Fosb Hdac1	1051	120	white	rectangle	gene,gene	0.5	black	46	17	100360880,/,297893
+N-rno05031-15	Maob	434	564	white	rectangle	gene	0.5	black	46	17	25750,29253
+N-rno05031-8	Drd1	642	770	white	rectangle	gene	0.5	black	46	17	24316
+N-rno05031-12	Gria2	642	491	white	rectangle	gene	0.5	black	46	17	29627,29628,29629,50592
+N-rno05031-11	Grin3b	642	568	white	rectangle	gene	0.5	black	46	17	170796,191573,24408,24409,24410,24411,24412
+N-rno05031-10	Cacna1c	642	608	white	rectangle	gene	0.5	black	46	17	24239,29716
+N-rno05031-96	Pdyn	1058	486	white	rectangle	gene	0.5	black	46	17	29190
+N-rno05031-97	Arc	1110	486	white	rectangle	gene	0.5	black	46	17	54323
+N-rno05031-98	Fos	1083	464	white	rectangle	gene	0.5	black	46	17	314322
+N-rno05031-54	Grin3b*	642	215	white	rectangle	gene	0.5	black	46	17	170796,191573,24408,24409,24410,24411,24412
+N-rno05031-53	Cacna1c*	642	256	white	rectangle	gene	0.5	black	46	17	24239,29716
+N-rno05031-77	Maob*	429	202	white	rectangle	gene	0.5	black	46	17	25750,29253
+N-rno05031-17 82	Slc6a3 Stx1a	527	501	white	rectangle	gene,gene	0.5	black	46	17	24898,/,116470
+N-rno05031-78 86	Slc6a3 Stx1a*	527	142	white	rectangle	gene,gene	0.5	black	46	17	24898,/,116470
+N-rno05031-55	Gria2*	642	137	white	rectangle	gene	0.5	black	46	17	29627,29628,29629,50592
+N-rno05031-32	Th	157	517	white	rectangle	gene	0.5	black	46	17	25085
+N-rno05031-75	Th*	157	161	white	rectangle	gene	0.5	black	46	17	25085
+N-rno05031-59	Ppp3cc	778	167	white	rectangle	gene	0.5	black	46	17	171378,24674,24675,29748,29749
+N-rno05031-101	Fos*	1148	68	white	rectangle	gene	0.5	black	46	17	314322

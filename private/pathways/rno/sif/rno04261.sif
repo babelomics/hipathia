@@ -1,0 +1,63 @@
+N-rno04261-26	activation	N-rno04261-28
+N-rno04261-27	activation	N-rno04261-29
+N-rno04261-27	activation	N-rno04261-30
+N-rno04261-28	activation	N-rno04261-31
+N-rno04261-29	activation	N-rno04261-31
+N-rno04261-30	activation	N-rno04261-36
+N-rno04261-30	activation	N-rno04261-33
+N-rno04261-31	activation	N-rno04261-51
+N-rno04261-32	activation	N-rno04261-20
+N-rno04261-32	activation	N-rno04261-23
+N-rno04261-32	activation	N-rno04261-73
+N-rno04261-32	activation	N-rno04261-72
+N-rno04261-32	activation	N-rno04261-4
+N-rno04261-32	activation	N-rno04261-39
+N-rno04261-32	activation	N-rno04261-2
+N-rno04261-32	activation	N-rno04261-3
+N-rno04261-32	activation	N-rno04261-40
+N-rno04261-32	activation	N-rno04261-37
+N-rno04261-32	activation	N-rno04261-8 38
+N-rno04261-32	activation	N-rno04261-9 13 14
+N-rno04261-32	activation	N-rno04261-14 16
+N-rno04261-33	activation	N-rno04261-34
+N-rno04261-35	activation	N-rno04261-32
+N-rno04261-40	inhibition	N-rno04261-41
+N-rno04261-41	activation	N-rno04261-8 38
+N-rno04261-42	inhibition	N-rno04261-40
+N-rno04261-43	activation	N-rno04261-44
+N-rno04261-43	activation	N-rno04261-3
+N-rno04261-44	activation	N-rno04261-45
+N-rno04261-45	activation	N-rno04261-39
+N-rno04261-45	activation	N-rno04261-2
+N-rno04261-45	activation	N-rno04261-3
+N-rno04261-46	activation	N-rno04261-47
+N-rno04261-47	activation	N-rno04261-48
+N-rno04261-48	activation	N-rno04261-65
+N-rno04261-48	activation	N-rno04261-66
+N-rno04261-49	activation	N-rno04261-40
+N-rno04261-49	activation	N-rno04261-64
+N-rno04261-51	activation	N-rno04261-52
+N-rno04261-53	inhibition	N-rno04261-2
+N-rno04261-53	inhibition	N-rno04261-3
+N-rno04261-54	inhibition	N-rno04261-2
+N-rno04261-54	inhibition	N-rno04261-3
+N-rno04261-56	activation	N-rno04261-47
+N-rno04261-57	activation	N-rno04261-26
+N-rno04261-57	activation	N-rno04261-27
+N-rno04261-58	activation	N-rno04261-26
+N-rno04261-58	activation	N-rno04261-27
+N-rno04261-59	activation	N-rno04261-26
+N-rno04261-59	activation	N-rno04261-27
+N-rno04261-60	inhibition	N-rno04261-9 13 14
+N-rno04261-60	inhibition	N-rno04261-14 16
+N-rno04261-61	inhibition	N-rno04261-62
+N-rno04261-61	inhibition	N-rno04261-37
+N-rno04261-63	activation	N-rno04261-37
+N-rno04261-64	activation	N-rno04261-63
+N-rno04261-65	activation	N-rno04261-49
+N-rno04261-67	activation	N-rno04261-49
+N-rno04261-68	activation	N-rno04261-56
+N-rno04261-69	activation	N-rno04261-56
+N-rno04261-70	activation	N-rno04261-46
+N-rno04261-9 13 14	activation	N-rno04261-15 17
+N-rno04261-9 13 14	activation	N-rno04261-15 16

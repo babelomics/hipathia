@@ -1,0 +1,66 @@
+N-rno04066-6	activation	N-rno04066-10 8 9
+N-rno04066-12	activation	N-rno04066-17
+N-rno04066-17	activation	N-rno04066-85
+N-rno04066-17	activation	N-rno04066-18
+N-rno04066-18	activation	N-rno04066-19
+N-rno04066-19	activation	N-rno04066-20
+N-rno04066-20	activation	N-rno04066-82
+N-rno04066-20	inhibition	N-rno04066-80
+N-rno04066-22	activation	N-rno04066-27
+N-rno04066-23	activation	N-rno04066-25
+N-rno04066-23	activation	N-rno04066-26
+N-rno04066-24	activation	N-rno04066-20
+N-rno04066-24	inhibition	N-rno04066-6
+N-rno04066-25	activation	N-rno04066-24
+N-rno04066-27	activation	N-rno04066-23
+N-rno04066-38	inhibition	N-rno04066-37
+N-rno04066-40	activation	N-rno04066-41
+N-rno04066-41	activation	N-rno04066-10 8 9
+N-rno04066-66	activation	N-rno04066-67
+N-rno04066-67	activation	N-rno04066-10 8 9
+N-rno04066-68	activation	N-rno04066-66
+N-rno04066-69	activation	N-rno04066-70
+N-rno04066-70	activation	N-rno04066-67
+N-rno04066-72	activation	N-rno04066-73
+N-rno04066-73	activation	N-rno04066-74
+N-rno04066-74	activation	N-rno04066-10 8 9
+N-rno04066-75	inhibition	N-rno04066-6
+N-rno04066-76	activation	N-rno04066-6
+N-rno04066-77	activation	N-rno04066-6
+N-rno04066-78	activation	N-rno04066-6
+N-rno04066-79	activation	N-rno04066-6
+N-rno04066-82	activation	N-rno04066-83
+N-rno04066-84	activation	N-rno04066-86
+N-rno04066-84	inhibition	N-rno04066-80
+N-rno04066-85	activation	N-rno04066-84
+N-rno04066-86	activation	N-rno04066-81
+N-rno04066-2 3 4 7	inhibition	N-rno04066-10 8 9
+N-rno04066-10 8 9	activation	N-rno04066-63
+N-rno04066-10 8 9	activation	N-rno04066-64
+N-rno04066-10 8 9	activation	N-rno04066-49
+N-rno04066-10 8 9	activation	N-rno04066-50
+N-rno04066-10 8 9	activation	N-rno04066-51
+N-rno04066-10 8 9	activation	N-rno04066-5
+N-rno04066-10 8 9	activation	N-rno04066-52
+N-rno04066-10 8 9	activation	N-rno04066-53
+N-rno04066-10 8 9	activation	N-rno04066-54
+N-rno04066-10 8 9	activation	N-rno04066-55
+N-rno04066-10 8 9	activation	N-rno04066-56
+N-rno04066-10 8 9	activation	N-rno04066-57
+N-rno04066-10 8 9	activation	N-rno04066-58
+N-rno04066-10 8 9	activation	N-rno04066-59
+N-rno04066-10 8 9	activation	N-rno04066-60
+N-rno04066-10 8 9	activation	N-rno04066-61
+N-rno04066-10 8 9	activation	N-rno04066-62
+N-rno04066-10 8 9	activation	N-rno04066-11
+N-rno04066-10 8 9	activation	N-rno04066-30
+N-rno04066-10 8 9	activation	N-rno04066-42
+N-rno04066-10 8 9	activation	N-rno04066-43
+N-rno04066-10 8 9	activation	N-rno04066-44
+N-rno04066-10 8 9	activation	N-rno04066-45
+N-rno04066-10 8 9	activation	N-rno04066-47
+N-rno04066-10 8 9	activation	N-rno04066-48
+N-rno04066-10 8 9	activation	N-rno04066-29
+N-rno04066-10 8 9	activation	N-rno04066-88
+N-rno04066-10 8 9	activation	N-rno04066-89
+N-rno04066-10 8 9	activation	N-rno04066-46

@@ -1,0 +1,21 @@
+N-hsa05218-3	activation	N-hsa05218-31
+N-hsa05218-7	activation	N-hsa05218-32
+N-hsa05218-7	activation	N-hsa05218-26
+N-hsa05218-11	activation	N-hsa05218-17
+N-hsa05218-12	activation	N-hsa05218-33
+N-hsa05218-13	activation	N-hsa05218-12
+N-hsa05218-15	activation	N-hsa05218-18
+N-hsa05218-16	inhibition	N-hsa05218-22 23
+N-hsa05218-18	inhibition	N-hsa05218-19
+N-hsa05218-19	activation	N-hsa05218-16
+N-hsa05218-20	activation	N-hsa05218-21
+N-hsa05218-25	inhibition	N-hsa05218-14
+N-hsa05218-26	activation	N-hsa05218-25
+N-hsa05218-27	activation	N-hsa05218-22 23
+N-hsa05218-30	activation	N-hsa05218-9
+N-hsa05218-30	activation	N-hsa05218-8
+N-hsa05218-31	activation	N-hsa05218-30
+N-hsa05218-32	activation	N-hsa05218-31
+N-hsa05218-33	activation	N-hsa05218-32
+N-hsa05218-33	activation	N-hsa05218-26
+N-hsa05218-22 23	activation	N-hsa05218-21

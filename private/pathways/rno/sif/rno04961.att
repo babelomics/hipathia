@@ -1,0 +1,25 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-rno04961-3	C16051	652	577	white	circle	compound	0.5	black	8	8	NA
+N-rno04961-6	Pth1r	652	518	white	rectangle	gene	0.5	black	46	17	56813
+N-rno04961-21	Bdkrb2	158	0	white	rectangle	gene	0.5	black	46	17	25245
+N-rno04961-24	C00076	770	69	white	circle	compound	0.5	black	8	8	NA
+N-rno04961-39	Kl	107	148	white	rectangle	gene	0.5	black	46	17	83504
+N-rno04961-40	Prkca	245	59	white	rectangle	gene	0.5	black	46	17	24680,24681,25023
+N-rno04961-41	Gnaq	252	0	white	rectangle	gene	0.5	black	46	17	81666
+N-rno04961-42	Plcb1	343	0	white	rectangle	gene	0.5	black	46	17	24654,25031,29322,85240
+N-rno04961-43	C00165	297	30	white	circle	compound	0.5	black	8	8	NA
+N-rno04961-45	103690048	77	0	white	rectangle	gene	0.5	black	46	17	103690048,24523,24594,24841,292855,292858,292866
+N-rno04961-49	Prkaca	278	163	white	rectangle	gene	0.5	black	46	17	25636,293508
+N-rno04961-50	C00575	377	210	white	circle	compound	0.5	black	8	8	NA
+N-rno04961-51	Adcy6	470	241	white	rectangle	gene	0.5	black	46	17	25289,302950
+N-rno04961-52	Gnas	570	291	white	rectangle	gene	0.5	black	46	17	24896
+N-rno04961-53	Atp1a1	896	211	white	rectangle	gene	0.5	black	46	17	24211,24212,24213,24214,25390,25650,29132,29639,84396
+N-rno04961-54	Kl*	839	258	white	rectangle	gene	0.5	black	46	17	83504
+N-rno04961-8 9	Vdr C01673	757	432	white	rectangle	gene,compound	0.5	black	46	17	24873,/,NA
+N-rno04961-47 48	Esr1 C00951	832	432	white	rectangle	gene,compound	0.5	black	46	17	24890,/,NA
+N-rno04961-20	Calb1*	716	69	white	rectangle	gene	0.5	black	46	17	83839
+N-rno04961-5	Trpv5	158	98	white	rectangle	gene	0.5	black	46	17	116469
+N-rno04961-12	Slc8a1	896	134	white	rectangle	gene	0.5	black	46	17	29715
+N-rno04961-26	Trpv5*	593	204	white	rectangle	gene	0.5	black	46	17	116469
+N-rno04961-17	Calb1	637	124	white	rectangle	gene	0.5	black	46	17	83839
+N-rno04961-13	Atp2b1	896	24	white	rectangle	gene	0.5	black	46	17	29598

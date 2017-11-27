@@ -1,0 +1,89 @@
+N-mmu04620-1	activation	N-mmu04620-79
+N-mmu04620-2	activation	N-mmu04620-16
+N-mmu04620-4	activation	N-mmu04620-16
+N-mmu04620-7	activation	N-mmu04620-27 65
+N-mmu04620-8	activation	N-mmu04620-27 65
+N-mmu04620-8	activation	N-mmu04620-38
+N-mmu04620-10	activation	N-mmu04620-85
+N-mmu04620-11	inhibition	N-mmu04620-12
+N-mmu04620-11	activation	N-mmu04620-84
+N-mmu04620-13	activation	N-mmu04620-16
+N-mmu04620-14	activation	N-mmu04620-35 37
+N-mmu04620-15	inhibition	N-mmu04620-15 9
+N-mmu04620-16	activation	N-mmu04620-21
+N-mmu04620-16	activation	N-mmu04620-20
+N-mmu04620-17	activation	N-mmu04620-46
+N-mmu04620-17	activation	N-mmu04620-34
+N-mmu04620-17	activation	N-mmu04620-39
+N-mmu04620-17	activation	N-mmu04620-86
+N-mmu04620-17	activation	N-mmu04620-40
+N-mmu04620-17	activation	N-mmu04620-76
+N-mmu04620-17	activation	N-mmu04620-87
+N-mmu04620-24	activation	N-mmu04620-45
+N-mmu04620-26	activation	N-mmu04620-85
+N-mmu04620-31	activation	N-mmu04620-38
+N-mmu04620-31	activation	N-mmu04620-27 65
+N-mmu04620-32	activation	N-mmu04620-78
+N-mmu04620-33	activation	N-mmu04620-85
+N-mmu04620-36	activation	N-mmu04620-17
+N-mmu04620-36	activation	N-mmu04620-25 41 43
+N-mmu04620-38	activation	N-mmu04620-66
+N-mmu04620-42	activation	N-mmu04620-82
+N-mmu04620-44	activation	N-mmu04620-19
+N-mmu04620-44	activation	N-mmu04620-18
+N-mmu04620-44	activation	N-mmu04620-77
+N-mmu04620-45	inhibition	N-mmu04620-82
+N-mmu04620-47	activation	N-mmu04620-23
+N-mmu04620-47	activation	N-mmu04620-48
+N-mmu04620-47	activation	N-mmu04620-22
+N-mmu04620-47	activation	N-mmu04620-20
+N-mmu04620-47	activation	N-mmu04620-19
+N-mmu04620-47	activation	N-mmu04620-18
+N-mmu04620-47	activation	N-mmu04620-77
+N-mmu04620-51	activation	N-mmu04620-7
+N-mmu04620-52	activation	N-mmu04620-61
+N-mmu04620-57	activation	N-mmu04620-6 80
+N-mmu04620-59	activation	N-mmu04620-61
+N-mmu04620-61	activation	N-mmu04620-14
+N-mmu04620-61	activation	N-mmu04620-15 9
+N-mmu04620-63	activation	N-mmu04620-50 58
+N-mmu04620-78	activation	N-mmu04620-42
+N-mmu04620-79	activation	N-mmu04620-44
+N-mmu04620-81	activation	N-mmu04620-33
+N-mmu04620-82	activation	N-mmu04620-46
+N-mmu04620-82	activation	N-mmu04620-34
+N-mmu04620-82	activation	N-mmu04620-39
+N-mmu04620-82	activation	N-mmu04620-86
+N-mmu04620-82	activation	N-mmu04620-40
+N-mmu04620-82	activation	N-mmu04620-76
+N-mmu04620-82	activation	N-mmu04620-87
+N-mmu04620-83	activation	N-mmu04620-26
+N-mmu04620-84	activation	N-mmu04620-10
+N-mmu04620-85	activation	N-mmu04620-46
+N-mmu04620-85	activation	N-mmu04620-34
+N-mmu04620-85	activation	N-mmu04620-39
+N-mmu04620-85	activation	N-mmu04620-86
+N-mmu04620-85	activation	N-mmu04620-40
+N-mmu04620-85	activation	N-mmu04620-76
+N-mmu04620-85	activation	N-mmu04620-87
+N-mmu04620-27 65	activation	N-mmu04620-36
+N-mmu04620-30 8	activation	N-mmu04620-36
+N-mmu04620-35 37	activation	N-mmu04620-16
+N-mmu04620-35 37	activation	N-mmu04620-47
+N-mmu04620-15 9	activation	N-mmu04620-25 41 43
+N-mmu04620-24 28 64	activation	N-mmu04620-12
+N-mmu04620-3 5	activation	N-mmu04620-17
+N-mmu04620-3 5	activation	N-mmu04620-16
+N-mmu04620-3 5	activation	N-mmu04620-4
+N-mmu04620-6 80	activation	N-mmu04620-27 65
+N-mmu04620-25 41 43	activation	N-mmu04620-24
+N-mmu04620-25 41 43	activation	N-mmu04620-83
+N-mmu04620-25 41 43	activation	N-mmu04620-81
+N-mmu04620-25 41 43	activation	N-mmu04620-24 28 64
+N-mmu04620-49 55	activation	N-mmu04620-31 60 62
+N-mmu04620-49 55	activation	N-mmu04620-32
+N-mmu04620-50 58	activation	N-mmu04620-8
+N-mmu04620-50 58	activation	N-mmu04620-59
+N-mmu04620-50 58	activation	N-mmu04620-30 8
+N-mmu04620-53 54	activation	N-mmu04620-32
+N-mmu04620-53 54	activation	N-mmu04620-31 60 62

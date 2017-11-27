@@ -1,0 +1,40 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-hsa05014-1	SOD1	790	121	white	rectangle	gene	0.5	black	46	17	6647
+N-hsa05014-6	SOD1*	556	602	white	rectangle	gene	0.5	black	46	17	6647
+N-hsa05014-7	CYCS	874	781	white	rectangle	gene	0.5	black	46	17	54205
+N-hsa05014-8	C00025	256	361	white	circle	compound	0.5	black	8	8	NA
+N-hsa05014-10	TNF	251	152	white	rectangle	gene	0.5	black	46	17	7124
+N-hsa05014-14	BAX	930	680	white	rectangle	gene	0.5	black	46	17	581
+N-hsa05014-15	BAD	982	680	white	rectangle	gene	0.5	black	46	17	572
+N-hsa05014-16	BCL2	760	679	white	rectangle	gene	0.5	black	46	17	596
+N-hsa05014-17	BCL2L1	812	679	white	rectangle	gene	0.5	black	46	17	598
+N-hsa05014-19	APAF1	875	823	white	rectangle	gene	0.5	black	46	17	317
+N-hsa05014-20	CASP9	982	802	white	rectangle	gene	0.5	black	46	17	842
+N-hsa05014-24	TNFRSF1A	331	152	white	rectangle	gene	0.5	black	46	17	7132,7133
+N-hsa05014-25	DAXX	554	248	white	rectangle	gene	0.5	black	46	17	1616
+N-hsa05014-26	MAP3K5	644	248	white	rectangle	gene	0.5	black	46	17	4217
+N-hsa05014-27	MAP2K3	737	260	white	rectangle	gene	0.5	black	46	17	5606
+N-hsa05014-28	MAP2K6	737	236	white	rectangle	gene	0.5	black	46	17	5608
+N-hsa05014-29	MAPK14	830	248	white	rectangle	gene	0.5	black	46	17	1432,5600,5603,6300
+N-hsa05014-35	SOD1**	669	61	white	rectangle	gene	0.5	black	46	17	6647
+N-hsa05014-36	SOD1***	764	61	white	rectangle	gene	0.5	black	46	17	6647
+N-hsa05014-37	GPX1	759	29	white	rectangle	gene	0.5	black	46	17	2876
+N-hsa05014-38	CAT	759	6	white	rectangle	gene	0.5	black	46	17	847
+N-hsa05014-39	NOS1	591	170	white	rectangle	gene	0.5	black	46	17	4842
+N-hsa05014-47	C16844	819	75	white	circle	compound	0.5	black	8	8	NA
+N-hsa05014-48	C00070	617	1	white	circle	compound	0.5	black	8	8	NA
+N-hsa05014-59	C00704	379	638	white	circle	compound	0.5	black	8	8	NA
+N-hsa05014-50 52	ALS2 RAC1	996	38	white	rectangle	gene,gene	0.5	black	46	17	57679,/,5879
+N-hsa05014-31 34	NEFL PRPH	902	102	white	rectangle	gene,gene	0.5	black	46	17	4747,/,5630
+N-hsa05014-5	TOMM40	684	549	white	rectangle	gene	0.5	black	46	17	10452,84134
+N-hsa05014-51	DERL1	612	349	white	rectangle	gene	0.5	black	46	17	79139
+N-hsa05014-54	PPP3CA	642	695	white	rectangle	gene	0.5	black	46	17	5530,5532,5533,5534,5535
+N-hsa05014-4	GRIA1	330	329	white	rectangle	gene	0.5	black	46	17	2890,2891,2902,2903,2904,2905,2906
+N-hsa05014-13	CASP3	1068	801	white	rectangle	gene	0.5	black	46	17	836
+N-hsa05014-32 34	NEFM PRPH	902	76	white	rectangle	gene,gene	0.5	black	46	17	4741,/,5630
+N-hsa05014-33 34	NEFH PRPH	902	51	white	rectangle	gene,gene	0.5	black	46	17	4744,/,5630
+N-hsa05014-46	C00027	720	76	white	circle	compound	0.5	black	8	8	NA
+N-hsa05014-49	C00001	817	0	white	circle	compound	0.5	black	8	8	NA
+N-hsa05014-43	C00533	629	154	white	circle	compound	0.5	black	8	8	NA
+N-hsa05014-2	SLC1A2	188	572	white	rectangle	gene	0.5	black	46	17	6506
+N-hsa05014-53	RAB5A	1080	39	white	rectangle	gene	0.5	black	46	17	5868

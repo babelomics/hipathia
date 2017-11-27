@@ -1,0 +1,15 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-rno04623-23	Ikbkg	721	0	white	rectangle	gene	0.5	black	46	17	309295,309361,84351
+N-rno04623-24	Ddx58	512	277	white	rectangle	gene	0.5	black	46	17	297989
+N-rno04623-27	Nfkbia	820	0	white	rectangle	gene	0.5	black	46	17	25493,81525
+N-rno04623-38	Mb21d1	410	236	white	rectangle	gene	0.5	black	46	17	682147
+N-rno04623-39	C20640	514	236	white	circle	compound	0.5	black	8	8	NA
+N-rno04623-7 10	Zbp1 Irf3	537	132	white	rectangle	gene,gene	0.5	black	46	17	171091,/,292892
+N-rno04623-7 12	Zbp1 Irf7	537	132	white	rectangle	gene,gene	0.5	black	46	17	171091,/,293624
+N-rno04623-7 18	Zbp1 Ripk1	537	132	white	rectangle	gene,gene	0.5	black	46	17	171091,/,306886
+N-rno04623-7 19	Zbp1 Ripk3	537	132	white	rectangle	gene,gene	0.5	black	46	17	171091,/,246240
+N-rno04623-15 16	Mavs Tmem173	583	277	white	rectangle	gene,gene	0.5	black	46	17	311430,/,498840
+N-rno04623-17	Rela	820	45	white	rectangle	gene	0.5	black	46	17	309165,81736
+N-rno04623-8	Tbk1	697	174	white	rectangle	gene	0.5	black	46	17	299827
+N-rno04623-9	Ikbke	697	153	white	rectangle	gene	0.5	black	46	17	363984
+N-rno04623-25	Rela*	820	324	white	rectangle	gene	0.5	black	46	17	309165,81736

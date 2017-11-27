@@ -1,0 +1,17 @@
+N-mmu03460-6	activation	N-mmu03460-24
+N-mmu03460-6	activation	N-mmu03460-29
+N-mmu03460-6	activation	N-mmu03460-26 12 24
+N-mmu03460-21	activation	N-mmu03460-27
+N-mmu03460-24	activation	N-mmu03460-48
+N-mmu03460-29	activation	N-mmu03460-25 40
+N-mmu03460-20 21	activation	N-mmu03460-7
+N-mmu03460-20 21	activation	N-mmu03460-16 49
+N-mmu03460-20 21	activation	N-mmu03460-16 34
+N-mmu03460-20 21	activation	N-mmu03460-1 10 11 13 2 3 32 35 4 50 51 8 9 14 17 18 19
+N-mmu03460-30 31	inhibition	N-mmu03460-1 10 11 13 2 3 32 35 4 50 51 8 9 14 17 18 19
+N-mmu03460-23 49	activation	N-mmu03460-21
+N-mmu03460-23 49	activation	N-mmu03460-20 21
+N-mmu03460-26 12 24	activation	N-mmu03460-25 40
+N-mmu03460-26 12 24	activation	N-mmu03460-28
+N-mmu03460-1 10 11 13 2 3 32 35 4 50 51 8 9 14 17 18 19	inhibition	N-mmu03460-7
+N-mmu03460-1 10 11 13 2 3 32 35 4 50 51 8 9 14 17 18 19	inhibition	N-mmu03460-6

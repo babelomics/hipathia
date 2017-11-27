@@ -1,0 +1,15 @@
+N-hsa04330-5	inhibition	N-hsa04330-13 14
+N-hsa04330-17	activation	N-hsa04330-22
+N-hsa04330-20	inhibition	N-hsa04330-22
+N-hsa04330-21	inhibition	N-hsa04330-22
+N-hsa04330-22	activation	N-hsa04330-19
+N-hsa04330-22	activation	N-hsa04330-13 14
+N-hsa04330-23	inhibition	N-hsa04330-22
+N-hsa04330-25	activation	N-hsa04330-22
+N-hsa04330-26	activation	N-hsa04330-22
+N-hsa04330-1 18 2 3	activation	N-hsa04330-22
+N-hsa04330-15 16	activation	N-hsa04330-13 14
+N-hsa04330-5 8	inhibition	N-hsa04330-13 14
+N-hsa04330-10 5 6	inhibition	N-hsa04330-13 14
+N-hsa04330-13 14	activation	N-hsa04330-12
+N-hsa04330-13 14	activation	N-hsa04330-11

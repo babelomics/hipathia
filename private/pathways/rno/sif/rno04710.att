@@ -1,0 +1,15 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-rno04710-6	Nr1d1	621	205	white	rectangle	gene	0.5	black	46	17	252917
+N-rno04710-15	Fbxl3	305	299	white	rectangle	gene	0.5	black	46	17	306129
+N-rno04710-16	Prkag1	396	267	white	rectangle	gene	0.5	black	46	17	25520,301518,373545,64562,65248,78975,83803
+N-rno04710-17	Creb1	731	437	white	rectangle	gene	0.5	black	46	17	81646
+N-rno04710-18	Csnk1e	374	405	white	rectangle	gene	0.5	black	46	17	58822,64462
+N-rno04710-20	C00076	296	446	white	circle	compound	0.5	black	8	8	NA
+N-rno04710-21	C00575	296	430	white	circle	compound	0.5	black	8	8	NA
+N-rno04710-3 4	Arntl Npas2	748	26	white	rectangle	gene,gene	0.5	black	46	17	29657,/,316351,60447
+N-rno04710-10 8 9	Csnk1e Cry2 Per1	475	0	white	rectangle	gene,gene,gene	0.5	black	46	17	58822,64462,/,170917,299691,/,287422,63840,78962
+N-rno04710-12 13	Skp1 Fbxw11	305	367	white	rectangle	gene,gene	0.5	black	46	17	287280,300084,362356,/,303024,361765
+N-rno04710-11	Cry2	498	307	white	rectangle	gene	0.5	black	46	17	170917,299691
+N-rno04710-7	Per1	452	358	white	rectangle	gene	0.5	black	46	17	287422,63840,78962
+N-rno04710-23	Bhlhe41	545	256	white	rectangle	gene	0.5	black	46	17	117095,79431
+N-rno04710-5	Rora	748	119	white	rectangle	gene	0.5	black	46	17	300807,309288,368158

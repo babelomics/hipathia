@@ -1,0 +1,359 @@
+path	action	node1	relation	node2
+04014	-	53	activation	6 48
+04014	-	52	activation	6 48
+04014	-	9	activation	47 49
+04014	-	50	activation	47 49
+04014	-	51	activation	47 49
+04014	+	53	inhibition	6 48
+04014	+	52	inhibition	6 48
+04014	+	9	activation	6 48
+04014	+	50	activation	6 48
+04014	+	51	activation	6 48
+04015	-	24	activation	6 20
+04015	-	26	activation	6 20
+04015	-	69	activation	6 20
+04015	-	44	activation	19 21
+04015	-	38	activation	19 21
+04015	-	60	activation	19 21
+04015	-	59	activation	19 21
+04015	-	23	activation	19 21
+04015	-	22	activation	19 21
+04015	-	57	activation	19 21
+04015	-	84 86	activation	19 21
+04015	-	88	activation	19 21
+04015	+	24	inhibition	6 20
+04015	+	26	inhibition	6 20
+04015	+	69	inhibition	6 20
+04015	+	44	activation	6 20
+04015	+	38	activation	6 20
+04015	+	60	activation	6 20
+04015	+	59	activation	6 20
+04015	+	23	activation	6 20
+04015	+	22	activation	6 20
+04015	+	57	activation	6 20
+04015	+	84 86	activation	6 20
+04015	+	88	activation	6 20
+04015	+	84 86 85 84 86	activation	84 86
+04010	+	36 37	activation	34 36
+04010	+	36 38	activation	34 36
+04010	+	36 39	activation	34 36
+04010	+	36 40	activation	34 36
+04068	+	7	activation	36
+04390	+	66 67 68	activation	66
+04390	+	33	activation	43 44
+04390	+	33	activation	30 7
+04390	+	33	activation	93
+04390	+	33	activation	45 46 57
+04390	+	55 56	activation	45 46 57
+04390	+	33	activation	85 86 87
+04390	+	83 84	activation	85 86 87
+04390	+	33	activation	69 70 71
+04390	-	55 56	activation	83 84
+04064	+	29 66	activation	29
+04064	+	27 28	activation	27
+04064	+	39	activation	22 23 24
+04064	+	22 23 24	activation	5
+04066	+	80	inhibition	81
+04066	+	81	activation	10 8 9
+04066	+	83	activation	10 8 9
+04024	+	22	activation	19
+04024	+	19	inhibition	38
+04024	+	45	activation	49
+04115	+	47	inhibition	48
+04115	+	47	inhibition	4
+04115	+	42	inhibition	35
+04620	+	31 60 62	activation	31
+04620	+	6 80	activation	3 5
+04660	+	4	activation	3
+04660	+	15 16 17	activation	15
+04662	+	4	activation	3
+04662	+	7 8 9	activation	7
+04666	-	34	activation	46
+04666	-	12 13	activation	16
+04666	-	29	activation	27
+04666	+	43	activation	21
+04666	+	34	activation	33
+04666	+	33	activation	46
+04666	+	14	activation	21
+04666	+	29 36	activation	27
+04666	+	45	activation	30 44
+04666	+	12 13	activation	15
+04666	+	15	activation	16
+04668	+	21	activation	27
+04668	+	4	activation	5
+04668	+	4	activation	6
+04062	+	16 19	activation	19 58
+04062	+	13	activation	14
+04062	+	11	activation	12
+04062	+	12	activation	34
+04921	+	8	activation	2
+04919	+	35	activation	36
+04916	+	31	activation	26
+04916	-	17	activation	16
+04261	+	31	activation	35
+04261	+	2	activation	43
+05200	+	42 43	activation	188
+05200	-	43	activation	188
+05231	+	35	activation	36
+05231	+	19	activation	41
+05010	+	40	activation	12
+05010	+	41	activation	13
+05010	+	55	activation	13
+05010	+	21	activation	30
+05010	+	30	activation	46
+05214	+	70	activation	71
+05214	+	46	activation	77
+05214	+	77	activation	47
+05214	-	74	activation	36
+05214	+	36	activation	74
+05214	+	74	activation	75
+05214	-	58	activation	77
+05214	+	58	inhibition	77
+05214	-	26	activation	73
+05214	+	26	inhibition	73
+05218	-	26	activation	25
+05218	+	26	activation	17
+05218	+	17	activation	25
+05161	-	81	activation	241
+05161	-	241	activation	247
+05161	+	81	activation	247
+05161	-	182	activation	227
+05161	+	182 183	activation	227
+04022	+	28	activation	29
+04071	+	40	activation	30
+04071	+	42	activation	30
+04072	+	15	activation	25
+04114	+	46	activation	1
+04114	+	46	activation	16
+04114	+	41	activation	1
+04114	+	41	activation	16
+04114	+	6	activation	19
+04114	+	42	activation	19
+04114	+	42	activation	26
+04114	+	42	activation	18 27
+04151	+	89 90	activation	15
+04151	+	82 83 85	activation	15
+04151	-	90	activation	15
+04151	-	85	activation	15
+04151	-	8	activation	6
+04151	+	7 8 9	activation	6
+04152	+	84	activation	85
+04152	+	27	activation	29
+04152	+	1	activation	23
+04152	+	1	inhibition	51
+04210	+	22	activation	74
+04210	+	22	activation	75
+04210	+	23	activation	22
+04210	+	24	activation	22
+04210	+	24	activation	13
+04210	+	24	activation	14
+04210	+	31 32 33	activation	31
+04213	-	40	activation	28
+04270	+	32	activation	10 3 71
+04270	+	6	activation	21
+04270	+	26	activation	27
+04350	+	36	activation	23 24 25
+04350	+	36	activation	19 20
+04350	+	27	activation	17
+04350	+	12	activation	14
+04350	+	50	activation	55
+04350	+	44 45	activation	38
+04380	+	50	activation	51
+04380	+	75	activation	76
+04380	+	17 18	activation	14
+04380	+	17 18	activation	19
+04380	+	17 18	activation	20
+04380	+	17 18	activation	73
+04380	-	17	activation	14
+04380	-	17	activation	19
+04380	-	17	activation	20
+04380	-	17	activation	73
+04510	+	22	activation	8
+04510	-	22	activation	66
+04510	-	22	activation	15
+04510	-	22	activation	16
+04510	-	22	activation	17 18
+04520	+	45 68	activation	44 52 45
+04540	-	29	activation	1
+04540	-	46	activation	22
+04540	-	53	activation	21
+04540	-	51	activation	21
+04540	-	27	activation	11
+04540	-	50	activation	12
+04540	-	37	activation	10
+04540	+	1	activation	29
+04540	+	22	activation	46
+04540	+	21	activation	53
+04540	+	21	activation	51
+04540	+	11	activation	27
+04540	+	12	activation	50
+04540	+	10	activation	37
+04610	+	5	activation	41
+04610	+	3	activation	4
+04610	-	4	activation	3
+04611	+	70	activation	8
+04611	+	49	activation	50
+04611	+	19 79 80	activation	5
+04611	+	19 79 80	activation	4
+04611	-	19	activation	5
+04611	-	19	activation	4
+04611	-	89	activation	19
+04611	+	55	activation	61
+04611	+	59	activation	62
+04611	+	60	activation	62
+04612	+	5	activation	27
+04612	+	5	activation	26
+04612	+	5	activation	10
+04612	+	4	activation	27
+04612	+	4	activation	26
+04612	+	4	activation	10
+04612	+	6	activation	27
+04612	+	6	activation	26
+04612	+	6	activation	10
+04612	+	1	activation	17 28
+04622	+	5 8 37	activation	8 12 13 14
+04622	+	5 8 37	activation	15
+04664	+	35	inhibition	17
+04664	+	31	activation	29
+04720	+	18	activation	13
+04720	-	13	activation	18
+04722	+	62	activation	15 24
+04722	+	63	activation	15 24
+04722	+	27 43	activation	27 28
+04722	+	27 39	activation	27 28
+04722	+	14 32	activation	8 30
+04726	+	12	activation	14
+04726	+	12	activation	15
+04726	+	9	activation	13
+04726	+	62	activation	68
+04726	+	62	activation	69
+04726	+	63	activation	70
+04728	+	17	activation	18
+04728	-	56	inhibition	30
+04728	+	55 56	inhibition	30
+04730	+	25	activation	21
+04730	+	47	activation	25
+04740	+	9	activation	3
+04742	+	69	activation	66
+04742	+	72	activation	18
+04750	+	42	activation	43
+04810	-	50	activation	54
+04810	+	54	activation	50
+04810	+	38	activation	8 79
+04810	+	38	activation	8 82
+04910	+	52	activation	65
+04910	-	52	activation	59
+04910	-	52	activation	62
+04910	-	52	activation	44
+04910	+	65	activation	59
+04910	+	65	activation	62
+04910	+	65	activation	44
+04911	+	51	activation	60
+04911	+	27	activation	28
+04913	+	49	activation	44
+04913	+	53	activation	76
+04914	+	14	inhibition	23
+04915	+	60	activation	62
+04918	+	59	activation	14
+04922	+	84	activation	41
+04925	+	14 64	activation	33
+04925	+	14 64	activation	34
+04925	-	14	activation	33
+04925	-	14	activation	34
+04932	+	132	activation	129 129 130
+04933	+	75	activation	76
+04933	+	82	activation	81
+04933	+	3	activation	14
+04933	+	3	activation	53
+04933	+	3	activation	49
+04933	+	3	activation	50
+04933	+	3	activation	39
+04933	+	3	activation	40
+04971	+	10	activation	12
+04972	+	12	activation	14
+04972	+	60	activation	14
+04972	+	61	activation	65
+05014	+	4	activation	39
+05014	+	43	activation	35
+05014	+	46	activation	1
+05016	+	27	activation	21
+05016	+	21	activation	29
+05016	+	26	activation	29
+05031	+	32	activation	17 82
+05031	+	75	activation	78 86
+05031	+	17 82	activation	40
+05031	+	78 86	activation	91
+05031	+	40	activation	12
+05031	+	91	activation	55
+05031	+	45	activation	44
+05031	+	45	activation	48
+05031	+	65	activation	60
+05031	+	65	activation	62
+05031	+	60	inhibition	55
+05031	+	60	inhibition	65
+05034	+	91	activation	94
+05034	+	67	activation	68
+05100	+	52	activation	56
+05120	+	10 11 12	activation	13
+05120	-	10	activation	13
+05120	-	12	activation	13
+05133	-	25	activation	76 97
+05133	+	25 26	activation	76 97
+05142	+	87	activation	42
+05152	-	60	activation	51
+05152	+	57	activation	51
+05152	+	93	activation	96
+05152	+	67	activation	66
+05160	+	59 60	activation	60 61
+05169	+	63 74	activation	54 55 59
+05169	+	63 74	activation	76
+05169	+	63 74	activation	75
+05169	-	63	activation	54 55 59
+05169	-	63	activation	76
+05169	-	63	activation	75
+05169	-	55	activation	56
+05169	+	54 55 59	activation	56
+05205	+	7 93	activation	7 9
+05212	-	53	activation	3
+05212	+	3	activation	53
+05213	-	20	activation	25
+05213	+	20	inhibition	25
+05213	-	34	activation	21
+05213	-	34	activation	14
+05213	+	25	activation	21
+05213	+	25	activation	14
+05213	+	34	activation	25
+05220	+	31	activation	29
+05221	+	30	activation	3
+05221	+	30	activation	2
+05222	+	24	activation	11
+05222	+	11	activation	17
+05222	-	24	activation	17
+05222	-	23	activation	11
+05222	+	23	inhibition	11
+04340	+	7 47	activation	9
+04340	+	7 8	activation	9
+04340	+	23 24	activation	26
+04340	+	20 21	activation	19
+04340	+	20 21	activation	40
+04150	+	50	activation	61
+04150	+	14	activation	61
+04150	+	61	activation	57 60
+04150	+	61	activation	57 63 62
+04150	+	61	activation	57 59
+04150	+	23 24	activation	57 60
+04150	+	23 24	activation	57 63 62
+04150	+	23 24	activation	57 59
+04150	+	57 60	activation	15
+04150	+	57 63 62	activation	15
+04150	+	57 59	activation	15
+04150	+	57 60	activation	17
+04150	+	57 63 62	activation	17
+04150	+	57 59	activation	17
+04150	+	64 67	activation	12
+04150	+	64 71 70	activation	12
+04150	+	64 68	activation	12
+04150	+	50	activation	64 67
+04150	+	50	activation	64 71 70
+04150	+	50	activation	64 68
+04150	+	17	inhibition	66

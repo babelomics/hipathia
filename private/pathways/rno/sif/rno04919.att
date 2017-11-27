@@ -1,0 +1,62 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-rno04919-4	C05981	506	241	white	circle	compound	0.5	black	8	8	NA
+N-rno04919-5	Akt1	566	240	white	rectangle	gene	0.5	black	46	17	24185,25233,29414
+N-rno04919-6	Pdpk1	486	264	white	rectangle	gene	0.5	black	46	17	81745
+N-rno04919-7	Pik3ca	443	240	white	rectangle	gene	0.5	black	46	17	170911,25513,29741,298947,366508,497931,60664,85243
+N-rno04919-8	Prkca	517	560	white	rectangle	gene	0.5	black	46	17	24680,24681,25023
+N-rno04919-12	Gsk3b	672	368	white	rectangle	gene	0.5	black	46	17	84027
+N-rno04919-14	Plce1	334	570	white	rectangle	gene	0.5	black	46	17	114633,140693,24654,24655,25031,25738,287745,29322,29337,497197,85240
+N-rno04919-15	Kras	461	608	white	rectangle	gene	0.5	black	46	17	24525,24605,293621
+N-rno04919-16	Raf1	544	608	white	rectangle	gene	0.5	black	46	17	24703
+N-rno04919-17	Map2k1	627	608	white	rectangle	gene	0.5	black	46	17	170851,58960
+N-rno04919-19	C02465	109	637	white	circle	compound	0.5	black	8	8	NA
+N-rno04919-20	C01829	109	587	white	circle	compound	0.5	black	8	8	NA
+N-rno04919-33	C00575	468	645	white	circle	compound	0.5	black	8	8	NA
+N-rno04919-34	Prkaca	542	643	white	rectangle	gene	0.5	black	46	17	25636,293508
+N-rno04919-36	C00076	445	571	white	circle	compound	0.5	black	8	8	NA
+N-rno04919-37	Mapk1	710	608	white	rectangle	gene	0.5	black	46	17	116590,50689
+N-rno04919-41	Hif1a*	1170	58	white	rectangle	gene	0.5	black	46	17	29560
+N-rno04919-83	Mdm2	672	338	white	rectangle	gene	0.5	black	46	17	314856
+N-rno04919-85	Tsc2	672	302	white	rectangle	gene	0.5	black	46	17	24855
+N-rno04919-86	Rheb	750	302	white	rectangle	gene	0.5	black	46	17	26954
+N-rno04919-90	Thrb*	1042	322	white	rectangle	gene	0.5	black	46	17	24831
+N-rno04919-96	Src	332	309	white	rectangle	gene	0.5	black	46	17	83805
+N-rno04919-97	C02465*	109	311	white	circle	compound	0.5	black	8	8	NA
+N-rno04919-98	Thra	1044	185	white	rectangle	gene	0.5	black	46	17	81812
+N-rno04919-106	C00165	399	541	white	circle	compound	0.5	black	8	8	NA
+N-rno04919-2 3	Itgb3 Itgav	192	598	white	rectangle	gene,gene	0.5	black	46	17	29302,/,296456
+N-rno04919-94 95	Itgb3 Itgav*	192	302	white	rectangle	gene,gene	0.5	black	46	17	29302,/,296456
+N-rno04919-22 53	Thrb C02465	333	266	white	rectangle	gene,compound	0.5	black	46	17	24831,/,NA
+N-rno04919-48 52	Thra C01829	321	62	white	rectangle	gene,compound	0.5	black	46	17	81812,/,NA
+N-rno04919-43	Tbc1d4	672	241	white	rectangle	gene	0.5	black	46	17	306117
+N-rno04919-44	Pfkfb2	672	216	white	rectangle	gene	0.5	black	46	17	24640
+N-rno04919-87	Bad	672	185	white	rectangle	gene	0.5	black	46	17	64639
+N-rno04919-88	Foxo1	672	161	white	rectangle	gene	0.5	black	46	17	84482
+N-rno04919-89	Casp9	672	137	white	rectangle	gene	0.5	black	46	17	58918
+N-rno04919-46	Atp1a1	192	395	white	rectangle	gene	0.5	black	46	17	24211,24212,24213,24214,25390,25650,29132,29639,84396
+N-rno04919-40	Rcan2	1170	82	white	rectangle	gene	0.5	black	46	17	140666
+N-rno04919-21 53	Thra C02465	335	227	white	rectangle	gene,compound	0.5	black	46	17	81812,/,NA
+N-rno04919-45	Slc9a1	192	442	white	rectangle	gene	0.5	black	46	17	24782
+N-rno04919-11	Ctnnb1	750	368	white	rectangle	gene	0.5	black	46	17	84353
+N-rno04919-35	C01245	400	570	white	circle	compound	0.5	black	8	8	NA
+N-rno04919-18	Stat1	903	651	white	rectangle	gene	0.5	black	46	17	25124
+N-rno04919-38	Tp53	903	613	white	rectangle	gene	0.5	black	46	17	24842
+N-rno04919-39	Esr1	903	572	white	rectangle	gene	0.5	black	46	17	24890
+N-rno04919-26	Thrb	903	517	white	rectangle	gene	0.5	black	46	17	24831
+N-rno04919-42	Slc2a1	1170	24	white	rectangle	gene	0.5	black	46	17	24778
+N-rno04919-91	Pfkp	1170	0	white	rectangle	gene	0.5	black	46	17	60416
+N-rno04919-84	Tp53*	750	338	white	rectangle	gene	0.5	black	46	17	24842
+N-rno04919-25	Mtor	833	302	white	rectangle	gene	0.5	black	46	17	56718
+N-rno04919-103	Ccnd1	1170	421	white	rectangle	gene	0.5	black	46	17	58919
+N-rno04919-27	Gata4	1170	396	white	rectangle	gene	0.5	black	46	17	54254
+N-rno04919-28	Rcan1	1170	372	white	rectangle	gene	0.5	black	46	17	266766
+N-rno04919-29	Hif1a	1170	348	white	rectangle	gene	0.5	black	46	17	29560
+N-rno04919-104	Myc	1170	324	white	rectangle	gene	0.5	black	46	17	24577
+N-rno04919-30	Myh6	1170	287	white	rectangle	gene	0.5	black	46	17	29556
+N-rno04919-31	Atp2a2	1170	264	white	rectangle	gene	0.5	black	46	17	29693
+N-rno04919-32	Pln	1170	241	white	rectangle	gene	0.5	black	46	17	64672
+N-rno04919-99	Wnt4	1170	211	white	rectangle	gene	0.5	black	46	17	84426
+N-rno04919-100	Ctnnb1*	1170	188	white	rectangle	gene	0.5	black	46	17	84353
+N-rno04919-101	Notch1	1170	151	white	rectangle	gene	0.5	black	46	17	25496,29492,406162,56761
+N-rno04919-102	Bmp4	1170	128	white	rectangle	gene	0.5	black	46	17	25296
+N-rno04919-49	Actg1	397	62	white	rectangle	gene	0.5	black	46	17	287876,684969,81822

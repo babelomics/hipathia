@@ -1,0 +1,19 @@
+N-mmu05150-2	activation	N-mmu05150-4
+N-mmu05150-2	activation	N-mmu05150-48
+N-mmu05150-4	activation	N-mmu05150-13
+N-mmu05150-15	activation	N-mmu05150-69
+N-mmu05150-15	activation	N-mmu05150-14
+N-mmu05150-17	inhibition	N-mmu05150-32
+N-mmu05150-17	inhibition	N-mmu05150-2
+N-mmu05150-17	inhibition	N-mmu05150-1 2 3
+N-mmu05150-32	activation	N-mmu05150-5 6 7
+N-mmu05150-32	activation	N-mmu05150-40
+N-mmu05150-33	inhibition	N-mmu05150-2
+N-mmu05150-33	inhibition	N-mmu05150-1 2 3
+N-mmu05150-47	inhibition	N-mmu05150-1 2 3
+N-mmu05150-64	activation	N-mmu05150-65
+N-mmu05150-65	activation	N-mmu05150-66
+N-mmu05150-5 6 7	activation	N-mmu05150-8 9
+N-mmu05150-8 9	activation	N-mmu05150-2
+N-mmu05150-8 9	activation	N-mmu05150-1 2 3
+N-mmu05150-10 11	activation	N-mmu05150-8 9

@@ -1,0 +1,178 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-hsa05200-2	DCC	133	985	white	rectangle	gene	0.5	black	46	17	1630
+N-hsa05200-3	CASP3	215	1017	white	rectangle	gene	0.5	black	46	17	836
+N-hsa05200-8	WNT16	52	820	white	rectangle	gene	0.5	black	46	17	51384,54361,7471,7472,7473,7474,7475,7476,7477,7478,7479,7480,7481,7482,7483,7484,80326,81029,89780
+N-hsa05200-12	DVL1	450	820	white	rectangle	gene	0.5	black	46	17	1855,1856,1857
+N-hsa05200-13	LAMC3	52	603	white	rectangle	gene	0.5	black	46	17	10319,1282,1284,1285,1286,1287,1288,22798,2335,284217,3908,3909,3910,3911,3912,3913,3914,3915,3918
+N-hsa05200-15	PTK2	311	602	white	rectangle	gene	0.5	black	46	17	5747
+N-hsa05200-16	PTEN	421	583	white	rectangle	gene	0.5	black	46	17	5728
+N-hsa05200-17	FZD10	131	820	white	rectangle	gene	0.5	black	46	17	11211,2535,7855,7976,8321,8322,8323,8324,8325,8326
+N-hsa05200-19	ABL1	168	520	white	rectangle	gene	0.5	black	46	17	25,613
+N-hsa05200-23	PIK3R5	429	518	white	rectangle	gene	0.5	black	46	17	23533,5290,5291,5293,5294,5295,5296,8503
+N-hsa05200-24	STAT5A	463	342	white	rectangle	gene	0.5	black	46	17	6776,6777
+N-hsa05200-25	JAK1	323	310	white	rectangle	gene	0.5	black	46	17	3716
+N-hsa05200-26	EGFR	131	284	white	rectangle	gene	0.5	black	46	17	1956
+N-hsa05200-27	ERBB2	131	264	white	rectangle	gene	0.5	black	46	17	2064
+N-hsa05200-28	PDGFRA	131	238	white	rectangle	gene	0.5	black	46	17	5156,5159
+N-hsa05200-29	IGF1R	132	215	white	rectangle	gene	0.5	black	46	17	3480
+N-hsa05200-30	KIT	131	191	white	rectangle	gene	0.5	black	46	17	3815
+N-hsa05200-31	FLT3	132	167	white	rectangle	gene	0.5	black	46	17	2322
+N-hsa05200-32	MET	132	145	white	rectangle	gene	0.5	black	46	17	4233
+N-hsa05200-33	FGFR1	132	121	white	rectangle	gene	0.5	black	46	17	2260,2261,2263
+N-hsa05200-34	TFG	132	55	white	rectangle	gene	0.5	black	46	17	10342,4914,7170,7175
+N-hsa05200-35	TGFA	53	287	white	rectangle	gene	0.5	black	46	17	7039
+N-hsa05200-36	EGF	53	264	white	rectangle	gene	0.5	black	46	17	1950
+N-hsa05200-37	HGF	53	145	white	rectangle	gene	0.5	black	46	17	3082
+N-hsa05200-38	PDGFA	53	238	white	rectangle	gene	0.5	black	46	17	5154,5155
+N-hsa05200-39	IGF1	53	215	white	rectangle	gene	0.5	black	46	17	3479
+N-hsa05200-43	AR	587	967	white	rectangle	gene	0.5	black	46	17	367
+N-hsa05200-44	GSK3B	558	820	white	rectangle	gene	0.5	black	46	17	2932
+N-hsa05200-47	CHUK	604	644	white	rectangle	gene	0.5	black	46	17	1147,3551,8517
+N-hsa05200-50	BAD	607	483	white	rectangle	gene	0.5	black	46	17	572
+N-hsa05200-51	MDM2	607	433	white	rectangle	gene	0.5	black	46	17	4193
+N-hsa05200-54	STAT3	548	322	white	rectangle	gene	0.5	black	46	17	6774
+N-hsa05200-55	STAT1	548	299	white	rectangle	gene	0.5	black	46	17	6772
+N-hsa05200-56	GRB2	235	191	white	rectangle	gene	0.5	black	48	18	2885
+N-hsa05200-57	SOS1	305	191	white	rectangle	gene	0.5	black	46	17	6654,6655
+N-hsa05200-58	HRAS	379	191	white	rectangle	gene	0.5	black	46	17	3265,3845,4893
+N-hsa05200-59	ARAF	461	190	white	rectangle	gene	0.5	black	46	17	369,5894,673
+N-hsa05200-60	MAP2K1	540	190	white	rectangle	gene	0.5	black	46	17	5604,5605
+N-hsa05200-63	NFKBIA	685	643	white	rectangle	gene	0.5	black	46	17	4792
+N-hsa05200-64	NFKB1	685	610	white	rectangle	gene	0.5	black	46	17	4790,4791,5970
+N-hsa05200-67	RET	255	155	white	rectangle	gene	0.5	black	46	17	5979,8030,8031
+N-hsa05200-68	RASSF1	329	120	white	rectangle	gene	0.5	black	46	17	11186
+N-hsa05200-69	PLCG1	231	23	white	rectangle	gene	0.5	black	46	17	5335,5336
+N-hsa05200-70	RALGDS	442	36	white	rectangle	gene	0.5	black	46	17	5900
+N-hsa05200-71	RALA	520	59	white	rectangle	gene	0.5	black	46	17	5898,5899
+N-hsa05200-72	RHOA	520	11	white	rectangle	gene	0.5	black	46	17	387,5879,5880,5881
+N-hsa05200-73	RALBP1	596	71	white	rectangle	gene	0.5	black	46	17	10928
+N-hsa05200-74	PLD1	596	44	white	rectangle	gene	0.5	black	46	17	5337
+N-hsa05200-77	JUN	782	225	white	rectangle	gene	0.5	black	46	17	3725
+N-hsa05200-78	FOS	782	202	white	rectangle	gene	0.5	black	46	17	2353
+N-hsa05200-79	MYC	782	179	white	rectangle	gene	0.5	black	46	17	4609
+N-hsa05200-81	LEF1	758	761	white	rectangle	gene	0.5	black	46	17	51176,6932,6934,83439
+N-hsa05200-82	PRKCA	352	40	white	rectangle	gene	0.5	black	46	17	5578,5579,5582
+N-hsa05200-90	C00951	642	1176	white	circle	compound	0.5	black	8	8	NA
+N-hsa05200-92	C05981	452	546	white	circle	compound	0.5	black	8	8	NA
+N-hsa05200-93	C00165	284	42	white	circle	compound	0.5	black	8	8	NA
+N-hsa05200-95	C00076	340	2	white	circle	compound	0.5	black	8	8	NA
+N-hsa05200-98	PTCH1	754	1125	white	rectangle	gene	0.5	black	46	17	5727
+N-hsa05200-99	SMO	835	1125	white	rectangle	gene	0.5	black	46	17	6608
+N-hsa05200-104	EGLN2	1046	1068	white	rectangle	gene	0.5	black	46	17	112398,112399,54583
+N-hsa05200-113	CYCS	1249	1007	white	rectangle	gene	0.5	black	46	17	54205
+N-hsa05200-118	TGFB1	1614	1174	white	rectangle	gene	0.5	black	46	17	7040,7042,7043
+N-hsa05200-123	BAX	1397	776	white	rectangle	gene	0.5	black	46	17	581
+N-hsa05200-127	MECOM	1670	917	white	rectangle	gene	0.5	black	46	17	2122
+N-hsa05200-128	MECOM*	1670	895	white	rectangle	gene	0.5	black	46	17	2122,861
+N-hsa05200-133	C00122	988	1068	white	circle	compound	0.5	black	8	8	NA
+N-hsa05200-142	C00777	1158	0	white	circle	compound	0.5	black	8	8	NA
+N-hsa05200-150	RARA	1422	80	white	rectangle	gene	0.5	black	46	17	5914,7704
+N-hsa05200-151	PML	1487	80	white	rectangle	gene	0.5	black	46	17	5371,5914
+N-hsa05200-152	RUNX1	1567	80	white	rectangle	gene	0.5	black	46	17	861,862
+N-hsa05200-153	SPI1	1527	136	white	rectangle	gene	0.5	black	46	17	6688
+N-hsa05200-155	CEBPA	1645	136	white	rectangle	gene	0.5	black	46	17	1050
+N-hsa05200-156	CEBPA*	1705	136	white	rectangle	gene	0.5	black	46	17	1050
+N-hsa05200-157	RUNX1*	1795	135	white	rectangle	gene	0.5	black	46	17	861
+N-hsa05200-158	TP53*	1415	653	white	rectangle	gene	0.5	black	46	17	7157
+N-hsa05200-159	MDM2*	1478	618	white	rectangle	gene	0.5	black	46	17	4193
+N-hsa05200-163	PIAS2	1582	507	white	rectangle	gene	0.5	black	46	17	9063
+N-hsa05200-165	CDKN1A	1415	558	white	rectangle	gene	0.5	black	46	17	1026
+N-hsa05200-167	RB1	1267	511	white	rectangle	gene	0.5	black	46	17	5925
+N-hsa05200-171	SKP2	1455	379	white	rectangle	gene	0.5	black	46	17	6502
+N-hsa05200-172	CKS1B	1502	420	white	rectangle	gene	0.5	black	46	17	1163,1164
+N-hsa05200-174	CDKN1B*	1421	426	white	rectangle	gene	0.5	black	46	17	1027
+N-hsa05200-175	CDKN2B	1455	508	white	rectangle	gene	0.5	black	46	17	1030
+N-hsa05200-176	CDKN2A	1323	562	white	rectangle	gene	0.5	black	46	17	1029
+N-hsa05200-177	CDKN2A*	1555	618	white	rectangle	gene	0.5	black	46	17	1029
+N-hsa05200-178	FAS	1439	1122	white	rectangle	gene	0.5	black	46	17	355
+N-hsa05200-179	FADD	1439	1084	white	rectangle	gene	0.5	black	46	17	8772
+N-hsa05200-180	CASP8	1439	1047	white	rectangle	gene	0.5	black	46	17	841
+N-hsa05200-181	BID	1439	1008	white	rectangle	gene	0.5	black	46	17	637
+N-hsa05200-206	DAPK1	654	144	white	rectangle	gene	0.5	black	46	17	1612,1613,23604
+N-hsa05200-208	ETS1	782	154	white	rectangle	gene	0.5	black	46	17	2113
+N-hsa05200-221	BCL2*	1249	967	white	rectangle	gene	0.5	black	46	17	596
+N-hsa05200-228	NKX3-1	482	602	white	rectangle	gene	0.5	black	46	17	4824
+N-hsa05200-229	MAPK1	680	191	white	rectangle	gene	0.5	black	46	17	5594,5595
+N-hsa05200-230	AKT3	503	542	white	rectangle	gene	0.5	black	46	17	10000,207,208
+N-hsa05200-231	CTNNB1	641	820	white	rectangle	gene	0.5	black	46	17	1499
+N-hsa05200-232	GLI1*	835	990	white	rectangle	gene	0.5	black	46	17	2735,2736,2737
+N-hsa05200-233	FASLG	1440	1175	white	rectangle	gene	0.5	black	46	17	356
+N-hsa05200-248	KITLG	53	190	white	rectangle	gene	0.5	black	46	17	4254
+N-hsa05200-249	FLT3LG	53	168	white	rectangle	gene	0.5	black	46	17	2323
+N-hsa05200-250	FGF1	53	120	white	rectangle	gene	0.5	black	46	17	2246,2247,2248,2249,2250,2251,2252,2253,2254,2255,2256,2257,2258,2259,26281,26291,27006,8074,8817,8822,8823,9965
+N-hsa05200-251	C00535	470	1178	white	circle	compound	0.5	black	8	8	NA
+N-hsa05200-252	C03917	554	1178	white	circle	compound	0.5	black	8	8	NA
+N-hsa05200-40 41	AR HSP90AA1	587	1053	white	rectangle	gene,gene	0.5	black	46	17	367,/,3320,3326,7184
+N-hsa05200-11 14	ITGB1 ITGA6	131	595	white	rectangle	gene,gene	0.5	black	46	17	3688,/,3655,3673,3674,3675,3685
+N-hsa05200-20 21 22	CRK CBLC CRK	311	537	white	rectangle	gene,gene,gene	0.5	black	46	17	1398,1399,/,23624,867,868,/,1398,1399
+N-hsa05200-119 120	TGFBR1 TGFBR2	1614	1130	white	rectangle	gene,gene	0.5	black	46	17	7046,/,7048
+N-hsa05200-161 162	MYC MAX	1660	500	white	rectangle	gene,gene	0.5	black	46	17	4609,/,4149
+N-hsa05200-164 166	CCND1 CDK4	1361	503	white	rectangle	gene,gene	0.5	black	46	17	595,/,1019,1021
+N-hsa05200-169 170	CDK2 CCNE1	1339	462	white	rectangle	gene,gene	0.5	black	46	17	1017,/,898,9134
+N-hsa05200-101 102	STK36 SUFU	812	1024	white	rectangle	gene,gene	0.5	black	46	17	27148,/,51684
+N-hsa05200-18 4	APPL1 CASP9	279	977	white	rectangle	gene,gene	0.5	black	46	17	26060,/,842
+N-hsa05200-105 106 107 108 109	TCEB2 TCEB1 VHL CUL2 RBX1	1104	1082	white	rectangle	gene,gene,gene,gene,gene	0.5	black	46	17	6923,/,6921,/,7428,/,8453,/,9978
+N-hsa05200-61 62	RASSF5 RASSF1	471	290	white	rectangle	gene,gene	0.5	black	46	17	83593,/,11186
+N-hsa05200-91 97	C00187 SHH	798	1174	white	circle	compound,gene	0.5	black	8	8	NA,/,6469
+N-hsa05200-110 111	EPAS1 ARNT	1069	978	white	rectangle	gene,gene	0.5	black	46	17	2034,3091,/,405,9915
+N-hsa05200-110 112	EPAS1 CREBBP	1069	978	white	rectangle	gene,gene	0.5	black	46	17	2034,3091,/,1387,2033
+N-hsa05200-148 149	LEF1 JUP	1223	31	white	rectangle	gene,gene	0.5	black	46	17	51176,6932,6934,83439,/,3728
+N-hsa05200-199	BCL2L1**	803	340	white	rectangle	gene	0.5	black	46	17	598
+N-hsa05200-188	KLK3	827	798	white	rectangle	gene	0.5	black	46	17	354
+N-hsa05200-53	BCL2L1	681	482	white	rectangle	gene	0.5	black	46	17	598
+N-hsa05200-80	TP53	824	433	white	rectangle	gene	0.5	black	46	17	7157
+N-hsa05200-200	FIGF	803	309	white	rectangle	gene	0.5	black	46	17	2277,5228,7422,7423,7424
+N-hsa05200-192	PTGS2	813	646	white	rectangle	gene	0.5	black	46	17	5743
+N-hsa05200-193	NOS2	813	625	white	rectangle	gene	0.5	black	46	17	4843
+N-hsa05200-194	BCL2	764	561	white	rectangle	gene	0.5	black	46	17	596
+N-hsa05200-195	BIRC8	866	600	white	rectangle	gene	0.5	black	46	17	112401,329,330,331,79444
+N-hsa05200-198	BCL2L1*	814	578	white	rectangle	gene	0.5	black	46	17	598
+N-hsa05200-196	TRAF1	866	578	white	rectangle	gene	0.5	black	46	17	7185,7186,7187,7188,7189,9618
+N-hsa05200-197	CCND1**	814	555	white	rectangle	gene	0.5	black	46	17	595
+N-hsa05200-75	MAPK8	596	11	white	rectangle	gene	0.5	black	46	17	5599,5601,5602
+N-hsa05200-76	RAC1	683	72	white	rectangle	gene	0.5	black	46	17	5879,5880,5881,998
+N-hsa05200-96	C00416	662	42	white	circle	compound	0.5	black	8	8	NA
+N-hsa05200-209	FIGF**	891	237	white	rectangle	gene	0.5	black	46	17	2277,5228,7422,7423,7424
+N-hsa05200-211	CXCL8	891	192	white	rectangle	gene	0.5	black	46	17	3576
+N-hsa05200-210	MMP1	891	214	white	rectangle	gene	0.5	black	46	17	4312,4313,4318
+N-hsa05200-212	CCND1***	907	148	white	rectangle	gene	0.5	black	46	17	595
+N-hsa05200-207	CDK4	907	126	white	rectangle	gene	0.5	black	46	17	1019
+N-hsa05200-189	BIRC5	826	723	white	rectangle	gene	0.5	black	46	17	332
+N-hsa05200-190	MYC*	828	693	white	rectangle	gene	0.5	black	46	17	4609
+N-hsa05200-191	CCND1*	828	672	white	rectangle	gene	0.5	black	46	17	595
+N-hsa05200-222	CASP9*	1171	1007	white	rectangle	gene	0.5	black	46	17	842
+N-hsa05200-129 130	CTBP1 HDAC1	1682	849	white	rectangle	gene,gene	0.5	black	46	17	1487,1488,/,3065,3066
+N-hsa05200-146 147	RARB RXRA	1159	110	white	rectangle	gene,gene	0.5	black	46	17	5915,/,6256,6257,6258
+N-hsa05200-173	CCNA1	1424	187	white	rectangle	gene	0.5	black	46	17	8900
+N-hsa05200-220	CSF1R*	1773	282	white	rectangle	gene	0.5	black	46	17	1436
+N-hsa05200-214	CSF3R	1532	260	white	rectangle	gene	0.5	black	46	17	1441
+N-hsa05200-213	CSF2RA	1532	281	white	rectangle	gene	0.5	black	46	17	1438
+N-hsa05200-215	CSF1R	1582	260	white	rectangle	gene	0.5	black	46	17	1436
+N-hsa05200-218	CSF3R*	1653	282	white	rectangle	gene	0.5	black	46	17	1441
+N-hsa05200-216	IL6	1653	260	white	rectangle	gene	0.5	black	46	17	3569
+N-hsa05200-217	E2F1*	1706	282	white	rectangle	gene	0.5	black	46	17	1869,1870,1871
+N-hsa05200-219	MYC**	1706	260	white	rectangle	gene	0.5	black	46	17	4609
+N-hsa05200-168	E2F1	1267	474	white	rectangle	gene	0.5	black	46	17	1869,1870,1871
+N-hsa05200-49	CASP9	607	512	white	rectangle	gene	0.5	black	46	17	842
+N-hsa05200-227	FOXO1	607	457	white	rectangle	gene	0.5	black	46	17	2308
+N-hsa05200-52	CDKN1B	607	406	white	rectangle	gene	0.5	black	46	17	1027
+N-hsa05200-226	CDKN1A*	607	375	white	rectangle	gene	0.5	black	46	17	1026
+N-hsa05200-48	MTOR	607	540	white	rectangle	gene	0.5	black	46	17	2475
+N-hsa05200-183	BMP2	784	885	white	rectangle	gene	0.5	black	46	17	650,652
+N-hsa05200-184	GLI1	838	885	white	rectangle	gene	0.5	black	46	17	2735
+N-hsa05200-187	WNT16*	893	885	white	rectangle	gene	0.5	black	46	17	51384,54361,7471,7472,7473,7474,7475,7476,7477,7478,7479,7480,7481,7482,7483,7484,80326,81029,89780
+N-hsa05200-185	HHIP	784	860	white	rectangle	gene	0.5	black	46	17	64399
+N-hsa05200-186	PTCH1*	839	860	white	rectangle	gene	0.5	black	46	17	5727,8643
+N-hsa05200-42 43	AR AR	587	984	white	rectangle	gene,gene	0.5	black	46	17	367,/,367
+N-hsa05200-121 122	SMAD2 SMAD4	1614	1063	white	rectangle	gene,gene	0.5	black	46	17	4087,4088,/,4089
+N-hsa05200-5	CASP3*	415	985	white	rectangle	gene	0.5	black	46	17	836
+N-hsa05200-65	STK4	655	275	white	rectangle	gene	0.5	black	46	17	6789
+N-hsa05200-66	CCND1	655	250	white	rectangle	gene	0.5	black	46	17	595
+N-hsa05200-205	SLC2A1	1015	840	white	rectangle	gene	0.5	black	46	17	6513
+N-hsa05200-202	FIGF*	1070	840	white	rectangle	gene	0.5	black	46	17	2277,5228,7422,7423,7424
+N-hsa05200-201	PDGFB	1070	817	white	rectangle	gene	0.5	black	46	17	5155
+N-hsa05200-204	TGFB1*	1070	794	white	rectangle	gene	0.5	black	46	17	7040,7042,7043
+N-hsa05200-203	TGFA*	1128	840	white	rectangle	gene	0.5	black	46	17	7039
+N-hsa05200-225	PPARD	1266	182	white	rectangle	gene	0.5	black	46	17	5467
+N-hsa05200-224	MYC***	1266	204	white	rectangle	gene	0.5	black	46	17	4609
+N-hsa05200-223	CCND1****	1266	228	white	rectangle	gene	0.5	black	46	17	595

@@ -1,0 +1,19 @@
+N-mmu04976-17	activation	N-mmu04976-30
+N-mmu04976-21	activation	N-mmu04976-17
+N-mmu04976-22	activation	N-mmu04976-33
+N-mmu04976-30	activation	N-mmu04976-31
+N-mmu04976-31	activation	N-mmu04976-22
+N-mmu04976-33	activation	N-mmu04976-16
+N-mmu04976-79	inhibition	N-mmu04976-41
+N-mmu04976-79	inhibition	N-mmu04976-34
+N-mmu04976-79	inhibition	N-mmu04976-36
+N-mmu04976-42 44	activation	N-mmu04976-79
+N-mmu04976-42 44	activation	N-mmu04976-37
+N-mmu04976-42 44	activation	N-mmu04976-38
+N-mmu04976-42 140	activation	N-mmu04976-79
+N-mmu04976-42 140	activation	N-mmu04976-37
+N-mmu04976-42 140	activation	N-mmu04976-38
+N-mmu04976-97 141	activation	N-mmu04976-59
+N-mmu04976-97 141	activation	N-mmu04976-95 96
+N-mmu04976-97 98	activation	N-mmu04976-59
+N-mmu04976-97 98	activation	N-mmu04976-95 96

@@ -1,0 +1,15 @@
+N-mmu04330-5	inhibition	N-mmu04330-13 14
+N-mmu04330-17	activation	N-mmu04330-22
+N-mmu04330-20	inhibition	N-mmu04330-22
+N-mmu04330-21	inhibition	N-mmu04330-22
+N-mmu04330-22	activation	N-mmu04330-19
+N-mmu04330-22	activation	N-mmu04330-13 14
+N-mmu04330-23	inhibition	N-mmu04330-22
+N-mmu04330-25	activation	N-mmu04330-22
+N-mmu04330-26	activation	N-mmu04330-22
+N-mmu04330-1 18 2 3	activation	N-mmu04330-22
+N-mmu04330-15 16	activation	N-mmu04330-13 14
+N-mmu04330-5 8	inhibition	N-mmu04330-13 14
+N-mmu04330-10 5 6	inhibition	N-mmu04330-13 14
+N-mmu04330-13 14	activation	N-mmu04330-12
+N-mmu04330-13 14	activation	N-mmu04330-11

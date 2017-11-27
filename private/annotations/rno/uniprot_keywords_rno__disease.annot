@@ -1,0 +1,258 @@
+Ar	Disease mutation	Disease
+Nr3c4	Disease mutation	Disease
+Anks6	Disease mutation	Disease
+Pkdr1	Disease mutation	Disease
+Samd6	Disease mutation	Disease
+Apc	Tumor suppressor	Disease
+Apob	Atherosclerosis	Disease
+Aa1064	Atherosclerosis	Disease
+Ac1-060	Atherosclerosis	Disease
+Araf	Proto-oncogene	Disease
+A-raf	Proto-oncogene	Disease
+Araf1	Proto-oncogene	Disease
+Cdkn2a	Tumor suppressor	Disease
+Arhgef2	Proto-oncogene	Disease
+Sag	Autoimmune uveitis	Biological process,Disease
+Arsb	Mucopolysaccharidosis	Disease
+Aurka	Proto-oncogene	Disease
+Aik	Proto-oncogene	Disease
+Airk	Proto-oncogene	Disease
+Ark1	Proto-oncogene	Disease
+Aura	Proto-oncogene	Disease
+Ayk1	Proto-oncogene	Disease
+Btak	Proto-oncogene	Disease
+Iak1	Proto-oncogene	Disease
+Stk15	Proto-oncogene	Disease
+Stk6	Proto-oncogene	Disease
+Bcl10	Tumor suppressor	Disease
+Arfgef2	Disease mutation	Disease
+Arfgep2	Disease mutation	Disease
+Big2	Disease mutation	Disease
+Bin1	Tumor suppressor	Disease
+Amph2	Tumor suppressor	Disease
+Amphl	Tumor suppressor	Disease
+Brca1	Tumor suppressor	Disease
+Brca2	Tumor suppressor	Disease
+Fancd1	Tumor suppressor	Disease
+Brms1	Tumor suppressor	Disease
+Cadm4	Tumor suppressor	Disease
+Igsf4c	Tumor suppressor	Disease
+Necl4	Tumor suppressor	Disease
+Cblb	Diabetes mellitus	Disease
+Cdc73	Tumor suppressor	Disease
+Hrpt2	Tumor suppressor	Disease
+Cdk4	Proto-oncogene	Disease
+Cdk5	Neurodegeneration	Disease
+Cdkn5	Neurodegeneration	Disease
+Cdkn2a	Tumor suppressor	Disease
+P16ink4a	Tumor suppressor	Disease
+Cdkn2b	Tumor suppressor	Disease
+Ink4	Tumor suppressor	Disease
+Cenpw	Tumor suppressor	Disease
+Cug2	Tumor suppressor	Disease
+Cep41	Ciliopathy	Disease
+Tsga14	Ciliopathy	Disease
+Chd5	Tumor suppressor	Disease
+Crk	Proto-oncogene	Disease
+Crko	Proto-oncogene	Disease
+Csf1r	Proto-oncogene	Disease
+Csfmr	Proto-oncogene	Disease
+Fms	Proto-oncogene	Disease
+Ctcf	Tumor suppressor	Disease
+Gja8	Disease mutation	Disease
+Dab2ip	Tumor suppressor	Disease
+Dcc	Tumor suppressor	Disease
+Dlec1	Tumor suppressor	Disease
+Dmtf1	Tumor suppressor	Disease
+Dsg4	Disease mutation	Disease
+Efna1	Tumor suppressor	Disease
+Epgl1	Tumor suppressor	Disease
+Lerk1	Tumor suppressor	Disease
+Enpp2	Obesity	Disease
+Atx	Obesity	Disease
+Npps2	Obesity	Disease
+Erbb2	Proto-oncogene	Disease
+Neu	Proto-oncogene	Disease
+Errfi1	Tumor suppressor	Disease
+33	Tumor suppressor	Disease
+Mig6	Tumor suppressor	Disease
+Ets1	Proto-oncogene	Disease
+Ets-1	Proto-oncogene	Disease
+Fam3c	Oncogene	Disease
+Ilei	Oncogene	Disease
+Fgr	Proto-oncogene	Disease
+Flcn	Tumor suppressor	Disease
+Bhd	Tumor suppressor	Disease
+Fos	Proto-oncogene	Disease
+Frk	Tumor suppressor	Disease
+Gask	Tumor suppressor	Disease
+Fto	Obesity	Disease
+Hck	Proto-oncogene	Disease
+Jun	Proto-oncogene	Disease
+Rjg-9	Proto-oncogene	Disease
+Prkcd	Tumor suppressor	Disease
+Pkcd	Tumor suppressor	Disease
+Prkci	Proto-oncogene	Disease
+Prkci	Tumor suppressor	Disease
+Pkcl	Proto-oncogene	Disease
+Pkcl	Tumor suppressor	Disease
+Lck	Proto-oncogene	Disease
+Lepr	Disease mutation	Disease
+Lepr	Obesity	Disease
+Fa	Disease mutation	Disease
+Fa	Obesity	Disease
+Obr	Disease mutation	Disease
+Obr	Obesity	Disease
+Lep	Obesity	Disease
+Ob	Obesity	Disease
+Limd1	Tumor suppressor	Disease
+Litaf	Proto-oncogene	Disease
+Lyn	Proto-oncogene	Disease
+Lzts1	Tumor suppressor	Disease
+Map3k8	Proto-oncogene	Disease
+Tpl2	Proto-oncogene	Disease
+Maf	Proto-oncogene	Disease
+Maf	Tumor suppressor	Disease
+Maf2	Proto-oncogene	Disease
+Maf2	Tumor suppressor	Disease
+Mafb	Proto-oncogene	Disease
+Mafb	Tumor suppressor	Disease
+Maf1	Proto-oncogene	Disease
+Maf1	Tumor suppressor	Disease
+Mas1	Proto-oncogene	Disease
+Mas	Proto-oncogene	Disease
+Mas-1	Proto-oncogene	Disease
+Mbp	Autoimmune encephalomyelitis	Disease
+Mcf2l	Proto-oncogene	Disease
+Ost	Proto-oncogene	Disease
+Mcts1	Tumor suppressor	Disease
+Nf2	Tumor suppressor	Disease
+Mertk	Proto-oncogene	Disease
+Mer	Proto-oncogene	Disease
+Met	Proto-oncogene	Disease
+Tmem67	Disease mutation	Disease
+Mks3	Disease mutation	Disease
+Wpk	Disease mutation	Disease
+Mos	Proto-oncogene	Disease
+Mycn	Proto-oncogene	Disease
+Nmyc	Proto-oncogene	Disease
+Nmyc1	Proto-oncogene	Disease
+Myc	Proto-oncogene	Disease
+Plp1	Disease mutation	Disease
+Plp	Disease mutation	Disease
+Nbl1	Tumor suppressor	Disease
+Dan	Tumor suppressor	Disease
+Ndrg2	Tumor suppressor	Disease
+Nek8	Disease mutation	Disease
+Jck	Disease mutation	Disease
+Slc11a2	Disease mutation	Disease
+Dct1	Disease mutation	Disease
+Dmt1	Disease mutation	Disease
+Nramp2	Disease mutation	Disease
+Tp53	Tumor suppressor	Disease
+P53	Tumor suppressor	Disease
+Park7	Tumor suppressor	Disease
+Cap1	Tumor suppressor	Disease
+Pdcd4	Tumor suppressor	Disease
+Dug	Tumor suppressor	Disease
+Pdgfb	Proto-oncogene	Disease
+Hpgd	Tumor suppressor	Disease
+Pgdh1	Tumor suppressor	Disease
+Pdgfra	Proto-oncogene	Disease
+Phlda3	Tumor suppressor	Disease
+Tih1	Tumor suppressor	Disease
+Phlpp1	Tumor suppressor	Disease
+Phlpp	Tumor suppressor	Disease
+Plekhe1	Tumor suppressor	Disease
+Scop	Tumor suppressor	Disease
+Pim3	Proto-oncogene	Disease
+Kid1	Proto-oncogene	Disease
+Pim1	Proto-oncogene	Disease
+Pim-1	Proto-oncogene	Disease
+Pinx1	Tumor suppressor	Disease
+Plekho1	Tumor suppressor	Disease
+Plag1	Proto-oncogene	Disease
+Plk2	Tumor suppressor	Disease
+Snk	Tumor suppressor	Disease
+Prkcdbp	Tumor suppressor	Disease
+Dig2	Tumor suppressor	Disease
+Srbc	Tumor suppressor	Disease
+Prr5	Tumor suppressor	Disease
+Protor1	Tumor suppressor	Disease
+Pts	Phenylketonuria	Disease
+Pttg1	Proto-oncogene	Disease
+Pttg	Proto-oncogene	Disease
+Raf1	Proto-oncogene	Disease
+Raf	Proto-oncogene	Disease
+Rap1a	Tumor suppressor	Disease
+Krev1	Tumor suppressor	Disease
+Rassf5	Tumor suppressor	Disease
+Nore1	Tumor suppressor	Disease
+Rassf4	Tumor suppressor	Disease
+Rassf2	Tumor suppressor	Disease
+RAS	Oncogene	Disease
+Hras	Proto-oncogene	Disease
+Hras1	Proto-oncogene	Disease
+Kras	Proto-oncogene	Disease
+Kras2	Proto-oncogene	Disease
+Nras	Proto-oncogene	Disease
+Rbl2	Tumor suppressor	Disease
+Rbmx	Tumor suppressor	Disease
+Rbmxrt	Tumor suppressor	Disease
+Rb1	Tumor suppressor	Disease
+Rb-1	Tumor suppressor	Disease
+Dlc1	Tumor suppressor	Disease
+Arhgap7	Tumor suppressor	Disease
+Rhogap	Tumor suppressor	Disease
+Stard12	Tumor suppressor	Disease
+Arhgap35	Tumor suppressor	Disease
+Grlf1	Tumor suppressor	Disease
+Rhoa	Proto-oncogene	Disease
+Arha	Proto-oncogene	Disease
+Arha2	Proto-oncogene	Disease
+Rhob	Tumor suppressor	Disease
+Arhb	Tumor suppressor	Disease
+Rufy3	Oncogene	Disease
+Ripx	Oncogene	Disease
+Sdha	Tumor suppressor	Disease
+Sik1	Tumor suppressor	Disease
+Kid2	Tumor suppressor	Disease
+Sik	Tumor suppressor	Disease
+Snf1lk	Tumor suppressor	Disease
+Src	Proto-oncogene	Disease
+Stk11	Tumor suppressor	Disease
+Lkb1	Tumor suppressor	Disease
+Trp53inp1	Tumor suppressor	Disease
+Sip	Tumor suppressor	Disease
+Tbrg1	Tumor suppressor	Disease
+Cct4	Disease mutation	Disease
+Tg	Disease mutation	Disease
+Tpr	Proto-oncogene	Disease
+Traf6	Osteopetrosis	Disease
+Tsc1	Tumor suppressor	Disease
+Tsc2	Tumor suppressor	Disease
+Tub	Obesity	Disease
+Txnip	Tumor suppressor	Disease
+Vdup1	Tumor suppressor	Disease
+Ufl1	Tumor suppressor	Disease
+Vav1	Proto-oncogene	Disease
+Vav	Proto-oncogene	Disease
+Vhl	Tumor suppressor	Disease
+Vwa5a	Tumor suppressor	Disease
+Loh11cr2a	Tumor suppressor	Disease
+Masa1	Tumor suppressor	Disease
+Wisp1	Proto-oncogene	Disease
+Ccn4	Proto-oncogene	Disease
+Elm1	Proto-oncogene	Disease
+Wt1	Tumor suppressor	Disease
+Wt-1	Tumor suppressor	Disease
+Yap1	Proto-oncogene	Disease
+Yap	Proto-oncogene	Disease
+Yap65	Proto-oncogene	Disease
+Dis3l2	Tumor suppressor	Disease
+RGD1560168_predicted	Tumor suppressor	Disease
+rCG_23910	Tumor suppressor	Disease
+H920_19748	Tumor suppressor	Disease
+Dis3l2	Tumor suppressor	Disease
+LOC100910954	Tumor suppressor	Disease
+p53	Tumor suppressor	Disease

@@ -1,0 +1,55 @@
+N-mmu05166-27	activation	N-mmu05166-26
+N-mmu05166-38	activation	N-mmu05166-39
+N-mmu05166-41	activation	N-mmu05166-34 35 36
+N-mmu05166-42	activation	N-mmu05166-38
+N-mmu05166-51	activation	N-mmu05166-52
+N-mmu05166-52	activation	N-mmu05166-53 146
+N-mmu05166-55	activation	N-mmu05166-56
+N-mmu05166-56	activation	N-mmu05166-132 57 58
+N-mmu05166-59	activation	N-mmu05166-60
+N-mmu05166-61	inhibition	N-mmu05166-59
+N-mmu05166-62	inhibition	N-mmu05166-65
+N-mmu05166-62	inhibition	N-mmu05166-64
+N-mmu05166-75	activation	N-mmu05166-74
+N-mmu05166-84	activation	N-mmu05166-83
+N-mmu05166-85	activation	N-mmu05166-84
+N-mmu05166-86	activation	N-mmu05166-85
+N-mmu05166-87	activation	N-mmu05166-85
+N-mmu05166-88	activation	N-mmu05166-85
+N-mmu05166-89	activation	N-mmu05166-75
+N-mmu05166-91	activation	N-mmu05166-95
+N-mmu05166-92	activation	N-mmu05166-96
+N-mmu05166-94	activation	N-mmu05166-96
+N-mmu05166-95	activation	N-mmu05166-97
+N-mmu05166-96	activation	N-mmu05166-89 90
+N-mmu05166-97	activation	N-mmu05166-98
+N-mmu05166-98	activation	N-mmu05166-99
+N-mmu05166-103	activation	N-mmu05166-105
+N-mmu05166-104	activation	N-mmu05166-103
+N-mmu05166-105	activation	N-mmu05166-107
+N-mmu05166-107	inhibition	N-mmu05166-111
+N-mmu05166-107	inhibition	N-mmu05166-99
+N-mmu05166-107	activation	N-mmu05166-89
+N-mmu05166-107	activation	N-mmu05166-89 90
+N-mmu05166-108	activation	N-mmu05166-109
+N-mmu05166-109	activation	N-mmu05166-110
+N-mmu05166-110	inhibition	N-mmu05166-111
+N-mmu05166-111	inhibition	N-mmu05166-114 112 113
+N-mmu05166-115	inhibition	N-mmu05166-117 118
+N-mmu05166-116	inhibition	N-mmu05166-117 118
+N-mmu05166-119	activation	N-mmu05166-120
+N-mmu05166-143	inhibition	N-mmu05166-132 136
+N-mmu05166-143	inhibition	N-mmu05166-136 139
+N-mmu05166-149	activation	N-mmu05166-132 136
+N-mmu05166-149	activation	N-mmu05166-136 139
+N-mmu05166-150	activation	N-mmu05166-149
+N-mmu05166-163	activation	N-mmu05166-91
+N-mmu05166-66 67 68	inhibition	N-mmu05166-62 63
+N-mmu05166-117 118	inhibition	N-mmu05166-119
+N-mmu05166-28 165	inhibition	N-mmu05166-33
+N-mmu05166-28 165	activation	N-mmu05166-30 31
+N-mmu05166-29 165	activation	N-mmu05166-27
+N-mmu05166-29 165	inhibition	N-mmu05166-33
+N-mmu05166-29 165	activation	N-mmu05166-30 31
+N-mmu05166-30 31	activation	N-mmu05166-32
+N-mmu05166-132 57 58	activation	N-mmu05166-5

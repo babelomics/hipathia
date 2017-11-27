@@ -1,0 +1,52 @@
+N-hsa04610-2	activation	N-hsa04610-3
+N-hsa04610-2	activation	N-hsa04610-19
+N-hsa04610-2	activation	N-hsa04610-17
+N-hsa04610-4	activation	N-hsa04610-3
+N-hsa04610-4	activation	N-hsa04610-5
+N-hsa04610-6	activation	N-hsa04610-5
+N-hsa04610-8	activation	N-hsa04610-7
+N-hsa04610-9	activation	N-hsa04610-7
+N-hsa04610-10	inhibition	N-hsa04610-6
+N-hsa04610-10	inhibition	N-hsa04610-5
+N-hsa04610-12	inhibition	N-hsa04610-41
+N-hsa04610-13	inhibition	N-hsa04610-5
+N-hsa04610-13	inhibition	N-hsa04610-41
+N-hsa04610-15	inhibition	N-hsa04610-41
+N-hsa04610-16	inhibition	N-hsa04610-20
+N-hsa04610-16	inhibition	N-hsa04610-21
+N-hsa04610-18	activation	N-hsa04610-22
+N-hsa04610-19	activation	N-hsa04610-17
+N-hsa04610-19	activation	N-hsa04610-18
+N-hsa04610-20	activation	N-hsa04610-57
+N-hsa04610-20	activation	N-hsa04610-17
+N-hsa04610-21	activation	N-hsa04610-17
+N-hsa04610-22	activation	N-hsa04610-23
+N-hsa04610-26	activation	N-hsa04610-46
+N-hsa04610-26	activation	N-hsa04610-45
+N-hsa04610-28	inhibition	N-hsa04610-26
+N-hsa04610-28	inhibition	N-hsa04610-24 25
+N-hsa04610-37	inhibition	N-hsa04610-49
+N-hsa04610-39	activation	N-hsa04610-38 59
+N-hsa04610-40	activation	N-hsa04610-38 59
+N-hsa04610-41	activation	N-hsa04610-39
+N-hsa04610-41	activation	N-hsa04610-11
+N-hsa04610-41	activation	N-hsa04610-58
+N-hsa04610-41	activation	N-hsa04610-52
+N-hsa04610-41	inhibition	N-hsa04610-9
+N-hsa04610-42	inhibition	N-hsa04610-38 59
+N-hsa04610-43	activation	N-hsa04610-38 59
+N-hsa04610-49	activation	N-hsa04610-41
+N-hsa04610-51	inhibition	N-hsa04610-2
+N-hsa04610-51	inhibition	N-hsa04610-3
+N-hsa04610-51	inhibition	N-hsa04610-4
+N-hsa04610-60	activation	N-hsa04610-6
+N-hsa04610-67	activation	N-hsa04610-44
+N-hsa04610-68	activation	N-hsa04610-44
+N-hsa04610-72	inhibition	N-hsa04610-38 59
+N-hsa04610-14 50	activation	N-hsa04610-5
+N-hsa04610-24 25	activation	N-hsa04610-46
+N-hsa04610-24 25	activation	N-hsa04610-45
+N-hsa04610-38 59	activation	N-hsa04610-11
+N-hsa04610-38 59	inhibition	N-hsa04610-49
+N-hsa04610-38 59	inhibition	N-hsa04610-16
+N-hsa04610-38 59	inhibition	N-hsa04610-14 50

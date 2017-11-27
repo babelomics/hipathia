@@ -1,0 +1,52 @@
+N-mmu04610-2	activation	N-mmu04610-3
+N-mmu04610-2	activation	N-mmu04610-19
+N-mmu04610-2	activation	N-mmu04610-17
+N-mmu04610-4	activation	N-mmu04610-3
+N-mmu04610-4	activation	N-mmu04610-5
+N-mmu04610-6	activation	N-mmu04610-5
+N-mmu04610-8	activation	N-mmu04610-7
+N-mmu04610-9	activation	N-mmu04610-7
+N-mmu04610-10	inhibition	N-mmu04610-6
+N-mmu04610-10	inhibition	N-mmu04610-5
+N-mmu04610-12	inhibition	N-mmu04610-41
+N-mmu04610-13	inhibition	N-mmu04610-5
+N-mmu04610-13	inhibition	N-mmu04610-41
+N-mmu04610-15	inhibition	N-mmu04610-41
+N-mmu04610-16	inhibition	N-mmu04610-20
+N-mmu04610-16	inhibition	N-mmu04610-21
+N-mmu04610-18	activation	N-mmu04610-22
+N-mmu04610-19	activation	N-mmu04610-17
+N-mmu04610-19	activation	N-mmu04610-18
+N-mmu04610-20	activation	N-mmu04610-57
+N-mmu04610-20	activation	N-mmu04610-17
+N-mmu04610-21	activation	N-mmu04610-17
+N-mmu04610-22	activation	N-mmu04610-23
+N-mmu04610-26	activation	N-mmu04610-46
+N-mmu04610-26	activation	N-mmu04610-45
+N-mmu04610-28	inhibition	N-mmu04610-26
+N-mmu04610-28	inhibition	N-mmu04610-24 25
+N-mmu04610-37	inhibition	N-mmu04610-49
+N-mmu04610-39	activation	N-mmu04610-38 59
+N-mmu04610-40	activation	N-mmu04610-38 59
+N-mmu04610-41	activation	N-mmu04610-39
+N-mmu04610-41	activation	N-mmu04610-11
+N-mmu04610-41	activation	N-mmu04610-58
+N-mmu04610-41	activation	N-mmu04610-52
+N-mmu04610-41	inhibition	N-mmu04610-9
+N-mmu04610-42	inhibition	N-mmu04610-38 59
+N-mmu04610-43	activation	N-mmu04610-38 59
+N-mmu04610-49	activation	N-mmu04610-41
+N-mmu04610-51	inhibition	N-mmu04610-2
+N-mmu04610-51	inhibition	N-mmu04610-3
+N-mmu04610-51	inhibition	N-mmu04610-4
+N-mmu04610-60	activation	N-mmu04610-6
+N-mmu04610-67	activation	N-mmu04610-44
+N-mmu04610-68	activation	N-mmu04610-44
+N-mmu04610-72	inhibition	N-mmu04610-38 59
+N-mmu04610-14 50	activation	N-mmu04610-5
+N-mmu04610-24 25	activation	N-mmu04610-46
+N-mmu04610-24 25	activation	N-mmu04610-45
+N-mmu04610-38 59	activation	N-mmu04610-11
+N-mmu04610-38 59	inhibition	N-mmu04610-49
+N-mmu04610-38 59	inhibition	N-mmu04610-16
+N-mmu04610-38 59	inhibition	N-mmu04610-14 50

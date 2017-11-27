@@ -1,0 +1,161 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-rno05205-15	Pik3ca	684	1145	white	rectangle	gene	0.5	black	46	17	170911,25513,29741,298947,366508,497931,60664,85243
+N-rno05205-24	Itpr1	491	1005	white	rectangle	gene	0.5	black	46	17	25262,25679,81678
+N-rno05205-27	NEWGENE_621802	684	1005	white	rectangle	gene	0.5	black	46	17	103693838,171140,24245,24246,25400
+N-rno05205-31	Plce1	491	1058	white	rectangle	gene	0.5	black	46	17	114633
+N-rno05205-33	Arhgef12	294	1058	white	rectangle	gene	0.5	black	46	17	367072
+N-rno05205-38	Gab1	589	1145	white	rectangle	gene	0.5	black	46	17	361388
+N-rno05205-41	Rac1	393	1198	white	rectangle	gene	0.5	black	46	17	363875
+N-rno05205-54	Mapk1	393	1321	white	rectangle	gene	0.5	black	46	17	116590
+N-rno05205-58	Elk1	491	1332	white	rectangle	gene	0.5	black	46	17	314436
+N-rno05205-59	Esr1	491	1310	white	rectangle	gene	0.5	black	46	17	24890
+N-rno05205-62	Kras	393	1383	white	rectangle	gene	0.5	black	46	17	24525,24605,25482,293621,361568,365355
+N-rno05205-64	Braf	491	1382	white	rectangle	gene	0.5	black	46	17	114486,24703,64363
+N-rno05205-66	Map2k1	590	1383	white	rectangle	gene	0.5	black	46	17	170851,58960
+N-rno05205-85	Src	221	1408	white	rectangle	gene	0.5	black	46	17	83805
+N-rno05205-86	Grb2	294	1381	white	rectangle	gene	0.5	black	46	17	81504
+N-rno05205-88	Vav2	294	1364	white	rectangle	gene	0.5	black	46	17	296603
+N-rno05205-97	Rhoa	393	1058	white	rectangle	gene	0.5	black	46	17	117273,297173
+N-rno05205-112	Mdm2	395	84	white	rectangle	gene	0.5	black	46	17	314856
+N-rno05205-116	Mapk1**	1357	1425	white	rectangle	gene	0.5	black	46	17	116590,50689
+N-rno05205-119	Mmp9	1520	1446	white	rectangle	gene	0.5	black	46	17	81687
+N-rno05205-126	Gab1*	1260	1231	white	rectangle	gene	0.5	black	46	17	361388
+N-rno05205-127	Pik3ca*	1348	1231	white	rectangle	gene	0.5	black	46	17	170911,25513,29741,298947,366508,497931,60664,85243
+N-rno05205-135	Grb2*	1260	1197	white	rectangle	gene	0.5	black	46	17	81504
+N-rno05205-136	Kras*	1348	1197	white	rectangle	gene	0.5	black	46	17	24525,24605,25482,293621,361568,365355
+N-rno05205-137	Braf*	1435	1197	white	rectangle	gene	0.5	black	46	17	114486,24703,64363
+N-rno05205-147	Src*	1260	733	white	rectangle	gene	0.5	black	46	17	83805
+N-rno05205-160	Tgfb1	126	516	white	rectangle	gene	0.5	black	46	17	59086
+N-rno05205-164	Myc	393	417	white	rectangle	gene	0.5	black	46	17	24577
+N-rno05205-165	Ctnnb1*	393	397	white	rectangle	gene	0.5	black	46	17	84353
+N-rno05205-172	Timp3	684	335	white	rectangle	gene	0.5	black	46	17	25358
+N-rno05205-173	Thbs1	684	310	white	rectangle	gene	0.5	black	46	17	445442
+N-rno05205-175	Mmp2	684	243	white	rectangle	gene	0.5	black	46	17	81686
+N-rno05205-176	Mmp9*	684	220	white	rectangle	gene	0.5	black	46	17	81687
+N-rno05205-179	Vegfa	794	232	white	rectangle	gene	0.5	black	46	17	83785
+N-rno05205-180	Hif1a	393	377	white	rectangle	gene	0.5	black	46	17	29560
+N-rno05205-193	Tfap4	684	417	white	rectangle	gene	0.5	black	46	17	360482
+N-rno05205-204	Pik3ca**	294	679	white	rectangle	gene	0.5	black	46	17	170911,25513,29741,298947,366508,497931,60664,85243
+N-rno05205-206	Akt1**	393	693	white	rectangle	gene	0.5	black	46	17	24185,25233,29414
+N-rno05205-208	Pdpk1	393	668	white	rectangle	gene	0.5	black	46	17	81745
+N-rno05205-210	Mtor	491	693	white	rectangle	gene	0.5	black	46	17	56718
+N-rno05205-213	Rps6kb2	590	679	white	rectangle	gene	0.5	black	46	17	361696,83840
+N-rno05205-219	Faslg	118	132	white	rectangle	gene	0.5	black	46	17	25385
+N-rno05205-223	Lum	116	85	white	rectangle	gene	0.5	black	46	17	81682
+N-rno05205-224	Tgfb2	116	25	white	rectangle	gene	0.5	black	46	16	81809
+N-rno05205-226	Sdc1	1172	1425	white	rectangle	gene	0.5	black	46	17	25216
+N-rno05205-228	Hpse2	1090	1450	white	rectangle	gene	0.5	black	46	17	368128,64537
+N-rno05205-240	Met	1172	1219	white	rectangle	gene	0.5	black	46	17	24553
+N-rno05205-245	100360552	1172	1152	white	rectangle	gene	0.5	black	46	17	100360552,100909849,266608,266715,282581,317674,363913,364754,58868,64512,64558
+N-rno05205-246	Wnt1	1090	1152	white	rectangle	gene	0.5	black	46	17	24881
+N-rno05205-250	Sdc2	1172	989	white	rectangle	gene	0.5	black	46	17	25615
+N-rno05205-252	Ezr	1260	1008	white	rectangle	gene	0.5	black	46	17	54319
+N-rno05205-253	Rdx	1260	989	white	rectangle	gene	0.5	black	46	17	315655
+N-rno05205-254	Msn	1260	970	white	rectangle	gene	0.5	black	46	17	81521
+N-rno05205-261	Fgfr1	1172	875	white	rectangle	gene	0.5	black	46	17	79114
+N-rno05205-262	Sdc4	1172	829	white	rectangle	gene	0.5	black	46	17	24771
+N-rno05205-263	Itgb1	1172	733	white	rectangle	gene	0.5	black	46	17	24511,315346
+N-rno05205-271	Frs2	1260	899	white	rectangle	gene	0.5	black	46	17	314850
+N-rno05205-276	Sos1	1435	899	white	rectangle	gene	0.5	black	46	17	313845,85384
+N-rno05205-278	Kras**	1520	899	white	rectangle	gene	0.5	black	46	17	24525,24605,25482,293621,361568,365355
+N-rno05205-280	Plcg1	1260	853	white	rectangle	gene	0.5	black	46	17	25738,29337
+N-rno05205-289	100360552*	1172	422	white	rectangle	gene	0.5	black	46	17	100360552,100909849,266608,266715,282581,317674,363913,364754,58868,64512,64558
+N-rno05205-297	Igf2	1090	494	white	rectangle	gene	0.5	black	46	17	24483
+N-rno05205-298	Igf1r	1172	494	white	rectangle	gene	0.5	black	46	17	25718
+N-rno05205-305	Hspg2	1090	139	white	rectangle	gene	0.5	black	46	17	313641
+N-rno05205-306	Hspg2*	1090	82	white	rectangle	gene	0.5	black	46	17	313641
+N-rno05205-308	Itga2	1172	140	white	rectangle	gene	0.5	black	46	17	170921,24511
+N-rno05205-313	Prkaca	1311	116	white	rectangle	gene	0.5	black	46	17	25636,293508
+N-rno05205-315	Ptk2*	1400	116	white	rectangle	gene	0.5	black	46	17	25614
+N-rno05205-317	Mapk13	1481	116	white	rectangle	gene	0.5	black	46	17	29513,60352,689314,81649
+N-rno05205-323	Ptpn6	1260	162	white	rectangle	gene	0.5	black	46	17	116689
+N-rno05205-333	Mir21*	684	516	white	rectangle	gene	0.5	black	46	17	100314000
+N-rno05205-347	Sdc1*	1172	1291	white	rectangle	gene	0.5	black	46	17	25216
+N-rno05205-353	Fn1	1090	1026	white	rectangle	gene	0.5	black	46	17	25661
+N-rno05205-362	Mir10a	684	845	white	rectangle	gene	0.5	black	46	17	100313996,100314226
+N-rno05205-403	Gpc3*	1172	456	white	rectangle	gene	0.5	black	46	17	25236
+N-rno05205-405	Gpc1	1172	608	white	rectangle	gene	0.5	black	46	17	58920
+N-rno05205-407	Egfr	1172	647	white	rectangle	gene	0.5	black	46	17	24329
+N-rno05205-413	Fgfr1*	1172	572	white	rectangle	gene	0.5	black	46	17	79114
+N-rno05205-427	Mapk1*******	294	540	white	rectangle	gene	0.5	black	46	17	116590,50689
+N-rno05205-447	Sdc1**	1172	1126	white	rectangle	gene	0.5	black	46	17	25216
+N-rno05205-273 274	Grb2 Ptpn11	1348	908	white	rectangle	gene,gene	0.5	black	46	17	81504,/,25622
+N-rno05205-1 19	Cd44 G10505	198	1102	white	rectangle	gene,compound	0.5	black	46	17	25406,/,G10505
+N-rno05205-2 39	Tiam1 Ank1	294	1198	white	rectangle	gene,gene	0.5	black	46	17	304109,/,306570,361833,362036
+N-rno05205-2 45	Tiam1 Pak1	294	1198	white	rectangle	gene,gene	0.5	black	46	17	304109,/,29431
+N-rno05205-4 60	Erbb2 Cd44	198	1381	white	rectangle	gene,gene	0.5	black	46	17	24337,/,25406
+N-rno05205-7 9	Rhoa Rock2	393	1102	white	rectangle	gene,gene	0.5	black	46	17	117273,297173,/,25537,81762
+N-rno05205-12 23	Ank1 Cd44	294	983	white	rectangle	gene,gene	0.5	black	46	17	306570,361833,362036,/,25406
+N-rno05205-19 60	G10505 Cd44	102	1238	white	circle	compound,gene	0.5	black	8	8	G10505,/,25406
+N-rno05205-42 99	Cdc42 Cd44	294	1239	white	rectangle	gene,gene	0.5	black	46	17	64465,/,25406
+N-rno05205-53 99 42 53	Iqgap1 Cd44 Cdc42 Iqgap1	294	1256	white	rectangle	gene,gene,gene,gene	0.5	black	46	17	361598,/,25406,/,64465,/,361598
+N-rno05205-70 357	Cd44 Twist2	198	882	white	rectangle	gene,gene	0.5	black	46	17	25406,/,59327,85489
+N-rno05205-71 74 75	Nanog Ddx5 Drosha	294	913	white	rectangle	gene,gene,gene	0.5	black	46	17	414065,/,287765,/,310159
+N-rno05205-71 78	Nanog Stat3	294	913	white	rectangle	gene,gene	0.5	black	46	17	414065,/,25125
+N-rno05205-151 199	Dcn Igf1	91	466	white	rectangle	gene,gene	0.5	black	46	17	29139,/,24482
+N-rno05205-151 425	Dcn Egfr	91	466	white	rectangle	gene,gene	0.5	black	46	17	29139,/,24329
+N-rno05205-151 153 154	Dcn Tlr2 Tlr4	91	466	white	rectangle	gene,gene,gene	0.5	black	46	17	29139,/,310553,/,29260
+N-rno05205-151 162	Dcn Erbb2	91	466	white	rectangle	gene,gene	0.5	black	46	17	29139,/,24337,29496,59323
+N-rno05205-151 167	Dcn Met	91	466	white	rectangle	gene,gene	0.5	black	46	17	29139,/,24553
+N-rno05205-151 436 437	Dcn Egfr Cav1	91	466	white	rectangle	gene,gene,gene	0.5	black	46	17	29139,/,24329,/,25404,29161,363425
+N-rno05205-167 169	Met Cblb	198	322	white	rectangle	gene,gene	0.5	black	46	17	24553,/,171136,292699,500985
+N-rno05205-199 200	Igf1 Igf1r	126	679	white	rectangle	gene,gene	0.5	black	46	17	24482,/,25718
+N-rno05205-239 244	Hgf G13064	1090	1219	white	rectangle	gene,compound	0.5	black	46	17	24446,/,G13064
+N-rno05205-259 268	Fgf2 G13063	1090	875	white	rectangle	gene,compound	0.5	black	46	17	54250,/,G13063
+N-rno05205-265 268	Fn1 G13063	1090	780	white	rectangle	gene,compound	0.5	black	46	17	25661,/,G13063
+N-rno05205-290 301	Shh C00925	1090	343	white	rectangle	gene,compound	0.5	black	46	17	29499,84399,/,NA
+N-rno05205-320 327	Vegfa C00925	1090	1	white	rectangle	gene,compound	0.5	black	46	17	83785,/,NA
+N-rno05205-342 348	Vtn C00925	1090	1330	white	rectangle	gene,compound	0.5	black	46	17	29169,/,NA
+N-rno05205-343 348	Fn1 C00925	1090	1246	white	rectangle	gene,compound	0.5	black	46	17	25661,/,NA
+N-rno05205-404 419	C00925 Wnt2	1122	457	white	circle	compound,gene	0.5	black	8	8	NA,/,114487,114850,116466,140584,24881,24882,282582,287357,291678,293990,303181,303586,315196,315294,316526,316527,500047,64566,84426
+N-rno05205-406 409	Hbegf G13063	1090	647	white	rectangle	gene,compound	0.5	black	46	17	25433,/,G13063
+N-rno05205-409 411	G13063 Fgf2	1122	609	white	circle	compound,gene	0.5	black	8	8	G13063,/,54250
+N-rno05205-17	Akt1	783	1146	white	rectangle	gene	0.5	black	46	17	24185,25233,29414
+N-rno05205-30	Flna	783	1005	white	rectangle	gene	0.5	black	46	17	293860,306204,362332
+N-rno05205-45 46	Pak1 Flna	491	1240	white	rectangle	gene,gene	0.5	black	46	17	29431,/,293860,306204,362332
+N-rno05205-103	Ccnd1	686	1321	white	rectangle	gene	0.5	black	46	17	58919
+N-rno05205-69	Mapk1*	684	1383	white	rectangle	gene	0.5	black	46	17	116590,50689
+N-rno05205-81	Hcls1	393	1408	white	rectangle	gene	0.5	black	46	17	288077,60465
+N-rno05205-91	Rac1*	393	1362	white	rectangle	gene	0.5	black	46	17	363875
+N-rno05205-113	Tp53	592	84	white	rectangle	gene	0.5	black	46	17	24842
+N-rno05205-120	Plau	1520	1425	white	rectangle	gene	0.5	black	46	17	25619
+N-rno05205-121	Plaur	1520	1404	white	rectangle	gene	0.5	black	46	17	50692
+N-rno05205-129	Akt1*	1618	1231	white	rectangle	gene	0.5	black	46	17	24185,25233,29414
+N-rno05205-140	Mapk1***	1618	1197	white	rectangle	gene	0.5	black	46	17	116590,50689
+N-rno05205-146	Ptk2	1260	771	white	rectangle	gene	0.5	black	46	17	25614
+N-rno05205-183	Vegfa*	684	386	white	rectangle	gene	0.5	black	46	17	83785
+N-rno05205-451	Kdr**	894	232	white	rectangle	gene	0.5	black	46	17	25589
+N-rno05205-195	Cdkn1a	829	418	white	rectangle	gene	0.5	black	46	17	114851
+N-rno05205-215 216	Eif4b 100911372	684	688	white	rectangle	gene,gene	0.5	black	46	17	300253,/,100911372,29304
+N-rno05205-220	Fas	200	133	white	rectangle	gene	0.5	black	46	17	246097
+N-rno05205-109	Smad2	395	25	white	rectangle	gene	0.5	black	46	17	29357
+N-rno05205-142	Ctnnb1	1618	1151	white	rectangle	gene	0.5	black	46	17	84353
+N-rno05205-256	Actg1	1348	989	white	rectangle	gene	0.5	black	46	17	287876,684969,81822
+N-rno05205-150	Prkca	1260	829	white	rectangle	gene	0.5	black	46	17	24680
+N-rno05205-144	Nudt16l1	1260	809	white	rectangle	gene	0.5	black	46	17	497867
+N-rno05205-145	Pxn	1260	790	white	rectangle	gene	0.5	black	46	17	360820
+N-rno05205-270	Mapk1****	1618	899	white	rectangle	gene	0.5	black	46	17	116590,50689
+N-rno05205-284	Prkca*	1435	832	white	rectangle	gene	0.5	black	46	17	24680,24681,25023
+N-rno05205-337	Ctnnb1**	1520	422	white	rectangle	gene	0.5	black	46	17	84353
+N-rno05205-304	Mapk1*****	1348	494	white	rectangle	gene	0.5	black	46	17	116590,50689
+N-rno05205-400	Itga2*	1172	51	white	rectangle	gene	0.5	black	46	17	170921,24511
+N-rno05205-318	Hspb2	1566	116	white	rectangle	gene	0.5	black	46	17	161476
+N-rno05205-324	Kdr*	1172	197	white	rectangle	gene	0.5	black	46	17	25589
+N-rno05205-158	Pdcd4	684	478	white	rectangle	gene	0.5	black	46	17	64031
+N-rno05205-236	Itgb3	1172	1330	white	rectangle	gene	0.5	black	46	17	29302,296456
+N-rno05205-352	Itgb1*	1172	1058	white	rectangle	gene	0.5	black	46	17	24511,315346
+N-rno05205-369	Hoxd10	683	807	white	rectangle	gene	0.5	black	46	17	303991
+N-rno05205-415	Mapk1******	1348	608	white	rectangle	gene	0.5	black	46	17	116590,50689
+N-rno05205-431	Cdkn1a*	684	541	white	rectangle	gene	0.5	black	46	17	114851
+N-rno05205-7 93	Rhoa Arhgef1	393	1102	white	rectangle	gene,gene	0.5	black	46	17	117273,297173,/,60323
+N-rno05205-34	Slc9a1	590	1103	white	rectangle	gene	0.5	black	46	17	24782
+N-rno05205-22	Ppp1r12a	590	1059	white	rectangle	gene	0.5	black	46	17	116670,24668,24669,25594,304813,499076
+N-rno05205-77	Mir21	783	913	white	rectangle	gene	0.5	black	46	17	100314000
+N-rno05205-434	Casp3	294	566	white	rectangle	gene	0.5	black	46	17	25402
+N-rno05205-188	103694380	684	449	white	rectangle	gene	0.5	black	46	17	103694380,24835
+N-rno05205-189	Il12b	734	449	white	rectangle	gene	0.5	black	46	17	64546
+N-rno05205-422	Cd63	393	630	white	rectangle	gene	0.5	black	46	17	29186
+N-rno05205-288	Gpc3	1172	386	white	rectangle	gene	0.5	black	46	17	25236
+N-rno05205-291 292	Ptch1 Smo	1172	343	white	rectangle	gene,gene	0.5	black	46	17	89830,/,25273
+N-rno05205-319	Kdr	1172	0	white	rectangle	gene	0.5	black	46	17	25589
+N-rno05205-238	Itgb5	1172	1246	white	rectangle	gene	0.5	black	46	17	257645,296456

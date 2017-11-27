@@ -1,0 +1,32 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-rno05210-1	Dcc	276	225	white	rectangle	gene	0.5	black	46	17	25311
+N-rno05210-2	Casp3	357	265	white	rectangle	gene	0.5	black	46	17	25402
+N-rno05210-4	Pik3ca	499	388	white	rectangle	gene	0.5	black	46	17	170911,25513,29741,298947,366508,497931,60664,85243
+N-rno05210-14	Kras	444	342	white	rectangle	gene	0.5	black	46	17	24525
+N-rno05210-15	Braf	525	342	white	rectangle	gene	0.5	black	46	17	114486,24703,64363
+N-rno05210-19	Ralgds	525	275	white	rectangle	gene	0.5	black	46	17	29622
+N-rno05210-20	Rhoa	604	275	white	rectangle	gene	0.5	black	46	17	117273,297173,363875,366957
+N-rno05210-25	Map2k1	604	342	white	rectangle	gene	0.5	black	46	17	170851
+N-rno05210-26	Mapk1	764	342	white	rectangle	gene	0.5	black	46	17	116590,50689
+N-rno05210-27	Jun	906	367	white	rectangle	gene	0.5	black	46	17	24516
+N-rno05210-28	Fos	906	342	white	rectangle	gene	0.5	black	46	17	314322
+N-rno05210-29	Myc*	906	317	white	rectangle	gene	0.5	black	46	17	24577
+N-rno05210-33	Lef1	906	516	white	rectangle	gene	0.5	black	46	17	161452,312451,363595,679869
+N-rno05210-34	Gsk3b	591	559	white	rectangle	gene	0.5	black	46	17	84027
+N-rno05210-35	Gsk3b*	592	478	white	rectangle	gene	0.5	black	46	17	84027
+N-rno05210-36	Ctnnb1	673	559	white	rectangle	gene	0.5	black	46	17	84353
+N-rno05210-37	Ctnnb1*	676	478	white	rectangle	gene	0.5	black	46	17	84353
+N-rno05210-38	Akt1	525	431	white	rectangle	gene	0.5	black	46	17	24185,25233,29414
+N-rno05210-42	Bax	1025	39	white	rectangle	gene	0.5	black	46	17	24887
+N-rno05210-5 6	Casp9 Appl1	423	233	white	rectangle	gene,gene	0.5	black	46	17	58918,/,290537
+N-rno05210-10 44	Tgfbr1 Tgfbr2	277	156	white	rectangle	gene,gene	0.5	black	46	17	29591,/,81810
+N-rno05210-16	Mapk8	682	275	white	rectangle	gene	0.5	black	46	17	116554,25272,50658
+N-rno05210-53	Ccnd1*	1023	341	white	rectangle	gene	0.5	black	46	17	58919
+N-rno05210-21	Birc5	1022	535	white	rectangle	gene	0.5	black	46	17	64041
+N-rno05210-22	Myc	1022	500	white	rectangle	gene	0.5	black	46	17	24577
+N-rno05210-23	Ccnd1	1022	477	white	rectangle	gene	0.5	black	46	17	58919
+N-rno05210-39	Bad	614	405	white	rectangle	gene	0.5	black	46	17	64639
+N-rno05210-40	Casp9	614	379	white	rectangle	gene	0.5	black	46	17	58918
+N-rno05210-31	Bcl2	635	0	white	rectangle	gene	0.5	black	46	17	24224
+N-rno05210-7	Casp3*	558	225	white	rectangle	gene	0.5	black	46	17	25402
+N-rno05210-9 11	Smad3 Smad4	428	147	white	rectangle	gene,gene	0.5	black	46	17	25631,29357,/,50554

@@ -1,0 +1,15 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-rno03460-6	Fancd2	155	259	white	rectangle	gene	0.5	black	46	17	312641
+N-rno03460-21	Atr	146	440	white	rectangle	gene	0.5	black	46	17	685055
+N-rno03460-24	Brca2	346	110	white	rectangle	gene	0.5	black	46	17	360254
+N-rno03460-29	Fan1	154	0	white	rectangle	gene	0.5	black	44	17	309256
+N-rno03460-20 21	Atrip Atr	146	457	white	rectangle	gene,gene	0.5	black	46	17	301014,/,685055
+N-rno03460-10 11 13 2 3 32 35 4 50 51 8 9	Fancg Fancl Faap100 Fanca Fancb Ube2t Apitd1 Fancc Faap24 Hes1 Fance Fancf	348	249	white	rectangle	gene,gene,gene,gene,gene,gene,gene,gene,gene,gene,gene,gene	0.5	black	46	17	691105,/,305600,/,303742,/,361435,/,501552,/,360847,/,100534597,688314,/,24361,/,502320,/,29577,/,309643,/,499155
+N-rno03460-30 31	Usp1 Wdr48	191	319	white	rectangle	gene,gene	0.5	black	46	17	313387,/,363164
+N-rno03460-23 49	Telo2 Faap24	256	450	white	rectangle	gene,gene	0.5	black	46	17	302986,/,502320
+N-rno03460-26 12 24	Brip1 Palb2 Brca2	272	49	white	rectangle	gene,gene,gene	0.5	black	46	17	360588,/,293452,/,360254
+N-rno03460-27	Brca1	226	49	white	rectangle	gene	0.5	black	46	17	497672
+N-rno03460-48	Rad51	425	88	white	rectangle	gene	0.5	black	46	17	499870
+N-rno03460-25 40	Mlh1 Pms2	272	6	white	rectangle	gene,gene	0.5	black	46	17	81685,/,288479
+N-rno03460-7	Fanci	155	276	white	rectangle	gene	0.5	black	46	17	100360594
+N-rno03460-28	Rad51c	425	111	white	rectangle	gene	0.5	black	46	17	497976

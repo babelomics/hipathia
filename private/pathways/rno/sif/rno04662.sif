@@ -1,0 +1,42 @@
+N-rno04662-3	activation	N-rno04662-28
+N-rno04662-5	activation	N-rno04662-6
+N-rno04662-7	activation	N-rno04662-5
+N-rno04662-14	inhibition	N-rno04662-10
+N-rno04662-14	activation	N-rno04662-7 8 9
+N-rno04662-15	activation	N-rno04662-11 12 13
+N-rno04662-19	activation	N-rno04662-16
+N-rno04662-19	activation	N-rno04662-17 52
+N-rno04662-25	activation	N-rno04662-24
+N-rno04662-25	activation	N-rno04662-49
+N-rno04662-26	activation	N-rno04662-25
+N-rno04662-28	activation	N-rno04662-27
+N-rno04662-31	activation	N-rno04662-26
+N-rno04662-31	activation	N-rno04662-15
+N-rno04662-31	activation	N-rno04662-4
+N-rno04662-34	activation	N-rno04662-36
+N-rno04662-34	activation	N-rno04662-35
+N-rno04662-34	activation	N-rno04662-38
+N-rno04662-34	activation	N-rno04662-53
+N-rno04662-34	activation	N-rno04662-19
+N-rno04662-34	activation	N-rno04662-32 33
+N-rno04662-37	activation	N-rno04662-34
+N-rno04662-38	activation	N-rno04662-31
+N-rno04662-38	activation	N-rno04662-17 52
+N-rno04662-38	activation	N-rno04662-30 32
+N-rno04662-38	activation	N-rno04662-32 33
+N-rno04662-38	activation	N-rno04662-32 51
+N-rno04662-47	activation	N-rno04662-48
+N-rno04662-48	activation	N-rno04662-24
+N-rno04662-49	activation	N-rno04662-47
+N-rno04662-53	activation	N-rno04662-29
+N-rno04662-11 12 13	activation	N-rno04662-7 8 9
+N-rno04662-17 52	activation	N-rno04662-14
+N-rno04662-30 32	activation	N-rno04662-29
+N-rno04662-32 33	activation	N-rno04662-31
+N-rno04662-39 42	inhibition	N-rno04662-38
+N-rno04662-39 42	inhibition	N-rno04662-32 33
+N-rno04662-39 41	inhibition	N-rno04662-38
+N-rno04662-39 41	inhibition	N-rno04662-32 33
+N-rno04662-39 40	inhibition	N-rno04662-38
+N-rno04662-39 40	inhibition	N-rno04662-32 33
+N-rno04662-50 51	activation	N-rno04662-26

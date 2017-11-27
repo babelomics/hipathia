@@ -1,0 +1,71 @@
+N-rno04660-3	activation	N-rno04660-36
+N-rno04660-13	activation	N-rno04660-14
+N-rno04660-15	activation	N-rno04660-13
+N-rno04660-18	activation	N-rno04660-15 16 17
+N-rno04660-19	activation	N-rno04660-18
+N-rno04660-20	inhibition	N-rno04660-77
+N-rno04660-20	activation	N-rno04660-19
+N-rno04660-24	activation	N-rno04660-21 22 23
+N-rno04660-24	activation	N-rno04660-22 72
+N-rno04660-25	activation	N-rno04660-20
+N-rno04660-27	activation	N-rno04660-20
+N-rno04660-27	activation	N-rno04660-25
+N-rno04660-28	activation	N-rno04660-26
+N-rno04660-28	activation	N-rno04660-27
+N-rno04660-29	activation	N-rno04660-30
+N-rno04660-29	activation	N-rno04660-27
+N-rno04660-31	activation	N-rno04660-32
+N-rno04660-32	activation	N-rno04660-33
+N-rno04660-33	activation	N-rno04660-34
+N-rno04660-33	activation	N-rno04660-70
+N-rno04660-36	activation	N-rno04660-35
+N-rno04660-42	activation	N-rno04660-43
+N-rno04660-54	activation	N-rno04660-47 53
+N-rno04660-54	activation	N-rno04660-47 75
+N-rno04660-54	activation	N-rno04660-57 59
+N-rno04660-56	activation	N-rno04660-54
+N-rno04660-58	inhibition	N-rno04660-54
+N-rno04660-58	inhibition	N-rno04660-47 53
+N-rno04660-58	inhibition	N-rno04660-47 75
+N-rno04660-58	inhibition	N-rno04660-57 59
+N-rno04660-60	activation	N-rno04660-54
+N-rno04660-60	activation	N-rno04660-57 59
+N-rno04660-69	activation	N-rno04660-71
+N-rno04660-70	activation	N-rno04660-69
+N-rno04660-71	activation	N-rno04660-34
+N-rno04660-73	activation	N-rno04660-74
+N-rno04660-73	activation	N-rno04660-22 72
+N-rno04660-74	activation	N-rno04660-34
+N-rno04660-76	activation	N-rno04660-35
+N-rno04660-77	inhibition	N-rno04660-35
+N-rno04660-21 22 23	activation	N-rno04660-15 16 17
+N-rno04660-22 72	activation	N-rno04660-15
+N-rno04660-22 72	activation	N-rno04660-15 16 17
+N-rno04660-37 46	activation	N-rno04660-42
+N-rno04660-37 46	activation	N-rno04660-38 40
+N-rno04660-38 40	activation	N-rno04660-24
+N-rno04660-38 40	activation	N-rno04660-32
+N-rno04660-38 40	activation	N-rno04660-4
+N-rno04660-39 40	activation	N-rno04660-31
+N-rno04660-45 46	activation	N-rno04660-44
+N-rno04660-47 53	activation	N-rno04660-76
+N-rno04660-47 53	activation	N-rno04660-37 46
+N-rno04660-47 53	activation	N-rno04660-38 40
+N-rno04660-47 53	activation	N-rno04660-39 40
+N-rno04660-47 53	activation	N-rno04660-40 41
+N-rno04660-47 53	activation	N-rno04660-41 46
+N-rno04660-47 53	activation	N-rno04660-45 46
+N-rno04660-47 53	activation	N-rno04660-54
+N-rno04660-47 75	activation	N-rno04660-76
+N-rno04660-47 75	activation	N-rno04660-37 46
+N-rno04660-47 75	activation	N-rno04660-38 40
+N-rno04660-47 75	activation	N-rno04660-39 40
+N-rno04660-47 75	activation	N-rno04660-40 41
+N-rno04660-47 75	activation	N-rno04660-41 46
+N-rno04660-47 75	activation	N-rno04660-45 46
+N-rno04660-57 59	activation	N-rno04660-47 53
+N-rno04660-57 59	activation	N-rno04660-47 75
+N-rno04660-61 63	inhibition	N-rno04660-47 53
+N-rno04660-61 63	inhibition	N-rno04660-47 75
+N-rno04660-61 62	inhibition	N-rno04660-47 53
+N-rno04660-61 62	inhibition	N-rno04660-47 75

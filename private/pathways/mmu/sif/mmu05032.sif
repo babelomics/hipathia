@@ -1,0 +1,35 @@
+N-mmu05032-5	activation	N-mmu05032-13
+N-mmu05032-7	activation	N-mmu05032-22
+N-mmu05032-9	activation	N-mmu05032-31
+N-mmu05032-9	activation	N-mmu05032-79
+N-mmu05032-11	activation	N-mmu05032-33
+N-mmu05032-11	activation	N-mmu05032-93
+N-mmu05032-14	activation	N-mmu05032-5
+N-mmu05032-15	activation	N-mmu05032-7
+N-mmu05032-22	activation	N-mmu05032-37
+N-mmu05032-22	inhibition	N-mmu05032-4
+N-mmu05032-22	inhibition	N-mmu05032-38
+N-mmu05032-24	activation	N-mmu05032-25
+N-mmu05032-28	activation	N-mmu05032-30
+N-mmu05032-46	activation	N-mmu05032-12 98
+N-mmu05032-48	activation	N-mmu05032-51
+N-mmu05032-49	activation	N-mmu05032-51
+N-mmu05032-50	activation	N-mmu05032-48
+N-mmu05032-51	activation	N-mmu05032-52
+N-mmu05032-52	activation	N-mmu05032-50
+N-mmu05032-53	activation	N-mmu05032-51
+N-mmu05032-53	activation	N-mmu05032-48
+N-mmu05032-54	activation	N-mmu05032-55
+N-mmu05032-54	activation	N-mmu05032-87
+N-mmu05032-76	activation	N-mmu05032-77
+N-mmu05032-77	activation	N-mmu05032-24
+N-mmu05032-78	activation	N-mmu05032-76
+N-mmu05032-79	activation	N-mmu05032-80
+N-mmu05032-80	activation	N-mmu05032-81
+N-mmu05032-86	activation	N-mmu05032-85
+N-mmu05032-87	activation	N-mmu05032-86
+N-mmu05032-92	activation	N-mmu05032-91
+N-mmu05032-93	activation	N-mmu05032-92
+N-mmu05032-97	activation	N-mmu05032-12 98
+N-mmu05032-12 98	activation	N-mmu05032-48
+N-mmu05032-12 98	activation	N-mmu05032-49

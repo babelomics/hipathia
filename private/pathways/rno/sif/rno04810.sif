@@ -1,0 +1,67 @@
+N-rno04810-10	activation	N-rno04810-82 83
+N-rno04810-13	activation	N-rno04810-15
+N-rno04810-14	activation	N-rno04810-8 79
+N-rno04810-14	activation	N-rno04810-8 82
+N-rno04810-15	activation	N-rno04810-45
+N-rno04810-19	activation	N-rno04810-10
+N-rno04810-20	activation	N-rno04810-21 82
+N-rno04810-22	inhibition	N-rno04810-21 82
+N-rno04810-24	activation	N-rno04810-25
+N-rno04810-25	inhibition	N-rno04810-23
+N-rno04810-27	activation	N-rno04810-26 80
+N-rno04810-28	activation	N-rno04810-30
+N-rno04810-28	activation	N-rno04810-29
+N-rno04810-33	activation	N-rno04810-31
+N-rno04810-34	inhibition	N-rno04810-35 81 80
+N-rno04810-36	activation	N-rno04810-35 81 80
+N-rno04810-37	inhibition	N-rno04810-32
+N-rno04810-39	activation	N-rno04810-38
+N-rno04810-40	activation	N-rno04810-39
+N-rno04810-41	activation	N-rno04810-33
+N-rno04810-41	activation	N-rno04810-28
+N-rno04810-41	activation	N-rno04810-22
+N-rno04810-41	inhibition	N-rno04810-34
+N-rno04810-41	activation	N-rno04810-35 81 80
+N-rno04810-42	activation	N-rno04810-43
+N-rno04810-42	activation	N-rno04810-22
+N-rno04810-42	inhibition	N-rno04810-36
+N-rno04810-43	activation	N-rno04810-37
+N-rno04810-43	inhibition	N-rno04810-47
+N-rno04810-43	activation	N-rno04810-45
+N-rno04810-44	activation	N-rno04810-42
+N-rno04810-44	activation	N-rno04810-48
+N-rno04810-44	activation	N-rno04810-40
+N-rno04810-44	activation	N-rno04810-14
+N-rno04810-45	activation	N-rno04810-48
+N-rno04810-45	activation	N-rno04810-19
+N-rno04810-45	activation	N-rno04810-42
+N-rno04810-45	inhibition	N-rno04810-16 17 18
+N-rno04810-46	activation	N-rno04810-41
+N-rno04810-46	activation	N-rno04810-27
+N-rno04810-46	inhibition	N-rno04810-45
+N-rno04810-47	activation	N-rno04810-46
+N-rno04810-49	inhibition	N-rno04810-46
+N-rno04810-50	activation	N-rno04810-54
+N-rno04810-50	activation	N-rno04810-45
+N-rno04810-51	inhibition	N-rno04810-41
+N-rno04810-52	activation	N-rno04810-51
+N-rno04810-53	activation	N-rno04810-52
+N-rno04810-55	activation	N-rno04810-45
+N-rno04810-56	activation	N-rno04810-45
+N-rno04810-57	activation	N-rno04810-44
+N-rno04810-58	activation	N-rno04810-57
+N-rno04810-58	activation	N-rno04810-42
+N-rno04810-62	activation	N-rno04810-58
+N-rno04810-63	activation	N-rno04810-49
+N-rno04810-64	activation	N-rno04810-63
+N-rno04810-64	activation	N-rno04810-59 60 61
+N-rno04810-66	activation	N-rno04810-53
+N-rno04810-66	activation	N-rno04810-54
+N-rno04810-66	activation	N-rno04810-55
+N-rno04810-67	activation	N-rno04810-47
+N-rno04810-68	activation	N-rno04810-66
+N-rno04810-69	activation	N-rno04810-68
+N-rno04810-73	activation	N-rno04810-67
+N-rno04810-59 60 61	activation	N-rno04810-56
+N-rno04810-11 12	activation	N-rno04810-82 83
+N-rno04810-16 17 18	inhibition	N-rno04810-11 12

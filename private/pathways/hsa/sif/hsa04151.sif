@@ -1,0 +1,82 @@
+N-hsa04151-1	activation	N-hsa04151-14
+N-hsa04151-1	activation	N-hsa04151-13
+N-hsa04151-3	inhibition	N-hsa04151-2
+N-hsa04151-6	activation	N-hsa04151-5
+N-hsa04151-6	activation	N-hsa04151-4
+N-hsa04151-8	activation	N-hsa04151-6
+N-hsa04151-10	activation	N-hsa04151-7 8 9
+N-hsa04151-13	activation	N-hsa04151-51
+N-hsa04151-13	activation	N-hsa04151-95
+N-hsa04151-13	activation	N-hsa04151-38
+N-hsa04151-13	activation	N-hsa04151-31
+N-hsa04151-13	inhibition	N-hsa04151-71
+N-hsa04151-13	inhibition	N-hsa04151-23
+N-hsa04151-13	inhibition	N-hsa04151-60
+N-hsa04151-13	inhibition	N-hsa04151-61
+N-hsa04151-13	inhibition	N-hsa04151-29
+N-hsa04151-13	inhibition	N-hsa04151-30
+N-hsa04151-13	inhibition	N-hsa04151-63
+N-hsa04151-13	inhibition	N-hsa04151-11 12
+N-hsa04151-13	inhibition	N-hsa04151-108
+N-hsa04151-14	activation	N-hsa04151-6
+N-hsa04151-14	activation	N-hsa04151-100
+N-hsa04151-14	activation	N-hsa04151-101
+N-hsa04151-14	activation	N-hsa04151-102
+N-hsa04151-14	activation	N-hsa04151-13
+N-hsa04151-15	activation	N-hsa04151-1
+N-hsa04151-19	inhibition	N-hsa04151-1
+N-hsa04151-20	activation	N-hsa04151-15
+N-hsa04151-21	activation	N-hsa04151-44
+N-hsa04151-21	activation	N-hsa04151-20
+N-hsa04151-23	inhibition	N-hsa04151-34
+N-hsa04151-23	inhibition	N-hsa04151-24
+N-hsa04151-23	inhibition	N-hsa04151-35
+N-hsa04151-29	activation	N-hsa04151-25
+N-hsa04151-29	activation	N-hsa04151-26
+N-hsa04151-29	activation	N-hsa04151-36
+N-hsa04151-29	activation	N-hsa04151-37
+N-hsa04151-29	activation	N-hsa04151-27
+N-hsa04151-29	activation	N-hsa04151-28
+N-hsa04151-30	inhibition	N-hsa04151-32
+N-hsa04151-30	inhibition	N-hsa04151-103
+N-hsa04151-31	inhibition	N-hsa04151-33
+N-hsa04151-38	activation	N-hsa04151-39
+N-hsa04151-39	activation	N-hsa04151-98
+N-hsa04151-39	activation	N-hsa04151-99
+N-hsa04151-41	inhibition	N-hsa04151-29
+N-hsa04151-41	inhibition	N-hsa04151-30
+N-hsa04151-43	activation	N-hsa04151-21
+N-hsa04151-44	activation	N-hsa04151-45
+N-hsa04151-45	activation	N-hsa04151-46
+N-hsa04151-46	activation	N-hsa04151-71
+N-hsa04151-46	activation	N-hsa04151-15
+N-hsa04151-47	inhibition	N-hsa04151-13
+N-hsa04151-48	inhibition	N-hsa04151-13
+N-hsa04151-53	activation	N-hsa04151-11 12
+N-hsa04151-54	activation	N-hsa04151-11 12
+N-hsa04151-55	activation	N-hsa04151-53
+N-hsa04151-58	activation	N-hsa04151-13
+N-hsa04151-59	inhibition	N-hsa04151-13
+N-hsa04151-60	inhibition	N-hsa04151-105 62
+N-hsa04151-61	inhibition	N-hsa04151-105 62
+N-hsa04151-71	activation	N-hsa04151-72
+N-hsa04151-72	activation	N-hsa04151-73
+N-hsa04151-75	activation	N-hsa04151-1
+N-hsa04151-84	activation	N-hsa04151-82 83 85
+N-hsa04151-85	activation	N-hsa04151-15
+N-hsa04151-86	activation	N-hsa04151-87
+N-hsa04151-87	activation	N-hsa04151-15
+N-hsa04151-90	activation	N-hsa04151-15
+N-hsa04151-91	activation	N-hsa04151-89 90
+N-hsa04151-95	activation	N-hsa04151-96
+N-hsa04151-95	activation	N-hsa04151-97
+N-hsa04151-106	activation	N-hsa04151-53
+N-hsa04151-107	activation	N-hsa04151-13
+N-hsa04151-108	inhibition	N-hsa04151-109
+N-hsa04151-108	inhibition	N-hsa04151-110
+N-hsa04151-11 12	inhibition	N-hsa04151-10
+N-hsa04151-7 8 9	inhibition	N-hsa04151-3
+N-hsa04151-104 79	activation	N-hsa04151-15
+N-hsa04151-22 81	activation	N-hsa04151-75
+N-hsa04151-49 50	activation	N-hsa04151-13
+N-hsa04151-78 80	activation	N-hsa04151-104 79

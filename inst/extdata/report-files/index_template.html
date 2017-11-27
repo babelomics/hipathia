@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>hiPathia results</title>
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- Chrome for Android theme color -->
+        <!--<meta name="theme-color" content="#303F9F">-->
+        <meta name="theme-color" content="#000000">
+
+        <!-- Web Application Manifest -->
+        <link rel="manifest" href="manifest.json">
+
+        <!-- Windows Theme color -->
+        <meta name="msapplication-TileColor" content="#3372DF">
+
+        <!-- Add to homescreen for Chrome on Android -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="application-name" content="hiPathia results">
+
+        <!-- Add to homescreen for Safari on iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="hiPathia results">
+
+        <!-- Force Microsoft use latest web tech -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- END meta -->
+
+        <!--Config-->
+        <script src="conf/nv-config.js"></script>
+        <script src="conf/config.js"></script>
+
+        <!-- Normalize -->
+        <link href='normalize-css/normalize.css' rel='stylesheet' type='text/css'>
+
+        <!--Fonts-->
+        <link href='fonts/fonts.css' rel='stylesheet' type='text/css'>
+        <link href='fontawesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+        <!--CSS-->
+        <link href='css/global.css' rel='stylesheet' type='text/css'>
+        <link href='css/form.css' rel='stylesheet' type='text/css'>
+
+
+        <!--Web Components-->
+        <script src="webcomponentsjs/webcomponents-lite.min.js"></script>
+
+        <link rel="import" href="pathway-viewer.html">
+
+        <link rel="import" href="conf/theme.html">
+
+        <style>
+            .title {
+                font-size: 16pt;
+                margin: 25px;
+            }
+
+            .supertitle {
+                padding: 25px;
+                margin: 0px 0px 0px 0px;
+                background-color: #214753;
+                color: #efefef;
+                font-size: 20pt;
+            }
+
+            .minititle {
+                color: #efefef;
+                font-size: 10pt;
+            }
+            
+            #pathway-viewer {
+                position: relative;
+                box-sizing: border-box;
+                margin: 30px;
+                width: calc(100% - 60px);
+                height: 760px;
+            }
+        </style>
+    </head>
+
+    <body unresolved class="fullbleed">
+        <div style="text-align:center;padding-top:15px;">
+            <img src="report_logo.png" align="left">
+            <img src="report_title.png" align="center">
+            <img src="report_legend.png" align="right">
+        </div>
+        PUT_HERE_YOUR_ELEMENTS
+        <script>
+            var pathwayViewer = document.querySelector('pathway-viewer');
+        </script>
+    </body>
+
+</html>

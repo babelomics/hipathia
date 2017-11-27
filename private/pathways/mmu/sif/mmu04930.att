@@ -1,0 +1,31 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-mmu04930-1	Pkm	432	0	white	rectangle	gene	0.5	black	46	17	18746,18770
+N-mmu04930-2	Pik3ca	515	512	white	rectangle	gene	0.5	black	46	17	18706,18707,18708,18709,18710,30955,320207,74769
+N-mmu04930-4	Irs1	432	512	white	rectangle	gene	0.5	black	46	17	16367
+N-mmu04930-5	Insr	266	512	white	rectangle	gene	0.5	black	46	17	16337
+N-mmu04930-6	Ins1	183	512	white	rectangle	gene	0.5	black	46	17	16333,16334
+N-mmu04930-11	Socs3	349	449	white	rectangle	gene	0.5	black	46	17	12702,12703,216233,67296
+N-mmu04930-12	Mapk1	349	422	white	rectangle	gene	0.5	black	46	17	26413,26417
+N-mmu04930-16	Adipoq	183	618	white	rectangle	gene	0.5	black	46	17	11450
+N-mmu04930-17	Ikbkb b	349	394	white	rectangle	gene	0.5	black	46	17	16150
+N-mmu04930-18	Prkcd d	349	296	white	rectangle	gene	0.5	black	46	17	18753,18754
+N-mmu04930-19	Pdx1	432	165	white	rectangle	gene	0.5	black	46	17	18609
+N-mmu04930-20	Irs1*	432	490	white	rectangle	gene	0.5	black	46	17	16367,16369,16370,384783
+N-mmu04930-21	Mapk10	349	374	white	rectangle	gene	0.5	black	46	17	26414,26419,26420
+N-mmu04930-22	Prkcz	349	325	white	rectangle	gene	0.5	black	46	17	18762
+N-mmu04930-23	Tnf	183	345	white	rectangle	gene	0.5	black	46	17	21926
+N-mmu04930-25	Cacna1a	266	104	white	rectangle	gene	0.5	black	46	17	12286,12287,12288,12289,12290,12291
+N-mmu04930-27	Gck	349	0	white	rectangle	gene	0.5	black	46	17	103988,15275,15277,212032,216019
+N-mmu04930-28	Mtor	349	345	white	rectangle	gene	0.5	black	46	17	56717
+N-mmu04930-29	Mafa	432	131	white	rectangle	gene	0.5	black	46	17	378435
+N-mmu04930-30	Slc2a2	266	0	white	rectangle	gene	0.5	black	46	17	20526
+N-mmu04930-31	Kcnj11	266	34	white	rectangle	gene	0.5	black	46	17	16514
+N-mmu04930-32	Abcc8	266	51	white	rectangle	gene	0.5	black	46	17	20927
+N-mmu04930-8	C00022	513	1	white	circle	compound	0.5	black	8	8	NA
+N-mmu04930-3	Slc2a4	515	618	white	rectangle	gene	0.5	black	46	17	20528
+N-mmu04930-13	C00162	182	384	white	circle	compound	0.5	black	8	8	NA
+N-mmu04930-15	C00031*	101	223	white	circle	compound	0.5	black	8	8	NA
+N-mmu04930-26	Ins1*	598	148	white	rectangle	gene	0.5	black	46	17	16333,16334
+N-mmu04930-10	C00031	182	1	white	circle	compound	0.5	black	8	8	NA
+N-mmu04930-7	C00002	513	53	white	circle	compound	0.5	black	8	8	NA
+N-mmu04930-9	C00238	318	34	white	circle	compound	0.5	black	8	8	NA

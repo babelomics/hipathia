@@ -1,0 +1,61 @@
+N-hsa04540-8	activation	N-hsa04540-18 19
+N-hsa04540-9	activation	N-hsa04540-14 16
+N-hsa04540-9	activation	N-hsa04540-14 15
+N-hsa04540-9	activation	N-hsa04540-14 31
+N-hsa04540-9	activation	N-hsa04540-16 17
+N-hsa04540-13	activation	N-hsa04540-41
+N-hsa04540-23	inhibition	N-hsa04540-14 16
+N-hsa04540-23	inhibition	N-hsa04540-14 15
+N-hsa04540-23	inhibition	N-hsa04540-14 31
+N-hsa04540-23	inhibition	N-hsa04540-16 17
+N-hsa04540-24	activation	N-hsa04540-25
+N-hsa04540-25	activation	N-hsa04540-23
+N-hsa04540-26	activation	N-hsa04540-14 16
+N-hsa04540-26	activation	N-hsa04540-14 15
+N-hsa04540-26	activation	N-hsa04540-14 31
+N-hsa04540-26	activation	N-hsa04540-16 17
+N-hsa04540-27	activation	N-hsa04540-11
+N-hsa04540-27	activation	N-hsa04540-48
+N-hsa04540-28	inhibition	N-hsa04540-14 16
+N-hsa04540-28	inhibition	N-hsa04540-14 15
+N-hsa04540-28	inhibition	N-hsa04540-14 31
+N-hsa04540-29	activation	N-hsa04540-1
+N-hsa04540-29	activation	N-hsa04540-13
+N-hsa04540-30	activation	N-hsa04540-14 16
+N-hsa04540-30	activation	N-hsa04540-14 15
+N-hsa04540-30	activation	N-hsa04540-14 31
+N-hsa04540-30	activation	N-hsa04540-16 17
+N-hsa04540-33	activation	N-hsa04540-30
+N-hsa04540-34	activation	N-hsa04540-24
+N-hsa04540-34	activation	N-hsa04540-14 16
+N-hsa04540-34	activation	N-hsa04540-14 15
+N-hsa04540-34	activation	N-hsa04540-14 31
+N-hsa04540-34	activation	N-hsa04540-16 17
+N-hsa04540-37	activation	N-hsa04540-26
+N-hsa04540-37	activation	N-hsa04540-10
+N-hsa04540-38	inhibition	N-hsa04540-14 16
+N-hsa04540-38	inhibition	N-hsa04540-14 15
+N-hsa04540-38	inhibition	N-hsa04540-14 31
+N-hsa04540-38	inhibition	N-hsa04540-16 17
+N-hsa04540-39	activation	N-hsa04540-38
+N-hsa04540-40	activation	N-hsa04540-39
+N-hsa04540-41	activation	N-hsa04540-40
+N-hsa04540-42	activation	N-hsa04540-41
+N-hsa04540-43	activation	N-hsa04540-42
+N-hsa04540-44	activation	N-hsa04540-43
+N-hsa04540-44	activation	N-hsa04540-34
+N-hsa04540-45	activation	N-hsa04540-44
+N-hsa04540-46	activation	N-hsa04540-22
+N-hsa04540-46	activation	N-hsa04540-47
+N-hsa04540-47	activation	N-hsa04540-33
+N-hsa04540-48	activation	N-hsa04540-52
+N-hsa04540-49	inhibition	N-hsa04540-33
+N-hsa04540-50	activation	N-hsa04540-12
+N-hsa04540-50	activation	N-hsa04540-48
+N-hsa04540-51	activation	N-hsa04540-21
+N-hsa04540-51	activation	N-hsa04540-49
+N-hsa04540-52	activation	N-hsa04540-9
+N-hsa04540-52	activation	N-hsa04540-54
+N-hsa04540-53	activation	N-hsa04540-21
+N-hsa04540-53	activation	N-hsa04540-47
+N-hsa04540-54	activation	N-hsa04540-9

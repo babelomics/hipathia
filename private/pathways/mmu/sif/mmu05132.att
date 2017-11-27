@@ -1,0 +1,32 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-mmu05132-4	Rac1	667	845	white	rectangle	gene	0.5	black	46	17	19353
+N-mmu05132-5	Cdc42	667	819	white	rectangle	gene	0.5	black	46	17	12540
+N-mmu05132-7	Mapk10	788	793	white	rectangle	gene	0.5	black	46	17	26414,26419,26420
+N-mmu05132-9	C04637	588	793	white	circle	compound	0.5	black	8	8	NA
+N-mmu05132-10	Wasf2	815	694	white	rectangle	gene	0.5	black	46	17	242687,83767
+N-mmu05132-11	Arpc1b	840	647	white	rectangle	gene	0.5	black	46	17	11867,56378,56443,67771,68089,74192,76709
+N-mmu05132-12	Was	865	694	white	rectangle	gene	0.5	black	46	17	22376,73178
+N-mmu05132-15	Rhog	667	793	white	rectangle	gene	0.5	black	46	17	56212
+N-mmu05132-24	Tlr4	244	1103	white	rectangle	gene	0.5	black	46	17	21898
+N-mmu05132-26	Cd14	244	1058	white	rectangle	gene	0.5	black	46	17	12475
+N-mmu05132-27	C00338	125	1058	white	circle	compound	0.5	black	8	8	NA
+N-mmu05132-28	Tlr5	1088	1103	white	rectangle	gene	0.5	black	46	17	53791
+N-mmu05132-29	Myd88	921	1103	white	rectangle	gene	0.5	black	46	17	17874
+N-mmu05132-38	Flna	645	131	white	rectangle	gene	0.5	black	46	17	192176,286940,68794
+N-mmu05132-39	Pfn1	645	153	white	rectangle	gene	0.5	black	46	17	18643,18645,382562,75477
+N-mmu05132-45	Plekhm2	610	332	white	rectangle	gene	0.5	black	46	17	69582
+N-mmu05132-56	Mapk1	788	819	white	rectangle	gene	0.5	black	46	17	26413,26417
+N-mmu05132-57	Mapk11	788	845	white	rectangle	gene	0.5	black	46	17	19094,26415,26416,29857
+N-mmu05132-59	Pkn2	989	638	white	rectangle	gene	0.5	black	46	17	109333,263803,320795
+N-mmu05132-64	Ifng	65	0	white	rectangle	gene	0.5	black	46	17	15978
+N-mmu05132-65 66	Ifngr1 Ifngr2	244	8	white	rectangle	gene,gene	0.5	black	46	17	15979,/,15980
+N-mmu05132-51 52 53	Nlrc4 Pycard Casp1	646	979	white	rectangle	gene,gene,gene	0.5	black	46	17	268973,/,66824,/,12362
+N-mmu05132-8	Tjp1	740	1139	white	rectangle	gene	0.5	black	46	17	21872
+N-mmu05132-13	Fos	921	829	white	rectangle	gene	0.5	black	46	17	14281,16476
+N-mmu05132-6	Nfkb1	921	807	white	rectangle	gene	0.5	black	46	17	18033,19697
+N-mmu05132-20	Actb	840	602	white	rectangle	gene	0.5	black	46	17	11461,11465
+N-mmu05132-41	Actb*	737	142	white	rectangle	gene	0.5	black	46	17	11461,11465
+N-mmu05132-48	Klc1	704	332	white	rectangle	gene	0.5	black	46	17	16593,16594,232943,74764
+N-mmu05132-68	Nos2	522	0	white	rectangle	gene	0.5	black	46	17	18126
+N-mmu05132-55	Il18	1056	954	white	rectangle	gene	0.5	black	43	17	16173
+N-mmu05132-54	Il1b	1056	933	white	rectangle	gene	0.5	black	43	17	16176

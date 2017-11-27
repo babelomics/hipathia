@@ -1,0 +1,45 @@
+ID	label	X	Y	color	shape	type	label.cex	label.color	width	height	genesList
+N-hsa04610-2	F12	214	517	white	rectangle	gene	0.5	black	46	17	2161
+N-hsa04610-4	F9	214	391	white	rectangle	gene	0.5	black	46	17	2158
+N-hsa04610-6	F7	90	391	white	rectangle	gene	0.5	black	46	17	2155
+N-hsa04610-8	FGA	80	0	white	rectangle	gene	0.5	black	46	17	2243,2244,2266
+N-hsa04610-9	F13A1	178	40	white	rectangle	gene	0.5	black	46	17	2162,2165
+N-hsa04610-10	TFPI	89	324	white	rectangle	gene	0.5	black	46	17	7035
+N-hsa04610-12	SERPIND1	85	255	white	rectangle	gene	0.5	black	46	17	3053
+N-hsa04610-13	SERPINC1	85	275	white	rectangle	gene	0.5	black	46	17	462
+N-hsa04610-15	SERPINA5	85	235	white	rectangle	gene	0.5	black	46	17	5104
+N-hsa04610-16	SERPINE1	408	254	white	rectangle	gene	0.5	black	46	17	5054,5055
+N-hsa04610-18	KNG1	344	450	white	rectangle	gene	0.5	black	46	17	3827
+N-hsa04610-19	KLKB1	344	517	white	rectangle	gene	0.5	black	46	17	3818
+N-hsa04610-20	PLAU	493	264	white	rectangle	gene	0.5	black	46	17	5328
+N-hsa04610-21	PLAT	493	244	white	rectangle	gene	0.5	black	46	17	5327
+N-hsa04610-22	C00306	418	450	white	circle	compound	0.5	black	8	8	NA
+N-hsa04610-26	C1QA	811	493	white	rectangle	gene	0.5	black	46	17	712,713,714,715,716
+N-hsa04610-28	SERPING1	872	466	white	rectangle	gene	0.5	black	46	17	710
+N-hsa04610-37	PROS1	265	306	white	rectangle	gene	0.5	black	46	17	5627
+N-hsa04610-39	THBD	228	254	white	rectangle	gene	0.5	black	46	17	7056
+N-hsa04610-40	SERPINA1	408	208	white	rectangle	gene	0.5	black	46	17	5265
+N-hsa04610-41	F2	153	254	white	rectangle	gene	0.5	black	46	17	2147
+N-hsa04610-42	A2M	408	168	white	rectangle	gene	0.5	black	46	17	2
+N-hsa04610-43	SERPINF2	408	188	white	rectangle	gene	0.5	black	46	17	5345
+N-hsa04610-49	F5	178	295	white	rectangle	gene	0.5	black	46	17	2153
+N-hsa04610-51	SERPINC1*	277	450	white	rectangle	gene	0.5	black	46	17	462
+N-hsa04610-60	F3	89	450	white	rectangle	gene	0.5	black	46	17	2152
+N-hsa04610-67	CFB	755	448	white	rectangle	gene	0.5	black	46	17	629
+N-hsa04610-68	CFD	755	428	white	rectangle	gene	0.5	black	46	17	1675
+N-hsa04610-72	SERPINA5*	408	228	white	rectangle	gene	0.5	black	46	17	5104
+N-hsa04610-14 50	VWF F8	265	364	white	rectangle	gene,gene	0.5	black	46	17	7450,/,2157
+N-hsa04610-24 25	MBL2 MASP2	931	510	white	rectangle	gene,gene	0.5	black	46	17	4153,/,10747,5648
+N-hsa04610-38 59	PROC PROCR	321	254	white	rectangle	gene,gene	0.5	black	46	17	5624,/,10544
+N-hsa04610-3	F11	214	450	white	rectangle	gene	0.5	black	46	17	2160
+N-hsa04610-17	PLG	556	517	white	rectangle	gene	0.5	black	46	17	5340
+N-hsa04610-5	F10	152	324	white	rectangle	gene	0.5	black	46	17	2159
+N-hsa04610-7	C00290	169	1	white	circle	compound	0.5	black	8	8	NA
+N-hsa04610-57	PLAUR	493	309	white	rectangle	gene	0.5	black	46	17	5329
+N-hsa04610-23	BDKRB1	493	450	white	rectangle	gene	0.5	black	46	17	623,624
+N-hsa04610-46	C2	872	422	white	rectangle	gene	0.5	black	46	17	717
+N-hsa04610-45	C4A	872	402	white	rectangle	gene	0.5	black	46	17	720,721
+N-hsa04610-11	F2R	281	138	white	rectangle	gene	0.5	black	46	17	2149
+N-hsa04610-58	F2RL2	281	107	white	rectangle	gene	0.5	black	46	17	2151,9002
+N-hsa04610-52	CPB2	235	40	white	rectangle	gene	0.5	black	46	17	1361
+N-hsa04610-44	C3	684	402	white	rectangle	gene	0.5	black	46	17	718
