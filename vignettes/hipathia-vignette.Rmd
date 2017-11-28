@@ -117,7 +117,7 @@ The parameters needed by this function are the data matrix and the species
 of the experiment.
 
 ```{r, fig.show='hold'}
-trans.data <- translate.matrix(brca_data, "hsa")
+trans_data <- translate.matrix(brca_data, "hsa")
 ```
 
 Apart from the necessary bias corrections, expression data must be normalized
@@ -125,9 +125,9 @@ between 0 and 1 before applying the `hipathia` function. Function
 `normalize.data` is designed to this purpouse. 
 
 ```{r, fig.show='hold'}
-boxplot(trans.data)
-exp.data <- normalize.data(trans.data)
-boxplot(exp.data)
+boxplot(trans_data)
+exp_data <- normalize.data(trans_data)
+boxplot(exp_data)
 ```
 
 Function `normalize.data` includes different parameters for normalization.
@@ -135,8 +135,8 @@ If option `by.quantiles` is `TRUE`, a previous normalization by quantiles
 is performed.
 
 ```{r, fig.show='hold'}
-exp.data <- normalize.data(trans.data, by.quantiles = TRUE)
-boxplot(exp.data)
+exp_data <- normalize.data(trans_data, by.quantiles = TRUE)
+boxplot(exp_data)
 ```
 
 Other parameters of this function affect the way in which normalization
@@ -157,8 +157,8 @@ direct transformation from the original interval to [0,1]. It is recommended
 to keep it set to `FALSE` except for heavy-tailed distributions of the genes. 
 
 ```{r, fig.show='hold'}
-exp.data <- normalize.data(trans.data, percentil = TRUE)
-boxplot(exp.data)
+exp_data <- normalize.data(trans_data, percentil = TRUE)
+boxplot(exp_data)
 ```
 
 Parameter `truncation.percentil` gives the value of percentil `p` from which
@@ -166,8 +166,8 @@ all further values are truncated to percentil `p`. Symmetrically, values beyond
 percentil `1-p` are also truncated to `1-p`.
 
 ```{r, fig.show='hold'}
-exp.data <- normalize.data(trans.data, truncation.percentil = 0.95)
-boxplot(exp.data)
+exp_data <- normalize.data(trans_data, truncation.percentil = 0.95)
+boxplot(exp_data)
 ```
 
 
@@ -193,7 +193,7 @@ object. By default, all pathways available for the specified species are
 loaded.
 
 ```{r, fig.show='hold'}
-pathways2 <- load.pathways(species = "hsa", pathways.list = c("hsa03320", "hsa04014"))
+pathways_only2 <- load.pathways(species = "hsa", pathways.list = c("hsa03320", "hsa04014"))
 ```
 
 In order to know which pathways are included in each pathways object,
@@ -205,8 +205,8 @@ get.pathways.list(pathways)
 ```
 
 ```{r, fig.show='hold'}
-length(get.pathways.list(pathways2))
-get.pathways.list(pathways2)
+length(get.pathways.list(pathways_only2))
+get.pathways.list(pathways_only2)
 ```
 
 ## Pathway activation computation
@@ -224,7 +224,7 @@ Section **Computing the signal** or refer to
 [Hidalgo et al.](https://www.ncbi.nlm.nih.gov/pubmed/28042959).
 
 ```{r, fig.show='hold'}
-results <- hipathia(exp.data, pathways, decompose = FALSE, verbose=FALSE)
+results <- hipathia(exp_data, pathways, decompose = FALSE, verbose=FALSE)
 ```
 
 The resulting object includes the level of activity of the signal in each
@@ -233,8 +233,8 @@ extract the matrix of signal activity values from this object use function
 `get.paths.matrix`.
 
 ```{r, fig.show='hold'}
-path.vals <- get.paths.matrix(results)
-hhead(path.vals)
+path_vals <- get.paths.matrix(results)
+hhead(path_vals)
 ```
 
 Rownames of the matrix of pathway results are the IDs of the subpathways.
@@ -243,8 +243,8 @@ function. However, it is not recommended to change the row names of this
 matrix.
 
 ```{r, fig.show='hold'}
-path.names <- get.path.names(pathways, rownames(path.vals))
-head(path.names)
+path_names <- get.path.names(pathways, rownames(path_vals))
+head(path_names)
 ```
 
 Notice that the matrix of subpathway activity values will include a value of
@@ -259,7 +259,8 @@ and decomposed subpathways per species:
 ```{r, echo=FALSE, results='asis'}
 tab <- t(sapply(c("hsa", "mmu", "rno"), function(species){
    p <- load.pathways(species)
-   effs <- sum(sapply(p$pathigraphs, function(pathi) length(pathi$effector.subgraphs)))
+   effs <- sum(sapply(p$pathigraphs, function(pathi) length(
+       pathi$effector.subgraphs)))
    decs <- sum(sapply(p$pathigraphs, function(pathi) length(pathi$subgraphs)))
    n <- length(p$pathigraphs)
    c(n, decs, effs)
@@ -354,8 +355,8 @@ accepts any annotation defined by the user and it has also two default
 annotations: Gene Ontology functions and Uniprot keywords. 
 
 ```{r, fig.show='hold'}
-uniprot.vals <- quantify.terms(results, pathways, "uniprot")
-go.vals <- quantify.terms(results, pathways, "GO")
+uniprot_vals <- quantify.terms(results, pathways, "uniprot")
+go_vals <- quantify.terms(results, pathways, "GO")
 ```
 
 The result of this function is a matrix with the level of activity of each
@@ -372,8 +373,8 @@ of samples is one of the keys. We can perform a comparison of two groups
 applying the Wilcoxon test using function `do.wilcoxon`.
 
 ```{r, fig.show='hold'}
-sample.group <- brca_design[colnames(path.vals),"group"]
-comp <- do.wilcoxon(path.vals, sample.group, g1 = "Tumor", g2 = "Normal")
+sample_group <- brca_design[colnames(path_vals),"group"]
+comp <- do.wilcoxon(path_vals, sample_group, g1 = "Tumor", g2 = "Normal")
 hhead(comp)
 ```
 
@@ -382,8 +383,8 @@ from the Wilcoxon test, summaryzing the number of significant up- or
 down-activated features.
 
 ```{r, fig.show='hold'}
-pathways.summary <- get.pathways.summary(comp, pathways)
-head(pathways.summary, n = 15)
+pathways_summary <- get.pathways.summary(comp, pathways)
+head(pathways_summary, n = 15)
 ```
 
 Principal Components Analysis can be also performed by using function
@@ -391,8 +392,8 @@ Principal Components Analysis can be also performed by using function
 columns of the input matrix.
 
 ```{r, fig.show='hold'}
-ranked.path.vals <- path.vals[order(comp$p.value, decreasing = FALSE),]
-pca.model <- do.pca(ranked.path.vals[1:ncol(ranked.path.vals),])
+ranked_path_vals <- path_vals[order(comp$p.value, decreasing = FALSE),]
+pca_model <- do.pca(ranked_path_vals[1:ncol(ranked_path_vals),])
 ```
 
 PCA models can be visualized with a specific function called `pca.plot`.
@@ -415,15 +416,19 @@ classes. The colors inside the heatmap can be also selected with parameter
 color schemes *classic* (default), *hipathia* or *redgreen* may be chosen. 
 
 ```{r, fig.show='hold'}
-heatmap.plot(path.vals, sample.type=sample.group)
-heatmap.plot(path.vals, sample.type=sample.group, colors="hipathia", variable.clust = TRUE)
+heatmap.plot(path_vals, sample.type = sample_group)
+heatmap.plot(path_vals, sample.type = sample_group, colors="hipathia", 
+             variable.clust = TRUE)
 ```
 
 
 ```{r, fig.show='hold'}
-heatmap.plot(ranked.path.vals[1:15,], sample.type=sample.group, variable.clust = TRUE)
-heatmap.plot(ranked.path.vals[1:15,], sample.group, colors="hipathia", variable.clust = TRUE)
-heatmap.plot(ranked.path.vals[1:15,], sample.group, colors="redgreen", variable.clust = TRUE)
+heatmap.plot(ranked_path_vals[1:15,], sample.type = sample_group, 
+             variable.clust = TRUE)
+heatmap.plot(ranked_path_vals[1:15,], sample.type = sample_group, 
+             colors="hipathia", variable.clust = TRUE)
+heatmap.plot(ranked_path_vals[1:15,], sample.type = sample_group, 
+             colors="redgreen", variable.clust = TRUE)
 ```
 
 
@@ -442,8 +447,9 @@ plotted can be selected through parameters `cp1` and `cp2` giving integer
 number. If parameter `legend` is set to TRUE, the legend will be plotted.
 
 ```{r, fig.show='hold'}
-pca.plot(pca.model, sample.group, legend = TRUE)
-pca.plot(pca.model, sample.type = rep(1:5, 8), main = "Random types", legend = TRUE)
+pca.plot(pca_model, sample_group, legend = TRUE)
+pca.plot(pca_model, sample.type = rep(1:5, 8), main = "Random types", 
+         legend = TRUE)
 ```
 
 Function `multiple.pca.plot` plots $n$ PCA components given by parameter
@@ -459,9 +465,11 @@ can be represented by setting `plot.variance` parameter to TRUE. If parameter
 to the plot through parameter `main`. 
 
 ```{r, fig.show='hold'}
-multiple.pca.plot(pca.model, sample.group, plot.variance = FALSE, legend = FALSE)
-multiple.pca.plot(pca.model, sample.group, cex=3, plot.variance = TRUE)
-multiple.pca.plot(pca.model, sample.type = rep(1:5, 8), main = "Random sample types")
+multiple.pca.plot(pca_model, sample_group, plot.variance = FALSE, 
+                  legend = FALSE)
+multiple.pca.plot(pca_model, sample_group, cex=3, plot.variance = TRUE)
+multiple.pca.plot(pca_model, sample.type = rep(1:5, 8), 
+                  main = "Random sample types")
 ```
 
 
@@ -499,10 +507,18 @@ When computed, the resulting object must be provided to the
 `pathway.comparison.plot` function as parameter `node.colors`.
 
 ```{r, fig.show='hold'}
-colors.de <- node.color.per.differential.expression(results, pathways, sample.group, "Tumor", "Normal")
-pathway.comparison.plot(comp, metaginfo = pathways, pathway = "hsa03320", node.colors = colors.de)
-colors.de.hipathia <- node.color.per.differential.expression(results, pathways, sample.group, "Tumor", "Normal", colors = "hipathia")
-pathway.comparison.plot(comp, metaginfo = pathways, pathway = "hsa04014", node.colors = colors.de.hipathia, colors = "hipathia")
+colors_de <- node.color.per.differential.expression(results, pathways, 
+                                                    sample_group, "Tumor", 
+                                                    "Normal")
+pathway.comparison.plot(comp, metaginfo = pathways, pathway = "hsa03320", 
+                        node.colors = colors_de)
+colors_de_hipathia <- node.color.per.differential.expression(results, pathways, 
+                                                             sample_group, 
+                                                             "Tumor", "Normal", 
+                                                             colors = 
+                                                                 "hipathia")
+pathway.comparison.plot(comp, metaginfo = pathways, pathway = "hsa04014", 
+                        node.colors = colors_de_hipathia, colors = "hipathia")
 ```
 
 
@@ -518,7 +534,7 @@ similar data structure.
 
 ```{r, fig.show='hold'}
 create.report(results, comp, pathways, "save_noColors")
-create.report(results, comp, pathways, "save_colors", node.colors = colors.de)
+create.report(results, comp, pathways, "save_colors", node.colors = colors_de)
 ```
 
 Due to cross-origin security restrictions 
