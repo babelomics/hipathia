@@ -47,7 +47,8 @@ By default \code{classic} color scheme is applied.}
 
 \examples{
 data(comp)
-pathways <- load.pathways(species = "hsa")
+pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+"hsa04012"))
 pathway.comparison.plot(comp, metaginfo = pathways, pathway = "hsa03320")
 
 data(results)
@@ -56,7 +57,7 @@ data(path_vals)
 sample_group <- brca_design[colnames(path_vals),"group"]
 colors_de <- node.color.per.differential.expression(results, pathways,
 sample_group, "Tumor", "Normal")
-pathway.comparison.plot(comp, metaginfo = pathways, pathway = "hsa03320",
+pathway.comparison.plot(comp, metaginfo = pathways, pathway = "hsa04012",
 node.colors = colors_de)
 
 }

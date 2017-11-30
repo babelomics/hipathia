@@ -72,6 +72,7 @@ translate.ids <- function(ids, xref){
 #' @return Matrix of gene expression with Entrez IDs as rownames.
 #'
 #' @export
+#' @import hpAnnot
 #'
 translate.matrix <- function(exp, species, verbose=TRUE){
 
@@ -135,7 +136,8 @@ translate.matrix <- function(exp, species, verbose=TRUE){
 #'
 #' @examples
 #' data(path_vals)
-#' pathways <- load.pathways(species = "hsa")
+#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' "hsa04012"))
 #' translated.names <- get.path.names(pathways, rownames(path_vals))
 #'
 #' @return A character vector including the readable names of the
@@ -259,6 +261,7 @@ igraphs.upgrade <- function(metaginfo){
 #' subpathways.
 #'
 #' @export
+#' @import hpAnnot
 #'
 load.pathways <- function(species, pathways.list = NULL){
     metaginfo <- load.mgi(species)
@@ -280,7 +283,8 @@ load.pathways <- function(species, pathways.list = NULL){
 #' @return List of the pathway IDs included in the pathways object
 #'
 #' @examples
-#' pathways <- load.pathways("hsa")
+#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' "hsa04012"))
 #' pathways.list <- get.pathways.list(pathways)
 #'
 #' @export
@@ -296,10 +300,10 @@ filter.pathways <- function(metaginfo, pathways.list = NULL){
         metaginfo$all.genes <- all.needed.genes(metaginfo$pathigraphs)
         metaginfo$path.norm <- metaginfo$path.norm[
             sapply(names(metaginfo$path.norm), function(x){
-                unlist(strsplit(x, split="_"))[2]}) %in% pathways.list]
+                unlist(strsplit(x, split = "-"))[2]}) %in% pathways.list]
         metaginfo$eff.norm <- metaginfo$eff.norm[
             sapply(names(metaginfo$eff.norm), function(x){
-                unlist(strsplit(x, split="_"))[2]}) %in% pathways.list]
+                unlist(strsplit(x, split = "-"))[2]}) %in% pathways.list]
     }
     return(metaginfo)
 }
@@ -479,13 +483,15 @@ get.effpath.id <- function(node.name){
 #' annotation \code{dbannot}.
 #'
 #' @examples
-#' pathways <- load.pathways(species = "hsa")
+#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' "hsa04012"))
 #' pathway.names <- c("P-hsa03320-37", "P-hsa03320-61", "P-hsa03320-46",
 #' "P-hsa03320-57", "P-hsa03320-64", "P-hsa03320-47", "P-hsa03320-65")
 #' get.pathways.annotations(pathway.names, pathways, "GO")
 #' get.pathways.annotations(pathway.names, pathways, "uniprot")
 #'
 #' @export
+#' @import hpAnnot
 #'
 get.pathways.annotations <- function(pathway.names, metaginfo, dbannot,
                                      collapse = TRUE){
@@ -538,6 +544,7 @@ get.pathways.annotations <- function(pathway.names, metaginfo, dbannot,
 #' @return highest common ancestors
 #'
 #' #@export
+#' @import hpAnnot
 #'
 get.highest.sig.ancestor <- function(go_terms, go_comp, metaginfo,
                                      unique = TRUE, pval = 0.05){
@@ -627,14 +634,15 @@ get.highest.sig.ancestor <- function(go_terms, go_comp, metaginfo,
 #' @return Table of comparisons with Highest common ancestors
 #'
 #' @examples
-#' data(comp)
+#' \dontrun{data(comp)
 #' data(go_vals)
 #' data(brca_design)
 #' data(path_vals)
 #' sample.group <- brca_design[colnames(path_vals),"group"]
 #' comp.go <- do.wilcoxon(go_vals, sample.group, g1 = "Tumor", g2 = "Normal")
-#' pathways <- load.pathways(species = "hsa")
-#' table <- paths.to.go.ancestor(pathways, comp, comp.go)
+#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' "hsa04012"))
+#' table <- paths.to.go.ancestor(pathways, comp, comp.go)}
 #'
 #' @export
 #'
@@ -688,7 +696,8 @@ paths.to.go.ancestor <- function(pathways, comp.paths, comp.go, pval = 0.05){
 #'
 #' @examples
 #' data(path_vals)
-#' pathways <- load.pathways(species = "hsa")
+#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' "hsa04012"))
 #' path.normalized <- normalize.paths(path_vals, pathways)
 #'
 #' @export

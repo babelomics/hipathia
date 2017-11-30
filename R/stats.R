@@ -367,9 +367,9 @@ compute.difexp <- function(vals, group1.label, group2.label, groups){
 
     g1_indexes <- which(groups == group1.label)
     g2_indexes <- which(groups == group2.label)
-    design <- cbind(groups[c(g1_indexes, g2_indexes)] == group1.label,
-                    groups[c(g1_indexes, g2_indexes)] == group2.label)+0
-    colnames(design) <- c("grupo1", "grupo2")
+    grupo1 <- (groups[c(g1_indexes, g2_indexes)] == group1.label) + 0
+    grupo2 <- (groups[c(g1_indexes, g2_indexes)] == group2.label) + 0
+    design <- cbind(grupo1, grupo2)
 
     fit <- limma::lmFit(vals[,c(g1_indexes, g2_indexes)], design)
     cont.matrix <- limma::makeContrasts(grupo1 - grupo2, levels = design)
@@ -384,11 +384,13 @@ compute.difexp <- function(vals, group1.label, group2.label, groups){
 }
 
 
-compute.node.difexp <- function(results, groups, group1.label, group2.label){
+compute.node.difexp <- function(results, groups, group1.label, group2.label,
+                                verbose = FALSE){
 
     difexp <- list()
     for(pathway in names(results$by.path)){
-        print(pathway)
+        if(verbose == TRUE)
+            print(pathway)
         difexp[[pathway]]<-compute.difexp(results$by.path[[pathway]]$nodes.vals,
                                             group1.label,
                                             group2.label,
@@ -428,14 +430,15 @@ compute.node.difexp <- function(results, groups, group1.label, group2.label){
 #'
 #' @examples
 #' data(comp)
-#' pathways <- load.pathways(species = "hsa")
+#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' "hsa04012"))
 #' get.pathways.summary(comp, pathways)
 #'
 #' @export
 #'
 get.pathways.summary <- function(comp, metaginfo, conf = 0.05){
     comp$pathways <- sapply(rownames(comp), function(n){
-        unlist(strsplit(n, split="-"))[2]
+        unlist(strsplit(n, split = "-"))[2]
     })
     id.pathways <- unique(comp$pathways)
     name.pathways <- sapply(id.pathways, function(id){
@@ -446,13 +449,13 @@ get.pathways.summary <- function(comp, metaginfo, conf = 0.05){
         num.total.paths <- nrow(minicomp)
         num.sig.paths <- sum(minicomp$FDRp.value < conf)
         percent.sig.paths <- round(num.sig.paths/nrow(minicomp)*100, digits = 2)
-        is.up.path <- minicomp$FDRp.value <conf & minicomp$`UP/DOWN` == "UP"
+        is.up.path <- minicomp$FDRp.value < conf & minicomp$`UP/DOWN` == "UP"
         num.up.paths <- sum(is.up.path)
-        percent.up.paths <- round(num.up.paths/nrow(minicomp)*100, digits = 2)
+        percent.up.paths <- round(num.up.paths/nrow(minicomp) * 100, digits = 2)
         is.down.path <- minicomp$FDRp.value < conf &
             minicomp$`UP/DOWN` == "DOWN"
         num.down.paths <- sum(is.down.path)
-        percent.down.paths <- round(num.down.paths/nrow(minicomp)*100,
+        percent.down.paths <- round(num.down.paths/nrow(minicomp) * 100,
                                     digits = 2)
         data.frame(num.total.paths = num.total.paths,
                    num.significant.paths = num.sig.paths,

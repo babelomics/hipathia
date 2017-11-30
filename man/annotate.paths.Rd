@@ -21,5 +21,8 @@ Object of annotations from pathways to functions
 Annotates functions from a database to each pathway
 }
 \examples{
+pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+"hsa04012"))
+annotate.paths(pathways, "GO")
 
 }

@@ -33,7 +33,8 @@ previously computed subpathways
 }
 \examples{
 data(results)
-pathways <- load.pathways(species = "hsa")
+pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+"hsa04012"))
 go.values <- quantify.terms(results, pathways, "GO")
 uniprot.values <- quantify.terms(results, pathways, "uniprot")
 

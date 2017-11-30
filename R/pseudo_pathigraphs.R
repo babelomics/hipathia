@@ -402,11 +402,12 @@ create.report3 <- function(results, comp, pseudo, metaginfo, output.folder,
 
     comp$status <- comp$"UP/DOWN"
     comp$has_changed <- TRUE
-    path_json <- create.pseudo.path.info(comp, pseudo.meta, pathways )
+    path_json <- create.pseudo.path.info(comp, pseudo, metaginfo )
     write(path_json, file = paste0(output.folder, "/pathways/path_info.json"))
 }
 
 
+#' @importFrom utils read.table
 create.html.report3 <- function(pseudo_pathigraphs, metaginfo,comp, home,
                                 output.folder, effector = FALSE, conf = 0.05,
                                 extra_javascript = "", after_html = "",

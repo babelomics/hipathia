@@ -22,7 +22,8 @@
 #' @examples
 #' data(results)
 #' data(comp)
-#' pathways <- load.pathways(species = "hsa")
+#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' "hsa04012"))
 #' save.results(results, comp, pathways, "output.results")
 #'
 #' @export
@@ -587,13 +588,14 @@ create.html.report2 <- function(pathigraphs, comp, home, output.folder,
 #' data(comp)
 #' data(brca_design)
 #' data(path_vals)
-#' pathways <- load.pathways(species = "hsa")
-#' create.report(results, comp, pathways, "~/save_results/")
+#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' "hsa04012"))
+#' create.report(results, comp, pathways, "save_results/")
 #'
 #' sample_group <- brca_design[colnames(path_vals),"group"]
 #' colors.de <- node.color.per.differential.expression(results, pathways,
 #' sample_group, "Tumor", "Normal")
-#' create.report(results, comp, pathways, "~/save_results/",
+#' create.report(results, comp, pathways, "save_results/",
 #' node.colors = colors.de)
 #'
 #' @param results Results object as given by the \code{hipathia} function
@@ -678,7 +680,8 @@ summarize.atts <- function(att.list, att.names){
 #' data(results)
 #' data(brca_design)
 #' data(path_vals)
-#' pathways <- load.pathways(species = "hsa")
+#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' "hsa04012"))
 #' sample.group <- brca_design[colnames(path_vals),"group"]
 #' colors.de <- node.color.per.differential.expression(results, pathways,
 #' sample.group, "Tumor", "Normal")

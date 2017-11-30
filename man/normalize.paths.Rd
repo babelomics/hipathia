@@ -27,7 +27,8 @@ value of 0.5 at each node.
 }
 \examples{
 data(path_vals)
-pathways <- load.pathways(species = "hsa")
+pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+"hsa04012"))
 path.normalized <- normalize.paths(path_vals, pathways)
 
 }

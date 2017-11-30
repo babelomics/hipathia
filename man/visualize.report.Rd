@@ -21,7 +21,8 @@ Visualize a HiPathia report
 data(results)
 data(brca_design)
 data(path_vals)
-pathways <- load.pathways(species = "hsa")
+pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+"hsa04012"))
 sample.group <- brca_design[colnames(path_vals),"group"]
 colors.de <- node.color.per.differential.expression(results, pathways,
 sample.group, "Tumor", "Normal")

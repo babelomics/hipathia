@@ -51,7 +51,8 @@ By default \code{classic} color scheme is applied.}
 data(results)
 data(brca_design)
 data(path_vals)
-pathways <- load.pathways(species = "hsa")
+pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+"hsa04012"))
 sample_group <- brca_design[colnames(path_vals),"group"]
 colors_de <- node.color.per.differential.expression(results, pathways,
 sample_group, "Tumor", "Normal")

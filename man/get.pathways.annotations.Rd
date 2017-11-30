@@ -28,7 +28,8 @@ Get functional annotation of the pathways, either for a particular
 annotation or a stored one.
 }
 \examples{
-pathways <- load.pathways(species = "hsa")
+pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+"hsa04012"))
 pathway.names <- c("P-hsa03320-37", "P-hsa03320-61", "P-hsa03320-46",
 "P-hsa03320-57", "P-hsa03320-64", "P-hsa03320-47", "P-hsa03320-65")
 get.pathways.annotations(pathway.names, pathways, "GO")

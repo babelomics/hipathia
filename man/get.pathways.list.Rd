@@ -17,7 +17,8 @@ Lists the IDs of the pathways included in the pathways object
 \code{metaginfo}
 }
 \examples{
-pathways <- load.pathways("hsa")
+pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+"hsa04012"))
 pathways.list <- get.pathways.list(pathways)
 
 }

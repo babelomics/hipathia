@@ -13,8 +13,12 @@
 #' @return Object of annotations from pathways to functions
 #'
 #' @examples
+#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' "hsa04012"))
+#' annotate.paths(pathways, "GO")
 #'
 #' @export
+#' @import hpAnnot
 #'
 annotate.paths <- function(metaginfo, dbannot){
 
@@ -69,7 +73,8 @@ annotate.paths <- function(metaginfo, dbannot){
 #'
 #' @examples
 #' data(results)
-#' pathways <- load.pathways(species = "hsa")
+#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' "hsa04012"))
 #' go.values <- quantify.terms(results, pathways, "GO")
 #' uniprot.values <- quantify.terms(results, pathways, "uniprot")
 #'
@@ -163,6 +168,11 @@ enrichment <- function(path_functions, dbannot, na.rm = TRUE){
 #' @param pathigraph Pathway object
 #' @param dbannot Dataframe with the annotation of the genes to the functions.
 #' First column are gene symbols, second column the functions.
+#' @param entrez2hgnc Relation between Entrez and HGNC genes.
+#' @param use.last.nodes Boolean, whether to annotate functions to the last
+#' nodes of the pathways or not. If FALSE, functions will refer to all the nodes
+#' of the pathway.
+#' @param unique Boolean, whether to return the first function for each path.
 #'
 #' @return List of annotations from pathways to functions
 #'

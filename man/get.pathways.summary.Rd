@@ -39,7 +39,8 @@ of up- and down-regulated subpathways in each pathway.
 }
 \examples{
 data(comp)
-pathways <- load.pathways(species = "hsa")
+pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+"hsa04012"))
 get.pathways.summary(comp, pathways)
 
 }

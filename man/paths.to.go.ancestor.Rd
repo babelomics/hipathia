@@ -40,13 +40,14 @@ are defined as all the nodes from which a path can be defined from the
 ancestor to the node.
 }
 \examples{
-data(comp)
+\dontrun{data(comp)
 data(go_vals)
 data(brca_design)
 data(path_vals)
 sample.group <- brca_design[colnames(path_vals),"group"]
 comp.go <- do.wilcoxon(go_vals, sample.group, g1 = "Tumor", g2 = "Normal")
-pathways <- load.pathways(species = "hsa")
-table <- paths.to.go.ancestor(pathways, comp, comp.go)
+pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+"hsa04012"))
+table <- paths.to.go.ancestor(pathways, comp, comp.go)}
 
 }

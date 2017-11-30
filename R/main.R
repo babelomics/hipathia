@@ -27,8 +27,8 @@
 #'
 #' @examples
 #' data(exp_data)
-#' pathways <- load.pathways(species = "hsa", c("hsa03320", "hsa04024",
-#' "hsa05200"))
+#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' "hsa04012"))
 #' results <- hipathia(exp_data, pathways, verbose = TRUE)
 #' results <- hipathia(exp_data, pathways, decompose = TRUE, verbose = FALSE)
 #'

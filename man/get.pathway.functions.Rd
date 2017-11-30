@@ -12,6 +12,14 @@ get.pathway.functions(pathigraph, dbannot, entrez2hgnc, use.last.nodes = TRUE,
 
 \item{dbannot}{Dataframe with the annotation of the genes to the functions.
 First column are gene symbols, second column the functions.}
+
+\item{entrez2hgnc}{Relation between Entrez and HGNC genes.}
+
+\item{use.last.nodes}{Boolean, whether to annotate functions to the last
+nodes of the pathways or not. If FALSE, functions will refer to all the nodes
+of the pathway.}
+
+\item{unique}{Boolean, whether to return the first function for each path.}
 }
 \value{
 List of annotations from pathways to functions

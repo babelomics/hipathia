@@ -34,7 +34,8 @@ the name of the last node in the subpathway.
 }
 \examples{
 data(path_vals)
-pathways <- load.pathways(species = "hsa")
+pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+"hsa04012"))
 translated.names <- get.path.names(pathways, rownames(path_vals))
 
 }

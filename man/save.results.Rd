@@ -29,7 +29,8 @@ the accuracy of the results and the .SIF and attributes of the pathways.
 \examples{
 data(results)
 data(comp)
-pathways <- load.pathways(species = "hsa")
+pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+"hsa04012"))
 save.results(results, comp, pathways, "output.results")
 
 }

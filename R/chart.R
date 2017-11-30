@@ -424,7 +424,8 @@ plot.pathigraph <- function(g, node.color = NULL, edge.lty = 1, main = "" ){
 #'
 #' @examples
 #' data(comp)
-#' pathways <- load.pathways(species = "hsa")
+#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' "hsa04012"))
 #' pathway.comparison.plot(comp, metaginfo = pathways, pathway = "hsa03320")
 #'
 #' data(results)
@@ -433,7 +434,7 @@ plot.pathigraph <- function(g, node.color = NULL, edge.lty = 1, main = "" ){
 #' sample_group <- brca_design[colnames(path_vals),"group"]
 #' colors_de <- node.color.per.differential.expression(results, pathways,
 #' sample_group, "Tumor", "Normal")
-#' pathway.comparison.plot(comp, metaginfo = pathways, pathway = "hsa03320",
+#' pathway.comparison.plot(comp, metaginfo = pathways, pathway = "hsa04012",
 #' node.colors = colors_de)
 #'
 #' @export
@@ -443,7 +444,8 @@ pathway.comparison.plot <- function(comp, metaginfo, pathway, conf=0.05,
 
     if(length(colors) == 1){
         if(colors == "hipathia"){ colors <- c("#50b7ae", "darkgrey", "#f16a34")
-        }else if(colors == "classic"){ colors <- c("#0571b0","darkgrey","#ca0020")}
+        }else if(colors == "classic"){ colors <- c("#0571b0", "darkgrey",
+                                                   "#ca0020")}
     }
     down.col <- colors[1]
     no.col <- colors[2]
@@ -492,9 +494,9 @@ add.edge.colors <- function(pathigraph, pcomp, effector, up.col = "#ca0020",
     g <- pathigraph$graph
     elg <- apply(get.edgelist(g), 1, paste, collapse = "_")
     states <- matrix(NA,
-                     nrow = nrow(comp),
+                     nrow = nrow(pcomp),
                      ncol= length(elg),
-                     dimnames = list(rownames(comp), elg))
+                     dimnames = list(rownames(pcomp), elg))
     for( path.name in rownames(pcomp)){
         if(pcomp[path.name,"FDRp.value"] <= conf){
             up.down <- pcomp[path.name,"UP/DOWN"]
@@ -562,7 +564,8 @@ add.edge.colors <- function(pathigraph, pcomp, effector, up.col = "#ca0020",
 #' data(results)
 #' data(brca_design)
 #' data(path_vals)
-#' pathways <- load.pathways(species = "hsa")
+#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' "hsa04012"))
 #' sample_group <- brca_design[colnames(path_vals),"group"]
 #' colors_de <- node.color.per.differential.expression(results, pathways,
 #' sample_group, "Tumor", "Normal")
