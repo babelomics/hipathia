@@ -16,13 +16,14 @@ column are gene symbols, second column the functions.}
 }
 \value{
 Object of annotations from pathways to functions
+
+#@examples
+#pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#"hsa04012"))
+#annotate.paths(pathways, "GO")
+
+#@export
 }
 \description{
 Annotates functions from a database to each pathway
-}
-\examples{
-pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
-"hsa04012"))
-annotate.paths(pathways, "GO")
-
 }

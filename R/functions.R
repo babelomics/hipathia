@@ -12,12 +12,12 @@
 #'
 #' @return Object of annotations from pathways to functions
 #'
-#' @examples
-#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
-#' "hsa04012"))
-#' annotate.paths(pathways, "GO")
+#' #@examples
+#' #pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' #"hsa04012"))
+#' #annotate.paths(pathways, "GO")
 #'
-#' @export
+#' #@export
 #' @import hpAnnot
 #'
 annotate.paths <- function(metaginfo, dbannot){
@@ -175,8 +175,6 @@ enrichment <- function(path_functions, dbannot, na.rm = TRUE){
 #' @param unique Boolean, whether to return the first function for each path.
 #'
 #' @return List of annotations from pathways to functions
-#'
-#' @export
 #'
 get.pathway.functions <- function(pathigraph, dbannot, entrez2hgnc,
                                   use.last.nodes = TRUE, unique = TRUE){
