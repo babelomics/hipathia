@@ -182,7 +182,7 @@ cor.data.frame <- function(wilcox){
             }
         }
     }
-    result <- data.frame(pvalue, class, esti, stringsAsFactors=FALSE)
+    result <- data.frame(pvalue, class, esti, stringsAsFactors = FALSE)
     return(result)
 }
 
@@ -392,9 +392,9 @@ compute.node.difexp <- function(results, groups, group1.label, group2.label,
         if(verbose == TRUE)
             print(pathway)
         difexp[[pathway]]<-compute.difexp(results$by.path[[pathway]]$nodes.vals,
-                                            group1.label,
-                                            group2.label,
-                                            groups)
+                                          group1.label,
+                                          group2.label,
+                                          groups)
     }
     return(difexp)
 }

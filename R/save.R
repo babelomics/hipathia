@@ -117,8 +117,10 @@ create.node.and.edge.attributes <- function(comp, pathway, metaginfo,
     V(ig)$color <- "white"
     V(ig)$width[V(ig)$shape=="circle"] <- 15
     V(ig)$width[V(ig)$shape!="circle"] <- 22
-    V(ig)$shape[V(ig)$shape=="rectangle" & !grepl("func",V(ig)$name)] <- "ellipse"
-    V(ig)$shape[V(ig)$shape=="rectangle" & grepl("func",V(ig)$name)] <-"rectangle"
+    V(ig)$shape[V(ig)$shape=="rectangle" & !grepl("func",V(ig)$name)] <-
+        "ellipse"
+    V(ig)$shape[V(ig)$shape=="rectangle" & grepl("func",V(ig)$name)] <-
+        "rectangle"
     V(ig)$width[grepl("func",V(ig)$name)] <- -1
 
     V(ig)$tooltip <- sapply(1:length(V(ig)), function(i){
@@ -337,7 +339,8 @@ create.node.and.edge.attributes <- function(comp, pathway, metaginfo,
     rownames(def_sif) <- NULL
     def_sif <- as.data.frame(def_sif, stringsAsFactors = FALSE)
 
-    def_eatt$shape <- c("inhibited","directed")[grepl("activation",def_sif[,2])+1]
+    def_eatt$shape <- c("inhibited", "directed")[grepl("activation",
+                                                       def_sif[,2]) + 1]
 
     def_eatt <- cbind(def_eatt, (def_epath_assoc == TRUE) + 0)
 
@@ -421,7 +424,9 @@ create.node.and.edge.attributes <- function(comp, pathway, metaginfo,
             if(length(ids) > 0){
                 ids <- setdiff(ids, "/")
                 tids <- sapply(reverse_xref[ids],
-                               function(x) if(is.null(x)) return("?") else return(x))
+                               function(x){
+                                   if(is.null(x)) return("?") else return(x)
+                               } )
                 return(paste(tids, collapse = ","))
             } else {
                 return("?")
@@ -498,7 +503,8 @@ create.path.info <- function(all_comp, metaginfo){
             out <- paste0(out, "\"shortname\":\"" ,
                           gsub("\\*", "", strsplit(get.path.names(
                               metaginfo,
-                              rownames(path_info[[x]])[i]),": ")[[1]][2]),"\", ")
+                              rownames(path_info[[x]])[i]),": ")[[1]][2]),
+                          "\", ")
             out <- paste0(out, "\"pvalue\":", path_info[[x]]$FDRp.value[i],", ")
             out <- paste0(out, "\"status\":\"", path_info[[x]]$status[i],"\", ")
             out <- paste0(out, "\"sig\":\"",
@@ -551,13 +557,16 @@ create.html.report2 <- function(pathigraphs, comp, home, output.folder,
     png.files.copy <- paste0(home, "/report-files/", png.files.copy)
     file.copy(png.files.copy, pv.folder)
 
-    # cp_command <- paste0("cp -r ",home,"/pathway-viewer/* '",output.folder,"/pathway-viewer/'")
+    # cp_command <- paste0("cp -r ", home, "/pathway-viewer/* '",
+    #                      output.folder, "/pathway-viewer/'")
     # system(cp_command)
-    # mv_legend_command <- paste0("cp  ",home,"/report-files/*.png '", output.folder,"/pathway-viewer/'")
+    # mv_legend_command <- paste0("cp  ", home, "/report-files/*.png '",
+    #                             output.folder, "/pathway-viewer/'")
     # system(mv_legend_command)
 
     index <- scan(paste0(home,'/report-files/',template_name),
-                  comment.char = "", sep = "\n", what = "character", quiet = TRUE)
+                  comment.char = "", sep = "\n", what = "character",
+                  quiet = TRUE)
 
     global_div <- c()
 
