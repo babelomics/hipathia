@@ -1,6 +1,6 @@
 ---
 title: "HiPathia Bioconductor Package"
-author: "Marta R. Hidalgo, Francisco Salavert, Çankut Cubuk, Alicia Amadoz, José Carbonell-Caballero, Joaquín Dopazo"
+author: "Marta R. Hidalgo, Francisco Salavert, Alicia Amadoz, Çankut Cubuk, José Carbonell-Caballero, Joaquín Dopazo"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -193,7 +193,8 @@ object. By default, all pathways available for the specified species are
 loaded.
 
 ```{r, fig.show='hold'}
-pathways_only2 <- load.pathways(species = "hsa", pathways.list = c("hsa03320", "hsa04014"))
+pathways_only2 <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+                                                                   "hsa04014"))
 ```
 
 In order to know which pathways are included in each pathways object,

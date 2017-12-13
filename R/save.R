@@ -30,9 +30,6 @@
 #'
 save.results <- function(results, comp, metaginfo, output.folder){
 
-    if(!file.exists(output.folder)){
-        dir.create(output.folder)
-    }
     # Write files
     utils::write.table(results$all$path.vals,
                        file = paste0(output.folder,"/all_path_vals.txt"),
@@ -71,17 +68,17 @@ write.attributes <- function(this_comp, pathway, metaginfo, prefix,
                                             conf = conf,
                                             reverse_xref = reverse_xref,
                                             exp = exp)
-    utils::write.table(atts$sif,file=paste0(prefix,".sif"),
+    utils::write.table(atts$sif, file = paste0(prefix, ".sif"),
                        row.names = FALSE,
                        col.names = FALSE,
                        quote = FALSE,
                        sep = "\t")
-    utils::write.table(atts$node_att,file=paste0(prefix,".natt"),
+    utils::write.table(atts$node_att, file = paste0(prefix, ".natt"),
                        row.names = FALSE,
                        col.names = TRUE,
                        quote = FALSE,
                        sep = "\t")
-    utils::write.table(atts$edge_att,file=paste0(prefix,".eatt"),
+    utils::write.table(atts$edge_att, file = paste0(prefix, ".eatt"),
                        row.names = FALSE,
                        col.names = TRUE,
                        quote = FALSE,
@@ -477,14 +474,14 @@ create.path.info <- function(all_comp, metaginfo){
                 anychanged <- TRUE
             if(path_info[[x]]$FDRp.value[i] <= 0.05) {
                 anysig <- TRUE
-                if(path_info[[x]]$status[i]=="UP")
+                if(path_info[[x]]$status[i] == "UP")
                     anysigup <- TRUE
-                if(path_info[[x]]$status[i]=="DOWN")
+                if(path_info[[x]]$status[i] == "DOWN")
                     anysigdown <- TRUE
             }
-            if(path_info[[x]]$status[i]=="UP")
+            if(path_info[[x]]$status[i] == "UP")
                 anyup <- TRUE
-            if(path_info[[x]]$status[i]=="DOWN")
+            if(path_info[[x]]$status[i] == "DOWN")
                 anydown <- TRUE
         }
         out <- paste0(out, "\t\"haschanged\":", tolower(anychanged), ",\n")
@@ -496,32 +493,36 @@ create.path.info <- function(all_comp, metaginfo){
         out <- paste0(out, "\t\"paths\":[\n")
         for(i in 1:nrow(path_info[[x]])){
             out <- paste0(out, "\t\t{")
-            out <- paste0(out, "\"id\":\"", rownames(path_info[[x]])[i],"\", ")
+            out <- paste0(out, "\"id\":\"", rownames(path_info[[x]])[i], "\", ")
             out <- paste0(out, "\"name\":\"",
                           get.path.names(metaginfo,
-                                         rownames(path_info[[x]])[i]),"\", ")
+                                         rownames(path_info[[x]])[i]), "\", ")
             out <- paste0(out, "\"shortname\":\"" ,
                           gsub("\\*", "", strsplit(get.path.names(
                               metaginfo,
                               rownames(path_info[[x]])[i]),": ")[[1]][2]),
                           "\", ")
-            out <- paste0(out, "\"pvalue\":", path_info[[x]]$FDRp.value[i],", ")
-            out <- paste0(out, "\"status\":\"", path_info[[x]]$status[i],"\", ")
+            out <- paste0(out, "\"pvalue\":", path_info[[x]]$FDRp.value[i],
+                          ", ")
+            out <- paste0(out, "\"status\":\"", path_info[[x]]$status[i],
+                          "\", ")
             out <- paste0(out, "\"sig\":\"",
-                          tolower(path_info[[x]]$FDRp.value[i] < 0.05),"\", ")
+                          tolower(path_info[[x]]$FDRp.value[i] < 0.05), "\", ")
             out <- paste0(out, "\"haschanged\":",
-                          tolower(path_info[[x]]$has_change[i]),", ")
+                          tolower(path_info[[x]]$has_change[i]), ", ")
             out <- paste0(out, "\"up\":",
-                          tolower(path_info[[x]]$status[i] == "UP"),", ")
+                          tolower(path_info[[x]]$status[i] == "UP"), ", ")
             out <- paste0(out, "\"down\":",
-                          tolower(path_info[[x]]$status[i] == "DOWN"),", ")
+                          tolower(path_info[[x]]$status[i] == "DOWN"), ", ")
             out <- paste0(out, "\"upsig\":",
                           tolower(path_info[[x]]$status[i] == "UP" &
-                                      path_info[[x]]$FDRp.value[i]<0.05),", ")
+                                      path_info[[x]]$FDRp.value[i] < 0.05),
+                          ", ")
             out <- paste0(out, "\"downsig\":",
                           tolower(path_info[[x]]$status[i] == "DOWN" &
-                                      path_info[[x]]$FDRp.value[i]<0.05),", ")
-            out <- paste0(out, "\"color\":\"", path_info[[x]]$color[i],"\"")
+                                      path_info[[x]]$FDRp.value[i] < 0.05),
+                          ", ")
+            out <- paste0(out, "\"color\":\"", path_info[[x]]$color[i], "\"")
             out <- paste0(out, "}")
             if(i == nrow(path_info[[x]])){
                 out <- paste0(out, "\n")
@@ -538,12 +539,7 @@ create.path.info <- function(all_comp, metaginfo){
 }
 
 
-create.html.report2 <- function(pathigraphs, comp, home, output.folder,
-                                conf = 0.05, extra_javascript = "",
-                                after_html = "", before_html = "",
-                                clean_out_folder = TRUE,
-                                template_name = "index_template.html",
-                                output_name = "index.html"){
+create.report.folders <- function(output.folder, home, clean_out_folder = TRUE){
 
     pv.folder <- paste0(output.folder,"/pathway-viewer")
 
@@ -563,6 +559,55 @@ create.html.report2 <- function(pathigraphs, comp, home, output.folder,
     # mv_legend_command <- paste0("cp  ", home, "/report-files/*.png '",
     #                             output.folder, "/pathway-viewer/'")
     # system(mv_legend_command)
+
+}
+
+create.pathways.folder <- function(output.folder, metaginfo, comp, moreatts, conf, verbose = FALSE, pseudo = NULL){
+
+    pathways.folder <- paste0(output.folder, "/pathway-viewer/pathways/")
+    if(!file.exists(pathways.folder))
+        dir.create(pathways.folder)
+    if(is.null(pseudo)){
+        for(pathway in names(metaginfo$pathigraphs)){
+            if(verbose == TRUE)
+                cat(pathway)
+            write.attributes(comp,
+                             pathway,
+                             metaginfo,
+                             paste0(pathways.folder, pathway),
+                             moreatts_pathway = moreatts[[pathway]],
+                             conf = conf)
+        }
+    }else{
+        for(pathway in names(pseudo$pathigraphs)){
+            if(verbose == TRUE)
+                cat(pathway)
+            write.pseudo.attributes(comp,
+                                    pathway,
+                                    pseudo,
+                                    paste0(pathways.folder, pathway),
+                                    moreatts_pathway = moreatts[[pathway]],
+                                    conf = conf)
+        }
+    }
+
+    comp$status <- comp$"UP/DOWN"
+    comp$has_changed <- TRUE
+    if(is.null(pseudo)){
+        path_json <- create.path.info(comp, metaginfo)
+    }else{
+        path_json <- create.pseudo.path.info(comp, pseudo, metaginfo )
+    }
+    write(path_json, file = paste0(output.folder,
+                                   "/pathway-viewer/pathways/path_info.json"))
+
+}
+
+
+create.html.index <- function(home, output.folder,
+                                template_name = "index_template.html",
+                                output_name = "index.html"){
+
 
     index <- scan(paste0(home,'/report-files/',template_name),
                   comment.char = "", sep = "\n", what = "character",
@@ -627,7 +672,8 @@ create.html.report2 <- function(pathigraphs, comp, home, output.folder,
 #' @export
 #'
 create.report <- function(results, comp, metaginfo, output.folder,
-                          node.colors = NULL, conf=0.05, verbose = FALSE){
+                          node.colors = NULL, conf=0.05, verbose = FALSE,
+                          save.results = FALSE){
 
     if(!is.null(node.colors)){
         moreatts <- summarize.atts(list(node.colors), c("color"))
@@ -635,35 +681,22 @@ create.report <- function(results, comp, metaginfo, output.folder,
         moreatts <- NULL
     }
 
-    save.results(results, comp, metaginfo, output.folder)
+    if(!file.exists(output.folder))
+        dir.create(output.folder)
+
+    if(save.results == TRUE)
+        save.results(results, comp, metaginfo, output.folder)
 
     pv.path <- paste0(system.file("extdata", package="hipathia"))
-    create.html.report2(metaginfo,
-                        comp,
-                        pv.path,
-                        output.folder,
-                        template_name = "index_template.html",
-                        output_name = "index.html",
-                        clean_out_folder = FALSE)
+    create.report.folders(output.folder, pv.path, clean_out_folder = FALSE)
+    create.pathways.folder(output.folder, metaginfo, comp, moreatts, conf,
+                           verbose, pseudo = )
 
-    pathways.folder <- paste0(output.folder, "/pathway-viewer/pathways/")
-    if(!file.exists(pathways.folder))
-        dir.create(pathways.folder)
-    for(pathway in names(metaginfo$pathigraphs)){
-        if(verbose == TRUE) cat(pathway)
-        write.attributes(comp,
-                         pathway,
-                         metaginfo,
-                         paste0(pathways.folder, pathway),
-                         moreatts_pathway = moreatts[[pathway]],
-                         conf = conf)
-    }
+    create.html.index(pv.path,
+                      output.folder,
+                      template_name = "index_template.html",
+                      output_name = "index.html")
 
-    comp$status <- comp$"UP/DOWN"
-    comp$has_changed <- TRUE
-    path_json <- create.path.info(comp, metaginfo)
-    write(path_json,
-          file=paste0(output.folder,"/pathway-viewer/pathways/path_info.json"))
 }
 
 

@@ -634,14 +634,14 @@ get.highest.sig.ancestor <- function(go_terms, go_comp, metaginfo,
 #' @return Table of comparisons with Highest common ancestors
 #'
 #' @examples
-#' \dontrun{data(comp)
+#' data(comp)
 #' data(go_vals)
 #' data(brca_design)
 #' data(path_vals)
 #' sample.group <- brca_design[colnames(path_vals),"group"]
 #' comp.go <- do.wilcoxon(go_vals, sample.group, g1 = "Tumor", g2 = "Normal")
-#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
-#' "hsa04012"))
+#' \dontrun{pathways <- load.pathways(species = "hsa", pathways.list =
+#' c("hsa03320", "hsa04012"))
 #' table <- paths.to.go.ancestor(pathways, comp, comp.go)}
 #'
 #' @export
