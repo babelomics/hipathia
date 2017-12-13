@@ -31,13 +31,19 @@ analyze your data.
 
 ## Previous considerations
 
-HiPathia uses 
 We have developed a module which is able to transform KEGG pathway KGML files
 into SIF files with attibutes
 
 ### Instalation 
 
 In order to install the Hipathia package, type on your R console
+
+```{r, fig.show='hold', message=FALSE, warning=FALSE}
+## try http:// if https:// URLs are not supported 
+source("https://bioconductor.org/biocLite.R") 
+biocLite("hipathia")
+```
+
 
 
 ### Example data

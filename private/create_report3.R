@@ -10,8 +10,6 @@ create.report3 <- function(results, comp, pseudo, metaginfo, output.folder,
     if(!file.exists(output.folder))
         dir.create(output.folder)
 
-    # save.results(results, comp, pseudo, output.folder)
-
     pv.path <- paste0(system.file("extdata", package="hipathia"))
     create.report.folders(output.folder, pv.path, clean_out_folder = FALSE)
     create.pathways.folder(output.folder, metaginfo, comp, moreatts, conf,

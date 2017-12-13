@@ -2,13 +2,51 @@
 ######## PSEUDO PATHIGRAPHS
 ######## ######## ######## ######## ######## ######## ######## ########
 
-get.pseudo.pathigraphs <- function(subgraphs, annots){
+get.pseudo.metaginfo <- function(pathways, group.by, verbose = TRUE){
+
+    subgraphs <- unlist(lapply(pathways$pathigraphs, function(pg){
+        pg$effector.subgraphs
+    }), recursive = FALSE)
+    names(subgraphs) <- sapply(names(subgraphs), function(n){
+        unlist(strsplit(n, split = "\\."))[2]})
+
+    if(group.by == "uniprot" | group.by == "GO"){
+        annofuns <- load.annofuns(db = group.by, pathways$species)
+        annofuns <- annofuns[!is.na(annofuns$funs),]
+        annots <- annofuns[,c(2,3)]
+    }else if(group.by == "genes"){
+        gens <- lapply(names(subgraphs), function(name){
+            sg <- subgraphs[[name]]
+            l <- unlist(V(sg)$genesList)
+            l <- l[!is.na(l)]
+            l <- l[!l == "/"]
+            cbind(name, l)
+        })
+        gens <- gens[sapply(gens, ncol) > 1]
+        annots <- do.call("rbind", gens)
+    }else{
+        stop("Parameter `group.by` not recognized")
+    }
+
+    pseudo <- get.pseudo.pathigraphs(subgraphs, annots, verbose = verbose)
+
+    pseudo.meta <- NULL
+    pseudo.meta$pathigraphs <- pseudo
+    pseudo.meta$species <- pathways$species
+
+    return(pseudo.meta)
+}
+
+
+
+get.pseudo.pathigraphs <- function(subgraphs, annots, verbose = TRUE){
 
     categories <- unique(annots[,2])
     pseudo_pathigraphs <- list()
     for(i in 1:length(categories)){
-        cat("Processing ", categories[i], " (", i, " of ", length(categories),
-            ")\n", sep = "")
+        if(verbose == TRUE)
+            cat("Processing ", categories[i], " (", i, " of ",
+                length(categories), ")\n", sep = "")
         selnames <- annots[which(annots[,2] == categories[i]),1]
         selsub <- subgraphs[selnames]
         cat("    found ", length(selsub), " subgraphs...\n", sep = "")
