@@ -555,13 +555,6 @@ create.report.folders <- function(output.folder, home, clean_out_folder = TRUE){
     png.files.copy <- paste0(home, "/report-files/", png.files.copy)
     file.copy(png.files.copy, pv.folder)
 
-    # cp_command <- paste0("cp -r ", home, "/pathway-viewer/* '",
-    #                      output.folder, "/pathway-viewer/'")
-    # system(cp_command)
-    # mv_legend_command <- paste0("cp  ", home, "/report-files/*.png '",
-    #                             output.folder, "/pathway-viewer/'")
-    # system(mv_legend_command)
-
 }
 
 create.pathways.folder <- function(output.folder, metaginfo, comp, moreatts,
@@ -648,7 +641,7 @@ create.html.index <- function(home, output.folder,
 #' @param node.colors List of colors with which to paint the nodes of the
 #' pathways, as returned by the
 #' \code{node.color.per.differential.expression} function. Default is white.
-#' @param group.by How to group the subpathways to be visualize. By default
+#' @param group.by How to group the subpathways to be visualized. By default
 #' they are grouped by the pathway to which they belong. Available groupings
 #' include "uniprot", to group subpathways by their annotated Uniprot functions,
 #' "GO", to group subpathways by their annotated GO terms, and "genes", to group
@@ -665,6 +658,10 @@ create.html.index <- function(home, output.folder,
 create.report <- function(results, comp, metaginfo, output.folder,
                           node.colors = NULL, group.by = NULL, conf=0.05,
                           verbose = FALSE, save.results = FALSE){
+
+    if(!is.null(group.by) &
+       length(unlist(strsplit(rownames(comp)[1], split = "-"))) == 4)
+        stop("Grouping only available for effector subgraphs")
 
     if(!is.null(node.colors)){
         moreatts <- summarize.atts(list(node.colors), c("color"))
@@ -747,10 +744,10 @@ visualize.report <- function(output.folder, port = 4000){
 
 # PSEUDO META_GRAPH_INFORMATION
 
-get.pseudo.metaginfo <- function(pathways, group.by, verbose = TRUE){
-    # pseudo <- load.pseudo.mgi("hsa")
-    pseudo <- load(paste0("~/appl/hpAnnot/private/pathways/pseudo/pmgi_",
-                          pathways$species, "_", group.by, ".RData"))
+get.pseudo.metaginfo <- function(pathways, group.by){
+    pseudo <- load.pseudo.mgi(pathways$species, group.by)
+    # pseudo <- load(paste0("~/appl/hpAnnot/private/pathways/pseudo/pmgi_",
+    #                       pathways$species, "_", group.by, ".RData"))
     pseudo <- get(pseudo)
     rownames(pseudo$all.labelids) <- pseudo$all.labelids[,1]
     pathways.list <- names(pathways$pathigraphs)

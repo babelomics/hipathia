@@ -114,6 +114,10 @@ visualize.report("save_noColors")
 create.report(results, comp, pathways, "save_colors", node.colors = colors_de)
 visualize.report("save_colors")
 
+create.report(results, comp, pathways, group.by = "uniprot",
+              "save_colors_uniprot", node.colors = colors_de)
+visualize.report("save_colors_uniprot")
+
 # Stop server
 servr::daemon_stop()
 
