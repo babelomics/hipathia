@@ -90,7 +90,7 @@ create.node.and.edge.attributes <- function(comp, pathway, metaginfo,
                                             moreatts_pathway = NULL, conf=0.05,
                                             reverse_xref = NULL, exp = NULL){
 
-    # pcomp <- comp[grep(paste0(pathway,"__"),rownames(comp)),]
+
     pathigraphs <- metaginfo$pathigraphs
     effector <- length(unlist(strsplit(rownames(comp)[1], split="-"))) == 3
     if(effector == TRUE){
@@ -114,9 +114,9 @@ create.node.and.edge.attributes <- function(comp, pathway, metaginfo,
     V(ig)$color <- "white"
     V(ig)$width[V(ig)$shape=="circle"] <- 15
     V(ig)$width[V(ig)$shape!="circle"] <- 22
-    V(ig)$shape[V(ig)$shape=="rectangle" & !grepl("func",V(ig)$name)] <-
+    V(ig)$shape[V(ig)$shape=="rectangle" & !grepl("func", V(ig)$name)] <-
         "ellipse"
-    V(ig)$shape[V(ig)$shape=="rectangle" & grepl("func",V(ig)$name)] <-
+    V(ig)$shape[V(ig)$shape=="rectangle" & grepl("func", V(ig)$name)] <-
         "rectangle"
     V(ig)$width[grepl("func",V(ig)$name)] <- -1
 
@@ -193,7 +193,7 @@ create.node.and.edge.attributes <- function(comp, pathway, metaginfo,
         }
         natt <- cbind(natt, moreatts_pathway[,not.common.col])
     }
-    node_path_assoc <- mat.or.vec(nrow(natt), length(s))
+    node_path_assoc <- matrix(0, nrow = nrow(natt), ncol = length(s))
     colnames(node_path_assoc) <- names(s)
     natt <- cbind(natt, node_path_assoc)
 
@@ -212,7 +212,7 @@ create.node.and.edge.attributes <- function(comp, pathway, metaginfo,
         raw_edges <- get.edgelist(subgraph)
         type <- c("activation","inhibition")[(E(subgraph)$relation == -1) + 1]
         edges <- cbind(raw_edges[,1], type, raw_edges[,2])
-        sif <- rbind(sif,edges)
+        sif <- rbind(sif, edges)
 
         # edge attributes
         eids <- apply(edges, 1, function(x) paste0(x, collapse = "_"))
@@ -220,13 +220,13 @@ create.node.and.edge.attributes <- function(comp, pathway, metaginfo,
         if("color" %in% colnames(comp)){
             color <- comp[name,"color"]
         } else {
-            if( comp[name,"FDRp.value"]<conf){
-                color <- c("#1f78b4","#e31a1c")[(status=="UP") + 1]
+            if( comp[name,"FDRp.value"] < conf){
+                color <- c("#1f78b4","#e31a1c")[(status == "UP") + 1]
             } else {
                 color <- "darkgrey"
             }
         }
-        path_assoc <- mat.or.vec(nrow(edges), length(s))
+        path_assoc <- matrix(0, nrow = nrow(edges), ncol = length(s))
         colnames(path_assoc) <- names(s)
         path_assoc[,name] <- 1
         edges_atts <- cbind(id = eids,
@@ -262,7 +262,7 @@ create.node.and.edge.attributes <- function(comp, pathway, metaginfo,
         # up regulated
         upsig <- which(subeatt[,"status"] == "UP" &
                            as.numeric(subeatt[,"adj.pvalue"]) < conf)
-        if(length(upsig)>0){
+        if(length(upsig) > 0){
 
             selected_subsif <- subsif[1,]
             selected_subsif[2] <- paste0(selected_subsif[2], ".up")
@@ -358,7 +358,7 @@ create.node.and.edge.attributes <- function(comp, pathway, metaginfo,
         funejes <- as.data.frame(matrix(0,
                                         nrow = length(ids),
                                         ncol = ncol(def_eatt)),
-                                 stringsAsFactors=FALSE)
+                                 stringsAsFactors = FALSE)
         colnames(funejes) <- colnames(def_eatt)
         rownames(funejes) <- ids
         funejes$id <- ids
@@ -372,26 +372,15 @@ create.node.and.edge.attributes <- function(comp, pathway, metaginfo,
         nods <- get.edgelist(ig)[left,1]
         names(nods) <- ids
         names(ids) <- nods
-        if(effector == TRUE){
-            funs <- t(apply(funejes, 1, function(x){
-                if(any(colnames(funejes) == nods[as.character(x[1])])){
-                    x[which(colnames(funejes) == nods[as.character(x[1])])] <- 1
-                    x
-                }else{
-                    x
-                }
-            }))
-        }else{
-            funs <- t(apply(funejes, 1, function(x){
-                lastnodes <- sapply(colnames(funejes), get.effnode.id)
-                if(any(lastnodes == nods[x[1]])){
-                    x[which(lastnodes == nods[x[1]])] <- 1
-                    x
-                }else{
-                    x
-                }
-            }))
-        }
+        funs <- t(apply(funejes, 1, function(x){
+            lastnodes <- sapply(colnames(funejes), get.effnode.id)
+            if(any(lastnodes == nods[x[[1]]])){
+                x[which(lastnodes == nods[x[[1]]])] <- 1
+                x
+            }else{
+                x
+            }
+        }))
         funs <- as.data.frame(funs, stringsAsFactors = FALSE)
         sif_funs <- data.frame(V1 = get.edgelist(ig)[left,1],
                                type = rep("activation", times = length(left)),
@@ -420,10 +409,12 @@ create.node.and.edge.attributes <- function(comp, pathway, metaginfo,
         translate_ids <- function(ids){
             if(length(ids) > 0){
                 ids <- setdiff(ids, "/")
-                tids <- sapply(reverse_xref[ids],
-                               function(x){
-                                   if(is.null(x)) return("?") else return(x)
-                               } )
+                tids <- sapply(reverse_xref[ids],function(x){
+                    if(is.null(x)){
+                        return("?")
+                    } else {
+                        return(x)
+                    }})
                 return(paste(tids, collapse = ","))
             } else {
                 return("?")
@@ -439,8 +430,11 @@ create.node.and.edge.attributes <- function(comp, pathway, metaginfo,
             if(length(ids) > 0){
                 ids <- setdiff(ids, "/")
                 exp_values <- sapply(ids_list[ids],function(x){
-                    if(is.null(x)) return("?") else return(exp[x,])
-                })
+                    if(is.null(x)){
+                        return("?")
+                    }else{
+                        return(exp[x,])
+                    }})
                 return(paste(exp_values, collapse = ","))
             } else {
                 return("?")
@@ -458,8 +452,9 @@ create.node.and.edge.attributes <- function(comp, pathway, metaginfo,
 
 create.path.info <- function(all_comp, metaginfo){
     fpgs <- metaginfo$pathigraphs
-    path_info <- by(all_comp,sapply(strsplit(rownames(all_comp), "-"), "[[", 2),
-                    function(x)x)
+    path_info <- lapply(fpgs, function(fpg){
+        all_comp[names(fpg$effector.subgraphs),]})
+
     path_json_list <- lapply(names(path_info),function(x){
         out <- paste0("{\n\t\"id\":\"", x, "\",\n")
         out <- paste0(out, "\t\"name\":\"", fpgs[[x]]$path.name, "\",\n")
@@ -497,11 +492,18 @@ create.path.info <- function(all_comp, metaginfo){
             out <- paste0(out, "\"name\":\"",
                           get.path.names(metaginfo,
                                          rownames(path_info[[x]])[i]), "\", ")
-            out <- paste0(out, "\"shortname\":\"" ,
-                          gsub("\\*", "", strsplit(get.path.names(
-                              metaginfo,
-                              rownames(path_info[[x]])[i]),": ")[[1]][2]),
-                          "\", ")
+            if(grepl("term_", metaginfo$pathigraphs[[1]]$path.id) == TRUE){
+                out <- paste0(out, "\"shortname\":\"",
+                              get.path.names(metaginfo,
+                                             rownames(path_info[[x]])[i]),
+                              "\", ")
+            }else{
+                out <- paste0(out, "\"shortname\":\"" ,
+                              gsub("\\*", "", strsplit(get.path.names(
+                                  metaginfo,
+                                  rownames(path_info[[x]])[i]),": ")[[1]][2]),
+                              "\", ")
+            }
             out <- paste0(out, "\"pvalue\":", path_info[[x]]$FDRp.value[i],
                           ", ")
             out <- paste0(out, "\"status\":\"", path_info[[x]]$status[i],
@@ -562,42 +564,26 @@ create.report.folders <- function(output.folder, home, clean_out_folder = TRUE){
 
 }
 
-create.pathways.folder <- function(output.folder, metaginfo, comp, moreatts, conf, verbose = FALSE, pseudo = NULL){
+create.pathways.folder <- function(output.folder, metaginfo, comp, moreatts,
+                                   conf, verbose = FALSE){
 
     pathways.folder <- paste0(output.folder, "/pathway-viewer/pathways/")
     if(!file.exists(pathways.folder))
         dir.create(pathways.folder)
-    if(is.null(pseudo)){
-        for(pathway in names(metaginfo$pathigraphs)){
-            if(verbose == TRUE)
-                cat(pathway)
-            write.attributes(comp,
-                             pathway,
-                             metaginfo,
-                             paste0(pathways.folder, pathway),
-                             moreatts_pathway = moreatts[[pathway]],
-                             conf = conf)
-        }
-    }else{
-        for(pathway in names(pseudo$pathigraphs)){
-            if(verbose == TRUE)
-                cat(pathway)
-            write.pseudo.attributes(comp,
-                                    pathway,
-                                    pseudo,
-                                    paste0(pathways.folder, pathway),
-                                    moreatts_pathway = moreatts[[pathway]],
-                                    conf = conf)
-        }
+    for(pathway in names(metaginfo$pathigraphs)){
+        if(verbose == TRUE)
+            cat(pathway)
+        write.attributes(comp,
+                         pathway,
+                         metaginfo,
+                         paste0(pathways.folder, pathway),
+                         moreatts_pathway = moreatts[[pathway]],
+                         conf = conf)
     }
 
     comp$status <- comp$"UP/DOWN"
     comp$has_changed <- TRUE
-    if(is.null(pseudo)){
-        path_json <- create.path.info(comp, metaginfo)
-    }else{
-        path_json <- create.pseudo.path.info(comp, pseudo, metaginfo )
-    }
+    path_json <- create.path.info(comp, metaginfo)
     write(path_json, file = paste0(output.folder,
                                    "/pathway-viewer/pathways/path_info.json"))
 
@@ -687,19 +673,22 @@ create.report <- function(results, comp, metaginfo, output.folder,
     }
 
     if(!is.null(group.by)){
-        pseudo.meta <- get.pseudo.metaginfo(metaginfo, group.by = group.by)
-    }else{
-        pseudo.meta <- NULL
+        cat(paste0("Creating groupings by ", group.by, "...\n"))
+        metaginfo <- get.pseudo.metaginfo(metaginfo, group.by = group.by)
     }
 
     if(!file.exists(output.folder))
         dir.create(output.folder)
-
     pv.path <- paste0(system.file("extdata", package="hipathia"))
-    create.report.folders(output.folder, pv.path, clean_out_folder = FALSE)
-    create.pathways.folder(output.folder, metaginfo, comp, moreatts, conf,
-                           verbose, pseudo = pseudo.meta)
 
+    cat("Creating report folders...\n")
+    create.report.folders(output.folder, pv.path, clean_out_folder = FALSE)
+
+    cat("Creating pathways folder...\n")
+    create.pathways.folder(output.folder, metaginfo, comp, moreatts, conf,
+                           verbose)
+
+    cat("Creating HTML index...\n")
     create.html.index(pv.path,
                       output.folder,
                       template_name = "index_template.html",
@@ -759,622 +748,46 @@ visualize.report <- function(output.folder, port = 4000){
 # PSEUDO META_GRAPH_INFORMATION
 
 get.pseudo.metaginfo <- function(pathways, group.by, verbose = TRUE){
-
-    subgraphs <- unlist(lapply(pathways$pathigraphs, function(pg){
-        pg$effector.subgraphs
-    }), recursive = FALSE)
-    names(subgraphs) <- sapply(names(subgraphs), function(n){
-        unlist(strsplit(n, split = "\\."))[2]})
-
-    if(group.by == "uniprot" | group.by == "GO"){
-        annofuns <- load.annofuns(db = group.by, pathways$species)
-        annofuns <- annofuns[!is.na(annofuns$funs),]
-        annots <- annofuns[,c(2,3)]
-    }else if(group.by == "genes"){
-        gens <- lapply(names(subgraphs), function(name){
-            sg <- subgraphs[[name]]
-            l <- unlist(V(sg)$genesList)
-            l <- l[!is.na(l)]
-            l <- l[!l == "/"]
-            cbind(name, l)
-        })
-        gens <- gens[sapply(gens, ncol) > 1]
-        annots <- do.call("rbind", gens)
-    }else{
-        stop("Parameter `group.by` not recognized")
-    }
-
-    pseudo <- get.pseudo.pathigraphs(subgraphs, annots, verbose = verbose)
-
-    pseudo.meta <- NULL
-    pseudo.meta$pathigraphs <- pseudo
-    pseudo.meta$species <- pathways$species
-
-    return(pseudo.meta)
+    # pseudo <- load.pseudo.mgi("hsa")
+    pseudo <- load(paste0("~/appl/hpAnnot/private/pathways/pseudo/pmgi_",
+                          pathways$species, "_", group.by, ".RData"))
+    pseudo <- get(pseudo)
+    rownames(pseudo$all.labelids) <- pseudo$all.labelids[,1]
+    pathways.list <- names(pathways$pathigraphs)
+    if(!all(unique(pseudo$all.labelids[,"path.id"]) %in% pathways.list))
+        pseudo <- filter.pseudo.mgi(pseudo, pathways.list)
+    return(pseudo)
 }
 
-
-
-get.pseudo.pathigraphs <- function(subgraphs, annots, verbose = TRUE){
-
-    categories <- unique(annots[,2])
-    pseudo_pathigraphs <- list()
-    for(i in 1:length(categories)){
-        if(verbose == TRUE)
-            cat("Processing ", categories[i], " (", i, " of ",
-                length(categories), ")\n", sep = "")
-        selnames <- annots[which(annots[,2] == categories[i]),1]
-        selsub <- subgraphs[selnames]
-        cat("    found ", length(selsub), " subgraphs...\n", sep = "")
-        path.id <- paste0("term_", i)
-        cpfs <- create.pathigraph.from.subgraphs(selsub, categories[i], path.id)
-        pseudo_pathigraphs[[path.id]] <- cpfs
-    }
-
-    return(pseudo_pathigraphs)
-
-}
-
-
-create.pathigraph.from.subgraphs <- function(selsub, path.name, path.id){
-
-    # # relabel nodes by pathway
-    # for(i in 1:length(selsub)){
-    #   pathway <- strsplit(names(selsub)[i],"__")[[1]][1]
-    #   V(selsub[[i]])$name <- paste0(pathway,"__",V(selsub[[i]])$name)
-    # }
-
-    # overlapping between paths
-    imat <- data.matrix(mat.or.vec(nr = length(selsub), nc = length(selsub)))
-    rownames(imat) <- names(selsub)
-    colnames(imat) <- names(selsub)
-    for(i in 1:length(selsub)){
-        for(j in 1:length(selsub)){
-            imat[i,j] <- length(intersect(V(selsub[[i]])$name,
-                                          V(selsub[[j]])$name))
-        }
-    }
-    ga <- graph.adjacency(imat > 0)
-    cga <- clusters(ga)
-    cga$groups <- unique(cga$membership)
-
-    # recalculate Y coordinates
-    path_coords <- do.call("rbind", lapply(selsub, function(x){
-        range(V(x)$nodeY)
-    }))
-    init_path_coords <- cbind(path_coords, 0, 0, 0, 0, 0)
-    group_coords <- do.call("rbind", by(path_coords, cga$membership, range))
-
-    ymargin <- 50
-    lasty <- 0
-    for(i in 1:cga$no){
-        m <- cga$groups[i]
-        indexes <- which(cga$membership == m)
-        for(j in indexes){
-            V(selsub[[j]])$nodeY <- V(selsub[[j]])$nodeY -
-                group_coords[i,1] + lasty
-            init_path_coords[j,3] <- group_coords[i,1]
-            init_path_coords[j,4] <- lasty
-            init_path_coords[j,5] <- m
-            init_path_coords[j,6] <- path_coords[j,1] -
-                group_coords[i,1] + lasty
-            init_path_coords[j,7] <- path_coords[j,2] -
-                group_coords[i,1] + lasty
-        }
-        lasty <- lasty + (group_coords[i,2] - group_coords[i,1]) + ymargin
-    }
-
-    # create general graphs
-
-    node_atts <- unique(do.call("rbind", lapply(selsub, function(x) {
-        data.frame(name = V(x)$name,
-                   label = V(x)$label,
-                   shape = V(x)$shape,
-                   x = V(x)$nodeX,
-                   y = V(x)$nodeY,
-                   width = V(x)$width,
-                   height = V(x)$height,
-                   label.color = V(x)$label.color,
-                   label.cex = V(x)$label.cex,
-                   stringsAsFactors = FALSE)
-    })))
-    rownames(node_atts) <- node_atts$name
-
-    edges <- unique(do.call("rbind", lapply(selsub, function(x) {
-        el <- get.edgelist(x)
-        data.frame(source = el[,1],
-                   relation = E(x)$relation,
-                   target = el[,2])
-    })))
-
-    supergraph <- graph.data.frame(edges[,c(1,3)], directed = TRUE)
-    E(supergraph)$relation <- edges[,2]
-    for(k in 1:ncol(node_atts)){
-        field <- colnames(node_atts)[k]
-        supergraph <- set.vertex.attribute(supergraph,
-                                           name = field,
-                                           value = node_atts[V(supergraph)$name,
-                                                             field])
-    }
-    V(supergraph)$nodeX <- V(supergraph)$x
-    V(supergraph)$nodeY <- V(supergraph)$y
-    V(supergraph)$genesList <- rep(NA, length(V(supergraph)$name))
-
-    pathigraph <- list()
-    pathigraph$graph <- supergraph
-    pathigraph$path.name <- path.name
-    pathigraph$path.id <- path.id
-    pathigraph$effector.subgraphs <- selsub
-    pathigraph$path_coords <- path_coords
-    pathigraph$init_path_coords <- init_path_coords
-    pathigraph$group_coords <- group_coords
-    pathigraph$ga <- ga
-    pathigraph$cga <- cga
-
-    return(pathigraph)
-
-}
-
-create.pseudo.node.and.edge.attributes <- function(comp, pathway, metaginfo,
-                                                   moreatts_pathway = NULL,
-                                                   conf = 0.05, effector = TRUE,
-                                                   reverse_xref = NULL,
-                                                   exp = NULL){
-    print(pathway)
-    pathigraphs <- metaginfo$pathigraphs
-    pcomp <- comp[grep(paste0(pathway,"__"),rownames(comp)),]
-    if(effector){
-        s <- pathigraphs[[pathway]]$effector.subgraphs
-    }else{
-        s <- pathigraphs[[pathway]]$subgraphs
-    }
-    ig <- pathigraphs[[pathway]]$graph
-
-    if(is.null(V(ig)$type)) V(ig)$type <- "node"
-    if(is.null(V(ig)$width)) V(ig)$width <- 15
-    if(is.null(V(ig)$height)) V(ig)$height <- 5
-    if(is.null(V(ig)$label.color)) V(ig)$label.color <- "black"
-    if(is.null(V(ig)$label.cex)) V(ig)$label.cex <- 0.7
-    V(ig)$stroke.color <- "lightgrey"
-    #V(ig)$stroke.color <- find.node.colors(pcomp, s, ig, conf)[V(ig)$name]
-
-    #V(ig)$color <- "white"
-    V(ig)$width[V(ig)$shape=="circle"] <- 15
-    V(ig)$width[V(ig)$shape!="circle"] <- 22
-    V(ig)$shape[V(ig)$shape=="rectangle"
-                & !grepl("func",V(ig)$name)] <- "ellipse"
-    V(ig)$shape[V(ig)$shape=="rectangle"
-                & grepl("func",V(ig)$name)] <- "rectangle"
-
-    natt <- cbind(V(ig)$name, V(ig)$label, 10, V(ig)$nodeX, V(ig)$nodeY,
-                  V(ig)$stroke.color, V(ig)$shape, V(ig)$type, V(ig)$label.cex,
-                  V(ig)$label.color, V(ig)$width, V(ig)$height,
-                  sapply(V(ig)$genesList, paste, collapse = ","))
-    colnames(natt) <- c("ID", "label", "labelSize", "X", "Y", "color", "shape",
-                        "type", "label.cex", "label.color", "width", "height",
-                        "genesList")
-    rownames(natt) <- natt[,1]
-    natt[,"label"] <- gsub("\n", " / ", natt[,"label"])
-    if(!is.null(moreatts_pathway)){
-        natt <- cbind(natt, moreatts_pathway)
-    }
-    node_path_assoc <- matrix(0, nrow = nrow(natt), ncol = length(s))
-    colnames(node_path_assoc) <- names(s)
-    natt <- cbind(natt, node_path_assoc)
-
-    sif <- c()
-    eatt <- c()
-    epath_assoc <- c()
-
-    for(i in 1:length(s)){
-
-        # get subgraph
-        subgraph <- s[[i]]
-        name <- names(s)[i]
-        #cname <- paste(pathway,name,sep="__")
-        cname <- name
-        pname <- get.path.names(metaginfo, name)
-
-        # sif
-        raw_edges <- get.edgelist(subgraph)
-        type <- c("activation","inhibition")[(E(subgraph)$relation == -1)+1]
-        edges <- cbind(raw_edges[,1], type, raw_edges[,2])
-        sif <- rbind(sif, edges)
-
-        # edge attributes
-        eids <- apply(edges, 1, function(x) paste0(x, collapse = "_"))
-        status <- comp[cname,"UP/DOWN"]
-        if("color" %in% colnames(comp)){
-            color <- comp[cname,"color"]
-        } else {
-            if( comp[cname,"FDRp.value"] < conf){
-                color <- c("#1f78b4","#e31a1c")[(status == "UP") + 1]
-            } else {
-                color <- "darkgrey"
-            }
-        }
-        path_assoc <- matrix(0, nrow = nrow(edges), ncol = length(s))
-        colnames(path_assoc) <- names(s)
-        path_assoc[,name] <- 1
-        edges_atts <- cbind(id = eids, status = status, color = color,
-                            name = name, cname = cname, pname = pname,
-                            pvalue = comp[cname,"p.value"],
-                            adj.pvalue = comp[cname,"FDRp.value"])
-        eatt <- rbind(eatt, edges_atts)
-
-        epath_assoc <- rbind(epath_assoc, path_assoc)
-
-        # node attributes
-        natt[get.vertex.attribute(subgraph, "name"),name] <- 1
-
-    }
-
-    # melt multi path interactions
-    unique_edges <- unique(eatt[,1])
-    def_eatt <- c()
-    def_sif <- c()
-    def_epath_assoc <- c()
-
-    for(ue in unique_edges){
-
-        indexes <- which(eatt[,1] == ue)
-        subeatt <- eatt[indexes,,drop = FALSE]
-        subepath_assoc <- epath_assoc[indexes,,drop = FALSE]
-        subsif <- sif[indexes,,drop = FALSE]
-
-        anysig <- F
-        # up regulated
-        upsig <- which(subeatt[,"status"] == "UP" &
-                           as.numeric(subeatt[,"adj.pvalue"]) < conf)
-        if(length(upsig) > 0){
-
-            selected_subsif <- subsif[1,]
-            selected_subsif[2] <- paste0(selected_subsif[2], ".up")
-            def_sif <- rbind(def_sif, selected_subsif)
-
-            mini_subeatt <- subeatt[upsig,,drop = FALSE]
-            selected_subeatt <- mini_subeatt[1,c("id", "status", "color",
-                                                 "pvalue", "adj.pvalue")]
-            selected_subeatt["id"] <- paste(selected_subsif, collapse = "_")
-            def_eatt <- rbind(def_eatt, selected_subeatt)
-
-            selected_subepath_assoc <- subepath_assoc[upsig,,drop = FALSE]
-            def_epath_assoc <- rbind(def_epath_assoc,
-                                     colSums(selected_subepath_assoc) > 0)
-
-            anysig <- TRUE
-        }
-
-        # down regulated
-        downsig <- which(subeatt[,"status"]=="DOWN" &
-                             as.numeric(subeatt[,"adj.pvalue"]) < conf)
-        if(length(downsig) > 0){
-
-            selected_subsif <- subsif[1,]
-            selected_subsif[2] <- paste0(selected_subsif[2], ".down")
-            def_sif <- rbind(def_sif, selected_subsif)
-
-            mini_subeatt <- subeatt[downsig,,drop = FALSE]
-            selected_subeatt <- mini_subeatt[1,c("id", "status", "color",
-                                                 "pvalue", "adj.pvalue")]
-            selected_subeatt["id"] <- paste(selected_subsif, collapse = "_")
-            def_eatt <- rbind(def_eatt, selected_subeatt)
-
-            selected_subepath_assoc <- subepath_assoc[downsig,,drop = FALSE]
-            def_epath_assoc <- rbind(def_epath_assoc,
-                                     colSums(selected_subepath_assoc) > 0)
-
-            anysig <- TRUE
-        }
-
-        # no sigs
-        nosigs <- which(as.numeric(subeatt[,"adj.pvalue"]) >= conf)
-        if(length(nosigs) > 0){
-
-            selected_subsif <- subsif[1,]
-            def_sif <- rbind(def_sif, selected_subsif)
-
-            mini_subeatt <- subeatt[nosigs,,drop = FALSE]
-            selected_subeatt <- mini_subeatt[1,c("id", "status", "color")]
-            def_eatt <- rbind(def_eatt, selected_subeatt)
-
-            selected_subepath_assoc <- subepath_assoc[nosigs,,drop = FALSE]
-            def_epath_assoc <- rbind(def_epath_assoc,
-                                     colSums(selected_subepath_assoc) > 0)
-
-        }
-
-
-
-
-        #     if(length(indexes)==1){
-        #       def_eatt <- rbind(def_eatt,subeatt[,c("id","status","color")])
-        #       def_sif <- rbind(def_sif,subsif)
-        #       def_epath_assoc <- rbind(def_epath_assoc,subepath_assoc)
-        #     } else {
-        #
-        #       down_ind <- which(subeatt[,"status"]=="DOWN")
-        #       if(length(down_ind)>0){
-        #         down_subeatt <- subeatt[down_ind,,drop=F]
-        #
-        #         selected_subsif <- subsif[1,]
-        #         selected_subsif[2] <- paste0(selected_subsif[2],".down")
-        #
-        #   selected_down_subeatt <- down_subeatt[1,c("id","status","color")]
-        # selected_down_subeatt["id"] <- paste0(selected_subsif,
-        #                                       collapse = "_")
-        #
-        #         def_eatt <- rbind(def_eatt,selected_down_subeatt)
-        #         def_sif <- rbind(def_sif,selected_subsif)
-        #
-        #         down_subepath_assoc <- subepath_assoc[down_ind,,drop=F]
-        #         def_epath_assoc <- rbind(def_epath_assoc,
-        # colSums(down_subepath_assoc)>0)
-        #       }
-        #
-        #       up_ind <- which(subeatt[,"status"]=="UP")
-        #       if(length(up_ind)>0){
-        #         up_subeatt <- subeatt[up_ind,,drop=F]
-        #
-        #         selected_subsif <- subsif[1,]
-        #         selected_subsif[2] <- paste0(selected_subsif[2],".up")
-        #
-        #         selected_up_subeatt <- up_subeatt[1,c("id","status","color")]
-        #    selected_up_subeatt["id"] <- paste0(selected_subsif,collapse="_")
-        #
-        #         def_eatt <- rbind(def_eatt,selected_up_subeatt)
-        #         def_sif <- rbind(def_sif,selected_subsif)
-        #
-        #         up_subepath_assoc <- subepath_assoc[up_ind,,drop=F]
-        # def_epath_assoc <- rbind(def_epath_assoc,colSums(up_subepath_assoc)>0)
-        #       }
-        #
-        #     }
-
-    }
-
-    rownames(def_eatt) <- NULL
-    def_eatt <- as.data.frame(def_eatt, stringsAsFactors = FALSE)
-    def_epath_assoc <- as.data.frame(def_epath_assoc, stringsAsFactors = FALSE)
-    rownames(def_sif) <- NULL
-    def_sif <- as.data.frame(def_sif, stringsAsFactors = FALSE)
-
-    def_eatt$head <- c("inhibited", "directed")[grepl("activation",
-                                                      def_sif[,2]) + 1]
-
-    def_eatt <- cbind(def_eatt,(def_epath_assoc == TRUE) + 0)
-
-    natt[,"label"] <- gsub("\\*","", natt[,"label"])
-
-    # Add functions
-    #---------------------
-    left <- which(grepl("func", get.edgelist(ig)[,2]))
-    if(length(left) > 0 ){
-        if(length(left) == 1){
-            ids <- paste(get.edgelist(ig)[left,1], "activation",
-                         get.edgelist(ig)[left,2], sep = "_")
-        }else{
-            ids <- apply(get.edgelist(ig)[left,], 1, function(x){
-                paste(x[1], "activation", x[2], sep = "_")})
-        }
-        funejes <- as.data.frame(matrix(0, nrow = length(ids),
-                                        ncol = ncol(def_eatt)),
-                                 stringsAsFactors = FALSE)
-        colnames(funejes) <- colnames(def_eatt)
-        rownames(funejes) <- ids
-        funejes$id <- ids
-        funejes$status <- "DOWN"
-        funejes$color <- "darkgrey"
-        if("pvalue" %in% colnames(funejes))
-            funejes$pvalue <- ids
-        if("adj.pvalue" %in% colnames(funejes))
-            funejes$adj.pvalue <- "DOWN"
-        funejes$head <- "directed"
-        nods <- get.edgelist(ig)[left,1]
-        names(nods) <- ids
-        names(ids) <- nods
-        if(effector == TRUE){
-            funs <- t(apply(funejes, 1, function(x){
-                if(any(colnames(funejes) == nods[as.character(x[1])])){
-                    x[which(colnames(funejes) == nods[as.character(x[1])])] <- 1
-                    x
-                }else{
-                    x
-                }
-            }))
-        }else{
-            funs <- t(apply(funejes, 1, function(x){
-                lastnodes <- sapply(colnames(funejes), function(col){
-                    unlist(strsplit(col, split = " - "))[2]})
-                if(any(lastnodes == nods[x[1]])){
-                    x[which(lastnodes == nods[x[1]])] <- 1
-                    x
-                }else{
-                    x
-                }
-            }))
-        }
-        funs <- as.data.frame(funs, stringsAsFactors = FALSE)
-        sif_funs <- data.frame(V1 = get.edgelist(ig)[left,1],
-                               type = rep("activation", times = length(left)),
-                               V3 = get.edgelist(ig)[left,2],
-                               stringsAsFactors = FALSE)
-
-        def_sif <- rbind(def_sif, sif_funs)
-        def_eatt <- rbind(def_eatt, funs)
-    }
-
-    fun_indexes <- grep("_func",rownames(natt))
-    fun_names <- rownames(natt)[fun_indexes]
-    if(length(fun_indexes)>0){
-        for(i in 1:length(fun_names)){
-            pp <- gsub("_func", "", fun_names[i])
-            if(effector == TRUE){
-                natt[fun_names[i],pp] <- 1
-            } else {
-                natt[fun_names[i], grep(paste0("- ", pp), colnames(natt))] <- 1
-            }
-        }
-    }
-
-    if(!is.null(reverse_xref)){
-        sids <- strsplit(as.character(natt[,"genesList"]), split = ",")
-        translate_ids <- function(ids){
-            if(length(ids) > 0){
-                ids <- setdiff(ids, "/")
-                tids <- sapply(reverse_xref[ids],function(x){
-                    if(is.null(x)){
-                        return("?")
-                    } else {
-                        return(x)
-                    }})
-                return(paste(tids, collapse = ","))
-            } else {
-                return("?")
-            }
-        }
-        natt <- cbind(natt, tids = sapply(sids, translate_ids))
-    }
-    if(!is.null(exp)){
-        sids <- strsplit(as.character(natt[,"genesList"]), split = ",")
-        ids_list <- as.list(1:nrow(exp))
-        names(ids_list) <- rownames(exp)
-        get_expr_ids <- function(ids){
-            if(length(ids) > 0){
-                ids <- setdiff(ids, "/")
-                exp_values <- sapply(ids_list[ids],function(x){
-                    if(is.null(x)){
-                        return("?")
-                    }else{
-                        return(exp[x,])
-                    }})
-                return(paste(exp_values, collapse = ","))
-            } else {
-                return("?")
-            }
-        }
-        natt <- cbind(natt, exp_values = sapply(sids, get_expr_ids))
-    }
-
-    return(list(sif = def_sif, edge_att = def_eatt, node_att = natt))
-}
-
-
-
-create.pseudo.path.info <- function(all_comp, metaginfo.pseudo, metaginfo){
-    fpgs <- metaginfo.pseudo$pathigraphs
-    path_info <- lapply(fpgs, function(fpg){
-        all_comp[names(fpg$effector.subgraphs),]})
-
-    path_json_list <- lapply(names(path_info), function(x){
-        out <- paste0("{\n\t\"id\":\"", x, "\",\n")
-        out <- paste0(out, "\t\"name\":\"", fpgs[[x]]$path.name, "\",\n")
-        anysig <- FALSE
-        anyup <- FALSE
-        anydown <- FALSE
-        anysigup <- FALSE
-        anysigdown <- FALSE
-        anychanged <- FALSE
-        for(i in 1:nrow(path_info[[x]])){
-            if(path_info[[x]]$has_change[i] == TRUE)
-                anychanged <- TRUE
-            if(path_info[[x]]$FDRp.value[i] <= 0.05) {
-                anysig <- TRUE
-                if(path_info[[x]]$status[i] == "UP")
-                    anysigup <- TRUE
-                if(path_info[[x]]$status[i] == "DOWN")
-                    anysigdown <- TRUE
-            }
-            if(path_info[[x]]$status[i] == "UP")
-                anyup <- TRUE
-            if(path_info[[x]]$status[i] == "DOWN")
-                anydown <- TRUE
-        }
-        out <- paste0(out, "\t\"haschanged\":", tolower(anychanged), ",\n")
-        out <- paste0(out, "\t\"sig\":", tolower(anysig), ",\n")
-        out <- paste0(out, "\t\"up\":", tolower(anyup), ",\n")
-        out <- paste0(out, "\t\"down\":", tolower(anydown), ",\n")
-        out <- paste0(out, "\t\"upsig\":", tolower(anysigup), ",\n")
-        out <- paste0(out, "\t\"downsig\":", tolower(anysigdown), ",\n")
-        out <- paste0(out, "\t\"paths\":[\n")
-        for(i in 1:nrow(path_info[[x]])){
-            out <- paste0(out, "\t\t{")
-            out <- paste0(out, "\"id\":\"", rownames(path_info[[x]])[i], "\", ")
-            out <- paste0(out, "\"name\":\"",
-                          get.path.names(metaginfo,
-                                         rownames(path_info[[x]])[i]),"\", ")
-            # out <- paste0(out, "\"shortname\":\"",
-            #               gsub("\\*", "", strsplit(get.path.names(
-            #                   metaginfo,
-            #                   rownames(path_info[[x]])[i]), ": ")[[1]][2]),
-            #               "\", ")
-            out <- paste0(out, "\"shortname\":\"",
-                          gsub("\\*", "",
-                               get.path.names(metaginfo,
-                                              rownames(path_info[[x]])[i])),
-                          "\", ")
-            out <- paste0(out, "\"pvalue\":", path_info[[x]]$FDRp.value[i],
-                          ", ")
-            out <- paste0(out, "\"status\":\"", path_info[[x]]$status[i],
-                          "\", ")
-            out <- paste0(out, "\"sig\":\"",
-                          tolower(path_info[[x]]$FDRp.value[i] < 0.05), "\", ")
-            out <- paste0(out, "\"haschanged\":",
-                          tolower(path_info[[x]]$has_change[i]), ", ")
-            out <- paste0(out, "\"up\":",
-                          tolower(path_info[[x]]$status[i] == "UP"), ", ")
-            out <- paste0(out, "\"down\":",
-                          tolower(path_info[[x]]$status[i] == "DOWN"), ", ")
-            out <- paste0(out, "\"upsig\":",
-                          tolower(path_info[[x]]$status[i] == "UP" &
-                                      path_info[[x]]$FDRp.value[i] < 0.05),
-                          ", ")
-            out <- paste0(out, "\"downsig\":",
-                          tolower(path_info[[x]]$status[i] == "DOWN" &
-                                      path_info[[x]]$FDRp.value[i] < 0.05),
-                          ", ")
-            out <- paste0(out, "\"color\":\"", path_info[[x]]$color[i], "\"")
-            out <- paste0(out, "}")
-            if(i == nrow(path_info[[x]])){
-                out <- paste0(out, "\n")
-            } else {
-                out <- paste0(out, ",\n")
-            }
-        }
-        out <- paste0(out, "\t]\n")
-        out <- paste0(out, "}")
-        out
+filter.pseudo.mgi <- function(pseudo.meta, pathways.list){
+    num.nodes <- sapply(names(pseudo.meta$pathigraphs), function(term){
+        graph <- pseudo.meta$pathigraphs[[term]]$graph
+        vs <- V(graph)[unlist(lapply(pathways.list, grep, V(graph)$name) )]
+        length(vs)
     })
-    path_json <- paste0("[\n", paste(path_json_list, collapse = ","), "\n]")
-    return(path_json)
-}
+    tofilter <- names(pseudo.meta$pathigraphs)[num.nodes >= 1]
+    mini.pathigraphs <- lapply(pseudo.meta$pathigraphs[tofilter],
+                               function(pg){
+        minipg <- NULL
+        graph <- pg$graph
+        vs <- V(graph)[unlist(lapply(pathways.list, grep, V(graph)$name) )]
+        minipg$graph <- igraph::induced_subgraph(graph, vs)
+        minipg$path.name <- pg$path.name
+        minipg$path.id <- pg$path.id
+        es.ind <- unlist(lapply(pathways.list, grep, pg$effector.subgraphs) )
+        minipg$effector.subgraphs <- pg$effector.subgraphs[es.ind]
+        minipg
+                               })
+    names(mini.pathigraphs) <- tofilter
 
+    all.labels <- pseudo.meta$all.labelids
+    filter.labelids <- all.labels[all.labels[,"path.id"] %in% pathways.list,]
 
+    mini.pseudo <- NULL
+    mini.pseudo$pathigraphs <- mini.pathigraphs
+    mini.pseudo$species <- pseudo.meta$species
+    mini.pseudo$all.labelids <- filter.labelids
 
-write.pseudo.attributes <- function(this_comp, pathway, metaginfo, prefix,
-                                    moreatts_pathway=NULL, conf=0.05,
-                                    reverse_xref=NULL, exp=NULL){
-    atts <- create.pseudo.node.and.edge.attributes(this_comp, pathway,
-                                                   metaginfo,
-                                                   moreatts_pathway =
-                                                       moreatts_pathway,
-                                                   conf = conf,
-                                                   reverse_xref = reverse_xref,
-                                                   exp = exp)
-    utils::write.table(atts$sif, file = paste0(prefix, ".sif"),
-                       row.names = FALSE,
-                       col.names = FALSE,
-                       quote = FALSE,
-                       sep = "\t")
-    utils::write.table(atts$node_att, file = paste0(prefix, ".natt"),
-                       row.names = FALSE,
-                       col.names = TRUE,
-                       quote = FALSE,
-                       sep = "\t")
-    utils::write.table(atts$edge_att, file = paste0(prefix, ".eatt"),
-                       row.names = FALSE,
-                       col.names = TRUE,
-                       quote = FALSE,
-                       sep = "\t")
+    return(mini.pseudo)
 }
 

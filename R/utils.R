@@ -146,35 +146,26 @@ translate.matrix <- function(exp, species, verbose=TRUE){
 #'
 get.path.names <- function(metaginfo, names, maxchar=NULL){
 
-    pathigraphs <- metaginfo$pathigraphs
+    labels <- metaginfo$all.labelids
 
     prettynames <- unlist(lapply(names, function(name){
         strname <- unlist(strsplit(name, "\\-"))
-        pathway <- strname[2]
-        labelid <- pathigraphs[[pathway]]$label.id
-        if(length(strname) > 3){
-            newini <- labelid[which(labelid[,1] ==
-                                        paste("N", strname[2], strname[3],
-                                              sep = "-")),2]
-            newend <- labelid[which(labelid[,1] ==
-                                        paste("N", strname[2], strname[4],
-                                              sep = "-")),2]
-            if(grepl("_func", strname[4])){
-                otroend <- labelid[which(labelid[,1] ==
-                                             paste("N", strname[2], strname[3],
-                                                   sep = "-")),2]
-                name <- paste0(pathigraphs[[pathway]]$path.name,
-                               ": ", newini, " -> ", otroend, " -> ", newend )
-            }else{
-                name <- paste0(pathigraphs[[pathway]]$path.name,
-                               ": ", newini, " -> ", newend )
-            }
+
+        if(length(strname) == 4){
+            ininode <- paste("N", strname[2], strname[3], sep = "-")
+            effnode <- paste("N", strname[2], strname[4], sep = "-")
+            inilabel <- labels[ininode, "label"]
+            efflabel <- labels[effnode, "label"]
+            pathlabel <- labels[ininode, "path.name"]
+            label <- paste0(pathlabel, ": ", inilabel, " -> ", efflabel )
+            label
+        }else if(length(strname) == 3){
+            effnode <- paste("N", strname[2], strname[3], sep = "-")
+            label <- labels[effnode, c("path.name", "label")]
+            label <- paste(label, collapse = ": ")
+            label
         }else{
-            path.name <- pathigraphs[[pathway]]$path.name
-            node <- labelid[which(labelid[,1] ==
-                                      paste("N", strname[2], strname[3],
-                                            sep = "-")),2]
-            name <- paste0(path.name, ": ", node)
+            stop("Not recognized name")
         }
     }))
 
@@ -440,10 +431,12 @@ hhead <- function(mat, n = 5){
 get.effnode.id <- function(path.name){
     path.split <- unlist(strsplit(path.name, split="-"))
     if(!path.split[1] == "P") return(NA)
-    if(length(path.split) > 3){
+    if(length(path.split) == 4){
         paste("N", path.split[2], path.split[4], sep="-")
-    }else{
+    }else if(length(path.split) == 3){
         paste("N", path.split[2], path.split[3], sep="-")
+    }else{
+        return(NA)
     }
 }
 
