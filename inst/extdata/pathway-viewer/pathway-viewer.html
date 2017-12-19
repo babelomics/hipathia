@@ -46894,6 +46894,12 @@ var saveAs=saveAs||function(e){"use strict";if(typeof e==="undefined"||typeof na
                         me.$.networkViewer.$.nodeRender.applyDirect(dp, dp);
                     }
                 }
+		var vertices = me.$.networkViewer.vertices;
+            	for (var i = 0, l = vertices.length; i < l; i++) {
+		        var vertex = vertices[i];
+		        vertex.renderer.set('labelColor', vertex.attributes.labelColor);
+            	}
+
 
                 //Edge attribute processing
                 var ecolmap = {};
