@@ -1,3 +1,12 @@
+##
+## save.R
+## Saving functions for package Hipathia
+##
+## Written by Marta R. Hidalgo, Jose Carbonell-Caballero
+##
+## Code style by Hadley Wickham (http://r-pkgs.had.co.nz/style.html)
+## https://www.bioconductor.org/developers/how-to/coding-style/
+##
 
 ##################################
 # Save results
@@ -747,8 +756,8 @@ visualize.report <- function(output.folder, port = 4000){
 get.pseudo.metaginfo <- function(pathways, group.by){
     pseudo <- load.pseudo.mgi(pathways$species, group.by)
     # pseudo <- load(paste0("~/appl/hpAnnot/private/pathways/pseudo/pmgi_",
-    #                       pathways$species, "_", group.by, ".RData"))
-    pseudo <- get(pseudo)
+    #                       pathways$species, "_", group.by, "_red.RData"))
+    # pseudo <- get(pseudo)
     rownames(pseudo$all.labelids) <- pseudo$all.labelids[,1]
     pathways.list <- names(pathways$pathigraphs)
     if(!all(unique(pseudo$all.labelids[,"path.id"]) %in% pathways.list))

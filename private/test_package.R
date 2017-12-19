@@ -1,3 +1,9 @@
+##
+## test_package.R
+## Script for testing all main functionalittis of the package
+##
+## Written by Marta R. Hidalgo, marta.hidalgo@outlook.es
+##
 
 library(hipathia)
 
@@ -8,7 +14,7 @@ library(hipathia)
 # load and filter graphs
 pathways <- load.pathways(species = "hsa")
 pathways_only2 <- load.pathways(species = "hsa",
-                                pathways.list = c("hsa03320", "hsa04024"))
+                                pathways.list = c("hsa03320", "hsa04012"))
 
 # prepare data
 data("brca_data")
@@ -21,7 +27,7 @@ exp_data <- normalize.data(trans_data)
 # Hipathia
 ##############################
 
-results <- hipathia(exp_data, pathways, verbose=TRUE)
+results <- hipathia(exp_data, pathways, verbose = TRUE)
 
 
 # Descriptive plots

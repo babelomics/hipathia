@@ -23,6 +23,7 @@ Imports:
   coin, stats, limma, grDevices, utils, graphics, preprocessCore, servr
 RoxygenNote: 6.0.1
 Suggests: knitr,
-    rmarkdown
+    rmarkdown,
+    testthat
 VignetteBuilder: knitr
 biocViews: Pathways, GraphAndNetwork, GeneExpression, GeneSignaling, GO

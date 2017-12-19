@@ -1,3 +1,12 @@
+##
+## stats.R
+## Statistics functions
+##
+## Written by Marta R. Hidalgo, marta.hidalgo@outlook.es
+##
+## Code style by Hadley Wickham (http://r-pkgs.had.co.nz/style.html)
+## https://www.bioconductor.org/developers/how-to/coding-style/
+##
 
 #' Normalize expression data to be used in \code{hipathia}
 #'

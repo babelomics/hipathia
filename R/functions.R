@@ -1,3 +1,12 @@
+##
+## functions.R
+## Enrichment functions
+##
+## Written by Marta R. Hidalgo, Jose Carbonell-Caballero
+##
+## Code style by Hadley Wickham (http://r-pkgs.had.co.nz/style.html)
+## https://www.bioconductor.org/developers/how-to/coding-style/
+##
 
 
 #' Annotates functions to pathways

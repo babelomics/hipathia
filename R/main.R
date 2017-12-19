@@ -1,8 +1,12 @@
-###
-### Code style by Hadley Wickham (http://r-pkgs.had.co.nz/style.html)
-###
-### https://www.bioconductor.org/developers/how-to/coding-style/
-###
+##
+## main.R
+## Core functions of package Hipathia
+##
+## Written by Marta R. Hidalgo, marta.hidalgo@outlook.es
+##
+## Code style by Hadley Wickham (http://r-pkgs.had.co.nz/style.html)
+## https://www.bioconductor.org/developers/how-to/coding-style/
+##
 
 #' Computes the level of activation of the subpathways for each of the samples
 #'
@@ -37,9 +41,16 @@
 hipathia <- function(genes.vals, metaginfo, decompose = FALSE, maxnum = 100,
                      verbose = TRUE, tol = 0.000001){
 
+    if(is.null(genes.vals))
+        stop("Missing input matrix")
+    if(is.null(metaginfo))
+        stop("Missing pathways object")
+    test.matrix(genes.vals)
+    test.pathways.object(metaginfo)
+    test.tolerance(tol)
+
     pathigraphs <- metaginfo$pathigraphs
     genes.vals <- add.missing.genes(genes.vals, genes = metaginfo$all.genes)
-
     results <- list()
 
     if(verbose == TRUE)
@@ -48,10 +59,10 @@ hipathia <- function(genes.vals, metaginfo, decompose = FALSE, maxnum = 100,
     results$by.path <- lapply(pathigraphs, function(pathigraph){
 
         if(verbose == TRUE)
-            cat(paste(pathigraph$path.id, "-", pathigraph$path.name, "\n"))
+            cat(pathigraph$path.id, "-", pathigraph$path.name, "\n")
 
         res <- list()
-        res$nodes.vals <- nodes.values.from.genes( genes.vals, pathigraph$graph)
+        res$nodes.vals <- nodes.values.from.genes(genes.vals, pathigraph$graph)
 
         if(decompose == FALSE){
             respaths <- all.path.values( res$nodes.vals,
@@ -64,22 +75,19 @@ hipathia <- function(genes.vals, metaginfo, decompose = FALSE, maxnum = 100,
                                          maxnum = maxnum,
                                          tol = tol )
         }
-
         res$path.vals <- respaths[[1]]
         res$convergence <- respaths[[2]]
 
         return(res)
-
     })
 
-    results$all$path.vals <- do.call("rbind", lapply(results$by.path,
-                                                     function(x){x$path.vals}))
-    results$all$nodes.vals <- do.call("rbind", lapply(results$by.path,
-                                                      function(x){x$
-                                                              nodes.vals}))
-
+    results$all$path.vals <- do.call("rbind",
+                                     lapply(results$by.path, function(x){
+                                         x$path.vals}))
+    results$all$nodes.vals <- do.call("rbind",
+                                      lapply(results$by.path, function(x){
+                                          x$nodes.vals}))
     return(results)
-
 }
 
 
@@ -159,12 +167,12 @@ get.genes.lists <- function( genes.list ){
             g.list <- c( g.list, genes.list[[1]])
         }
         else{
-            g.list.list[[length(g.list.list)+1]] <- g.list
+            g.list.list[[length(g.list.list) + 1]] <- g.list
             g.list <- NULL
         }
         genes.list <- genes.list[-1]
     }
-    g.list.list[[length(g.list.list)+1]] <- g.list
+    g.list.list[[length(g.list.list) + 1]] <- g.list
     return(g.list.list)
 }
 
@@ -187,7 +195,7 @@ all.path.values <- function( nodes.vals, subgraph.list, method = "maxmin",
         }else if(length(dec.name) == 3){
             endnode <- paste("N", dec.name[2], dec.name[3], sep = "-")
             sl <- subgraph.list[[path]]
-            ininodes <- V(sl)$name[!V(sl)$name%in%get.edgelist(sl)[,2]]
+            ininodes <- V(sl)$name[!V(sl)$name %in% get.edgelist(sl)[,2]]
         }else{
             stop("Error: Unknown path ID")
         }
@@ -214,8 +222,6 @@ path.value <- function( nodes.vals, subgraph, ininodes, endnode,
 
     # Initialize lists
     ready <- ininodes
-    processed <- list()
-
     # Initialize node values
     node.signal <- matrix(NA,
                           ncol = ncol(nodes.vals),
@@ -233,7 +239,7 @@ path.value <- function( nodes.vals, subgraph, ininodes, endnode,
 
         # Compute node signal
         if(divide && actnode != endnode){
-            nfol <- length(incident(subgraph, actnode, mode="out"))
+            nfol <- length(incident(subgraph, actnode, mode = "out"))
         }
         else{
             nfol <- 1
@@ -247,10 +253,10 @@ path.value <- function( nodes.vals, subgraph, ininodes, endnode,
 
         # Transmit signal
         nextnodes <- get.edgelist(subgraph)[incident(subgraph,
-                                                     actnode, mode="out"),2]
+                                                     actnode, mode = "out"),2]
         dif <- old.signal - node.signal[actnode,]
 
-        if(actnode==endnode){
+        if(actnode == endnode){
             reached_last <- TRUE
             if(!all(is.na(dif)))
                 endnode.signal.dif <- c(endnode.signal.dif, sqrt(sum(dif^2)))
@@ -261,7 +267,7 @@ path.value <- function( nodes.vals, subgraph, ininodes, endnode,
             ready <- unique(c(ready, nextnodes))
         ready <- ready[-1]
     }
-    if(reached_last==FALSE){
+    if(reached_last == FALSE){
         endnode.signal.dif <- NA
     }
     return(list(node.signal[endnode,], endnode.signal.dif))
@@ -271,7 +277,7 @@ path.value <- function( nodes.vals, subgraph, ininodes, endnode,
 compute.node.signal <- function(actnode, node.val, node.signal, subgraph,
                                 method="maxmin", response.tol = 0){
 
-    incis <- incident(subgraph, actnode, mode="in")
+    incis <- incident(subgraph, actnode, mode = "in")
 
     if(length(incis)==0){
         signal <- rep(1, length(node.val))
@@ -280,18 +286,18 @@ compute.node.signal <- function(actnode, node.val, node.signal, subgraph,
 
         # get activators and inhibitors signal
         prevs <- get.edgelist(subgraph)[incis,1]
-        input_signals <- node.signal[prevs,,drop=FALSE]
+        input_signals <- node.signal[prevs,,drop = FALSE]
         nas <- is.na(input_signals[,1])
         prevs <- prevs[!nas]
         incis <- incis[!nas]
-        input_signals <- input_signals[!nas,,drop=FALSE]
+        input_signals <- input_signals[!nas,,drop = FALSE]
         typeincis <- E(subgraph)$relation[incis]
         activators <- typeincis == 1
         nactivators <- sum(activators)
         inhibitors <- typeincis == -1
         ninhibitors <- sum(inhibitors)
-        activator_signals <- input_signals[activators,,drop=FALSE]
-        inhibitor_signals <- input_signals[inhibitors,,drop=FALSE]
+        activator_signals <- input_signals[activators,,drop = FALSE]
+        inhibitor_signals <- input_signals[inhibitors,,drop = FALSE]
 
         if( method == "sum"){
             s1 <- prettyifelse(nactivators > 0,
@@ -305,30 +311,30 @@ compute.node.signal <- function(actnode, node.val, node.signal, subgraph,
         else if( method == "maxmin"){
             s1 <- prettyifelse(nactivators > 0,
                                apply(1- activator_signals, 2, prod),
-                               rep(0,length(node.val)))
+                               rep(0, length(node.val)))
             s2 <- prettyifelse(ninhibitors > 0,
                                apply(apply(inhibitor_signals, 1, max) +
                                          apply(inhibitor_signals, 1, min) -
                                          inhibitor_signals, 2, prod),
-                               rep(1,length(node.val)))
+                               rep(1, length(node.val)))
             signal <- (1-s1)*s2
         }
         else if( method == "pond"){
             s1 <- prettyifelse(nactivators > 0,
-                               apply(1- activator_signals, 2, prod),
-                               rep(0,length(node.val)))
+                               apply(1 - activator_signals, 2, prod),
+                               rep(0, length(node.val)))
             s2 <- prettyifelse(ninhibitors > 0,
-                               apply(1- inhibitor_signals, 2, prod),
-                               rep(1,length(node.val)))
+                               apply(1 - inhibitor_signals, 2, prod),
+                               rep(1, length(node.val)))
             signal <- (1-s1)*s2
         }
         else if( method == "min"){
             s1 <- prettyifelse(nactivators > 0,
                                apply(activator_signals,2,min),
-                               rep(1,length(node.val)))
+                               rep(1, length(node.val)))
             s2 <- prettyifelse(ninhibitors > 0,
-                               1-apply(inhibitor_signals,2,max),
-                               rep(1,length(node.val)))
+                               1 - apply(inhibitor_signals,2,max),
+                               rep(1, length(node.val)))
             signal <- s1*s2
         }
         else {
@@ -337,19 +343,19 @@ compute.node.signal <- function(actnode, node.val, node.signal, subgraph,
 
         # If signal too low, signal do not propagate
         if(sum(nas) == 0 && signal < response.tol)
-            signal <- rep(0,length(node.val))
+            signal <- rep(0, length(node.val))
 
     }
 
     signal[signal>1] <- 1
     signal[signal<0] <- 0
-    signal <- signal*node.val
+    signal <- signal * node.val
 
     return(signal)
 }
 
 
-prettyifelse <- function(test,una,olaotra){
+prettyifelse <- function(test, una, olaotra){
     if(test){
         return(una)
     } else {

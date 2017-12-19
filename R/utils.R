@@ -1,5 +1,13 @@
-# utils.R
-# Written by Marta R. Hidalgo
+##
+## utils.R
+## Utility functions for package Hipathia
+##
+## Written by Marta R. Hidalgo, Jose Carbonell-Caballero
+##
+## Code style by Hadley Wickham (http://r-pkgs.had.co.nz/style.html)
+## https://www.bioconductor.org/developers/how-to/coding-style/
+##
+
 
 
 translate.ids <- function(ids, xref){
@@ -295,6 +303,8 @@ filter.pathways <- function(metaginfo, pathways.list = NULL){
         metaginfo$eff.norm <- metaginfo$eff.norm[
             sapply(names(metaginfo$eff.norm), function(x){
                 unlist(strsplit(x, split = "-"))[2]}) %in% pathways.list]
+        metaginfo$all.labelids <- metaginfo$all.labelids[
+            metaginfo$all.labelids[,"path.id"] %in% pathways.list,]
     }
     return(metaginfo)
 }
@@ -363,27 +373,21 @@ clip.names <- function(snames, maxchar = 30){
 
 
 #' @importFrom stats median
-add.missing.genes <- function(exp.data, genes, default=NULL){
+add.missing.genes <- function(exp.data, genes, default = NULL){
     if(is.null(default))
         default <- stats::median(exp.data)
     missing_genes <- setdiff(genes, rownames(exp.data))
     if(length(missing_genes > 0)){
-        if(ncol(exp.data) == 1){
-            fakemat <- default +
-                as.matrix(mat.or.vec(nr = length(missing_genes),
-                                     nc = ncol(exp.data)))
-        } else {
-            fakemat <- default + mat.or.vec(nr = length(missing_genes),
-                                            nc = ncol(exp.data))
-        }
+        fakemat <- default + matrix(0, nrow = length(missing_genes),
+                                    ncol = ncol(exp.data))
         rownames(fakemat) <- missing_genes
         colnames(fakemat) <- colnames(exp.data)
-        exp.data <- rbind(exp.data,fakemat)
+        exp.data <- rbind(exp.data, fakemat)
         #message("----------------------------------------------------")
         message("Added missing genes: ",
                 length(missing_genes),
                 " (",
-                round(length(missing_genes)/nrow(exp.data)*100, digits = 2),
+                round(length(missing_genes)/nrow(exp.data) * 100, digits = 2),
                 "%)")
         message("----------------------------------------------------")
     }
