@@ -5,7 +5,7 @@
 \title{Create visualization HTML}
 \usage{
 create.report(results, comp, metaginfo, output.folder, node.colors = NULL,
-  conf = 0.05, verbose = FALSE)
+  group.by = NULL, conf = 0.05, verbose = FALSE, save.results = FALSE)
 }
 \arguments{
 \item{results}{Results object as given by the \code{hipathia} function}
@@ -22,6 +22,12 @@ However, the parent folder must exist.}
 \item{node.colors}{List of colors with which to paint the nodes of the
 pathways, as returned by the
 \code{node.color.per.differential.expression} function. Default is white.}
+
+\item{group.by}{How to group the subpathways to be visualized. By default
+they are grouped by the pathway to which they belong. Available groupings
+include "uniprot", to group subpathways by their annotated Uniprot functions,
+"GO", to group subpathways by their annotated GO terms, and "genes", to group
+subpathways by the genes they include.}
 
 \item{conf}{Level of significance. By default 0.05.}
 

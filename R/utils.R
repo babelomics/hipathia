@@ -491,7 +491,7 @@ get.effpath.id <- function(node.name){
 #' @import hpAnnot
 #'
 get.pathways.annotations <- function(pathway.names, metaginfo, dbannot,
-                                     collapse = TRUE){
+                                     collapse = FALSE){
 
     if(is.character(dbannot)){
         annofuns <- load.annofuns(dbannot, metaginfo$species)

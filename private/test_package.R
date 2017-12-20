@@ -158,6 +158,8 @@ servr::daemon_stop()
 # Function analysis
 ##############################
 
+uniprot.annots - get.pathways.annotations(rownames(comp), pathways, "uniprot")
+
 # Uniprot Keywords
 #------------------
 uniprot_vals <- quantify.terms(results, pathways, "uniprot")
