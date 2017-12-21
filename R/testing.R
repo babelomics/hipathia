@@ -23,7 +23,7 @@ test.matrix <- function(mat){
 
 test.pathways.object <- function(pathways){
     hasall <- length(pathways) == 6
-    spec <- hpAnnot:::is.accepted(pathways$species)
+    spec <- is.accepted(pathways$species)
     isigraph <- class(pathways$pathigraphs[[1]]$graph) == "igraph"
     if(!hasall == TRUE | !spec == TRUE | !isigraph == TRUE)
         stop("Pathways object not allowed")
@@ -35,7 +35,27 @@ test.tolerance <- function(tol){
     if(!ispositive == TRUE)
         stop("Tolerance parameter must be positive")
     if(!isless1 == TRUE)
-        stop("Tolerance paramter must be lower than 1")
+        stop("Tolerance parameter must be lower than 1")
 }
 
+
+#' Checks whether a species is accepted
+#'
+#' @param species Species of the samples.
+#'
+#' @examples
+#' is.accepted("hsa")
+#' is.accepted("fca")
+#'
+#' @return Boolean, whether \code{species} is accepted or not.
+#'
+is.accepted <- function(species){
+    isacc <- species %in% c("hsa", "mmu", "rno")
+    return(isacc)
+}
+
+is.accepted.grouping <- function(group){
+    isacc <- group %in% c("uniprot", "GO", "genes")
+    return(isacc)
+}
 

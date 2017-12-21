@@ -561,7 +561,7 @@ add.edge.colors <- function(pathigraph, pcomp, effector, up.col = "#ca0020",
 #' they are grouped by the pathway to which they belong. Available groupings
 #' include "uniprot", to group subpathways by their annotated Uniprot functions,
 #' "GO", to group subpathways by their annotated GO terms, and "genes", to group
-#' subpathways by the genes they include.
+#' subpathways by the genes they include. Default is set to "pathway".
 #' @param colors Either a character vector with 3 colors (indicating,
 #' in this order, down-regulation, non-significance and up-regulation colors)
 #'  or a key name indicating the color scheme to be used. Options are:
@@ -588,7 +588,7 @@ add.edge.colors <- function(pathigraph, pcomp, effector, up.col = "#ca0020",
 #'
 node.color.per.differential.expression <- function(results, metaginfo, groups,
                                                    group1.label, group2.label,
-                                                   group.by = NULL,
+                                                   group.by = "pathway",
                                                    colors = "classic",
                                                    conf = 0.05){
 
@@ -603,7 +603,7 @@ node.color.per.differential.expression <- function(results, metaginfo, groups,
     no.col <- colors[2]
     up.col <- colors[3]
 
-    if(!is.null(group.by))
+    if(group.by != "pathway")
         metaginfo <- get.pseudo.metaginfo(metaginfo, group.by = group.by)
 
     difexp <- compute.difexp(results$all$nodes.vals, group1.label,
@@ -635,7 +635,10 @@ node.color.per.differential.expression <- function(results, metaginfo, groups,
         return(path.colors)
     })
     names(cols) <- names(metaginfo$pathigraphs)
-    return(cols)
+    colors.de <- NULL
+    colors.de$colors <- cols
+    colors.de$group.by <- group.by
+    return(colors.de)
 }
 
 

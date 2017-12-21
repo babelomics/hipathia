@@ -383,13 +383,13 @@ add.missing.genes <- function(exp.data, genes, default = NULL){
         rownames(fakemat) <- missing_genes
         colnames(fakemat) <- colnames(exp.data)
         exp.data <- rbind(exp.data, fakemat)
-        #message("----------------------------------------------------")
+        # message("----------------------------------------------------")
         message("Added missing genes: ",
                 length(missing_genes),
                 " (",
                 round(length(missing_genes)/nrow(exp.data) * 100, digits = 2),
                 "%)")
-        message("----------------------------------------------------")
+        # message("----------------------------------------------------")
     }
     return(exp.data)
 }

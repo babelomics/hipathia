@@ -31,12 +31,23 @@ analyze your data.
 
 ## Previous considerations
 
-We have developed a module which is able to transform KEGG pathway KGML files
-into SIF files with attibutes
+HiPathia is a method for the computation of signal transduction along
+signaling pathways. The method is independent on the pathways database, it only 
+needs information about the topology of the graph and the genes included in each
+node. 
+
+However, due to computational cost, HiPathia needs to preprocess the graphs to 
+be fully efficient. In the current implementation we have developed a module 
+which has preprocessed 145 KEGG pathway KGML files, which are ready to be 
+analyzed.
+
+Further versions of the package will allow the user to preprocess their own 
+graph pathways to be analyzed with HiPathia.
+
 
 ### Instalation 
 
-In order to install the Hipathia package, type on your R console
+In order to install the HiPathia package, type on your R console
 
 ```{r, fig.show='hold', message=FALSE, warning=FALSE}
 ## try http:// if https:// URLs are not supported 
@@ -48,7 +59,7 @@ biocLite("hipathia")
 
 ### Example data
 
-In order to illustrate the Hipathia package functionalities an example dataset
+In order to illustrate the HiPathia package functionalities an example dataset
 has been prepared. Data has been downloaded from The Cancer Genome Atlas data
 repository, from the BRCA-US project. 20 tumor and 20 normal samples of RNA-Seq
 data have been randomly selected and normalized. Specifically, data has been
@@ -180,7 +191,7 @@ boxplot(exp_data)
 
 ### Load pathways
 
-Hipathia package is currently implemented to use preprocessed KEGG pathways.
+HiPathia package is currently implemented to use preprocessed KEGG pathways.
 The pathways have been processed and stored in a pathways object. This object
 includes all the information that the different functions in the package need.
 In order to load this object, use function `load.pathways` and select the
@@ -318,7 +329,7 @@ pathway.
 
 #### Node expression
 
-Pathways are representaed by graphs and composed by nodes and relations
+Pathways are represented by graphs and composed by nodes and relations
 among them. Some nodes may contain multiple genes representing different
 isoforms of the protein or members of the same gene familiy, among others.
 Since each gene has its own level of expression, the first step of the
@@ -331,16 +342,17 @@ The computation of the signal intensity across the pathway is performed by
 means of an iterative algorithm beginning in the input nodes of the
 subpathway. In order to initialize the pathway signal we assume an incoming
 signal value of 1 in the input nodes of the subpathway. Then, for each node
-$n$ of the network, the signal value is propagated along the nodes according
-to the following rule
+$n$ of the network, the signal value $S_n$ is propagated along the nodes 
+according to the following rule
 \begin{equation}
 \label{formula}
- S_n = v\cdot(1-\prod_{s_i \in A}(1-s_i))\cdot\prod_{s_j\in I}(1-s_j)
+ S_n = v_n\cdot(1-\prod_{s_i \in A_n}(1-s_i))\cdot\prod_{s_j\in I_n}(1-s_j)
 \end{equation}
 
-\noindent where $A$ is the set of signals arriving to the node from an
-activation edge, $I$ is the set of signals arriving to the node from an 
-inhibition edge, and $v$ is the normalized value of the current node. 
+\noindent where $A_n$ is the set of signals arriving to the current node from an
+activation edge, $I_n$ is the set of signals arriving to the current node from 
+an inhibition edge, and $v_n$ is the normalized value of expression of the 
+current node. 
 
 
 ## Function activation computation
@@ -531,7 +543,7 @@ pathway.comparison.plot(comp, metaginfo = pathways, pathway = "hsa04014",
 
 ### Visualization through a local server
 
-Hipathia results can be viewed on a web browser interactivelly. In order to
+HiPathia results can be viewed on a web browser interactivelly. In order to
 save the files for their visualization, use function `create.report`. The
 parameters to be provided are the object of results, the Wilcoxon comparison,
 the pathways object and the path to the folder in which the files must be
@@ -540,15 +552,15 @@ object returned by function `color.nodes.per.differential.expression` or a
 similar data structure. 
 
 ```{r, fig.show='hold'}
-create.report(results, comp, pathways, "save_noColors")
-create.report(results, comp, pathways, "save_colors", node.colors = colors_de)
+create.report(comp, pathways, "save_noColors")
+create.report(comp, pathways, "save_colors", node.colors = colors_de)
 ```
 
 Due to cross-origin security restrictions 
 ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)), 
 a web server is needed to serve the result files correctly.
 The easiest way to run a web server to show the result files is with the
-Hipathia function `visualize.report`. The user must specify the folder where
+HiPathia function `visualize.report`. The user must specify the folder where
 the report has been stored by function `create.report`. A web server developed
 in R will be executed, serving the result files to the default URL
 http://127.0.0.1:4000. Port 4000 may be changed through parameter `port`. 
@@ -579,6 +591,41 @@ just link or move the output folder to your web server http document root
 and then open it on your web browser.
 
 
+### Visualization through a local server with different groupings
+
+Effector subpathway results are shown by default grouped by the pathway to which
+they belong. However, if our interest is to see the comparison of all the 
+subpathways arriving to a particular function, we can group the subpathways by
+Uniprot or GO functions. Moreover, if we want to see the results of all the 
+subpathways containing a particular gene, we can group the subpathways by
+genes.
+
+In order to do that, we must use the `group.by` parameter of functions 
+`color.node.per.differential.expression` and `create.report`. 
+Available `group.by` parameter values include: `uniprot`, to group subpathways 
+arriving to the same Uniprot functions, `GO`, to group subpathways arriving to 
+the same GO terms, and `genes`, to group subpathways containing each particular 
+gene.
+
+```{r, fig.show='hold'}
+colors_de_uni <- node.color.per.differential.expression(results, pathways, 
+                                                    sample_group, "Tumor", 
+                                                    "Normal", 
+                                                    group.by = "uniprot")
+create.report(comp, pathways, "save_colors_uniprot", 
+              node.colors = colors_de_uni, group.by = "uniprot")
+visualize.report("save_colors_uniprot", port = 4002)
+```
+
+As before, to stop the server and free the port, use the information about how 
+to stop each server individually in the output of each `visualize.report` 
+function or stop all servers at a time, using
+
+```{r, fig.show='hold'}
+servr::daemon_stop()
+```
+
+
 #### Interpreting HTML results
 
 The interactive visualization of HiPathia results includes three panels and
@@ -597,7 +644,7 @@ colors indicate different levels of significance with respect to the p-value
 of the differential expression. 
 
 The selected pathway to be shown can be modified through the pathway list in
-the top right panel. Arrows pointing up and down lo the left of the names of
+the top right panel. Arrows pointing up and down to the left of the names of
 the pathways indicates that the pathways contain up- or down-activated
 subpathways, respectively. When the arrows are colored in red or blue, it
 means that there are significant up- or down-regulated subpathways,

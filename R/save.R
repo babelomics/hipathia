@@ -642,7 +642,6 @@ create.html.index <- function(home, output.folder,
 #' create.report(results, comp, pathways, "save_results/",
 #' node.colors = colors.de)
 #'
-#' @param results Results object as given by the \code{hipathia} function
 #' @param comp Comparison object as given by the \code{do.wilcoxon} function
 #' @param metaginfo Pathways object as returned by the \code{load.pathways}
 #' function
@@ -656,7 +655,7 @@ create.html.index <- function(home, output.folder,
 #' they are grouped by the pathway to which they belong. Available groupings
 #' include "uniprot", to group subpathways by their annotated Uniprot functions,
 #' "GO", to group subpathways by their annotated GO terms, and "genes", to group
-#' subpathways by the genes they include.
+#' subpathways by the genes they include. Default is set to "pathway".
 #' @param conf Level of significance. By default 0.05.
 #' @param verbose Boolean, whether to show details about the results of the
 #' execution
@@ -666,21 +665,22 @@ create.html.index <- function(home, output.folder,
 #'
 #' @export
 #'
-create.report <- function(results, comp, metaginfo, output.folder,
-                          node.colors = NULL, group.by = NULL, conf=0.05,
-                          verbose = FALSE){
+create.report <- function(comp, metaginfo, output.folder, node.colors = NULL,
+                          group.by = "pathway", conf=0.05, verbose = FALSE){
 
     if(!is.null(group.by) &
        length(unlist(strsplit(rownames(comp)[1], split = "-"))) == 4)
         stop("Grouping only available for effector subgraphs")
 
     if(!is.null(node.colors)){
-        moreatts <- summarize.atts(list(node.colors), c("color"))
+        if(node.colors$group.by != group.by)
+            stop("Grouping in node.colors must agree with group.by")
+        moreatts <- summarize.atts(list(node.colors$colors), c("color"))
     }else{
         moreatts <- NULL
     }
 
-    if(!is.null(group.by)){
+    if(group.by != "pathway"){
         cat(paste0("Creating groupings by ", group.by, "...\n"))
         metaginfo <- get.pseudo.metaginfo(metaginfo, group.by = group.by)
     }
@@ -757,9 +757,6 @@ visualize.report <- function(output.folder, port = 4000){
 
 get.pseudo.metaginfo <- function(pathways, group.by){
     pseudo <- load.pseudo.mgi(pathways$species, group.by)
-    # pseudo <- load(paste0("~/appl/hpAnnot/private/pathways/pseudo/pmgi_",
-    #                       pathways$species, "_", group.by, "_red.RData"))
-    # pseudo <- get(pseudo)
     rownames(pseudo$all.labelids) <- pseudo$all.labelids[,1]
     pathways.list <- names(pathways$pathigraphs)
     if(!all(unique(pseudo$all.labelids[,"path.id"]) %in% pathways.list))
