@@ -5,7 +5,7 @@
 \title{Colors of the nodes by its differential expression}
 \usage{
 node.color.per.differential.expression(results, metaginfo, groups, group1.label,
-  group2.label, colors = "classic", conf = 0.05)
+  group2.label, group.by = NULL, colors = "classic", conf = 0.05)
 }
 \arguments{
 \item{results}{Object of results as provided by the \code{hipathia}
@@ -19,6 +19,12 @@ Samples must be ordered as in \code{results}}
 \item{group1.label}{String, label of the first group to be compared}
 
 \item{group2.label}{String, label of the second group to be compared}
+
+\item{group.by}{How to group the subpathways to be visualized. By default
+they are grouped by the pathway to which they belong. Available groupings
+include "uniprot", to group subpathways by their annotated Uniprot functions,
+"GO", to group subpathways by their annotated GO terms, and "genes", to group
+subpathways by the genes they include.}
 
 \item{colors}{Either a character vector with 3 colors (indicating,
 in this order, down-regulation, non-significance and up-regulation colors)

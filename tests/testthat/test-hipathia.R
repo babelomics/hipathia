@@ -16,7 +16,7 @@ test_that("Classes are correct", {
     expect_equal(length(results$by.path), 2)
 })
 
-test_that("Genes.vals & metaginfo parameters are needed"{
+test_that("Genes.vals & metaginfo parameters are needed", {
     expect_error(hipathia())
     expect_error(hipathia(exp_data))
     expect_error(hipathia(metaginfo = mgi))

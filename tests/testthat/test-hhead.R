@@ -4,8 +4,6 @@
 library(hipathia)
 context("Head function for matrices")
 
-m <- matrix(0, ncol = nc, nrow = nr)
-
 test_that("Performs well on dim(3,3)", {
     nr <- 3
     nc <- 3

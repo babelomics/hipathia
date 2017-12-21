@@ -7,7 +7,7 @@ context("Load pathways")
 pathways_list <- c("hsa03320", "hsa04012")
 mgi <- load.pathways("hsa", pathways.list = pathways_list)
 
-test_that("Species parameter is needed"{
+test_that("Species parameter is needed", {
     expect_error(load.pathways())
 })
 

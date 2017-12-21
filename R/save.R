@@ -39,6 +39,8 @@
 #'
 save.results <- function(results, comp, metaginfo, output.folder){
 
+    if(!file.exists(output.folder))
+        dir.create(output.folder)
     # Write files
     utils::write.table(results$all$path.vals,
                        file = paste0(output.folder,"/all_path_vals.txt"),
@@ -666,7 +668,7 @@ create.html.index <- function(home, output.folder,
 #'
 create.report <- function(results, comp, metaginfo, output.folder,
                           node.colors = NULL, group.by = NULL, conf=0.05,
-                          verbose = FALSE, save.results = FALSE){
+                          verbose = FALSE){
 
     if(!is.null(group.by) &
        length(unlist(strsplit(rownames(comp)[1], split = "-"))) == 4)

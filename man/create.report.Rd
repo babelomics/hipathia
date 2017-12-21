@@ -5,7 +5,7 @@
 \title{Create visualization HTML}
 \usage{
 create.report(results, comp, metaginfo, output.folder, node.colors = NULL,
-  group.by = NULL, conf = 0.05, verbose = FALSE, save.results = FALSE)
+  group.by = NULL, conf = 0.05, verbose = FALSE)
 }
 \arguments{
 \item{results}{Results object as given by the \code{hipathia} function}

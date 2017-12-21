@@ -7,7 +7,7 @@ context("Pathways summary")
 data("comp")
 pathways_list <- c("hsa03320", "hsa04012")
 mgi <- load.pathways("hsa", pathways.list = pathways_list)
-pathsum <- get.pathways.summary(comp, pathways)
+pathsum <- get.pathways.summary(comp, mgi)
 
 test_that("Resulting object is a data.frame", {
     expect_is(pathsum, "data.frame")
