@@ -410,7 +410,7 @@ plot.pathigraph <- function(g, node.color = NULL, edge.lty = 1, main = "" ){
 #' Plots the layout of a pathway, coloring the significant subpathways
 #' in different colors depending on whether they are significantly up- or
 #' down-regulated. Nodes may be also colored providing a suitable list of
-#' colors for each node. Function \code{node.color.per.differential.expression}
+#' colors for each node. Function \code{node.color.per.de}
 #' assigns colors to the nodes depending on their differential expression.
 #'
 #' @param comp Comparison data frame as returned by the \code{do.wilcox}
@@ -441,7 +441,7 @@ plot.pathigraph <- function(g, node.color = NULL, edge.lty = 1, main = "" ){
 #' data(brca_design)
 #' data(path_vals)
 #' sample_group <- brca_design[colnames(path_vals),"group"]
-#' colors_de <- node.color.per.differential.expression(results, pathways,
+#' colors_de <- node.color.per.de(results, pathways,
 #' sample_group, "Tumor", "Normal")
 #' pathway.comparison.plot(comp, metaginfo = pathways, pathway = "hsa04012",
 #' node.colors = colors_de)
@@ -581,16 +581,14 @@ add.edge.colors <- function(pathigraph, pcomp, effector, up.col = "#ca0020",
 #' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
 #' "hsa04012"))
 #' sample_group <- brca_design[colnames(path_vals),"group"]
-#' colors_de <- node.color.per.differential.expression(results, pathways,
+#' colors_de <- node.color.per.de(results, pathways,
 #' sample_group, "Tumor", "Normal")
 #'
 #' @export
 #'
-node.color.per.differential.expression <- function(results, metaginfo, groups,
-                                                   group1.label, group2.label,
-                                                   group.by = "pathway",
-                                                   colors = "classic",
-                                                   conf = 0.05){
+node.color.per.de <- function(results, metaginfo, groups, group1.label,
+                              group2.label, group.by = "pathway",
+                              colors = "classic", conf = 0.05){
 
     if(length(colors) == 1){
         if(colors == "hipathia"){

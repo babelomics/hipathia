@@ -33,7 +33,7 @@ UP- and DOWN-activated subpathways are identified.
 Plots the layout of a pathway, coloring the significant subpathways
 in different colors depending on whether they are significantly up- or
 down-regulated. Nodes may be also colored providing a suitable list of
-colors for each node. Function \code{node.color.per.differential.expression}
+colors for each node. Function \code{node.color.per.de}
 assigns colors to the nodes depending on their differential expression.
 }
 \section{Slots}{
@@ -55,7 +55,7 @@ data(results)
 data(brca_design)
 data(path_vals)
 sample_group <- brca_design[colnames(path_vals),"group"]
-colors_de <- node.color.per.differential.expression(results, pathways,
+colors_de <- node.color.per.de(results, pathways,
 sample_group, "Tumor", "Normal")
 pathway.comparison.plot(comp, metaginfo = pathways, pathway = "hsa04012",
 node.colors = colors_de)

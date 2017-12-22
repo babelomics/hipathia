@@ -24,7 +24,7 @@ data(path_vals)
 pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
 "hsa04012"))
 sample.group <- brca_design[colnames(path_vals),"group"]
-colors.de <- node.color.per.differential.expression(results, pathways,
+colors.de <- node.color.per.de(results, pathways,
 sample.group, "Tumor", "Normal")
 create.report(results, comp, pathways, "~/save_results/",
 node.colors = colors.de)

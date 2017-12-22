@@ -8,11 +8,7 @@ data("results")
 data("brca_design")
 sample_group <- brca_design[colnames(results$all$path.vals),"group"]
 mgi <- load.pathways("hsa", pathways.list = c("hsa03320", "hsa04012"))
-colors_de <- node.color.per.differential.expression(results,
-                                                    mgi,
-                                                    sample_group,
-                                                    "Tumor",
-                                                    "Normal")
+colors_de <- node.color.per.de(results, mgi, sample_group, "Tumor", "Normal")
 
 test_that("Classes are correct", {
     expect_is(colors_de, "list")

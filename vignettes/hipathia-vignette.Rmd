@@ -517,7 +517,7 @@ up-activation respectively) or a color scheme (either *classic* or *hipathia*).
 In order to visualize the effect of the nodes expression differences in the
 pathways, nodes can be colored by its differential expression. The color of
 each node with respect to its differential expression must be previously
-computed using function `node.color.per.differential.expression`. Note that
+computed using function `node.color.per.de`. Note that
 this fucntion computes differential expression on the nodes, not on the genes.
 It uses function `eBayes` from package `limma`, see the `limma` package
 vignette for further information. 
@@ -526,16 +526,12 @@ When computed, the resulting object must be provided to the
 `pathway.comparison.plot` function as parameter `node.colors`.
 
 ```{r, fig.show='hold'}
-colors_de <- node.color.per.differential.expression(results, pathways, 
-                                                    sample_group, "Tumor", 
-                                                    "Normal")
+colors_de <- node.color.per.de(results, pathways, sample_group, "Tumor", 
+                               "Normal")
 pathway.comparison.plot(comp, metaginfo = pathways, pathway = "hsa03320", 
                         node.colors = colors_de)
-colors_de_hipathia <- node.color.per.differential.expression(results, pathways, 
-                                                             sample_group, 
-                                                             "Tumor", "Normal", 
-                                                             colors = 
-                                                                 "hipathia")
+colors_de_hipathia <- node.color.per.de(results, pathways, sample_group, 
+                                        "Tumor", "Normal", colors = "hipathia")
 pathway.comparison.plot(comp, metaginfo = pathways, pathway = "hsa04014", 
                         node.colors = colors_de_hipathia, colors = "hipathia")
 ```
@@ -608,10 +604,8 @@ the same GO terms, and `genes`, to group subpathways containing each particular
 gene.
 
 ```{r, fig.show='hold'}
-colors_de_uni <- node.color.per.differential.expression(results, pathways, 
-                                                    sample_group, "Tumor", 
-                                                    "Normal", 
-                                                    group.by = "uniprot")
+colors_de_uni <- node.color.per.de(results, pathways, sample_group, "Tumor", 
+                                   "Normal", group.by = "uniprot")
 create.report(comp, pathways, "save_colors_uniprot", 
               node.colors = colors_de_uni, group.by = "uniprot")
 visualize.report("save_colors_uniprot", port = 4002)

@@ -12,11 +12,7 @@
 # mgi <- load.pathways("hsa", pathways.list = c("hsa03320", "hsa04012"))
 # results <- hipathia(exp_data, mgi)
 # sample_group <- brca_design[colnames(path_vals),"group"]
-# colors_de <- node.color.per.differential.expression(results,
-#                                                     mgi,
-#                                                     sample_group,
-#                                                     "Tumor",
-#                                                     "Normal")
+# colors_de <- node.color.per.de(results, mgi, sample_group, "Tumor", "Normal")
 # create.report(results, comp, mgi, output_folder)
 #
 # test_that("Folders are created", {

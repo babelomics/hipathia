@@ -92,18 +92,16 @@ pca.plot(pca_model, sample_group, sample_colors)
 ##############################
 
 # Define node colors
-colors_de <- node.color.per.differential.expression(results,
-                                                    pathways,
-                                                    sample_group,
-                                                    "Tumor",
-                                                    "Normal")
-colors_de_hipathia <- node.color.per.differential.expression(results,
-                                                             pathways,
-                                                             sample_group,
-                                                             "Tumor",
-                                                             "Normal",
-                                                             colors =
-                                                                 "hipathia")
+colors_de <- node.color.per.de(results, pathways, sample_group, "Tumor",
+                               "Normal")
+colors_de_hipathia <- node.color.per.de(results, pathways, sample_group,
+                                        "Tumor", "Normal", colors = "hipathia")
+# Node colors with Uniprot grouping
+colors_uni <- node.color.per.de(results, pathways, sample_group, "Tumor",
+                               "Normal", group.by = "uniprot")
+# Node colors with genes grouping
+colors_gen <- node.color.per.de(results, pathways, sample_group, "Tumor",
+                                "Normal", group.by = "genes")
 
 # Visualize comparison as static image
 #-------------------------------------------
@@ -114,18 +112,26 @@ pathway.comparison.plot(comp, metaginfo = pathways, pathway = "hsa04014",
 
 # Save & Visualize comparison in server
 #-------------------------------------------
-create.report(results, comp, pathways, "save_noColors")
+create.report(comp, pathways, "save_noColors")
 visualize.report("save_noColors")
 
-create.report(results, comp, pathways, "save_colors", node.colors = colors_de)
-visualize.report("save_colors")
+create.report(comp, pathways, "save_colors", node.colors = colors_de)
+visualize.report("save_colors", port = 4001)
 
-create.report(results, comp, pathways, group.by = "uniprot",
-              "save_colors_uniprot", node.colors = colors_de)
-visualize.report("save_colors_uniprot")
+# Visualize with grouping by Uniprot functions
+create.report(comp, pathways, group.by = "uniprot",
+              "save_colors_uniprot", node.colors = colors_uni)
+visualize.report("save_colors_uniprot", port = 4002)
+
+# Visualize with grouping by genes
+create.report(comp, pathways, group.by = "genes",
+              "save_colors_genest", node.colors = colors_gen)
+visualize.report("save_colors_genes", port = 4002)
 
 # Stop server
 servr::daemon_stop()
+
+
 
 
 

@@ -629,7 +629,7 @@ create.html.index <- function(home, output.folder,
 #' create.report(results, comp, pathways, "save_results/")
 #'
 #' sample_group <- brca_design[colnames(path_vals),"group"]
-#' colors.de <- node.color.per.differential.expression(results, pathways,
+#' colors.de <- node.color.per.de(results, pathways,
 #' sample_group, "Tumor", "Normal")
 #' create.report(results, comp, pathways, "save_results/",
 #' node.colors = colors.de)
@@ -642,7 +642,7 @@ create.html.index <- function(home, output.folder,
 #' However, the parent folder must exist.
 #' @param node.colors List of colors with which to paint the nodes of the
 #' pathways, as returned by the
-#' \code{node.color.per.differential.expression} function. Default is white.
+#' \code{node.color.per.de} function. Default is white.
 #' @param group.by How to group the subpathways to be visualized. By default
 #' they are grouped by the pathway to which they belong. Available groupings
 #' include "uniprot", to group subpathways by their annotated Uniprot functions,
@@ -660,7 +660,7 @@ create.html.index <- function(home, output.folder,
 create.report <- function(comp, metaginfo, output.folder, node.colors = NULL,
                           group.by = "pathway", conf=0.05, verbose = FALSE){
 
-    if(!is.null(group.by) &
+    if(group.by != "pathway" &
        length(unlist(strsplit(rownames(comp)[1], split = "-"))) == 4)
         stop("Grouping only available for effector subgraphs")
 
@@ -722,7 +722,7 @@ summarize.atts <- function(att.list, att.names){
 #' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
 #' "hsa04012"))
 #' sample.group <- brca_design[colnames(path_vals),"group"]
-#' colors.de <- node.color.per.differential.expression(results, pathways,
+#' colors.de <- node.color.per.de(results, pathways,
 #' sample.group, "Tumor", "Normal")
 #' create.report(results, comp, pathways, "~/save_results/",
 #' node.colors = colors.de)

@@ -4,12 +4,10 @@
 \alias{create.report}
 \title{Create visualization HTML}
 \usage{
-create.report(results, comp, metaginfo, output.folder, node.colors = NULL,
-  group.by = NULL, conf = 0.05, verbose = FALSE)
+create.report(comp, metaginfo, output.folder, node.colors = NULL,
+  group.by = "pathway", conf = 0.05, verbose = FALSE)
 }
 \arguments{
-\item{results}{Results object as given by the \code{hipathia} function}
-
 \item{comp}{Comparison object as given by the \code{do.wilcoxon} function}
 
 \item{metaginfo}{Pathways object as returned by the \code{load.pathways}
@@ -21,13 +19,13 @@ However, the parent folder must exist.}
 
 \item{node.colors}{List of colors with which to paint the nodes of the
 pathways, as returned by the
-\code{node.color.per.differential.expression} function. Default is white.}
+\code{node.color.per.de} function. Default is white.}
 
 \item{group.by}{How to group the subpathways to be visualized. By default
 they are grouped by the pathway to which they belong. Available groupings
 include "uniprot", to group subpathways by their annotated Uniprot functions,
 "GO", to group subpathways by their annotated GO terms, and "genes", to group
-subpathways by the genes they include.}
+subpathways by the genes they include. Default is set to "pathway".}
 
 \item{conf}{Level of significance. By default 0.05.}
 
@@ -55,7 +53,7 @@ pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
 create.report(results, comp, pathways, "save_results/")
 
 sample_group <- brca_design[colnames(path_vals),"group"]
-colors.de <- node.color.per.differential.expression(results, pathways,
+colors.de <- node.color.per.de(results, pathways,
 sample_group, "Tumor", "Normal")
 create.report(results, comp, pathways, "save_results/",
 node.colors = colors.de)
