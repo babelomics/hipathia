@@ -269,7 +269,6 @@ create.node.and.edge.attributes <- function(comp, pathway, metaginfo,
         subepath_assoc <- epath_assoc[indexes,,drop = FALSE]
         subsif <- sif[indexes,,drop = FALSE]
 
-        anysig <- FALSE
         # up regulated
         upsig <- which(subeatt[,"status"] == "UP" &
                            as.numeric(subeatt[,"adj.pvalue"]) < conf)
@@ -288,8 +287,6 @@ create.node.and.edge.attributes <- function(comp, pathway, metaginfo,
             selected_subepath_assoc <- subepath_assoc[upsig,,drop = FALSE]
             def_epath_assoc <- rbind(def_epath_assoc,
                                      colSums(selected_subepath_assoc) > 0)
-
-            anysig <- TRUE
         }
 
         # down regulated
@@ -313,8 +310,6 @@ create.node.and.edge.attributes <- function(comp, pathway, metaginfo,
             selected_subepath_assoc <- subepath_assoc[downsig,,drop = FALSE]
             def_epath_assoc <- rbind(def_epath_assoc,
                                      colSums(selected_subepath_assoc) > 0)
-
-            anysig <- TRUE
         }
 
         # no sigs
@@ -335,10 +330,7 @@ create.node.and.edge.attributes <- function(comp, pathway, metaginfo,
             selected_subepath_assoc <- subepath_assoc[nosigs,,drop = FALSE]
             def_epath_assoc <- rbind(def_epath_assoc,
                                      colSums(selected_subepath_assoc) > 0)
-
         }
-
-
     }
 
     rownames(def_eatt) <- NULL
