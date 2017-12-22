@@ -125,7 +125,7 @@ visualize.report("save_colors_uniprot", port = 4002)
 
 # Visualize with grouping by genes
 create.report(comp, pathways, group.by = "genes",
-              "save_colors_genest", node.colors = colors_gen)
+              "save_colors_genes", node.colors = colors_gen)
 visualize.report("save_colors_genes", port = 4002)
 
 # Stop server
