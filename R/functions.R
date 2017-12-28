@@ -190,15 +190,15 @@ get.pathway.functions <- function(pathigraph, dbannot, entrez2hgnc,
 
     g <- pathigraph$graph
     last_nodes <- gsub("_func", "", get.last.node(g))
-    if(use.last.nodes==TRUE){
+    if(use.last.nodes == TRUE){
         ebn <- V(g)$genesList[which(V(g)$name %in% last_nodes)]
     } else {
-        ebn <- get.vertex.attribute(g,"genesList")
+        ebn <- get.vertex.attribute(g, "genesList")
     }
     entrezs <- unique(unlist(ebn))
     entrezs <- entrezs[!is.na(entrezs)]
     gpf <- unique(get.entrez.function(entrezs, entrez2hgnc, dbannot))
-    if(nrow(gpf)==0){
+    if(nrow(gpf) == 0){
         last_node_functions <- rep(NA, length(last_nodes))
         names(last_node_functions) <- last_nodes
         last_node_functions <- as.list(last_node_functions)

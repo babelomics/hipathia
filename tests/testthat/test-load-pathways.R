@@ -21,7 +21,7 @@ test_that("Pathways object is correct", {
                          c("all.labelids", "pathigraphs", "all.genes",
                            "path.norm", "eff.norm", "species")),
                  character(0))
-    expect_true(hpAnnot:::is.accepted(mgi$species))
+    expect_true(is.accepted(mgi$species))
     expect_true(all(mgi$all.labelids[,"path.id"] %in% pathways_list))
     expect_true(all(mgi$eff.norm >= 0 & mgi$eff.norm <= 1))
     expect_true(all(mgi$path.norm >= 0 & mgi$path.norm <= 1))
