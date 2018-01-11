@@ -7,15 +7,14 @@
 load.xref(species)
 }
 \arguments{
-\item{species}{Species of the samples.}
+\item{species}{Species of the samples.
+
+#@examples
+#load.xref("hsa")}
 }
 \value{
 Table of references
 }
 \description{
 Loads table of references
-}
-\examples{
-load.xref("hsa")
-
 }

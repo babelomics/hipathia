@@ -14,9 +14,9 @@
 #' @param db Database to be used. Either "GO" or "uniprot".
 #' @param species Species of the samples.
 #'
-#' @examples
-#' load.annofuns("GO", "hsa")
-#' load.annofuns("uniprot", "hsa")
+#' #@examples
+#' #load.annofuns("GO", "hsa")
+#' #load.annofuns("uniprot", "hsa")
 #'
 #' @return Annotations object
 #'
@@ -42,8 +42,8 @@ load.annofuns <- function(db, species){
 #'
 #' @param species Species of the samples.
 #'
-#' @examples
-#' load.mgi("hsa")
+#' #@examples
+#' #load.mgi("hsa")
 #'
 #' @return Graph information object
 #'
@@ -77,8 +77,8 @@ load.mgi <- function(species){
 #' "GO", to group subpathways by their annotated GO terms, and "genes", to group
 #' subpathways by the genes they include.
 #'
-#' @examples
-#' load.pseudo.mgi("hsa", "uniprot")
+#' #@examples
+#' #load.pseudo.mgi("hsa", "uniprot")
 #'
 #' @return Pseudo graph information object
 #'
@@ -139,8 +139,8 @@ load.pseudo.mgi <- function(species, group.by){
 #'
 #' @param species Species of the samples.
 #'
-#' @examples
-#' load.xref("hsa")
+#' #@examples
+#' #load.xref("hsa")
 #'
 #' @return Table of references
 #'
@@ -157,8 +157,8 @@ load.xref <- function(species){
 #'
 #' @param species Species of the samples.
 #'
-#' @examples
-#' load.entrez.hgnc("hsa")
+#' #@examples
+#' #load.entrez.hgnc("hsa")
 #'
 #' @return Table of translation from HGNC to Entrez
 #'
@@ -208,8 +208,8 @@ load.unibp <- function(species){
 #' @param db Database to be used. Either "GO" or "uniprot".
 #' @param species Species of the samples.
 #'
-#' @examples
-#' load.annots("GO", "hsa")
+#' #@examples
+#' #load.annots("GO", "hsa")
 #'
 #' @return Functional annotations from HGNC to the selected database.
 #'
@@ -229,8 +229,8 @@ load.annots <- function(db, species){
 
 #' Loads GO graph information
 #'
-#' @examples
-#' load.gobp.frame()
+#' #@examples
+#' #load.gobp.frame()
 #'
 #' @return GO graph information
 #'
@@ -243,8 +243,8 @@ load.gobp.frame <- function(){
 
 #' Loads GO graph
 #'
-#' @examples
-#' load.gobp.net()
+#' #@examples
+#' #load.gobp.net()
 #'
 #' @return GO graph
 #'

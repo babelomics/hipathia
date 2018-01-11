@@ -9,15 +9,14 @@ load.annots(db, species)
 \arguments{
 \item{db}{Database to be used. Either "GO" or "uniprot".}
 
-\item{species}{Species of the samples.}
+\item{species}{Species of the samples.
+
+#@examples
+#load.annots("GO", "hsa")}
 }
 \value{
 Functional annotations from HGNC to the selected database.
 }
 \description{
 Loads functional annotations from HGNC to the selected database.
-}
-\examples{
-load.annots("GO", "hsa")
-
 }

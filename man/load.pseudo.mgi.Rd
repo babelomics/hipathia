@@ -13,15 +13,14 @@ load.pseudo.mgi(species, group.by)
 they are grouped by the pathway to which they belong. Available groupings
 include "uniprot", to group subpathways by their annotated Uniprot functions,
 "GO", to group subpathways by their annotated GO terms, and "genes", to group
-subpathways by the genes they include.}
+subpathways by the genes they include.
+
+#@examples
+#load.pseudo.mgi("hsa", "uniprot")}
 }
 \value{
 Pseudo graph information object
 }
 \description{
 Loads object with pseudo graph information
-}
-\examples{
-load.pseudo.mgi("hsa", "uniprot")
-
 }

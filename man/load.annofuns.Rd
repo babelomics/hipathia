@@ -9,16 +9,15 @@ load.annofuns(db, species)
 \arguments{
 \item{db}{Database to be used. Either "GO" or "uniprot".}
 
-\item{species}{Species of the samples.}
+\item{species}{Species of the samples.
+
+#@examples
+#load.annofuns("GO", "hsa")
+#load.annofuns("uniprot", "hsa")}
 }
 \value{
 Annotations object
 }
 \description{
 Loads annotations object
-}
-\examples{
-load.annofuns("GO", "hsa")
-load.annofuns("uniprot", "hsa")
-
 }

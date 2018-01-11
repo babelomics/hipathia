@@ -7,15 +7,14 @@
 load.entrez.hgnc(species)
 }
 \arguments{
-\item{species}{Species of the samples.}
+\item{species}{Species of the samples.
+
+#@examples
+#load.entrez.hgnc("hsa")}
 }
 \value{
 Table of translation from HGNC to Entrez
 }
 \description{
 Loads table of translation from HGNC to Entrez
-}
-\examples{
-load.entrez.hgnc("hsa")
-
 }

@@ -10,9 +10,6 @@ load.gobp.frame()
 GO graph information
 }
 \description{
-Loads GO graph information
-}
-\examples{
-load.gobp.frame()
-
+#@examples
+#load.gobp.frame()
 }

@@ -17,6 +17,5 @@ test_that("Classes are correct", {
 })
 
 test_that("Names are correct", {
-    expect_equal(length(setdiff(names(colors_de), names(mgi$pathigraphs))), 0)
-    expect_equal(length(setdiff(names(mgi$pathigraphs), names(colors_de))), 0)
+    expect_equivalent(length(setdiff(names(colors_de$colors), names(mgi$pathigraphs))), 0)
 })

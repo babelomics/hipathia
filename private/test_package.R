@@ -151,7 +151,7 @@ dec.names <- get.path.names(pathways_only2, rownames(comp_dec))
 comp_dec <- cbind(dec.names, comp_dec)
 
 # Save & visualize report
-create.report(results_decomposed, comp_dec, pathways_only2, "save_decomposed")
+create.report(comp_dec, pathways_only2, "save_decomposed")
 visualize.report("save_decomposed")
 servr::daemon_stop()
 

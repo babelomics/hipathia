@@ -10,9 +10,6 @@ load.gobp.net()
 GO graph
 }
 \description{
-Loads GO graph
-}
-\examples{
-load.gobp.net()
-
+#@examples
+#load.gobp.net()
 }

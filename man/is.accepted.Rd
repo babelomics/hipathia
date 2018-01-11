@@ -7,16 +7,15 @@
 is.accepted(species)
 }
 \arguments{
-\item{species}{Species of the samples.}
+\item{species}{Species of the samples.
+
+#@examples
+#is.accepted("hsa")
+#is.accepted("fca")}
 }
 \value{
 Boolean, whether \code{species} is accepted or not.
 }
 \description{
 Checks whether a species is accepted
-}
-\examples{
-is.accepted("hsa")
-is.accepted("fca")
-
 }

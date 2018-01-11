@@ -26,7 +26,7 @@ pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
 sample.group <- brca_design[colnames(path_vals),"group"]
 colors.de <- node.color.per.de(results, pathways,
 sample.group, "Tumor", "Normal")
-create.report(results, comp, pathways, "~/save_results/",
+create.report(comp, pathways, "~/save_results/",
 node.colors = colors.de)
 visualize.report("~/save_results/")
 visualize.report("~/save_results/", port=5000)

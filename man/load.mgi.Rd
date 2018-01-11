@@ -7,15 +7,14 @@
 load.mgi(species)
 }
 \arguments{
-\item{species}{Species of the samples.}
+\item{species}{Species of the samples.
+
+#@examples
+#load.mgi("hsa")}
 }
 \value{
 Graph information object
 }
 \description{
 Loads object with graph information
-}
-\examples{
-load.mgi("hsa")
-
 }
