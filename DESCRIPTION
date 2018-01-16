@@ -2,11 +2,11 @@ Package: hipathia
 Title: HiPathia
 Version: 0.99.0
 Authors@R: c(person("Marta R.", "Hidalgo", email = "marta.hidalgo@outlook.es", role = c("aut", "cre")),
-	     person("José", "Carbonell-Caballero", email = "jcarbonell.cipf@gmail.com", role = c("aut")),
+	     person("José", "Carbonell-Caballero", email = "jcarbonell.work@gmail.com", role = c("aut")),
 	     person("Francisco", "Salavert", email = "fsalavert@cipf.es", role = c("ctb")),
-	     person("Alicia", "Amadoz", email = "aamadoz@cipf.es", role = c("ctb")),
-	     person("Çankut", "Cubuk", email = "ccubuk@cipf.es", role = c("ctb")),
-	     person("Joaquin", "Dopazo", email = "jdopazo@cipf.es", role = c("ctb")))
+	     person("Alicia", "Amadoz", email = "alicia.amadoz@gmail.com", role = c("ctb")),
+	     person("Çankut", "Cubuk", email = "cankutcubuk@gmail.com", role = c("ctb")),
+	     person("Joaquin", "Dopazo", email = "joaquin.dopazo@juntadeandalucia.es", role = c("ctb")))
 Author: Marta R. Hidalgo [aut, cre]
 	José Carbonell-Caballero [aut]
 	Francisco Salavert [ctb]
