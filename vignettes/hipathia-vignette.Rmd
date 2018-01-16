@@ -603,7 +603,7 @@ arriving to the same Uniprot functions, `GO`, to group subpathways arriving to
 the same GO terms, and `genes`, to group subpathways containing each particular 
 gene.
 
-```{r, fig.show='hold'}
+```{r, fig.show='hold', eval=FALSE}
 colors_de_uni <- node.color.per.de(results, pathways, sample_group, "Tumor", 
                                    "Normal", group.by = "uniprot")
 create.report(comp, pathways, "save_colors_uniprot", 
