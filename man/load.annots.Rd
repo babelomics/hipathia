@@ -2,7 +2,7 @@
 % Please edit documentation in R/load.R
 \name{load.annots}
 \alias{load.annots}
-\title{Loads functional annotations}
+\title{Loads functional annotations to genes}
 \usage{
 load.annots(db, species)
 }

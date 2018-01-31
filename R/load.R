@@ -21,19 +21,14 @@
 #' @return Annotations object
 #'
 load.annofuns <- function(db, species){
-    if(!is.accepted(species))
+    if(!is.accepted.species(species))
         stop("Species not accepted")
-    if(db == "GO"){
-        ag <- utils::data("annofuns_GO", envir = environment())
-        annofuns_GO <- get(ag)
-        annofuns <- annofuns_GO[[species]]
-    }else if(db == "uniprot"){
-        au <- utils::data("annofuns_uniprot", envir = environment())
-        annofuns_uniprot <- get(au)
-        annofuns <- annofuns_uniprot[[species]]
-    }else{
+    if(!is.accepted.database(db))
         stop("Database not accepted")
-    }
+    file <- paste0("annofuns_", db, "_", species, ".rda")
+    af <- load(system.file("extdata", file, package = "hpAnnot"), 
+               envir = environment())
+    annofuns <- get(af)
     return(annofuns)
 }
 
@@ -48,23 +43,13 @@ load.annofuns <- function(db, species){
 #' @return Graph information object
 #'
 load.mgi <- function(species){
-    if(!is.accepted(species))
+    if(!is.accepted.species(species))
         stop("Species not accepted")
-    if(species == "hsa"){
-        mgi <- utils::data("meta_graph_info_hsa", envir = environment())
-        meta_graph_info_hsa <- get(mgi)
-        return(meta_graph_info_hsa)
-    }else if(species == "rno"){
-        mgi <- utils::data("meta_graph_info_rno", envir = environment())
-        meta_graph_info_rno <- get(mgi)
-        return(meta_graph_info_rno)
-    }else if(species == "mmu"){
-        mgi <- utils::data("meta_graph_info_mmu", envir = environment())
-        meta_graph_info_mmu <- get(mgi)
-        return(meta_graph_info_mmu)
-    }else{
-        stop("Species not accepted")
-    }
+    file <- paste0("meta_graph_info_", species, ".rda")
+    mgi <- load(system.file("extdata", file, package = "hpAnnot"), 
+                envir = environment())
+    meta_graph_info <- get(mgi)
+    return(meta_graph_info)
 }
 
 
@@ -83,55 +68,15 @@ load.mgi <- function(species){
 #' @return Pseudo graph information object
 #'
 load.pseudo.mgi <- function(species, group.by){
-    if(!is.accepted(species))
+    if(!is.accepted.species(species))
         stop("Species not accepted")
     if(!is.accepted.grouping(group.by))
         stop("Grouping not accepted")
-    if(species == "hsa"){
-        if(group.by == "uniprot"){
-            pmgi <- utils::data("pmgi_hsa_uniprot", envir = environment())
-            pmgi_hsa_uniprot <- get(pmgi)
-            return(pmgi_hsa_uniprot)
-        }else if(group.by == "GO"){
-            pmgi <- utils::data("pmgi_hsa_GO", envir = environment())
-            pmgi_hsa_GO <- get(pmgi)
-            return(pmgi_hsa_GO)
-        }else if(group.by == "genes"){
-            pmgi <- utils::data("pmgi_hsa_genes", envir = environment())
-            pmgi_hsa_genes <- get(pmgi)
-            return(pmgi_hsa_genes)
-        }
-    }else if(species == "rno"){
-        if(group.by == "uniprot"){
-            pmgi <- utils::data("pmgi_rno_uniprot", envir = environment())
-            pmgi_rno_uniprot <- get(pmgi)
-            return(pmgi_rno_uniprot)
-        }else if(group.by == "GO"){
-            pmgi <- utils::data("pmgi_rno_GO", envir = environment())
-            pmgi_rno_GO <- get(pmgi)
-            return(pmgi_rno_GO)
-        }else if(group.by == "genes"){
-            pmgi <- utils::data("pmgi_rno_genes", envir = environment())
-            pmgi_rno_genes <- get(pmgi)
-            return(pmgi_rno_genes)
-        }
-    }else if(species == "mmu"){
-        if(group.by == "uniprot"){
-            pmgi <- utils::data("pmgi_mmu_uniprot", envir = environment())
-            pmgi_mmu_uniprot <- get(pmgi)
-            return(pmgi_mmu_uniprot)
-        }else if(group.by == "GO"){
-            pmgi <- utils::data("pmgi_mmu_GO", envir = environment())
-            pmgi_mmu_GO <- get(pmgi)
-            return(pmgi_mmu_GO)
-        }else if(group.by == "genes"){
-            pmgi <- utils::data("pmgi_mmu_genes", envir = environment())
-            pmgi_mmu_genes <- get(pmgi)
-            return(pmgi_mmu_genes)
-        }
-    }else{
-        stop("Species not accepted")
-    }
+    file <- paste0("pmgi_", species, "_", group.by, ".rda")
+    pseudo <- load(system.file("extdata", file, package = "hpAnnot"), 
+         envir = environment())
+    pmgi <- get(pseudo)
+    return(pmgi)
 }
 
 
@@ -145,11 +90,13 @@ load.pseudo.mgi <- function(species, group.by){
 #' @return Table of references
 #'
 load.xref <- function(species){
-    if(!is.accepted(species))
+    if(!is.accepted.species(species))
         stop("Species not accepted")
-    xr <- utils::data("xref", envir = environment())
-    xref_spe <- get(xr)[[species]]
-    return(xref_spe)
+    file <- paste0("xref_", species, ".rda")
+    xr <- load(system.file("extdata", file, package = "hpAnnot"), 
+         envir = environment())
+    xref <- get(xr)
+    return(xref)
 }
 
 
@@ -163,45 +110,17 @@ load.xref <- function(species){
 #' @return Table of translation from HGNC to Entrez
 #'
 load.entrez.hgnc <- function(species){
-    if(!is.accepted(species))
+    if(!is.accepted.species(species))
         stop("Species not accepted")
-    eh <- utils::data("entrez_hgnc", envir = environment())
-    entrez_hgnc <- get(eh)[[species]]
+    file <- paste0("entrez_hgnc_", species, ".rda")
+    eh <- load(system.file("extdata", file, package = "hpAnnot"), 
+         envir = environment())
+    entrez_hgnc <- get(eh)
     return(entrez_hgnc)
 }
 
 
-#' Loads GO Annotations
-#'
-#' @param species Species of the samples.
-#'
-#' @return GO Annotations
-#'
-load.gobp <- function(species){
-    if(!is.accepted(species))
-        stop("Species not accepted")
-    gba <- utils::data("go_bp_annots", envir = environment())
-    go_bp_annot <- get(gba)[[species]]
-    return(go_bp_annot)
-}
-
-
-#' Loads Uniprot annotations
-#'
-#' @param species Species of the samples.
-#'
-#' @return Uniprot annotations
-#'
-load.unibp <- function(species){
-    if(!is.accepted(species))
-        stop("Species not accepted")
-    uba <- utils::data("uni_bp_annots", envir = environment())
-    uni_bp_annot <- get(uba)[[species]]
-    return(uni_bp_annot)
-}
-
-
-#' Loads functional annotations
+#' Loads functional annotations to genes
 #'
 #' Loads functional annotations from HGNC to the selected database.
 #'
@@ -214,16 +133,15 @@ load.unibp <- function(species){
 #' @return Functional annotations from HGNC to the selected database.
 #'
 load.annots <- function(db, species){
-    if(!is.accepted(species))
+    if(!is.accepted.species(species))
         stop("Species not accepted")
-    if(db == "GO"){
-        annofuns <- load.gobp(species)
-    }else if(db == "uniprot"){
-        annofuns <- load.unibp(species)
-    }else{
+    if(!is.accepted.database(db))
         stop("Database not accepted")
-    }
-    return(annofuns)
+    file <- paste0("annot_", db, "_", species, ".rda")
+    ann <- load(system.file("extdata", file, package = "hpAnnot"), 
+                  envir = environment())
+    annot <- get(ann)
+    return(annot)
 }
 
 
@@ -235,7 +153,8 @@ load.annots <- function(db, species){
 #' @return GO graph information
 #'
 load.gobp.frame <- function(){
-    gbf <- utils::data("go_bp_frame", envir = environment())
+    gbf <- load(system.file("extdata", "go_bp_frame.rda", package = "hpAnnot"), 
+                envir = environment())
     go_bp_frame <- get(gbf)
     return(go_bp_frame)
 }
@@ -249,7 +168,8 @@ load.gobp.frame <- function(){
 #' @return GO graph
 #'
 load.gobp.net <- function(){
-    gbn <- utils::data("go_bp_net", envir = environment())
+    gbn <- load(system.file("extdata", "go_bp_net.rda", package = "hpAnnot"), 
+                envir = environment())
     go_bp_net <- get(gbn)
     return(go_bp_net)
 }
