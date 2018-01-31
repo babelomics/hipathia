@@ -455,9 +455,15 @@ create.node.and.edge.attributes <- function(comp, pathway, metaginfo,
 
 create.path.info <- function(all_comp, metaginfo){
     fpgs <- metaginfo$pathigraphs
+    effector <- length(unlist(strsplit(rownames(all_comp)[1], split="-"))) == 3
     path_info <- lapply(fpgs, function(fpg){
-        all_comp[names(fpg$effector.subgraphs),]})
-
+        if(effector == TRUE){
+            all_comp[names(fpg$effector.subgraphs),]        
+        }else{
+            all_comp[names(fpg$subgraphs),]        
+        }
+    })
+    
     path_json_list <- lapply(names(path_info),function(x){
         out <- paste0("{\n\t\"id\":\"", x, "\",\n")
         out <- paste0(out, "\t\"name\":\"", fpgs[[x]]$path.name, "\",\n")
@@ -468,7 +474,7 @@ create.path.info <- function(all_comp, metaginfo){
         anysigdown <- FALSE
         anychanged <- FALSE
         for(i in 1:nrow(path_info[[x]])){
-            if(path_info[[x]]$has_change[i] == TRUE)
+            if(path_info[[x]]$has_changed[i] == TRUE)
                 anychanged <- TRUE
             if(path_info[[x]]$FDRp.value[i] <= 0.05) {
                 anysig <- TRUE
@@ -514,7 +520,7 @@ create.path.info <- function(all_comp, metaginfo){
             out <- paste0(out, "\"sig\":\"",
                           tolower(path_info[[x]]$FDRp.value[i] < 0.05), "\", ")
             out <- paste0(out, "\"haschanged\":",
-                          tolower(path_info[[x]]$has_change[i]), ", ")
+                          tolower(path_info[[x]]$has_changed[i]), ", ")
             out <- paste0(out, "\"up\":",
                           tolower(path_info[[x]]$status[i] == "UP"), ", ")
             out <- paste0(out, "\"down\":",
