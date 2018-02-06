@@ -162,14 +162,14 @@ get.path.names <- function(metaginfo, names, maxchar=NULL){
         if(length(strname) == 4){
             ininode <- paste("N", strname[2], strname[3], sep = "-")
             effnode <- paste("N", strname[2], strname[4], sep = "-")
-            inilabel <- labels[ininode, "label"]
-            efflabel <- labels[effnode, "label"]
-            pathlabel <- labels[ininode, "path.name"]
+            inilabel <- as.matrix(labels)[ininode, "label"]
+            efflabel <- as.matrix(labels)[effnode, "label"]
+            pathlabel <- as.matrix(labels)[ininode, "path.name"]
             label <- paste0(pathlabel, ": ", inilabel, " -> ", efflabel )
             label
         }else if(length(strname) == 3){
             effnode <- paste("N", strname[2], strname[3], sep = "-")
-            label <- labels[effnode, c("path.name", "label")]
+            label <- as.matrix(labels)[effnode, c("path.name", "label")]
             label <- paste(label, collapse = ": ")
             label
         }else{

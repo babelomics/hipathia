@@ -229,11 +229,9 @@ do.wilcoxon <- function(sel.vals, group.value, g1, g2, paired=FALSE,
     g1_indexes <- which(group.value == g1)
     g2_indexes <- which(group.value == g2)
 
-    stat.vals <- suppressWarnings(calculate.wilcox.test(sel.vals,
-                                                        g2_indexes,
-                                                        g1_indexes,
-                                                        paired = paired,
-                                                        adjust = adjust))
+    stat.vals <- suppressWarnings(
+        calculate.wilcox.test(sel.vals, g2_indexes, g1_indexes, paired = paired,
+                              adjust = adjust))
     return(stat.vals)
 }
 
@@ -242,18 +240,18 @@ do.wilcoxon <- function(sel.vals, group.value, g1, g2, paired=FALSE,
 calculate.wilcox.test <- function( data, control, disease, paired, adjust=TRUE){
     if(paired == TRUE){
         dat <- apply(data, 1, wilcoxsign.test.fun, control, disease)
-        testData <- do.call("rbind",dat)
-        if(adjust==TRUE){
+        testData <- do.call("rbind", dat)
+        if(adjust == TRUE){
             fdrData <- stats::p.adjust(testData[,1], method = "fdr")
         } else {
             fdrData <- testData[,1]
         }
-        data2 <- data.frame(testData, fdrData, stringsAsFactors=FALSE)
+        data2 <- data.frame(testData, fdrData, stringsAsFactors = FALSE)
     }else{
         testData <- do.call("rbind",
                             apply(data, 1, wilcox.test.fun,
                                   control, disease, paired))
-        if(adjust==TRUE){
+        if(adjust == TRUE){
             fdrData <- stats::p.adjust(testData[,1], method = "fdr")
         } else {
             fdrData <- testData[,1]
@@ -262,10 +260,11 @@ calculate.wilcox.test <- function( data, control, disease, paired, adjust=TRUE){
         lc <- length(control)
         ld <- length(disease)
         m <- lc*ld/2
-        sigma <- sqrt(lc*ld*(lc+ld+1)/12)
-        z <- (testData[,3]-m)/sigma
-        data2 <- data.frame(testData[,1:2], z, fdrData, stringsAsFactors=FALSE)
-        need0 <- which(data2$pvalue==1 &
+        sigma <- sqrt(lc * ld * (lc + ld + 1)/12)
+        z <- (testData[,3] - m)/sigma
+        data2 <- data.frame(testData[,1:2], z, fdrData, 
+                            stringsAsFactors = FALSE)
+        need0 <- which(data2$pvalue == 1 &
                            data2$class == "0" &
                            data2$fdrData == 1)
         data2[need0, "z"] <- 0
