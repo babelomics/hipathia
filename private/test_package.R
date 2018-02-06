@@ -64,7 +64,7 @@ ranked_comp <- comp[order(comp$p.value, decreasing = FALSE), ]
 table(comp$FDRp.value<0.05)
 
 # Plot heatmap for most relevant paths
-heatmap.plot(ranked_path_vals[comp$FDRp.value<0.05,],
+heatmap.plot(ranked_path_vals[comp$FDRp.value < 0.05,],
              sample.type = sample_group, variable.clust = TRUE)
 
 # Plot heatmap for most relevant paths
