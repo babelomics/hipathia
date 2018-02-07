@@ -61,7 +61,7 @@ head(pathways_summary, n = 15)
 ranked_path_vals <- path_vals[order(comp$p.value, decreasing = FALSE),]
 ranked_comp <- comp[order(comp$p.value, decreasing = FALSE), ]
 
-table(comp$FDRp.value<0.05)
+table(comp$FDRp.value < 0.05)
 
 # Plot heatmap for most relevant paths
 heatmap.plot(ranked_path_vals[comp$FDRp.value < 0.05,],

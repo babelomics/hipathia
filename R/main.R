@@ -39,16 +39,17 @@
 #' @export
 #'
 hipathia <- function(genes.vals, metaginfo, decompose = FALSE, maxnum = 100,
-                     verbose = TRUE, tol = 0.000001){
+                     verbose = TRUE, tol = 0.000001, test = TRUE){
 
-    if(is.null(genes.vals))
-        stop("Missing input matrix")
-    if(is.null(metaginfo))
-        stop("Missing pathways object")
-    test.matrix(genes.vals)
-    test.pathways.object(metaginfo)
-    test.tolerance(tol)
-
+    if(test == TRUE){
+        if(is.null(genes.vals))
+            stop("Missing input matrix")
+        if(is.null(metaginfo))
+            stop("Missing pathways object")
+        test.matrix(genes.vals)
+        test.pathways.object(metaginfo)
+        test.tolerance(tol)
+    }
     pathigraphs <- metaginfo$pathigraphs
     genes.vals <- add.missing.genes(genes.vals, genes = metaginfo$all.genes)
     results <- list()
@@ -81,12 +82,10 @@ hipathia <- function(genes.vals, metaginfo, decompose = FALSE, maxnum = 100,
         return(res)
     })
 
-    results$all$path.vals <- do.call("rbind",
-                                     lapply(results$by.path, function(x){
-                                         x$path.vals}))
-    results$all$nodes.vals <- do.call("rbind",
-                                      lapply(results$by.path, function(x){
-                                          x$nodes.vals}))
+    results$all$path.vals <- do.call("rbind", lapply(results$by.path, 
+                                                     function(x) x$path.vals))
+    results$all$nodes.vals <- do.call("rbind", lapply(results$by.path, 
+                                                      function(x) x$nodes.vals))
     return(results)
 }
 
