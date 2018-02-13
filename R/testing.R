@@ -9,7 +9,7 @@
 ##
 
 
-test.matrix <- function(mat){
+test_matrix <- function(mat){
     is01 <- all(mat >= 0 & mat <= 1)
     nona <- sum(is.na(mat)) == 0
     ismatrix <- class(mat) == "matrix"
@@ -21,15 +21,15 @@ test.matrix <- function(mat){
         stop("Input values must be of class 'matrix'")
 }
 
-test.pathways.object <- function(pathways){
+test_pathways_object <- function(pathways){
     hasall <- length(pathways) == 6
-    spec <- is.accepted.species(pathways$species)
+    spec <- is_accepted_species(pathways$species)
     isigraph <- class(pathways$pathigraphs[[1]]$graph) == "igraph"
     if(!hasall == TRUE | !spec == TRUE | !isigraph == TRUE)
         stop("Pathways object not allowed")
 }
 
-test.tolerance <- function(tol){
+test_tolerance <- function(tol){
     isless1 <- tol < 1
     ispositive <- tol > 0
     if(!ispositive == TRUE)
@@ -44,22 +44,22 @@ test.tolerance <- function(tol){
 #' @param species Species of the samples.
 #'
 #' #@examples
-#' #is.accepted.species("hsa")
-#' #is.accepted.species("fca")
+#' #is_accepted_species("hsa")
+#' #is_accepted_species("fca")
 #'
 #' @return Boolean, whether \code{species} is accepted or not.
 #'
-is.accepted.species <- function(species){
+is_accepted_species <- function(species){
     isacc <- species %in% c("hsa", "mmu", "rno")
     return(isacc)
 }
 
-is.accepted.grouping <- function(group){
+is_accepted_grouping <- function(group){
     isacc <- group %in% c("uniprot", "GO", "genes")
     return(isacc)
 }
 
-is.accepted.database <- function(db){
+is_accepted_database <- function(db){
     isacc <- db %in% c("uniprot", "GO")
     return(isacc)
 }

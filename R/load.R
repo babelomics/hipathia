@@ -15,15 +15,15 @@
 #' @param species Species of the samples.
 #'
 #' #@examples
-#' #load.annofuns("GO", "hsa")
-#' #load.annofuns("uniprot", "hsa")
+#' #load_annofuns("GO", "hsa")
+#' #load_annofuns("uniprot", "hsa")
 #'
 #' @return Annotations object
 #'
-load.annofuns <- function(db, species){
-    if(!is.accepted.species(species))
+load_annofuns <- function(db, species){
+    if(!is_accepted_species(species))
         stop("Species not accepted")
-    if(!is.accepted.database(db))
+    if(!is_accepted_database(db))
         stop("Database not accepted")
     file <- paste0("annofuns_", db, "_", species, ".rda")
     af <- load(system.file("extdata", file, package = "hpAnnot"), 
@@ -38,12 +38,12 @@ load.annofuns <- function(db, species){
 #' @param species Species of the samples.
 #'
 #' #@examples
-#' #load.mgi("hsa")
+#' #load_mgi("hsa")
 #'
 #' @return Graph information object
 #'
-load.mgi <- function(species){
-    if(!is.accepted.species(species))
+load_mgi <- function(species){
+    if(!is_accepted_species(species))
         stop("Species not accepted")
     file <- paste0("meta_graph_info_", species, ".rda")
     mgi <- load(system.file("extdata", file, package = "hpAnnot"), 
@@ -56,23 +56,23 @@ load.mgi <- function(species){
 #' Loads object with pseudo graph information
 #'
 #' @param species Species of the samples.
-#' @param group.by How to group the subpathways to be visualized. By default
+#' @param group_by How to group the subpathways to be visualized. By default
 #' they are grouped by the pathway to which they belong. Available groupings
 #' include "uniprot", to group subpathways by their annotated Uniprot functions,
 #' "GO", to group subpathways by their annotated GO terms, and "genes", to group
 #' subpathways by the genes they include.
 #'
 #' #@examples
-#' #load.pseudo.mgi("hsa", "uniprot")
+#' #load_pseudo_mgi("hsa", "uniprot")
 #'
 #' @return Pseudo graph information object
 #'
-load.pseudo.mgi <- function(species, group.by){
-    if(!is.accepted.species(species))
+load_pseudo_mgi <- function(species, group_by){
+    if(!is_accepted_species(species))
         stop("Species not accepted")
-    if(!is.accepted.grouping(group.by))
+    if(!is_accepted_grouping(group_by))
         stop("Grouping not accepted")
-    file <- paste0("pmgi_", species, "_", group.by, ".rda")
+    file <- paste0("pmgi_", species, "_", group_by, ".rda")
     pseudo <- load(system.file("extdata", file, package = "hpAnnot"), 
          envir = environment())
     pmgi <- get(pseudo)
@@ -85,12 +85,12 @@ load.pseudo.mgi <- function(species, group.by){
 #' @param species Species of the samples.
 #'
 #' #@examples
-#' #load.xref("hsa")
+#' #load_xref("hsa")
 #'
 #' @return Table of references
 #'
-load.xref <- function(species){
-    if(!is.accepted.species(species))
+load_xref <- function(species){
+    if(!is_accepted_species(species))
         stop("Species not accepted")
     file <- paste0("xref_", species, ".rda")
     xr <- load(system.file("extdata", file, package = "hpAnnot"), 
@@ -105,12 +105,12 @@ load.xref <- function(species){
 #' @param species Species of the samples.
 #'
 #' #@examples
-#' #load.entrez.hgnc("hsa")
+#' #load_entrez_hgnc("hsa")
 #'
 #' @return Table of translation from HGNC to Entrez
 #'
-load.entrez.hgnc <- function(species){
-    if(!is.accepted.species(species))
+load_entrez_hgnc <- function(species){
+    if(!is_accepted_species(species))
         stop("Species not accepted")
     file <- paste0("entrez_hgnc_", species, ".rda")
     eh <- load(system.file("extdata", file, package = "hpAnnot"), 
@@ -128,14 +128,14 @@ load.entrez.hgnc <- function(species){
 #' @param species Species of the samples.
 #'
 #' #@examples
-#' #load.annots("GO", "hsa")
+#' #load_annots("GO", "hsa")
 #'
 #' @return Functional annotations from HGNC to the selected database.
 #'
-load.annots <- function(db, species){
-    if(!is.accepted.species(species))
+load_annots <- function(db, species){
+    if(!is_accepted_species(species))
         stop("Species not accepted")
-    if(!is.accepted.database(db))
+    if(!is_accepted_database(db))
         stop("Database not accepted")
     file <- paste0("annot_", db, "_", species, ".rda")
     ann <- load(system.file("extdata", file, package = "hpAnnot"), 
@@ -148,11 +148,11 @@ load.annots <- function(db, species){
 #' Loads GO graph information
 #'
 #' #@examples
-#' #load.gobp.frame()
+#' #load_gobp_frame()
 #'
 #' @return GO graph information
 #'
-load.gobp.frame <- function(){
+load_gobp_frame <- function(){
     gbf <- load(system.file("extdata", "go_bp_frame.rda", package = "hpAnnot"), 
                 envir = environment())
     go_bp_frame <- get(gbf)
@@ -163,11 +163,11 @@ load.gobp.frame <- function(){
 #' Loads GO graph
 #'
 #' #@examples
-#' #load.gobp.net()
+#' #load_gobp_net()
 #'
 #' @return GO graph
 #'
-load.gobp.net <- function(){
+load_gobp_net <- function(){
     gbn <- load(system.file("extdata", "go_bp_net.rda", package = "hpAnnot"), 
                 envir = environment())
     go_bp_net <- get(gbn)

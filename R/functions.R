@@ -22,35 +22,35 @@
 #' @return Object of annotations from pathways to functions
 #'
 #' #@examples
-#' #pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' #pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 #' #"hsa04012"))
-#' #annotate.paths(pathways, "GO")
+#' #annotate_paths(pathways, "GO")
 #'
 #' #@export
 #' @import hpAnnot
 #'
-annotate.paths <- function(metaginfo, dbannot){
+annotate_paths <- function(metaginfo, dbannot){
 
     pathigraphs <- metaginfo$pathigraphs
-    entrez2hgnc <- load.entrez.hgnc(metaginfo$species)
+    entrez2hgnc <- load_entrez_hgnc(metaginfo$species)
     if(is.character(dbannot) & length(dbannot) == 1)
-        dbannot <- load.annots(dbannot, metaginfo$species)
+        dbannot <- load_annots(dbannot, metaginfo$species)
 
-    annofuns <- do.call("rbind", lapply(pathigraphs,function(pathigraph){
+    annofuns <- do_call("rbind", lapply(pathigraphs,function(pathigraph){
 
-        new.pathigraph <- pathigraph
-        vs <- V(new.pathigraph$graph)$name
-        new.pathigraph$graph <- induced.subgraph(new.pathigraph$graph,
+        new_pathigraph <- pathigraph
+        vs <- V(new_pathigraph$graph)$name
+        new_pathigraph$graph <- induced.subgraph(new_pathigraph$graph,
                                                  vs[!grepl("_func", vs)])
-        funs <- get.pathway.functions(new.pathigraph,
+        funs <- get_pathway_functions(new_pathigraph,
                                       dbannot,
                                       entrez2hgnc,
-                                      use.last.nodes = TRUE,
+                                      use_last_nodes = TRUE,
                                       unique = FALSE)
         paths <- lapply(names(funs), function(path){
             rep(path, times=length(funs[[path]]))
         })
-        df <- data.frame(effector.nodes = unlist(paths),
+        df <- data.frame(effector_nodes = unlist(paths),
                          paths = gsub("N", "P", unlist(paths)),
                          funs = unlist(funs),
                          stringsAsFactors = FALSE)
@@ -72,7 +72,7 @@ annotate.paths <- function(metaginfo, dbannot){
 #' a dataframe with the annotation of the genes to the functions. First
 #' column are gene symbols, second column the functions.
 #' @param normalize Boolean, whether to normalize the matrix of pathway
-#' values with \code{normalize.paths} before quantifying the signal. Due to
+#' values with \code{normalize_paths} before quantifying the signal. Due to
 #' the nature of the Hipathia method, in which the length of each pathway may
 #' alter its signal rank, we strongly recommend to perform this normalization.
 #' This normalization removes the bias. Default is set to TRUE.
@@ -82,52 +82,52 @@ annotate.paths <- function(metaginfo, dbannot){
 #'
 #' @examples
 #' data(results)
-#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 #' "hsa04012"))
-#' go.values <- quantify.terms(results, pathways, "GO")
-#' uniprot.values <- quantify.terms(results, pathways, "uniprot")
+#' go_values <- quantify_terms(results, pathways, "GO")
+#' uniprot_values <- quantify_terms(results, pathways, "uniprot")
 #'
 #' @export
 #'
-quantify.terms <- function(results, metaginfo, dbannot, normalize = TRUE){
+quantify_terms <- function(results, metaginfo, dbannot, normalize = TRUE){
 
     method="mean"
     species <- metaginfo$species
 
     if(is.character(dbannot) & length(dbannot) == 1){
-        annofuns <- load.annofuns(dbannot, species)
+        annofuns <- load_annofuns(dbannot, species)
     }else{
-        annofuns <- annotate.paths(metaginfo, dbannot)
+        annofuns <- annotate_paths(metaginfo, dbannot)
     }
 
     annofuns <- annofuns[!is.na(annofuns$funs),]
     annofuns$pathway <- sapply(strsplit(annofuns$paths, split = "-"), "[[", 2)
     annofuns <- annofuns[annofuns$pathway %in% names(metaginfo$pathigraphs),]
-    fun.names <- unique(annofuns$funs)
+    fun_names <- unique(annofuns$funs)
 
-    path.vals <- results$all$path.vals
+    path_vals <- results$all$path.vals
     if(normalize == TRUE)
-        path.vals <- normalize.paths(path.vals, metaginfo)
+        path_vals <- normalize_paths(path_vals, metaginfo)
 
-    fun.vals <- matrix(0,
-                       ncol = ncol(path.vals),
-                       nrow = length(fun.names),
-                       dimnames = list(fun.names, colnames(path.vals)))
-    cat("Quantified functions:", nrow(fun.vals), "\n")
-    for(fun in fun.names){
+    fun_vals <- matrix(0,
+                       ncol = ncol(path_vals),
+                       nrow = length(fun_names),
+                       dimnames = list(fun_names, colnames(path_vals)))
+    cat("Quantified functions:", nrow(fun_vals), "\n")
+    for(fun in fun_names){
         paths <- annofuns$paths[annofuns$funs == fun]
         if(method == "mean"){
-            fun.vals[fun,] <- apply(path.vals[paths,,drop = FALSE], 2, mean)
+            fun_vals[fun,] <- apply(path_vals[paths,,drop = FALSE], 2, mean)
         }else if(method == "signal"){
-            minimat <- 1 - path.vals[paths,,drop = FALSE]
-            fun.vals[fun,] <- 1 - apply(minimat, 2, prod)
+            minimat <- 1 - path_vals[paths,,drop = FALSE]
+            fun_vals[fun,] <- 1 - apply(minimat, 2, prod)
         }
     }
-    return(fun.vals)
+    return(fun_vals)
 
 }
 
-get.entrez.function <- function(entrezs, entrez2hgnc, dbannot){
+get_entrez_function <- function(entrezs, entrez2hgnc, dbannot){
     hgncs <- entrez2hgnc[entrez2hgnc[,1] %in% entrezs,2]
     path_functions <- dbannot[dbannot$gene %in% hgncs,]
 
@@ -137,8 +137,8 @@ get.entrez.function <- function(entrezs, entrez2hgnc, dbannot){
 
 #' @importFrom stats fisher.test
 #' @importFrom stats p.adjust
-enrichment <- function(path_functions, dbannot, na.rm = TRUE){
-    if(na.rm){
+enrichment <- function(path_functions, dbannot, na_rm = TRUE){
+    if(na_rm){
         path_functions <- path_functions[!is.na(path_functions[,1]),]
     }
     hgncs <- unique(path_functions[,1])
@@ -178,26 +178,26 @@ enrichment <- function(path_functions, dbannot, na.rm = TRUE){
 #' @param dbannot Dataframe with the annotation of the genes to the functions.
 #' First column are gene symbols, second column the functions.
 #' @param entrez2hgnc Relation between Entrez and HGNC genes.
-#' @param use.last.nodes Boolean, whether to annotate functions to the last
+#' @param use_last_nodes Boolean, whether to annotate functions to the last
 #' nodes of the pathways or not. If FALSE, functions will refer to all the nodes
 #' of the pathway.
 #' @param unique Boolean, whether to return the first function for each path.
 #'
 #' @return List of annotations from pathways to functions
 #'
-get.pathway.functions <- function(pathigraph, dbannot, entrez2hgnc,
-                                  use.last.nodes = TRUE, unique = TRUE){
+get_pathway_functions <- function(pathigraph, dbannot, entrez2hgnc,
+                                  use_last_nodes = TRUE, unique = TRUE){
 
     g <- pathigraph$graph
-    last_nodes <- gsub("_func", "", get.last.node(g))
-    if(use.last.nodes == TRUE){
+    last_nodes <- gsub("_func", "", get_last_node(g))
+    if(use_last_nodes == TRUE){
         ebn <- V(g)$genesList[which(V(g)$name %in% last_nodes)]
     } else {
         ebn <- get.vertex.attribute(g, "genesList")
     }
     entrezs <- unique(unlist(ebn))
     entrezs <- entrezs[!is.na(entrezs)]
-    gpf <- unique(get.entrez.function(entrezs, entrez2hgnc, dbannot))
+    gpf <- unique(get_entrez_function(entrezs, entrez2hgnc, dbannot))
     if(nrow(gpf) == 0){
         last_node_functions <- rep(NA, length(last_nodes))
         names(last_node_functions) <- last_nodes
@@ -212,7 +212,7 @@ get.pathway.functions <- function(pathigraph, dbannot, entrez2hgnc,
         filtdbannot <- filtdbannot[order(filtdbannot$rank),]
 
         last_node_functions <- lapply(last_nodes,
-                                      get.best.node.functions,
+                                      get_best_node_functions,
                                       pathigraph,
                                       entrez2hgnc,
                                       filtdbannot,
@@ -227,12 +227,12 @@ get.pathway.functions <- function(pathigraph, dbannot, entrez2hgnc,
 
 
 
-get.best.node.functions <- function(node, pathigraph, entrez2hgnc, filtdbannot,
+get_best_node_functions <- function(node, pathigraph, entrez2hgnc, filtdbannot,
                                     unique = TRUE){
     g <- pathigraph$graph
     entrezs <- V(g)$genesList[[which(V(g)$name == node)]]
     node_funcs <- unique(unlist(lapply(entrezs,
-                                       get.best.gene.functions,
+                                       get_best_gene_functions,
                                        entrez2hgnc = entrez2hgnc,
                                        filtdbannot = filtdbannot,
                                        unique = unique)))
@@ -240,7 +240,7 @@ get.best.node.functions <- function(node, pathigraph, entrez2hgnc, filtdbannot,
     return(node_funcs)
 }
 
-get.best.gene.functions <- function(entrez, entrez2hgnc, filtdbannot,
+get_best_gene_functions <- function(entrez, entrez2hgnc, filtdbannot,
                                     unique = TRUE){
     hgncs <- entrez2hgnc[entrez2hgnc[,1] %in% entrez,2]
     funcs <- filtdbannot[filtdbannot$gene %in% hgncs,]
@@ -252,7 +252,7 @@ get.best.gene.functions <- function(entrez, entrez2hgnc, filtdbannot,
     }
 }
 
-get.last.node <- function(subgraph){
+get_last_node <- function(subgraph){
     V(subgraph)$name[!(V(subgraph)$name %in% get.edgelist(subgraph)[,1])]
 }
 

@@ -4,11 +4,11 @@
 \alias{hipathia}
 \title{Computes the level of activation of the subpathways for each of the samples}
 \usage{
-hipathia(genes.vals, metaginfo, decompose = FALSE, maxnum = 100,
-  verbose = TRUE, tol = 1e-06)
+hipathia(genes_vals, metaginfo, decompose = FALSE, maxnum = 100,
+  verbose = TRUE, tol = 1e-06, test = TRUE)
 }
 \arguments{
-\item{genes.vals}{A matrix with the normalized expression values of the
+\item{genes_vals}{A matrix with the normalized expression values of the
 genes. Rows represent genes and columns represent samples.
 Rownames() must be accepted gene IDs.}
 
@@ -29,14 +29,14 @@ iterating the signal through the loops into the pathways}
 \value{
 An object with the level of activation of the subpathways from
 the pathways in \code{pathigraphs} for the experiment
-with expression values in \code{genes.vals}.
+with expression values in \code{genes_vals}.
 }
 \description{
 #@importFrom igraph
 }
 \examples{
 data(exp_data)
-pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 "hsa04012"))
 results <- hipathia(exp_data, pathways, verbose = TRUE)
 results <- hipathia(exp_data, pathways, decompose = TRUE, verbose = FALSE)

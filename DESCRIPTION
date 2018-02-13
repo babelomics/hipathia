@@ -1,6 +1,6 @@
 Package: hipathia
 Title: HiPathia
-Version: 0.99.6
+Version: 0.99.7
 Authors@R: c(person("Marta R.", "Hidalgo", email = "marta.hidalgo@outlook.es", role = c("aut", "cre")),
 	     person("José", "Carbonell-Caballero", email = "jcarbonell.work@gmail.com", role = c("aut")),
 	     person("Francisco", "Salavert", email = "fsalavert@cipf.es", role = c("ctb")),

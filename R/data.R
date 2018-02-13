@@ -47,12 +47,12 @@
 #' Normalized BRCA gene expression dataset
 #'
 #' Experimental design matrix once expression matrix \code{brca_data} has been
-#' translated to Entrez geens with \code{translate.matrix} and normalized using
-#' \code{normalize.data}.
+#' translated to Entrez geens with \code{translate_matrix} and normalized using
+#' \code{normalize_data}.
 #'
 #' To create the data, the following functions have been called:
-#' \code{trans_data <- translate.matrix(brca_data, "hsa")}
-#' \code{exp_data <- normalize.data(trans_data)}
+#' \code{trans_data <- translate_matrix(brca_data, "hsa")}
+#' \code{exp_data <- normalize_data(trans_data)}
 #'
 #' @format Matrix with 40 columns and 3184 rows. Row names are Entrez IDs
 #' and column names are the  TCGA identifyers of the samples.
@@ -69,7 +69,7 @@
 #' Results object
 #'
 #' Results object returned by \code{hipathia::hipathia} function, after calling
-#' \code{results <- hipathia(exp.data, pathways, verbose=TRUE)}
+#' \code{results <- hipathia(exp_data, pathways, verbose=TRUE)}
 #'
 #' @format Object of results, including pathways information.
 #'
@@ -82,11 +82,11 @@
 
 #' Wilcoxon comparison of pathways object
 #'
-#' Comparison object returned by \code{hipathia::do.wilcoxon} function, after
+#' Comparison object returned by \code{hipathia::do_wilcoxon} function, after
 #' calling
-#' \code{comp <- do.wilcoxon(path_vals, sample.group, g1 = "Tumor", g2 =
+#' \code{comp <- do_wilcoxon(path_vals, sample_group, g1 = "Tumor", g2 =
 #' "Normal")}
-#' \code{path_names <- get.path.names(pathways, rownames(comp))}
+#' \code{path_names <- get_path_names(pathways, rownames(comp))}
 #' \code{comp <- cbind(path_names, comp)}
 #'
 #' @format Table with 1868 rows and 5 columns
@@ -101,9 +101,9 @@
 #'
 #' Matrix of pathway activation values for the BRCA dataset. This matrix is
 #' extracted from the Results object returned by the \code{hipathia} function
-#' by means of the \code{get.paths.matrix} function.
+#' by means of the \code{get_paths_matrix} function.
 #'
-#' \code{path_vals <- get.paths.matrix(results)}
+#' \code{path_vals <- get_paths_matrix(results)}
 #'
 #' @format Matrix with 40 columns and 1868 rows. Row names are Pathway IDs
 #' and column names are the TCGA identifyers of the samples.
@@ -120,9 +120,9 @@
 #'
 #' Matrix of Gene Ontology terms activation values for the BRCA dataset.
 #' This matrix is computed from the Results object returned by the
-#' \code{hipathia} function by means of the \code{quantify.terms} function.
+#' \code{hipathia} function by means of the \code{quantify_terms} function.
 #'
-#' \code{go_vals <- quantify.terms(results, pathways, "GO")}
+#' \code{go_vals <- quantify_terms(results, pathways, "GO")}
 #'
 #' @format Matrix with 40 columns and 1654 rows. Row names are Gene Ontology
 #' terms and column names are the TCGA identifyers of the samples.
@@ -140,9 +140,9 @@
 #'
 #' Matrix of Uniprot functions activation values for the BRCA dataset.
 #' This matrix is computed from the Results object returned by the
-#' \code{hipathia} function by means of the \code{quantify.terms} function.
+#' \code{hipathia} function by means of the \code{quantify_terms} function.
 #'
-#' \code{uni_vals <- quantify.terms(results, pathways, "uniprot")}
+#' \code{uni_vals <- quantify_terms(results, pathways, "uniprot")}
 #'
 #' @format Matrix with 40 columns and 142 rows. Row names are Uniprot functions
 #' and column names are the TCGA identifyers of the samples.

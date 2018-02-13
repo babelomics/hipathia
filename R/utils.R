@@ -10,7 +10,7 @@
 
 
 
-translate.ids <- function(ids, xref){
+translate_ids <- function(ids, xref){
 
     # get translation
     ltids <- xref[ids]
@@ -75,21 +75,21 @@ translate.ids <- function(ids, xref){
 #' execution.
 #'
 #' @examples data("brca_data")
-#' trans.data <- translate.matrix(brca_data, "hsa")
+#' trans_data <- translate_matrix(brca_data, "hsa")
 #'
 #' @return Matrix of gene expression with Entrez IDs as rownames.
 #'
 #' @export
 #' @import hpAnnot
 #'
-translate.matrix <- function(exp, species, verbose=TRUE){
+translate_matrix <- function(exp, species, verbose=TRUE){
 
-    xref <- load.xref(species)
+    xref <- load_xref(species)
 
     new_ids <- gsub("\\.[0123456789]$", "", rownames(exp))
 
     # translate ids
-    tt <- translate.ids(new_ids, xref)
+    tt <- translate_ids(new_ids, xref)
 
     # filter untranslated ids
     exp2 <- exp[!tt$is_na,,drop=FALSE]
@@ -144,15 +144,15 @@ translate.matrix <- function(exp, species, verbose=TRUE){
 #'
 #' @examples
 #' data(path_vals)
-#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 #' "hsa04012"))
-#' translated.names <- get.path.names(pathways, rownames(path_vals))
+#' translated_names <- get_path_names(pathways, rownames(path_vals))
 #'
 #' @return A character vector including the readable names of the
 #' subpathways IDs, in the same order as provided.
 #' @export
 #'
-get.path.names <- function(metaginfo, names, maxchar=NULL){
+get_path_names <- function(metaginfo, names, maxchar=NULL){
 
     labels <- metaginfo$all.labelids
 
@@ -178,7 +178,7 @@ get.path.names <- function(metaginfo, names, maxchar=NULL){
     }))
 
     if(!is.null(maxchar))
-        prettynames <- clip.names(prettynames, maxchar = maxchar)
+        prettynames <- clip_names(prettynames, maxchar = maxchar)
 
     return(prettynames)
 
@@ -199,7 +199,7 @@ get.path.names <- function(metaginfo, names, maxchar=NULL){
 #'
 #' @return The pathways object with the upgraded igraph objects
 #'
-igraphs.upgrade <- function(metaginfo){
+igraphs_upgrade <- function(metaginfo){
 
     for(pw in names(metaginfo$pathigraphs)){
 
@@ -233,19 +233,19 @@ igraphs.upgrade <- function(metaginfo){
 #' @details
 #' The object of pathways includes information about the pathways and the
 #' subpathways which will be analyzed. This object must be provided to some
-#' of the functions (like \code{hipathia} or \code{quantify.terms}) in the
+#' of the functions (like \code{hipathia} or \code{quantify_terms}) in the
 #' package. These functions will analyze all the pathways included in this
 #' object. By default, all available pathways are load. In order to restrict
 #' the analysis to a predefined set of pathways, specify the set of pathways
-#' to load with the parameter \code{pathways.list}.
+#' to load with the parameter \code{pathways_list}.
 #'
 #' @param species Species of the samples.
-#' @param pathways.list Vector of the IDs of the pathways to load. By default
+#' @param pathways_list Vector of the IDs of the pathways to load. By default
 #' all available pathways are load.
 #'
 #' @examples
-#' pathways <- load.pathways("hsa")   # Loads all pathways for human
-#' pathways <- load.pathways("mmu", c("mmu03320", "mmu04024", "mmu05200"))
+#' pathways <- load_pathways("hsa")   # Loads all pathways for human
+#' pathways <- load_pathways("mmu", c("mmu03320", "mmu04024", "mmu05200"))
 #'    # Loads pathways 03320, 04024 and 05200 for mouse
 #'
 #' @return An pathways object including
@@ -253,19 +253,19 @@ igraphs.upgrade <- function(metaginfo){
 #' * \code{pathigraphs} List of Pathigraph objects. Each Pathigraph contains
 #' the necessary information of a pathway for it to be analyzed
 #' with \code{Hipathia}.
-#' * \code{all.genes} List of all the genes included in the selection of
+#' * \code{all_genes} List of all the genes included in the selection of
 #' pathways stored in \code{pathigraphs}.
-#' * \code{eff.norm} Vector of normalization values for effector subpathways.
-#' * \code{path.norm} Vector of normalization values for decomposed
+#' * \code{eff_norm} Vector of normalization values for effector subpathways.
+#' * \code{path_norm} Vector of normalization values for decomposed
 #' subpathways.
 #'
 #' @export
 #' @import hpAnnot
 #'
-load.pathways <- function(species, pathways.list = NULL){
-    metaginfo <- load.mgi(species)
-    metaginfo <- filter.pathways(metaginfo, pathways.list = pathways.list)
-    metaginfo <- igraphs.upgrade(metaginfo)
+load_pathways <- function(species, pathways_list = NULL){
+    metaginfo <- load_mgi(species)
+    metaginfo <- filter_pathways(metaginfo, pathways_list = pathways_list)
+    metaginfo <- igraphs_upgrade(metaginfo)
     cat(paste0("Loaded ", length(metaginfo$pathigraphs), " pathways\n"))
     return(metaginfo)
 }
@@ -282,35 +282,35 @@ load.pathways <- function(species, pathways.list = NULL){
 #' @return List of the pathway IDs included in the pathways object
 #'
 #' @examples
-#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 #' "hsa04012"))
-#' pathways.list <- get.pathways.list(pathways)
+#' pathways_list <- get_pathways_list(pathways)
 #'
 #' @export
 #'
-get.pathways.list <- function(metaginfo){
+get_pathways_list <- function(metaginfo){
     return(names(metaginfo$pathigraphs))
 }
 
 
-filter.pathways <- function(metaginfo, pathways.list = NULL){
-    if(!is.null(pathways.list)){
-        metaginfo$pathigraphs <- metaginfo$pathigraphs[pathways.list]
-        metaginfo$all.genes <- all.needed.genes(metaginfo$pathigraphs)
+filter_pathways <- function(metaginfo, pathways_list = NULL){
+    if(!is.null(pathways_list)){
+        metaginfo$pathigraphs <- metaginfo$pathigraphs[pathways_list]
+        metaginfo$all.genes <- all_needed_genes(metaginfo$pathigraphs)
         metaginfo$path.norm <- metaginfo$path.norm[
             sapply(names(metaginfo$path.norm), function(x){
-                unlist(strsplit(x, split = "-"))[2]}) %in% pathways.list]
+                unlist(strsplit(x, split = "-"))[2]}) %in% pathways_list]
         metaginfo$eff.norm <- metaginfo$eff.norm[
             sapply(names(metaginfo$eff.norm), function(x){
-                unlist(strsplit(x, split = "-"))[2]}) %in% pathways.list]
+                unlist(strsplit(x, split = "-"))[2]}) %in% pathways_list]
         metaginfo$all.labelids <- metaginfo$all.labelids[
-            metaginfo$all.labelids[,"path.id"] %in% pathways.list,]
+            metaginfo$all.labelids[,"path.id"] %in% pathways_list,]
     }
     return(metaginfo)
 }
 
 
-all.needed.genes <- function(pathigraphs){
+all_needed_genes <- function(pathigraphs){
     genes <- unique(unlist(sapply(pathigraphs, function(x){
         unique(unlist(V(x$graph)$genesList))
     })))
@@ -328,7 +328,7 @@ all.needed.genes <- function(pathigraphs){
 #' in a sample.
 #'
 #' Rownames are the IDs of the subpathways. In order to transform IDs into
-#' readable names, use \code{get.path.names}.
+#' readable names, use \code{get_path_names}.
 #'
 #' Effector subpathways are subgraphs of a pathway including all the paths
 #' leading to an effector protein. Effector proteins are defined as final
@@ -346,13 +346,13 @@ all.needed.genes <- function(pathigraphs){
 #'
 #' @examples
 #' data(results)
-#' path.vals <- get.paths.matrix(results)
+#' path_vals <- get_paths_matrix(results)
 #'
 #' @return Matrix with the levels of activation of each decomposed subpathway
 #' for each sample.
 #' @export
 #'
-get.paths.matrix <- function(results){
+get_paths_matrix <- function(results){
     return(results$all$path.vals)
 }
 
@@ -360,7 +360,7 @@ get.paths.matrix <- function(results){
 
 
 
-clip.names <- function(snames, maxchar = 30){
+clip_names <- function(snames, maxchar = 30){
     sapply(snames, function(x) {
         if(nchar(x) > maxchar){
             return(paste0(substr(x, 1 , maxchar - 3), "..."))
@@ -373,25 +373,25 @@ clip.names <- function(snames, maxchar = 30){
 
 
 #' @importFrom stats median
-add.missing.genes <- function(exp.data, genes, default = NULL){
+add_missing_genes <- function(exp_data, genes, default = NULL){
     if(is.null(default))
-        default <- stats::median(exp.data)
-    missing_genes <- setdiff(genes, rownames(exp.data))
+        default <- stats::median(exp_data)
+    missing_genes <- setdiff(genes, rownames(exp_data))
     if(length(missing_genes > 0)){
         fakemat <- default + matrix(0, nrow = length(missing_genes),
-                                    ncol = ncol(exp.data))
+                                    ncol = ncol(exp_data))
         rownames(fakemat) <- missing_genes
-        colnames(fakemat) <- colnames(exp.data)
-        exp.data <- rbind(exp.data, fakemat)
+        colnames(fakemat) <- colnames(exp_data)
+        exp_data <- rbind(exp_data, fakemat)
         # message("----------------------------------------------------")
         message("Added missing genes: ",
                 length(missing_genes),
                 " (",
-                round(length(missing_genes)/nrow(exp.data) * 100, digits = 2),
+                round(length(missing_genes)/nrow(exp_data) * 100, digits = 2),
                 "%)")
         # message("----------------------------------------------------")
     }
-    return(exp.data)
+    return(exp_data)
 }
 
 
@@ -432,33 +432,33 @@ hhead <- function(mat, n = 5){
 
 
 
-get.effnode.id <- function(path.name){
-    path.split <- unlist(strsplit(path.name, split="-"))
-    if(!path.split[1] == "P") return(NA)
-    if(length(path.split) == 4){
-        paste("N", path.split[2], path.split[4], sep="-")
-    }else if(length(path.split) == 3){
-        paste("N", path.split[2], path.split[3], sep="-")
+get_effnode_id <- function(path_name){
+    path_split <- unlist(strsplit(path_name, split="-"))
+    if(!path_split[1] == "P") return(NA)
+    if(length(path_split) == 4){
+        paste("N", path_split[2], path_split[4], sep="-")
+    }else if(length(path_split) == 3){
+        paste("N", path_split[2], path_split[3], sep="-")
     }else{
         return(NA)
     }
 }
 
 
-get.ininode.id <- function(path.name){
-    path.split <- unlist(strsplit(path.name, split="-"))
-    if(length(path.split) > 3){
-        paste("N", path.split[2], path.split[3], sep="-")
+get_ininode_id <- function(path_name){
+    path_split <- unlist(strsplit(path_name, split="-"))
+    if(length(path_split) > 3){
+        paste("N", path_split[2], path_split[3], sep="-")
     }else{
         return(NA)
     }
 }
 
 
-get.effpath.id <- function(node.name){
-    node.split <- unlist(strsplit(node.name, split="-"))
-    if(!node.split[1] == "N") return(NA)
-    gsub("N", "P", node.name)
+get_effpath_id <- function(node_name){
+    node_split <- unlist(strsplit(node_name, split="-"))
+    if(!node_split[1] == "N") return(NA)
+    gsub("N", "P", node_name)
 }
 
 
@@ -467,7 +467,7 @@ get.effpath.id <- function(node.name){
 #' Get functional annotation of the pathways, either for a particular
 #' annotation or a stored one.
 #'
-#' @param pathway.names Character vector of the names of the pathways
+#' @param pathway_names Character vector of the names of the pathways
 #' @param metaginfo Pathways object
 #' @param dbannot Either a string indicating which precomputed annotation
 #' to use ("uniprot" for Uniprot Keywords or "GO" for Gene Ontology terms),
@@ -480,33 +480,33 @@ get.effpath.id <- function(node.name){
 #' annotation \code{dbannot}.
 #'
 #' @examples
-#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 #' "hsa04012"))
-#' pathway.names <- c("P-hsa03320-37", "P-hsa03320-61", "P-hsa03320-46",
+#' pathway_names <- c("P-hsa03320-37", "P-hsa03320-61", "P-hsa03320-46",
 #' "P-hsa03320-57", "P-hsa03320-64", "P-hsa03320-47", "P-hsa03320-65")
-#' get.pathways.annotations(pathway.names, pathways, "GO")
-#' get.pathways.annotations(pathway.names, pathways, "uniprot")
+#' get_pathways_annotations(pathway_names, pathways, "GO")
+#' get_pathways_annotations(pathway_names, pathways, "uniprot")
 #'
 #' @export
 #' @import hpAnnot
 #'
-get.pathways.annotations <- function(pathway.names, metaginfo, dbannot,
+get_pathways_annotations <- function(pathway_names, metaginfo, dbannot,
                                      collapse = FALSE){
 
     if(is.character(dbannot)){
-        annofuns <- load.annofuns(dbannot, metaginfo$species)
+        annofuns <- load_annofuns(dbannot, metaginfo$species)
     }else{
-        annofuns <- annotate.paths(metaginfo, dbannot)
+        annofuns <- annotate_paths(metaginfo, dbannot)
     }
 
     annofuns$funs[is.na(annofuns$funs)] <- ""
-    decomposed <- length(unlist(strsplit(pathway.names[1], split = "-"))) == 4
+    decomposed <- length(unlist(strsplit(pathway_names[1], split = "-"))) == 4
     if(decomposed == TRUE)
-        pathway.names <- sapply(pathway.names, function(n)
+        pathway_names <- sapply(pathway_names, function(n)
             paste(unlist(strsplit(n, split="-"))[c(1,2,4)], collapse = "-"))
 
     if(collapse == TRUE){
-        miniaf <- do.call("rbind", lapply(pathway.names, function(path){
+        miniaf <- do.call("rbind", lapply(pathway_names, function(path){
             data.frame(effector.nodes =
                            annofuns$effector.nodes[annofuns$paths == path][1],
                        paths = path,
@@ -515,7 +515,7 @@ get.pathways.annotations <- function(pathway.names, metaginfo, dbannot,
                        stringsAsFactors = FALSE)
         }))
     }else{
-        miniaf <- do.call("rbind", lapply(pathway.names, function(path){
+        miniaf <- do.call("rbind", lapply(pathway_names, function(path){
             annofuns[annofuns$paths == path,]
         }))
     }
@@ -531,7 +531,7 @@ get.pathways.annotations <- function(pathway.names, metaginfo, dbannot,
 #' @param go_terms GO terms for which the highest common ancestors are
 #' to be looked for.
 #' @param go_comp Wilcoxon comparison of the matrix of GO values as returned
-#' by \code{do.wilcoxon}.
+#' by \code{do_wilcoxon}.
 #' @param metaginfo Pathways object
 #' @param unique Boolean, whether to return only one highest significant GO
 #' ancestor or all of them. By default, TRUE.
@@ -542,11 +542,11 @@ get.pathways.annotations <- function(pathway.names, metaginfo, dbannot,
 #' #@export
 #' @import hpAnnot
 #'
-get.highest.sig.ancestor <- function(go_terms, go_comp, metaginfo,
+get_highest_sig_ancestor <- function(go_terms, go_comp, metaginfo,
                                      unique = TRUE, pval = 0.05){
 
-    go_bp_frame <- load.gobp.frame()
-    go_bp_net <- load.gobp.net()
+    go_bp_frame <- load_gobp_frame()
+    go_bp_net <- load_gobp_net()
 
     # Relacionar GO term con su etiqueta
     go_labels <- sapply(go_terms,
@@ -564,26 +564,26 @@ get.highest.sig.ancestor <- function(go_terms, go_comp, metaginfo,
         # print(label)
         short <- shortest.paths(go_bp_net, label, mode = "in")[1,]
         ancestors <- names(short)[!short == "Inf"]
-        sig.ancestors <- intersect(ancestors, sig_go_labels)
-        if(length(sig.ancestors) > 0 ){
-            if(length(sig.ancestors) > 1)
-                sig.ancestors <- setdiff(sig.ancestors, label)
-            sig.levels <- go_bp_frame[sig.ancestors, "level"]
+        sig_ancestors <- intersect(ancestors, sig_go_labels)
+        if(length(sig_ancestors) > 0 ){
+            if(length(sig_ancestors) > 1)
+                sig_ancestors <- setdiff(sig_ancestors, label)
+            sig_levels <- go_bp_frame[sig_ancestors, "level"]
             if(unique == TRUE){
-                highest.ancestors <- go_bp_frame[sig.ancestors,
-                                                 "id"][sig.levels ==
-                                                           min(sig.levels)][1]
+                highest_ancestors <- go_bp_frame[sig_ancestors,
+                                                 "id"][sig_levels ==
+                                                           min(sig_levels)][1]
             }else{
-                highest.ancestors <- go_bp_frame[sig.ancestors,
-                                                 "id"][sig.levels ==
-                                                           min(sig.levels)]
+                highest_ancestors <- go_bp_frame[sig_ancestors,
+                                                 "id"][sig_levels ==
+                                                           min(sig_levels)]
             }
             df <- data.frame(GO_term = label,
                              GO_name = go_bp_frame[label, "name"],
                              GO_adj_pval = go_comp[label, "FDRp.value"],
-                             Highest_Significant_Ancestor = highest.ancestors,
-                             HSA_name = go_bp_frame[highest.ancestors, "name"],
-                             HSA_adj_pval = go_comp[highest.ancestors,
+                             Highest_Significant_Ancestor = highest_ancestors,
+                             HSA_name = go_bp_frame[highest_ancestors, "name"],
+                             HSA_adj_pval = go_comp[highest_ancestors,
                                                     "FDRp.value"],
                              stringsAsFactors = FALSE)
         }else{
@@ -621,10 +621,10 @@ get.highest.sig.ancestor <- function(go_terms, go_comp, metaginfo,
 #' ancestor to the node.
 #'
 #' @param pathways Pathways object
-#' @param comp.paths Wilcoxon comparison of the matrix of pathways values
-#' as returned by \code{do.wilcoxon}.
-#' @param comp.go Wilcoxon comparison of the matrix of GO values as
-#' returned by \code{do.wilcoxon}.
+#' @param comp_paths Wilcoxon comparison of the matrix of pathways values
+#' as returned by \code{do_wilcoxon}.
+#' @param comp_go Wilcoxon comparison of the matrix of GO values as
+#' returned by \code{do_wilcoxon}.
 #' @param pval P-value cut-off. Default values is set to 0.05.
 #'
 #' @return Table of comparisons with Highest common ancestors
@@ -634,27 +634,27 @@ get.highest.sig.ancestor <- function(go_terms, go_comp, metaginfo,
 #' data(go_vals)
 #' data(brca_design)
 #' data(path_vals)
-#' sample.group <- brca_design[colnames(path_vals),"group"]
-#' comp.go <- do.wilcoxon(go_vals, sample.group, g1 = "Tumor", g2 = "Normal")
-#' \dontrun{pathways <- load.pathways(species = "hsa", pathways.list =
+#' sample_group <- brca_design[colnames(path_vals),"group"]
+#' comp_go <- do_wilcoxon(go_vals, sample_group, g1 = "Tumor", g2 = "Normal")
+#' \dontrun{pathways <- load_pathways(species = "hsa", pathways_list =
 #' c("hsa03320", "hsa04012"))
-#' table <- paths.to.go.ancestor(pathways, comp, comp.go)}
+#' table <- paths_to_go_ancestor(pathways, comp, comp_go)}
 #'
 #' @export
 #'
-paths.to.go.ancestor <- function(pathways, comp.paths, comp.go, pval = 0.05){
-    path.names <- get.path.names(pathways, rownames(comp.paths))
-    names(path.names) <- rownames(comp.paths)
-    path.annot <- get.pathways.annotations(pathway.names = rownames(comp.paths),
+paths_to_go_ancestor <- function(pathways, comp_paths, comp_go, pval = 0.05){
+    path_names <- get_path_names(pathways, rownames(comp_paths))
+    names(path_names) <- rownames(comp_paths)
+    path_annot <- get_pathways_annotations(pathway_names = rownames(comp_paths),
                                            pathways, "GO", collapse = FALSE)
-    big.table <- do.call("rbind", lapply(rownames(comp.paths), function(path){
-        gos <- path.annot[path.annot$paths == path, "funs"]
+    big_table <- do.call("rbind", lapply(rownames(comp_paths), function(path){
+        gos <- path_annot[path_annot$paths == path, "funs"]
         if(length(gos) > 1 || !gos == ""){
-            gos.ancst <- get.highest.sig.ancestor(go_terms = gos,
-                                                  comp.go,
+            gos_ancst <- get_highest_sig_ancestor(go_terms = gos,
+                                                  comp_go,
                                                   metaginfo = pathways)
         }else{
-            gos.ancst <- data.frame(GO_term = "",
+            gos_ancst <- data.frame(GO_term = "",
                                     GO_name = "",
                                     GO_adj_pval = "",
                                     Highest_Significant_Ancestor = "",
@@ -663,14 +663,14 @@ paths.to.go.ancestor <- function(pathways, comp.paths, comp.go, pval = 0.05){
                                     stringsAsFactors = FALSE)
         }
         df <- cbind(path.id = path,
-                    path.name = path.names[path],
-                    comp.paths[path,c("UP/DOWN", "FDRp.value")],
-                    gos.ancst)
+                    path.name = path_names[path],
+                    comp_paths[path,c("UP/DOWN", "FDRp.value")],
+                    gos_ancst)
         return(df)
     }))
-    rownames(big.table) <- NULL
+    rownames(big_table) <- NULL
 
-    return(big.table)
+    return(big_table)
 }
 
 
@@ -685,35 +685,35 @@ paths.to.go.ancestor <- function(pathways, comp.paths, comp.go, pval = 0.05){
 #' by dividing by the value obtained from running the method with a basal
 #' value of 0.5 at each node.
 #'
-#' @param path.vals Matrix of the pathway values
+#' @param path_vals Matrix of the pathway values
 #' @param metaginfo Pathways object
 #'
 #' @return Matrix of normalized pathway values
 #'
 #' @examples
 #' data(path_vals)
-#' pathways <- load.pathways(species = "hsa", pathways.list = c("hsa03320",
+#' pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 #' "hsa04012"))
-#' path.normalized <- normalize.paths(path_vals, pathways)
+#' path_normalized <- normalize_paths(path_vals, pathways)
 #'
 #' @export
 #'
-normalize.paths <- function(path.vals, metaginfo){
-    decomposed <- !all(sapply(sapply(rownames(path.vals),
+normalize_paths <- function(path_vals, metaginfo){
+    decomposed <- !all(sapply(sapply(rownames(path_vals),
                                      strsplit, "-"), length) == 3)
     if(decomposed == TRUE){
-        norm.factors <- metaginfo$path.norm[rownames(path.vals)]
-        path.norm <- normalize.data(path.vals/(norm.factors*0.99+0.01),
-                                    by.quantiles = FALSE,
-                                    by.gene = FALSE,
+        norm_factors <- metaginfo$path.norm[rownames(path_vals)]
+        path_norm <- normalize_data(path_vals/(norm_factors*0.99+0.01),
+                                    by_quantiles = FALSE,
+                                    by_gene = FALSE,
                                     percentil = FALSE)
     }else{
-        norm.factors <- metaginfo$eff.norm[rownames(path.vals)]
-        path.norm <- normalize.data(path.vals/(norm.factors*0.99+0.01),
-                                    by.quantiles = FALSE,
-                                    by.gene = FALSE,
+        norm_factors <- metaginfo$eff.norm[rownames(path_vals)]
+        path_norm <- normalize_data(path_vals/(norm_factors*0.99+0.01),
+                                    by_quantiles = FALSE,
+                                    by_gene = FALSE,
                                     percentil = FALSE)
     }
-    return(path.norm)
+    return(path_norm)
 }
 
