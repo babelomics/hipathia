@@ -452,9 +452,10 @@ pathway_comparison_plot <- function(comp, metaginfo, pathway, conf=0.05,
                                     node_colors = NULL, colors = "classic"){
 
     if(length(colors) == 1){
-        if(colors == "hipathia"){ colors <- c("#50b7ae", "darkgrey", "#f16a34")
-        }else if(colors == "classic"){ colors <- c("#0571b0", "darkgrey",
-                                                   "#ca0020")}
+        if(colors == "hipathia"){ 
+            colors <- c("#50b7ae", "darkgrey", "#f16a34")
+        }else if(colors == "classic"){ 
+            colors <- c("#0571b0", "darkgrey","#ca0020")}
     }
     down_col <- colors[1]
     no_col <- colors[2]
@@ -484,7 +485,7 @@ pathway_comparison_plot <- function(comp, metaginfo, pathway, conf=0.05,
     name <- metaginfo$pathigraphs[[pathway]]$path.name
     title <- paste(id, "-", name)
     plot_pathigraph(g,
-                    node_color = node_colors[[pathway]],
+                    node_color = node_colors$colors[[pathway]],
                     edge_lty = edge_lty,
                     main = title )
 }
