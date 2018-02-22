@@ -2,7 +2,7 @@
 title: "HiPathia Bioconductor Package"
 author: "Marta R. Hidalgo, Francisco Salavert, Alicia Amadoz, Çankut Cubuk, José Carbonell-Caballero, Joaquín Dopazo"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: BiocStyle::pdf_document
 vignette: >
   %\VignetteIndexEntry{Vignette Title}
   %\VignetteEngine{knitr::rmarkdown}

@@ -1,6 +1,6 @@
 ##
 ## load.R
-## Load from hpAnnot package functions
+## Load objects from hpAnnot package through AnnotationHub
 ##
 ## Written by Marta R. Hidalgo, marta.hidalgo@outlook.es
 ##
@@ -19,6 +19,7 @@
 #' #load_annofuns("uniprot", "hsa")
 #'
 #' @return Annotations object
+#' @import AnnotationHub
 #'
 load_annofuns <- function(db, species){
     if(!is_accepted_species(species))
@@ -26,9 +27,9 @@ load_annofuns <- function(db, species){
     if(!is_accepted_database(db))
         stop("Database not accepted")
     file <- paste0("annofuns_", db, "_", species, ".rda")
-    af <- load(system.file("extdata", file, package = "hpAnnot"), 
-               envir = environment())
-    annofuns <- get(af)
+    ah <- AnnotationHub()
+    hp <- query(ah, "hpAnnot")
+    annofuns <- suppressMessages(ah[[names(hp)[hp$title == file]]])
     return(annofuns)
 }
 
@@ -41,15 +42,16 @@ load_annofuns <- function(db, species){
 #' #load_mgi("hsa")
 #'
 #' @return Graph information object
+#' @import AnnotationHub
 #'
 load_mgi <- function(species){
     if(!is_accepted_species(species))
         stop("Species not accepted")
     file <- paste0("meta_graph_info_", species, ".rda")
-    mgi <- load(system.file("extdata", file, package = "hpAnnot"), 
-                envir = environment())
-    meta_graph_info <- get(mgi)
-    return(meta_graph_info)
+    ah <- AnnotationHub()
+    hp <- query(ah, "hpAnnot")
+    mgi <- suppressMessages(ah[[names(hp)[hp$title == file]]])
+    return(mgi)
 }
 
 
@@ -66,6 +68,7 @@ load_mgi <- function(species){
 #' #load_pseudo_mgi("hsa", "uniprot")
 #'
 #' @return Pseudo graph information object
+#' @import AnnotationHub
 #'
 load_pseudo_mgi <- function(species, group_by){
     if(!is_accepted_species(species))
@@ -73,9 +76,9 @@ load_pseudo_mgi <- function(species, group_by){
     if(!is_accepted_grouping(group_by))
         stop("Grouping not accepted")
     file <- paste0("pmgi_", species, "_", group_by, ".rda")
-    pseudo <- load(system.file("extdata", file, package = "hpAnnot"), 
-         envir = environment())
-    pmgi <- get(pseudo)
+    ah <- AnnotationHub()
+    hp <- query(ah, "hpAnnot")
+    pmgi <- suppressMessages(ah[[names(hp)[hp$title == file]]])
     return(pmgi)
 }
 
@@ -88,14 +91,15 @@ load_pseudo_mgi <- function(species, group_by){
 #' #load_xref("hsa")
 #'
 #' @return Table of references
+#' @import AnnotationHub
 #'
 load_xref <- function(species){
     if(!is_accepted_species(species))
         stop("Species not accepted")
     file <- paste0("xref_", species, ".rda")
-    xr <- load(system.file("extdata", file, package = "hpAnnot"), 
-         envir = environment())
-    xref <- get(xr)
+    ah <- AnnotationHub()
+    hp <- query(ah, "hpAnnot")
+    xref <- suppressMessages(ah[[names(hp)[hp$title == file]]])
     return(xref)
 }
 
@@ -108,14 +112,15 @@ load_xref <- function(species){
 #' #load_entrez_hgnc("hsa")
 #'
 #' @return Table of translation from HGNC to Entrez
+#' @import AnnotationHub
 #'
 load_entrez_hgnc <- function(species){
     if(!is_accepted_species(species))
         stop("Species not accepted")
     file <- paste0("entrez_hgnc_", species, ".rda")
-    eh <- load(system.file("extdata", file, package = "hpAnnot"), 
-         envir = environment())
-    entrez_hgnc <- get(eh)
+    ah <- AnnotationHub()
+    hp <- query(ah, "hpAnnot")
+    entrez_hgnc <- suppressMessages(ah[[names(hp)[hp$title == file]]])
     return(entrez_hgnc)
 }
 
@@ -131,6 +136,7 @@ load_entrez_hgnc <- function(species){
 #' #load_annots("GO", "hsa")
 #'
 #' @return Functional annotations from HGNC to the selected database.
+#' @import AnnotationHub
 #'
 load_annots <- function(db, species){
     if(!is_accepted_species(species))
@@ -138,9 +144,9 @@ load_annots <- function(db, species){
     if(!is_accepted_database(db))
         stop("Database not accepted")
     file <- paste0("annot_", db, "_", species, ".rda")
-    ann <- load(system.file("extdata", file, package = "hpAnnot"), 
-                  envir = environment())
-    annot <- get(ann)
+    ah <- AnnotationHub()
+    hp <- query(ah, "hpAnnot")
+    annot <- suppressMessages(ah[[names(hp)[hp$title == file]]])
     return(annot)
 }
 
@@ -151,12 +157,13 @@ load_annots <- function(db, species){
 #' #load_gobp_frame()
 #'
 #' @return GO graph information
+#' @import AnnotationHub
 #'
 load_gobp_frame <- function(){
-    gbf <- load(system.file("extdata", "go_bp_frame.rda", package = "hpAnnot"), 
-                envir = environment())
-    go_bp_frame <- get(gbf)
-    return(go_bp_frame)
+    ah <- AnnotationHub()
+    hp <- query(ah, "hpAnnot")
+    gbf <- suppressMessages(ah[[names(hp)[hp$title == "go_bp_frame.rda"]]])
+    return(gbf)
 }
 
 
@@ -166,11 +173,12 @@ load_gobp_frame <- function(){
 #' #load_gobp_net()
 #'
 #' @return GO graph
+#' @import AnnotationHub
 #'
 load_gobp_net <- function(){
-    gbn <- load(system.file("extdata", "go_bp_net.rda", package = "hpAnnot"), 
-                envir = environment())
-    go_bp_net <- get(gbn)
-    return(go_bp_net)
+    ah <- AnnotationHub()
+    hp <- query(ah, "hpAnnot")
+    gbn <- suppressMessages(ah[[names(hp)[hp$title == "go_bp_net.rda"]]])
+    return(gbn)
 }
 
