@@ -1,6 +1,6 @@
 Package: hipathia
 Title: HiPathia
-Version: 0.99.8
+Version: 0.99.9
 Authors@R: c(person("Marta R.", "Hidalgo", email = "marta.hidalgo@outlook.es", role = c("aut", "cre")),
 	     person("José", "Carbonell-Caballero", email = "jcarbonell.work@gmail.com", role = c("aut")),
 	     person("Francisco", "Salavert", email = "fsalavert@cipf.es", role = c("ctb")),
@@ -15,7 +15,7 @@ Author: Marta R. Hidalgo [aut, cre]
 	Joaquin Dopazo [ctb]
 Maintainer: Marta R. Hidalgo <marta.hidalgo@outlook.es>
 Description: Hipathia is a package for Signaling pathway analysis and the Signaling pathway functional analysis.
-Depends: R (>= 3.4), igraph (>= 1.0.1), AnnotationHub(>= 2.6.5)
+Depends: R (>= 3.4), igraph (>= 1.0.1), AnnotationHub(>= 2.6.5), MultiAssayExperiment(>= 1.4.9), SummarizedExperiment(>= 1.8.1)
 License: GPL-2
 Encoding: UTF-8
 LazyData: true

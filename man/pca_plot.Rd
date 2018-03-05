@@ -4,21 +4,21 @@
 \alias{pca_plot}
 \title{Plots two components of a PCA}
 \usage{
-pca_plot(fit, sample_type = NULL, sample_colors = NULL, cp1 = 1,
-  cp2 = 2, legend = TRUE, legend_xy = "bottomleft", cex = 2, pch = 20,
+pca_plot(fit, group = NULL, sample_colors = NULL, cp1 = 1, cp2 = 2,
+  legend = TRUE, legend_xy = "bottomleft", cex = 2, pch = 20,
   mgp = c(3, 1, 0), main = "PCA plot", save_png = NULL)
 }
 \arguments{
 \item{fit}{princomp object as returned by \code{do_pca}}
 
-\item{sample_type}{Vector with the group to which each sample belongs.
-The samples must be ordered as in \code{path_vals}.
+\item{group}{Vector with the group to which each sample belongs.
+The samples must be ordered as in \code{rownames(fit$scores)}.
 By default, all samples will be assigned to the same class.}
 
 \item{sample_colors}{Named character vector of colors. The names of
-the colors must be the classes in \code{sample_type}. Each sample will be
+the colors must be the classes in \code{group}. Each sample will be
 assigned the color corresponding to its class, taken from the
-\code{sample_type} vector. By default a color will be assigned
+\code{group} vector. By default a color will be assigned
 automatically to each class.}
 
 \item{cp1}{Integer, number of the component in the X-axis.

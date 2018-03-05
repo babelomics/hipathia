@@ -4,11 +4,14 @@
 \alias{do_pca}
 \title{Performs a Principal Components Analysis}
 \usage{
-do_pca(data, cor = FALSE)
+do_pca(data, sel_assay = 1, cor = FALSE)
 }
 \arguments{
-\item{data}{Matrix of values to be analyzed. Samples must be represented
-in the columns.}
+\item{data}{SummarizedExperiment or matrix of values to be analyzed. Samples 
+must be represented in the columns.}
+
+\item{sel_assay}{Character or integer, indicating the assay to be normalized 
+in the SummarizedExperiment. Default is 1.}
 
 \item{cor}{A logical value indicating whether the calculation should use
 the correlation matrix or the covariance matrix. (The correlation matrix

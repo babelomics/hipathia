@@ -27,7 +27,6 @@
 #' #annotate_paths(pathways, "GO")
 #'
 #' #@export
-#' @import hpAnnot
 #'
 annotate_paths <- function(metaginfo, dbannot){
 
@@ -89,23 +88,27 @@ annotate_paths <- function(metaginfo, dbannot){
 #'
 #' @export
 #'
-quantify_terms <- function(results, metaginfo, dbannot, normalize = TRUE){
+quantify_terms <- function(results, metaginfo, dbannot, matrix = FALSE, 
+                           normalize = TRUE){
 
-    method="mean"
+    method = "mean"
     species <- metaginfo$species
-
+    path_vals <- assay(results[["paths"]])
+    first <- rownames(path_vals)[1]
+    decomposed <- is_decomposed_matrix(path_vals)
+    if(decomposed == TRUE)
+        stop("Function terms can only be computed from NOT decomposed subpaths")
+    
     if(is.character(dbannot) & length(dbannot) == 1){
         annofuns <- load_annofuns(dbannot, species)
     }else{
         annofuns <- annotate_paths(metaginfo, dbannot)
     }
-
     annofuns <- annofuns[!is.na(annofuns$funs),]
     annofuns$pathway <- sapply(strsplit(annofuns$paths, split = "-"), "[[", 2)
     annofuns <- annofuns[annofuns$pathway %in% names(metaginfo$pathigraphs),]
     fun_names <- unique(annofuns$funs)
 
-    path_vals <- results$all$path.vals
     if(normalize == TRUE)
         path_vals <- normalize_paths(path_vals, metaginfo)
 
@@ -123,8 +126,11 @@ quantify_terms <- function(results, metaginfo, dbannot, normalize = TRUE){
             fun_vals[fun,] <- 1 - apply(minimat, 2, prod)
         }
     }
+    if(matrix == FALSE)
+        fun_vals <- SummarizedExperiment(list(terms = fun_vals), 
+                                         colData = colData(results[["paths"]]))
     return(fun_vals)
-
+    
 }
 
 get_entrez_function <- function(entrezs, entrez2hgnc, dbannot){

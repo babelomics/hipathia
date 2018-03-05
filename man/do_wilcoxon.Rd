@@ -4,13 +4,17 @@
 \alias{do_wilcoxon}
 \title{Apply Wilcoxon test}
 \usage{
-do_wilcoxon(sel_vals, group_value, g1, g2, paired = FALSE, adjust = TRUE)
+do_wilcoxon(data, group, g1, g2, paired = FALSE, adjust = TRUE,
+  sel_assay = 1)
 }
 \arguments{
-\item{sel_vals}{Matrix of values. Columns represent samples.}
+\item{data}{Either a SummarizedExperiment object or a matrix, containing the
+values. Columns represent samples.}
 
-\item{group_value}{Vector with the class to which each sample belongs.
-Samples must be ordered as in \code{sel_vals}}
+\item{group}{Either a character indicating the name of the column in colData 
+including the classes to compare, or a character vector with the class to 
+which each sample belongs. 
+Samples must be ordered as in \code{data}}
 
 \item{g1}{String, label of the first group to be compared}
 
@@ -23,6 +27,9 @@ is used.}
 
 \item{adjust}{Boolean, whether to adjust the p.value with
 Benjamini-Hochberg FDR method}
+
+\item{sel_assay}{Character or integer, indicating the assay to be normalized 
+in the SummarizedExperiment. Default is 1.}
 }
 \value{
 Dataframe with the result of the comparison

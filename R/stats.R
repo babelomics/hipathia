@@ -8,9 +8,11 @@
 ## https://www.bioconductor.org/developers/how-to/coding-style/
 ##
 
-#' Normalize expression data to be used in \code{hipathia}
+#' Normalize expression data from a SummarizedExperiment or matrix to be used in 
+#' \code{hipathia}
 #'
-#' Transforms the rank of the matrix of gene expression to [0,1] in order
+#' Transforms the rank of the SummarizedExperiment or matrix of gene expression 
+#' to [0,1] in order
 #' to be processed by \code{hipathia}. The transformation may be performed
 #' in two different ways. If \code{percentil = FALSE}, the transformation
 #' is a re-scaling of the rank of the matrix. If \code{percentil = TRUE},
@@ -30,9 +32,11 @@
 #' may be given to the parameter \code{truncation_percentil}. When provided,
 #' values beyond percentil p are truncated to the value of percentil p, and
 #' values beyond 1-p are truncated to percentil 1-p. This step is performed
-#'  before any other tranformation. By default no truncation is performed.
+#' before any other tranformation. By default no truncation is performed.
 #'
-#' @param exp_data Matrix of gene expression.
+#' @param data Either a SummarizedExperiment or a matrix of gene expression.
+#' @param sel_assay Character or integer, indicating the assay to be normalized 
+#' in the SummarizedExperiment. Default is 1.
 #' @param by_quantiles Boolean, whether to normalize the data by quantiles.
 #' Default is FALSE.
 #' @param by_gene Boolean, whether to transform the rank of each row of the
@@ -54,14 +58,45 @@
 #'
 #' @export
 #' @import preprocessCore
+#' @import SummarizedExperiment
 #' @importFrom stats quantile
 #' @importFrom stats ecdf
 #'
-normalize_data <- function(exp_data, by_quantiles = FALSE, by_gene = FALSE,
-                           percentil = FALSE, truncation_percentil = NULL){
+normalize_data <- function(data, sel_assay = 1, by_quantiles = FALSE, 
+                         by_gene = FALSE, percentil = FALSE, 
+                         truncation_percentil = NULL){
+    
+    if(is(data, "SummarizedExperiment")){
+        se_flag <- TRUE
+        mat <- assay(data, sel_assay)
+    }else if(is(data, "matrix")){
+        se_flag <- FALSE
+        mat <- data
+    }else{
+        stop("Only SummarizedExperiment or matrix classes accepted as data")
+    }
+    norm_mat <- normalize_matrix(mat, by_quantiles = by_quantiles, 
+                                 by_gene = by_gene, percentil = percentil, 
+                                 truncation_percentil=truncation_percentil)
+    if(se_flag == TRUE){
+        norm_data <- SummarizedExperiment(list(norm = norm_mat), 
+                                          colData = colData(data))
+    }else{
+        norm_data <- norm_mat
+    }
+    return(norm_data)
+}
 
+
+#' @import preprocessCore
+#' @importFrom stats quantile
+#' @importFrom stats ecdf
+normalize_matrix <- function(mat, sel_assay = 1, by_quantiles = FALSE, 
+                           by_gene = FALSE,
+                           percentil = FALSE, truncation_percentil = NULL){
+    
     # Normalize data matrix
-    norm_data <- data.matrix(exp_data)
+    norm_data <- data.matrix(mat)
     if(!is.null(truncation_percentil)){
         if( truncation_percentil >= 0 & truncation_percentil <= 1){
             # Guarantees that truncation_percentil is in [0.5,1]
@@ -103,9 +138,8 @@ normalize_data <- function(exp_data, by_quantiles = FALSE, by_gene = FALSE,
                 (max(norm_data, na.rm = TRUE) - min(norm_data, na.rm = TRUE))
         }
     }
-
-    colnames(norm_data) <- colnames(exp_data)
-    rownames(norm_data) <- rownames(exp_data)
+    colnames(norm_data) <- colnames(mat)
+    rownames(norm_data) <- rownames(mat)
 
     return(norm_data)
 }
@@ -201,9 +235,12 @@ cor_data_frame <- function(wilcox){
 #' Performs a Wilcoxon test for the values in \code{sel_vals} comparing
 #' conditions \code{g1} and \code{g2}
 #'
-#' @param sel_vals Matrix of values. Columns represent samples.
-#' @param group_value Vector with the class to which each sample belongs.
-#' Samples must be ordered as in \code{sel_vals}
+#' @param data Either a SummarizedExperiment object or a matrix, containing the
+#' values. Columns represent samples.
+#' @param group Either a character indicating the name of the column in colData 
+#' including the classes to compare, or a character vector with the class to 
+#' which each sample belongs. 
+#' Samples must be ordered as in \code{data}
 #' @param g1 String, label of the first group to be compared
 #' @param g2 String, label of the second group to be compared
 #' @param paired Boolean, whether the samples to be compared are paired.
@@ -212,6 +249,8 @@ cor_data_frame <- function(wilcox){
 #' is used.
 #' @param adjust Boolean, whether to adjust the p.value with
 #' Benjamini-Hochberg FDR method
+#' @param sel_assay Character or integer, indicating the assay to be normalized 
+#' in the SummarizedExperiment. Default is 1.
 #'
 #' @return Dataframe with the result of the comparison
 #'
@@ -222,22 +261,41 @@ cor_data_frame <- function(wilcox){
 #' comp <- do_wilcoxon(path_vals, sample_group, g1 = "Tumor", g2 = "Normal")
 #'
 #' @export
+#' @import SummarizedExperiment
 #'
-do_wilcoxon <- function(sel_vals, group_value, g1, g2, paired=FALSE,
-                        adjust=TRUE){
+do_wilcoxon <- function(data, group, g1, g2, paired = FALSE,
+                        adjust = TRUE, sel_assay = 1){
 
-    g1_indexes <- which(group_value == g1)
-    g2_indexes <- which(group_value == g2)
+    if(is(data, "SummarizedExperiment")){
+        se_flag <- TRUE
+        if(is(group, "character") & length(group) == 1)
+            if(group %in% colnames(colData(data))){
+                group <- colData(data)[[group]]
+            }else{
+                stop("Group variable must be a column in colData(data)")
+            }
+        vals <- assay(data, sel_assay)
+    }else if(is(data, "matrix")){
+        se_flag <- FALSE
+        vals <- data
+    }else{
+        stop("Only SummarizedExperiment or matrix classes accepted as data")
+    }
+
+    g1_indexes <- which(group == g1)
+    g2_indexes <- which(group == g2)
 
     stat_vals <- suppressWarnings(
-        calculate_wilcox_test(sel_vals, g2_indexes, g1_indexes, paired = paired,
+        calculate_wilcox_test(vals, g2_indexes, g1_indexes, paired = paired,
                               adjust = adjust))
+    if(se_flag == TRUE && "subpath.name" %in% colnames(rowData(data)))
+        stat_vals <- cbind(name = rowData(data)[["subpath.name"]], stat_vals)
     return(stat_vals)
 }
 
 
 #'@importFrom stats p.adjust
-calculate_wilcox_test <- function( data, control, disease, paired, adjust=TRUE){
+calculate_wilcox_test <- function(data, control, disease, paired, adjust=TRUE){
     if(paired == TRUE){
         dat <- apply(data, 1, wilcoxsign_test_fun, control, disease)
         testData <- do.call("rbind", dat)
@@ -277,9 +335,8 @@ calculate_wilcox_test <- function( data, control, disease, paired, adjust=TRUE){
 
 
 wilcoxsign_test_fun <- function(x, control, disease){
-    r <- try(coin::wilcoxsign_test(as.numeric(x[disease])~
-                                       as.numeric(x[control]),
-                                   showWarnings = FALSE))
+    r <- try(coin::wilcoxsign_test(
+        as.numeric(x[disease]) ~ as.numeric(x[control]), showWarnings = FALSE))
     if (class(r) == "try-error"){
         pvalue <- 1
         class <- "0"
@@ -347,8 +404,10 @@ wilcox_data_frame <- function(wilcox){
 #'
 #' Performs a Principal Components Analysis
 #'
-#' @param data Matrix of values to be analyzed. Samples must be represented
-#' in the columns.
+#' @param data SummarizedExperiment or matrix of values to be analyzed. Samples 
+#' must be represented in the columns.
+#' @param sel_assay Character or integer, indicating the assay to be normalized 
+#' in the SummarizedExperiment. Default is 1.
 #' @param cor A logical value indicating whether the calculation should use
 #' the correlation matrix or the covariance matrix. (The correlation matrix
 #' can only be used if there are no constant variables.)
@@ -362,7 +421,14 @@ wilcox_data_frame <- function(wilcox){
 #' @export
 #' @importFrom stats princomp
 #'
-do_pca <- function(data, cor = FALSE){
+do_pca <- function(data, sel_assay = 1, cor = FALSE){
+    if(is(data, "SummarizedExperiment")){
+        data <- assay(data, sel_assay)
+    }else if(is(data, "matrix")){
+        data <- data
+    }else{
+        stop("Only SummarizedExperiment or matrix classes accepted as data")
+    }
     fit <- stats::princomp(t(data), cor = cor)
     fit$var <- fit$sdev^2
     fit$explain_var <- fit$var/sum(fit$var)

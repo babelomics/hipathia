@@ -5,7 +5,8 @@
 \title{Computes the level of activation of the functions related to the
 previously computed subpathways}
 \usage{
-quantify_terms(results, metaginfo, dbannot, normalize = TRUE)
+quantify_terms(results, metaginfo, dbannot, matrix = FALSE,
+  normalize = TRUE)
 }
 \arguments{
 \item{results}{List of results as returned by the \code{hipathia} function}

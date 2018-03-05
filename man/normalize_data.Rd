@@ -2,13 +2,17 @@
 % Please edit documentation in R/stats.R
 \name{normalize_data}
 \alias{normalize_data}
-\title{Normalize expression data to be used in \code{hipathia}}
+\title{Normalize expression data from a SummarizedExperiment or matrix to be used in 
+\code{hipathia}}
 \usage{
-normalize_data(exp_data, by_quantiles = FALSE, by_gene = FALSE,
+normalize_data(data, sel_assay = 1, by_quantiles = FALSE, by_gene = FALSE,
   percentil = FALSE, truncation_percentil = NULL)
 }
 \arguments{
-\item{exp_data}{Matrix of gene expression.}
+\item{data}{Either a SummarizedExperiment or a matrix of gene expression.}
+
+\item{sel_assay}{Character or integer, indicating the assay to be normalized 
+in the SummarizedExperiment. Default is 1.}
 
 \item{by_quantiles}{Boolean, whether to normalize the data by quantiles.
 Default is FALSE.}
@@ -28,7 +32,8 @@ is performed.}
 Matrix of gene expression whose values are in [0,1].
 }
 \description{
-Transforms the rank of the matrix of gene expression to [0,1] in order
+Transforms the rank of the SummarizedExperiment or matrix of gene expression 
+to [0,1] in order
 to be processed by \code{hipathia}. The transformation may be performed
 in two different ways. If \code{percentil = FALSE}, the transformation
 is a re-scaling of the rank of the matrix. If \code{percentil = TRUE},
@@ -49,7 +54,7 @@ For distributions with extreme outlayer values, a percentil \code{p}
 may be given to the parameter \code{truncation_percentil}. When provided,
 values beyond percentil p are truncated to the value of percentil p, and
 values beyond 1-p are truncated to percentil 1-p. This step is performed
- before any other tranformation. By default no truncation is performed.
+before any other tranformation. By default no truncation is performed.
 }
 \examples{
 data("brca_data")

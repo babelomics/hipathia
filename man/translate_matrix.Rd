@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{translate_matrix}
 \alias{translate_matrix}
-\title{Translation of the rownames IDs to Entrez IDs.}
+\title{Translation of the rownames IDs of a matrix to Entrez IDs.}
 \usage{
 translate_matrix(exp, species, verbose = TRUE)
 }
@@ -20,9 +20,4 @@ Matrix of gene expression with Entrez IDs as rownames.
 \description{
 Translates the IDs in the rownames of a matrix to Entrez IDs.
 For accepted IDs to be transformed see the DOCUMENTATION.
-}
-\examples{
-data("brca_data")
-trans_data <- translate_matrix(brca_data, "hsa")
-
 }

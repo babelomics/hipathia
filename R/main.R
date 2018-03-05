@@ -12,10 +12,13 @@
 #'
 #' #@importFrom igraph
 #'
-#' @param genes_vals A matrix with the normalized expression values of the
-#' genes. Rows represent genes and columns represent samples.
-#' Rownames() must be accepted gene IDs.
+#' @param genes_vals A SummarizedExperiment or matrix with the normalized 
+#' expression values of the genes. Rows represent genes and columns represent 
+#' samples. Rownames() must be accepted gene IDs.
 #' @param metaginfo Pathways object
+#' @param sel_assay Character or integer, indicating the assay to be processed 
+#' in the SummarizedExperiment. Only applied if \code{genes_vals} is a 
+#' \code{SummarizedExperiment}.Default is 1.
 #' @param decompose Boolean, whether to compute the values for the decomposed
 #' subpathways. By default, effector subpathways are computed.
 #' @param maxnum Number of maximum iterations when iterating the signal
@@ -25,7 +28,8 @@
 #' @param tol Tolerance for the difference between two iterations when
 #' iterating the signal through the loops into the pathways
 #'
-#' @return An object with the level of activation of the subpathways from
+#' @return A MultiAssayExperiment object with the level of activation of the 
+#' subpathways from
 #' the pathways in \code{pathigraphs} for the experiment
 #' with expression values in \code{genes_vals}.
 #'
@@ -37,10 +41,19 @@
 #' results <- hipathia(exp_data, pathways, decompose = TRUE, verbose = FALSE)
 #'
 #' @export
+#' @import MultiAssayExperiment
+#' @import SummarizedExperiment
 #'
-hipathia <- function(genes_vals, metaginfo, decompose = FALSE, maxnum = 100,
-                     verbose = TRUE, tol = 0.000001, test = TRUE){
+hipathia <- function(genes_vals, metaginfo, sel_assay = 1, decompose = FALSE, 
+                     maxnum = 100, verbose = TRUE, tol = 0.000001, test = TRUE){
 
+    if(is(genes_vals, "SummarizedExperiment")){
+        coldata <- colData(genes_vals)
+        genes_vals <- assay(genes_vals, sel_assay)
+    }else{
+        cols <- colnames(genes_vals)
+        coldata <- data.frame(cols = cols, stringsAsFactors = FALSE)
+    }
     if(test == TRUE){
         if(is.null(genes_vals))
             stop("Missing input matrix")
@@ -82,11 +95,22 @@ hipathia <- function(genes_vals, metaginfo, decompose = FALSE, maxnum = 100,
         return(res)
     })
 
-    results$all$path.vals <- do.call("rbind", lapply(results$by.path, 
-                                                     function(x) x$path.vals))
-    results$all$nodes.vals <- do.call("rbind", lapply(results$by.path, 
-                                                      function(x) x$nodes.vals))
-    return(results)
+    paths <- do.call("rbind", lapply(results$by.path, function(x) x$path.vals))
+    nodes <- do.call("rbind", lapply(results$by.path, function(x) x$nodes.vals))
+    
+    paths_rd <- DataFrame(subpath.ID = rownames(paths), 
+                          subpath.name = get_path_names(metaginfo, 
+                                                        rownames(paths)))
+    nodes_rd <- as.data.frame(metaginfo$all.labelids[rownames(nodes),], 
+                              stringsAsFactors = FALSE)
+        
+    paths_se <- SummarizedExperiment(list(paths = paths), rowData = paths_rd, 
+                                     colData = coldata)
+    nodes_se <- SummarizedExperiment(list(nodes = nodes), rowData = nodes_rd, 
+                                     colData = coldata)
+    resmae <- MultiAssayExperiment(list(paths = paths_se, nodes = nodes_se))
+    
+    return(resmae)
 }
 
 

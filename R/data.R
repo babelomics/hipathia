@@ -1,3 +1,41 @@
+##
+## data.R
+## Data documentation script
+##
+## Written by Marta R. Hidalgo
+##
+## Code style by Hadley Wickham (http://r-pkgs.had.co.nz/style.html)
+## https://www.bioconductor.org/developers/how-to/coding-style/
+##
+
+
+
+#' BRCA gene expression dataset as SummarizedExperiment
+#'
+#' A dataset containing a matrix with the Gene expression of 40 samples from the
+#' BRCA-US project from The Cancer Genome Atlas (TCGA), and their experimental 
+#' design, containing 20 "Tumor" samples 20 "Normal" samples.
+#'
+#' The gene expression matrix includes 40 samples. The data has been 
+#' log-transformed and normalized with TMM.
+#'
+#' @format SummarizedExperiment. The assay is a matrix with 40 columns and 
+#' 18638 rows. Row names are Entrez IDs and column names are the TCGA 
+#' identifyers of the samples. The colData() is a data.frame with 1 column and 
+#' 40 rows, including the experimental design of the 40 samples from the BRCA-US
+#' project from TCGA. Field \code{group} is the type of sample, either "Tumor" 
+#' or "Normal".
+#'
+#' @return SummarizedExperiment including a matrix with 40 columns and 18638 
+#' rows. Row names are Entrez IDs and column names are the TCGA identifyers of 
+#' the samples. 
+#'
+#' @usage data(brca)
+#'
+#' @source \url{https://cancergenome.nih.gov/}
+#'
+"brca"
+
 
 #' BRCA gene expression dataset
 #'

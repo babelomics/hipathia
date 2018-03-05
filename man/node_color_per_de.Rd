@@ -4,8 +4,8 @@
 \alias{node_color_per_de}
 \title{Colors of the nodes by its differential expression}
 \usage{
-node_color_per_de(results, metaginfo, groups, group1_label, group2_label,
-  group_by = "pathway", colors = "classic", conf = 0.05)
+node_color_per_de(results, metaginfo, group, g1, g2, group_by = "pathway",
+  colors = "classic", conf = 0.05)
 }
 \arguments{
 \item{results}{Object of results as provided by the \code{hipathia}
@@ -13,12 +13,14 @@ function_}
 
 \item{metaginfo}{Object of pathways_}
 
-\item{groups}{Vector with the class to which each sample belongs_
-Samples must be ordered as in \code{results}}
+\item{group}{Character indicating the column in which the group variable is 
+stored, in case the object provided to \code{hipathia} was a 
+SummarizedExperiment, or a vector with the class to which each sample 
+belongs. Samples must be ordered as in \code{results}.}
 
-\item{group1_label}{String, label of the first group to be compared}
+\item{g1}{String, label of the first group to be compared}
 
-\item{group2_label}{String, label of the second group to be compared}
+\item{g2}{String, label of the second group to be compared}
 
 \item{group_by}{How to group the subpathways to be visualized. By default
 they are grouped by the pathway to which they belong. Available groupings
@@ -41,8 +43,8 @@ of the nodes in each pathway.
 Performs a differential expression on the nodes and computes the colors
 of the nodes depending on it_ Significant up- and down-regulated nodes
 are depicted with the selected color, with a gradient towards the
-non-significant color depending on the value of the p-value_
-Smaller p-values give rise to purer colors than higher p-values_
+non-significant color depending on the value of the p-value.
+Smaller p-values give rise to purer colors than higher p-values.
 }
 \section{Slots}{
 

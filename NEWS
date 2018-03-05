@@ -1,1 +1,5 @@
 Information about new versions of Hipathia
+
+0.99.7: Last version supporting hpAnnot as annotation package
+0.99.8: First version using AnnotationHub to load annotation files.
+0.99.9: Adapting hipathia package to SummarizedExperiment and MultiAssayExperiment.

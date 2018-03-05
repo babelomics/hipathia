@@ -2,17 +2,17 @@
 % Please edit documentation in R/utils.R
 \name{hhead}
 \alias{hhead}
-\title{Head function for matrices}
+\title{Head function for SummarizedExperiment, data.frames and matrix objects}
 \usage{
-hhead(mat, n = 5)
+hhead(mat, n = 5, sel_assay = 1)
 }
 \arguments{
-\item{mat}{Matrix to be shown}
+\item{mat}{Object to be shown}
 
 \item{n}{Number of rows and columns}
 }
 \value{
-Matrix with as much as \code{n} rows and columns.
+Matrix with as much as \code{n} rows and \code{n} columns.
 }
 \description{
 Shows the first \code{n} rows and the first \code{n} columns of a matrix,

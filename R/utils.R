@@ -62,8 +62,52 @@ translate_ids <- function(ids, xref){
 
 
 
+
 #' @title
-#' Translation of the rownames IDs to Entrez IDs.
+#' Translation of the rownames IDs of a SummarizedExperiment to Entrez IDs.
+#'
+#' @description
+#' Translates the IDs in the rownames of a SummarizedExperiment to Entrez IDs.
+#' For accepted IDs to be transformed see the DOCUMENTATION.
+#'
+#' @param data Either a SummarizedExperiment object or a matrix of gene expression.
+#' @param species Species of the samples.
+#' @param sel_assay Character or integer, indicating the assay to be translated 
+#' in the SummarizedExperiment. Default is 1.
+#' @param verbose Boolean, whether to show details about the results of the
+#' execution.
+#'
+#' @examples data("brca_data")
+#' trans_data <- translate_matrix(brca_data, "hsa")
+#'
+#' @return Either a SummarizedExperiment or a matrix (depending on the input 
+#' type) of gene expression with Entrez IDs as rownames.
+#'
+#' @export
+#' @import SummarizedExperiment
+#' @import AnnotationHub
+#'
+translate_data <- function(data, species, sel_assay = 1, verbose=TRUE){
+    
+    if(is(data, "SummarizedExperiment")){
+        se_flag <- TRUE
+        mat <- assay(data, sel_assay)
+    }else if(is(data, "matrix")){
+        se_flag <- FALSE
+        mat <- data
+    }else{
+        stop("Only SummarizedExperiment or matrix classes accepted as data")
+    }
+    trans_mat <- translate_matrix(mat, species)
+    if(se_flag == TRUE)
+        trans_mat <- SummarizedExperiment(list(trans = trans_mat), 
+                                     colData = colData(se))
+    return(trans_mat)
+}
+
+
+#' @title
+#' Translation of the rownames IDs of a matrix to Entrez IDs.
 #'
 #' @description
 #' Translates the IDs in the rownames of a matrix to Entrez IDs.
@@ -74,13 +118,9 @@ translate_ids <- function(ids, xref){
 #' @param verbose Boolean, whether to show details about the results of the
 #' execution.
 #'
-#' @examples data("brca_data")
-#' trans_data <- translate_matrix(brca_data, "hsa")
-#'
 #' @return Matrix of gene expression with Entrez IDs as rownames.
 #'
-#' @export
-#' @import hpAnnot
+#' @import AnnotationHub
 #'
 translate_matrix <- function(exp, species, verbose=TRUE){
 
@@ -260,13 +300,13 @@ igraphs_upgrade <- function(metaginfo){
 #' subpathways.
 #'
 #' @export
-#' @import hpAnnot
+#' @import AnnotationHub
 #'
 load_pathways <- function(species, pathways_list = NULL){
     metaginfo <- load_mgi(species)
     metaginfo <- filter_pathways(metaginfo, pathways_list = pathways_list)
     metaginfo <- igraphs_upgrade(metaginfo)
-    cat(paste0("Loaded ", length(metaginfo$pathigraphs), " pathways\n"))
+    message(paste0("Loaded ", length(metaginfo$pathigraphs), " pathways\n"))
     return(metaginfo)
 }
 
@@ -319,10 +359,10 @@ all_needed_genes <- function(pathigraphs){
 
 
 
-#' Gets the matrix of subpathway activation values
+#' Gets the object of subpathway activation values
 #'
 #' @description
-#' This function returns the matrix with the levels of activation of each
+#' This function returns the object with the levels of activation of each
 #' subpathway for each sample. Rows represent the subpathways and columns
 #' represent the samples. Each cell is the value of activation of a subpathway
 #' in a sample.
@@ -343,19 +383,26 @@ all_needed_genes <- function(pathigraphs){
 #' in as many decomposed subpathways as initial nodes it includes.
 #'
 #' @param results Results object as returned by \code{hipathia}.
+#' @param matrix Boolean, if TRUE the function returns a matrix object, if 
+#' FALSE (as default) returns a SummarizedExperiment object.
 #'
 #' @examples
 #' data(results)
-#' path_vals <- get_paths_matrix(results)
+#' path_vals <- get_paths_data(results)
 #'
-#' @return Matrix with the levels of activation of each decomposed subpathway
-#' for each sample.
+#' @return Object, either a SummarizedExperiment or a matrix, with the levels 
+#' of activation of each decomposed subpathway for each sample.
+#' 
 #' @export
+#' @import SummarizedExperiment
 #'
-get_paths_matrix <- function(results){
-    return(results$all$path.vals)
+get_paths_data <- function(results, matrix = FALSE){
+    if(as_matrix == TRUE){
+        return(assay(results[["paths"]]))
+    }else{
+        return(results[["paths"]])
+    }
 }
-
 
 
 
@@ -397,13 +444,13 @@ add_missing_genes <- function(exp_data, genes, default = NULL){
 
 
 
-#' Head function for matrices
+#' Head function for SummarizedExperiment, data.frames and matrix objects
 #'
 #' Shows the first \code{n} rows and the first \code{n} columns of a matrix,
 #' in case the matrix has more than \code{n+5} rows or columns.
 #' Otherwise, it shows all the rows or columns, respectively.
 #'
-#' @param mat Matrix to be shown
+#' @param mat Object to be shown
 #' @param n Number of rows and columns
 #'
 #' @examples mat <- matrix(rnorm(100), ncol = 10)
@@ -411,22 +458,28 @@ add_missing_genes <- function(exp_data, genes, default = NULL){
 #' hhead(mat, 3)
 #' hhead(mat, 7)
 #'
-#' @return Matrix with as much as \code{n} rows and columns.
+#' @return Matrix with as much as \code{n} rows and \code{n} columns.
 #'
 #' @export
-hhead <- function(mat, n = 5){
-    if(ncol(mat) >= n+5){
-        if(nrow(mat) >= n+5){
-            mat[1:n,1:n]
+hhead <- function(mat, n = 5, sel_assay = 1){
+    if(is(mat, "SummarizedExperiment"))
+        mat <- assay(mat, sel_assay)
+    if(!is.null(ncol(mat))){
+        if(ncol(mat) >= n+5){
+            if(nrow(mat) >= n+5){
+                mat[1:n,1:n]
+            }else{
+                mat[,1:n]
+            }
         }else{
-            mat[,1:n]
+            if(nrow(mat) >= n+5){
+                mat[1:n,]
+            }else{
+                mat
+            }
         }
     }else{
-        if(nrow(mat) >= n+5){
-            mat[1:n,]
-        }else{
-            mat
-        }
+        head(mat, n)
     }
 }
 
@@ -488,7 +541,7 @@ get_effpath_id <- function(node_name){
 #' get_pathways_annotations(pathway_names, pathways, "uniprot")
 #'
 #' @export
-#' @import hpAnnot
+#' @import AnnotationHub
 #'
 get_pathways_annotations <- function(pathway_names, metaginfo, dbannot,
                                      collapse = FALSE){
@@ -500,7 +553,7 @@ get_pathways_annotations <- function(pathway_names, metaginfo, dbannot,
     }
 
     annofuns$funs[is.na(annofuns$funs)] <- ""
-    decomposed <- length(unlist(strsplit(pathway_names[1], split = "-"))) == 4
+    decomposed <- is_decomposed(pathway_names)
     if(decomposed == TRUE)
         pathway_names <- sapply(pathway_names, function(n)
             paste(unlist(strsplit(n, split="-"))[c(1,2,4)], collapse = "-"))
@@ -540,7 +593,7 @@ get_pathways_annotations <- function(pathway_names, metaginfo, dbannot,
 #' @return highest common ancestors
 #'
 #' #@export
-#' @import hpAnnot
+#' @import AnnotationHub
 #'
 get_highest_sig_ancestor <- function(go_terms, go_comp, metaginfo,
                                      unique = TRUE, pval = 0.05){
@@ -699,8 +752,7 @@ paths_to_go_ancestor <- function(pathways, comp_paths, comp_go, pval = 0.05){
 #' @export
 #'
 normalize_paths <- function(path_vals, metaginfo){
-    decomposed <- !all(sapply(sapply(rownames(path_vals),
-                                     strsplit, "-"), length) == 3)
+    decomposed <- is_decomposed_matrix(path_vals)
     if(decomposed == TRUE){
         norm_factors <- metaginfo$path.norm[rownames(path_vals)]
         path_norm <- normalize_data(path_vals/(norm_factors*0.99+0.01),
@@ -715,5 +767,19 @@ normalize_paths <- function(path_vals, metaginfo){
                                     percentil = FALSE)
     }
     return(path_norm)
+}
+
+
+is_decomposed_matrix <- function(mat){
+    decomposed <- is_decomposed(rownames(mat))
+    return(decomposed)
+}
+
+is_decomposed <- function(ids){
+    lens <- sapply(sapply(ids, strsplit, "-"), length)
+    if(length(unique(lens)) > 1)
+        stop("Not unique type of labels")
+    decomposed <- !(lens[1] == 3)
+    return(decomposed)
 }
 

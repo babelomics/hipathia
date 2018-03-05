@@ -4,21 +4,21 @@
 \alias{multiple_pca_plot}
 \title{Plots multiple components of a PCA}
 \usage{
-multiple_pca_plot(fit, sample_type = NULL, sample_colors = NULL,
-  comps = 1:3, plot_variance = FALSE, legend = TRUE, cex = 2,
-  pch = 20, main = "Multiple PCA plot", save_png = NULL)
+multiple_pca_plot(fit, group = NULL, sample_colors = NULL, comps = 1:3,
+  plot_variance = FALSE, legend = TRUE, cex = 2, pch = 20,
+  main = "Multiple PCA plot", save_png = NULL)
 }
 \arguments{
 \item{fit}{princomp object as returned by \code{do_pca}}
 
-\item{sample_type}{Vector with the group to which each sample belongs.
+\item{group}{Vector with the group to which each sample belongs.
 The samples must be ordered as in \code{path_vals}.
 By default, all samples will be assigned to the same class.}
 
 \item{sample_colors}{Named character vector of colors. The names of the
-colors must be the classes in \code{sample_type}. Each sample will be
+colors must be the classes in \code{group}. Each sample will be
 assigned the color corresponding to its class, taken from the
-\code{sample_type} vector. By default a color will be assigned
+\code{group} vector. By default a color will be assigned
 automatically to each class.}
 
 \item{comps}{Vector with the components to be plot}

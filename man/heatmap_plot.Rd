@@ -4,18 +4,23 @@
 \alias{heatmap_plot}
 \title{Plots subpathways heatmap}
 \usage{
-heatmap_plot(path_vals, sample_type = NULL, colors = "classic",
+heatmap_plot(data, group = NULL, sel_assay = 1, colors = "classic",
   sample_clust = TRUE, variable_clust = FALSE, labRow = NULL,
   labCol = NULL, sample_colors = NULL, scale = TRUE, save_png = NULL,
   legend = TRUE, legend_xy = "topright", pch = 15, main = NULL)
 }
 \arguments{
-\item{path_vals}{Matrix with the values of the subpathways.
-Rows are subpathways and columns are samples.}
+\item{data}{Either a SummarizedExperiment or a matrix with the values to be 
+plotted. Rows are features and columns are samples.}
 
-\item{sample_type}{Vector with the group to which each sample belongs.
-The samples must be ordered as in \code{path_vals}. By default, all
-samples will be assigned to the same class.}
+\item{group}{Either a character indicating the name of the column in 
+colData 
+including the classes to plot, or a character vector with the class to 
+which each sample belongs. Samples must be ordered as in \code{data}. 
+By default, all samples will be assigned to the same class.}
+
+\item{sel_assay}{Character or integer, indicating the assay to be normalized 
+in the SummarizedExperiment. Default is 1.}
 
 \item{colors}{Either a character vector with colors or a key name
 indicating the color scheme to be used in the heatmap.
@@ -37,13 +42,13 @@ By default TRUE.}
 By default FALSE. If TRUE, rows with 0 variance are removed.}
 
 \item{labRow, labCol}{Character vectors with row and column labels
-to be used. By default rownames(path_vals) or colnames(path_vals)
+to be used. By default rownames(data) or colnames(data)
 are used, respectively.}
 
 \item{sample_colors}{Named character vector of colors. The names of
-the colors must be the classes in \code{sample_type}. Each sample will
+the colors must be the classes in \code{group}. Each sample will
 be assigned the color corresponding to its class, taken from the
-\code{sample_type} vector. By default a color will be assigned
+\code{group} vector. By default a color will be assigned
 automatically to each class.}
 
 \item{scale}{Boolean, whether to scale each row to the interval [0,1].
@@ -70,8 +75,8 @@ Plots a heatmap with the values of the subpathways.
 data(brca_design)
 data(path_vals)
 sample_group <- brca_design[colnames(path_vals),"group"]
-heatmap_plot(path_vals, sample_type = sample_group)
-heatmap_plot(path_vals, sample_type = sample_group, colors = "hipathia",
+heatmap_plot(path_vals, group = sample_group)
+heatmap_plot(path_vals, group = sample_group, colors = "hipathia",
 variable_clust = TRUE)
 
 }

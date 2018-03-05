@@ -12,11 +12,15 @@
 #'
 #' Plots a heatmap with the values of the subpathways.
 #'
-#' @param path_vals Matrix with the values of the subpathways.
-#' Rows are subpathways and columns are samples.
-#' @param sample_type Vector with the group to which each sample belongs.
-#' The samples must be ordered as in \code{path_vals}. By default, all
-#' samples will be assigned to the same class.
+#' @param data Either a SummarizedExperiment or a matrix with the values to be 
+#' plotted. Rows are features and columns are samples.
+#' @param sel_assay Character or integer, indicating the assay to be normalized 
+#' in the SummarizedExperiment. Default is 1.
+#' @param group Either a character indicating the name of the column in 
+#' colData 
+#' including the classes to plot, or a character vector with the class to 
+#' which each sample belongs. Samples must be ordered as in \code{data}. 
+#' By default, all samples will be assigned to the same class.
 #' @param colors Either a character vector with colors or a key name
 #' indicating the color scheme to be used in the heatmap.
 #' If a character vector is provided, it is recommended to provide at
@@ -34,12 +38,12 @@
 #' @param variable_clust Boolean, whether to cluster variables (rows).
 #' By default FALSE. If TRUE, rows with 0 variance are removed.
 #' @param labRow,labCol Character vectors with row and column labels
-#' to be used. By default rownames(path_vals) or colnames(path_vals)
+#' to be used. By default rownames(data) or colnames(data)
 #' are used, respectively.
 #' @param sample_colors Named character vector of colors. The names of
-#' the colors must be the classes in \code{sample_type}. Each sample will
+#' the colors must be the classes in \code{group}. Each sample will
 #' be assigned the color corresponding to its class, taken from the
-#' \code{sample_type} vector. By default a color will be assigned
+#' \code{group} vector. By default a color will be assigned
 #' automatically to each class.
 #' @param scale Boolean, whether to scale each row to the interval [0,1].
 #' Default is TRUE.
@@ -56,8 +60,8 @@
 #' data(brca_design)
 #' data(path_vals)
 #' sample_group <- brca_design[colnames(path_vals),"group"]
-#' heatmap_plot(path_vals, sample_type = sample_group)
-#' heatmap_plot(path_vals, sample_type = sample_group, colors = "hipathia",
+#' heatmap_plot(path_vals, group = sample_group)
+#' heatmap_plot(path_vals, group = sample_group, colors = "hipathia",
 #' variable_clust = TRUE)
 #'
 #' @export
@@ -65,11 +69,26 @@
 #' @importFrom stats var
 #' @importFrom stats heatmap
 #'
-heatmap_plot <- function(path_vals, sample_type = NULL, colors = "classic",
+heatmap_plot <- function(data, group = NULL, sel_assay = 1, 
+                         colors = "classic",
                          sample_clust = TRUE, variable_clust = FALSE,
                          labRow = NULL, labCol = NULL, sample_colors = NULL,
                          scale = TRUE, save_png = NULL, legend = TRUE,
                          legend_xy = "topright", pch = 15, main = NULL){
+    if(is(data, "SummarizedExperiment")){
+        se <- TRUE
+        if(is(group, "character") & length(group) == 1)
+            if(group %in% colnames(colData(data))){
+                group <- colData(data)[[group]]
+            }else{
+                stop("group variable must be a column in colData(data)")
+            }
+        vals <- assay(data)
+    }else if(is(data, "matrix")){
+        vals <- data
+    }else{
+        stop("Only SummarizedExperiment or matrix classes accepted as data")
+    }
     if(length(colors) == 1){
         if(colors == "hipathia"){
             colors <- c("#007462", "white", "#e66430")
@@ -78,8 +97,8 @@ heatmap_plot <- function(path_vals, sample_type = NULL, colors = "classic",
         }else if(colors == "redgreen"){
             colors <- c("green","black","red")}
     }
-    if(is.null(sample_type))
-        sample_type <- rep("A", ncol(path_vals))
+    if(is.null(group))
+        group <- rep("A", ncol(vals))
     if(sample_clust==FALSE){
         colv <- NA
     } else {
@@ -88,40 +107,40 @@ heatmap_plot <- function(path_vals, sample_type = NULL, colors = "classic",
     if(variable_clust==FALSE){
         rowv <- NA
     } else {
-        vars <- apply(path_vals, 1, stats::var)
-        path_vals <- path_vals[!is.na(vars) & vars != 0,]
+        vars <- apply(vals, 1, stats::var)
+        vals <- vals[!is.na(vars) & vars != 0,]
         rowv <- TRUE
     }
     if(is.null(labRow)){
-        if(nrow(path_vals) < 50){
-            labRow <- rownames(path_vals)
+        if(nrow(vals) < 50){
+            labRow <- rownames(vals)
         }else{
             labRow <- FALSE
         }
     }
     if(is.null(labCol)){
-        if(ncol(path_vals) < 50){
-            labCol <- colnames(path_vals)
+        if(ncol(vals) < 50){
+            labCol <- colnames(vals)
         }else{
             labCol <- FALSE
         }
     }
     if(is.null(sample_colors)){
-        if(length(unique(sample_type)) <= 8){
+        if(length(unique(group)) <= 8){
             sample_colors <- c("#50b7ae", "#b6ebe7", "#e66430",
                                "#305f59", "#ffc868", "#152e2b",
                                "#a0170e", "#f9b493")[1:length(unique(
-                                   sample_type))]
+                                   group))]
         }else{
             sample_colors <- c("#50b7ae", "#b6ebe7", "#e66430", "#305f59",
                                "#ffc868", "#152e2b", "#a0170e", "#f9b493",
                                grDevices::terrain.colors(length(unique(
-                                   sample_type)) - 8))
+                                   group)) - 8))
         }
-        names(sample_colors) <- unique(sample_type)
+        names(sample_colors) <- unique(group)
     }
     if(scale == TRUE){
-        path_vals <- t(apply(path_vals, 1, function(x){
+        vals <- t(apply(vals, 1, function(x){
             (x - min(x, na.rm = TRUE))/(max(x, na.rm = TRUE) -
                                             min(x, na.rm = TRUE))
         }))
@@ -130,19 +149,19 @@ heatmap_plot <- function(path_vals, sample_type = NULL, colors = "classic",
         grDevices::png(filename = save_png)
     if(!is.null(main))
         graphics::par(oma=c(1,0,3,1))
-    stats::heatmap(path_vals,
+    stats::heatmap(vals,
                    margins = c(10,10),
                    labRow = labRow,
                    labCol = labCol,
                    scale = "none",
                    Rowv = rowv,
                    Colv = colv,
-                   ColSideColors = sample_colors[sample_type],
+                   ColSideColors = sample_colors[group],
                    col = grDevices::colorRampPalette(colors)(256))
     if(legend == TRUE)
         legend(legend_xy,
-               legend = unique(sample_type),
-               col = sample_colors[unique(sample_type)],
+               legend = unique(group),
+               col = sample_colors[unique(group)],
                pch = pch,
                xpd = TRUE,
                cex = 1,
@@ -162,13 +181,13 @@ heatmap_plot <- function(path_vals, sample_type = NULL, colors = "classic",
 #' Plots two components of a PCA computed with \code{do_pca}
 #'
 #' @param fit princomp object as returned by \code{do_pca}
-#' @param sample_type Vector with the group to which each sample belongs.
-#' The samples must be ordered as in \code{path_vals}.
+#' @param group Vector with the group to which each sample belongs.
+#' The samples must be ordered as in \code{rownames(fit$scores)}.
 #' By default, all samples will be assigned to the same class.
 #' @param sample_colors Named character vector of colors. The names of
-#' the colors must be the classes in \code{sample_type}. Each sample will be
+#' the colors must be the classes in \code{group}. Each sample will be
 #' assigned the color corresponding to its class, taken from the
-#' \code{sample_type} vector. By default a color will be assigned
+#' \code{group} vector. By default a color will be assigned
 #' automatically to each class.
 #' @param cp1 Integer, number of the component in the X-axis.
 #' Default is 1, the first component.
@@ -197,24 +216,24 @@ heatmap_plot <- function(path_vals, sample_type = NULL, colors = "classic",
 #' @export
 #' @import grDevices graphics
 #'
-pca_plot <- function(fit, sample_type = NULL, sample_colors = NULL, cp1 = 1,
+pca_plot <- function(fit, group = NULL, sample_colors = NULL, cp1 = 1,
                      cp2 = 2, legend = TRUE, legend_xy = "bottomleft", cex = 2,
                      pch = 20, mgp = c(3,1,0), main = "PCA plot",
                      save_png = NULL){
-    if(is.null(sample_type)) sample_type <- rep("A", fit$n.obs)
+    if(is.null(group)) group <- rep("A", fit$n.obs)
     if(is.null(sample_colors)){
-        if(length(unique(sample_type)) <= 8){
+        if(length(unique(group)) <= 8){
             sample_colors <- c("#50b7ae", "#b6ebe7", "#e66430",
                                "#305f59", "#ffc868", "#152e2b",
                                "#a0170e", "#f9b493")[1:length(unique(
-                                   sample_type))]
+                                   group))]
         }else{
             sample_colors <- c("#50b7ae", "#b6ebe7", "#e66430", "#305f59",
                                "#ffc868", "#152e2b", "#a0170e", "#f9b493",
                                grDevices::topo.colors(length(unique(
-                                   sample_type)) - 8))
+                                   group)) - 8))
         }
-        names(sample_colors) <- unique(sample_type)
+        names(sample_colors) <- unique(group)
     }
     cpv1 <- fit$scores[,cp1]
     cpv2 <- fit$scores[,cp2]
@@ -224,15 +243,15 @@ pca_plot <- function(fit, sample_type = NULL, sample_colors = NULL, cp1 = 1,
                    cpv2,
                    xlab = paste("PC", cp1),
                    ylab = paste("PC", cp2),
-                   col = sample_colors[sample_type],
+                   col = sample_colors[group],
                    pch = pch,
                    cex = cex,
                    main = main,
                    mgp = mgp)
     if(legend == TRUE){
         legend(legend_xy,
-               legend = unique(sample_type),
-               col = sample_colors[unique(sample_type)],
+               legend = unique(group),
+               col = sample_colors[unique(group)],
                pch = pch,
                xpd = TRUE,
                cex = 1,
@@ -249,13 +268,13 @@ pca_plot <- function(fit, sample_type = NULL, sample_colors = NULL, cp1 = 1,
 #' Plots multiple components of a PCA analysis computed with \code{do_pca}
 #'
 #' @param fit princomp object as returned by \code{do_pca}
-#' @param sample_type Vector with the group to which each sample belongs.
+#' @param group Vector with the group to which each sample belongs.
 #' The samples must be ordered as in \code{path_vals}.
 #' By default, all samples will be assigned to the same class.
 #' @param sample_colors Named character vector of colors. The names of the
-#' colors must be the classes in \code{sample_type}. Each sample will be
+#' colors must be the classes in \code{group}. Each sample will be
 #' assigned the color corresponding to its class, taken from the
-#' \code{sample_type} vector. By default a color will be assigned
+#' \code{group} vector. By default a color will be assigned
 #' automatically to each class.
 #' @param comps Vector with the components to be plot
 #' @param plot_variance Logical, whether to plot the cumulative variance.
@@ -278,7 +297,7 @@ pca_plot <- function(fit, sample_type = NULL, sample_colors = NULL, cp1 = 1,
 #' @export
 #' @import graphics grDevices
 #'
-multiple_pca_plot <- function(fit, sample_type = NULL, sample_colors = NULL,
+multiple_pca_plot <- function(fit, group = NULL, sample_colors = NULL,
                               comps = 1:3, plot_variance = FALSE, legend = TRUE,
                               cex = 2, pch = 20, main = "Multiple PCA plot",
                               save_png = NULL){
@@ -302,7 +321,7 @@ multiple_pca_plot <- function(fit, sample_type = NULL, sample_colors = NULL,
         grDevices::png(filename = save_png)
     for(i in 1:(ncombs)){
         pca_plot(fit,
-                 sample_type = sample_type,
+                 group = group,
                  sample_colors = sample_colors,
                  cp1 = combs[1,i],
                  cp2 = combs[2,i],
@@ -314,23 +333,23 @@ multiple_pca_plot <- function(fit, sample_type = NULL, sample_colors = NULL,
     }
     if(legend == TRUE){
         if(is.null(sample_colors)){
-            if(length(unique(sample_type)) <= 8){
+            if(length(unique(group)) <= 8){
                 sample_colors <- c("#50b7ae", "#b6ebe7", "#e66430",
                                    "#305f59", "#ffc868", "#152e2b",
                                    "#a0170e", "#f9b493")[1:length(unique(
-                                       sample_type))]
+                                       group))]
             }else{
                 sample_colors <- c("#50b7ae", "#b6ebe7", "#e66430", "#305f59",
                                    "#ffc868", "#152e2b", "#a0170e", "#f9b493",
                                    grDevices::topo.colors(length(unique(
-                                       sample_type)) - 8))
+                                       group)) - 8))
             }
-            names(sample_colors) <- unique(sample_type)
+            names(sample_colors) <- unique(group)
         }
         graphics::plot(1, type="n", axes = FALSE, xlab = "", ylab = "")
         legend("center",
-               legend = unique(sample_type),
-               col = sample_colors[unique(sample_type)],
+               legend = unique(group),
+               col = sample_colors[unique(group)],
                pch = pch,
                lwd = 2,
                xpd = TRUE,
@@ -548,16 +567,18 @@ add_edge_colors <- function(pathigraph, pcomp, effector, up_col = "#ca0020",
 #' Performs a differential expression on the nodes and computes the colors
 #' of the nodes depending on it_ Significant up- and down-regulated nodes
 #' are depicted with the selected color, with a gradient towards the
-#' non-significant color depending on the value of the p-value_
-#' Smaller p-values give rise to purer colors than higher p-values_
+#' non-significant color depending on the value of the p-value.
+#' Smaller p-values give rise to purer colors than higher p-values.
 #'
 #' @param results Object of results as provided by the \code{hipathia}
 #' function_
 #' @param metaginfo Object of pathways_
-#' @param groups Vector with the class to which each sample belongs_
-#' Samples must be ordered as in \code{results}
-#' @param group1_label String, label of the first group to be compared
-#' @param group2_label String, label of the second group to be compared
+#' @param group Character indicating the column in which the group variable is 
+#' stored, in case the object provided to \code{hipathia} was a 
+#' SummarizedExperiment, or a vector with the class to which each sample 
+#' belongs. Samples must be ordered as in \code{results}.
+#' @param g1 String, label of the first group to be compared
+#' @param g2 String, label of the second group to be compared
 #' @param group_by How to group the subpathways to be visualized. By default
 #' they are grouped by the pathway to which they belong. Available groupings
 #' include "uniprot", to group subpathways by their annotated Uniprot functions,
@@ -587,9 +608,9 @@ add_edge_colors <- function(pathigraph, pcomp, effector, up_col = "#ca0020",
 #'
 #' @export
 #'
-node_color_per_de <- function(results, metaginfo, groups, group1_label,
-                              group2_label, group_by = "pathway",
-                              colors = "classic", conf = 0.05){
+node_color_per_de <- function(results, metaginfo, group, g1, g2, 
+                              group_by = "pathway", colors = "classic", 
+                              conf = 0.05){
 
     if(length(colors) == 1){
         if(colors == "hipathia"){
@@ -605,8 +626,13 @@ node_color_per_de <- function(results, metaginfo, groups, group1_label,
     if(group_by != "pathway")
         metaginfo <- get_pseudo_metaginfo(metaginfo, group_by = group_by)
 
-    difexp <- compute_difexp(results$all$nodes.vals, group1_label,
-                             group2_label, groups)
+    if(is(group, "character") & length(group) == 1)
+        if(group %in% colnames(colData(results[["nodes"]]))){
+            group <- colData(results[["nodes"]])[[group]]
+        }else{
+            stop("Group variable must be a column in colData())")
+        }
+    difexp <- compute_difexp(assay(results[["nodes"]]), g1, g2, group)
     updown <- sapply(difexp$statistic, function(x){
         if(x < 0){
             "down"
@@ -622,7 +648,7 @@ node_color_per_de <- function(results, metaginfo, groups, group1_label,
                                         down_col = down_col,
                                         no_col = no_col,
                                         conf = conf)
-    names(node_colors) <- rownames(results$all$nodes.vals)
+    names(node_colors) <- rownames(results[["nodes"]])
     cols <- lapply(metaginfo$pathigraphs, function(pg){
         gen_nodes <- V(pg$graph)$name[V(pg$graph)$name %in% rownames(difexp)]
         path_colors <- node_colors[gen_nodes]

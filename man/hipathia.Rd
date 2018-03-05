@@ -4,15 +4,19 @@
 \alias{hipathia}
 \title{Computes the level of activation of the subpathways for each of the samples}
 \usage{
-hipathia(genes_vals, metaginfo, decompose = FALSE, maxnum = 100,
-  verbose = TRUE, tol = 1e-06, test = TRUE)
+hipathia(genes_vals, metaginfo, sel_assay = 1, decompose = FALSE,
+  maxnum = 100, verbose = TRUE, tol = 1e-06, test = TRUE)
 }
 \arguments{
-\item{genes_vals}{A matrix with the normalized expression values of the
-genes. Rows represent genes and columns represent samples.
-Rownames() must be accepted gene IDs.}
+\item{genes_vals}{A SummarizedExperiment or matrix with the normalized 
+expression values of the genes. Rows represent genes and columns represent 
+samples. Rownames() must be accepted gene IDs.}
 
 \item{metaginfo}{Pathways object}
+
+\item{sel_assay}{Character or integer, indicating the assay to be processed 
+in the SummarizedExperiment. Only applied if \code{genes_vals} is a 
+\code{SummarizedExperiment}.Default is 1.}
 
 \item{decompose}{Boolean, whether to compute the values for the decomposed
 subpathways. By default, effector subpathways are computed.}
@@ -27,7 +31,8 @@ the execution of hipathia}
 iterating the signal through the loops into the pathways}
 }
 \value{
-An object with the level of activation of the subpathways from
+A MultiAssayExperiment object with the level of activation of the 
+subpathways from
 the pathways in \code{pathigraphs} for the experiment
 with expression values in \code{genes_vals}.
 }
