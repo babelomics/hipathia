@@ -101,7 +101,7 @@ translate_data <- function(data, species, sel_assay = 1, verbose=TRUE){
     trans_mat <- translate_matrix(mat, species)
     if(se_flag == TRUE)
         trans_mat <- SummarizedExperiment(list(trans = trans_mat), 
-                                     colData = colData(se))
+                                     colData = colData(data))
     return(trans_mat)
 }
 

@@ -304,7 +304,8 @@ calculate_wilcox_test <- function(data, control, disease, paired, adjust=TRUE){
         } else {
             fdrData <- testData[,1]
         }
-        data2 <- data.frame(testData[,c(2,3,1)], fdrData, stringsAsFactors = FALSE)
+        data2 <- data.frame(testData[,c(2,3,1)], fdrData, 
+                            stringsAsFactors = FALSE)
     }else{
         testData <- do.call("rbind",
                             apply(data, 1, wilcox_test_fun,
@@ -322,6 +323,7 @@ calculate_wilcox_test <- function(data, control, disease, paired, adjust=TRUE){
         z <- (testData[,3] - m)/sigma
         data2 <- data.frame(testData[,2], z, fdrData, testData[,1],
                             stringsAsFactors = FALSE)
+        rownames(data2) <- rownames(testData)
         need0 <- which(data2$pvalue == 1 &
                            data2$class == "0" &
                            data2$fdrData == 1)
