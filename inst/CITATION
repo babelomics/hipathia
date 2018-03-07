@@ -1,0 +1,30 @@
+
+citHeader("For citing the HiPathia methodology please cite:")
+
+citEntry(entry="article",
+    title = "High throughput estimation of functional cell activities reveals disease mechanisms and predicts relevant clinical outcomes",
+    author = personList(person(first="Marta",middle="R",last="Hidalgo"), as.person("Cankut Çubuk"), as.person("Alicia Amadoz"), as.person("Francisco Salavert"), as.person("José Carbonell-Caballero"), as.person("Joaquín Dopazo")),
+	journal="Oncotarget",
+	editor="R. Gentleman, V. Carey, S. Dudoit, R. Irizarry, W. Huber",
+	number=8,
+	volume= 3,
+	publisher="Springer",
+	address="New York",
+    year = 2017,
+    pages ="5160--5178",
+
+    textVersion = 
+    paste("Hidalgo, M. R., Cubuk, C., Amadoz, A., Salavert, F.,", 
+	  "Carbonell-Caballero, J., & Dopazo, J. (2017).", 
+	  "High throughput estimation of functional cell activities", 
+	  "reveals disease mechanisms and predicts relevant clinical", 
+	  "outcomes. Oncotarget, 8(3), 5160–5178. ",
+	  "http://doi.org/10.18632/oncotarget.14107")
+    )
+
+citFooter("This free open-source software implements academic
+research by the authors and co-workers. If you use it,
+please support the project by citing the appropriate
+journal articles.")
+
+
