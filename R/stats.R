@@ -304,7 +304,7 @@ calculate_wilcox_test <- function(data, control, disease, paired, adjust=TRUE){
         } else {
             fdrData <- testData[,1]
         }
-        data2 <- data.frame(testData, fdrData, stringsAsFactors = FALSE)
+        data2 <- data.frame(testData[,c(2,3,1)], fdrData, stringsAsFactors = FALSE)
     }else{
         testData <- do.call("rbind",
                             apply(data, 1, wilcox_test_fun,
@@ -320,14 +320,14 @@ calculate_wilcox_test <- function(data, control, disease, paired, adjust=TRUE){
         m <- lc*ld/2
         sigma <- sqrt(lc * ld * (lc + ld + 1)/12)
         z <- (testData[,3] - m)/sigma
-        data2 <- data.frame(testData[,1:2], z, fdrData, 
+        data2 <- data.frame(testData[,2], z, fdrData, testData[,1],
                             stringsAsFactors = FALSE)
         need0 <- which(data2$pvalue == 1 &
                            data2$class == "0" &
                            data2$fdrData == 1)
         data2[need0, "z"] <- 0
     }
-    colnames(data2) <- c("p.value", "UP/DOWN", "statistic", "FDRp.value")
+    colnames(data2) <- c("UP/DOWN", "statistic", "p.value", "FDRp.value")
     data2[data2$statistic>0,"UP/DOWN"] <- "UP"
     data2[data2$statistic<0,"UP/DOWN"] <- "DOWN"
     return(data2)
