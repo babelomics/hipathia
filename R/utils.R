@@ -397,7 +397,7 @@ all_needed_genes <- function(pathigraphs){
 #' @import SummarizedExperiment
 #'
 get_paths_data <- function(results, matrix = FALSE){
-    if(as_matrix == TRUE){
+    if(matrix == TRUE){
         return(assay(results[["paths"]]))
     }else{
         return(results[["paths"]])

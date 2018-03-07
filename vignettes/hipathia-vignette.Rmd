@@ -1,53 +1,85 @@
 ---
-title: "HiPathia Bioconductor Package"
-author: "Marta R. Hidalgo, Francisco Salavert, Alicia Amadoz, Çankut Cubuk, José Carbonell-Caballero, Joaquín Dopazo"
+title: "Hipathia Package"
+#author: "Marta R. Hidalgo, Francisco Salavert, Alicia Amadoz, Çankut Cubuk, José Carbonell-Caballero, Joaquín Dopazo"
 date: "`r Sys.Date()`"
-output: BiocStyle::pdf_document
+package: hipathia
+abstract: >
+  _Hipathia_ is a method for the computation of signal transduction along
+  signaling pathways from transcriptomic data. The method is based on an 
+  iterative algorithm which
+  is able to compute the signal intensity passing through the nodes of a
+  network by taking into account the level of expression of each gene and
+  the intensity of the signal arriving to it. It also provides a new approach 
+  to functional analysis allowing to compute the signal arriving to the 
+  functions annotated to each pathway. 
+output: 
+  BiocStyle::pdf_document
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Hipathia Package}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+toc_float: true
+author:
+- name: Marta R. Hidalgo
+  affiliation: Unidad de Bioinformática y Bioestadística, Centro de Investigación Príncipe Felipe (CIPF), Valencia, 46012, Spain
+  email: marta.hidalgo@outlook.es
+- name: Francisco Salavert
+  affiliation: BioBam Bioinformatics S.L., Valencia, 46012, Spain
+- name: Alicia Amadoz
+  affiliation: Department of Bioinformatics, Igenomix S.A., Valencia, 46980, Spain
+- name: Çankut Cubuk
+  affiliation: Clinical Bioinformatics Area, Fundación Progreso y Salud (FPS), Hospital Virgen del Rocio, Sevilla, 41013, Spain
+- name: José Carbonell-Caballero
+  affiliation: Chromatin and Gene expression Lab, Gene Regulation, Stem Cells and Cancer Program, Centre de Regulació Genòmica (CRG), The Barcelona Institute of Science and Technology, PRBB, Barcelona, 08003, Spain
+- name: Joaquín Dopazo
+  affiliation: 
+  - Clinical Bioinformatics Area, Fundación Progreso y Salud (FPS), Hospital Virgen del Rocio, Sevilla, 41013, Spain 
+  - Functional Genomics Node (INB), FPS, Hospital Virgen del Rocio, Sevilla, 41013, Spain. 
+  - Bioinformatics in Rare Diseases (BiER), Centro de Investigación Biomédica en Red de Enfermedades Raras (CIBERER), FPS, Hospital Virgen del Rocio, Sevilla, 41013, Spain
+
 ---
 
-HiPathia is a method for the computation of signal transduction along
-signaling pathways. The method is based on an iterative algorithm which
-is able to compute the signal intensity passing through the nodes of a
-network by taking into account the level of expression of each gene and
-the intensity of the signal arriving to it.
 
+\newpage
+\section{Introduction}\label{sec:intro}
 
-## Introduction
-
-HiPathia package implements the Canonical Circuit Activity Analysis method
+_Hipathia_ package implements the Canonical Circuit Activity Analysis method
 for the quantification of the signaling pathways activity presented in 
-[Hidalgo et al.](https://www.ncbi.nlm.nih.gov/pubmed/28042959). It has been
+[Hidalgo et al](https://www.ncbi.nlm.nih.gov/pubmed/28042959). This method 
+has been implemented in the webtool http://hipathia.babelomics.org, allowing 
+the user to compare signal propagation in an experiment, and train and use a 
+predictor based on the activation of the canonical circuits or subpathways. 
+The package _hipathia_ has been
 conceived as a functional tool for R users which allows more control on the
-analysis pipeline than the web implementation http://hipathia.babelomics.org.
+analysis pipeline than the web implementation does.
 
-This document will introduce you to the HiPathia package and how to use it to
+This document will introduce you to the _hipathia_ package and how to use it to
 analyze your data. 
 
+![Visual representation of the package functionalities.](pics/package_guide.png)
 
+<!-- The use of the package has three main steps: Data preprocessment, Pathway and function activation computation, and data analysis and visualization. -->
 
-## Previous considerations
+\section{Previous considerations}
 
-HiPathia is a method for the computation of signal transduction along
-signaling pathways. The method is independent on the pathways database, it only 
+_Hipathia_ is a method for the computation of signal transduction along
+signaling pathways taking as input transcriptomics data. The method is 
+independent on the pathways database, it only 
 needs information about the topology of the graph and the genes included in each
 node. 
 
-However, due to computational cost, HiPathia needs to preprocess the graphs to 
+However, due to computational cost, _hipathia_ needs to preprocess the graphs to 
 be fully efficient. In the current implementation we have developed a module 
 which has preprocessed 145 KEGG pathway KGML files, which are ready to be 
 analyzed.
 
 Further versions of the package will allow the user to preprocess their own 
-graph pathways to be analyzed with HiPathia.
+graph pathways to be analyzed with _hipathia_.
 
 
-### Instalation 
+\subsection{Instalation}\label{sec:instalation}
 
-In order to install the HiPathia package, type on your R console
+In order to install the _hipathia_ package, type on your R console
 
 ```{r, fig.show='hold', message=FALSE, warning=FALSE, eval=FALSE}
 ## try http:// if https:// URLs are not supported 
@@ -56,94 +88,157 @@ biocLite("hipathia")
 ```
 
 
+\subsection{Example data}
 
-### Example data
+In order to illustrate the _hipathia_ package functionalities an example dataset
+has been prepared. Data has been downloaded from 
+[The Cancer Genome Atlas](https://cancergenome.nih.gov/) data
+repository, from the BRCA-US project, release 20. 20 tumor and 20 normal samples 
+of RNA-Seq data have been randomly selected and normalized. 
 
-In order to illustrate the HiPathia package functionalities an example dataset
-has been prepared. Data has been downloaded from The Cancer Genome Atlas data
-repository, from the BRCA-US project. 20 tumor and 20 normal samples of RNA-Seq
-data have been randomly selected and normalized. Specifically, data has been
-corrected for batch effect using the COMBAT method, then corrected for RNA
-composition bias applying TMM normalization and log-transformed.
+Specifically, raw data has been
+corrected for batch effect using the `ComBat` function from package 
+`r Biocpkg("sva")`, then corrected for RNA
+composition bias applying TMM normalization from package `r Biocpkg("edgeR")`, 
+and finally log-transformed.
 
 ```{r, fig.show='hold', message=FALSE, warning=FALSE}
 library(hipathia)
-data("brca_data")
+data("brca")
+brca
 ```
 
-The information about the type of these samples has been stored in a
-different dataset, and can be loaded in the same way as before.
+The dataset `brca` is a `r Biocpkg("SummarizedExperiment")` object, including 
+the gene expression of the 40 samples in the assay `raw`, and the information 
+about whether each 
+sample comes from _Tumor_ or _Normal_ tissues in the `group` columns of the 
+`colData` dataFrame.
 
 ```{r, fig.show='hold', message=FALSE, warning=FALSE}
-data("brca_design")
+hhead(assay(brca), 4)
+```
+```{r, fig.show='hold', message=FALSE, warning=FALSE}
+colData(brca)
 ```
 
 
-## Preprocessment
+\subsection{Accepted objects}
 
-### Preprocess data
+_Hipathia_ has been designed to work with matrices encapsulated as 
+`r Biocpkg("SummarizedExperiment")` objects, in which also the experimental 
+design has been included. However, it is also possible to work in _hipathia_ 
+with matrix objects, as long as the experimental design is provided when needed. 
 
-HiPathia accepts as input data a gene expression matrix. Expression may have
-been measured with any available sequencing technique. However, HiPathia
+Imagine we have the expression data stored in a matrix object called `brca_data`
+and the experimental design stored in a data frame with one column called 
+`brca_design`. Then, in order to summarize this data in a `SummarizedExperiment`
+object we should only run:
+
+```{r, fig.show='hold', message=FALSE, eval=FALSE}
+brca <- SummarizedExperiment(assays=SimpleList(raw=brca_data), 
+                             colData=brca_design)
+```
+
+Note that the data frame object provided as `colData` parameter should be 
+ordered as the columns in the matrix provided as assay. For further information 
+on this kind of objects please refer to `r Biocpkg("SummarizedExperiment")`.
+
+When executing a function which needs as input parameter the experimental design
+(such as the Wilcoxon test in `do_wilcoxon`, or `heatmap_plot`), parameter 
+`group` may take two different objects. In case parameter `data` is a 
+matrix, `group` should be a vector giving the class to which each sample 
+belongs, in the same order than the data matrix. In case parameter `data` is a
+`SummarizedExperiment`, `group` may be either a vector as above, or the name
+of the column in the `colData` `dataFrame` of the `SummarizedExperiment` storing
+this information. 
+
+In general, functions accepting both SummarizedExperiment and matrix objects as 
+input data and returning a data matrix object, will give as output the same kind 
+of object received. That is, if we 
+apply function `translate_data` to a SummarizedExperiment object, we will obtain
+a SummarizedExperiment, while applying the same function to a matrix object 
+will result in a matrix object as output.
+
+
+
+
+\newpage
+\section{Preprocessment}\label{sec:pre}
+
+<!-- \subsection{Preprocess data} -->
+
+_Hipathia_ accepts as input data a gene expression matrix. Expression may have
+been measured with any available sequencing technique. However, _hipathia_
 assumes that data has been already normalized for correcting any possible
 sequencing bias (which includes also batch effect correction). 
 
-```{r, fig.show='hold',}
-hhead(brca_data)
-```
-
+\subsection{Gene IDs translation}
 
 The gene expression matrix must include samples as columns and genes as rows,
-as shown in the previous example. Rownames must be the Entrez IDs of the genes
-in the rows. In order to transform other gene IDs to Entrez IDs, function
-`translate_matrix` can be used. Accepted IDs to be transformed to Entrez IDs
-include
-
+as shown in the `brca` dataset example. Rownames must be the Entrez IDs of the 
+genes in the rows. In order to transform other gene IDs to Entrez IDs, function
+`translate_data` can be used. Accepted IDs to be transformed to Entrez IDs
+include:
+    
 **Human**
-* Affy HG U133A probeset
-* Affy HG U133B probeset
-* Affy HG U133-PLUS_2 probeset
-* Agilent SurePrint G3 GE 8x60k
-* Agilent SurePrint G3 GE 8x60k v2
-* Agilent Whole Genome 4x44k
-* Agilent Whole Genome 4x44k v2
-* CCDS
-* Ensembl gene
-* Ensembl transcript
-* Entrez ID
-* GenBank EMBL
-* GenBank PID
-* HGNC symbol
-* RefSeq mRNA
-* RefSeq mRNA PRED
-* RefSeq ncRNA
-* RefSeq ncRNA PRED
+\begin{itemize}
+    \item Affy HG U133A probeset
+    \item Affy HG U133B probeset
+    \item Affy HG U133-PLUS\_2 probeset
+    \item Agilent SurePrint G3 GE 8x60k
+    \item Agilent SurePrint G3 GE 8x60k v2
+    \item Agilent Whole Genome 4x44k
+    \item Agilent Whole Genome 4x44k v2
+    \item CCDS
+    \item Ensembl gene
+    \item Ensembl transcript
+    \item Entrez ID
+    \item GenBank EMBL
+    \item GenBank PID
+    \item HGNC symbol
+    \item RefSeq mRNA
+    \item RefSeq mRNA PRED
+    \item RefSeq ncRNA
+    \item RefSeq ncRNA PRED
+\end{itemize}
 
 **Mouse**
-* Affy Mouse 430 2
-* Ensembl gene
-* Gene name
-* Mouse Gene 1.0
+\begin{itemize}
+    \item Affy Mouse 430 2
+    \item Ensembl gene
+    \item Gene name
+    \item Mouse Gene 1.0
+\end{itemize}
 
 **Rat**
-* Ensembl gene
-* Gene name
+\begin{itemize}
+    \item Ensembl gene
+    \item Gene name
+\end{itemize}
+
 
 
 The parameters needed by this function are the data matrix and the species
 of the experiment.
 
 ```{r, fig.show='hold'}
-trans_data <- translate_matrix(brca_data, "hsa")
+trans_data <- translate_data(brca_data, "hsa")
 ```
 
-Apart from the necessary bias corrections, expression data must be normalized
-between 0 and 1 before applying the `hipathia` function. Function 
+
+\subsection{Data scaling \& normalization}
+
+Apart from the necessary bias corrections, the expression data matrix must be 
+scaled between 0 and 1 before computing the subpaths activation values. Function 
 `normalize_data` is designed to this purpouse. 
 
 ```{r, fig.show='hold'}
-boxplot(trans_data)
 exp_data <- normalize_data(trans_data)
+```
+```{r, fig.show='hold', fig.cap="BRCA data before scaling"}
+boxplot(trans_data)
+```
+```{r, fig.show='hold', fig.cap="BRCA data after scaling"}
 boxplot(exp_data)
 ```
 
@@ -151,29 +246,29 @@ Function `normalize_data` includes different parameters for normalization.
 If option `by_quantiles` is `TRUE`, a previous normalization by quantiles
 is performed.
 
-```{r, fig.show='hold'}
+```{r, fig.show='hold', fig.cap="BRCA data after a Quantiles normalization"}
 exp_data <- normalize_data(trans_data, by_quantiles = TRUE)
 boxplot(exp_data)
 ```
 
-Other parameters of this function affect the way in which normalization
+Other parameters of this function affect the way in which scaling
 to the interval [0,1] is performed. Parameter `by_gene` indicates whether
-to perform the transformation [0,1] to each row of the matrix. If the option
-`by_gene` is set to TRUE, the normalization between 0 and 1 is done for each
+to perform the scaling to [0,1] to each row of the matrix. If the option
+`by_gene` is set to `TRUE`, the normalization between 0 and 1 is done for each
 row of the matrix, meaning that the expression of each gene will have a range
-between 0 and 1. If it is set to FALSE, the normalization is done for the 
+between 0 and 1. If it is set to `FALSE`, the normalization is done for the 
 whole matrix, meaning that only the genes with the maximum value of the 
 matrix will have a normalized value of 1. It is recommended to keep it set
 to `FALSE`, as the default value. 
- 
+
 Parameter `percentil` indicates whether to use the percentil to compute the
-normalized value between 0 and 1. If it is set to TRUE, the function takes as
+normalized value between 0 and 1. If it is set to `TRUE`, the function takes as
 a value for the position `(i,j)` of the matrix the percentil of sample `j` in
-the ditribution of gene `i`. If it is seet to FALSE, the functions applies a
+the ditribution of gene `i`. If it is set to `FALSE`, the function applies a
 direct transformation from the original interval to [0,1]. It is recommended
 to keep it set to `FALSE` except for heavy-tailed distributions of the genes. 
 
-```{r, fig.show='hold'}
+```{r, fig.show='hold', fig.cap="BRCA data after normalizing by percentil"}
 exp_data <- normalize_data(trans_data, percentil = TRUE)
 boxplot(exp_data)
 ```
@@ -182,21 +277,35 @@ Parameter `truncation_percentil` gives the value of percentil `p` from which
 all further values are truncated to percentil `p`. Symmetrically, values beyond
 percentil `1-p` are also truncated to `1-p`.
 
-```{r, fig.show='hold'}
+```{r, fig.show='hold', fig.cap="BRCA data after truncating by percentil 0.95"}
 exp_data <- normalize_data(trans_data, truncation_percentil = 0.95)
 boxplot(exp_data)
 ```
 
 
 
-### Load pathways
+\newpage
 
-HiPathia package is currently implemented to use preprocessed KEGG pathways.
+\section{Pathway activation computation}
+
+_Hipathia_ aims to compute the level of activation of each subpathway in a
+pathway for each of the samples from the experiment. This is done by function
+`hipathia`, which takes as inputs the matrix of gene expression, the pathways
+object and some additional parameters.
+
+In this section we will see how to load the pathways object, how the _hipathia_ 
+method works and how to apply function `hipathia` to the computation of the
+values of activation of the loaded pathways.
+
+
+\subsection{Loading pathways}
+
+_Hipathia_ package is currently implemented to use preprocessed KEGG pathways.
 The pathways have been processed and stored in a pathways object. This object
 includes all the information that the different functions in the package need.
 In order to load this object, use function `load_pathways` and select the
-species to be analyzed. Available species include human ("hsa"), mouse ("mmu")
-and rat ("rno").
+species to be analyzed. Available species include human ( _hsa_ ), mouse 
+( _mmu_ ) and rat ( _rno_ ).
 
 ```{r, fig.show='hold'}
 pathways <- load_pathways(species = "hsa")
@@ -219,7 +328,7 @@ function `get_pathways_list` can be used.
 
 ```{r, fig.show='hold'}
 length(get_pathways_list(pathways))
-get_pathways_list(pathways)
+get_pathways_list(pathways)[1:10]
 ```
 
 ```{r, fig.show='hold'}
@@ -227,82 +336,38 @@ length(get_pathways_list(pathways_only2))
 get_pathways_list(pathways_only2)
 ```
 
-## Pathway activation computation
-
-HiPathia aims to compute the level of activation of each subpathway in a
-pathway for each of the samples from the experiment. This is done by function
-`hipathia`, which takes as inputs the matrix of gene expression, the pathways
-object and some other parameters.
-
-Parameter `decompose` indicates whether to use effector subpathways or to
-decompose the pathways into decomposed subpathways. For further information
-on this, see next section **Subpathways**. For further information on the
-method used to compute the level of signal activity in the pathways, see
-Section **Computing the signal** or refer to 
-[Hidalgo et al.](https://www.ncbi.nlm.nih.gov/pubmed/28042959).
-
-```{r, fig.show='hold'}
-results <- hipathia(exp_data, pathways, decompose = FALSE, verbose=FALSE)
-```
-
-The resulting object includes the level of activity of the signal in each
-subpathway as well as further information of the computation. In order to
-extract the matrix of signal activity values from this object use function
-`get_paths_matrix`.
-
-```{r, fig.show='hold'}
-path_vals <- get_paths_matrix(results)
-hhead(path_vals)
-```
-
-Rownames of the matrix of pathway results are the IDs of the subpathways.
-In order to transform this ID to a comprehensive name, use `get_path_names`
-function. However, it is not recommended to change the row names of this
-matrix.
-
-```{r, fig.show='hold'}
-path_names <- get_path_names(pathways, rownames(path_vals))
-head(path_names)
-```
-
-Notice that the matrix of subpathway activity values will include a value of
-activity for each sample and for each possible subpathway of the pathways in
-the pathway object. Depending on whether parameter `decompose` is set to TRUE
-or FALSE, and on the number of pathways included in the object of pathways
-given as attribute, the number of analyzed subpathways may vary. Currently
-HiPathia includes up to the following number of pathways, effector subpathways
-and decomposed subpathways per species: 
 
 
-```{r, echo=FALSE, results='asis'}
-tab <- t(sapply(c("hsa", "mmu", "rno"), function(species){
-   p <- load_pathways(species)
-   effs <- sum(sapply(p$pathigraphs, function(pathi) length(
-       pathi$effector.subgraphs)))
-   decs <- sum(sapply(p$pathigraphs, function(pathi) length(pathi$subgraphs)))
-   n <- length(p$pathigraphs)
-   c(n, decs, effs)
-}))
-colnames(tab) <- c("Pathways", "Effector subpathways", "Decomposed subpathways")
-knitr::kable(tab)
-```
+\subsection{Computing the signal}\label{sec:signal}
+
+In order for a protein to pass the signal, there are two important factors:
+    first, the protein must be present, and second, some other protein must
+activate it. Therefore, _hipathia_ is a method to compute signal transduction
+based on two steps. First, it quantifies the presence of a particular gene
+as a normalized value between 0 and 1. Then, it computes the signal value
+passing through a node taking into account the level of expression of each
+gene inside the node and the intensity of the signal arriving to it. The
+signal value of the pathway is the signal value through the last node of the
+pathway. 
 
 
-### Subpathways
+\subsubsection{Subpathways}\label{sec:subs}
 
 Pathways are represented by directed graphs, which include different input
 and output nodes. The signal arrives to an initial node and is transmited
 along the pathway following the direction of the interactions up to an output
 node. Thus, the signal may follow many different paths along the pathway.
-HiPathia computes the intensity of this signal up to each output node of a
+_Hipathia_ computes the intensity of this signal up to each output node of a
 pathway separately.
 
 Genes in the output nodes are also called *effector proteins*, since they
 are the ones responsibles for performing the action the signal is seeking.
 We define the *effector subpathway* ending in node *G* as the subgraph
 including any node in a path leading to *G*. When applied to effector
-subpathways, HiPathia returns the intensity of the signal arriving to the
+subpathways, _hipathia_ returns the intensity of the signal arriving to the
 effector protein *G*.
+
+![Effector subpathway depicted in yellow](pics/ERBB_eff_mini.png)
 
 Effector subpathways may have many different input nodes. In order to analyze
 in detail which of the possible paths leading to node *G* is responsible for
@@ -311,23 +376,10 @@ subpathways including only one input node. We define the
 *decomposed subpathway* from *H* to *G* as the subgraph including any node
 in a path from *H* to *G*.
 
-It is recommended to perform an initial HiPathia analysis with effector
-subpathways, and use decomposed subpathways only for specific pathways in
-which the user is highly interested.
+![Decomposed subpathway depicted in red](pics/ERBB_decomposed_mini.png)
 
-### Computing the signal
 
-In order for a protein to pass the signal, there are two important factors:
-first, the protein must be present, and second, some other protein must
-activate it. Therefore, HiPathia is a method to compute signal transduction
-based on two steps. First, it quantifies the presence of a particular gene
-as a normalized value between 0 and 1. Then, it computes the signal value
-passing through a node taking into account the level of expression of each
-gene inside the node and the intensity of the signal arriving to it. The
-signal value of the pathway is the signal value through the last node of the
-pathway. 
-
-#### Node expression
+\subsubsection{Node expression}\label{sec:nodes}
 
 Pathways are represented by graphs and composed by nodes and relations
 among them. Some nodes may contain multiple genes representing different
@@ -336,7 +388,7 @@ Since each gene has its own level of expression, the first step of the
 method is to summarize this information into a score representing the
 expression of the node as a whole. 
 
-#### Signal transduction
+\subsubsection{Signal transduction}\label{sec:transduct}
 
 The computation of the signal intensity across the pathway is performed by
 means of an iterative algorithm beginning in the input nodes of the
@@ -346,7 +398,7 @@ $n$ of the network, the signal value $S_n$ is propagated along the nodes
 according to the following rule
 \begin{equation}
 \label{formula}
- S_n = v_n\cdot(1-\prod_{s_i \in A_n}(1-s_i))\cdot\prod_{s_j\in I_n}(1-s_j)
+S_n = v_n\cdot(1-\prod_{s_i \in A_n}(1-s_i))\cdot\prod_{s_j\in I_n}(1-s_j)
 \end{equation}
 
 \noindent where $A_n$ is the set of signals arriving to the current node from an
@@ -355,39 +407,135 @@ an inhibition edge, and $v_n$ is the normalized value of expression of the
 current node. 
 
 
-## Function activation computation
+\subsection{Using \emph{Hipathia} to compute the signal}\label{sec:using}
+
+Function `hipathia` computes the level of activation of the subpathways, taking 
+as inputs the matrix of gene expression, the pathways
+object and some additional parameters.
+
+Parameter `decompose` indicates whether to use effector subpathways or 
+decomposed subpathways. Option `decompose=FALSE` uses effector subpathways while
+option `decompose=TRUE` uses decomposed subpathways. For further information
+on this, see Section \@ref(sec:subs). For further information on the
+method used to compute the level of signal activity in the pathways, see
+Section \@ref(sec:signal) or refer to 
+[Hidalgo et al.](https://www.ncbi.nlm.nih.gov/pubmed/28042959).
+
+```{r, fig.show='hold'}
+results <- hipathia(exp_data, pathways, decompose = FALSE, verbose=FALSE)
+```
+
+The genes which are needed by `hipathia` to compute the signal and are not
+present in the provided matrix are added by the function, assigning to each 
+sample the median of the matrix. The number and percentage of added genes is
+shown by the function. A high level of _added missing genes_ may indicate that 
+the results are not representative of the actual analysis.
+
+The resulting object is a `r Biocpkg("MultiArrayExperiment")` object, which 
+includes two different `r Biocpkg("SummarizedExperiment")` objects: `paths` and
+`nodes`.
+
+```{r, fig.show='hold'}
+results
+```
+
+The `paths` object includes as assay a matrix with the level of activity of the 
+signal in each subpathway. In order to
+extract the object of signal activity values from this object use function
+`get_paths_data`. By default, this function returns a 
+`r Biocpkg("SummarizedExperiment")` object, but it can return just the matrix of 
+subpaths values if parameter `matrix` is set to `TRUE`. 
+
+```{r, fig.show='hold'}
+path_vals <- get_paths_data(results, matrix = TRUE)
+path_vals <- get_paths_data(results)
+hhead(path_vals, 4)
+```
+
+Rownames of the matrix of pathway results are the IDs of the subpathways. The 
+object `results` stores also the comprehensive names of the subpathways as
+`rowData` of the assay `paths`. However, in case we need to transform subpath 
+IDs to comprehensive subpath names, we can use `get_path_names`
+function, see Section \@ref(sec:gpn) for further information on this. 
+However, it is not recommended to change the row names of the
+matrix of subpath values.
+
+Notice that the matrix of subpathway activity values will include a value of
+activity for each sample and for each possible subpathway of the pathways in
+the pathway object. Depending on whether parameter `decompose` is set to `TRUE`
+or `FALSE`, and on the number of pathways included in the object of pathways
+given as attribute, the number of analyzed subpathways may vary. Currently
+_hipathia_ includes up to the following number of pathways, effector subpathways
+and decomposed subpathways per species: 
+    
+    
+```{r, echo=FALSE, results='asis'}
+tab <- t(sapply(c("hsa", "mmu", "rno"), function(species){
+    p <- suppressMessages(load_pathways(species))
+    effs <- sum(sapply(p$pathigraphs, function(pathi) length(
+        pathi$effector.subgraphs)))
+    decs <- sum(sapply(p$pathigraphs, function(pathi) length(pathi$subgraphs)))
+    n <- length(p$pathigraphs)
+    c(n, effs, decs)
+}))
+colnames(tab) <- c("Pathways", "Effector subpathways", "Decomposed subpathways")
+knitr::kable(tab)
+```
+
+
+
+It is recommended to perform an initial _hipathia_ analysis with effector
+subpathways, and use decomposed subpathways only for specific pathways in
+which the user is highly interested.
+
+
+
+
+\newpage
+
+\section{Function activation computation}
 
 Each effector protein of a pathway is responsible for performing a particular
 function. Thus, from the matrix of effector subpathways we can infer the
-functions matrix, which gives an intensity value for each molecular function
-and for each sample. 
+functions matrix with the function `quantify_terms`, which computes an intensity 
+value for each molecular function and for each sample. 
 
 Different effector subpathways of different pathways may end in the same
-effector protein, and also different effector genes may have the same molecular
-function. Therefore, for a particular function $f$, we summarize the values of
-all the subpathways ending in an effector protein related to $f$ with a mean
-value.
+effector protein, and also different effector proteins may have the same 
+molecular
+function. Therefore, for a particular function $f$, `quantify_terms` summarizes
+the values of all the subpathways ending in an effector protein related to $f$ 
+with a mean value.
 
 Different function activity matrices can be computed depending on the
-functional annotation given to the effector nodes. Function `quantify_terms`
+functional annotation given to the effector nodes. Function `quantify_terms`,
+through parameter `dbannot`,
 accepts any annotation defined by the user and it has also two default
 annotations: Gene Ontology functions and Uniprot keywords. 
 
 ```{r, fig.show='hold'}
-uniprot_vals <- quantify_terms(results, pathways, "uniprot")
-go_vals <- quantify_terms(results, pathways, "GO")
+uniprot_vals <- quantify_terms(results, pathways, dbannot = "uniprot")
+go_vals <- quantify_terms(results, pathways, dbannot = "GO")
 ```
 
-The result of this function is a matrix with the level of activity of each
-annotated function for each sample. Notice that functions annotated to genes
+The result of this function is a data object with the level of activity of each
+annotated function for each sample. As before, the returned object is a 
+`r Biocpkg("SummarizedExperiment")`, unless parameter `matrix` is set to `TRUE`
+in which case a matrix is returned.
+
+Notice that functions annotated to genes
 which are not included in any effector node will be not computed.
 
 
-## Pathway/Function activation analysis
+\newpage
+\section{Pathway/Function activation analysis}\label{sec:pf-ana}
 
-Once the matrix of desired features has been computed, any kind of analysis
+\subsection{Two classes comparison}
+
+Once the object data of desired features has been computed, either subpath 
+values or function values, any kind of analysis
 may be performed on it, in the same way as if it were the matrix of gene
-expressions. Specifically, comparison of the features across different groups
+expression. Specifically, comparison of the features across different groups
 of samples is one of the keys. We can perform a comparison of two groups
 applying the Wilcoxon test using function `do_wilcoxon`.
 
@@ -403,8 +551,14 @@ down-activated features.
 
 ```{r, fig.show='hold'}
 pathways_summary <- get_pathways_summary(comp, pathways)
-head(pathways_summary, n = 15)
+head(pathways_summary, 4)
 ```
+
+In order to visualize the results of the comparison, see Section 
+\@ref(sec:visual).
+
+
+\subsection{Principal Components Analysis}
 
 Principal Components Analysis can be also performed by using function
 `do_pca`. Notice that the number of rows must not exceed the number of
@@ -416,47 +570,64 @@ pca_model <- do_pca(ranked_path_vals[1:ncol(ranked_path_vals),])
 ```
 
 PCA models can be visualized with a specific function called `pca_plot`.
-See section **Visualization** for further information.
+See Section \@ref(sec:visual) for further information.
 
 
-## Visualization
+\newpage
+\section{Visualization}\label{sec:visual}
+                         
+\subsection{Heatmap}
 
-### Heatmap
-
-Function `heatmap_plot` plots a heatmap with the values of the given matrix.
+Function `heatmap_plot` plots a heatmap with the values of the given data 
+object. This object may be a SummarizedExperiment object or a matrix. 
 The experimental design can be provided to assign a class to each sample by
-means of the parameter `sample_type`. Notice that the calsses must be in the
+means of the parameter `group`. Notice that the classes must be in the
 same order as the columns of the provided matrix. One can select whether to
-cluster samples or variables with parameters `variable_clust` and
-`sample_clust`. The colors of the different classes of samples can be selected
+cluster samples or variables setting parameters `variable_clust` and
+`sample_clust` to `TRUE`. 
+
+The colors of the different classes of samples can be selected
 through parameter `sample_colors` with a vector of colors named after the
 classes. The colors inside the heatmap can be also selected with parameter
 `colors`. Personalized colors can be provided as a vector, or preselected
 color schemes *classic* (default), *hipathia* or *redgreen* may be chosen. 
 
-```{r, fig.show='hold'}
-heatmap_plot(path_vals, sample_type = sample_group)
-heatmap_plot(path_vals, sample_type = sample_group, colors="hipathia", 
-             variable_clust = TRUE)
+```{r, fig.show='hold', fig.cap="Heatmap plot", fig.small=TRUE}
+heatmap_plot(path_vals, group = sample_group)
 ```
 
-
-```{r, fig.show='hold'}
-heatmap_plot(ranked_path_vals[1:15,], sample_type = sample_group, 
-             variable_clust = TRUE)
-heatmap_plot(ranked_path_vals[1:15,], sample_type = sample_group, 
-             colors="hipathia", variable_clust = TRUE)
-heatmap_plot(ranked_path_vals[1:15,], sample_type = sample_group, 
-             colors="redgreen", variable_clust = TRUE)
+```{r, fig.show='hold', fig.cap="Heatmap plots with variable clustering", fig.small=TRUE}
+heatmap_plot(uniprot_vals, group = sample_group, colors="hipathia", 
+          variable_clust = TRUE)
 ```
 
+```{r, fig.show='hold', fig.cap="Different colors of heatmaps: `redgreen`", fig.small=TRUE}
+heatmap_plot(go_vals, group = sample_group, colors="redgreen", 
+          variable_clust = TRUE)
+```
 
-### PCA
+<!-- ```{r, fig.show='hold', fig.cap="Different colors of heatmaps: `classic`", fig.small=TRUE} -->
+<!-- heatmap_plot(ranked_path_vals[1:15,], group = sample_group,  -->
+<!--           variable_clust = TRUE) -->
+<!-- ``` -->
+
+<!-- ```{r, fig.show='hold', fig.cap="Different colors of heatmaps: `hipathia`", fig.small=TRUE} -->
+<!-- heatmap_plot(ranked_path_vals[1:15,], group = sample_group,  -->
+<!--           colors="hipathia", variable_clust = TRUE) -->
+<!-- ``` -->
+
+<!-- ```{r, fig.show='hold', fig.cap="Different colors of heatmaps: `redgreen`", fig.small=TRUE} -->
+<!-- heatmap_plot(ranked_path_vals[1:15,], group = sample_group,  -->
+<!--           colors="redgreen", variable_clust = TRUE) -->
+<!-- ``` -->
+
+
+\subsection{PCA}
 
 Function `pca_plot` plots two components of a PCA model computed with function
-`do_pca` (see section **Pathway/Function activation analysis**). The
+`do_pca` (see Section \@ref(sec:pf-ana)). The
 experimental design can be provided to assign a class to each sample by means
-of the parameter `sample_type`. Notice that the classes must be in the same
+of the parameter `group`. Notice that the classes must be in the same
 order as the columns of the matrix provided to the PCA model. The colors of
 the different classes of samples can be selected through parameter
 `sample_colors` with a vector of colors named after the classes. If no such
@@ -465,16 +636,19 @@ title may be given to the plot through parameter `main`. The components to be
 plotted can be selected through parameters `cp1` and `cp2` giving integer
 number. If parameter `legend` is set to TRUE, the legend will be plotted.
 
-```{r, fig.show='hold'}
+```{r, fig.show='hold', fig.cap="PCA plot"}
 pca_plot(pca_model, sample_group, legend = TRUE)
-pca_plot(pca_model, sample_type = rep(1:5, 8), main = "Random types", 
-         legend = TRUE)
+```
+```{r, fig.show='hold', fig.cap="PCA plot with 5 random colors"}
+pca_plot(pca_model, group = rep(1:5, 8), main = "Random types", 
+      legend = TRUE)
 ```
 
 Function `multiple_pca_plot` plots $n$ PCA components given by parameter
-`comps` as an integer vector. As before, the experimental design can be
+`comps=n` as an integer vector. By default, $n=3$. As before, the experimental 
+design can be
 provided to assign a class to each sample by means of the parameter
-`sample_type`. Notice that the classes must be in the same order as the
+`group`. Notice that the classes must be in the same order as the
 columns of the matrix provided to the PCA model. The colors of the different
 classes of samples can be selected through parameter `sample_colors` with a
 vector of colors named after the classes. If no such parameter is provided,
@@ -483,16 +657,18 @@ can be represented by setting `plot_variance` parameter to TRUE. If parameter
 `legend` is set to TRUE, the legend will be plotted. A main title may be given
 to the plot through parameter `main`. 
 
-```{r, fig.show='hold'}
-multiple_pca_plot(pca_model, sample_group, plot_variance = FALSE, 
-                  legend = FALSE)
+<!-- multiple_pca_plot(pca_model, sample_group, plot_variance = FALSE,  -->
+<!--                legend = FALSE) -->
+
+```{r, fig.show='hold', fig.cap="Multiple PCA plot with acumulated explained variance"}
 multiple_pca_plot(pca_model, sample_group, cex=3, plot_variance = TRUE)
-multiple_pca_plot(pca_model, sample_type = rep(1:5, 8), 
-                  main = "Random sample types")
 ```
 
+<!-- multiple_pca_plot(pca_model, group = rep(1:5, 8),  -->
+<!--                main = "Random sample types") -->
 
-### Pathway comparison
+
+\subsection{Pathway comparison}
 
 The results of a comparison are sometimes difficult to summarize. An easy
 way to understand these results is to visualize them as an image. Function
@@ -501,10 +677,13 @@ from KEGG, including a color code representing the significant up- and
 down-activated subpathways, and, if desired, the significant up- and
 down-regulated nodes. 
 
-```{r, fig.show='hold'}
+```{r, fig.show='hold', fig.cap= "Pathway comparison plot without node colors"}
 pathway_comparison_plot(comp, metaginfo = pathways, pathway = "hsa03320")
-pathway_comparison_plot(comp, metaginfo = pathways, pathway = "hsa04014")
 ```
+
+<!-- ```{r, fig.show='hold'} -->
+<!-- pathway_comparison_plot(comp, metaginfo = pathways, pathway = "hsa04014") -->
+<!-- ``` -->
 
 In these plots, colored edges represent significant subpathways. Edges
 belonging to subpathways which are significantly down-activated will be
@@ -519,31 +698,41 @@ pathways, nodes can be colored by its differential expression. The color of
 each node with respect to its differential expression must be previously
 computed using function `node_color_per_de`. Note that
 this fucntion computes differential expression on the nodes, not on the genes.
-It uses function `eBayes` from package `limma`, see the `limma` package
+It uses function `eBayes` from package `r Biocpkg("limma")`, see the package
 vignette for further information. 
 
 When computed, the resulting object must be provided to the
 `pathway_comparison_plot` function as parameter `node_colors`.
 
-```{r, fig.show='hold'}
+```{r, fig.show='hold', fig.cap="Pathway comparison plot with node colors: `classic`"}
 colors_de <- node_color_per_de(results, pathways, sample_group, "Tumor", 
-                               "Normal")
+                            "Normal")
 pathway_comparison_plot(comp, metaginfo = pathways, pathway = "hsa03320", 
-                        node_colors = colors_de)
+                     node_colors = colors_de)
+```
+
+```{r, fig.show='hold', fig.cap="Pathway comparison plot with node colors: `hipathia`"}
 colors_de_hipathia <- node_color_per_de(results, pathways, sample_group, 
-                                        "Tumor", "Normal", colors = "hipathia")
-pathway_comparison_plot(comp, metaginfo = pathways, pathway = "hsa04014", 
-                        node_colors = colors_de_hipathia, colors = "hipathia")
+                                     "Tumor", "Normal", colors = "hipathia")
+pathway_comparison_plot(comp, metaginfo = pathways, pathway = "hsa03320", 
+                     node_colors = colors_de_hipathia, colors = "hipathia")
 ```
 
 
-### Visualization through a local server
+\subsection{Visualization through a local server}
 
-HiPathia results can be viewed on a web browser interactivelly. In order to
-save the files for their visualization, use function `create_report`. The
-parameters to be provided are the object of results, the Wilcoxon comparison,
+_Hipathia_ results can be viewed on a web browser interactivelly. In order to
+save the files for their visualization, use function `create_report`. To 
+visualize the created report, use function `visualize_report`. For the
+interpretation of the results in this visualization, see Section 
+\@ref(sec:interpret).
+
+The
+parameters to be provided to function `create_report` are the object of results,
+the Wilcoxon comparison,
 the pathways object and the path to the folder in which the files must be
-saved. Optionally, the colors of the nodes can be also provided using an
+saved. Optionally, the colors of the nodes showing their differential expression
+can be also provided using an 
 object returned by function `node_color_per_de` or a
 similar data structure. 
 
@@ -556,7 +745,7 @@ Due to cross-origin security restrictions
 ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)), 
 a web server is needed to serve the result files correctly.
 The easiest way to run a web server to show the result files is with the
-HiPathia function `visualize_report`. The user must specify the folder where
+_hipathia_ function `visualize_report`. The user must specify the folder where
 the report has been stored by function `create_report`. A web server developed
 in R will be executed, serving the result files to the default URL
 http://127.0.0.1:4000. Port 4000 may be changed through parameter `port`. 
@@ -569,8 +758,8 @@ visualize_report("save_colors")
 visualize_report("save_noColors", port = 4001)
 ```
 
-The function `visualize_report` uses the `servr` package, please refer to
-[servr](https://github.com/yihui/servr) for further information.
+The function `visualize_report` uses the `r CRANpkg("servr")` package, please 
+refer to the package documentation for further information.
 
 The servers will be active until function `daemon_stop` from package `servr`
 is executed. Information about how to stop each server individually is given
@@ -587,7 +776,7 @@ just link or move the output folder to your web server http document root
 and then open it on your web browser.
 
 
-### Visualization through a local server with different groupings
+\subsection{Visualization through a local server with different groupings}
 
 Effector subpathway results are shown by default grouped by the pathway to which
 they belong. However, if our interest is to see the comparison of all the 
@@ -605,9 +794,9 @@ gene.
 
 ```{r, fig.show='hold', eval=FALSE}
 colors_de_uni <- node_color_per_de(results, pathways, sample_group, "Tumor", 
-                                   "Normal", group_by = "uniprot")
+                                "Normal", group_by = "uniprot")
 create_report(comp, pathways, "save_colors_uniprot", 
-              node_colors = colors_de_uni, group_by = "uniprot")
+           node_colors = colors_de_uni, group_by = "uniprot")
 visualize_report("save_colors_uniprot", port = 4002)
 ```
 
@@ -620,13 +809,16 @@ servr::daemon_stop()
 ```
 
 
-#### Interpreting HTML results
+\subsection{Interpreting HTML results}\label{sec:interpret}
 
-The interactive visualization of HiPathia results includes three panels and
+The interactive visualization of _hipathia_ results includes three panels and
 a legend. The legend is on top of the page resuming the main information
 depicted in the images. The left panel is the pathways panel, where the
 currently selected pathway is shown. The layout of the pathway is similar
 to the layout shown in KEGG. 
+
+![Interactive Hipathia report visualization](pics/hipathia_report_1.png)
+
 
 As before, edges belonging to significant down-activated pathways are depicted
 in blue, those belonging to significant up-activated subpathways are depicted
@@ -654,4 +846,45 @@ selected from the list, only the arrows and nodes belonging to this subpathway
 will be highlighted. Clicking again on this subpathway will deselect it.
 
 
+\newpage
+\section{Utilities}
+\subsection{Functions}
 
+We have developed some simple functions to ease the use of data in _hipathia_.
+
+\subsubsection{hhead}
+
+Function `hhead` has been conceived as a generalization of function `head` to
+matrices, dataframes and SummarizedExperiment objects. It returns the values of 
+the $n$ first rows and columns of the matrix. In case the object is a 
+SummarizedExperiment, it returns the values of the $n$ first rows and columns 
+of the (first) assay included in it. In case the object is not a matrix, 
+dataframe or SummarizedExperiment object, it returns the result of applying
+function `head` to the object.
+
+```{r, fig.show='hold', message=FALSE, warning=FALSE}
+class(brca)
+hhead(brca, 4)
+```
+
+```{r, fig.show='hold', message=FALSE, warning=FALSE}
+class(assay(brca))
+hhead(assay(brca), 4)
+```
+
+\subsubsection{get\_path\_name}\label{sec:gpn}
+
+The results object returned by function `hipathia` includes the names of the 
+subpathways, and they are shown in the table returned by function `do_wilcoxon`.
+However, in case we need to transform subpath 
+IDs to comprehensive subpath names, we can use `get_path_names`
+function:
+
+
+```{r, fig.show='hold'}
+get_path_names(pathways, c("P-hsa03320-37", "P-hsa04010-15"))
+```
+
+```{r, fig.show='hold', echo = FALSE}
+get_path_names(pathways, c("P-hsa03320-37", "P-hsa04010-15"))
+```
