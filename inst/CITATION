@@ -1,14 +1,14 @@
 
-citHeader("For citing the HiPathia methodology please cite:")
+citHeader("For citing the hipathia package and the HiPathia methodology please cite:")
 
 citEntry(entry="article",
     title = "High throughput estimation of functional cell activities reveals disease mechanisms and predicts relevant clinical outcomes",
     author = personList(as.person("Marta R. Hidalgo"), as.person("Cankut Çubuk"), as.person("Alicia Amadoz"), as.person("Francisco Salavert"), as.person("José Carbonell-Caballero"), as.person("Joaquín Dopazo")),
 	journal="Oncotarget",
+	editor="M. Blagosklonny, A.V. Gudkov",
 	number=8,
 	volume= 3,
-	publisher="Springer",
-	address="New York",
+	publisher="Impact Journals",
     year = 2017,
     pages ="5160--5178",
 
