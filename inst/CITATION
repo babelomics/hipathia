@@ -3,7 +3,7 @@ citHeader("For citing the HiPathia methodology please cite:")
 
 citEntry(entry="article",
     title = "High throughput estimation of functional cell activities reveals disease mechanisms and predicts relevant clinical outcomes",
-    author = personList(person(first="Marta",middle="R",last="Hidalgo"), as.person("Cankut Çubuk"), as.person("Alicia Amadoz"), as.person("Francisco Salavert"), as.person("José Carbonell-Caballero"), as.person("Joaquín Dopazo")),
+    author = personList(as.person("Marta R. Hidalgo"), as.person("Cankut Çubuk"), as.person("Alicia Amadoz"), as.person("Francisco Salavert"), as.person("José Carbonell-Caballero"), as.person("Joaquín Dopazo")),
 	journal="Oncotarget",
 	editor="R. Gentleman, V. Carey, S. Dudoit, R. Irizarry, W. Huber",
 	number=8,
