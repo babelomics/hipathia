@@ -160,6 +160,14 @@ a SummarizedExperiment, while applying the same function to a matrix object
 will result in a matrix object as output.
 
 
+\subsection{How to cite}
+_Hipathia_ is a free open-source software implementing the result of a research 
+work. If you use it, please support the research project by citing:
+
+Hidalgo, M. R., Cubuk, C., Amadoz, A., Salavert, F., Carbonell-Caballero, J., 
+& Dopazo, J. (2017). High throughput estimation of functional cell activities 
+reveals disease mechanisms and predicts relevant clinical outcomes.
+Oncotarget, 8(3), 5160–5178.  http://doi.org/10.18632/oncotarget.14107
 
 
 \newpage
@@ -885,6 +893,3 @@ function:
 get_path_names(pathways, c("P-hsa03320-37", "P-hsa04010-15"))
 ```
 
-```{r, fig.show='hold', echo = FALSE}
-get_path_names(pathways, c("P-hsa03320-37", "P-hsa04010-15"))
-```
