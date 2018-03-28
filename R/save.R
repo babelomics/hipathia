@@ -145,7 +145,7 @@ create_node_and_edge_attributes <- function(comp, pathway, metaginfo,
         }else if(V(ig)$shape[i] == "rectangle"){
             if(grepl("\n", V(ig)$label[i])){
                 gsub("\n", "<br>", V(ig)$label[i])
-                }else{""}
+            }else{""}
         }else if(V(ig)$shape[i] == "circle"){
             paste0("<a target='_blank' ",
                    "href='http://www.genome.jp/dbget-bin/www_bget?",
