@@ -10,6 +10,9 @@ hhead(mat, n = 5, sel_assay = 1)
 \item{mat}{Object to be shown}
 
 \item{n}{Number of rows and columns}
+
+\item{sel_assay}{Character or integer, indicating the assay to be translated 
+in the SummarizedExperiment. Default is 1.}
 }
 \value{
 Matrix with as much as \code{n} rows and \code{n} columns.

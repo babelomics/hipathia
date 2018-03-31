@@ -5,7 +5,7 @@
 \title{Computes the level of activation of the functions related to the
 previously computed subpathways}
 \usage{
-quantify_terms(results, metaginfo, dbannot, matrix = FALSE,
+quantify_terms(results, metaginfo, dbannot, out_matrix = FALSE,
   normalize = TRUE)
 }
 \arguments{
@@ -17,6 +17,9 @@ quantify_terms(results, metaginfo, dbannot, matrix = FALSE,
 use ("uniprot" for Uniprot Keywords or "GO" for Gene Ontology terms), or
 a dataframe with the annotation of the genes to the functions. First
 column are gene symbols, second column the functions.}
+
+\item{out_matrix}{Boolean, whther the output object should be a matrix 
+object. Default is FALSE, returning a SummarizedExperiment object.}
 
 \item{normalize}{Boolean, whether to normalize the matrix of pathway
 values with \code{normalize_paths} before quantifying the signal. Due to

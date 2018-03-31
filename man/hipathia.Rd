@@ -29,6 +29,8 @@ the execution of hipathia}
 
 \item{tol}{Tolerance for the difference between two iterations when
 iterating the signal through the loops into the pathways}
+
+\item{test}{Boolean, whether to test the input objects. Default is TRUE.}
 }
 \value{
 A MultiAssayExperiment object with the level of activation of the 
