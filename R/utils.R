@@ -452,6 +452,8 @@ add_missing_genes <- function(exp_data, genes, default = NULL){
 #'
 #' @param mat Object to be shown
 #' @param n Number of rows and columns
+#' @param sel_assay Character or integer, indicating the assay to be translated 
+#' in the SummarizedExperiment. Default is 1.
 #'
 #' @examples mat <- matrix(rnorm(100), ncol = 10)
 #' hhead(mat)
@@ -460,6 +462,7 @@ add_missing_genes <- function(exp_data, genes, default = NULL){
 #'
 #' @return Matrix with as much as \code{n} rows and \code{n} columns.
 #'
+#' @importFrom utils head
 #' @export
 hhead <- function(mat, n = 5, sel_assay = 1){
     if(is(mat, "SummarizedExperiment"))
@@ -479,7 +482,7 @@ hhead <- function(mat, n = 5, sel_assay = 1){
             }
         }
     }else{
-        head(mat, n)
+        utils::head(mat, n)
     }
 }
 
