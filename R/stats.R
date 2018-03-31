@@ -51,7 +51,7 @@
 #' @return Matrix of gene expression whose values are in [0,1].
 #'
 #' @examples data("brca_data")
-#' trans_data <- translate_matrix(brca_data, "hsa")
+#' trans_data <- translate_data(brca_data, "hsa")
 #' exp_data <- normalize_data(trans_data)
 #' exp_data <- normalize_data(trans_data, by_quantiles = TRUE,
 #' truncation_percentil=0.95)
