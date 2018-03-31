@@ -27,6 +27,7 @@
 #' the execution of hipathia
 #' @param tol Tolerance for the difference between two iterations when
 #' iterating the signal through the loops into the pathways
+#' @param test Boolean, whether to test the input objects. Default is TRUE.
 #'
 #' @return A MultiAssayExperiment object with the level of activation of the 
 #' subpathways from

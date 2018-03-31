@@ -70,6 +70,8 @@ annotate_paths <- function(metaginfo, dbannot){
 #' use ("uniprot" for Uniprot Keywords or "GO" for Gene Ontology terms), or
 #' a dataframe with the annotation of the genes to the functions. First
 #' column are gene symbols, second column the functions.
+#' @param out_matrix Boolean, whther the output object should be a matrix 
+#' object. Default is FALSE, returning a SummarizedExperiment object.
 #' @param normalize Boolean, whether to normalize the matrix of pathway
 #' values with \code{normalize_paths} before quantifying the signal. Due to
 #' the nature of the Hipathia method, in which the length of each pathway may
@@ -88,7 +90,7 @@ annotate_paths <- function(metaginfo, dbannot){
 #'
 #' @export
 #'
-quantify_terms <- function(results, metaginfo, dbannot, matrix = FALSE, 
+quantify_terms <- function(results, metaginfo, dbannot, out_matrix = FALSE, 
                            normalize = TRUE){
 
     method = "mean"
@@ -126,7 +128,7 @@ quantify_terms <- function(results, metaginfo, dbannot, matrix = FALSE,
             fun_vals[fun,] <- 1 - apply(minimat, 2, prod)
         }
     }
-    if(matrix == FALSE)
+    if(out_matrix == FALSE)
         fun_vals <- SummarizedExperiment(list(terms = fun_vals), 
                                          colData = colData(results[["paths"]]))
     return(fun_vals)
