@@ -457,9 +457,8 @@ plot_pathigraph <- function(g, node_color = NULL, edge_lty = 1, main = "" ){
 #' pathway_comparison_plot(comp, metaginfo = pathways, pathway = "hsa03320")
 #'
 #' data(results)
-#' data(brca_design)
-#' data(path_vals)
-#' sample_group <- brca_design[colnames(path_vals),"group"]
+#' data(brca)
+#' sample_group <- colData(brca)[,1]
 #' colors_de <- node_color_per_de(results, pathways,
 #' sample_group, "Tumor", "Normal")
 #' pathway_comparison_plot(comp, metaginfo = pathways, pathway = "hsa04012",

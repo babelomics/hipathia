@@ -230,7 +230,7 @@ The parameters needed by this function are the data matrix and the species
 of the experiment.
 
 ```{r, fig.show='hold'}
-trans_data <- translate_data(brca_data, "hsa")
+trans_data <- translate_data(brca, "hsa")
 ```
 
 
