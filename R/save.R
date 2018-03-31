@@ -724,11 +724,10 @@ summarize_atts <- function(att_list, att_names){
 #'
 #' @examples
 #' data(results)
-#' data(brca_design)
-#' data(path_vals)
+#' data(brca)
 #' pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 #' "hsa04012"))
-#' sample_group <- brca_design[colnames(path_vals),"group"]
+#' sample_group <- colData(brca)[,1]
 #' colors_de <- node_color_per_de(results, pathways,
 #' sample_group, "Tumor", "Normal")
 #' create_report(comp, pathways, "~/save_results/",
