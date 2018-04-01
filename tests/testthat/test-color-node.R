@@ -5,10 +5,10 @@ library(hipathia)
 context("Color node per DE")
 
 data("results")
-data("brca_design")
-sample_group <- brca_design[colnames(results$all$path.vals),"group"]
-mgi <- load.pathways("hsa", pathways.list = c("hsa03320", "hsa04012"))
-colors_de <- node.color.per.de(results, mgi, sample_group, "Tumor", "Normal")
+data("brca")
+sample_group <- colData(brca)[,1]
+mgi <- load_pathways("hsa", pathways_list = c("hsa03320", "hsa04012"))
+colors_de <- node_color_per_de(results, mgi, sample_group, "Tumor", "Normal")
 
 test_that("Classes are correct", {
     expect_is(colors_de, "list")

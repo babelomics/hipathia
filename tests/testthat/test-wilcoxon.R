@@ -5,16 +5,16 @@ library(hipathia)
 context("Wilcoxon")
 
 data("path_vals")
-data("brca_design")
-sample_group <- brca_design[colnames(path_vals),"group"]
+data("brca")
+sample_group <- colData(brca)[,1]
 
 test_that("Resulting object is a data.frame", {
     expect_is(comp, "data.frame")
 })
 
 test_that("Output is correct", {
-    comp <- do.wilcoxon(path_vals, sample_group, g1 = "Tumor", g2 = "Normal")
-    expect_equal(4, ncol(comp))
+    comp <- do_wilcoxon(path_vals, sample_group, g1 = "Tumor", g2 = "Normal")
+    expect_equal(5, ncol(comp))
     expect_equal(nrow(comp), nrow(path_vals))
     expect_equal(rownames(comp), rownames(path_vals))
     expect_equal("numeric", class(comp$p.value))

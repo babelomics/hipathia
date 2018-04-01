@@ -5,9 +5,9 @@ library(hipathia)
 context("Paths length normalization")
 
 data("results")
-mgi <- load.pathways("hsa", pathways.list = c("hsa03320", "hsa04012"))
-p <- results$all$path.vals
-n <- normalize.paths(p, mgi)
+mgi <- load_pathways("hsa", pathways_list = c("hsa03320", "hsa04012"))
+p <- assay(results[["paths"]])
+n <- normalize_paths(p, mgi)
 
 test_that("Class is correct", {
     expect_is(n, "matrix")

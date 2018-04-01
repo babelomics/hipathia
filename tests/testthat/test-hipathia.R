@@ -5,15 +5,16 @@ library(hipathia)
 context("Hipathia function")
 
 data("exp_data")
-mgi <- load.pathways("hsa", pathways.list = c("hsa03320", "hsa04012"))
+mgi <- load_pathways("hsa", pathways_list = c("hsa03320", "hsa04012"))
 results <- hipathia(exp_data[,1, drop = FALSE], mgi)
 
 test_that("Classes are correct", {
-    expect_is(results, "list")
-    expect_is(results$all$path.vals, "matrix")
-    expect_is(results$all$nodes.vals, "matrix")
-    expect_is(results$by.path, "list")
-    expect_equal(length(results$by.path), 2)
+    expect_is(results, "MultiAssayExperiment")
+    expect_is(results[["paths"]], "SummarizedExperiment")
+    expect_is(results[["nodes"]], "SummarizedExperiment")
+    expect_is(colData(results), "DataFrame")
+    expect_is(assay(results, "paths"), "matrix")
+    expect_is(assay(results, "nodes"), "matrix")
 })
 
 test_that("Genes.vals & metaginfo parameters are needed", {
@@ -23,18 +24,19 @@ test_that("Genes.vals & metaginfo parameters are needed", {
 })
 
 test_that("Results are complete", {
-    expect_equal(2, length(results))
-    expect_equal(2, length(results$all))
-    expect_equal(length(mgi$pathigraphs),
-                 length(results$by.path))
-    expect_equal(ncol(results$all$path.vals), 1)
-    expect_equal(ncol(results$all$nodes.vals), 1)
+    expect_equal(length(assays(results)), 2)
+    expect_equal(1, ncol(results[["paths"]]))
+    expect_equal(1, ncol(results[["nodes"]]))
+    expect_equal(sum(sapply(mgi$pathigraphs, function(p){
+                    length(p$effector.subgraphs)})),
+                 nrow(results[["paths"]]))
+    expect_equal(nrow(mgi$all.labelids), nrow(results[["nodes"]]))
 })
 
 test_that("Values are in rank", {
-    pv <- results$all$path.vals
+    pv <- assay(results[["paths"]])
     expect_true(all(pv <= 1 & pv >= 0))
-    nv <- results$all$nodes.vals
+    nv <- assay(results[["nodes"]])
     expect_true(all(nv <= 1 & nv >= 0))
 })
 
@@ -44,6 +46,6 @@ test_that("Extreme values are preserved", {
     m1 <- matrix(1, ncol = 1, nrow = length(genes), dimnames = list(genes, "1"))
     m <- cbind(m0, m1)
     results <- hipathia(m, mgi)
-    expect_true(all(results$all$path.vals %in% c(0,1)))
+    expect_true(all(assay(results[["paths"]]) %in% c(0,1)))
 })
 

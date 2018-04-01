@@ -5,10 +5,10 @@ library(hipathia)
 context("Get pathway annotations")
 
 data("comp")
-mgi <- load.pathways("hsa", pathways.list = c("hsa03320", "hsa04012"))
-names <- get.pathways.annotations(rownames(comp), mgi, "uniprot")
-names_col <- get.pathways.annotations(rownames(comp), mgi, "uniprot", 
-                                      collapse = T)
+mgi <- load_pathways("hsa", pathways_list = c("hsa03320", "hsa04012"))
+names <- get_pathways_annotations(rownames(comp), mgi, "uniprot")
+names_col <- get_pathways_annotations(rownames(comp), mgi, "uniprot", 
+                                      collapse = TRUE)
 
 test_that("Classes are correct", {
     expect_is(names, "data.frame")

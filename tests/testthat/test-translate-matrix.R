@@ -5,8 +5,8 @@ library(hipathia)
 context("Label translation function")
 
 data("brca_data")
-trans_data <- translate.matrix(brca_data, "hsa")
-mgi <- load.mgi("hsa")
+trans_data <- translate_matrix(brca_data, "hsa")
+mgi <- load_pathways("hsa")
 
 test_that("Resulting object is a matrix", {
     expect_is(trans_data, "matrix")

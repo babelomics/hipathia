@@ -5,8 +5,8 @@ library(hipathia)
 context("Get pathway list")
 
 data("comp")
-mgi <- load.pathways("hsa", pathways.list = c("hsa03320", "hsa04012"))
-paths <- get.pathways.list(mgi)
+mgi <- load_pathways("hsa", pathways_list = c("hsa03320", "hsa04012"))
+paths <- get_pathways_list(mgi)
 
 test_that("Class is correct", {
     expect_is(paths, "character")

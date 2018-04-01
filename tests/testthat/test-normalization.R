@@ -2,23 +2,23 @@
 ## Marta R. Hidalgo
 
 library(hipathia)
-context("Normalize.data function")
+context("Normalize_data function")
 
 data("brca_data")
-exp_data <- normalize.data(brca_data)
+exp_data <- normalize_data(brca_data)
 
 test_that("Resulting object is a matrix", {
     expect_is(exp_data, "matrix")
 })
 
 test_that("Exp.data parameter is necessary", {
-    expect_error(normalize.data())
+    expect_error(normalize_data())
 })
 
 test_that("Truncation.percentil must be in [0,1]", {
-    expect_error(normalize.data(brca_data, truncation.percentil = 5))
-    expect_error(normalize.data(brca_data, truncation.percentil = -5))
-    expect_error(normalize.data(brca_data, truncation.percentil = -0.1))
+    expect_error(normalize_data(brca_data, truncation_percentil = 5))
+    expect_error(normalize_data(brca_data, truncation_percentil = -5))
+    expect_error(normalize_data(brca_data, truncation_percentil = -0.1))
 })
 
 test_that("Dimnames are preserved", {
@@ -32,7 +32,7 @@ test_that("All values in [0,1]", {
 })
 
 test_that("All distributions are the same when by.quantiles is TRUE", {
-    exp_data <- normalize.data(brca_data, by.quantiles = T)
+    exp_data <- normalize_data(brca_data, by_quantiles = T)
     q <- quantile(exp_data[,1])
     expect_true(all(apply(exp_data, 2, function(x) all(quantile(x) == q))))
 })

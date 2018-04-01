@@ -4,16 +4,15 @@
 # library(hipathia)
 # context("Create report")
 #
-# data("exp_data")
-# data("brca_design")
+# data("brca")
 # data("comp")
+# data(results)
 # extdata_folder <- system.file("extdata", package = "hipathia")
 # output_folder <- paste0(extdata_folder, "/save_noColors")
-# mgi <- load.pathways("hsa", pathways.list = c("hsa03320", "hsa04012"))
-# results <- hipathia(exp_data, mgi)
-# sample_group <- brca_design[colnames(path_vals),"group"]
-# colors_de <- node.color.per.de(results, mgi, sample_group, "Tumor", "Normal")
-# create.report(results, comp, mgi, output_folder)
+# mgi <- load_pathways("hsa", pathways_list = c("hsa03320", "hsa04012"))
+# sample_group <- colData(brca)[,1]
+# colors_de <- node_color_per_de(results, mgi, sample_group, "Tumor", "Normal")
+# create_report(results, comp, mgi, output_folder)
 #
 # test_that("Folders are created", {
 #     expect_true(file.exists(paste0(output.folder, "/pathway-viewer")))

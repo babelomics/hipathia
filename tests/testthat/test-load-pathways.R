@@ -5,10 +5,10 @@ library(hipathia)
 context("Load pathways")
 
 pathways_list <- c("hsa03320", "hsa04012")
-mgi <- load.pathways("hsa", pathways.list = pathways_list)
+mgi <- load_pathways("hsa", pathways_list = pathways_list)
 
 test_that("Species parameter is needed", {
-    expect_error(load.pathways())
+    expect_error(load_pathways())
 })
 
 test_that("Pathways object is a list", {
@@ -21,7 +21,7 @@ test_that("Pathways object is correct", {
                          c("all.labelids", "pathigraphs", "all.genes",
                            "path.norm", "eff.norm", "species")),
                  character(0))
-    expect_true(is.accepted.species(mgi$species))
+    expect_true(is_accepted_species(mgi$species))
     expect_true(all(mgi$all.labelids[,"path.id"] %in% pathways_list))
     expect_true(all(mgi$eff.norm >= 0 & mgi$eff.norm <= 1))
     expect_true(all(mgi$path.norm >= 0 & mgi$path.norm <= 1))
