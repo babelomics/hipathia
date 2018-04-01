@@ -14,7 +14,7 @@ test_that("Resulting object is a data.frame", {
 
 test_that("Output is correct", {
     comp <- do_wilcoxon(path_vals, sample_group, g1 = "Tumor", g2 = "Normal")
-    expect_equal(5, ncol(comp))
+    expect_equal(4, ncol(comp))
     expect_equal(nrow(comp), nrow(path_vals))
     expect_equal(rownames(comp), rownames(path_vals))
     expect_equal("numeric", class(comp$p.value))
@@ -36,7 +36,7 @@ test_that("Equal datasets are not significant", {
                        dimnames = list(rownames(path_vals),
                                        colnames(path_vals)[21:40]))
     eq_vals <- cbind(eq_vals1, eq_vals2)
-    comp <- do.wilcoxon(eq_vals, sample_group, g1 = "Tumor", g2 = "Normal")
+    comp <- do_wilcoxon(eq_vals, sample_group, g1 = "Tumor", g2 = "Normal")
 
     expect_true(all(comp$p.value == 1))
     expect_true(all(comp$FDRp.value == 1))
