@@ -27,6 +27,6 @@ For accepted IDs to be transformed see the DOCUMENTATION.
 }
 \examples{
 data("brca_data")
-trans_data <- translate_matrix(brca_data, "hsa")
+trans_data <- translate_data(brca_data, "hsa")
 
 }

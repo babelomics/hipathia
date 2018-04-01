@@ -52,9 +52,8 @@ pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 pathway_comparison_plot(comp, metaginfo = pathways, pathway = "hsa03320")
 
 data(results)
-data(brca_design)
-data(path_vals)
-sample_group <- brca_design[colnames(path_vals),"group"]
+data(brca)
+sample_group <- colData(brca)[,1]
 colors_de <- node_color_per_de(results, pathways,
 sample_group, "Tumor", "Normal")
 pathway_comparison_plot(comp, metaginfo = pathways, pathway = "hsa04012",
