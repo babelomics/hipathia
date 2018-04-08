@@ -25,10 +25,10 @@ pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 sample_group <- colData(brca)[,1]
 colors_de <- node_color_per_de(results, pathways,
 sample_group, "Tumor", "Normal")
-create_report(comp, pathways, "~/save_results/",
+report <- create_report(comp, pathways, "save_results",
 node_colors = colors_de)
-visualize_report("~/save_results/")
-visualize_report("~/save_results/", port=5000)
+visualize_report(report)
+visualize_report(report, port = 5000)
 \dontshow{servr::daemon_stop()}
 
 }

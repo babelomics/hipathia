@@ -4,7 +4,7 @@
 \alias{save_results}
 \title{Save results to folder}
 \usage{
-save_results(results, comp, metaginfo, output_folder = NULL)
+save_results(results, comp, metaginfo, output_folder = NULL, path = NULL)
 }
 \arguments{
 \item{results}{Results object as returned by the \code{hipathia} function.}
@@ -13,8 +13,10 @@ save_results(results, comp, metaginfo, output_folder = NULL)
 
 \item{metaginfo}{Pathways object}
 
-\item{output_folder}{Absolute path to the folder in which results will be
-saved. If this folder does not exist, it will be created in a temp folder.}
+\item{output_folder}{Name of the folder in which the results will be stored.}
+
+\item{path}{Absolute path to the parent directory in which `output_folder` 
+will be saved. If it is not provided, it will be created in a temp folder.}
 }
 \value{
 Creates a folder in disk in which all the information to browse the
@@ -30,6 +32,6 @@ data(results)
 data(comp)
 pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 "hsa04012"))
-tmp_save_folder <- save_results(results, comp, pathways, "output_results")
+save_results(results, comp, pathways, "output_results")
 
 }
