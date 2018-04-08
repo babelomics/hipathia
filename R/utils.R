@@ -341,7 +341,7 @@ filter_pathways <- function(metaginfo, pathways_list = NULL){
         pn_idx <- pn_paths %in% pathways_list
         metaginfo$path.norm <- metaginfo$path.norm[pn_idx]
         en_paths <- sapply(strsplit(names(metaginfo$eff.norm), "-"), "[[", 2)
-        en_idx <- en_apths %in% pathways_list
+        en_idx <- en_paths %in% pathways_list
         metaginfo$eff.norm <- metaginfo$eff.norm[en_idx]
         metaginfo$all.labelids <- metaginfo$all.labelids[
             metaginfo$all.labelids[,"path.id"] %in% pathways_list,]
