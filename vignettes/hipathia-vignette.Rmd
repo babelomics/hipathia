@@ -746,8 +746,9 @@ object returned by function `node_color_per_de` or a
 similar data structure. 
 
 ```{r, fig.show='hold'}
-create_report(comp, pathways, "save_noColors")
-create_report(comp, pathways, "save_colors", node_colors = colors_de)
+report <- create_report(comp, pathways, "save_noColors")
+report_colors <- create_report(comp, pathways, "save_colors", 
+                               node_colors = colors_de)
 ```
 
 Due to cross-origin security restrictions 
@@ -760,11 +761,11 @@ in R will be executed, serving the result files to the default URL
 http://127.0.0.1:4000. Port 4000 may be changed through parameter `port`. 
 
 ```{r, fig.show='hold'}
-visualize_report("save_colors")
+visualize_report(report_colors)
 ```
 
 ```{r, fig.show='hold'}
-visualize_report("save_noColors", port = 4001)
+visualize_report(report, port = 4001)
 ```
 
 The function `visualize_report` uses the `r CRANpkg("servr")` package, please 
