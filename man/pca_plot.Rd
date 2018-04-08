@@ -54,7 +54,7 @@ Plots two components of a PCA computed with \code{do_pca}
 \examples{
 data(path_vals)
 sample_group <- brca_design[colnames(path_vals),"group"]
-pca_model <- do_pca(path_vals[1:ncol(path_vals),])
+pca_model <- do_pca(path_vals[seq_len(ncol(path_vals)),])
 pca_plot(pca_model, sample_group)
 
 }

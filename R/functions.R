@@ -89,6 +89,8 @@ annotate_paths <- function(metaginfo, dbannot){
 #' uniprot_values <- quantify_terms(results, pathways, "uniprot")
 #'
 #' @export
+#' @importFrom matrixStats colMeans2
+#' @importFrom matrixStats colProds
 #'
 quantify_terms <- function(results, metaginfo, dbannot, out_matrix = FALSE, 
                            normalize = TRUE){
@@ -122,10 +124,11 @@ quantify_terms <- function(results, metaginfo, dbannot, out_matrix = FALSE,
     for(fun in fun_names){
         paths <- annofuns$paths[annofuns$funs == fun]
         if(method == "mean"){
-            fun_vals[fun,] <- apply(path_vals[paths,,drop = FALSE], 2, mean)
+            fun_vals[fun,] <- colMeans2(path_vals[paths,,drop = FALSE], 
+                                        na.rm = TRUE)
         }else if(method == "signal"){
             minimat <- 1 - path_vals[paths,,drop = FALSE]
-            fun_vals[fun,] <- 1 - apply(minimat, 2, prod)
+            fun_vals[fun,] <- 1 - colProds(minimat, na.rm = TRUE)
         }
     }
     if(out_matrix == FALSE){
@@ -166,7 +169,7 @@ enrichment <- function(path_functions, dbannot, na_rm = TRUE){
                       c(term_counts[x], n1-term_counts[x],
                         all_term_counts[x], n2-all_term_counts[x]),
                       nrow = 2,
-                      dimnames = list(c("path","rest"),c("yes","no")))
+                      dimnames = list(c("path","rest"), c("yes","no")))
         test <- stats::fisher.test(mat, alternative = "greater")
         return(test$p.value)
     })

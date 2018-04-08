@@ -4,9 +4,9 @@
 \alias{multiple_pca_plot}
 \title{Plots multiple components of a PCA}
 \usage{
-multiple_pca_plot(fit, group = NULL, sample_colors = NULL, comps = 1:3,
-  plot_variance = FALSE, legend = TRUE, cex = 2, pch = 20,
-  main = "Multiple PCA plot", save_png = NULL)
+multiple_pca_plot(fit, group = NULL, sample_colors = NULL,
+  comps = seq_len(3), plot_variance = FALSE, legend = TRUE, cex = 2,
+  pch = 20, main = "Multiple PCA plot", save_png = NULL)
 }
 \arguments{
 \item{fit}{princomp object as returned by \code{do_pca}}
@@ -46,7 +46,7 @@ Plots multiple components of a PCA analysis computed with \code{do_pca}
 \examples{
 data(path_vals)
 sample_group <- brca_design[colnames(path_vals),"group"]
-pca_model <- do_pca(path_vals[1:ncol(path_vals),])
+pca_model <- do_pca(path_vals[seq_len(ncol(path_vals)),])
 multiple_pca_plot(pca_model, sample_group, cex = 3, plot_variance = TRUE)
 
 }

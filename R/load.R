@@ -27,8 +27,9 @@ load_annofuns <- function(db, species){
     if(!is_accepted_database(db))
         stop("Database not accepted")
     file <- paste0("annofuns_", db, "_", species, ".rda")
-    ah <- suppressMessages(AnnotationHub())
-    hp <- query(ah, "hpAnnot")
+    # ah <- suppressMessages(AnnotationHub())
+    # hp <- query(ah, "hpAnnot")
+    hp <- hub()
     annofuns <- suppressMessages(ah[[names(hp)[hp$title == file]]])
     return(annofuns)
 }
@@ -48,8 +49,9 @@ load_mgi <- function(species){
     if(!is_accepted_species(species))
         stop("Species not accepted")
     file <- paste0("meta_graph_info_", species, ".rda")
-    ah <- suppressMessages(AnnotationHub())
-    hp <- query(ah, "hpAnnot")
+    # ah <- suppressMessages(AnnotationHub())
+    # hp <- query(ah, "hpAnnot")
+    hp <- hub()
     mgi <- suppressMessages(ah[[names(hp)[hp$title == file]]])
     return(mgi)
 }
@@ -76,8 +78,9 @@ load_pseudo_mgi <- function(species, group_by){
     if(!is_accepted_grouping(group_by))
         stop("Grouping not accepted")
     file <- paste0("pmgi_", species, "_", group_by, ".rda")
-    ah <- suppressMessages(AnnotationHub())
-    hp <- query(ah, "hpAnnot")
+    # ah <- suppressMessages(AnnotationHub())
+    # hp <- query(ah, "hpAnnot")
+    hp <- hub()
     pmgi <- suppressMessages(ah[[names(hp)[hp$title == file]]])
     return(pmgi)
 }
@@ -97,8 +100,9 @@ load_xref <- function(species){
     if(!is_accepted_species(species))
         stop("Species not accepted")
     file <- paste0("xref_", species, ".rda")
-    ah <- suppressMessages(AnnotationHub())
-    hp <- query(ah, "hpAnnot")
+    # ah <- suppressMessages(AnnotationHub())
+    # hp <- query(ah, "hpAnnot")
+    hp <- hub()
     xref <- suppressMessages(ah[[names(hp)[hp$title == file]]])
     return(xref)
 }
@@ -118,8 +122,9 @@ load_entrez_hgnc <- function(species){
     if(!is_accepted_species(species))
         stop("Species not accepted")
     file <- paste0("entrez_hgnc_", species, ".rda")
-    ah <- suppressMessages(AnnotationHub())
-    hp <- query(ah, "hpAnnot")
+    # ah <- suppressMessages(AnnotationHub())
+    # hp <- query(ah, "hpAnnot")
+    hp <- hub()
     entrez_hgnc <- suppressMessages(ah[[names(hp)[hp$title == file]]])
     return(entrez_hgnc)
 }
@@ -144,8 +149,9 @@ load_annots <- function(db, species){
     if(!is_accepted_database(db))
         stop("Database not accepted")
     file <- paste0("annot_", db, "_", species, ".rda")
-    ah <- suppressMessages(AnnotationHub())
-    hp <- query(ah, "hpAnnot")
+    # ah <- suppressMessages(AnnotationHub())
+    # hp <- query(ah, "hpAnnot")
+    hp <- hub()
     annot <- suppressMessages(ah[[names(hp)[hp$title == file]]])
     return(annot)
 }
@@ -160,8 +166,9 @@ load_annots <- function(db, species){
 #' @import AnnotationHub
 #'
 load_gobp_frame <- function(){
-    ah <- suppressMessages(AnnotationHub())
-    hp <- query(ah, "hpAnnot")
+    # ah <- suppressMessages(AnnotationHub())
+    # hp <- query(ah, "hpAnnot")
+    hp <- hub()
     gbf <- suppressMessages(ah[[names(hp)[hp$title == "go_bp_frame.rda"]]])
     return(gbf)
 }
@@ -176,9 +183,20 @@ load_gobp_frame <- function(){
 #' @import AnnotationHub
 #'
 load_gobp_net <- function(){
-    ah <- suppressMessages(AnnotationHub())
-    hp <- query(ah, "hpAnnot")
+    # ah <- suppressMessages(AnnotationHub())
+    # hp <- query(ah, "hpAnnot")
+    hp <- hub()
     gbn <- suppressMessages(ah[[names(hp)[hp$title == "go_bp_net.rda"]]])
     return(gbn)
 }
 
+
+# Package-global cache of the Annotation-hub() object
+hub = local({
+    hp = NULL
+    function(){
+        if(is.null(hp))
+            hp <<- query(AnnotationHub(), "hpAnnot")
+        hp
+    }
+})

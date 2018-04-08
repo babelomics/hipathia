@@ -91,6 +91,8 @@ normalize_data <- function(data, sel_assay = 1, by_quantiles = FALSE,
 #' @import preprocessCore
 #' @importFrom stats quantile
 #' @importFrom stats ecdf
+#' @importFrom DelayedArray rowMins
+#' @importFrom DelayedArray rowMaxs
 normalize_matrix <- function(mat, sel_assay = 1, by_quantiles = FALSE, 
                            by_gene = FALSE,
                            percentil = FALSE, truncation_percentil = NULL){

@@ -66,7 +66,9 @@
 #'
 #' @export
 #' @import grDevices graphics
-#' @importFrom stats var
+#' @importFrom matrixStats rowVars
+#' @importFrom DelayedArray rowMins
+#' @importFrom DelayedArray rowMaxs
 #' @importFrom stats heatmap
 #'
 heatmap_plot <- function(data, group = NULL, sel_assay = 1, 
@@ -107,7 +109,7 @@ heatmap_plot <- function(data, group = NULL, sel_assay = 1,
     if(variable_clust==FALSE){
         rowv <- NA
     } else {
-        vars <- apply(vals, 1, stats::var)
+        vars <- matrixStats::rowVars(vals)
         vals <- vals[!is.na(vars) & vars != 0,]
         rowv <- TRUE
     }
@@ -139,10 +141,9 @@ heatmap_plot <- function(data, group = NULL, sel_assay = 1,
         names(sample_colors) <- unique(group)
     }
     if(scale == TRUE){
-        vals <- t(apply(vals, 1, function(x){
-            (x - min(x, na.rm = TRUE))/(max(x, na.rm = TRUE) -
-                                            min(x, na.rm = TRUE))
-        }))
+        min <- rowMins(vals, na.rm = TRUE)
+        max <- rowMaxs(vals, na.rm = TRUE)
+        vals <- (vals - min)/(max - min)
     }
     if(!is.null(save_png))
         grDevices::png(filename = save_png)
@@ -483,9 +484,7 @@ pathway_comparison_plot <- function(comp, metaginfo, pathway, conf=0.05,
     }else{
         effector = TRUE}
 
-    paths <- sapply(rownames(comp), function(x){
-        unlist(strsplit(x, "-"))[2]
-    })
+    paths <- sapply(strsplit(rownames(comp), "-"), "[[", 2)
     comp <- comp[paths == pathigraph$path.id, ]
 
     # Find edge colors
@@ -629,15 +628,9 @@ node_color_per_de <- function(results, metaginfo, group, g1, g2,
             stop("Group variable must be a column in colData())")
         }
     difexp <- compute_difexp(assay(results[["nodes"]]), g1, g2, group)
-    updown <- sapply(difexp$statistic, function(x){
-        if(x < 0){
-            "down"
-        }else if(x > 0){
-            "up"
-        }else{
-            "both"
-        }
-    })
+    updown <- rep("both", length(difexp$statistic))
+    updown[difexp$statistic < 0] <- "down"
+    updown[difexp$statistic > 0] <- "up"
     node_colors <- get_colors_from_pval(updown,
                                         difexp$p.value,
                                         up_col = up_col,

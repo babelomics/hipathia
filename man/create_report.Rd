@@ -4,7 +4,7 @@
 \alias{create_report}
 \title{Create visualization HTML}
 \usage{
-create_report(comp, metaginfo, output_folder, node_colors = NULL,
+create_report(comp, metaginfo, output_folder = NULL, node_colors = NULL,
   group_by = "pathway", conf = 0.05, verbose = FALSE)
 }
 \arguments{
@@ -14,8 +14,7 @@ create_report(comp, metaginfo, output_folder, node_colors = NULL,
 function}
 
 \item{output_folder}{Absolute path to the folder in which results will be
-saved. If this folder does not exist, it will be created.
-However, the parent folder must exist.}
+saved. If this folder does not exist, it will be created in a temp folder.}
 
 \item{node_colors}{List of colors with which to paint the nodes of the
 pathways, as returned by the
@@ -34,7 +33,8 @@ execution}
 }
 \value{
 Saves the results and creates a report to visualize them through
-a server in the specified \code{output_folder}.
+a server in the specified \code{output_folder}. Returns the folder where
+the report has been stored.
 }
 \description{
 Saves the results of a Wilcoxon comparison for the Hipathia pathway values

@@ -115,6 +115,7 @@ hipathia <- function(genes_vals, metaginfo, sel_assay = 1, decompose = FALSE,
 }
 
 
+#' @importFrom DelayedArray colMins
 nodes_values_from_genes <- function(genes_vals, ig, summ = "per90"){
     genes_list <- V(ig)$genesList
     names(genes_list) <- V(ig)$name
@@ -138,7 +139,7 @@ nodes_values_from_genes <- function(genes_vals, ig, summ = "per90"){
                 }
                 probabilities_mat <- rbind(probabilities_mat, prob)
             }
-            nodes_vals[node_name,] <- apply(probabilities_mat, 2, min)
+            nodes_vals[node_name,] <- colMins(probabilities_mat, na.rm = TRUE)
         }else{
             glist <- genes_list[[node_name]]
             if(length(glist) > 1){
@@ -156,17 +157,20 @@ nodes_values_from_genes <- function(genes_vals, ig, summ = "per90"){
 }
 
 
-#' @importFrom stats median
+#' @importFrom matrixStats colMedians
+#' @importFrom matrixStats colMeans2
 #' @importFrom stats quantile
+#' @importFrom DelayedArray colMaxs
+#' @importFrom DelayedArray colMins
 summarize_probabilities <- function(probabilities, summ = "per90"){
     if (summ == "mean"){
-        prob <- apply(probabilities, 2, mean, na.rm = TRUE)
+        prob <- colMeans2(probabilities, na.rm = TRUE)
     }else if(summ == "median"){
-        prob <- apply(probabilities, 2, stats::median, na.rm = TRUE)
+        prob <- colMedians(probabilities, na.rm = TRUE)
     }else if (summ == "max"){
-        prob <- apply(probabilities, 2, max, na.rm = TRUE)
+        prob <- colMaxs(probabilities, na.rm = TRUE)
     }else if (summ == "min"){
-        prob <- apply(probabilities, 2, min, na.rm = TRUE)
+        prob <- colMins(probabilities, na.rm = TRUE)
     }else if (summ == "per90"){
         prob <- apply(probabilities, 2, stats::quantile, 0.9, na.rm = TRUE)
     }else if (summ == "per95"){
@@ -295,6 +299,9 @@ path_value <- function( nodes_vals, subgraph, ininodes, endnode,
 }
 
 
+#' @importFrom matrixStats colProds
+#' @importFrom DelayedArray colMins
+#' @importFrom DelayedArray colMaxs
 compute_node_signal <- function(actnode, node_val, node_signal, subgraph,
                                 method="maxmin", response_tol = 0){
 
@@ -331,9 +338,12 @@ compute_node_signal <- function(actnode, node_val, node_signal, subgraph,
         }
         else if( method == "maxmin"){
             s1 <- prettyifelse(nactivators > 0,
-                               apply(1- activator_signals, 2, prod),
+                               colProds(1- activator_signals, na.rm = TRUE),
                                rep(0, length(node_val)))
             s2 <- prettyifelse(ninhibitors > 0,
+                               # colProds(rowMaxs(inhibitor_signals) +
+                               #          rowMaxs(inhibitor_signals) -
+                               #          inhibitor_signals),
                                apply(apply(inhibitor_signals, 1, max) +
                                          apply(inhibitor_signals, 1, min) -
                                          inhibitor_signals, 2, prod),
@@ -342,19 +352,19 @@ compute_node_signal <- function(actnode, node_val, node_signal, subgraph,
         }
         else if( method == "pond"){
             s1 <- prettyifelse(nactivators > 0,
-                               apply(1 - activator_signals, 2, prod),
+                               colProds(1 - activator_signals),
                                rep(0, length(node_val)))
             s2 <- prettyifelse(ninhibitors > 0,
-                               apply(1 - inhibitor_signals, 2, prod),
+                               colProds(1 - inhibitor_signals),
                                rep(1, length(node_val)))
             signal <- (1-s1)*s2
         }
         else if( method == "min"){
             s1 <- prettyifelse(nactivators > 0,
-                               apply(activator_signals,2,min),
+                               colMins(activator_signals),
                                rep(1, length(node_val)))
             s2 <- prettyifelse(ninhibitors > 0,
-                               1 - apply(inhibitor_signals,2,max),
+                               1 - colMaxs(inhibitor_signals),
                                rep(1, length(node_val)))
             signal <- s1*s2
         }
