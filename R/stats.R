@@ -122,17 +122,16 @@ normalize_matrix <- function(mat, sel_assay = 1, by_quantiles = FALSE,
     }
     if(by_gene == TRUE){
         if(percentil == TRUE){
-            norm_data <- t(apply(norm_data,1, function(x){stats::ecdf(x)(x)}))
+            norm_data <- t(apply(norm_data, 1, function(x){stats::ecdf(x)(x)}))
         }else{
-            norm_data <- t(apply(norm_data, 1, function(x){
-                (x - min(x, na.rm = TRUE))/(max(x, na.rm = TRUE) -
-                                                min(x, na.rm = TRUE))
-            }))
+            min <- rowMins(norm_data, na.rm = TRUE)
+            max <- rowMaxs(norm_data, na.rm = TRUE)
+            norm_data <- (norm_data - min)/(max - min)
         }
     } else {
         if(percentil == TRUE){
             emp <- stats::ecdf(norm_data)
-            norm_data <- t(apply(norm_data,1,emp))
+            norm_data <- t(apply(norm_data, 1, emp))
         }else{
             norm_data <- (norm_data - min(norm_data, na.rm = TRUE))/
                 (max(norm_data, na.rm = TRUE) - min(norm_data, na.rm = TRUE))
@@ -460,21 +459,6 @@ compute_difexp <- function(vals, group1_label, group2_label, groups){
 }
 
 
-compute_node_difexp <- function(results, groups, group1_label, group2_label,
-                                verbose = FALSE){
-
-    difexp <- list()
-    for(pathway in names(results$by.path)){
-        if(verbose == TRUE)
-            print(pathway)
-        difexp[[pathway]]<-compute_difexp(results$by.path[[pathway]]$nodes.vals,
-                                          group1_label,
-                                          group2_label,
-                                          groups)
-    }
-    return(difexp)
-}
-
 
 #' Compute pathway summary
 #'
@@ -548,16 +532,4 @@ get_pathways_summary <- function(comp, metaginfo, conf = 0.05){
     return(summ)
 }
 
-
-get_pathways_pvalues <- function(comp, conf = 0.05){
-    comp$pathways <- sapply(rownames(comp), function(n){
-        unlist(strsplit(n, split="\\_"))[2]
-    })
-    name_pathways <- unique(comp$pathways)
-    pvals <- lapply(name_pathways, function(pathway){
-        comp[comp$pathways == pathway, "FDRp.value"]
-    })
-    names(pvals) <- name_pathways
-    return(pvals)
-}
 

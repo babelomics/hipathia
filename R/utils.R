@@ -408,13 +408,10 @@ get_paths_data <- function(results, matrix = FALSE){
 
 
 clip_names <- function(snames, maxchar = 30){
-    sapply(snames, function(x) {
-        if(nchar(x) > maxchar){
-            return(paste0(substr(x, 1 , maxchar - 3), "..."))
-        } else {
-            return(x)
-        }
-    })
+    n <- nchar(snames)
+    idx <- n > maxchar
+    n[idx] <- maxchar - 3
+    paste0(substr(snames, 1, n), ifelse(idx, "...", ""))
 }
 
 
