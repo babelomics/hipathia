@@ -381,7 +381,7 @@ create_node_and_edge_attributes <- function(comp, pathway, metaginfo,
         funs <- t(apply(funejes, 1, function(x){
             lastnodes <- sapply(colnames(funejes), get_effnode_id)
             if(any(lastnodes == nods[x[[1]]])){
-                x[which(lastnodes == nods[x[[1]]])] <- 1
+                x[lastnodes == nods[x[[1]]]] <- 1
                 x
             }else{
                 x

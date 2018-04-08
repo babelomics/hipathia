@@ -106,10 +106,10 @@ normalize_matrix <- function(mat, sel_assay = 1, by_quantiles = FALSE,
             norm_data <- t(apply(norm_data, 1, function(x){
                 quan_inf <- stats::quantile(x, 1 - truncation_percentil,
                                             na.rm = TRUE)
-                x[which(x < quan_inf)] <- quan_inf
+                x[x < quan_inf] <- quan_inf
                 quan_sup <- stats::quantile(x, truncation_percentil,
                                             na.rm = TRUE)
-                x[which(x > quan_sup)] <- quan_sup
+                x[x > quan_sup] <- quan_sup
                 x
             }))
         }
