@@ -584,7 +584,8 @@ add_edge_colors <- function(pathigraph, pcomp, effector, up_col = "#ca0020",
 #' in this order, down-regulation, non-significance and up-regulation colors)
 #'  or a key name indicating the color scheme to be used. Options are:
 #' @slot classic ColorBrewer blue, white and colorBrewer red.
-#' @slot hipathia Hipathia predefined color scheme: Green, white and orange.
+#' @slot hipathia Hipathia predefined color scheme: 
+#' Green, white and orange.
 #' By default \code{classic} color scheme is applied.
 #' @param conf Level of significance of the comparison for the adjusted p-value
 #'

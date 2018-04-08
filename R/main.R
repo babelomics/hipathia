@@ -8,7 +8,8 @@
 ## https://www.bioconductor.org/developers/how-to/coding-style/
 ##
 
-#' Computes the level of activation of the subpathways for each of the samples
+#' Computes the level of activation of the subpathways for each 
+#' of the samples
 #'
 #' #@importFrom igraph
 #'

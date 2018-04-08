@@ -8,7 +8,8 @@
 ## https://www.bioconductor.org/developers/how-to/coding-style/
 ##
 
-#' Normalize expression data from a SummarizedExperiment or matrix to be used in 
+#' Normalize expression data from a SummarizedExperiment or matrix to be used 
+#' in 
 #' \code{hipathia}
 #'
 #' Transforms the rank of the SummarizedExperiment or matrix of gene expression 
@@ -187,7 +188,8 @@ do_cor <- function(sel_vals, design, adjust = TRUE){
     } else {
         fdrData <- testData[,1]
     }
-    data2 <- data.frame(testData[,1:3], fdrData, stringsAsFactors = FALSE)
+    data2 <- data.frame(testData[,seq_len(3)], fdrData, 
+                        stringsAsFactors = FALSE)
 
     colnames(data2) <- c("p.value", "UP/DOWN", "correlation", "FDRp.value")
     data2[data2$statistic>0,"UP/DOWN"] <- "UP"

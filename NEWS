@@ -1,5 +1,11 @@
-Information about new versions of Hipathia
+Version 0.99.7 (2018-02-14)
+  + Last version supporting hpAnnot as annotation package
 
-0.99.7: Last version supporting hpAnnot as annotation package
-0.99.8: First version using AnnotationHub to load annotation files.
-0.99.9: Adapting hipathia package to SummarizedExperiment and MultiAssayExperiment.
+Version 0.99.8 (2018-03-07)
+  + First version using AnnotationHub to load annotation files.
+
+Version 0.99.9 (2018-03-09)
+  + Adapting hipathia package to SummarizedExperiment and MultiAssayExperiment.
+
+Version 0.99.27 (2018-04-08)
+  + Correcting Bionconductor style

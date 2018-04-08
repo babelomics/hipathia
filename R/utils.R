@@ -70,7 +70,8 @@ translate_ids <- function(ids, xref){
 #' Translates the IDs in the rownames of a SummarizedExperiment to Entrez IDs.
 #' For accepted IDs to be transformed see the DOCUMENTATION.
 #'
-#' @param data Either a SummarizedExperiment object or a matrix of gene expression.
+#' @param data Either a SummarizedExperiment object or a matrix of gene 
+#' expression.
 #' @param species Species of the samples.
 #' @param sel_assay Character or integer, indicating the assay to be translated 
 #' in the SummarizedExperiment. Default is 1.
