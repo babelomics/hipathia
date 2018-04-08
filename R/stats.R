@@ -418,7 +418,7 @@ wilcox_data_frame <- function(wilcox){
 #'
 #' @examples
 #' data(path_vals)
-#' pca_model <- do_pca(path_vals[1:ncol(path_vals),])
+#' pca_model <- do_pca(path_vals[seq_len(ncol(path_vals)),])
 #'
 #' @export
 #' @importFrom stats princomp

@@ -129,8 +129,7 @@ heatmap_plot <- function(data, group = NULL, sel_assay = 1,
         if(length(unique(group)) <= 8){
             sample_colors <- c("#50b7ae", "#b6ebe7", "#e66430",
                                "#305f59", "#ffc868", "#152e2b",
-                               "#a0170e", "#f9b493")[1:length(unique(
-                                   group))]
+                               "#a0170e", "#f9b493")[seq_along(unique(group))]
         }else{
             sample_colors <- c("#50b7ae", "#b6ebe7", "#e66430", "#305f59",
                                "#ffc868", "#152e2b", "#a0170e", "#f9b493",
@@ -210,7 +209,7 @@ heatmap_plot <- function(data, group = NULL, sel_assay = 1,
 #' @examples
 #' data(path_vals)
 #' sample_group <- brca_design[colnames(path_vals),"group"]
-#' pca_model <- do_pca(path_vals[1:ncol(path_vals),])
+#' pca_model <- do_pca(path_vals[seq_len(ncol(path_vals)),])
 #' pca_plot(pca_model, sample_group)
 #'
 #' @export
@@ -225,8 +224,7 @@ pca_plot <- function(fit, group = NULL, sample_colors = NULL, cp1 = 1,
         if(length(unique(group)) <= 8){
             sample_colors <- c("#50b7ae", "#b6ebe7", "#e66430",
                                "#305f59", "#ffc868", "#152e2b",
-                               "#a0170e", "#f9b493")[1:length(unique(
-                                   group))]
+                               "#a0170e", "#f9b493")[seq_along(unique(group))]
         }else{
             sample_colors <- c("#50b7ae", "#b6ebe7", "#e66430", "#305f59",
                                "#ffc868", "#152e2b", "#a0170e", "#f9b493",
@@ -291,14 +289,15 @@ pca_plot <- function(fit, group = NULL, sample_colors = NULL, cp1 = 1,
 #' @examples
 #' data(path_vals)
 #' sample_group <- brca_design[colnames(path_vals),"group"]
-#' pca_model <- do_pca(path_vals[1:ncol(path_vals),])
+#' pca_model <- do_pca(path_vals[seq_len(ncol(path_vals)),])
 #' multiple_pca_plot(pca_model, sample_group, cex = 3, plot_variance = TRUE)
 #'
 #' @export
 #' @import graphics grDevices
 #'
 multiple_pca_plot <- function(fit, group = NULL, sample_colors = NULL,
-                              comps = 1:3, plot_variance = FALSE, legend = TRUE,
+                              comps = seq_len(3), plot_variance = FALSE, 
+                              legend = TRUE,
                               cex = 2, pch = 20, main = "Multiple PCA plot",
                               save_png = NULL){
     combs <- utils::combn(comps, 2)
@@ -319,7 +318,7 @@ multiple_pca_plot <- function(fit, group = NULL, sample_colors = NULL,
     graphics::par(oma=c(0, 0, 2, 0))
     if(!is.null(save_png))
         grDevices::png(filename = save_png)
-    for(i in 1:(ncombs)){
+    for(i in seq_len(ncombs)){
         pca_plot(fit,
                  group = group,
                  sample_colors = sample_colors,
@@ -333,16 +332,15 @@ multiple_pca_plot <- function(fit, group = NULL, sample_colors = NULL,
     }
     if(legend == TRUE){
         if(is.null(sample_colors)){
+            ug <- unique(group)
             if(length(unique(group)) <= 8){
                 sample_colors <- c("#50b7ae", "#b6ebe7", "#e66430",
                                    "#305f59", "#ffc868", "#152e2b",
-                                   "#a0170e", "#f9b493")[1:length(unique(
-                                       group))]
+                                   "#a0170e", "#f9b493")[seq_along(ug)]
             }else{
                 sample_colors <- c("#50b7ae", "#b6ebe7", "#e66430", "#305f59",
                                    "#ffc868", "#152e2b", "#a0170e", "#f9b493",
-                                   grDevices::topo.colors(length(unique(
-                                       group)) - 8))
+                                   grDevices::topo.colors(length(ug) - 8))
             }
             names(sample_colors) <- unique(group)
         }
@@ -373,7 +371,7 @@ plot_pca_variance <- function(fit, thresh = 0, acum = FALSE, minnum = 5){
     if(acum==FALSE){
         comptoplot <- fit$explain_var > thresh
         if(sum(comptoplot) < minnum)
-            comptoplot <- 1:5
+            comptoplot <- seq_len(5)
         graphics::barplot(fit$explain_var[ comptoplot ],
                           ylab = "explain variance",
                           xlab = "",
@@ -382,7 +380,7 @@ plot_pca_variance <- function(fit, thresh = 0, acum = FALSE, minnum = 5){
                           ylim = c(0,1))
     } else {
         comptoplot <- fit$acum_explain_var < (1 - thresh)
-        if(sum(comptoplot) < minnum) comptoplot <- 1:5
+        if(sum(comptoplot) < minnum) comptoplot <- seq_len(5)
         graphics::barplot(fit$acum_explain_var[ comptoplot ],
                           ylab = "acum explain variance",
                           xlab = "",
@@ -669,7 +667,7 @@ node_color_per_de <- function(results, metaginfo, group, g1, g2,
 get_colors_from_pval <- function(updown, pvals, up_col = "#da1f1f",
                                  down_col = "#1f9cda", no_col = "white",
                                  both_col = "#959595",conf = 0.05){
-    colors <- sapply(1:length(updown), function(i){
+    colors <- sapply(seq_along(updown), function(i){
         if(!is.na(pvals[i]) && pvals[i] <= conf){
             trans <- (1 - 18*pvals[i])
             if(is.na(updown[i])){

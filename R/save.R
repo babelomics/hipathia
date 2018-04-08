@@ -132,7 +132,7 @@ create_node_and_edge_attributes <- function(comp, pathway, metaginfo,
         "rectangle"
     V(ig)$width[grepl("func",V(ig)$name)] <- -1
 
-    V(ig)$tooltip <- sapply(1:length(V(ig)), function(i){
+    V(ig)$tooltip <- sapply(seq_along(V(ig)), function(i){
         if(V(ig)$shape[i] == "ellipse"){
             paste(sapply(V(ig)$genesList[[i]], function(gen){
                 if(!gen == "/"){
@@ -215,7 +215,7 @@ create_node_and_edge_attributes <- function(comp, pathway, metaginfo,
     eatt <- c()
     epath_assoc <- c()
 
-    for(i in 1:length(s)){
+    for(i in seq_along(s)){
 
         # get subgraph
         subgraph <- s[[i]]
@@ -400,10 +400,10 @@ create_node_and_edge_attributes <- function(comp, pathway, metaginfo,
     fun_indexes <- grep("_func", rownames(natt))
     fun_names <- rownames(natt)[fun_indexes]
     if(length(fun_indexes) > 0){
-        for(i in 1:length(fun_names)){
+        for(i in seq_along(fun_names)){
             pp <- gsub("N", "P", gsub("_func", "", fun_names[i]))
             if(effector == TRUE){
-                natt[fun_names[i],pp] <- 1
+                natt[fun_names[i], pp] <- 1
             } else {
                 natt[fun_names[i], grep(paste0("- ", pp), colnames(natt))] <- 1
             }
@@ -430,7 +430,7 @@ create_node_and_edge_attributes <- function(comp, pathway, metaginfo,
     }
     if(!is.null(exp)){
         sids <- strsplit(as.character(natt[,"genesList"]), split = ",")
-        ids_list <- as.list(1:nrow(exp))
+        ids_list <- as.list(seq_len(nrow(exp)))
         names(ids_list) <- rownames(exp)
         get_expr_ids <- function(ids){
             if(length(ids) > 0){
@@ -476,7 +476,7 @@ create_path_info <- function(all_comp, metaginfo){
         anysigup <- FALSE
         anysigdown <- FALSE
         anychanged <- FALSE
-        for(i in 1:nrow(path_info[[x]])){
+        for(i in seq_len(nrow(path_info[[x]]))){
             if(path_info[[x]]$has_changed[i] == TRUE)
                 anychanged <- TRUE
             if(path_info[[x]]$FDRp.value[i] <= 0.05) {
@@ -498,7 +498,7 @@ create_path_info <- function(all_comp, metaginfo){
         out <- paste0(out, "\t\"upsig\":", tolower(anysigup), ",\n")
         out <- paste0(out, "\t\"downsig\":", tolower(anysigdown), ",\n")
         out <- paste0(out, "\t\"paths\":[\n")
-        for(i in 1:nrow(path_info[[x]])){
+        for(i in seq_len(nrow(path_info[[x]]))){
             out <- paste0(out, "\t\t{")
             out <- paste0(out, "\"id\":\"", rownames(path_info[[x]])[i], "\", ")
             out <- paste0(out, "\"name\":\"",

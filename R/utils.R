@@ -470,13 +470,13 @@ hhead <- function(mat, n = 5, sel_assay = 1){
     if(!is.null(ncol(mat))){
         if(ncol(mat) >= n+5){
             if(nrow(mat) >= n+5){
-                mat[1:n,1:n]
+                mat[seq_len(n),seq_len(n)]
             }else{
-                mat[,1:n]
+                mat[,seq_len(n)]
             }
         }else{
             if(nrow(mat) >= n+5){
-                mat[1:n,]
+                mat[seq_len(n),]
             }else{
                 mat
             }
