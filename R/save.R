@@ -682,7 +682,7 @@ create_report <- function(comp, metaginfo, output_folder = NULL,
     }
 
     if(group_by != "pathway"){
-        message("Creating groupings by ", group_by, "...\n")
+        message("Creating groupings by ", group_by, "...")
         metaginfo <- get_pseudo_metaginfo(metaginfo, group_by = group_by)
     }
 
@@ -692,14 +692,14 @@ create_report <- function(comp, metaginfo, output_folder = NULL,
         dir.create(paste0(tempdir(), "/", output_folder))
     pv_path <- paste0(system.file("extdata", package="hipathia"))
 
-    message("Creating report folders...\n")
+    message("Creating report folders...")
     create_report_folders(output_folder, pv_path, clean_out_folder = FALSE)
 
-    message("Creating pathways folder...\n")
+    message("Creating pathways folder...")
     create_pathways_folder(output_folder, metaginfo, comp, moreatts, conf,
                            verbose)
 
-    message("Creating HTML index...\n")
+    message("Creating HTML index...")
     create_html_index(pv_path,
                       output_folder,
                       template_name = "index_template.html",

@@ -120,7 +120,7 @@ quantify_terms <- function(results, metaginfo, dbannot, out_matrix = FALSE,
                        ncol = ncol(path_vals),
                        nrow = length(fun_names),
                        dimnames = list(fun_names, colnames(path_vals)))
-    message("Quantified functions:", nrow(fun_vals), "\n")
+    message("Quantified functions:", nrow(fun_vals))
     for(fun in fun_names){
         paths <- annofuns$paths[annofuns$funs == fun]
         if(method == "mean"){

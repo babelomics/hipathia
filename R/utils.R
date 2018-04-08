@@ -306,7 +306,7 @@ load_pathways <- function(species, pathways_list = NULL){
     metaginfo <- load_mgi(species)
     metaginfo <- filter_pathways(metaginfo, pathways_list = pathways_list)
     metaginfo <- igraphs_upgrade(metaginfo)
-    message("Loaded ", length(metaginfo$pathigraphs), " pathways\n")
+    message("Loaded ", length(metaginfo$pathigraphs), " pathways")
     return(metaginfo)
 }
 
