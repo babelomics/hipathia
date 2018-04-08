@@ -645,8 +645,9 @@ create_html_index <- function(home, output_folder,
 #' @param comp Comparison object as given by the \code{do_wilcoxon} function
 #' @param metaginfo Pathways object as returned by the \code{load_pathways}
 #' function
-#' @param output_folder Absolute path to the folder in which results will be
-#' saved. If this folder does not exist, it will be created in a temp folder.
+#' @param output_folder Name of the folder in which the report will be stored.
+#' @param path Absolute path to the parent directory in which `output_folder` 
+#' will be saved. If it is not provided, it will be created in a temp folder.
 #' @param node_colors List of colors with which to paint the nodes of the
 #' pathways, as returned by the
 #' \code{node_color_per_de} function. Default is white.
@@ -665,7 +666,7 @@ create_html_index <- function(home, output_folder,
 #'
 #' @export
 #'
-create_report <- function(comp, metaginfo, output_folder = NULL, 
+create_report <- function(comp, metaginfo, output_folder = NULL, path = NULL,
                           node_colors = NULL,
                           group_by = "pathway", conf = 0.05, verbose = FALSE){
 
@@ -686,10 +687,16 @@ create_report <- function(comp, metaginfo, output_folder = NULL,
         metaginfo <- get_pseudo_metaginfo(metaginfo, group_by = group_by)
     }
 
-    if(is.null(output_folder))
-        output_folder <- tempdir()
+    if(is.null(path))
+        path <- tempdir()
+    if(is.null(output_folder)){
+        n <- length(list.files(path, pattern = "hipathia_report")) + 1
+        output_folder <- paste0("hipathia_report_", n)
+    }
+    output_folder <- paste0(path, "/", output_folder)
     if(!file.exists(output_folder))
-        dir.create(paste0(tempdir(), "/", output_folder))
+        dir.create(output_folder)
+    
     pv_path <- paste0(system.file("extdata", package="hipathia"))
 
     message("Creating report folders...")
