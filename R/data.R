@@ -174,22 +174,22 @@
 
 
 
-#' Uniprot matrix of the BRCA gene expression dataset
-#'
-#' Matrix of Uniprot functions activation values for the BRCA dataset.
-#' This matrix is computed from the Results object returned by the
-#' \code{hipathia} function by means of the \code{quantify_terms} function.
-#'
-#' \code{uni_vals <- quantify_terms(results, pathways, "uniprot")}
-#'
-#' @format Matrix with 40 columns and 142 rows. Row names are Uniprot functions
-#' and column names are the TCGA identifyers of the samples.
-#'
-#' @return  Matrix with 40 columns and 142 rows. Row names are Uniprot functions
-#' and column names are the TCGA identifyers of the samples.
-#'
-#' @usage data(uni_vals)
-#'
-"uni_vals"
+##' Uniprot matrix of the BRCA gene expression dataset
+##'
+##' Matrix of Uniprot functions activation values for the BRCA dataset.
+##' This matrix is computed from the Results object returned by the
+##' \code{hipathia} function by means of the \code{quantify_terms} function.
+##'
+##' \code{uni_vals <- quantify_terms(results, pathways, "uniprot")}
+##'
+##' @format Matrix with 40 columns and 142 rows. Row names are Uniprot functions
+##' and column names are the TCGA identifyers of the samples.
+##'
+##' @return  Matrix with 40 columns and 142 rows. Row names are Uniprot functions
+##' and column names are the TCGA identifyers of the samples.
+##'
+##' @usage data(uni_vals)
+##'
+#"uni_vals"
 
 
