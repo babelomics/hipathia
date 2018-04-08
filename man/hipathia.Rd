@@ -2,7 +2,8 @@
 % Please edit documentation in R/main.R
 \name{hipathia}
 \alias{hipathia}
-\title{Computes the level of activation of the subpathways for each of the samples}
+\title{Computes the level of activation of the subpathways for each 
+of the samples}
 \usage{
 hipathia(genes_vals, metaginfo, sel_assay = 1, decompose = FALSE,
   maxnum = 100, verbose = TRUE, tol = 1e-06, test = TRUE)

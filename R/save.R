@@ -21,8 +21,9 @@
 #' @param results Results object as returned by the \code{hipathia} function.
 #' @param comp Comparison as returned by the \code{do_wilcoxon} function.
 #' @param metaginfo Pathways object
-#' @param output_folder Absolute path to the folder in which results will be
-#' saved. If this folder does not exist, it will be created in a temp folder.
+#' @param output_folder Name of the folder in which the results will be stored.
+#' @param path Absolute path to the parent directory in which `output_folder` 
+#' will be saved. If it is not provided, it will be created in a temp folder.
 #'
 #' @return Creates a folder in disk in which all the information to browse the
 #' pathway results is stored.
@@ -32,17 +33,24 @@
 #' data(comp)
 #' pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 #' "hsa04012"))
-#' tmp_save_folder <- save_results(results, comp, pathways, "output_results")
+#' save_results(results, comp, pathways, "output_results")
 #'
 #' @export
 #'
-save_results <- function(results, comp, metaginfo, output_folder = NULL){
+save_results <- function(results, comp, metaginfo, output_folder = NULL, 
+                         path = NULL){
 
-    if(is.null(output_folder))
-        output_folder <- tempdir()
+    if(is.null(path))
+        path <- tempdir()
+    if(is.null(output_folder)){
+        n <- length(list.files(path, pattern = "hipathia_results")) + 1
+        output_folder <- paste0("hipathia_results_", n)
+    }
+    output_folder <- paste0(path, "/", output_folder)
     if(!file.exists(output_folder))
-        dir.create(paste0(tempdir(), "/", output_folder))
-    # Write files
+        dir.create(output_folder)
+
+        # Write files
     utils::write.table(results$all$path.vals,
                        file = paste0(output_folder,"/all_path_vals.txt"),
                        col.names = TRUE,
@@ -634,12 +642,12 @@ create_html_index <- function(home, output_folder,
 #' data(brca)
 #' pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 #' "hsa04012"))
-#' create_report(comp, pathways, "save_results/")
+#' create_report(comp, pathways, "save_results")
 #'
 #' sample_group <- colData(brca)[,1]
 #' colors_de <- node_color_per_de(results, pathways,
 #' sample_group, "Tumor", "Normal")
-#' create_report(comp, pathways, "save_results/",
+#' create_report(comp, pathways, "save_results",
 #' node_colors = colors_de)
 #'
 #' @param comp Comparison object as given by the \code{do_wilcoxon} function
@@ -742,10 +750,10 @@ summarize_atts <- function(att_list, att_names){
 #' sample_group <- colData(brca)[,1]
 #' colors_de <- node_color_per_de(results, pathways,
 #' sample_group, "Tumor", "Normal")
-#' create_report(comp, pathways, "~/save_results/",
+#' report <- create_report(comp, pathways, "save_results",
 #' node_colors = colors_de)
-#' visualize_report("~/save_results/")
-#' visualize_report("~/save_results/", port=5000)
+#' visualize_report(report)
+#' visualize_report(report, port = 5000)
 #' \dontshow{servr::daemon_stop()}
 #'
 #' @import servr

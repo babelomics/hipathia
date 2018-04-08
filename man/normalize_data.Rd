@@ -2,7 +2,8 @@
 % Please edit documentation in R/stats.R
 \name{normalize_data}
 \alias{normalize_data}
-\title{Normalize expression data from a SummarizedExperiment or matrix to be used in 
+\title{Normalize expression data from a SummarizedExperiment or matrix to be used 
+in 
 \code{hipathia}}
 \usage{
 normalize_data(data, sel_assay = 1, by_quantiles = FALSE, by_gene = FALSE,

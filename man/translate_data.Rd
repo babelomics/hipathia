@@ -7,7 +7,8 @@
 translate_data(data, species, sel_assay = 1, verbose = TRUE)
 }
 \arguments{
-\item{data}{Either a SummarizedExperiment object or a matrix of gene expression.}
+\item{data}{Either a SummarizedExperiment object or a matrix of gene 
+expression.}
 
 \item{species}{Species of the samples.}
 

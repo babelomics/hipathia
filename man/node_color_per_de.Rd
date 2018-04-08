@@ -51,7 +51,8 @@ Smaller p-values give rise to purer colors than higher p-values.
 \describe{
 \item{\code{classic}}{ColorBrewer blue, white and colorBrewer red.}
 
-\item{\code{hipathia}}{Hipathia predefined color scheme: Green, white and orange.
+\item{\code{hipathia}}{Hipathia predefined color scheme: 
+Green, white and orange.
 By default \code{classic} color scheme is applied.}
 }}
 
