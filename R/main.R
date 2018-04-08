@@ -131,24 +131,22 @@ nodes_values_from_genes <- function(genes_vals, ig, summ = "per90"){
             probabilities_mat <- matrix(NA, nrow = 0, ncol = ncol(genes_vals))
             for( list1 in lists ){
                 if( length(list1) > 1 ){
-                    prob <- summarize_probabilities(genes_vals[list1,,
-                                                               drop = FALSE],
-                                                    summ)
+                    gv_l1 <- genes_vals[list1,,drop = FALSE]
+                    prob <- summarize_probabilities(gv_l1, summ)
                 }else{
                     prob <- genes_vals[list1,,drop = FALSE]
                 }
-                probabilities_mat <- rbind( probabilities_mat, prob )
+                probabilities_mat <- rbind(probabilities_mat, prob)
             }
             nodes_vals[node_name,] <- apply(probabilities_mat, 2, min)
         }else{
             glist <- genes_list[[node_name]]
-            if (length(glist) > 1){
-                nodes_vals[node_name,] <-
-                    summarize_probabilities(genes_vals[glist,,drop = FALSE],
-                                            summ)
+            if(length(glist) > 1){
+                gv <- genes_vals[glist,,drop = FALSE]
+                nodes_vals[node_name,] <- summarize_probabilities(gv, summ)
             }else if (length(glist) == 1 && !is.na(glist)){
-                nodes_vals[node_name,] <- data.matrix(genes_vals[glist,,
-                                                                 drop = FALSE])
+                dm <- data.matrix(genes_vals[glist,,drop = FALSE])
+                nodes_vals[node_name,] <- dm
             }else{
                 nodes_vals[node_name,] <- rep(1, ncol(nodes_vals))
             }
@@ -176,8 +174,7 @@ summarize_probabilities <- function(probabilities, summ = "per90"){
     }else if (summ == "per99"){
         prob <- apply(probabilities, 2, stats::quantile, 0.99, na.rm = TRUE)
     }else{
-        print (paste("The option for summarizing the probabilities",
-                     summ, "is not valid"))
+        stop("Summarizing probabilities option", summ, "is not valid")
     }
     return(prob)
 }

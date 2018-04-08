@@ -544,7 +544,7 @@ add_edge_colors <- function(pathigraph, pcomp, effector, up_col = "#ca0020",
     for(i in which(!grepl("_func", elg))){
         edge_states <- names(table(states[,i]))
         if(is.null(edge_states)){
-            warning(paste("Edge", elg[i], "is not present in any subpath."))
+            warning("Edge", elg[i], "is not present in any subpath")
         }else{
             E(g)$color[i] <- colors[edge_states[1]]
             if(length(edge_states) > 1)

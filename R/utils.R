@@ -122,7 +122,7 @@ translate_data <- function(data, species, sel_assay = 1, verbose=TRUE){
 #'
 #' @import AnnotationHub
 #'
-translate_matrix <- function(exp, species, verbose=TRUE){
+translate_matrix <- function(exp, species, verbose = TRUE){
 
     xref <- load_xref(species)
 
@@ -306,7 +306,7 @@ load_pathways <- function(species, pathways_list = NULL){
     metaginfo <- load_mgi(species)
     metaginfo <- filter_pathways(metaginfo, pathways_list = pathways_list)
     metaginfo <- igraphs_upgrade(metaginfo)
-    message(paste0("Loaded ", length(metaginfo$pathigraphs), " pathways\n"))
+    message("Loaded ", length(metaginfo$pathigraphs), " pathways\n")
     return(metaginfo)
 }
 
@@ -337,12 +337,12 @@ filter_pathways <- function(metaginfo, pathways_list = NULL){
     if(!is.null(pathways_list)){
         metaginfo$pathigraphs <- metaginfo$pathigraphs[pathways_list]
         metaginfo$all.genes <- all_needed_genes(metaginfo$pathigraphs)
-        metaginfo$path.norm <- metaginfo$path.norm[
-            sapply(names(metaginfo$path.norm), function(x){
-                unlist(strsplit(x, split = "-"))[2]}) %in% pathways_list]
-        metaginfo$eff.norm <- metaginfo$eff.norm[
-            sapply(names(metaginfo$eff.norm), function(x){
-                unlist(strsplit(x, split = "-"))[2]}) %in% pathways_list]
+        pn_paths <- sapply(strsplit(names(metaginfo$path.norm), "-"), "[[", 2)
+        pn_idx <- pn_paths %in% pathways_list
+        metaginfo$path.norm <- metaginfo$path.norm[pn_idx]
+        en_paths <- sapply(strsplit(names(metaginfo$eff.norm), "-"), "[[", 2)
+        en_idx <- en_apths %in% pathways_list
+        metaginfo$eff.norm <- metaginfo$eff.norm[en_idx]
         metaginfo$all.labelids <- metaginfo$all.labelids[
             metaginfo$all.labelids[,"path.id"] %in% pathways_list,]
     }
@@ -563,11 +563,10 @@ get_pathways_annotations <- function(pathway_names, metaginfo, dbannot,
 
     if(collapse == TRUE){
         miniaf <- do.call("rbind", lapply(pathway_names, function(path){
-            data.frame(effector.nodes =
-                           annofuns$effector.nodes[annofuns$paths == path][1],
+            path_id <- annofuns$paths == path
+            data.frame(effector.nodes = annofuns$effector.nodes[path_id][1],
                        paths = path,
-                       funs = paste(annofuns$funs[annofuns$paths == path],
-                                    collapse = ", "),
+                       funs = paste(annofuns$funs[path_id], collapse = ", "),
                        stringsAsFactors = FALSE)
         }))
     }else{
@@ -605,35 +604,29 @@ get_highest_sig_ancestor <- function(go_terms, go_comp, metaginfo,
     go_bp_net <- load_gobp_net()
 
     # Relacionar GO term con su etiqueta
-    go_labels <- sapply(go_terms,
-                        function(term) go_bp_frame[go_bp_frame$name ==
-                                                       term, "id"])
-    go_comp$labels <- sapply(rownames(go_comp),
-                             function(term) go_bp_frame[go_bp_frame$name ==
-                                                            term, "id"])
+    go_labels <- sapply(go_terms, function(term) {
+        go_bp_frame[go_bp_frame$name == term, "id"]
+    })
+    go_comp$labels <- sapply(rownames(go_comp), function(term){
+        go_bp_frame[go_bp_frame$name == term, "id"]
+    })
     go_comp$terms <- rownames(go_comp)
     rownames(go_comp) <- go_comp$labels
     sig_go_labels <- go_comp[go_comp$FDRp.value < pval, "labels"]
 
     # Encontrar GO superior
     sup <- do.call("rbind", lapply(go_labels, function(label){
-        # print(label)
         short <- shortest.paths(go_bp_net, label, mode = "in")[1,]
         ancestors <- names(short)[!short == "Inf"]
-        sig_ancestors <- intersect(ancestors, sig_go_labels)
-        if(length(sig_ancestors) > 0 ){
-            if(length(sig_ancestors) > 1)
-                sig_ancestors <- setdiff(sig_ancestors, label)
-            sig_levels <- go_bp_frame[sig_ancestors, "level"]
-            if(unique == TRUE){
-                highest_ancestors <- go_bp_frame[sig_ancestors,
-                                                 "id"][sig_levels ==
-                                                           min(sig_levels)][1]
-            }else{
-                highest_ancestors <- go_bp_frame[sig_ancestors,
-                                                 "id"][sig_levels ==
-                                                           min(sig_levels)]
-            }
+        sig_ancs <- intersect(ancestors, sig_go_labels)
+        if(length(sig_ancs) > 0 ){
+            if(length(sig_ancs) > 1)
+                sig_ancs <- setdiff(sig_ancs, label)
+            sig_levels <- go_bp_frame[sig_ancs, "level"]
+            min_sl_idx <- sig_levels == min(sig_levels)
+            highest_ancestors <- go_bp_frame[sig_ancs, "id"][min_sl_idx]
+            if(unique == TRUE)
+                highest_ancestors <- highest_ancestors[1]
             df <- data.frame(GO_term = label,
                              GO_name = go_bp_frame[label, "name"],
                              GO_adj_pval = go_comp[label, "FDRp.value"],
@@ -779,7 +772,7 @@ is_decomposed_matrix <- function(mat){
 }
 
 is_decomposed <- function(ids){
-    lens <- sapply(sapply(ids, strsplit, "-"), length)
+    lens <- lengths(sapply(ids, strsplit, "-"))
     if(length(unique(lens)) > 1)
         stop("Not unique type of labels")
     decomposed <- !(lens[1] == 3)

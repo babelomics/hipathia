@@ -47,7 +47,7 @@ annotate_paths <- function(metaginfo, dbannot){
                                       use_last_nodes = TRUE,
                                       unique = FALSE)
         paths <- lapply(names(funs), function(path){
-            rep(path, times=length(funs[[path]]))
+            rep(path, times = length(funs[[path]]))
         })
         df <- data.frame(effector_nodes = unlist(paths),
                          paths = gsub("N", "P", unlist(paths)),
@@ -118,7 +118,7 @@ quantify_terms <- function(results, metaginfo, dbannot, out_matrix = FALSE,
                        ncol = ncol(path_vals),
                        nrow = length(fun_names),
                        dimnames = list(fun_names, colnames(path_vals)))
-    cat("Quantified functions:", nrow(fun_vals), "\n")
+    message("Quantified functions:", nrow(fun_vals), "\n")
     for(fun in fun_names){
         paths <- annofuns$paths[annofuns$funs == fun]
         if(method == "mean"){
@@ -128,9 +128,10 @@ quantify_terms <- function(results, metaginfo, dbannot, out_matrix = FALSE,
             fun_vals[fun,] <- 1 - apply(minimat, 2, prod)
         }
     }
-    if(out_matrix == FALSE)
-        fun_vals <- SummarizedExperiment(list(terms = fun_vals), 
-                                         colData = colData(results[["paths"]]))
+    if(out_matrix == FALSE){
+        cd <- colData(results[["paths"]])
+        fun_vals <- SummarizedExperiment(list(terms = fun_vals), colData = cd)
+    }
     return(fun_vals)
     
 }
@@ -226,8 +227,8 @@ get_pathway_functions <- function(pathigraph, dbannot, entrez2hgnc,
                                       filtdbannot,
                                       unique = unique)
         names(last_node_functions) <- last_nodes
-        last_node_functions[sapply(last_node_functions,
-                                   function(x) length(x)) == 0] <- NA
+        idx <- lengths(last_node_functions) == 0
+        last_node_functions[idx] <- NA
     }
     return(last_node_functions)
 
