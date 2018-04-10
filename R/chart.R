@@ -70,6 +70,7 @@
 #' @importFrom DelayedArray rowMins
 #' @importFrom DelayedArray rowMaxs
 #' @importFrom stats heatmap
+#' @importFrom methods is
 #'
 heatmap_plot <- function(data, group = NULL, sel_assay = 1, 
                          colors = "classic",
@@ -603,6 +604,7 @@ add_edge_colors <- function(pathigraph, pcomp, effector, up_col = "#ca0020",
 #' sample_group, "Tumor", "Normal")
 #'
 #' @export
+#' @importFrom methods is
 #'
 node_color_per_de <- function(results, metaginfo, group, g1, g2, 
                               group_by = "pathway", colors = "classic", 

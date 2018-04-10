@@ -1,6 +1,6 @@
 Package: hipathia
 Title: HiPathia: High-throughput Pathway Analysis
-Version: 0.99.32
+Version: 0.99.33
 Authors@R: c(person("Marta R.", "Hidalgo", email = "marta.hidalgo@outlook.es", role = c("aut", "cre")),
 	     person("José", "Carbonell-Caballero", role = c("ctb")),
 	     person("Francisco", "Salavert", role = c("ctb")),
@@ -20,7 +20,7 @@ License: GPL-2
 Encoding: UTF-8
 LazyData: true
 Imports:
-  coin, stats, limma, grDevices, utils, graphics, preprocessCore, servr, DelayedArray, matrixStats
+  coin, stats, limma, grDevices, utils, graphics, preprocessCore, servr, DelayedArray, matrixStats, methods, S4Vectors
 RoxygenNote: 6.0.1
 Suggests: BiocStyle, knitr, rmarkdown, testthat
 VignetteBuilder: knitr

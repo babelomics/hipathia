@@ -35,7 +35,7 @@ annotate_paths <- function(metaginfo, dbannot){
     if(is.character(dbannot) & length(dbannot) == 1)
         dbannot <- load_annots(dbannot, metaginfo$species)
 
-    annofuns <- do_call("rbind", lapply(pathigraphs,function(pathigraph){
+    annofuns <- do.call("rbind", lapply(pathigraphs,function(pathigraph){
 
         new_pathigraph <- pathigraph
         vs <- V(new_pathigraph$graph)$name

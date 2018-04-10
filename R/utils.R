@@ -87,6 +87,7 @@ translate_ids <- function(ids, xref){
 #' @export
 #' @import SummarizedExperiment
 #' @import AnnotationHub
+#' @importFrom methods is
 #'
 translate_data <- function(data, species, sel_assay = 1, verbose=TRUE){
     
@@ -461,6 +462,7 @@ add_missing_genes <- function(exp_data, genes, default = NULL){
 #' @return Matrix with as much as \code{n} rows and \code{n} columns.
 #'
 #' @importFrom utils head
+#' @importFrom methods is
 #' @export
 hhead <- function(mat, n = 5, sel_assay = 1){
     if(is(mat, "SummarizedExperiment"))

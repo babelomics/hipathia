@@ -62,6 +62,7 @@
 #' @import SummarizedExperiment
 #' @importFrom stats quantile
 #' @importFrom stats ecdf
+#' @importFrom methods is
 #'
 normalize_data <- function(data, sel_assay = 1, by_quantiles = FALSE, 
                          by_gene = FALSE, percentil = FALSE, 
@@ -265,6 +266,7 @@ cor_data_frame <- function(wilcox){
 #'
 #' @export
 #' @import SummarizedExperiment
+#' @importFrom methods is
 #'
 do_wilcoxon <- function(data, group, g1, g2, paired = FALSE,
                         adjust = TRUE, sel_assay = 1){
@@ -425,6 +427,7 @@ wilcox_data_frame <- function(wilcox){
 #'
 #' @export
 #' @importFrom stats princomp
+#' @importFrom methods is
 #'
 do_pca <- function(data, sel_assay = 1, cor = FALSE){
     if(is(data, "SummarizedExperiment")){
