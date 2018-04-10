@@ -46,7 +46,7 @@
 #' @export
 #' @import MultiAssayExperiment
 #' @import SummarizedExperiment
-#' @import S4Vectors
+#' @importFrom DataFrame S4Vectors
 #' @importFrom methods is
 #'
 hipathia <- function(genes_vals, metaginfo, sel_assay = 1, decompose = FALSE, 
