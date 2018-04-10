@@ -47,6 +47,7 @@ data(exp_data)
 pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 "hsa04012"))
 results <- hipathia(exp_data, pathways, verbose = TRUE)
-results <- hipathia(exp_data, pathways, decompose = TRUE, verbose = FALSE)
+\dontrun{results <- hipathia(exp_data, pathways, decompose = TRUE, 
+verbose = FALSE)}
 
 }

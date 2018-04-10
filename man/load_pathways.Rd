@@ -38,7 +38,7 @@ the analysis to a predefined set of pathways, specify the set of pathways
 to load with the parameter \code{pathways_list}.
 }
 \examples{
-pathways <- load_pathways("hsa")   # Loads all pathways for human
+\dontrun{pathways <- load_pathways("hsa")   # Loads all pathways for human}
 pathways <- load_pathways("mmu", c("mmu03320", "mmu04024", "mmu05200"))
    # Loads pathways 03320, 04024 and 05200 for mouse
 

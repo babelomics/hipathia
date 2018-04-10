@@ -643,12 +643,14 @@ create_html_index <- function(home, output_folder,
 #' pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 #' "hsa04012"))
 #' create_report(comp, pathways, "save_results")
-#'
+#' 
+#' \dontrun{
 #' sample_group <- colData(brca)[,1]
 #' colors_de <- node_color_per_de(results, pathways,
 #' sample_group, "Tumor", "Normal")
 #' create_report(comp, pathways, "save_results",
 #' node_colors = colors_de)
+#'}
 #'
 #' @param comp Comparison object as given by the \code{do_wilcoxon} function
 #' @param metaginfo Pathways object as returned by the \code{load_pathways}
@@ -743,10 +745,15 @@ summarize_atts <- function(att_list, att_names){
 #' @return The instructions to visualize a HiPathia report in a web browser
 #'
 #' @examples
-#' data(results)
-#' data(brca)
+#' data(comp)
 #' pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 #' "hsa04012"))
+#' report <- create_report(comp, pathways, "save_results")
+#' visualize_report(report)
+#' 
+#' \dontrun{
+#' data(results)
+#' data(brca)
 #' sample_group <- colData(brca)[,1]
 #' colors_de <- node_color_per_de(results, pathways,
 #' sample_group, "Tumor", "Normal")
@@ -754,6 +761,7 @@ summarize_atts <- function(att_list, att_names){
 #' node_colors = colors_de)
 #' visualize_report(report)
 #' visualize_report(report, port = 5000)
+#' }
 #' \dontshow{servr::daemon_stop()}
 #'
 #' @import servr

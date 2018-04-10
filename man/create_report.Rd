@@ -54,10 +54,12 @@ pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 "hsa04012"))
 create_report(comp, pathways, "save_results")
 
+\dontrun{
 sample_group <- colData(brca)[,1]
 colors_de <- node_color_per_de(results, pathways,
 sample_group, "Tumor", "Normal")
 create_report(comp, pathways, "save_results",
 node_colors = colors_de)
+}
 
 }

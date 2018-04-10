@@ -32,7 +32,7 @@ pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 "hsa04012"))
 pathway_names <- c("P-hsa03320-37", "P-hsa03320-61", "P-hsa03320-46",
 "P-hsa03320-57", "P-hsa03320-64", "P-hsa03320-47", "P-hsa03320-65")
-get_pathways_annotations(pathway_names, pathways, "GO")
+\dontrun{get_pathways_annotations(pathway_names, pathways, "GO")}
 get_pathways_annotations(pathway_names, pathways, "uniprot")
 
 }

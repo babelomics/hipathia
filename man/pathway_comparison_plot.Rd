@@ -51,6 +51,7 @@ pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 "hsa04012"))
 pathway_comparison_plot(comp, metaginfo = pathways, pathway = "hsa03320")
 
+\dontrun{
 data(results)
 data(brca)
 sample_group <- colData(brca)[,1]
@@ -58,5 +59,6 @@ colors_de <- node_color_per_de(results, pathways,
 sample_group, "Tumor", "Normal")
 pathway_comparison_plot(comp, metaginfo = pathways, pathway = "hsa04012",
 node_colors = colors_de)
+}
 
 }

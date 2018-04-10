@@ -286,7 +286,7 @@ igraphs_upgrade <- function(metaginfo){
 #' all available pathways are load.
 #'
 #' @examples
-#' pathways <- load_pathways("hsa")   # Loads all pathways for human
+#' \dontrun{pathways <- load_pathways("hsa")   # Loads all pathways for human}
 #' pathways <- load_pathways("mmu", c("mmu03320", "mmu04024", "mmu05200"))
 #'    # Loads pathways 03320, 04024 and 05200 for mouse
 #'
@@ -540,7 +540,7 @@ get_effpath_id <- function(node_name){
 #' "hsa04012"))
 #' pathway_names <- c("P-hsa03320-37", "P-hsa03320-61", "P-hsa03320-46",
 #' "P-hsa03320-57", "P-hsa03320-64", "P-hsa03320-47", "P-hsa03320-65")
-#' get_pathways_annotations(pathway_names, pathways, "GO")
+#' \dontrun{get_pathways_annotations(pathway_names, pathways, "GO")}
 #' get_pathways_annotations(pathway_names, pathways, "uniprot")
 #'
 #' @export
