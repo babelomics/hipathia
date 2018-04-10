@@ -47,18 +47,18 @@ If this folder does not exist, it will be created. The parent folder must
 exist.
 }
 \examples{
-data(results)
 data(comp)
-data(brca)
 pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 "hsa04012"))
-create_report(comp, pathways, "save_results")
+report <- create_report(comp, pathways, "save_results")
 
 \dontrun{
+data(results)
+data(brca)
 sample_group <- colData(brca)[,1]
 colors_de <- node_color_per_de(results, pathways,
 sample_group, "Tumor", "Normal")
-create_report(comp, pathways, "save_results",
+report_colors <- create_report(comp, pathways, "save_results",
 node_colors = colors_de)
 }
 
