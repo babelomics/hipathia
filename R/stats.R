@@ -299,6 +299,8 @@ do_wilcoxon <- function(data, group, g1, g2, paired = FALSE,
 }
 
 
+
+
 #'@importFrom stats p.adjust
 calculate_wilcox_test <- function(data, control, disease, paired, adjust=TRUE){
     if(paired == TRUE){
@@ -504,13 +506,9 @@ compute_difexp <- function(vals, group1_label, group2_label, groups){
 #' @export
 #'
 get_pathways_summary <- function(comp, metaginfo, conf = 0.05){
-    comp$pathways <- sapply(rownames(comp), function(n){
-        unlist(strsplit(n, split = "-"))[2]
-    })
+    comp$pathways <- sapply(strsplit(rownames(comp), split = "-"), "[[", 2)
     id_pathways <- unique(comp$pathways)
-    name_pathways <- sapply(id_pathways, function(id){
-        metaginfo$pathigraphs[[id]]$path.name
-    })
+    name_pathways <- sapply(metaginfo$pathigraphs, "[[", "path.name")
     summ <- lapply(id_pathways, function(pathway){
         minicomp <- comp[comp$pathways == pathway,]
         num_total_paths <- nrow(minicomp)
@@ -540,3 +538,39 @@ get_pathways_summary <- function(comp, metaginfo, conf = 0.05){
 }
 
 
+#' Computes pathway significance
+#'
+#' Performs a test for each pathway checking if the number of significant
+#' paths is significant, compared to not having any of the paths as significant.
+#'
+#' @param comp Comparison data frame as returned by the \code{do_wilcoxon}
+#' function.
+#'
+#' @return 
+#' Table with the names of the pathways and their p-value for the Fisher test
+#' comparing the proportion of significant subpaths vs. 0.
+#'
+#' @examples
+#' data(comp)
+#' top_pathways(comp)
+#'
+#' @export
+#'
+top_pathways <- function(comp){
+    
+    path_names <- as.character(comp$path_names)
+    comp$pathways <- sapply(strsplit(path_names, split = ":"), "[[", 1)
+    pathways <- unique(comp$pathways)
+    
+    tests <- do.call(rbind, lapply(pathways, function(path) {
+        t1 <- table(comp[comp$pathways == path,"FDRp.value"] < 0.05)
+        t2 <- c(sum(t1), 0)
+        
+        ft <- fisher.test(rbind(t1, t2))
+        data.frame(pathway = path, pval = ft$p.value, stringsAsFactors = F)
+    }))
+    
+    tests <- tests[order(tests$pval),]
+    
+    return(tests)
+}
