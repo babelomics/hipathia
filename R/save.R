@@ -770,7 +770,7 @@ summarize_atts <- function(att_list, att_names){
 visualize_report <- function(output_folder, port = 4000){
     servr::httd(paste0(output_folder, "/pathway-viewer"),
                 port = port, browser = FALSE, daemon = TRUE)
-    cat("Open a web browser and go to URL http://127.0.0.1:", port, "\n")
+    cat("Open a web browser and go to URL http://127.0.0.1:", port, "\n", sep = "")
 }
 
 

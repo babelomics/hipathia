@@ -110,7 +110,9 @@ heatmap_plot <- function(data, group = NULL, sel_assay = 1,
     if(variable_clust==FALSE){
         rowv <- NA
     } else {
-        vars <- matrixStats::rowVars(vals)
+        # vars <- matrixStats::rowVars(vals) This function is deprecated: not 
+        # all variances 0 are detected (some are reported as 1.2642e-32)
+        vars <- apply(vals, 1, var)
         vals <- vals[!is.na(vars) & vars != 0,]
         rowv <- TRUE
     }

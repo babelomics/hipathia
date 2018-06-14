@@ -269,7 +269,7 @@ cor_data_frame <- function(wilcox){
 #' @importFrom methods is
 #'
 do_wilcoxon <- function(data, group, g1, g2, paired = FALSE,
-                        adjust = TRUE, sel_assay = 1){
+                        adjust = TRUE, sel_assay = 1, order = FALSE){
 
     if(is(data, "SummarizedExperiment")){
         se_flag <- TRUE
@@ -295,6 +295,8 @@ do_wilcoxon <- function(data, group, g1, g2, paired = FALSE,
                               adjust = adjust))
     if(se_flag == TRUE && "subpath.name" %in% colnames(rowData(data)))
         stat_vals <- cbind(name = rowData(data)[["subpath.name"]], stat_vals)
+    if(order == TRUE)
+        stat_vals <- stat_vals[order(stat_vals$FDRp.value, decreasing = FALSE),]
     return(stat_vals)
 }
 

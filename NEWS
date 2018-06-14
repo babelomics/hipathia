@@ -9,3 +9,8 @@ Version 0.99.9 (2018-03-09)
 
 Version 0.99.27 (2018-04-08)
   + Correcting Bionconductor style
+
+Version 1.0.1 (2018-06-14)
+  + Fixing minor bug in heatmap_plot about variances in case variable_cluster = TRUE.
+  + Fixing minor bug in visualize_report.
+  + Adding test_package.R file.
