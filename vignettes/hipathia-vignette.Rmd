@@ -83,8 +83,9 @@ In order to install the _hipathia_ package, type on your R console
 
 ```{r, fig.show='hold', message=FALSE, warning=FALSE, eval=FALSE}
 ## try http:// if https:// URLs are not supported 
-source("https://bioconductor.org/biocLite.R") 
-biocLite("hipathia")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("hipathia")
 ```
 
 
