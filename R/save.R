@@ -140,13 +140,15 @@ create_node_and_edge_attributes <- function(comp, pathway, metaginfo,
         "rectangle"
     V(ig)$width[grepl("func",V(ig)$name)] <- -1
 
+    hgnc <- hipathia:::load_entrez_hgnc(metaginfo$species)
     V(ig)$tooltip <- sapply(seq_along(V(ig)), function(i){
         if(V(ig)$shape[i] == "ellipse"){
             paste(sapply(V(ig)$genesList[[i]], function(gen){
                 if(!gen == "/"){
                     paste0("<a target='_blank' ",
                            "href='http://www.genome.jp/dbget-bin/www_bget?",
-                           metaginfo$species, ":", gen, "'>", gen, "</a>")
+                           metaginfo$species, ":", gen, "'>", gen, "</a> (", 
+                           hgnc[hgnc[,1] == gen, 2], ")")
                 }else{
                     ""
                 }
