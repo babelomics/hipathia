@@ -14,3 +14,7 @@ Version 1.0.1 (2018-06-14)
   + Fixing minor bug in heatmap_plot about variances in case variable_cluster = TRUE.
   + Fixing minor bug in visualize_report.
   + Adding test_package.R file.
+
+Version 1.1.2 (2018-09-07)
+  + Adding gene name to tooltip
+  + Fixing minor bugs in chart.R, save.R, stats.R
