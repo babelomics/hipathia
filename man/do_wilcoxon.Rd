@@ -5,7 +5,7 @@
 \title{Apply Wilcoxon test}
 \usage{
 do_wilcoxon(data, group, g1, g2, paired = FALSE, adjust = TRUE,
-  sel_assay = 1)
+  sel_assay = 1, order = FALSE)
 }
 \arguments{
 \item{data}{Either a SummarizedExperiment object or a matrix, containing the
