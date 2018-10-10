@@ -255,6 +255,8 @@ cor_data_frame <- function(wilcox){
 #' Benjamini-Hochberg FDR method
 #' @param sel_assay Character or integer, indicating the assay to be normalized 
 #' in the SummarizedExperiment. Default is 1.
+#' @param order Boolean, whether to order the results table by the 
+#' \code{FDRp.value} column. Default is FALSE. 
 #'
 #' @return Dataframe with the result of the comparison
 #'

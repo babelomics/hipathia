@@ -30,6 +30,9 @@ Benjamini-Hochberg FDR method}
 
 \item{sel_assay}{Character or integer, indicating the assay to be normalized 
 in the SummarizedExperiment. Default is 1.}
+
+\item{order}{Boolean, whether to order the results table by the 
+\code{FDRp.value} column. Default is FALSE.}
 }
 \value{
 Dataframe with the result of the comparison
