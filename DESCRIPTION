@@ -1,6 +1,6 @@
 Package: hipathia
 Title: HiPathia: High-throughput Pathway Analysis
-Version: 1.2.0
+Version: 1.3.0
 Authors@R: c(person("Marta R.", "Hidalgo", email = "marta.hidalgo@outlook.es", role = c("aut", "cre")),
 	     person("José", "Carbonell-Caballero", role = c("ctb")),
 	     person("Francisco", "Salavert", role = c("ctb")),
