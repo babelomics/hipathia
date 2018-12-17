@@ -521,7 +521,10 @@ Different function activity matrices can be computed depending on the
 functional annotation given to the effector nodes. Function `quantify_terms`,
 through parameter `dbannot`,
 accepts any annotation defined by the user and it has also two default
-annotations: Gene Ontology functions and Uniprot keywords. 
+annotations: Gene Ontology functions and Uniprot keywords. For further 
+information on the differences between Gene Ontology and Uniprot keywords 
+annotations please refer to 
+[this page](https://www.uniprot.org/help/keywords_vs_go).
 
 ```{r, fig.show='hold'}
 uniprot_vals <- quantify_terms(results, pathways, dbannot = "uniprot")
