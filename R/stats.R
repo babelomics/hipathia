@@ -511,8 +511,9 @@ compute_difexp <- function(vals, group1_label, group2_label, groups){
 #'
 get_pathways_summary <- function(comp, metaginfo, conf = 0.05){
     comp$pathways <- sapply(strsplit(rownames(comp), split = "-"), "[[", 2)
-    id_pathways <- unique(comp$pathways)
-    name_pathways <- sapply(metaginfo$pathigraphs, "[[", "path.name")
+    local_paths <- unique(metaginfo$all.labelids[,c("path.id", "path.name")])
+    id_pathways <- local_paths[,"path.id"]
+    name_pathways <- local_paths[,"path.name"]
     summ <- lapply(id_pathways, function(pathway){
         minicomp <- comp[comp$pathways == pathway,]
         num_total_paths <- nrow(minicomp)
@@ -535,8 +536,8 @@ get_pathways_summary <- function(comp, metaginfo, conf = 0.05){
                    percent_down_paths = percent_down_paths)
     })
     summ <- do.call("rbind", summ)
-    rownames(summ) <- name_pathways
     summ <- cbind(id_pathways, summ)
+    rownames(summ) <- name_pathways
     summ <- summ[order(summ$percent_significant_paths, decreasing = TRUE),]
     return(summ)
 }
