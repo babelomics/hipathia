@@ -18,3 +18,7 @@ Version 1.0.1 (2018-06-14)
 Version 1.1.2 (2018-09-07)
   + Adding gene name to tooltip
   + Fixing minor bugs in chart.R, save.R, stats.R
+
+Version 1.2.1 (2018-12-17)
+  + Fixing bug in get_pathways_summary when "comp" is ordered.
+  + Minor adding to vignette.
