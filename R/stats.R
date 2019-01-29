@@ -332,7 +332,7 @@ calculate_wilcox_test <- function(data, control, disease, paired, adjust=TRUE){
         m <- lc*ld/2
         sigma <- sqrt(lc * ld * (lc + ld + 1)/12)
         z <- (testData[,3] - m)/sigma
-        data2 <- data.frame(testData[,2], z, fdrData, testData[,1],
+        data2 <- data.frame(testData[,2], z, testData[,1], fdrData, 
                             stringsAsFactors = FALSE)
         rownames(data2) <- rownames(testData)
         need0 <- which(data2$pvalue == 1 &
