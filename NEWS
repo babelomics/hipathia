@@ -22,3 +22,6 @@ Version 1.1.2 (2018-09-07)
 Version 1.3.1 (2018-12-17)
   + Fixing bug in get_pathways_summary when "comp" is ordered.
   + Minor adding to vignette.
+
+Version 1.3.2 (2019-01-29)
+  + Fixing bug in do_wilcoxon when "comp" is ordered.
