@@ -295,8 +295,8 @@ do_wilcoxon <- function(data, group, g1, g2, paired = FALSE,
     stat_vals <- suppressWarnings(
         calculate_wilcox_test(vals, g2_indexes, g1_indexes, paired = paired,
                               adjust = adjust))
-    if(se_flag == TRUE && "subpath.name" %in% colnames(rowData(data)))
-        stat_vals <- cbind(name = rowData(data)[["subpath.name"]], stat_vals)
+    if(se_flag == TRUE && "feat.name" %in% colnames(rowData(data)))
+        stat_vals <- cbind(name = rowData(data)[["feat.name"]], stat_vals)
     if(order == TRUE)
         stat_vals <- stat_vals[order(stat_vals$FDRp.value, decreasing = FALSE),]
     return(stat_vals)

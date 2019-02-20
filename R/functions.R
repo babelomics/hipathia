@@ -133,7 +133,16 @@ quantify_terms <- function(results, metaginfo, dbannot, out_matrix = FALSE,
     }
     if(out_matrix == FALSE){
         cd <- colData(results[["paths"]])
-        fun_vals <- SummarizedExperiment(list(terms = fun_vals), colData = cd)
+        if(is.character(dbannot) & length(dbannot) == 1 & dbannot == "GO"){
+            rd <- DataFrame(feat.name = get_go_names(rownames(fun_vals), 
+                                                     metaginfo$species))
+            fun_vals <- SummarizedExperiment(list(terms = fun_vals), 
+                                             colData = cd, 
+                                             rowData = rd)
+        }else{
+            fun_vals <- SummarizedExperiment(list(terms = fun_vals), 
+                                             colData = cd)
+        }
     }
     return(fun_vals)
     

@@ -227,6 +227,39 @@ get_path_names <- function(metaginfo, names, maxchar=NULL){
 }
 
 
+#' Tranlates GO IDs to GO names
+#'
+#' @description
+#' Translates the GO IDs to readable and comprensible names.
+#'
+#' @param names Character vector with the GO IDs to be translated
+#' @param maxchar Integer, describes the number of maximum characters to
+#' be shown. By default no filter is applied.
+#'
+#' @examples
+#'
+#' @return A character vector including the readable names of the
+#' GO IDs, in the same order as provided.
+#' @export
+#'
+get_go_names <- function(names, species, maxchar=NULL){
+    
+    gos <- load_annots("GO", species)
+    if(ncol(gos) == 3){
+        gos <- unique(gos[,c(2,3)])
+        rownames(gos) <- gos$'function'
+        gonames <- gos[names,"term"]
+    }else{
+        gonames <- names
+    }
+    
+    if(!is.null(maxchar))
+        gonames <- clip_names(gonames, maxchar = maxchar)
+    
+    return(gonames)
+    
+}
+
 
 #' @title
 #' Upgrade igraphs to current version
