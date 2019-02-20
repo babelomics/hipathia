@@ -451,26 +451,91 @@ do_pca <- function(data, sel_assay = 1, cor = FALSE){
 }
 
 
-compute_difexp <- function(vals, group1_label, group2_label, groups){
+# compute_difexp <- function(vals, groups, group1_label, group2_label){
+# 
+#     g1_indexes <- which(groups == group1_label)
+#     g2_indexes <- which(groups == group2_label)
+#     grupo1 <- (groups[c(g1_indexes, g2_indexes)] == group1_label) + 0
+#     grupo2 <- (groups[c(g1_indexes, g2_indexes)] == group2_label) + 0
+#     design <- cbind(grupo1, grupo2)
+# 
+#     fit <- limma::lmFit(vals[,c(g1_indexes, g2_indexes)], design)
+#     cont_matrix <- limma::makeContrasts(grupo1 - grupo2, levels = design)
+#     fit2 <- limma::contrasts.fit(fit, cont_matrix)
+#     fit2 <- limma::eBayes(fit2)
+#     result <- data.frame(statistic = as.numeric(fit2$t),
+#                          p.value = as.numeric(fit2$p.value),
+#                          laterality = as.factor(fit2$t>0))
+#     rownames(result) <- rownames(fit2)
+# 
+#     return(result)
+# }
 
-    g1_indexes <- which(groups == group1_label)
-    g2_indexes <- which(groups == group2_label)
-    grupo1 <- (groups[c(g1_indexes, g2_indexes)] == group1_label) + 0
-    grupo2 <- (groups[c(g1_indexes, g2_indexes)] == group2_label) + 0
-    design <- cbind(grupo1, grupo2)
-
-    fit <- limma::lmFit(vals[,c(g1_indexes, g2_indexes)], design)
-    cont_matrix <- limma::makeContrasts(grupo1 - grupo2, levels = design)
+compute_difexp <- function(vals, groups, expdes, g2 = NULL){
+    
+    if(!is.null(g2))
+         expdes <- paste(expdes, "-", g2)
+    
+    design <- model.matrix(~0 + factor(groups))
+    colnames(design) <- unique(groups)
+    rownames(design) <- colnames(vals)
+    cont_matrix <- makeContrasts(contrasts = expdes, levels = design)
+    
+    fit <- limma::lmFit(vals, design)
     fit2 <- limma::contrasts.fit(fit, cont_matrix)
     fit2 <- limma::eBayes(fit2)
     result <- data.frame(statistic = as.numeric(fit2$t),
                          p.value = as.numeric(fit2$p.value),
                          laterality = as.factor(fit2$t>0))
     rownames(result) <- rownames(fit2)
-
+    
     return(result)
 }
 
+do_limma <- function(data, groups, expdes, g2 = NULL, sel_assay = 1, order = FALSE){
+    
+    if(is(data, "SummarizedExperiment")){
+        se_flag <- TRUE
+        if(is(groups, "character") & length(groups) == 1)
+            if(groups %in% colnames(colData(data))){
+                groups <- colData(data)[[groups]]
+            }else{
+                stop("Group variable must be a column in colData(data)")
+            }
+        vals <- assay(data, sel_assay)
+    }else if(is(data, "matrix")){
+        se_flag <- FALSE
+        vals <- data
+    }else{
+        stop("Only SummarizedExperiment or matrix classes accepted as data")
+    }
+    
+    if(!is.null(g2))
+        expdes <- paste(expdes, "-", g2)
+    
+    design <- model.matrix(~0 + factor(groups))
+    colnames(design) <- unique(groups)
+    rownames(design) <- colnames(vals)
+    cont_matrix <- makeContrasts(contrasts = expdes, levels = design)
+    
+    fit <- limma::lmFit(vals, design)
+    fit1 <- limma::contrasts.fit(fit, cont_matrix)
+    fit2 <- limma::eBayes(fit1)
+    tt <- topTable(fit2, coef = 1, number = "all", sort.by = "none")
+    
+    updown <- c("UP", "DOWN", "UP")
+    names(updown) <- c("1", "-1", "0")
+    ud <- updown[as.character(sign(tt$logFC))]
+    comp <- data.frame(ud, tt$t, tt$P.Value, tt$adj.P.Val, stringsAsFactors = F)
+    colnames(comp) <- c("UP/DOWN", "statistic", "p.value", "FDRp.value")
+    rownames(comp) <- rownames(tt)
+    
+    if(se_flag == TRUE && "feat.name" %in% colnames(rowData(data)))
+        comp <- cbind(name = rowData(data)[["feat.name"]], comp)
+    if(order == TRUE)
+        comp <- comp[order(comp$FDRp.value, decreasing = FALSE),]
+    return(comp)
+}
 
 
 #' Compute pathway summary

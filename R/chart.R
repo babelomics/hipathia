@@ -610,7 +610,7 @@ add_edge_colors <- function(pathigraph, pcomp, effector, up_col = "#ca0020",
 #' @export
 #' @importFrom methods is
 #'
-node_color_per_de <- function(results, metaginfo, group, g1, g2, 
+node_color_per_de <- function(results, metaginfo, group, expdes, g2 = NULL, 
                               group_by = "pathway", colors = "classic", 
                               conf = 0.05){
 
@@ -626,7 +626,7 @@ node_color_per_de <- function(results, metaginfo, group, g1, g2,
     up_col <- colors[3]
 
     if(group_by != "pathway")
-        metaginfo <- get_pseudo_metaginfo(metaginfo, group_by = group_by)
+        metaginfo <- get_pseudo_metaginfo(metaginfo, group_by)
 
     if(is(group, "character") & length(group) == 1)
         if(group %in% colnames(colData(results[["nodes"]]))){
@@ -634,7 +634,7 @@ node_color_per_de <- function(results, metaginfo, group, g1, g2,
         }else{
             stop("Group variable must be a column in colData())")
         }
-    difexp <- compute_difexp(assay(results[["nodes"]]), g1, g2, group)
+    difexp <- compute_difexp(assay(results[["nodes"]]), group, expdes, g2)
     updown <- rep("both", length(difexp$statistic))
     updown[difexp$statistic < 0] <- "down"
     updown[difexp$statistic > 0] <- "up"
@@ -646,10 +646,11 @@ node_color_per_de <- function(results, metaginfo, group, g1, g2,
                                         conf = conf)
     names(node_colors) <- rownames(results[["nodes"]])
     cols <- lapply(metaginfo$pathigraphs, function(pg){
-        gen_nodes <- V(pg$graph)$name[V(pg$graph)$name %in% rownames(difexp)]
+        g <- pg$graph
+        gen_nodes <- V(g)$name[V(g)$name %in% rownames(difexp)]
         path_colors <- node_colors[gen_nodes]
         # Add function colors
-        toadd <- V(pg$graph)$name[!V(pg$graph)$name %in% rownames(difexp)]
+        toadd <- V(g)$name[!V(g)$name %in% rownames(difexp)]
         coltoadd <- rep("white", length(toadd))
         names(coltoadd) <- toadd
         path_colors <- c(path_colors, coltoadd)
