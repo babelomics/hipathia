@@ -440,6 +440,18 @@ get_paths_data <- function(results, matrix = FALSE){
 }
 
 
+#' 
+#' @export
+#' @import SummarizedExperiment
+#'
+get_nodes_data <- function(results, matrix = FALSE){
+    if(matrix == TRUE){
+        return(assay(results[["nodes"]]))
+    }else{
+        return(results[["nodes"]])
+    }
+}
+
 
 
 clip_names <- function(snames, maxchar = 30){

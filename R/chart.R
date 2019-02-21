@@ -578,8 +578,10 @@ add_edge_colors <- function(pathigraph, pcomp, effector, up_col = "#ca0020",
 #' stored, in case the object provided to \code{hipathia} was a 
 #' SummarizedExperiment, or a vector with the class to which each sample 
 #' belongs. Samples must be ordered as in \code{results}.
-#' @param g1 String, label of the first group to be compared
-#' @param g2 String, label of the second group to be compared
+#' @param expdes String, either the comparison to be performed or the label of 
+#' the first group to be compared.
+#' @param g2 String, label of the second group to be compared. Only necessary 
+#' in case expdes is the name of the first group, not the comparison.
 #' @param group_by How to group the subpathways to be visualized. By default
 #' they are grouped by the pathway to which they belong. Available groupings
 #' include "uniprot", to group subpathways by their annotated Uniprot functions,
@@ -601,19 +603,72 @@ add_edge_colors <- function(pathigraph, pcomp, effector, up_col = "#ca0020",
 #' @examples
 #' data(results)
 #' data(brca)
-#' pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
-#' "hsa04012"))
-#' sample_group <- colData(brca)[,1]
-#' colors_de <- node_color_per_de(results, pathways,
-#' sample_group, "Tumor", "Normal")
+#' pathways_list <- c("hsa03320", "hsa04012")
+#' pathways <- load_pathways(species = "hsa", pathways_list)
+#' colors_de <- node_color_per_de(results, pathways, "group", "Tumor - Normal")
+#' colors_de <- node_color_per_de(results, pathways, "group", "Tumor", "Normal")
+#' 
 #'
 #' @export
 #' @importFrom methods is
 #'
 node_color_per_de <- function(results, metaginfo, group, expdes, g2 = NULL, 
                               group_by = "pathway", colors = "classic", 
-                              conf = 0.05){
+                              conf = 0.05, adjust = TRUE){
 
+    difexp <- do_limma(results[["nodes"]], group, expdes, g2)
+    colors_de <- node_color_per_file(difexp, metaginfo, group_by, colors, conf, adjust)
+    return(colors_de)
+}
+
+
+#'
+#' Get colors of the nodes from a comparison file
+#'
+#' Computes the colors of the nodes depending on the sign and p.value from the 
+#' provided file. Significant up- and down-regulated nodes
+#' are depicted with the selected color, with a gradient towards the
+#' non-significant color depending on the value of the p-value.
+#' Smaller p-values give rise to purer colors than higher p-values.
+#'
+#' @param comp Comparison file as returned by \code{do_wilcoxon}. Must include a
+#' column named \code{UP/DOWN} with the sign of the comparison coded as 
+#' \code{UP} or \code {DOWN}, a column of raw p.values names \code{p.value} and 
+#' a column of adjusted p.values named \code{FDRp.value}.
+#' @param metaginfo Object of pathways_
+#' @param group_by How to group the subpathways to be visualized. By default
+#' they are grouped by the pathway to which they belong. Available groupings
+#' include "uniprot", to group subpathways by their annotated Uniprot functions,
+#' "GO", to group subpathways by their annotated GO terms, and "genes", to group
+#' subpathways by the genes they include. Default is set to "pathway".
+#' @param colors Either a character vector with 3 colors (indicating,
+#' in this order, down-regulation, non-significance and up-regulation colors)
+#'  or a key name indicating the color scheme to be used. Options are:
+#' @slot classic ColorBrewer blue, white and colorBrewer red.
+#' @slot hipathia Hipathia predefined color scheme: 
+#' Green, white and orange.
+#' By default \code{classic} color scheme is applied.
+#' @param conf Level of significance of the comparison for the adjusted p-value
+#'
+#' @return List of color vectors, named by the pathways to which they belong.
+#' The color vectors represent the differential expression
+#' of the nodes in each pathway.
+#'
+#' @examples
+#' data(results)
+#' data(brca)
+#' pathways_list <- c("hsa03320", "hsa04012")
+#' pathways <- load_pathways(species = "hsa", pathways_list)
+#' comp <- do_wilcoxon(results[["nodes"]], "group", "Tumor", "Normal")
+#' colors_de <- node_color_per_de(comp, pathways, "group", "Tumor - Normal")
+#' colors_de <- node_color_per_de(comp, pathways, "group", "Tumor", "Normal")
+#'
+#' @export
+#' @importFrom methods is
+#'
+node_color <- function(comp, metaginfo, group_by = "pathway", 
+                       colors = "classic", conf = 0.05, adjust = TRUE){
+    
     if(length(colors) == 1){
         if(colors == "hipathia"){
             colors <- c("#50b7ae", "white", "#f16a34")
@@ -624,33 +679,29 @@ node_color_per_de <- function(results, metaginfo, group, expdes, g2 = NULL,
     down_col <- colors[1]
     no_col <- colors[2]
     up_col <- colors[3]
-
+    
     if(group_by != "pathway")
         metaginfo <- get_pseudo_metaginfo(metaginfo, group_by)
-
-    if(is(group, "character") & length(group) == 1)
-        if(group %in% colnames(colData(results[["nodes"]]))){
-            group <- colData(results[["nodes"]])[[group]]
-        }else{
-            stop("Group variable must be a column in colData())")
-        }
-    difexp <- compute_difexp(assay(results[["nodes"]]), group, expdes, g2)
-    updown <- rep("both", length(difexp$statistic))
-    updown[difexp$statistic < 0] <- "down"
-    updown[difexp$statistic > 0] <- "up"
+    
+    updown <- tolower(comp$`UP/DOWN`)
+    if(adjust == TRUE){
+        pv <- comp$FDRp.value
+    }else{
+        pv <- comp$p.value
+    }
     node_colors <- get_colors_from_pval(updown,
-                                        difexp$p.value,
+                                        pv,
                                         up_col = up_col,
                                         down_col = down_col,
                                         no_col = no_col,
                                         conf = conf)
-    names(node_colors) <- rownames(results[["nodes"]])
+    names(node_colors) <- rownames(comp)
     cols <- lapply(metaginfo$pathigraphs, function(pg){
         g <- pg$graph
-        gen_nodes <- V(g)$name[V(g)$name %in% rownames(difexp)]
+        gen_nodes <- V(g)$name[V(g)$name %in% rownames(comp)]
         path_colors <- node_colors[gen_nodes]
         # Add function colors
-        toadd <- V(g)$name[!V(g)$name %in% rownames(difexp)]
+        toadd <- V(g)$name[!V(g)$name %in% rownames(comp)]
         coltoadd <- rep("white", length(toadd))
         names(coltoadd) <- toadd
         path_colors <- c(path_colors, coltoadd)
@@ -662,7 +713,6 @@ node_color_per_de <- function(results, metaginfo, group, expdes, g2 = NULL,
     colors_de$group_by <- group_by
     return(colors_de)
 }
-
 
 #' @import grDevices
 get_colors_from_pval <- function(updown, pvals, up_col = "#da1f1f",
