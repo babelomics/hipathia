@@ -31,3 +31,5 @@ Version 1.5.1 (2019-02-21)
   + Including parameter adjust in node_color_per_de function. Set TRUE as default, previously considered as FALSE
   + Allowing node_colors_per_de to accept any experimental design accepted by limma::makeContrasts.
   + Removing non-visible function compute_difexp
+  + Adding GO IDs to GO annotations and making them the rownames of the go_vals matrix
+  + Adding get_go_names function, to translat GO Ids to GO function names
