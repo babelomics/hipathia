@@ -227,16 +227,63 @@ get_path_names <- function(metaginfo, names, maxchar=NULL){
 }
 
 
+#' Tranlates node IDs to node names
+#'
+#' @description
+#' Translates the node IDs to readable and comprensible names.
+#'
+#' The names of the nodes are encoded
+#' as "pathway: name", where "pathway" is the pathway to
+#' which the node belongs and "node" is the name of
+#' the node. Nodes may include more genes than the one depicted in the name.
+#'
+#' @param metaginfo Pathways object
+#' @param names Character vector with the subpathway IDs to be translated
+#' @param maxchar Integer, describes the number of maximum characters to
+#' be shown. By default no filter is applied.
+#'
+#' @examples
+#' data(results)
+#' pathways_list <- c("hsa03320", "hsa04012")
+#' pathways <- load_pathways(species = "hsa", pathways_list)
+#' node_vals <- get_nodes_data(results)
+#' translated_names <- get_node_names(pathways, rownames(node_vals))
+#'
+#' @return A character vector including the readable names of the
+#' subpathways IDs, in the same order as provided.
+#' @export
+#'
+get_node_names <- function(metaginfo, names, maxchar=NULL){
+    
+    labels <- metaginfo$all.labelids
+    
+    prettynames <- unlist(lapply(names, function(name){
+        label <- as.matrix(labels)[name, c("path.name", "label")]
+        label <- paste(label, collapse = ": ")
+        label
+     }))
+    
+    if(!is.null(maxchar))
+        prettynames <- clip_names(prettynames, maxchar = maxchar)
+    
+    return(prettynames)
+    
+}
+
+
 #' Tranlates GO IDs to GO names
 #'
 #' @description
 #' Translates the GO IDs to readable and comprensible names.
 #'
-#' @param names Character vector with the GO IDs to be translated
+#' @param names Character vector with the GO IDs to be translated.
+#' @param species Species of the samples.
 #' @param maxchar Integer, describes the number of maximum characters to
 #' be shown. By default no filter is applied.
 #'
 #' @examples
+#' data(go_vals)
+#' get_go_names(rownames(go_vals), "hsa")
 #'
 #' @return A character vector including the readable names of the
 #' GO IDs, in the same order as provided.
@@ -440,6 +487,39 @@ get_paths_data <- function(results, matrix = FALSE){
 }
 
 
+#' Gets the object of node activation values
+#'
+#' @description
+#' This function returns the object with the levels of activation of each
+#' node for each sample. Rows represent the nodes and columns
+#' represent the samples. Each cell is the value of activation of a node
+#' in a sample.
+#'
+#' Rownames are the IDs of the nodes In order to transform IDs into
+#' readable names, use \code{get_node_names}.
+#'
+#' Effector subpathways are subgraphs of a pathway including all the paths
+#' leading to an effector protein. Effector proteins are defined as final
+#' nodes in the graph. Each effector protein (final node) in a pathway
+#' defines its own effector subpathway as the nodes and edges in a path leading
+#' to it.
+#'
+#' Decomposed subpathways are subgraphs of a pathway including all the paths
+#' starting in a receptor protein and ending in an effector protein. Receptor
+#' proteins are defined as initial nodes and effector proteins are defined
+#' as final nodes in the graph. Each effector subpathway can be decomposed
+#' in as many decomposed subpathways as initial nodes it includes.
+#'
+#' @param results Results object as returned by \code{hipathia}.
+#' @param matrix Boolean, if TRUE the function returns a matrix object, if 
+#' FALSE (as default) returns a SummarizedExperiment object.
+#'
+#' @examples
+#' data(results)
+#' path_vals <- get_paths_data(results)
+#'
+#' @return Object, either a SummarizedExperiment or a matrix, with the levels 
+#' of activation of each decomposed subpathway for each sample.
 #' 
 #' @export
 #' @import SummarizedExperiment

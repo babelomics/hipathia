@@ -4,7 +4,8 @@
 \alias{save_results}
 \title{Save results to folder}
 \usage{
-save_results(results, comp, metaginfo, output_folder = NULL, path = NULL)
+save_results(results, comp, metaginfo, output_folder = NULL,
+  path = NULL)
 }
 \arguments{
 \item{results}{Results object as returned by the \code{hipathia} function.}

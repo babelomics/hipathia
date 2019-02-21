@@ -61,7 +61,7 @@
 #' data(path_vals)
 #' sample_group <- brca_design[colnames(path_vals),"group"]
 #' heatmap_plot(path_vals, group = sample_group)
-#' heatmap_plot(path_vals, group = sample_group, colors = "hipathia",
+#' heatmap_plot(path_vals, group = "group", colors = "hipathia",
 #' variable_clust = TRUE)
 #'
 #' @export
@@ -70,6 +70,7 @@
 #' @importFrom DelayedArray rowMins
 #' @importFrom DelayedArray rowMaxs
 #' @importFrom stats heatmap
+#' @importFrom stats var
 #' @importFrom methods is
 #'
 heatmap_plot <- function(data, group = NULL, sel_assay = 1, 
@@ -112,7 +113,7 @@ heatmap_plot <- function(data, group = NULL, sel_assay = 1,
     } else {
         # vars <- matrixStats::rowVars(vals) This function is deprecated: not 
         # all variances 0 are detected (some are reported as 1.2642e-32)
-        vars <- apply(vals, 1, var)
+        vars <- apply(vals, 1, stats::var)
         vals <- vals[!is.na(vars) & vars != 0,]
         rowv <- TRUE
     }
@@ -454,16 +455,14 @@ plot_pathigraph <- function(g, node_color = NULL, edge_lty = 1, main = "" ){
 #'
 #' @examples
 #' data(comp)
-#' pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
-#' "hsa04012"))
+#' pathways_list <- c("hsa03320", "hsa04012")
+#' pathways <- load_pathways(species = "hsa", pathways_list)
 #' pathway_comparison_plot(comp, metaginfo = pathways, pathway = "hsa03320")
 #'
 #' \dontrun{
 #' data(results)
 #' data(brca)
-#' sample_group <- colData(brca)[,1]
-#' colors_de <- node_color_per_de(results, pathways,
-#' sample_group, "Tumor", "Normal")
+#' colors_de <- node_color_per_de(results, pathways, group, "Tumor", "Normal")
 #' pathway_comparison_plot(comp, metaginfo = pathways, pathway = "hsa04012",
 #' node_colors = colors_de)
 #' }
@@ -565,7 +564,7 @@ add_edge_colors <- function(pathigraph, pcomp, effector, up_col = "#ca0020",
 #'
 #' Colors of the nodes by its differential expression
 #'
-#' Performs a differential expression on the nodes and computes the colors
+#' Performs a Limma differential expression on the nodes and computes the colors
 #' of the nodes depending on it_ Significant up- and down-regulated nodes
 #' are depicted with the selected color, with a gradient towards the
 #' non-significant color depending on the value of the p-value.
@@ -594,7 +593,9 @@ add_edge_colors <- function(pathigraph, pcomp, effector, up_col = "#ca0020",
 #' @slot hipathia Hipathia predefined color scheme: 
 #' Green, white and orange.
 #' By default \code{classic} color scheme is applied.
-#' @param conf Level of significance of the comparison for the adjusted p-value
+#' @param conf Level of significance of the comparison for the adjusted p-value.
+#' @param adjust Boolean, whether to adjust the p.value from the comparison. 
+#' Default is TRUE.
 #'
 #' @return List of color vectors, named by the pathways to which they belong.
 #' The color vectors represent the differential expression
@@ -617,7 +618,7 @@ node_color_per_de <- function(results, metaginfo, group, expdes, g2 = NULL,
                               conf = 0.05, adjust = TRUE){
 
     difexp <- do_limma(results[["nodes"]], group, expdes, g2)
-    colors_de <- node_color_per_file(difexp, metaginfo, group_by, colors, conf, adjust)
+    colors_de <- node_color(difexp, metaginfo, group_by, colors, conf, adjust)
     return(colors_de)
 }
 
@@ -632,10 +633,10 @@ node_color_per_de <- function(results, metaginfo, group, expdes, g2 = NULL,
 #' Smaller p-values give rise to purer colors than higher p-values.
 #'
 #' @param comp Comparison file as returned by \code{do_wilcoxon}. Must include a
-#' column named \code{UP/DOWN} with the sign of the comparison coded as 
-#' \code{UP} or \code {DOWN}, a column of raw p.values names \code{p.value} and 
-#' a column of adjusted p.values named \code{FDRp.value}.
-#' @param metaginfo Object of pathways_
+#' column named "UP/DOWN" with the sign of the comparison coded as 
+#' \code{UP} or \code{DOWN}, a column named "p.value" of raw p.values and 
+#' a column named "FDRp.value" of adjusted p.values.
+#' @param metaginfo Object of pathways.
 #' @param group_by How to group the subpathways to be visualized. By default
 #' they are grouped by the pathway to which they belong. Available groupings
 #' include "uniprot", to group subpathways by their annotated Uniprot functions,
@@ -648,7 +649,9 @@ node_color_per_de <- function(results, metaginfo, group, expdes, g2 = NULL,
 #' @slot hipathia Hipathia predefined color scheme: 
 #' Green, white and orange.
 #' By default \code{classic} color scheme is applied.
-#' @param conf Level of significance of the comparison for the adjusted p-value
+#' @param conf Level of significance of the comparison for the adjusted p-value.
+#' @param adjust Boolean, whether to adjust the p.value from the comparison. 
+#' Default is TRUE.
 #'
 #' @return List of color vectors, named by the pathways to which they belong.
 #' The color vectors represent the differential expression
@@ -660,8 +663,7 @@ node_color_per_de <- function(results, metaginfo, group, expdes, g2 = NULL,
 #' pathways_list <- c("hsa03320", "hsa04012")
 #' pathways <- load_pathways(species = "hsa", pathways_list)
 #' comp <- do_wilcoxon(results[["nodes"]], "group", "Tumor", "Normal")
-#' colors_de <- node_color_per_de(comp, pathways, "group", "Tumor - Normal")
-#' colors_de <- node_color_per_de(comp, pathways, "group", "Tumor", "Normal")
+#' colors_de <- node_color(comp, pathways)
 #'
 #' @export
 #' @importFrom methods is

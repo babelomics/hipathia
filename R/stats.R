@@ -451,47 +451,6 @@ do_pca <- function(data, sel_assay = 1, cor = FALSE){
 }
 
 
-# compute_difexp <- function(vals, groups, group1_label, group2_label){
-# 
-#     g1_indexes <- which(groups == group1_label)
-#     g2_indexes <- which(groups == group2_label)
-#     grupo1 <- (groups[c(g1_indexes, g2_indexes)] == group1_label) + 0
-#     grupo2 <- (groups[c(g1_indexes, g2_indexes)] == group2_label) + 0
-#     design <- cbind(grupo1, grupo2)
-# 
-#     fit <- limma::lmFit(vals[,c(g1_indexes, g2_indexes)], design)
-#     cont_matrix <- limma::makeContrasts(grupo1 - grupo2, levels = design)
-#     fit2 <- limma::contrasts.fit(fit, cont_matrix)
-#     fit2 <- limma::eBayes(fit2)
-#     result <- data.frame(statistic = as.numeric(fit2$t),
-#                          p.value = as.numeric(fit2$p.value),
-#                          laterality = as.factor(fit2$t>0))
-#     rownames(result) <- rownames(fit2)
-# 
-#     return(result)
-# }
-
-compute_difexp <- function(vals, groups, expdes, g2 = NULL){
-    
-    if(!is.null(g2))
-         expdes <- paste(expdes, "-", g2)
-    
-    design <- model.matrix(~0 + factor(groups))
-    colnames(design) <- unique(groups)
-    rownames(design) <- colnames(vals)
-    cont_matrix <- makeContrasts(contrasts = expdes, levels = design)
-    
-    fit <- limma::lmFit(vals, design)
-    fit2 <- limma::contrasts.fit(fit, cont_matrix)
-    fit2 <- limma::eBayes(fit2)
-    result <- data.frame(statistic = as.numeric(fit2$t),
-                         p.value = as.numeric(fit2$p.value),
-                         laterality = as.factor(fit2$t>0))
-    rownames(result) <- rownames(fit2)
-    
-    return(result)
-}
-
 do_limma <- function(data, groups, expdes, g2 = NULL, sel_assay = 1, order = FALSE){
     
     if(is(data, "SummarizedExperiment")){
@@ -513,15 +472,15 @@ do_limma <- function(data, groups, expdes, g2 = NULL, sel_assay = 1, order = FAL
     if(!is.null(g2))
         expdes <- paste(expdes, "-", g2)
     
-    design <- model.matrix(~0 + factor(groups))
+    design <- stats::model.matrix(~0 + factor(groups))
     colnames(design) <- unique(groups)
     rownames(design) <- colnames(vals)
-    cont_matrix <- makeContrasts(contrasts = expdes, levels = design)
+    cont_matrix <- limma::makeContrasts(contrasts = expdes, levels = design)
     
     fit <- limma::lmFit(vals, design)
     fit1 <- limma::contrasts.fit(fit, cont_matrix)
     fit2 <- limma::eBayes(fit1)
-    tt <- topTable(fit2, coef = 1, number = "all", sort.by = "none")
+    tt <- limma::topTable(fit2, coef = 1, number = "all", sort.by = "none")
     
     updown <- c("UP", "DOWN", "UP")
     names(updown) <- c("1", "-1", "0")

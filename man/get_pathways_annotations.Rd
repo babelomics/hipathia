@@ -4,7 +4,8 @@
 \alias{get_pathways_annotations}
 \title{Get Pathways functional annotations}
 \usage{
-get_pathways_annotations(pathway_names, metaginfo, dbannot, collapse = FALSE)
+get_pathways_annotations(pathway_names, metaginfo, dbannot,
+  collapse = FALSE)
 }
 \arguments{
 \item{pathway_names}{Character vector of the names of the pathways}

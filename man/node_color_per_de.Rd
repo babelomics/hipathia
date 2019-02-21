@@ -4,8 +4,9 @@
 \alias{node_color_per_de}
 \title{Colors of the nodes by its differential expression}
 \usage{
-node_color_per_de(results, metaginfo, group, g1, g2, group_by = "pathway",
-  colors = "classic", conf = 0.05)
+node_color_per_de(results, metaginfo, group, expdes, g2 = NULL,
+  group_by = "pathway", colors = "classic", conf = 0.05,
+  adjust = TRUE)
 }
 \arguments{
 \item{results}{Object of results as provided by the \code{hipathia}
@@ -18,9 +19,11 @@ stored, in case the object provided to \code{hipathia} was a
 SummarizedExperiment, or a vector with the class to which each sample 
 belongs. Samples must be ordered as in \code{results}.}
 
-\item{g1}{String, label of the first group to be compared}
+\item{expdes}{String, either the comparison to be performed or the label of 
+the first group to be compared.}
 
-\item{g2}{String, label of the second group to be compared}
+\item{g2}{String, label of the second group to be compared. Only necessary 
+in case expdes is the name of the first group, not the comparison.}
 
 \item{group_by}{How to group the subpathways to be visualized. By default
 they are grouped by the pathway to which they belong. Available groupings
@@ -32,7 +35,10 @@ subpathways by the genes they include. Default is set to "pathway".}
 in this order, down-regulation, non-significance and up-regulation colors)
  or a key name indicating the color scheme to be used. Options are:}
 
-\item{conf}{Level of significance of the comparison for the adjusted p-value}
+\item{conf}{Level of significance of the comparison for the adjusted p-value.}
+
+\item{adjust}{Boolean, whether to adjust the p.value from the comparison. 
+Default is TRUE.}
 }
 \value{
 List of color vectors, named by the pathways to which they belong.
@@ -40,7 +46,7 @@ The color vectors represent the differential expression
 of the nodes in each pathway.
 }
 \description{
-Performs a differential expression on the nodes and computes the colors
+Performs a Limma differential expression on the nodes and computes the colors
 of the nodes depending on it_ Significant up- and down-regulated nodes
 are depicted with the selected color, with a gradient towards the
 non-significant color depending on the value of the p-value.
@@ -59,10 +65,10 @@ By default \code{classic} color scheme is applied.}
 \examples{
 data(results)
 data(brca)
-pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
-"hsa04012"))
-sample_group <- colData(brca)[,1]
-colors_de <- node_color_per_de(results, pathways,
-sample_group, "Tumor", "Normal")
+pathways_list <- c("hsa03320", "hsa04012")
+pathways <- load_pathways(species = "hsa", pathways_list)
+colors_de <- node_color_per_de(results, pathways, "group", "Tumor - Normal")
+colors_de <- node_color_per_de(results, pathways, "group", "Tumor", "Normal")
+
 
 }

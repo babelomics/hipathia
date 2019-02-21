@@ -4,8 +4,8 @@
 \alias{get_pathway_functions}
 \title{Returns functions related to a pathway}
 \usage{
-get_pathway_functions(pathigraph, dbannot, entrez2hgnc, use_last_nodes = TRUE,
-  unique = TRUE)
+get_pathway_functions(pathigraph, dbannot, entrez2hgnc,
+  use_last_nodes = TRUE, unique = TRUE)
 }
 \arguments{
 \item{pathigraph}{Pathway object}

@@ -140,7 +140,7 @@ create_node_and_edge_attributes <- function(comp, pathway, metaginfo,
         "rectangle"
     V(ig)$width[grepl("func",V(ig)$name)] <- -1
 
-    hgnc <- hipathia:::load_entrez_hgnc(metaginfo$species)
+    hgnc <- load_entrez_hgnc(metaginfo$species)
     V(ig)$tooltip <- sapply(seq_along(V(ig)), function(i){
         if(V(ig)$shape[i] == "ellipse"){
             paste(sapply(V(ig)$genesList[[i]], function(gen){

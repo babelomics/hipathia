@@ -6,8 +6,9 @@
 \usage{
 heatmap_plot(data, group = NULL, sel_assay = 1, colors = "classic",
   sample_clust = TRUE, variable_clust = FALSE, labRow = NULL,
-  labCol = NULL, sample_colors = NULL, scale = TRUE, save_png = NULL,
-  legend = TRUE, legend_xy = "topright", pch = 15, main = NULL)
+  labCol = NULL, sample_colors = NULL, scale = TRUE,
+  save_png = NULL, legend = TRUE, legend_xy = "topright", pch = 15,
+  main = NULL)
 }
 \arguments{
 \item{data}{Either a SummarizedExperiment or a matrix with the values to be 

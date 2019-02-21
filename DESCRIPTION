@@ -21,7 +21,7 @@ Encoding: UTF-8
 LazyData: true
 Imports:
   coin, stats, limma, grDevices, utils, graphics, preprocessCore, servr, DelayedArray, matrixStats, methods, S4Vectors
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 Suggests: BiocStyle, knitr, rmarkdown, testthat
 VignetteBuilder: knitr
 biocViews: Pathways, GraphAndNetwork, GeneExpression, GeneSignaling, GO
