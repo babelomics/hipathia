@@ -31,7 +31,7 @@ load_annofuns <- function(db, species){
         stop("Species not accepted")
     if(!is_accepted_database(db))
         stop("Database not accepted")
-    v <- get_hpannot_version
+    v <- get_hpannot_version()
     file <- paste0("annofuns_", db, "_", species, "_", v, ".rda")
     hp <- hub()
     annofuns <- suppressMessages(hp[[names(hp)[hp$title == file]]])
@@ -52,6 +52,7 @@ load_annofuns <- function(db, species){
 load_mgi <- function(species){
     if(!is_accepted_species(species))
         stop("Species not accepted")
+    v <- get_hpannot_version()
     file <- paste0("meta_graph_info_", species, "_", v, ".rda")
     hp <- hub()
     mgi <- suppressMessages(hp[[names(hp)[hp$title == file]]])
@@ -79,6 +80,7 @@ load_pseudo_mgi <- function(species, group_by){
         stop("Species not accepted")
     if(!is_accepted_grouping(group_by))
         stop("Grouping not accepted")
+    v <- get_hpannot_version()
     file <- paste0("pmgi_", species, "_", group_by, "_", v, ".rda")
     hp <- hub()
     pmgi <- suppressMessages(hp[[names(hp)[hp$title == file]]])
@@ -99,6 +101,7 @@ load_pseudo_mgi <- function(species, group_by){
 load_xref <- function(species){
     if(!is_accepted_species(species))
         stop("Species not accepted")
+    v <- get_hpannot_version()
     file <- paste0("xref_", species, "_", v, ".rda")
     hp <- hub()
     xref <- suppressMessages(hp[[names(hp)[hp$title == file]]])
@@ -119,6 +122,7 @@ load_xref <- function(species){
 load_entrez_hgnc <- function(species){
     if(!is_accepted_species(species))
         stop("Species not accepted")
+    v <- get_hpannot_version()
     file <- paste0("entrez_hgnc_", species, "_", v, ".rda")
     hp <- hub()
     entrez_hgnc <- suppressMessages(hp[[names(hp)[hp$title == file]]])
@@ -144,6 +148,7 @@ load_annots <- function(db, species){
         stop("Species not accepted")
     if(!is_accepted_database(db))
         stop("Database not accepted")
+    v <- get_hpannot_version()
     file <- paste0("annot_", db, "_", species, "_", v, ".rda")
     hp <- hub()
     annot <- suppressMessages(hp[[names(hp)[hp$title == file]]])
@@ -161,6 +166,7 @@ load_annots <- function(db, species){
 #'
 load_gobp_frame <- function(){
     hp <- hub()
+    v <- get_hpannot_version()
     file <- paste0("go_bp_frame_", v, ".rda")
     gbf <- suppressMessages(hp[[names(hp)[hp$title == file]]])
     return(gbf)
@@ -177,6 +183,7 @@ load_gobp_frame <- function(){
 #'
 load_gobp_net <- function(){
     hp <- hub()
+    v <- get_hpannot_version()
     file <- paste0("go_bp_net_", v, ".rda")
     gbn <- suppressMessages(hp[[names(hp)[hp$title == file]]])
     return(gbn)
