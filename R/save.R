@@ -140,30 +140,6 @@ create_node_and_edge_attributes <- function(comp, pathway, metaginfo,
         "rectangle"
     V(ig)$width[grepl("func",V(ig)$name)] <- -1
 
-    hgnc <- load_entrez_hgnc(metaginfo$species)
-    V(ig)$tooltip <- sapply(seq_along(V(ig)), function(i){
-        if(V(ig)$shape[i] == "ellipse"){
-            paste(sapply(V(ig)$genesList[[i]], function(gen){
-                if(!gen == "/"){
-                    paste0("<a target='_blank' ",
-                           "href='http://www.genome.jp/dbget-bin/www_bget?",
-                           metaginfo$species, ":", gen, "'>", gen, "</a> (", 
-                           hgnc[hgnc[,1] == gen, 2], ")")
-                }else{
-                    ""
-                }
-            }), collapse="<br>")
-        }else if(V(ig)$shape[i] == "rectangle"){
-            if(grepl("\n", V(ig)$label[i])){
-                gsub("\n", "<br>", V(ig)$label[i])
-            }else{""}
-        }else if(V(ig)$shape[i] == "circle"){
-            paste0("<a target='_blank' ",
-                   "href='http://www.genome.jp/dbget-bin/www_bget?",
-                   V(ig)$label[i], "'>", V(ig)$label[i], "</a>")
-        }
-    })
-
     natt <- cbind(V(ig)$name,
                   V(ig)$label,
                   10,
