@@ -105,7 +105,8 @@ hipathia <- function(genes_vals, metaginfo, sel_assay = 1, decompose = FALSE,
     
     paths_rd <- DataFrame(feat.ID = rownames(paths), 
                           feat.name = get_path_names(metaginfo, 
-                                                        rownames(paths)))
+                                                        rownames(paths)),
+                          decomposed = decompose)
     nodes_rd <- as.data.frame(metaginfo$all.labelids[rownames(nodes),], 
                               stringsAsFactors = FALSE)
         
