@@ -490,16 +490,16 @@ create_path_info <- function(all_comp, metaginfo){
             out <- paste0(out, "\"name\":\"",
                           get_path_names(metaginfo,
                                          rownames(path_info[[x]])[i]), "\", ")
-            if(grepl("term_", metaginfo$pathigraphs[[1]]$path.id) == TRUE){
-                out <- paste0(out, "\"shortname\":\"",
-                              get_path_names(metaginfo,
-                                             rownames(path_info[[x]])[i]),
-                              "\", ")
-            }else{
+            if(metaginfo$group.by == "pathways"){
                 out <- paste0(out, "\"shortname\":\"" ,
                               gsub("\\*", "", strsplit(get_path_names(
                                   metaginfo,
                                   rownames(path_info[[x]])[i]),": ")[[1]][2]),
+                              "\", ")
+            }else{
+                out <- paste0(out, "\"shortname\":\"",
+                              get_path_names(metaginfo,
+                                             rownames(path_info[[x]])[i]),
                               "\", ")
             }
             out <- paste0(out, "\"pvalue\":", path_info[[x]]$FDRp.value[i],

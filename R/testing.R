@@ -22,7 +22,7 @@ test_matrix <- function(mat){
 }
 
 test_pathways_object <- function(pathways){
-    hasall <- length(pathways) == 6
+    hasall <- length(pathways) == 7
     spec <- is_accepted_species(pathways$species)
     isigraph <- class(pathways$pathigraphs[[1]]$graph) == "igraph"
     if(!hasall == TRUE | !spec == TRUE | !isigraph == TRUE)
