@@ -32,4 +32,7 @@ Version 1.5.1 (2019-02-21)
   + Allowing node_colors_per_de to accept any experimental design accepted by limma::makeContrasts.
   + Removing non-visible function compute_difexp
   + Adding GO IDs to GO annotations and making them the rownames of the go_vals matrix
-  + Adding get_go_names function, to translat GO Ids to GO function names
+  + Adding get_go_names function, to translate GO Ids to GO function names
+  + Adapting to new RData names in AnnotationHub, which include the version of the data in hpAnnot files.
+  + Restricting GO names to 50 characters.
+  + Adding group.by slot to metaginfo objects.
