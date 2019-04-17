@@ -16,10 +16,10 @@ test_that("Pathways object is a list", {
 })
 
 test_that("Pathways object is correct", {
-    expect_equal(length(mgi), 6)
+    expect_equal(length(mgi), 7)
     expect_equal(setdiff(names(mgi),
                          c("all.labelids", "pathigraphs", "all.genes",
-                           "path.norm", "eff.norm", "species")),
+                           "path.norm", "eff.norm", "species", "group.by")),
                  character(0))
     expect_true(is_accepted_species(mgi$species))
     expect_true(all(mgi$all.labelids[,"path.id"] %in% pathways_list))
