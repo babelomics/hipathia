@@ -587,8 +587,13 @@ get_pathways_summary <- function(comp, metaginfo, conf = 0.05){
 #'
 top_pathways <- function(comp){
     
-    path_names <- as.character(comp$path_names)
-    comp$pathways <- sapply(strsplit(path_names, split = ":"), "[[", 1)
+    if("name" %in% colnames(comp)){
+        path_names <- as.character(comp$name)
+        comp$pathways <- sapply(strsplit(path_names, split = ":"), "[[", 1)
+    }else{
+        path_names <- rownames(comp)
+        comp$pathways <- sapply(strsplit(path_names, split = "-"), "[[", 2)
+    }
     pathways <- unique(comp$pathways)
     
     tests <- do.call(rbind, lapply(pathways, function(path) {

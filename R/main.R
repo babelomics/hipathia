@@ -378,8 +378,8 @@ compute_node_signal <- function(actnode, node_val, node_signal, subgraph,
         }
 
         # If signal too low, signal do not propagate
-        if(sum(nas) == 0 && signal < response_tol)
-            signal <- rep(0, length(node_val))
+        if(sum(nas) == 0 && any(signal < response_tol))
+            signal[signal < response_tol] <- 0
 
     }
 

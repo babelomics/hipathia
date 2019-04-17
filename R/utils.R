@@ -859,10 +859,11 @@ paths_to_go_ancestor <- function(pathways, comp_paths, comp_go, pval = 0.05){
 #' by dividing by the value obtained from running the method with a basal
 #' value of 0.5 at each node.
 #'
-#' @param path_vals Matrix of the pathway values
+#' @param path_vals SummarizedExperiment or matrix of the pathway values
 #' @param metaginfo Pathways object
 #'
-#' @return Matrix of normalized pathway values
+#' @return SummarizedExperiment or matrix of normalized pathway values, 
+#' depending on the class of \code{path_vals}.
 #'
 #' @examples
 #' data(path_vals)
@@ -876,17 +877,24 @@ normalize_paths <- function(path_vals, metaginfo){
     decomposed <- is_decomposed_matrix(path_vals)
     if(decomposed == TRUE){
         norm_factors <- metaginfo$path.norm[rownames(path_vals)]
-        path_norm <- normalize_data(path_vals/(norm_factors*0.99+0.01),
-                                    by_quantiles = FALSE,
-                                    by_gene = FALSE,
-                                    percentil = FALSE)
     }else{
         norm_factors <- metaginfo$eff.norm[rownames(path_vals)]
-        path_norm <- normalize_data(path_vals/(norm_factors*0.99+0.01),
-                                    by_quantiles = FALSE,
-                                    by_gene = FALSE,
-                                    percentil = FALSE)
     }
+    if(is(path_vals, "SummarizedExperiment")){
+        coldata <- colData(path_vals)
+        path_vals <- assay(path_vals, "paths")
+        se_flag <- TRUE
+    }else{
+        se_flag <- FALSE
+    }
+    path_norm <- normalize_data(path_vals/(norm_factors*0.99+0.01),
+                                by_quantiles = FALSE,
+                                by_gene = FALSE,
+                                percentil = FALSE)
+    if(se_flag == TRUE)
+        path_norm <- SummarizedExperiment(list(path_norm = path_norm), 
+                                          colData = coldata)
+    
     return(path_norm)
 }
 

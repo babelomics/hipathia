@@ -7,12 +7,13 @@
 normalize_paths(path_vals, metaginfo)
 }
 \arguments{
-\item{path_vals}{Matrix of the pathway values}
+\item{path_vals}{SummarizedExperiment or matrix of the pathway values}
 
 \item{metaginfo}{Pathways object}
 }
 \value{
-Matrix of normalized pathway values
+SummarizedExperiment or matrix of normalized pathway values, 
+depending on the class of \code{path_vals}.
 }
 \description{
 Due to the nature of the Hipathia method, the length of a pathway may
