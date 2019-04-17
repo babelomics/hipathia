@@ -689,7 +689,7 @@ get_pathways_annotations <- function(pathway_names, metaginfo, dbannot,
     if(collapse == TRUE){
         miniaf <- do.call("rbind", lapply(pathway_names, function(path){
             path_id <- annofuns$paths == path
-            data.frame(effector.nodes = annofuns$effector.nodes[path_id][1],
+            data.frame(effector.nodes = annofuns$effector_nodes[path_id][1],
                        paths = path,
                        funs = paste(annofuns$funs[path_id], collapse = ", "),
                        stringsAsFactors = FALSE)

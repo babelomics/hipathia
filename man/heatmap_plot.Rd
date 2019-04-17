@@ -77,7 +77,7 @@ data(brca_design)
 data(path_vals)
 sample_group <- brca_design[colnames(path_vals),"group"]
 heatmap_plot(path_vals, group = sample_group)
-heatmap_plot(path_vals, group = sample_group, colors = "hipathia",
+heatmap_plot(path_vals, group = "group", colors = "hipathia",
 variable_clust = TRUE)
 
 }
