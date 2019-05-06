@@ -22,8 +22,13 @@ test_matrix <- function(mat){
 }
 
 test_pathways_object <- function(pathways){
-    hasall <- length(pathways) == 7
-    spec <- is_accepted_species(pathways$species)
+    hasall <- length(pathways) == 7 | length(pathways) == 8
+    if(length(pathways) == 7){
+        byuser <- FALSE
+    }else if(length(pathways) == 8){
+        byuser <- pathways$by.user
+    }
+    spec <- is_accepted_species(pathways$species) | byuser == TRUE
     isigraph <- class(pathways$pathigraphs[[1]]$graph) == "igraph"
     if(!hasall == TRUE | !spec == TRUE | !isigraph == TRUE)
         stop("Pathways object not allowed")
