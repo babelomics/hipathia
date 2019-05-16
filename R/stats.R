@@ -341,8 +341,8 @@ calculate_wilcox_test <- function(data, control, disease, paired, adjust=TRUE){
         data2[need0, "z"] <- 0
     }
     colnames(data2) <- c("UP/DOWN", "statistic", "p.value", "FDRp.value")
-    data2[data2$statistic>0,"UP/DOWN"] <- "UP"
-    data2[data2$statistic<0,"UP/DOWN"] <- "DOWN"
+    data2[data2$statistic > 0,"UP/DOWN"] <- "UP"
+    data2[data2$statistic < 0,"UP/DOWN"] <- "DOWN"
     return(data2)
 }
 

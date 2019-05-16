@@ -12,13 +12,13 @@
 #' Data.frame with 2 columns: First column is the EntrezGene ID, second column 
 #' is the gene Symbol. The genes in the nodes of the pathways should be defined 
 #' by Entrez IDs in the SIF and ATT files of the pathways. In order to be more 
-#' readable, gene names are used when plotting the patwhays.
+#' readable, gene names are used when plotting the pathways.
 #' @param dbannot Functional annotation of the genes in the pathways to create 
 #' function nodes.
 #' 
 #' @export
 #' 
-mgi_from_sif <- function(sif.folder, spe, entrez_symbol, dbannot){
+create_mgi <- function(sif.folder, spe, entrez_symbol, dbannot){
     
     message("Loading graphs...")
     pgs <- load_graphs(sif.folder, spe)
@@ -36,9 +36,9 @@ load_graphs <- function(input.folder, species, pathway.names = NULL,
                         verbose = FALSE){
     
     file <- paste(input.folder, "/name.pathways_", species, ".txt", sep="")
-    nam <- read.delim(file, comment.char = "", sep = "\t", header = FALSE, 
-                      stringsAsFactors = FALSE, row.names = 1, 
-                      colClasses = "character")
+    nam <- utils::read.delim(file, comment.char = "", sep = "\t", 
+                             header = FALSE, stringsAsFactors = FALSE, 
+                             row.names = 1, colClasses = "character")
     
     if(is.null(pathway.names))
         pathway.names <- paste0(species, rownames(nam))
@@ -184,8 +184,8 @@ find_possible_paths <- function( ig, in.nodes, out.nodes ){
 
 
 
-#' Returns a list containing all paths from the given "node" to any final node, 
-#' in list format
+# Returns a list containing all paths from the given "node" to any final node, 
+# in list format
 find_all_paths_from <- function(node, ig, visited){
     paths <- list()
     edges <- incident(ig, node, mode="out")
@@ -533,7 +533,7 @@ get_node_vecForce <- function(x1, y1, x2, y2, p0, maxdis, repeller = FALSE){
     
     v <- c(x2 - x1, y2 - y1)
     if(v[1] == 0 & v[2] == 0){
-        v <- rnorm(2)
+        v <- stats::rnorm(2)
     }
     v <- v/sqrt(v[1]^2 + v[2]^2)
     v <- v * force
@@ -584,7 +584,7 @@ get_edge_vectorial_force <- function(c0, c1, c2, p0, maxdis){
     
     v <- c(sx - x0, sy - y0)
     if(v[1] == 0 & v[2] == 0){
-        v <- rnorm(2)
+        v <- stats::rnorm(2)
     }
     v <- v/sqrt(v[1]^2 + v[2]^2)
     v <- v * force
