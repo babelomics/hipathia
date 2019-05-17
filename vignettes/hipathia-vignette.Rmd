@@ -108,6 +108,10 @@ library(hipathia)
 data("brca")
 brca
 ```
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(devtools)
+load_all("~/appl/hipathia/")
+```
 
 The dataset `brca` is a `r Biocpkg("SummarizedExperiment")` object, including 
 the gene expression of the 40 samples in the assay `raw`, and the information 
@@ -861,6 +865,155 @@ will be highlighted. Clicking again on this subpathway will deselect it.
 
 
 \newpage
+\section{Creating a new Pathways object}
+
+\subsection{Creating a new pathways object with Hipathia}
+Hipathia is able to read and analyze custom graphs from SIF files with 
+attributes. No species restriction is applied in this case. See Section 
+\@ref(sec:spec) for further details on file specifications.
+
+The function used for that purpouse is `mgi_from_sif`, which takes as 
+parameter `sif.folder` the path to the folder where the pathway files are 
+stored, and as `spe` parameter the modeled species. Optionally, the function
+can add the name of the functions to which the effector nodes are related to 
+increase the readability of the output infromation. For that, the user must 
+include as `entrez_symbol` parameter
+a data.frame with two columns, first column with the EntrezGene ID, second 
+column with the gene Symbol of the included genes, and as parameter `dbannot` 
+the functional annotation of the included genes.
+
+```{r, echo=TRUE}
+newmgi <- mgi_from_sif(system.file("extdata/SIF_ATT_example", 
+                                   package = "hipathia"), 
+                       spe = "hsa")
+```
+
+\subsection{Pathway SIF + ATT specifications}\label{sec:spec}
+Hipathia is able to read and include graphs from SIF files with attributes with 
+the following features:
+\begin{itemize}
+\item Each pathway should be saved in two different files: .att (ATT file) and 
+.sif (SIF file).
+\item The SIF and ATT files should have the same name, i.e. hsa00.sif and 
+hsa00.att for the pathway with ID hsa00.
+\item Functions are not included in this files, but annotated "a posteriori" 
+following a file of annotations from genes to functions.
+\item There must also be a file including the readable names of the pathways in 
+the same folder, named: name (dot) pathways (underscore) (species) (dot) txt.
+\end{itemize}
+
+\subsubsection{SIF File}
+The SIF file must fulfill the following requirements:
+
+\begin{itemize}
+\item Text file with three columns separated by tabulars.
+\item Each row represents an interaction in the pathway. First column is the 
+source node, third column the target node, and the second is the type of 
+relation between them.
+\item Only activation and inhibition interactions are allowed.
+\item The name of the nodes in this file will be stored as the IDs of the nodes.
+\item The nodes IDs should have the following structure: N (dash) pathway ID 
+(dash) node ID.
+\item Hipathia distinguish between two types of nodes: simple and complex. 
+\begin{itemize}
+  \item Simple nodes may include many genes, but only one is needed to perform 
+  the function of the node. 
+  \item Complex nodes include different simple nodes and represent protein 
+  complexes. Each simple node within the complex represents one protein in the 
+  complex. This node requires the presence of all their simple nodes to perform 
+  its function.
+\end{itemize}
+\item Node IDs from simple nodes do not include any space, i.e. N-hsa00-A. 
+\item Node IDs from complex nodes are the juxtaposition of the included simple 
+node IDs, separated by spaces, i.e. N-hsa00-D E. 
+\end{itemize}
+
+An example of SIF file as described above is shown here:
+
+```{r, echo=FALSE}
+sif <- read.delim(system.file("extdata/SIF_ATT_example/hsa00.sif", 
+                              package = "hipathia"), 
+                  header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+names(sif) <- NULL
+rownames(sif) <- c("", " ", "  ", "   ")
+print(sif)
+```
+
+
+\subsubsection{ATT File}
+The ATT file must fulfill the following requirements:
+\begin{itemize}
+\item Text file with twelve columns separated by tabulars.
+\item Each row represents a node (either simple or complex).
+\item The columns included are:
+\begin{itemize}
+  \item {\bf ID}: Node ID as explained above.
+  \item {\bf label}: Name to be shown in the picture of the pathway. Generally, the 
+  gene name of the first included EntrezID gene is used as label. For complex 
+  nodes, we juxtapose the gene names of the first genes of each simple node 
+  included (see genesList column below).
+  \item {\bf X}: X-coordinate of the position of the node in the pathway.
+  \item {\bf Y}: Y-coordinate of the position of the node in the pathway.
+  \item {\bf color}: Default color of the node.
+  \item {\bf shape}: Shape of the node. "rectangle" should be used for genes and 
+  "circle" for metabolites.
+  \item {\bf type}: Type of the node, either "gene" for genes or "compound" for 
+  metabolites. For complex nodes, the type of each of their included simple 
+  nodes is juxtaposed separated by commas, i.e. gene,gene.
+  \item {\bf label.cex}: Amount by which plotting label should be scaled relative to 
+  the default.
+  \item {\bf label.color}: Default color of the node.
+  \item {\bf width}: Default width of the node.
+  \item {\bf height}: Default height of the node.
+  \item {\bf genesList}: List of genes included in each node, with EntrezID:
+\begin{itemize}
+    \item Simple nodes: EntrezIDs of the genes included, separated by commas 
+    (",") and no spaces, i.e. 1432,5880,842 for node N-hsa00-C.
+    \item Complex nodes: GenesList of the simple nodes included, separated by a 
+    slash ("/") and no spaces, and in the same order as in the node ID. For 
+    instance, node N-hsa00-D E includes two simple nodes: D and E. Its 
+    genesList column is 5747,/,9047,5335, meaning that the gene included in 
+    node D is 5747, and the genes included in node E are 9047 and 5335.
+\end{itemize}
+\item {\bf tooltip}: Tooltip to be shown in the pathway visualization. HTML code may 
+be included.
+\end{itemize}
+\end{itemize}
+
+An example of ATT file as described above is shown here:
+
+```{r, echo=FALSE}
+att <- read.delim(system.file("extdata/SIF_ATT_example/hsa00.att", 
+                              package = "hipathia"), 
+                  header = TRUE, sep = "\t", stringsAsFactors = FALSE)
+rownames(att) <- c("", " ", "  ", "   ", "    ")
+print(att)
+```
+
+\subsubsection{Pathway names file}
+The file including the real names of the patwhays must fulfill the following 
+requirements:
+
+\begin{itemize}
+    \item Text file with two columns separated by tabulars.
+    \item Each row represents a pathway. First column is the ID of the pathway, 
+    and the second is the real name of the pathway.
+    \item Only activation and inhibition interactions are allowed.
+\end{itemize}
+
+An example of ATT file as described above is shown here:
+
+```{r, echo=FALSE}
+nam <- read.delim(system.file("extdata/SIF_ATT_example/name.pathways_hsa.txt", 
+                              package = "hipathia"), 
+                  header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+names(nam) <- NULL
+rownames(nam) <- ""
+print(nam)
+```
+
+
+\newpage
 \section{Utilities}
 \subsection{Functions}
 
@@ -898,4 +1051,5 @@ function:
 ```{r, fig.show='hold'}
 get_path_names(pathways, c("P-hsa03320-37", "P-hsa04010-15"))
 ```
+
 

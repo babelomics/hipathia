@@ -18,14 +18,20 @@
 #' 
 #' @export
 #' 
-create_mgi <- function(sif.folder, spe, entrez_symbol, dbannot){
+mgi_from_sif <- function(sif.folder, spe, entrez_symbol = NULL, dbannot = NULL){
+    
+    ## NO USAR ESTA FUNCIÓN PARA HACER LOS PATHWAYS DE KEGG: NO HACE AMMENDMENTS
     
     message("Loading graphs...")
     pgs <- load_graphs(sif.folder, spe)
-    message("Adding functions to pathways...")
-    fpgs <- add_funs_to_pgs(pgs, entrez_symbol, dbannot, maxiter = 1000)
+    if(!is.null(dbannot) & !is.null(entrez_symbol)){
+        message("Adding functions to pathways...")
+        pgs <- add_funs_to_pgs(pgs, entrez_symbol, dbannot, maxiter = 1000)
+    }
     message("Creating MGI...")
-    metaginfo <- create_metaginfo_object(fpgs, spe, by.user = TRUE)
+    metaginfo <- create_metaginfo_object(pgs, spe, by.user = TRUE)
+    
+    message("Created MGI with ", length(metaginfo$pathigraphs), " pathway(s)")
     
     return(metaginfo)
 }
@@ -606,7 +612,7 @@ create_metaginfo_object <- function(fpgs, species, by.user = FALSE,
     pathigraph.genes <- all_needed_genes(fpgs)
     
     # Create all.labelids table
-    labelids <- sapply(fpgs, function(pg) cbind(pg$label.id,
+    labelids <- lapply(fpgs, function(pg) cbind(pg$label.id,
                                                 path.id = pg$path.id,
                                                 path.name = pg$path.name))
     labelids <- do.call("rbind", labelids)
