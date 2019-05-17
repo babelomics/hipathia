@@ -1,0 +1,4 @@
+N-hsa00-A	activation	N-hsa00-C
+N-hsa00-B	inhibition	N-hsa00-C
+N-hsa00-C	activation	N-hsa00-D E
+N-hsa00-D E	activation	N-hsa00-F
