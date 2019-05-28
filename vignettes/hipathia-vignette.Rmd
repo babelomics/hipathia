@@ -928,7 +928,8 @@ relation between them.
 node IDs, separated by spaces, i.e. N-hsa00-D E. 
 \end{itemize}
 
-An example of SIF file as described above is shown here:
+An example of SIF file as described above is shown here (hashtags must not be
+included in the file):
 
 ```{r, echo=FALSE}
 sif <- read.delim(system.file("extdata/SIF_ATT_example/hsa00.sif", 
@@ -980,7 +981,8 @@ be included.
 \end{itemize}
 \end{itemize}
 
-An example of ATT file as described above is shown here:
+An example of ATT file as described above is shown here (hashtags must not be
+included in the file):
 
 ```{r, echo=FALSE}
 att <- read.delim(system.file("extdata/SIF_ATT_example/hsa00.att", 
@@ -1001,7 +1003,8 @@ requirements:
     \item Only activation and inhibition interactions are allowed.
 \end{itemize}
 
-An example of ATT file as described above is shown here:
+An example of ATT file as described above is shown here (hashtags must not be
+included in the file):
 
 ```{r, echo=FALSE}
 nam <- read.delim(system.file("extdata/SIF_ATT_example/name.pathways_hsa.txt", 
