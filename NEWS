@@ -36,3 +36,6 @@ Version 1.5.1 (2019-02-21)
   + Adapting to new RData names in AnnotationHub, which include the version of the data in hpAnnot files.
   + Restricting GO names to 50 characters.
   + Adding group.by slot to metaginfo objects.
+
+Version 2.1.1 (2019-05-17)
+  + Adding function mgi_from_sif, which allows to create a pathways object from SIF + ATT files.
