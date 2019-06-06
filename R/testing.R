@@ -28,7 +28,7 @@ test_pathways_object <- function(pathways){
     }else if(length(pathways) == 8){
         byuser <- pathways$by.user
     }
-    spec <- is_accepted_species(pathways$species) | byuser == TRUE
+    spec <- is_accepted_species(pathways$species) || byuser == TRUE
     isigraph <- class(pathways$pathigraphs[[1]]$graph) == "igraph"
     if(!hasall == TRUE | !spec == TRUE | !isigraph == TRUE)
         stop("Pathways object not allowed")
