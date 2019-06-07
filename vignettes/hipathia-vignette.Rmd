@@ -109,8 +109,8 @@ data("brca")
 brca
 ```
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-library(devtools)
-load_all("~/appl/hipathia/")
+# library(devtools)
+# load_all("~/appl/hipathia/")
 ```
 
 The dataset `brca` is a `r Biocpkg("SummarizedExperiment")` object, including 

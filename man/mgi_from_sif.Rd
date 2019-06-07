@@ -4,7 +4,7 @@
 \alias{mgi_from_sif}
 \title{Create a Pathways object from SIF files}
 \usage{
-mgi_from_sif(sif.folder, spe, entrez_symbol, dbannot)
+mgi_from_sif(sif.folder, spe, entrez_symbol = NULL, dbannot = NULL)
 }
 \arguments{
 \item{sif.folder}{Path to the folder in which SIF and ATT files are stored.}
@@ -15,7 +15,7 @@ mgi_from_sif(sif.folder, spe, entrez_symbol, dbannot)
 Data.frame with 2 columns: First column is the EntrezGene ID, second column 
 is the gene Symbol. The genes in the nodes of the pathways should be defined 
 by Entrez IDs in the SIF and ATT files of the pathways. In order to be more 
-readable, gene names are used when plotting the patwhays.}
+readable, gene names are used when plotting the pathways.}
 
 \item{dbannot}{Functional annotation of the genes in the pathways to create 
 function nodes.}
