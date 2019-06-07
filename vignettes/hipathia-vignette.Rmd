@@ -99,7 +99,7 @@ of RNA-Seq data have been randomly selected and normalized.
 
 Specifically, raw data has been
 corrected for batch effect using the `ComBat` function from package 
-`r Biocpkg("sva")`, then corrected for RNA
+`r BiocStyle::Biocpkg("sva")`, then corrected for RNA
 composition bias applying TMM normalization from package `r Biocpkg("edgeR")`, 
 and finally log-transformed.
 
