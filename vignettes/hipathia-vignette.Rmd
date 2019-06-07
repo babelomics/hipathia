@@ -1,6 +1,6 @@
 ---
 title: "Hipathia Package"
-#author: "Marta R. Hidalgo, Francisco Salavert, Alicia Amadoz, Çankut Cubuk, José Carbonell-Caballero, Joaquín Dopazo"
+    #author: "Marta R. Hidalgo, Francisco Salavert, Alicia Amadoz, Çankut Cubuk, José Carbonell-Caballero, Joaquín Dopazo"
 date: "`r Sys.Date()`"
 package: hipathia
 abstract: >
@@ -87,6 +87,7 @@ if (!requireNamespace("BiocManager", quietly=TRUE))
     install.packages("BiocManager")
 BiocManager::install("hipathia")
 ```
+
 
 
 \subsection{Example data}
