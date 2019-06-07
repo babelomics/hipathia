@@ -195,7 +195,7 @@ hub = local({
     hp = NULL
     function(){
         if(is.null(hp))
-            hp <<- query(AnnotationHub(), "hpAnnot")
+            hp <- query(AnnotationHub(), "hpAnnot")
         hp
     }
 })

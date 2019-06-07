@@ -11,17 +11,21 @@ mgi_from_sif(sif.folder, spe, entrez_symbol = NULL, dbannot = NULL)
 
 \item{spe}{Species}
 
-\item{entrez_symbol}{Relation between Entrez (NCBI) genes and gene symbols. 
-Data.frame with 2 columns: First column is the EntrezGene ID, second column 
-is the gene Symbol. The genes in the nodes of the pathways should be defined 
-by Entrez IDs in the SIF and ATT files of the pathways. In order to be more 
+\item{entrez_symbol}{Relation between Entrez (NCBI) genes and gene symbols.
+Data.frame with 2 columns: First column is the EntrezGene ID, second column
+is the gene Symbol. The genes in the nodes of the pathways should be defined
+by Entrez IDs in the SIF and ATT files of the pathways. In order to be more
 readable, gene names are used when plotting the pathways.}
 
-\item{dbannot}{Functional annotation of the genes in the pathways to create 
+\item{dbannot}{Functional annotation of the genes in the pathways to create
 function nodes.}
+}
+\value{
+A pathways object with the same structure of that returned by
+function \code{load_pathways}.
 }
 \description{
 Creates a Pathways object from the information of a pathway stored in a SIF
-file with some attributes. This pathways object can be used by function 
+file with some attributes. This pathways object can be used by function
 \code{hipathia} to analyze data.
 }

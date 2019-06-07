@@ -26,7 +26,7 @@ test_that("Pathways object is correct", {
     expect_true(all(mgi$eff.norm >= 0 & mgi$eff.norm <= 1))
     expect_true(all(mgi$path.norm >= 0 & mgi$path.norm <= 1))
     expect_true(all(sapply(mgi$pathigraphs,
-                           function(pg) class(pg$graph) == "igraph")))
+                           function(pg) is(pg$graph, "igraph"))))
     all.effs <- unlist(sapply(mgi$pathigraphs,
                               function(pg) names(pg$effector.subgraphs)))
     all.paths <- unlist(sapply(mgi$pathigraphs,

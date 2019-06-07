@@ -13,22 +13,22 @@
 #' BRCA gene expression dataset as SummarizedExperiment
 #'
 #' A dataset containing a matrix with the Gene expression of 40 samples from the
-#' BRCA-US project from The Cancer Genome Atlas (TCGA), and their experimental 
+#' BRCA-US project from The Cancer Genome Atlas (TCGA), and their experimental
 #' design, containing 20 "Tumor" samples 20 "Normal" samples.
 #'
-#' The gene expression matrix includes 40 samples. The data has been 
+#' The gene expression matrix includes 40 samples. The data has been
 #' log-transformed and normalized with TMM.
 #'
-#' @format SummarizedExperiment. The assay is a matrix with 40 columns and 
-#' 18638 rows. Row names are Entrez IDs and column names are the TCGA 
-#' identifyers of the samples. The colData() is a data.frame with 1 column and 
+#' @format SummarizedExperiment. The assay is a matrix with 40 columns and
+#' 18638 rows. Row names are Entrez IDs and column names are the TCGA
+#' identifyers of the samples. The colData() is a data.frame with 1 column and
 #' 40 rows, including the experimental design of the 40 samples from the BRCA-US
-#' project from TCGA. Field \code{group} is the type of sample, either "Tumor" 
+#' project from TCGA. Field \code{group} is the type of sample, either "Tumor"
 #' or "Normal".
 #'
-#' @return SummarizedExperiment including a matrix with 40 columns and 18638 
-#' rows. Row names are Entrez IDs and column names are the TCGA identifyers of 
-#' the samples. 
+#' @return SummarizedExperiment including a matrix with 40 columns and 18638
+#' rows. Row names are Entrez IDs and column names are the TCGA identifyers of
+#' the samples.
 #'
 #' @usage data(brca)
 #'
@@ -185,8 +185,8 @@
 ##' @format Matrix with 40 columns and 142 rows. Row names are Uniprot functions
 ##' and column names are the TCGA identifyers of the samples.
 ##'
-##' @return  Matrix with 40 columns and 142 rows. Row names are Uniprot functions
-##' and column names are the TCGA identifyers of the samples.
+##' @return  Matrix with 40 columns and 142 rows. Row names are Uniprot
+##' functions and column names are the TCGA identifyers of the samples.
 ##'
 ##' @usage data(uni_vals)
 ##'

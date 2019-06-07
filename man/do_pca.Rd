@@ -7,10 +7,10 @@
 do_pca(data, sel_assay = 1, cor = FALSE)
 }
 \arguments{
-\item{data}{SummarizedExperiment or matrix of values to be analyzed. Samples 
+\item{data}{SummarizedExperiment or matrix of values to be analyzed. Samples
 must be represented in the columns.}
 
-\item{sel_assay}{Character or integer, indicating the assay to be normalized 
+\item{sel_assay}{Character or integer, indicating the assay to be normalized
 in the SummarizedExperiment. Default is 1.}
 
 \item{cor}{A logical value indicating whether the calculation should use

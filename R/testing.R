@@ -12,7 +12,7 @@
 test_matrix <- function(mat){
     is01 <- all(mat >= 0 & mat <= 1)
     nona <- sum(is.na(mat)) == 0
-    ismatrix <- class(mat) == "matrix"
+    ismatrix <- is(mat, "matrix")
     if(!is01 == TRUE)
         stop("Matrix rank exceeds from [0,1]")
     if(!nona == TRUE)
@@ -29,7 +29,7 @@ test_pathways_object <- function(pathways){
         byuser <- pathways$by.user
     }
     spec <- is_accepted_species(pathways$species) || byuser == TRUE
-    isigraph <- class(pathways$pathigraphs[[1]]$graph) == "igraph"
+    isigraph <- is(pathways$pathigraphs[[1]]$graph, "igraph")
     if(!hasall == TRUE | !spec == TRUE | !isigraph == TRUE)
         stop("Pathways object not allowed")
 }

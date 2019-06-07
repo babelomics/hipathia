@@ -32,7 +32,7 @@ test_that("All values in [0,1]", {
 })
 
 test_that("All distributions are the same when by.quantiles is TRUE", {
-    exp_data <- normalize_data(brca_data, by_quantiles = T)
+    exp_data <- normalize_data(brca_data, by_quantiles = TRUE)
     q <- quantile(exp_data[,1])
     expect_true(all(apply(exp_data, 2, function(x) all(quantile(x) == q))))
 })

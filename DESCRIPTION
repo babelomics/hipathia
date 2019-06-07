@@ -15,7 +15,7 @@ Description: Hipathia is a method for the computation of signal transduction alo
   the intensity of the signal arriving to it. It also provides a new approach 
   to functional analysis allowing to compute the signal arriving to the 
   functions annotated to each pathway. 
-Depends: R (>= 3.5), igraph (>= 1.0.1), AnnotationHub(>= 2.6.5), MultiAssayExperiment(>= 1.4.9), SummarizedExperiment(>= 1.8.1)
+Depends: R (>= 3.6), igraph (>= 1.0.1), AnnotationHub(>= 2.6.5), MultiAssayExperiment(>= 1.4.9), SummarizedExperiment(>= 1.8.1)
 License: GPL-2
 Encoding: UTF-8
 LazyData: true

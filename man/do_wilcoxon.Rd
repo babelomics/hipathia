@@ -11,9 +11,9 @@ do_wilcoxon(data, group, g1, g2, paired = FALSE, adjust = TRUE,
 \item{data}{Either a SummarizedExperiment object or a matrix, containing the
 values. Columns represent samples.}
 
-\item{group}{Either a character indicating the name of the column in colData 
-including the classes to compare, or a character vector with the class to 
-which each sample belongs. 
+\item{group}{Either a character indicating the name of the column in colData
+including the classes to compare, or a character vector with the class to
+which each sample belongs.
 Samples must be ordered as in \code{data}}
 
 \item{g1}{String, label of the first group to be compared}
@@ -28,10 +28,10 @@ is used.}
 \item{adjust}{Boolean, whether to adjust the p.value with
 Benjamini-Hochberg FDR method}
 
-\item{sel_assay}{Character or integer, indicating the assay to be normalized 
+\item{sel_assay}{Character or integer, indicating the assay to be normalized
 in the SummarizedExperiment. Default is 1.}
 
-\item{order}{Boolean, whether to order the results table by the 
+\item{order}{Boolean, whether to order the results table by the
 \code{FDRp.value} column. Default is FALSE.}
 }
 \value{

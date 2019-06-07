@@ -8,11 +8,11 @@
 ## https://www.bioconductor.org/developers/how-to/coding-style/
 ##
 
-#' Normalize expression data from a SummarizedExperiment or matrix to be used 
-#' in 
+#' Normalize expression data from a SummarizedExperiment or matrix to be used
+#' in
 #' \code{hipathia}
 #'
-#' Transforms the rank of the SummarizedExperiment or matrix of gene expression 
+#' Transforms the rank of the SummarizedExperiment or matrix of gene expression
 #' to [0,1] in order
 #' to be processed by \code{hipathia}. The transformation may be performed
 #' in two different ways. If \code{percentil = FALSE}, the transformation
@@ -36,7 +36,7 @@
 #' before any other tranformation. By default no truncation is performed.
 #'
 #' @param data Either a SummarizedExperiment or a matrix of gene expression.
-#' @param sel_assay Character or integer, indicating the assay to be normalized 
+#' @param sel_assay Character or integer, indicating the assay to be normalized
 #' in the SummarizedExperiment. Default is 1.
 #' @param by_quantiles Boolean, whether to normalize the data by quantiles.
 #' Default is FALSE.
@@ -64,10 +64,10 @@
 #' @importFrom stats ecdf
 #' @importFrom methods is
 #'
-normalize_data <- function(data, sel_assay = 1, by_quantiles = FALSE, 
-                         by_gene = FALSE, percentil = FALSE, 
+normalize_data <- function(data, sel_assay = 1, by_quantiles = FALSE,
+                         by_gene = FALSE, percentil = FALSE,
                          truncation_percentil = NULL){
-    
+
     if(is(data, "SummarizedExperiment")){
         se_flag <- TRUE
         mat <- assay(data, sel_assay)
@@ -77,11 +77,11 @@ normalize_data <- function(data, sel_assay = 1, by_quantiles = FALSE,
     }else{
         stop("Only SummarizedExperiment or matrix classes accepted as data")
     }
-    norm_mat <- normalize_matrix(mat, by_quantiles = by_quantiles, 
-                                 by_gene = by_gene, percentil = percentil, 
+    norm_mat <- normalize_matrix(mat, by_quantiles = by_quantiles,
+                                 by_gene = by_gene, percentil = percentil,
                                  truncation_percentil=truncation_percentil)
     if(se_flag == TRUE){
-        norm_data <- SummarizedExperiment(list(norm = norm_mat), 
+        norm_data <- SummarizedExperiment(list(norm = norm_mat),
                                           colData = colData(data))
     }else{
         norm_data <- norm_mat
@@ -95,10 +95,10 @@ normalize_data <- function(data, sel_assay = 1, by_quantiles = FALSE,
 #' @importFrom stats ecdf
 #' @importFrom DelayedArray rowMins
 #' @importFrom DelayedArray rowMaxs
-normalize_matrix <- function(mat, sel_assay = 1, by_quantiles = FALSE, 
+normalize_matrix <- function(mat, sel_assay = 1, by_quantiles = FALSE,
                            by_gene = FALSE,
                            percentil = FALSE, truncation_percentil = NULL){
-    
+
     # Normalize data matrix
     norm_data <- data.matrix(mat)
     if(!is.null(truncation_percentil)){
@@ -189,7 +189,7 @@ do_cor <- function(sel_vals, design, adjust = TRUE){
     } else {
         fdrData <- testData[,1]
     }
-    data2 <- data.frame(testData[,seq_len(3)], fdrData, 
+    data2 <- data.frame(testData[,seq_len(3)], fdrData,
                         stringsAsFactors = FALSE)
 
     colnames(data2) <- c("p.value", "UP/DOWN", "correlation", "FDRp.value")
@@ -208,7 +208,7 @@ cor_test_fun <- function(x, values){
 
 
 cor_data_frame <- function(wilcox){
-    if (class(wilcox) == "try-error" | is.na( wilcox$p.value )){
+    if (is(wilcox, "try-error") | is.na(wilcox$p.value)){
         pvalue <- 1
         class <- "0"
         esti <- 0
@@ -241,9 +241,9 @@ cor_data_frame <- function(wilcox){
 #'
 #' @param data Either a SummarizedExperiment object or a matrix, containing the
 #' values. Columns represent samples.
-#' @param group Either a character indicating the name of the column in colData 
-#' including the classes to compare, or a character vector with the class to 
-#' which each sample belongs. 
+#' @param group Either a character indicating the name of the column in colData
+#' including the classes to compare, or a character vector with the class to
+#' which each sample belongs.
 #' Samples must be ordered as in \code{data}
 #' @param g1 String, label of the first group to be compared
 #' @param g2 String, label of the second group to be compared
@@ -253,10 +253,10 @@ cor_data_frame <- function(wilcox){
 #' is used.
 #' @param adjust Boolean, whether to adjust the p.value with
 #' Benjamini-Hochberg FDR method
-#' @param sel_assay Character or integer, indicating the assay to be normalized 
+#' @param sel_assay Character or integer, indicating the assay to be normalized
 #' in the SummarizedExperiment. Default is 1.
-#' @param order Boolean, whether to order the results table by the 
-#' \code{FDRp.value} column. Default is FALSE. 
+#' @param order Boolean, whether to order the results table by the
+#' \code{FDRp.value} column. Default is FALSE.
 #'
 #' @return Dataframe with the result of the comparison
 #'
@@ -315,7 +315,7 @@ calculate_wilcox_test <- function(data, control, disease, paired, adjust=TRUE){
         } else {
             fdrData <- testData[,1]
         }
-        data2 <- data.frame(testData[,c(2,3,1)], fdrData, 
+        data2 <- data.frame(testData[,c(2,3,1)], fdrData,
                             stringsAsFactors = FALSE)
     }else{
         testData <- do.call("rbind",
@@ -332,7 +332,7 @@ calculate_wilcox_test <- function(data, control, disease, paired, adjust=TRUE){
         m <- lc*ld/2
         sigma <- sqrt(lc * ld * (lc + ld + 1)/12)
         z <- (testData[,3] - m)/sigma
-        data2 <- data.frame(testData[,2], z, testData[,1], fdrData, 
+        data2 <- data.frame(testData[,2], z, testData[,1], fdrData,
                             stringsAsFactors = FALSE)
         rownames(data2) <- rownames(testData)
         need0 <- which(data2$pvalue == 1 &
@@ -350,7 +350,7 @@ calculate_wilcox_test <- function(data, control, disease, paired, adjust=TRUE){
 wilcoxsign_test_fun <- function(x, control, disease){
     r <- try(coin::wilcoxsign_test(
         as.numeric(x[disease]) ~ as.numeric(x[control]), showWarnings = FALSE))
-    if (class(r) == "try-error"){
+    if (is(r, "try-error")){
         pvalue <- 1
         class <- "0"
         stat <- 0
@@ -387,7 +387,7 @@ wilcox_test_fun <- function(x, control, disease, paired){
 
 
 wilcox_data_frame <- function(wilcox){
-    if (class(wilcox) == "try-error"){
+    if (is(wilcox, "try-error")){
         pvalue <- 1
         class <- "0"
         stat <- 0
@@ -417,9 +417,9 @@ wilcox_data_frame <- function(wilcox){
 #'
 #' Performs a Principal Components Analysis
 #'
-#' @param data SummarizedExperiment or matrix of values to be analyzed. Samples 
+#' @param data SummarizedExperiment or matrix of values to be analyzed. Samples
 #' must be represented in the columns.
-#' @param sel_assay Character or integer, indicating the assay to be normalized 
+#' @param sel_assay Character or integer, indicating the assay to be normalized
 #' in the SummarizedExperiment. Default is 1.
 #' @param cor A logical value indicating whether the calculation should use
 #' the correlation matrix or the covariance matrix. (The correlation matrix
@@ -451,8 +451,9 @@ do_pca <- function(data, sel_assay = 1, cor = FALSE){
 }
 
 
-do_limma <- function(data, groups, expdes, g2 = NULL, sel_assay = 1, order = FALSE){
-    
+do_limma <- function(data, groups, expdes, g2 = NULL, sel_assay = 1,
+                     order = FALSE){
+
     if(is(data, "SummarizedExperiment")){
         se_flag <- TRUE
         if(is(groups, "character") & length(groups) == 1)
@@ -468,27 +469,28 @@ do_limma <- function(data, groups, expdes, g2 = NULL, sel_assay = 1, order = FAL
     }else{
         stop("Only SummarizedExperiment or matrix classes accepted as data")
     }
-    
+
     if(!is.null(g2))
         expdes <- paste(expdes, "-", g2)
-    
+
     design <- stats::model.matrix(~0 + factor(groups))
     colnames(design) <- unique(groups)
     rownames(design) <- colnames(vals)
     cont_matrix <- limma::makeContrasts(contrasts = expdes, levels = design)
-    
+
     fit <- limma::lmFit(vals, design)
     fit1 <- limma::contrasts.fit(fit, cont_matrix)
     fit2 <- limma::eBayes(fit1)
     tt <- limma::topTable(fit2, coef = 1, number = "all", sort.by = "none")
-    
+
     updown <- c("UP", "DOWN", "UP")
     names(updown) <- c("1", "-1", "0")
     ud <- updown[as.character(sign(tt$logFC))]
-    comp <- data.frame(ud, tt$t, tt$P.Value, tt$adj.P.Val, stringsAsFactors = F)
+    comp <- data.frame(ud, tt$t, tt$P.Value, tt$adj.P.Val,
+                       stringsAsFactors = FALSE)
     colnames(comp) <- c("UP/DOWN", "statistic", "p.value", "FDRp.value")
     rownames(comp) <- rownames(tt)
-    
+
     if(se_flag == TRUE && "feat.name" %in% colnames(rowData(data)))
         comp <- cbind(name = rowData(data)[["feat.name"]], comp)
     if(order == TRUE)
@@ -575,7 +577,7 @@ get_pathways_summary <- function(comp, metaginfo, conf = 0.05){
 #' @param comp Comparison data frame as returned by the \code{do_wilcoxon}
 #' function.
 #'
-#' @return 
+#' @return
 #' Table with the names of the pathways and their p-value for the Fisher test
 #' comparing the proportion of significant subpaths vs. 0.
 #'
@@ -586,7 +588,7 @@ get_pathways_summary <- function(comp, metaginfo, conf = 0.05){
 #' @export
 #'
 top_pathways <- function(comp){
-    
+
     if("name" %in% colnames(comp)){
         path_names <- as.character(comp$name)
         comp$pathways <- sapply(strsplit(path_names, split = ":"), "[[", 1)
@@ -595,16 +597,16 @@ top_pathways <- function(comp){
         comp$pathways <- sapply(strsplit(path_names, split = "-"), "[[", 2)
     }
     pathways <- unique(comp$pathways)
-    
+
     tests <- do.call(rbind, lapply(pathways, function(path) {
         t1 <- table(comp[comp$pathways == path,"FDRp.value"] < 0.05)
         t2 <- c(sum(t1), 0)
-        
+
         ft <- fisher.test(rbind(t1, t2))
-        data.frame(pathway = path, pval = ft$p.value, stringsAsFactors = F)
+        data.frame(pathway = path, pval = ft$p.value, stringsAsFactors = FALSE)
     }))
-    
+
     tests <- tests[order(tests$pval),]
-    
+
     return(tests)
 }

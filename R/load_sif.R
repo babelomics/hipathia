@@ -1,27 +1,30 @@
 
 
 #' Create a Pathways object from SIF files
-#' 
+#'
 #' Creates a Pathways object from the information of a pathway stored in a SIF
-#' file with some attributes. This pathways object can be used by function 
-#' \code{hipathia} to analyze data. 
-#' 
+#' file with some attributes. This pathways object can be used by function
+#' \code{hipathia} to analyze data.
+#'
 #' @param sif.folder Path to the folder in which SIF and ATT files are stored.
 #' @param spe Species
-#' @param entrez_symbol Relation between Entrez (NCBI) genes and gene symbols. 
-#' Data.frame with 2 columns: First column is the EntrezGene ID, second column 
-#' is the gene Symbol. The genes in the nodes of the pathways should be defined 
-#' by Entrez IDs in the SIF and ATT files of the pathways. In order to be more 
+#' @param entrez_symbol Relation between Entrez (NCBI) genes and gene symbols.
+#' Data.frame with 2 columns: First column is the EntrezGene ID, second column
+#' is the gene Symbol. The genes in the nodes of the pathways should be defined
+#' by Entrez IDs in the SIF and ATT files of the pathways. In order to be more
 #' readable, gene names are used when plotting the pathways.
-#' @param dbannot Functional annotation of the genes in the pathways to create 
+#' @param dbannot Functional annotation of the genes in the pathways to create
 #' function nodes.
-#' 
+#'
+#' @return A pathways object with the same structure of that returned by
+#' function \code{load_pathways}.
+#'
 #' @export
-#' 
+#'
 mgi_from_sif <- function(sif.folder, spe, entrez_symbol = NULL, dbannot = NULL){
-    
+
     ## NO USAR ESTA FUNCIÓN PARA HACER LOS PATHWAYS DE KEGG: NO HACE AMMENDMENTS
-    
+
     message("Loading graphs...")
     pgs <- load_graphs(sif.folder, spe)
     if(!is.null(dbannot) & !is.null(entrez_symbol)){
@@ -30,25 +33,25 @@ mgi_from_sif <- function(sif.folder, spe, entrez_symbol = NULL, dbannot = NULL){
     }
     message("Creating MGI...")
     metaginfo <- create_metaginfo_object(pgs, spe, by.user = TRUE)
-    
+
     message("Created MGI with ", length(metaginfo$pathigraphs), " pathway(s)")
-    
+
     return(metaginfo)
 }
 
 
 
-load_graphs <- function(input.folder, species, pathway.names = NULL, 
+load_graphs <- function(input.folder, species, pathway.names = NULL,
                         verbose = FALSE){
-    
+
     file <- paste(input.folder, "/name.pathways_", species, ".txt", sep="")
-    nam <- utils::read.delim(file, comment.char = "", sep = "\t", 
-                             header = FALSE, stringsAsFactors = FALSE, 
+    nam <- utils::read.delim(file, comment.char = "", sep = "\t",
+                             header = FALSE, stringsAsFactors = FALSE,
                              row.names = 1, colClasses = "character")
-    
+
     if(is.null(pathway.names))
         pathway.names <- paste0(species, rownames(nam))
-    
+
     pathigraphs <- list()
     for(pathway in pathway.names){
         if(verbose == TRUE)
@@ -63,29 +66,29 @@ load_graphs <- function(input.folder, species, pathway.names = NULL,
         pathigraphs[[pathway]]$effector.subgraphs <- ces
         pathigraphs[[pathway]]$path.name <- nam[gsub(species, "", pathway),1]
         pathigraphs[[pathway]]$path.id <- pathway
-        labs <- cbind(V(pathigraphs[[pathway]]$graph)$name, 
+        labs <- cbind(V(pathigraphs[[pathway]]$graph)$name,
                       V(pathigraphs[[pathway]]$graph)$label)
-        pathigraphs[[pathway]]$label.id <- labs 
+        pathigraphs[[pathway]]$label.id <- labs
         colnames(pathigraphs[[pathway]]$label.id) <- c("name", "label")
     }
-    
+
     return(pathigraphs)
-    
+
 }
 
 
 
 sif_to_pathigraph <- function(pref.file){
     # Read files
-    sif <- utils::read.table(paste0(pref.file, ".sif"), sep = "\t", fill = TRUE, 
+    sif <- utils::read.table(paste0(pref.file, ".sif"), sep = "\t", fill = TRUE,
                              stringsAsFactors = FALSE, header = FALSE)
-    att <- utils::read.table(paste0(pref.file, ".att"), sep = "\t", fill = TRUE, 
+    att <- utils::read.table(paste0(pref.file, ".att"), sep = "\t", fill = TRUE,
                              stringsAsFactors = FALSE, header = TRUE)
     rownames(att) <- att[,1]
-    
+
     # Create igraph
     ig <- graph.data.frame(sif[,c(1,3)], directed = TRUE)
-    
+
     # Add attributes
     E(ig)$relation <- unlist(sapply(sif[,2], function(x){
         ifelse(x == "activation", 1, -1)
@@ -106,7 +109,7 @@ sif_to_pathigraph <- function(pref.file){
     V(ig)$genesList <- glist[V(ig)$name]
     if(!is.null(att$label))
         V(ig)$label <- att[V(ig)$name,"label"]
-    
+
     return(ig)
 }
 
@@ -150,15 +153,15 @@ create_effector_subgraphs <- function(pathigraph, funs=FALSE){
     }else{
         pathisubs <- pathigraph$subgraphs
     }
-    pathisubs.effectors <- sapply(names(pathisubs), 
+    pathisubs.effectors <- sapply(names(pathisubs),
                                   function(name) paste(unlist(
-                                      strsplit(name, split="\\-"))[c(1, 2, 4)], 
+                                      strsplit(name, split="\\-"))[c(1, 2, 4)],
                                       collapse = "-"))
     effectors <- unique(pathisubs.effectors)
     effector.subs <- list()
     for(effector in effectors){
         subs <- pathisubs[effector == pathisubs.effectors]
-        effector.subs[[effector]] <- induced.subgraph(pathigraph$graph, 
+        effector.subs[[effector]] <- induced.subgraph(pathigraph$graph,
                                                       V(graph.union(subs))$name)
     }
     return(effector.subs)
@@ -190,7 +193,7 @@ find_possible_paths <- function( ig, in.nodes, out.nodes ){
 
 
 
-# Returns a list containing all paths from the given "node" to any final node, 
+# Returns a list containing all paths from the given "node" to any final node,
 # in list format
 find_all_paths_from <- function(node, ig, visited){
     paths <- list()
@@ -206,7 +209,7 @@ find_all_paths_from <- function(node, ig, visited){
             paths[[length(paths)+1]] <- path
         }else{
             new.paths <- find_all_paths_from(op, ig, visited)
-            for( j in 1:length( new.paths)){
+            for(j in seq_along(new.paths)){
                 new.paths[[j]] <- c(node, new.paths[[j]])
                 paths[[length(paths)+1]] <- new.paths[[j]]
             }
@@ -231,7 +234,7 @@ add_param <- function(param, graph, newgraph, common, init = TRUE){
     if(init == TRUE){
         current <- get.vertex.attribute(graph, param)
         if(is.numeric(current)){
-            newgraph <- set.vertex.attribute(newgraph, param, 
+            newgraph <- set.vertex.attribute(newgraph, param,
                                              value = mean(current))
         } else {
             newgraph <- set.vertex.attribute(newgraph, param,
@@ -246,19 +249,19 @@ add_param <- function(param, graph, newgraph, common, init = TRUE){
 }
 
 
-add_funs_to_pg <- function(pathigraph, entrez_symbol, dbannot, maxiter = 500, 
-                           verbose = TRUE, w = 10, e = 0.001, 
+add_funs_to_pg <- function(pathigraph, entrez_symbol, dbannot, maxiter = 500,
+                           verbose = TRUE, w = 10, e = 0.001,
                            use.last.nodes = TRUE, use.edges = FALSE, p0q = 0.01,
                            p0mult = 5){
-    
+
     newpathigraph <- pathigraph
-    
+
     V(pathigraph$graph)$x <- V(pathigraph$graph)$nodeX
     V(pathigraph$graph)$y <- V(pathigraph$graph)$nodeY
-    
-    lastNodeFuns_list <- get_pathway_functions(pathigraph, 
-                                               dbannot, 
-                                               entrez_symbol, 
+
+    lastNodeFuns_list <- get_pathway_functions(pathigraph,
+                                               dbannot,
+                                               entrez_symbol,
                                                use_last_nodes = use.last.nodes)
     if(sum(is.na(lastNodeFuns_list)) > 0)
         lastNodeFuns_list <- lastNodeFuns_list[!is.na(lastNodeFuns_list)]
@@ -271,7 +274,7 @@ add_funs_to_pg <- function(pathigraph, entrez_symbol, dbannot, maxiter = 500,
                           node_funs = paste0(names(lastNodeFuns), "_func"),
                           functions = lastNodeFuns,
                           stringsAsFactors = FALSE)
-        
+
         # create new graph
         if(verbose == TRUE)
             cat("Creating new graph...\n")
@@ -296,7 +299,7 @@ add_funs_to_pg <- function(pathigraph, entrez_symbol, dbannot, maxiter = 500,
             if(grepl("_func", name)){
                 nff[gsub("_func", "", name), "functions"]
             }else{
-                V(pathigraph$graph)$label[which(V(pathigraph$graph)$name == 
+                V(pathigraph$graph)$label[which(V(pathigraph$graph)$name ==
                                                     name)]
             }
         })
@@ -311,31 +314,31 @@ add_funs_to_pg <- function(pathigraph, entrez_symbol, dbannot, maxiter = 500,
             }
         })
         newgraph <- set.vertex.attribute(newgraph, "tooltip", value = tooltips)
-        
+
         # recalculate layout
         if(verbose == TRUE)
             cat("Recomputing graph layout...\n")
         fixed <- rep(TRUE, length(V(newgraph)))
         fixed[grep("func", V(newgraph)$name)] <- FALSE
         lay <- cbind(V(newgraph)$x, V(newgraph)$y)
-        rl <- refine_layout(newgraph, lay, fixed, w = w, maxiter = maxiter, 
-                            e = e, use.edges = use.edges, p0q = p0q, 
+        rl <- refine_layout(newgraph, lay, fixed, w = w, maxiter = maxiter,
+                            e = e, use.edges = use.edges, p0q = p0q,
                             p0mult = p0mult)
         if(verbose == TRUE)
             rl$iter
-        
+
         V(newgraph)$nodeX <- rl$layout[,1]
         V(newgraph)$x <- rl$layout[,1]
         V(newgraph)$nodeY <- rl$layout[,2]
         V(newgraph)$y <- rl$layout[,2]
-        
+
         gl <- as.list(V(pathigraph$graph)$genesList)
         names(gl) <- V(pathigraph$graph)$name
         V(newgraph)$genesList <- gl[V(newgraph)$name]
-        
+
         negl <- length(E(newgraph)) - length(E(pathigraph$graph))
         E(newgraph)$relation <- c(E(pathigraph$graph)$relation, rep(1, negl))
-        
+
         newpathigraph$graph <- newgraph
         newpathigraph$subgraphs_funs <- create_subgraphs(newgraph)[[1]]
         newpathigraph$effector.subgraphs_funs <-
@@ -343,14 +346,14 @@ add_funs_to_pg <- function(pathigraph, entrez_symbol, dbannot, maxiter = 500,
         newpathigraph$subgraphs <- pathigraph$subgraphs
         newpathigraph$rl <- rl
         newpathigraph$fixed <- rl$fixed
-        
+
         return(newpathigraph)
     }
-    
+
 }
 
 
-add_funs_to_pgs <- function(apgs, entrez_symbol, dbannot, maxiter = 100, 
+add_funs_to_pgs <- function(apgs, entrez_symbol, dbannot, maxiter = 100,
                             p0mult = 4, verbose = FALSE){
     if(verbose == TRUE)
         cat("Adding functions to pathways...\n")
@@ -375,21 +378,21 @@ add_funs_to_pgs <- function(apgs, entrez_symbol, dbannot, maxiter = 100,
 refine_layout <- function(gg, coords, fixed, e = 10e-7, maxiter = 500, w = 0.5,
                           align.final.at.right = TRUE, p0q = 0.01, p0mult = 5,
                           use.edges = TRUE){
-    
+
     cs <- coords
-    
+
     V(gg)$x <- cs[,1]
     V(gg)$y <- cs[,2]
-    
+
     minx <- min(cs[fixed == TRUE, 1])
     maxx <- max(cs[fixed == TRUE, 1])
     miny <- min(cs[fixed == TRUE, 2])
     maxy <- max(cs[fixed == TRUE, 2])
-    
+
     n <- length(V(gg))
     #maxdis <- sqrt((maxx-minx)^2+(maxy-miny)^2)
     maxdis <- max(abs(maxx - minx), 4*abs(maxy - miny))
-    
+
     # get neighbour
     global_dis <- shortest.paths(gg)
     global_dis[is.infinite(global_dis)] <-
@@ -398,16 +401,16 @@ refine_layout <- function(gg, coords, fixed, e = 10e-7, maxiter = 500, w = 0.5,
     nglobal_dis <- nglobal_dis/max(nglobal_dis)
     adjm <- (global_dis == 1) + 0
     dists <- c()
-    for(i in 1:nrow(adjm)){
+    for(i in seq_len(nrow(adjm))){
         anodes <- which(adjm[i,] == 1)
         for(j in anodes){
-            dists <- c(dists, sqrt((cs[i,1] - cs[j,1])^2 + 
+            dists <- c(dists, sqrt((cs[i,1] - cs[j,1])^2 +
                                        (cs[i,2] - cs[j,2])^2))
         }
     }
     p0 <- stats::quantile(dists[dists > 0], p0q)
     p00 <- p0 * p0mult
-    
+
     if(align.final.at.right == TRUE){
         nonfixed <- intersect(which(fixed == FALSE),
                               which(!(V(gg)$name %in% get.edgelist(gg)[,1])))
@@ -418,28 +421,28 @@ refine_layout <- function(gg, coords, fixed, e = 10e-7, maxiter = 500, w = 0.5,
             cs[nf,] <- c(x,y)
         }
     }
-    
+
     # Move also nodes with duplicated coordinates
     fixed[duplicated(cs)] <- FALSE
-    
+
     iter <- 1
     medif <- e + 1
     locations <- list()
-    
+
     while(medif > e & iter < maxiter){
         cs2 <- cs
-        for(i in 1:n){
+        for(i in seq_len(n)){
             if(fixed[i] == FALSE){
                 # node forces
                 node_forces <- mat.or.vec(nr = n, nc = 2)
-                for(j in 1:n){
+                for(j in seq_len(n)){
                     if(i != j){
                         is_uniq_rep <- !(nglobal_dis[i,j] == 1)
                         pp <- c(p00,p0)[is_uniq_rep + 1]
-                        node_forces[j,] <- get_node_vecForce(cs[i,1], cs[i,2], 
-                                                             cs[j,1], cs[j,2], 
+                        node_forces[j,] <- get_node_vecForce(cs[i,1], cs[i,2],
+                                                             cs[j,1], cs[j,2],
                                                              pp, maxdis,
-                                                             repeller = 
+                                                             repeller =
                                                                  is_uniq_rep)
                         if(global_dis[i,j] == 1){
                             node_forces[j,] <- node_forces[j,] * 10
@@ -451,8 +454,8 @@ refine_layout <- function(gg, coords, fixed, e = 10e-7, maxiter = 500, w = 0.5,
                     edges <- get.edgelist(gg)
                     ne <- nrow(edges)
                     edge_forces <- mat.or.vec(nr = ne, nc = 2)
-                    for(j in 1:nrow(edges)){
-                        if(V(gg)$name[i] != edges[j,1] & 
+                    for(j in seq_len(nrow(edges))){
+                        if(V(gg)$name[i] != edges[j,1] &
                            V(gg)$name[i] != edges[j,2]){
                             c0 <- cs[i,]
                             c1 <- cs[which(V(gg)$name == edges[j,1]),]
@@ -461,31 +464,31 @@ refine_layout <- function(gg, coords, fixed, e = 10e-7, maxiter = 500, w = 0.5,
                                 c0, c1, c2, p0, maxdis)
                         }
                     }
-                    
+
                     forces <- rbind(node_forces, edge_forces)
                 } else {
                     forces <- node_forces
                 }
                 cs2[i,] <- cs2[i,] + colMeans(forces) * w
-                
+
                 #print("*")
-                
+
                 #if(i==61) stop("pepe")
-                
+
             }
-            
+
         }
-        
-        
+
+
         medif <- max(abs(cs - cs2))
-        
+
         cs <- cs2
         locations[[iter]] <- cs
-        
+
         iter <- iter + 1
         # cat(iter,medif,"\n")
     }
-    
+
     return(list(
         layout = cs,
         locations = locations,
@@ -500,7 +503,7 @@ refine_layout <- function(gg, coords, fixed, e = 10e-7, maxiter = 500, w = 0.5,
         dists = dists,
         fixed = fixed
     ))
-    
+
 }
 
 # #
@@ -516,10 +519,10 @@ refine_layout <- function(gg, coords, fixed, e = 10e-7, maxiter = 500, w = 0.5,
 
 # get.node.vectorial.force
 get_node_vecForce <- function(x1, y1, x2, y2, p0, maxdis, repeller = FALSE){
-    
+
     dis <- sqrt((x1 - x2)^2 + (y1 - y2)^2)
     dis <- max(abs(x1 - x2), 4 * abs(y1 - y2))
-    
+
     if(repeller == TRUE){
         if(dis > p0){
             force <- 0
@@ -536,32 +539,32 @@ get_node_vecForce <- function(x1, y1, x2, y2, p0, maxdis, repeller = FALSE){
             force <- -ndis
         }
     }
-    
+
     v <- c(x2 - x1, y2 - y1)
     if(v[1] == 0 & v[2] == 0){
         v <- stats::rnorm(2)
     }
     v <- v/sqrt(v[1]^2 + v[2]^2)
     v <- v * force
-    
+
     return(v)
-    
+
 }
 
 get_edge_vectorial_force <- function(c0, c1, c2, p0, maxdis){
-    
+
     x0 <- c0[1]
     y0 <- c0[2]
     x1 <- c1[1]
     y1 <- c1[2]
     x2 <- c2[1]
     y2 <- c2[2]
-    
+
     mod <- sqrt( (x2 - x1)^2 + (y2 - y1)^2 )
     s <- ( (x0 - x1) * (x2 - x1) + (y0 - y1) * (y2 - y1)) / mod
     sx <- x1 + (s/mod)*(x2 - x1)
     sy <- y1 + (s/mod)*(y2 - y1)
-    
+
     if(x1 < x2) {
         xmin <- x1
         xmax <- x2
@@ -587,16 +590,16 @@ get_edge_vectorial_force <- function(c0, c1, c2, p0, maxdis){
             force <- -ndis
         }
     }
-    
+
     v <- c(sx - x0, sy - y0)
     if(v[1] == 0 & v[2] == 0){
         v <- stats::rnorm(2)
     }
     v <- v/sqrt(v[1]^2 + v[2]^2)
     v <- v * force
-    
+
     return(v)
-    
+
 }
 
 
@@ -606,11 +609,11 @@ get_edge_vectorial_force <- function(c0, c1, c2, p0, maxdis){
 #              CREATE METAGINFO
 #_____________________________________________________
 
-create_metaginfo_object <- function(fpgs, species, by.user = FALSE, 
+create_metaginfo_object <- function(fpgs, species, by.user = FALSE,
                                     basal.value = 0.5){
-    
+
     pathigraph.genes <- all_needed_genes(fpgs)
-    
+
     # Create all.labelids table
     labelids <- lapply(fpgs, function(pg) cbind(pg$label.id,
                                                 path.id = pg$path.id,
@@ -618,18 +621,18 @@ create_metaginfo_object <- function(fpgs, species, by.user = FALSE,
     labelids <- do.call("rbind", labelids)
     rownames(labelids) <- labelids[,1]
     # labelids <- as.data.frame(labelids, strignsAsFactors = FALSE)
-    
+
     # Todos los genes a valor 0.5
     genes.vals.05 <- matrix(basal.value, ncol=2, nrow=length(pathigraph.genes),
                             dimnames=list(pathigraph.genes, c("1", "2")))
     meta.05 <- NULL
     meta.05$pathigraphs <- fpgs
     meta.05$all.labelids <- labelids
-    results.05 <- hipathia(genes.vals.05, meta.05, test = FALSE, 
+    results.05 <- hipathia(genes.vals.05, meta.05, test = FALSE,
                            verbose = FALSE)
-    results.dec.05 <- hipathia(genes.vals.05, meta.05, decompose = TRUE, 
+    results.dec.05 <- hipathia(genes.vals.05, meta.05, decompose = TRUE,
                                test = FALSE, verbose = FALSE)
-    
+
     # Create metaginfo object
     metaginfo <- NULL
     metaginfo$species <- species
@@ -640,7 +643,7 @@ create_metaginfo_object <- function(fpgs, species, by.user = FALSE,
     metaginfo$all.labelids <- labelids
     metaginfo$group.by <- "pathways"
     metaginfo$by.user <- by.user
-    
+
     return(metaginfo)
 }
 

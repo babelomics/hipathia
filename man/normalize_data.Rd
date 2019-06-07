@@ -2,8 +2,8 @@
 % Please edit documentation in R/stats.R
 \name{normalize_data}
 \alias{normalize_data}
-\title{Normalize expression data from a SummarizedExperiment or matrix to be used 
-in 
+\title{Normalize expression data from a SummarizedExperiment or matrix to be used
+in
 \code{hipathia}}
 \usage{
 normalize_data(data, sel_assay = 1, by_quantiles = FALSE,
@@ -12,7 +12,7 @@ normalize_data(data, sel_assay = 1, by_quantiles = FALSE,
 \arguments{
 \item{data}{Either a SummarizedExperiment or a matrix of gene expression.}
 
-\item{sel_assay}{Character or integer, indicating the assay to be normalized 
+\item{sel_assay}{Character or integer, indicating the assay to be normalized
 in the SummarizedExperiment. Default is 1.}
 
 \item{by_quantiles}{Boolean, whether to normalize the data by quantiles.
@@ -33,7 +33,7 @@ is performed.}
 Matrix of gene expression whose values are in [0,1].
 }
 \description{
-Transforms the rank of the SummarizedExperiment or matrix of gene expression 
+Transforms the rank of the SummarizedExperiment or matrix of gene expression
 to [0,1] in order
 to be processed by \code{hipathia}. The transformation may be performed
 in two different ways. If \code{percentil = FALSE}, the transformation
