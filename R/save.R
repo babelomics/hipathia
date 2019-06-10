@@ -22,7 +22,7 @@
 #' @param comp Comparison as returned by the \code{do_wilcoxon} function.
 #' @param metaginfo Pathways object
 #' @param output_folder Name of the folder in which the results will be stored.
-#' @param path Absolute path to the parent directory in which `output_folder` 
+#' @param path Absolute path to the parent directory in which `output_folder`
 #' will be saved. If it is not provided, it will be created in a temp folder.
 #'
 #' @return Creates a folder in disk in which all the information to browse the
@@ -37,7 +37,7 @@
 #'
 #' @export
 #'
-save_results <- function(results, comp, metaginfo, output_folder = NULL, 
+save_results <- function(results, comp, metaginfo, output_folder = NULL,
                          path = NULL){
 
     if(is.null(path))
@@ -447,12 +447,12 @@ create_path_info <- function(all_comp, metaginfo){
     effector <- length(unlist(strsplit(rownames(all_comp)[1], split="-"))) == 3
     path_info <- lapply(fpgs, function(fpg){
         if(effector == TRUE){
-            all_comp[names(fpg$effector.subgraphs),]        
+            all_comp[names(fpg$effector.subgraphs),]
         }else{
-            all_comp[names(fpg$subgraphs),]        
+            all_comp[names(fpg$subgraphs),]
         }
     })
-    
+
     path_json_list <- lapply(names(path_info),function(x){
         out <- paste0("{\n\t\"id\":\"", x, "\",\n")
         out <- paste0(out, "\t\"name\":\"", fpgs[[x]]$path.name, "\",\n")
@@ -619,7 +619,7 @@ create_html_index <- function(home, output_folder,
 #' pathways <- load_pathways(species = "hsa", pathways_list = c("hsa03320",
 #' "hsa04012"))
 #' report <- create_report(comp, pathways, "save_results")
-#' 
+#'
 #' \dontrun{
 #' data(results)
 #' data(brca)
@@ -634,7 +634,7 @@ create_html_index <- function(home, output_folder,
 #' @param metaginfo Pathways object as returned by the \code{load_pathways}
 #' function
 #' @param output_folder Name of the folder in which the report will be stored.
-#' @param path Absolute path to the parent directory in which `output_folder` 
+#' @param path Absolute path to the parent directory in which `output_folder`
 #' will be saved. If it is not provided, it will be created in a temp folder.
 #' @param node_colors List of colors with which to paint the nodes of the
 #' pathways, as returned by the
@@ -684,7 +684,7 @@ create_report <- function(comp, metaginfo, output_folder = NULL, path = NULL,
     output_folder <- paste0(path, "/", output_folder)
     if(!file.exists(output_folder))
         dir.create(output_folder)
-    
+
     pv_path <- paste0(system.file("extdata", package="hipathia"))
 
     message("Creating report folders...")
@@ -728,7 +728,7 @@ summarize_atts <- function(att_list, att_names){
 #' "hsa04012"))
 #' report <- create_report(comp, pathways, "save_results")
 #' visualize_report(report)
-#' 
+#'
 #' \dontrun{
 #' data(results)
 #' data(brca)
@@ -748,7 +748,8 @@ summarize_atts <- function(att_list, att_names){
 visualize_report <- function(output_folder, port = 4000){
     servr::httd(paste0(output_folder, "/pathway-viewer"),
                 port = port, browser = FALSE, daemon = TRUE)
-    cat("Open a web browser and go to URL http://127.0.0.1:", port, "\n", sep = "")
+    cat("Open a web browser and go to URL http://127.0.0.1:", port, "\n",
+        sep = "")
 }
 
 

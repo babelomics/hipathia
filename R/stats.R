@@ -8,9 +8,8 @@
 ## https://www.bioconductor.org/developers/how-to/coding-style/
 ##
 
-#' Normalize expression data from a SummarizedExperiment or matrix to be used
-#' in
-#' \code{hipathia}
+#' Normalize expression data from a SummarizedExperiment or matrix
+#' to be used in \code{hipathia}
 #'
 #' Transforms the rank of the SummarizedExperiment or matrix of gene expression
 #' to [0,1] in order
