@@ -4,8 +4,7 @@
 \alias{save_results}
 \title{Save results to folder}
 \usage{
-save_results(results, comp, metaginfo, output_folder = NULL,
-  path = NULL)
+save_results(results, comp, metaginfo, output_folder = NULL, path = NULL)
 }
 \arguments{
 \item{results}{Results object as returned by the \code{hipathia} function.}
@@ -16,7 +15,7 @@ save_results(results, comp, metaginfo, output_folder = NULL,
 
 \item{output_folder}{Name of the folder in which the results will be stored.}
 
-\item{path}{Absolute path to the parent directory in which `output_folder` 
+\item{path}{Absolute path to the parent directory in which `output_folder`
 will be saved. If it is not provided, it will be created in a temp folder.}
 }
 \value{

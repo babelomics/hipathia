@@ -4,8 +4,14 @@
 \alias{node_color}
 \title{Get colors of the nodes from a comparison file}
 \usage{
-node_color(comp, metaginfo, group_by = "pathway", colors = "classic",
-  conf = 0.05, adjust = TRUE)
+node_color(
+  comp,
+  metaginfo,
+  group_by = "pathway",
+  colors = "classic",
+  conf = 0.05,
+  adjust = TRUE
+)
 }
 \arguments{
 \item{comp}{Comparison file as returned by \code{do_wilcoxon}. Must include a

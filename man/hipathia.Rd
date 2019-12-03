@@ -5,8 +5,16 @@
 \title{Computes the level of activation of the subpathways for each 
 of the samples}
 \usage{
-hipathia(genes_vals, metaginfo, sel_assay = 1, decompose = FALSE,
-  maxnum = 100, verbose = TRUE, tol = 1e-06, test = TRUE)
+hipathia(
+  genes_vals,
+  metaginfo,
+  sel_assay = 1,
+  decompose = FALSE,
+  maxnum = 100,
+  verbose = TRUE,
+  tol = 1e-06,
+  test = TRUE
+)
 }
 \arguments{
 \item{genes_vals}{A SummarizedExperiment or matrix with the normalized 

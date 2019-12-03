@@ -4,9 +4,20 @@
 \alias{pca_plot}
 \title{Plots two components of a PCA}
 \usage{
-pca_plot(fit, group = NULL, sample_colors = NULL, cp1 = 1, cp2 = 2,
-  legend = TRUE, legend_xy = "bottomleft", cex = 2, pch = 20,
-  mgp = c(3, 1, 0), main = "PCA plot", save_png = NULL)
+pca_plot(
+  fit,
+  group = NULL,
+  sample_colors = NULL,
+  cp1 = 1,
+  cp2 = 2,
+  legend = TRUE,
+  legend_xy = "bottomleft",
+  cex = 2,
+  pch = 20,
+  mgp = c(3, 1, 0),
+  main = "PCA plot",
+  save_png = NULL
+)
 }
 \arguments{
 \item{fit}{princomp object as returned by \code{do_pca}}

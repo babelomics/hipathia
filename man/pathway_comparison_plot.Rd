@@ -4,8 +4,14 @@
 \alias{pathway_comparison_plot}
 \title{Plots pathway with colored significant paths}
 \usage{
-pathway_comparison_plot(comp, metaginfo, pathway, conf = 0.05,
-  node_colors = NULL, colors = "classic")
+pathway_comparison_plot(
+  comp,
+  metaginfo,
+  pathway,
+  conf = 0.05,
+  node_colors = NULL,
+  colors = "classic"
+)
 }
 \arguments{
 \item{comp}{Comparison data frame as returned by the \code{do_wilcox}

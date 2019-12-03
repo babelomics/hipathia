@@ -4,8 +4,13 @@
 \alias{get_highest_sig_ancestor}
 \title{Get highest common GO ancestor of GO annotations}
 \usage{
-get_highest_sig_ancestor(go_terms, go_comp, metaginfo, unique = TRUE,
-  pval = 0.05)
+get_highest_sig_ancestor(
+  go_terms,
+  go_comp,
+  metaginfo,
+  unique = TRUE,
+  pval = 0.05
+)
 }
 \arguments{
 \item{go_terms}{GO terms for which the highest common ancestors are

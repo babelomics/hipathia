@@ -4,9 +4,18 @@
 \alias{multiple_pca_plot}
 \title{Plots multiple components of a PCA}
 \usage{
-multiple_pca_plot(fit, group = NULL, sample_colors = NULL,
-  comps = seq_len(3), plot_variance = FALSE, legend = TRUE,
-  cex = 2, pch = 20, main = "Multiple PCA plot", save_png = NULL)
+multiple_pca_plot(
+  fit,
+  group = NULL,
+  sample_colors = NULL,
+  comps = seq_len(3),
+  plot_variance = FALSE,
+  legend = TRUE,
+  cex = 2,
+  pch = 20,
+  main = "Multiple PCA plot",
+  save_png = NULL
+)
 }
 \arguments{
 \item{fit}{princomp object as returned by \code{do_pca}}

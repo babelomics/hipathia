@@ -2,8 +2,11 @@
 .Rhistory
 .RData
 .Ruserdata
+..Rcheck
 /vignettes/hipathia-vignette.html
 /vignettes/hipathia-vignette.pdf
+/vignettes/hipathia-vignette.log
+/vignettes/hipathia-vignette_files
 /hipathia.Rproj
 /private
 /R/load_hpAnnot.R

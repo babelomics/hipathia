@@ -4,9 +4,16 @@
 \alias{create_report}
 \title{Create visualization HTML}
 \usage{
-create_report(comp, metaginfo, output_folder = NULL, path = NULL,
-  node_colors = NULL, group_by = "pathway", conf = 0.05,
-  verbose = FALSE)
+create_report(
+  comp,
+  metaginfo,
+  output_folder = NULL,
+  path = NULL,
+  node_colors = NULL,
+  group_by = "pathway",
+  conf = 0.05,
+  verbose = FALSE
+)
 }
 \arguments{
 \item{comp}{Comparison object as given by the \code{do_wilcoxon} function}
@@ -16,7 +23,7 @@ function}
 
 \item{output_folder}{Name of the folder in which the report will be stored.}
 
-\item{path}{Absolute path to the parent directory in which `output_folder` 
+\item{path}{Absolute path to the parent directory in which `output_folder`
 will be saved. If it is not provided, it will be created in a temp folder.}
 
 \item{node_colors}{List of colors with which to paint the nodes of the

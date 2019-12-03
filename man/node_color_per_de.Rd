@@ -4,9 +4,17 @@
 \alias{node_color_per_de}
 \title{Colors of the nodes by its differential expression}
 \usage{
-node_color_per_de(results, metaginfo, group, expdes, g2 = NULL,
-  group_by = "pathway", colors = "classic", conf = 0.05,
-  adjust = TRUE)
+node_color_per_de(
+  results,
+  metaginfo,
+  group,
+  expdes,
+  g2 = NULL,
+  group_by = "pathway",
+  colors = "classic",
+  conf = 0.05,
+  adjust = TRUE
+)
 }
 \arguments{
 \item{results}{Object of results as provided by the \code{hipathia}
