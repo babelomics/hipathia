@@ -473,7 +473,7 @@ do_limma <- function(data, groups, expdes, g2 = NULL, sel_assay = 1,
         expdes <- paste(expdes, "-", g2)
 
     design <- stats::model.matrix(~0 + factor(groups))
-    colnames(design) <- unique(groups)
+    colnames(design) <- levels(factor(groups))
     rownames(design) <- colnames(vals)
     cont_matrix <- limma::makeContrasts(contrasts = expdes, levels = design)
 
@@ -493,7 +493,7 @@ do_limma <- function(data, groups, expdes, g2 = NULL, sel_assay = 1,
     if(se_flag == TRUE && "feat.name" %in% colnames(rowData(data)))
         comp <- cbind(name = rowData(data)[["feat.name"]], comp)
     if(order == TRUE)
-        comp <- comp[order(comp$FDRp.value, decreasing = FALSE),]
+        comp <- comp[order(comp$p.value, decreasing = FALSE),]
     return(comp)
 }
 

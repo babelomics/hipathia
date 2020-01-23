@@ -39,3 +39,6 @@ Version 1.5.1 (2019-02-21)
 
 Version 2.1.1 (2019-05-17)
   + Adding function mgi_from_sif, which allows to create a pathways object from SIF + ATT files.
+
+Version 2.3.2 (2019-05-17)
+  + Correcting bug in non-public do_limma function: experimental designs with more than two experimental conditions were not well treated.
