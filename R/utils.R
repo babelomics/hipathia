@@ -128,7 +128,7 @@ translate_matrix <- function(exp, species, verbose = TRUE){
 
     xref <- load_xref(species)
 
-    new_ids <- gsub("\\.[0123456789]$", "", rownames(exp))
+    new_ids <- gsub("\\.[0123456789]+$", "", rownames(exp))
 
     # translate ids
     tt <- translate_ids(new_ids, xref)
