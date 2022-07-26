@@ -472,16 +472,31 @@ do_limma <- function(data, groups, expdes, g2 = NULL, sel_assay = 1,
     if(!is.null(g2))
         expdes <- paste(expdes, "-", g2)
 
+    # Make contrasts
     design <- stats::model.matrix(~0 + factor(groups))
     colnames(design) <- levels(factor(groups))
     rownames(design) <- colnames(vals)
     cont_matrix <- limma::makeContrasts(contrasts = expdes, levels = design)
 
-    fit <- limma::lmFit(vals, design)
+    # Remove nodes with 0 variance
+    vars <- apply(vals, 1, var)
+    novar <- vals[-which(vars == 0),]
+    
+    # Do analysis
+    fit <- limma::lmFit(novar, design)
     fit1 <- limma::contrasts.fit(fit, cont_matrix)
     fit2 <- limma::eBayes(fit1)
     tt <- limma::topTable(fit2, coef = 1, number = "all", sort.by = "none")
 
+    # Add nodes with 0 variance to results table
+    ttnovar <- data.frame(path = names(vars[vars == 0]), logFC = 0, AveExpr = 1,
+                          t = -8, P.Value = 1, adj.P.Val = 1, B = -10)
+    rownames(ttnovar) <- ttnovar$path
+    ttnovar <- ttnovar[,-1]
+    tt <- rbind(tt, ttnovar)
+    tt <- tt[rownames(vals),]
+    
+    # Create results data frame
     updown <- c("UP", "DOWN", "UP")
     names(updown) <- c("1", "-1", "0")
     ud <- updown[as.character(sign(tt$logFC))]
