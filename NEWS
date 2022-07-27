@@ -42,3 +42,6 @@ Version 2.1.1 (2019-05-17)
 
 Version 2.3.2 (2019-05-17)
   + Correcting bug in non-public do_limma function: experimental designs with more than two experimental conditions were not well treated.
+
+Version 2.13.1 (2022-07-27)
+  + Fixing bug in nodes DE with limma with high rates of 0-variance genes. 
